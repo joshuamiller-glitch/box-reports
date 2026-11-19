@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 11:35Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:00Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 662; cells with a finished REPLACE verdict (L6M+L3M landed) 476; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 34); ADD rows finished 621.
+**Counts:** Asia cells with any engine row 738; cells with a finished REPLACE verdict (L6M+L3M landed) 529; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 39); ADD rows finished 708.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
-| K7 | 67 | 0 | 4 |
-| P7 | 61 | 0 | 3 |
-| A7 | 476 | 14 | 37 |
-| H7 | 65 | 0 | 3 |
-| U7 | 65 | 0 | 2 |
+| K7 | 68 | 0 | 7 |
+| P7 | 62 | 0 | 6 |
+| A7 | 529 | 14 | 51 |
+| H7 | 67 | 0 | 4 |
+| U7 | 67 | 0 | 4 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 363 tested; 514 cells with rows), long-only 0 (of 113 tested; 148 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 363 tested; 514 cells with rows), long-only 0 (of 166 tested; 224 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -61,9 +61,9 @@
 | L0a809c2e kagi_40 | both-side | A7 | 0.549 | +0.86 | +0.20 / +0.01 / +0.45 | RED / RED / RED | no | GREEN / AMBER / RED | fail | fail |
 | M0a809c2e kagi_40 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | pending / pending / pending | pending | pending |
 | L17ce266f tm240 | both-side | A7 | 0.622 | +0.70 | +0.07 / +0.21 / +0.18 | RED / RED / RED | no | GREEN / AMBER / RED | PASS | fail |
-| M17ce266f tm240 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | pending / pending / pending | pending | pending |
+| M17ce266f tm240 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | GREEN / AMBER / RED | pending | pending |
 | L5d9e7166 tm240 | both-side | A7 | 0.622 | +0.70 | +0.07 / +0.21 / +0.18 | RED / RED / RED | no | GREEN / AMBER / RED | PASS | fail |
-| M5d9e7166 tm240 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | pending / pending / pending | pending | pending |
+| M5d9e7166 tm240 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | GREEN / AMBER / RED | pending | pending |
 | L05222ff9 time_m_4 | both-side | A7 | 0.598 | +0.74 | +0.08 / +0.18 / +0.26 | RED / RED / RED | no | GREEN / AMBER / RED | fail | fail |
 | M05222ff9 time_m_4 | long-only (mode-correct twin) | A7 | not screened here (csv = both-side stream) | | | | | pending / pending / pending | pending | pending |
 | L63ff9ae8 time_m_4 | both-side | A7 | 0.598 | +0.74 | +0.08 / +0.18 / +0.26 | RED / RED / RED | no | pending / pending / pending | fail | fail |
@@ -89,7 +89,7 @@ Gate A pass 4, Gate B pass 0 among the both-side beaters listed (see MORNING.md 
 
 | Lda55d973 vol_750 | both-side | A7 | 2023 | +1 | +10 | -3 | -7 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.561 |
 | Lda55d973 vol_750 | both-side | A7 | 2024 | +3 | -1 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
-| Lda55d973 vol_750 | both-side | A7 | 2025 | +411 | +551 | +1221 | +144 | RED | AMBER (diag) | RED |  |  |  |
+| Lda55d973 vol_750 | both-side | A7 | 2025 | +411 | +551 | +1221 | +144 | RED | AMBER (F) | RED |  |  |  |
 | La5b5d03a time_m_2 | both-side | A7 | 2023 | +30 | +37 | +3 | -40 | RED | RED (diag) | RED | RED / RED |  | 0.573 |
 | La5b5d03a time_m_2 | both-side | A7 | 2024 | +1 | +2 | -20 | +4 | GREEN | GREEN (diag) | RED |  |  |  |
 | La5b5d03a time_m_2 | both-side | A7 | 2025 | -27 | -19 | -10 | -141 | GREEN | GREEN (diag) | RED |  |  |  |
@@ -98,89 +98,93 @@ Gate A pass 4, Gate B pass 0 among the both-side beaters listed (see MORNING.md 
 | Lcb276f27 tm120 | both-side | A7 | 2025 | -28 | -19 | -10 | -142 | GREEN | GREEN (diag) | RED |  |  |  |
 | L1edb9fab tm300 | both-side | A7 | 2023 | -4 | -2 | +5 | -19 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.500 |
 | L1edb9fab tm300 | both-side | A7 | 2024 | -5 | -8 | -17 | +4 | GREEN | GREEN (diag) | RED |  |  |  |
-| L1edb9fab tm300 | both-side | A7 | 2025 | +416 | +560 | +1221 | +147 | RED | GREEN (diag) | RED |  |  |  |
+| L1edb9fab tm300 | both-side | A7 | 2025 | +416 | +560 | +1221 | +147 | RED | GREEN (F) | RED |  |  |  |
 | L0a809c2e kagi_40 | both-side | A7 | 2023 | -13 | -7 | -4 | -35 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.549 |
 | L0a809c2e kagi_40 | both-side | A7 | 2024 | +21 | -2 | -14 | +20 | AMBER | AMBER (diag) | RED |  |  |  |
-| L0a809c2e kagi_40 | both-side | A7 | 2025 | +402 | +537 | +1215 | +144 | RED | GREEN (diag) | RED |  |  |  |
+| L0a809c2e kagi_40 | both-side | A7 | 2025 | +402 | +537 | +1215 | +144 | RED | GREEN (F) | RED |  |  |  |
 | L17ce266f tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
 | L17ce266f tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
-| L17ce266f tm240 | both-side | A7 | 2025 | +411 | +553 | +1219 | +150 | RED | GREEN (diag) | RED |  |  |  |
+| L17ce266f tm240 | both-side | A7 | 2025 | +411 | +553 | +1219 | +150 | RED | GREEN (F) | RED |  |  |  |
 | L5d9e7166 tm240 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
 | L5d9e7166 tm240 | both-side | A7 | 2024 | +8 | -3 | -14 | +16 | AMBER | AMBER (diag) | RED |  |  |  |
-| L5d9e7166 tm240 | both-side | A7 | 2025 | +411 | +553 | +1219 | +150 | RED | GREEN (diag) | RED |  |  |  |
+| L5d9e7166 tm240 | both-side | A7 | 2025 | +411 | +553 | +1219 | +150 | RED | GREEN (F) | RED |  |  |  |
 | L05222ff9 time_m_4 | both-side | A7 | 2023 | +5 | +10 | -2 | -17 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.598 |
 | L05222ff9 time_m_4 | both-side | A7 | 2024 | +8 | -4 | -14 | +17 | AMBER | AMBER (diag) | RED |  |  |  |
-| L05222ff9 time_m_4 | both-side | A7 | 2025 | +411 | +553 | +1219 | +149 | RED | GREEN (diag) | RED |  |  |  |
+| L05222ff9 time_m_4 | both-side | A7 | 2025 | +411 | +553 | +1219 | +149 | RED | GREEN (F) | RED |  |  |  |
 | L7c368a4f time_m_5 | both-side | A7 | 2023 | -5 | -2 | +4 | -19 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.537 |
 | L7c368a4f time_m_5 | both-side | A7 | 2024 | -6 | -8 | -17 | +1 | GREEN | GREEN (diag) | RED |  |  |  |
-| L7c368a4f time_m_5 | both-side | A7 | 2025 | +417 | +559 | +1221 | +149 | RED | GREEN (diag) | RED |  |  |  |
+| L7c368a4f time_m_5 | both-side | A7 | 2025 | +417 | +559 | +1221 | +149 | RED | GREEN (F) | RED |  |  |  |
 | L5c9e11b3 vol_750 | both-side | A7 | 2023 | -1 | +1 | +1 | -31 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
 | L5c9e11b3 vol_750 | both-side | A7 | 2024 | +5 | +1 | -13 | +7 | GREEN | GREEN (diag) | RED |  |  |  |
-| L5c9e11b3 vol_750 | both-side | A7 | 2025 | +410 | +546 | +1219 | +136 | RED | AMBER (diag) | RED |  |  |  |
+| L5c9e11b3 vol_750 | both-side | A7 | 2025 | +410 | +546 | +1219 | +136 | RED | AMBER (F) | RED |  |  |  |
 | Ledfbf4d2 vol_350 | both-side | A7 | 2023 | +1 | +7 | -3 | -21 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.622 |
 | Ledfbf4d2 vol_350 | both-side | A7 | 2024 | -1 | -4 | -11 | +6 | GREEN | GREEN (diag) | RED |  |  |  |
-| Ledfbf4d2 vol_350 | both-side | A7 | 2025 | +415 | +555 | +1228 | +149 | RED | GREEN (diag) | RED |  |  |  |
+| Ledfbf4d2 vol_350 | both-side | A7 | 2025 | +415 | +555 | +1228 | +149 | RED | GREEN (F) | RED |  |  |  |
 | Lf77e374b tm240 | both-side | A7 | 2023 | +13 | +18 | -4 | -4 | AMBER | AMBER (diag) | RED | RED / no RED, all 3 years |  | 0.512 |
 | Lf77e374b tm240 | both-side | A7 | 2024 | +4 | -6 | -11 | +20 | AMBER | AMBER (diag) | RED |  |  |  |
-| Lf77e374b tm240 | both-side | A7 | 2025 | +411 | +553 | +1225 | +156 | RED | AMBER (diag) | RED |  |  |  |
+| Lf77e374b tm240 | both-side | A7 | 2025 | +411 | +553 | +1225 | +156 | RED | AMBER (F) | RED |  |  |  |
 | L0b1d7882 tm30 | both-side | A7 | 2023 | -10 | -6 | -0 | -21 | GREEN | GREEN (diag) | RED | RED / no RED, all 3 years |  | 0.488 |
 | L0b1d7882 tm30 | both-side | A7 | 2024 | +4 | -13 | -9 | +21 | AMBER | AMBER (diag) | RED |  |  |  |
-| L0b1d7882 tm30 | both-side | A7 | 2025 | +410 | +550 | +1218 | +154 | RED | GREEN (diag) | RED |  |  |  |
+| L0b1d7882 tm30 | both-side | A7 | 2025 | +410 | +550 | +1218 | +154 | RED | GREEN (F) | RED |  |  |  |
 **Prior years against ALL live Asia books and ADD (where the A7-removal effect is absent or different): both-side beaters, rule B colours as run / ex-artefact, landed years only (pending = not run).**
 
 | cell | variant | 2023 as run / ex-art | 2024 as run / ex-art | 2025 as run / ex-art |
 |---|---|---|---|---|
-| Lda55d973 vol_750 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| Lda55d973 vol_750 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / AMBER diag |
+| Lda55d973 vol_750 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| Lda55d973 vol_750 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / AMBER F |
 | La5b5d03a time_m_2 (both-side) | ADD | RED / RED diag | GREEN / GREEN diag | GREEN / GREEN diag |
 | La5b5d03a time_m_2 (both-side) | RA7 | RED / RED diag | GREEN / GREEN diag | GREEN / GREEN diag |
 | Ma5b5d03a time_m_2 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | GREEN / GREEN diag |
 | Lcb276f27 tm120 (both-side) | ADD | RED / RED diag | GREEN / GREEN diag | GREEN / GREEN diag |
 | Lcb276f27 tm120 (both-side) | RA7 | RED / RED diag | GREEN / GREEN diag | GREEN / GREEN diag |
 | Mcb276f27 tm120 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | GREEN / GREEN diag |
-| L1edb9fab tm300 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| L1edb9fab tm300 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN diag |
-| L1edb9fab tm300 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / GREEN diag |
-| L1edb9fab tm300 (both-side) | RU7 | AMBER / AMBER diag | GREEN / GREEN diag | RED / GREEN diag |
-| M1edb9fab tm300 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| M1edb9fab tm300 (long-only) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN diag |
-| L0a809c2e kagi_40 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| L0a809c2e kagi_40 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
-| L17ce266f tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER diag |
-| L17ce266f tm240 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
-| L5d9e7166 tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER diag |
-| L5d9e7166 tm240 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
-| L05222ff9 time_m_4 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER diag |
-| L05222ff9 time_m_4 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
-| L7c368a4f time_m_5 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| L7c368a4f time_m_5 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN diag |
-| L7c368a4f time_m_5 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / GREEN diag |
-| L7c368a4f time_m_5 (both-side) | RU7 | AMBER / AMBER diag | GREEN / GREEN diag | RED / GREEN diag |
-| L5c9e11b3 vol_750 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| L5c9e11b3 vol_750 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| L5c9e11b3 vol_750 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / AMBER diag |
-| M5c9e11b3 vol_750 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| Ledfbf4d2 vol_350 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
-| Ledfbf4d2 vol_350 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN diag |
-| Lf77e374b tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER diag |
-| Lf77e374b tm240 (both-side) | RA7 | AMBER / AMBER diag | AMBER / AMBER diag | RED / AMBER diag |
-| L0b1d7882 tm30 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN diag |
-| L0b1d7882 tm30 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
+| L1edb9fab tm300 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| L1edb9fab tm300 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN F |
+| L1edb9fab tm300 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / GREEN F |
+| L1edb9fab tm300 (both-side) | RU7 | AMBER / AMBER diag | GREEN / GREEN diag | RED / GREEN F |
+| M1edb9fab tm300 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| M1edb9fab tm300 (long-only) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN F |
+| L0a809c2e kagi_40 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| L0a809c2e kagi_40 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN F |
+| L17ce266f tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER F |
+| L17ce266f tm240 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN F |
+| M17ce266f tm240 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
+| M17ce266f tm240 (long-only) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
+| L5d9e7166 tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER F |
+| L5d9e7166 tm240 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN F |
+| M5d9e7166 tm240 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER diag |
+| M5d9e7166 tm240 (long-only) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN diag |
+| L05222ff9 time_m_4 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER F |
+| L05222ff9 time_m_4 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN F |
+| L7c368a4f time_m_5 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| L7c368a4f time_m_5 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN F |
+| L7c368a4f time_m_5 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / GREEN F |
+| L7c368a4f time_m_5 (both-side) | RU7 | AMBER / AMBER diag | GREEN / GREEN diag | RED / GREEN F |
+| L5c9e11b3 vol_750 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| L5c9e11b3 vol_750 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| L5c9e11b3 vol_750 (both-side) | RH7 | RED / RED diag | GREEN / GREEN diag | RED / AMBER F |
+| M5c9e11b3 vol_750 (long-only) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| Ledfbf4d2 vol_350 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / AMBER F |
+| Ledfbf4d2 vol_350 (both-side) | RA7 | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN F |
+| Lf77e374b tm240 (both-side) | ADD | AMBER / AMBER diag | GREEN / GREEN diag | RED / AMBER F |
+| Lf77e374b tm240 (both-side) | RA7 | AMBER / AMBER diag | AMBER / AMBER diag | RED / AMBER F |
+| L0b1d7882 tm30 (both-side) | ADD | GREEN / GREEN diag | GREEN / GREEN diag | RED / GREEN F |
+| L0b1d7882 tm30 (both-side) | RA7 | GREEN / GREEN diag | AMBER / AMBER diag | RED / GREEN F |
 
 
 Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed have a RED year, 0 none; EX-ARTEFACT (see note) 2 RED, 11 none. Rows without any landed engine prior year are not listed (pending).
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 2419, last 3 h 7041; Asia queue lines pending (not DONE): 51634.
+Asia set-months landed: last 1 h 2786, last 3 h 7304; Asia queue lines pending (not DONE): 51636.
 
 ## Proof that Asia sets are launched ahead of NY AM
-- QUEUES.txt order on server 2 dispatcher: _asi position 5, _nye/pending_l 12, _nye/pending_w , _lon 13 (lower = earlier).
+- QUEUES.txt order on server 2 dispatcher: _asi position 6, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 18 TL3_NYL_      12 TL3_NYW_      12 TL3_ASI_       8 TL3_NYE_       8 TL3_LON_       1 TL3_EXE_
-- server2 running engine sets by tag: 44 TL3_ASI_
-- A running engine sets by tag: 179 TL3_ASI_      18 TL3_EXE_
-- B running engine sets by tag: 173 TL3_ASI_
+- box1 running engine sets by tag: 25 TL3_NYE_      24 TL3_NYL_       6 TL3_LON_       5 TL3_ASI_
+- server2 running engine sets by tag: none
+- A running engine sets by tag: 61 TL3_ASI_
+- B running engine sets by tag: 142 TL3_NYL_      26 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
