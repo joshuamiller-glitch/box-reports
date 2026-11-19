@@ -1,5 +1,9 @@
 # QUESTIONS FOR JOSH (newest at the top; the lead applies the safe default and carries on; written by the lead)
 
+## 2026-11-19 18:10Z (order 1750Z item 4: ONE DATE)
+22. STAGE-1 DATE AND THE NY AM OTHER-BOOK ROWS. Simulated mix (W-NYENG, model not measurement, 4,401 sm/h measured fleet rate): Asia first looks end 11-20 03:18Z, NY AM first looks 11-20 09:24Z, follow-ups 11-20 16:42Z, NY AM other-book REPLACE rows (77k sm, REPLACE of each cell vs every other NY AM live book) 11-21 06:48Z => STAGE 1 (Asia+NY AM) ~2026-11-21 06:54Z (range 11-21 01:54Z at 5,076/h to 11-21 10:30Z at 4,000/h), then combination stage (W-COMBO). Asia alone ~11-20 13:00-17:00Z (layers/exit run). Long pole: NY AM other-book rows. PROPOSAL (not applied): run other-book rows only for cells whose K7 L6M ulcer is lower (~1,132 rows) plus a random validation sample of 100 cells where it is not (1,800 rows): saves ~74k sm (~17 h): stage 1 ends ~11-20 13:54Z. Risk: no data on cells where K7 is not lower (K7 strict gate alone would lose 3 of the 4 observed other-slot passers). SAFE DEFAULT APPLIED: no gate (full run, no shortcuts per your 0224Z order); the 1,800-row validation sample is run FIRST so the gate can be judged on data; say 'apply the gate' if you want the saving.
+
+
 ## 2026-11-18 21:00Z
 1. SECURITY: an agent printed CLAUDE_CODE_OAUTH_TOKEN into a session transcript at ~20:45Z (not written to any file/log). Default applied: nothing is written or printed again. Recommended: rotate the token.
 2. EXIT RECIPES ON EVERY CELL (order 2024Z): the yield/cost study (autopilot/EXIT_YIELD.md, first numbers ~23:00Z) comes first. Default: NO full exit run until you decide.
