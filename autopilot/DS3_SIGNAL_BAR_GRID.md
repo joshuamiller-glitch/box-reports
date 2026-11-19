@@ -1,7 +1,7 @@
 # DS3_SIGNAL_BAR_GRID - whole trigger library x every bar row x session (W-GRIDA), FIRST PASS, NAKED SCREEN
 VERDICT (data ends 2026-11-12; naked screen with bar-scaled brackets, no layers, NOT an engine verdict; first heat table on built bars; nulls: random-entry replicas rand1,randd8a,randd8ax,randd8b,randd8bx): see the headline table - a trigger x bar counts only by EXCESS over the null distribution of the BEST pick; nothing here is a pass until the engine row with layers exists.
 
-Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-19 14:06Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
+Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-19 14:35Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
 
 **CORRECTION 02:30Z (read first): every random-entry null file produced by the fast path before 02:30Z was an exact COPY of the real result (the fast runner did not recognise the tag p1randN), so all earlier excess / percentile / null columns and the claim of null draws were INVALID (excess 0.0, percentile 1.00 = no null). 31,413 such files were deleted; the 1,411 legacy-runner null files are valid. Nulls are being regenerated; a null column is shown only when the null pool covers >= 80% of the real pool, otherwise it reads NO NULL YET. Real results are unaffected.**
 
@@ -40,7 +40,7 @@ Header: pick window end = newest data week (2026-11-12); refit date = every 2 we
 | p1rand9 | 426 | 400 | 0.000 | -0.66 / -0.58 / -0.57 / -0.99 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 Draws per cell = number of accepted null tags covering the pool (see per-session null_cover); needs >= 5 before any LEAD label.
 
-**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-19 14:06Z):** result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 0, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 41705, "p1rand10": 426, "p1rand11": 426, "p1rand12": 420, "p1rand13": 315, "p1rand14": 284, "p1rand15": 284, "p1rand16": 284, "p1rand17": 284, "p1rand18": 284, "p1rand19": 367, "p1rand2": 41477, "p1rand20": 494, "p1rand21": 102, "p1rand22": 102, "p1rand23": 102, "p1rand24": 102, "p1rand25": 102, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 4992, "p1rand30": 2, "p1rand4": 4904, "p1rand5": 4707, "p1rand6": 427, "p1rand7": 426, "p1rand8": 426, "p1rand9": 426, "p1real": 68817, "p1realx": 2739, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 1, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 0, "London": 0, "NYAM": 0, "NYPM": 0}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
+**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-19 14:35Z):** result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 0, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 42486, "p1rand10": 426, "p1rand11": 426, "p1rand12": 420, "p1rand13": 315, "p1rand14": 284, "p1rand15": 284, "p1rand16": 284, "p1rand17": 284, "p1rand18": 284, "p1rand19": 367, "p1rand2": 42332, "p1rand20": 494, "p1rand21": 102, "p1rand22": 102, "p1rand23": 102, "p1rand24": 102, "p1rand25": 102, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 4997, "p1rand30": 2, "p1rand4": 4927, "p1rand5": 4726, "p1rand6": 427, "p1rand7": 426, "p1rand8": 426, "p1rand9": 426, "p1real": 69064, "p1realx": 2826, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 0, "London": 0, "NYAM": 0, "NYPM": 0}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
 
 **Every number on this page comes from: PASS 1 (coarse grid: 2-3 settings per variant spanning the range; brackets plain 60/60 + sym15u; real + rand1/rand2 nulls; long/short = side split).**
 
@@ -51,8 +51,8 @@ Draws per cell = number of accepted null tags covering the pool (see per-session
 4. Needs in D7: trigger modules are bar-indicator only (no new feed) except book/tape families flagged in TRIGGER_REGISTRY.md; non-time bars need a custom BarsType (BAR_REGISTRY.md).
 5. Next: top cells -> live layers (fast replay) -> exact JL3 engine with controls (identity first); then Asia.
 
-## Progress (2026-11-19 14:06Z)
-COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 0, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 41705, "p1rand10": 426, "p1rand11": 426, "p1rand12": 420, "p1rand13": 315, "p1rand14": 284, "p1rand15": 284, "p1rand16": 284, "p1rand17": 284, "p1rand18": 284, "p1rand19": 367, "p1rand2": 41477, "p1rand20": 494, "p1rand21": 102, "p1rand22": 102, "p1rand23": 102, "p1rand24": 102, "p1rand25": 102, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 4992, "p1rand30": 2, "p1rand4": 4904, "p1rand5": 4707, "p1rand6": 427, "p1rand7": 426, "p1rand8": 426, "p1rand9": 426, "p1real": 68817, "p1realx": 2739, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 1, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-19T14:06Z rows=327 mods=146 todo=17 running=0. 
+## Progress (2026-11-19 14:35Z)
+COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 0, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 42486, "p1rand10": 426, "p1rand11": 426, "p1rand12": 420, "p1rand13": 315, "p1rand14": 284, "p1rand15": 284, "p1rand16": 284, "p1rand17": 284, "p1rand18": 284, "p1rand19": 367, "p1rand2": 42332, "p1rand20": 494, "p1rand21": 102, "p1rand22": 102, "p1rand23": 102, "p1rand24": 102, "p1rand25": 102, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 4997, "p1rand30": 2, "p1rand4": 4927, "p1rand5": 4726, "p1rand6": 427, "p1rand7": 426, "p1rand8": 426, "p1rand9": 426, "p1real": 69064, "p1realx": 2826, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-19T14:35Z rows=327 mods=146 todo=17 running=0. 
 Cells scored per session: {"Asia": 9215744, "London": 10188486, "NYAM": 11153833, "NYPM": 9963822}
 
 ## London
@@ -902,14 +902,14 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | profile_va | reject_native | dib_10000 | {"tol": 0.5, "conf": "body"} | sym15u / both | 131 | 2493 | 295 | -1054 | 183 | 1120 | 1 | 357 |
 | profile_va | retest | mom_28 | {"M": 10, "tol": 0.5} | sym8u / both | 133 | 3198 | 379 | -1464 | -342 | 2602 | 2 | 357 |
 | profile_va | retest_native | tm3600 | {"M": 10, "tol": 0.5} | sym15u / both | 144 | 3224 | -311 | -329 | -209 | 2404 | 1 | 357 |
-| round | break | volor_B320 | {"n": 1, "k": 0.0} | sym15u / both | 279 | 4289 | -337 | 598 | 2614 | 5233 | 1 | 472 |
-| round | break_native | volor_B320 | {"n": 1, "k": 0.0} | sym15u / both | 279 | 4289 | -337 | 598 | 2614 | 5233 | 1 | 472 |
-| round | false_break | typ_qmid_B080 | {"M": 1, "k": 0.0} | sym15u / both | 280 | 3905 | -315 | -392 | -1352 | 2804 | 1 | 472 |
-| round | false_break_native | typ_qmid_B080 | {"M": 3, "k": 0.5} | sym15u / both | 277 | 4927 | 217 | -2006 | -1716 | 4318 | 1 | 472 |
-| round | reject | time_s_20 | {"tol": 0.0, "conf": "body"} | sym15u / both | 350 | 4952 | 55 | -457 | -569 | 5515 | 2 | 472 |
-| round | reject_native | swing_atr_0.4 | {"tol": 1.0, "conf": "body"} | sym8u / both | 264 | 5128 | -1178 | 438 | 2006 | 5678 | 2 | 472 |
-| round | retest | rng_10 | {"M": 6, "tol": 0.0} | sym30u / both | 246 | 4477 | -191 | -320 | -645 | 5031 | 2 | 472 |
-| round | retest_native | rng_10 | {"M": 6, "tol": 0.0} | sym30u / both | 246 | 4477 | -191 | -320 | -645 | 5031 | 2 | 472 |
+| round | break | volor_B320 | {"n": 1, "k": 0.0} | sym15u / both | 279 | 4289 | -337 | 598 | 2614 | 5233 | 1 | 474 |
+| round | break_native | volor_B320 | {"n": 1, "k": 0.0} | sym15u / both | 279 | 4289 | -337 | 598 | 2614 | 5233 | 1 | 474 |
+| round | false_break | typ_qmid_B080 | {"M": 1, "k": 0.0} | sym15u / both | 280 | 3905 | -315 | -392 | -1352 | 2804 | 1 | 474 |
+| round | false_break_native | typ_qmid_B080 | {"M": 3, "k": 0.5} | sym15u / both | 277 | 4927 | 217 | -2006 | -1716 | 4318 | 1 | 474 |
+| round | reject | time_s_20 | {"tol": 0.0, "conf": "body"} | sym15u / both | 350 | 4952 | 55 | -457 | -569 | 5515 | 2 | 474 |
+| round | reject_native | swing_atr_0.4 | {"tol": 1.0, "conf": "body"} | sym8u / both | 264 | 5128 | -1178 | 438 | 2006 | 5678 | 2 | 474 |
+| round | retest | rng_10 | {"M": 6, "tol": 0.0} | sym30u / both | 246 | 4477 | -191 | -320 | -645 | 5031 | 2 | 474 |
+| round | retest_native | rng_10 | {"M": 6, "tol": 0.0} | sym30u / both | 246 | 4477 | -191 | -320 | -645 | 5031 | 2 | 474 |
 | session_hl | break | time_s_10 | {"n": 1, "k": 0.25} | asym20u/10u / both | 302 | 1967 | -451 | -883 | 870 | 1633 | 2 | 355 |
 | session_hl | break_native | pasl_14 | {"n": 2, "k": 0.5} | sym15u / both | 130 | 2714 | -40 | -912 | -606 | 3328 | 2 | 355 |
 | session_hl | false_break | pnf_5 | {"M": 1, "k": 0.0} | sym8u / both | 142 | 1886 | -97 | -644 | -522 | 2232 | 2 | 355 |
@@ -1297,14 +1297,14 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | profile_va | reject_native | vib_2000 | {"tol": 1.0, "conf": "body"} | sym15u / both | 251 | 4856 | 93 | -616 | 1178 | 5862 | 1 | 365 |
 | profile_va | retest | volor_B500 | {"M": 6, "tol": 0.5} | sym15u / both | 219 | 3728 | -176 | 1986 | 876 | 4478 | 1 | 365 |
 | profile_va | retest_native | swing_atr_0.1 | {"M": 10, "tol": 0.5} | plain60/60 / both | 472 | 5646 | -87 | 79 | 1170 | 3842 | 1 | 365 |
-| round | break | vol_500 | {"n": 2, "k": 0.5} | asym20u/10u / both | 505 | 8284 | -852 | -683 | 2764 | 7588 | 2 | 480 |
-| round | break_native | vol_350 | {"n": 3, "k": 0.25} | sym30u / both | 480 | 8082 | 547 | 474 | 3963 | 8386 | 2 | 480 |
-| round | false_break | vol_500 | {"M": 1, "k": 0.5} | asym10u/20u / both | 531 | 6712 | -926 | -3185 | 1543 | 6684 | 2 | 480 |
-| round | false_break_native | dib_3500 | {"M": 1, "k": 0.5} | asym20u/10u / both | 579 | 7357 | -777 | -1171 | -5154 | 8350 | 2 | 480 |
-| round | reject | urenko_10 | {"tol": 1.0, "conf": "close"} | sym15u / both | 656 | 8603 | -677 | -3216 | -3967 | 9974 | 2 | 480 |
-| round | reject_native | micro_B080 | {"tol": 0.5, "conf": "body"} | sym15u / both | 483 | 6202 | 1208 | 1809 | 6293 | 6823 | 1 | 480 |
-| round | retest | vsess_120 | {"M": 10, "tol": 0.5} | sym8u / both | 602 | 6345 | -467 | 1846 | 1394 | 5830 | 2 | 480 |
-| round | retest_native | vib_25000 | {"M": 10, "tol": 0.5} | sym15u / both | 475 | 6796 | 130 | -2984 | 617 | 3909 | 1 | 480 |
+| round | break | vol_500 | {"n": 2, "k": 0.5} | asym20u/10u / both | 505 | 8284 | -852 | -683 | 2764 | 7588 | 2 | 482 |
+| round | break_native | vol_350 | {"n": 3, "k": 0.25} | sym30u / both | 480 | 8082 | 547 | 474 | 3963 | 8386 | 2 | 482 |
+| round | false_break | vol_500 | {"M": 1, "k": 0.5} | asym10u/20u / both | 531 | 6712 | -926 | -3185 | 1543 | 6684 | 2 | 482 |
+| round | false_break_native | dib_3500 | {"M": 1, "k": 0.5} | asym20u/10u / both | 579 | 7357 | -777 | -1171 | -5154 | 8350 | 2 | 482 |
+| round | reject | urenko_10 | {"tol": 1.0, "conf": "close"} | sym15u / both | 656 | 8603 | -677 | -3216 | -3967 | 9974 | 2 | 482 |
+| round | reject_native | micro_B080 | {"tol": 0.5, "conf": "body"} | sym15u / both | 483 | 6202 | 1208 | 1809 | 6293 | 6823 | 1 | 482 |
+| round | retest | vsess_120 | {"M": 10, "tol": 0.5} | sym8u / both | 602 | 6345 | -467 | 1846 | 1394 | 5830 | 2 | 482 |
+| round | retest_native | vib_25000 | {"M": 10, "tol": 0.5} | sym15u / both | 475 | 6796 | 130 | -2984 | 617 | 3909 | 1 | 482 |
 | session_hl | break | cdr_400 | {"n": 1, "k": 0.0} | sym15u / both | 289 | 5222 | 455 | 152 | -732 | 4801 | 1 | 365 |
 | session_hl | break_native | cdr_400 | {"n": 1, "k": 0.0} | sym15u / both | 289 | 5222 | 391 | 152 | -732 | 4801 | 1 | 365 |
 | session_hl | false_break | tsf_5_200 | {"M": 1, "k": 0.0} | sym15u / both | 304 | 5700 | 445 | 717 | 2007 | 4594 | 1 | 365 |
@@ -1683,14 +1683,14 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | profile_va | reject_native | drb_240 | {"tol": 1.0, "conf": "body"} | sym15u / both | 184 | 3050 | -470 | 1055 | -505 | 3721 | 1 | 365 |
 | profile_va | retest | vnorm_700 | {"M": 10, "tol": 0.5} | sym15u / both | 95 | 2680 | -666 | 1165 | -2881 | 2087 | 1 | 365 |
 | profile_va | retest_native | cusum_10 | {"M": 3, "tol": 0.0} | sym15u / both | 138 | 2551 | 282 | 812 | -308 | 1772 | 1 | 365 |
-| round | break | urenko_20 | {"n": 3, "k": 0.5} | asym10u/20u / both | 294 | 4870 | -1460 | 947 | 1665 | 5441 | 2 | 480 |
-| round | break_native | mrenko_14 | {"n": 3, "k": 0.25} | asym20u/10u / both | 385 | 5120 | -1745 | -50 | 672 | 5770 | 2 | 480 |
-| round | false_break | renko_14 | {"M": 1, "k": 0.5} | asym20u/10u / both | 419 | 4685 | -629 | -2293 | -206 | 6549 | 2 | 480 |
-| round | false_break_native | mrenko_20 | {"M": 1, "k": 0.5} | plain60/60 / both | 868 | 4752 | -1374 | 276 | -110 | 6982 | 2 | 480 |
-| round | reject | bmsgq_B500 | {"tol": 0.0, "conf": "close"} | sym15u / both | 320 | 4999 | 2058 | 1366 | -2038 | 4402 | 1 | 480 |
-| round | reject_native | qmid_B130 | {"tol": 1.0, "conf": "body"} | sym15u / both | 332 | 5382 | 1274 | 778 | -622 | 5313 | 1 | 480 |
-| round | retest | ha_bmsgq_B080 | {"M": 10, "tol": 0.5} | sym15u / both | 311 | 5156 | 6 | -401 | -1769 | 5881 | 1 | 480 |
-| round | retest_native | qmid_B500 | {"M": 10, "tol": 0.5} | sym15u / both | 333 | 5018 | 731 | -988 | 116 | 3423 | 1 | 480 |
+| round | break | urenko_20 | {"n": 3, "k": 0.5} | asym10u/20u / both | 294 | 4870 | -1460 | 947 | 1665 | 5441 | 2 | 482 |
+| round | break_native | mrenko_14 | {"n": 3, "k": 0.25} | asym20u/10u / both | 385 | 5120 | -1745 | -50 | 672 | 5770 | 2 | 482 |
+| round | false_break | renko_14 | {"M": 1, "k": 0.5} | asym20u/10u / both | 419 | 4685 | -629 | -2293 | -206 | 6549 | 2 | 482 |
+| round | false_break_native | mrenko_20 | {"M": 1, "k": 0.5} | plain60/60 / both | 868 | 4752 | -1374 | 276 | -110 | 6982 | 2 | 482 |
+| round | reject | bmsgq_B500 | {"tol": 0.0, "conf": "close"} | sym15u / both | 320 | 4999 | 2058 | 1366 | -2038 | 4402 | 1 | 482 |
+| round | reject_native | qmid_B130 | {"tol": 1.0, "conf": "body"} | sym15u / both | 332 | 5382 | 1274 | 778 | -622 | 5313 | 1 | 482 |
+| round | retest | ha_bmsgq_B080 | {"M": 10, "tol": 0.5} | sym15u / both | 311 | 5156 | 6 | -401 | -1769 | 5881 | 1 | 482 |
+| round | retest_native | t3_entropy_B200 | {"M": 6, "tol": 0.5} | sym15u / both | 344 | 5489 | -104 | 258 | 700 | 4619 | 1 | 482 |
 | session_hl | break | frenko_80 | {"n": 2, "k": 0.25} | sym15u / both | 161 | 3527 | -570 | -235 | 1068 | 2358 | 1 | 365 |
 | session_hl | break_native | cusum_80 | {"n": 2, "k": 0.25} | sym15u / both | 176 | 3625 | -2152 | 404 | 326 | 3669 | 1 | 365 |
 | session_hl | false_break | pnf_5 | {"M": 2, "k": 0.0} | asym20u/10u / both | 224 | 3409 | 91 | -960 | 883 | 2536 | 2 | 365 |
@@ -2157,6 +2157,6 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | zones | retest_native | urenko_14 | {"M": 3, "tol": 0.5} | sym30u / both | 138 | 3160 | -470 | -589 | -815 | 2282 | 2 | 315 |
 
 ## DATA-QUALITY NOTICE: the load-dependent "SLOW" acceptance check silently dropped 30 modules from the job lists (found 05:00Z, fixed 05:40Z)
-Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 404 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
+Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 0 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
 Their pass-1 tables above are therefore PARTIAL for those modules (bands: Keltner/Donchian/envelope; momentum: CCI/mvote/Williams %R; trend: Supertrend/HMA turn/Heikin-Ashi; xmarket: ES/RTY/NKD/rates/commodities/tick/leaders; levels: supply-demand sd5/15/60, sdx3/5/15/30/60 + rng/vol/renko variants, Fibonacci 5/15/60).
 

@@ -1,8 +1,8 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 14:15Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 14:38Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
-**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 163; cells with a finished REPLACE verdict (L6M+L3M landed) 118; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 3; twin cells listed 176.
+**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 166; cells with a finished REPLACE verdict (L6M+L3M landed) 118; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 3; twin cells listed 177.
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | REPLACE P7 | REPLACE M7 | REPLACE H7 | ADD | prior years run | controls |
@@ -11,7 +11,7 @@
 | 107 | tick_8000 / levels_open_range.break_native {"n": 3, "k": 0.25} / plain60/60 / both | yes (L6M du -75 dm +1755 | L3M du -448 dm +2609) | not run | not run | not run | yes (L6M du -453 dm +1117 | L3M du -870 dm +1542) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 875 | [twin of L0f097450] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 76 | wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 303 | [twin of L0f097450] wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 303 | [twin of L0f097450] wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:2,P7:0,M7:0,H7:0 | 0 of 30 |
 | 229 | [twin of L0f097450] wrenko_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 988 | [twin of L0f097450] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 867 | [twin of L0f097450] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
@@ -87,11 +87,11 @@ Controls = the same events moved +-7..105 days (same weekday). Real beats a cont
 
 | cell | variant | real d mean / d ulcer | controls landed (of 30) | controls beaten on mean | beaten on ulcer | beaten on both | best control d mean / d ulcer |
 |---|---|---|---|---|---|---|---|
-| L01811caa | RK7 | +1755 / -75 | 0 | pending | | | |
+| L01811caa | RK7 | +1755 / -75 | 1 | 1 | 1 | 1 | -463 / +2418 |
 | L01811caa | ADD | +1117 / -453 | 0 | pending | | | |
 | L0f097450 | RK7 | +2291 / -58 | 0 | pending | | | |
 | L0f097450 | ADD | +1691 / -795 | 0 | pending | | | |
-| L6a25b155 | RK7 | +919 / -178 | 0 | pending | | | |
+| L6a25b155 | RK7 | +919 / -178 | 1 | 1 | 1 | 1 | -542 / +404 |
 | L6a25b155 | ADD | +460 / -436 | 0 | pending | | | |
 
 ## Candidates under the persistence >= 0.58 gate and the ADD-vs-REPLACE rule (order 1324Z)
@@ -157,13 +157,44 @@ Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD r
 
 | cell | pooled persistence REPLACE (months) | pooled persistence ADD (months) | RED years REPLACE / ADD | PICK | what is still needed |
 |---|---|---|---|---|---|
-| L01811caa | 0.59 (43 mo) | 0.60 (43 mo) | none / none | **REPLACE** (REPLACE passes: recent months, no RED year, pooled persistence 0.59 >= 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L6a25b155 | 0.59 (43 mo) | 0.65 (43 mo) | none / none | **REPLACE** (REPLACE passes: recent months, no RED year, pooled persistence 0.59 >= 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L0f097450 | 0.55 (43 mo) | 0.58 (43 mo) | Y2023 / none | **none yet** (REPLACE: RED Y2023; persistence 0.55 < 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L3701b464 (twin of L0f097450) | 0.81 (7 mo) | 0.65 (8 mo) | none / none | **none yet** (REPLACE: prior years pending (0/3)) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L01811caa | 0.59 (43 mo) | 0.60 (43 mo) | none / none | **REPLACE** (REPLACE: better on ulcer and mean $/wk, no RED year, pooled persistence 0.59 >= 0.58) [STRICT PASS (ulcer, mean, worst week and max DD all not worse on L6M and L3M)] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L6a25b155 | 0.59 (43 mo) | 0.65 (43 mo) | none / none | **REPLACE** (REPLACE: better on ulcer and mean $/wk, no RED year, pooled persistence 0.59 >= 0.58) [fails the STRICT criterion: WORST WEEK L6M worse by $1005; WORST WEEK L3M worse by $1005: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L0f097450 | 0.55 (43 mo) | 0.58 (43 mo) | Y2023 / none | **none yet** (REPLACE: RED Y2023; persistence 0.55 < 0.58) [fails the STRICT criterion: WORST WEEK L6M worse by $3120; WORST WEEK L3M worse by $3120: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L3701b464 (twin of L0f097450) | 0.68 (17 mo) | 0.59 (10 mo) | none / none | **none yet** (REPLACE: prior years pending (0/3)) [fails the STRICT criterion: WORST WEEK L6M worse by $3120; WORST WEEK L3M worse by $3120: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
 
 **Candidates passing recent months + no RED year + persistence >= 0.58:** L01811caa (REPLACE), L6a25b155 (REPLACE).
 **Dates:** 30 controls: queued at the front (landing as the fleet reaches them, ~06 hours at 2,000 sm/h); layers + exit run: the layer programme per candidate is ~1,068 set-months (about 0.5 h of fleet) but needs the automatic layer builder (not built, my ETA 2026-11-20 12:00Z) and the exit engine families (builder not started); so the earliest "through everything" date for L01811caa and L6a25b155 (they stay first) is 2026-11-21 ~12:00Z, later if the exit engine builder starts late. L0f097450 (= L3701b464, same stream) is judged by the same ADD/REPLACE rule.
+
+## STRICT criterion table (Asia / D8 rule: stack ulcer LOWER, mean $/wk NOT LOWER, worst week NOT WORSE, max DD NOT WORSE; L6M with L3M beside; REPLACE-K7 vs TODAY stack; engine base lots, $4.84)
+| cell | window | metric | today | REPLACE-K7 | change | pass |
+|---|---|---|---|---|---|---|
+| L01811caa | L6M | stack ulcer (lower = better) | +9416 | +9342 | -75 | PASS |
+| L01811caa | L6M | max drawdown | -31109 | -29253 | +1857 | PASS |
+| L01811caa | L6M | worst week | -15728 | -15108 | +620 | PASS |
+| L01811caa | L6M | mean $/wk | +18755 | +20510 | +1755 | PASS |
+| L01811caa | L3M | stack ulcer (lower = better) | +11035 | +10587 | -448 | PASS |
+| L01811caa | L3M | max drawdown | -31109 | -28995 | +2114 | PASS |
+| L01811caa | L3M | worst week | -15728 | -13266 | +2462 | PASS |
+| L01811caa | L3M | mean $/wk | +16098 | +18707 | +2609 | PASS |
+| L01811caa | both | STRICT VERDICT | | | | **PASS** |
+| L6a25b155 | L6M | stack ulcer (lower = better) | +9416 | +9238 | -178 | PASS |
+| L6a25b155 | L6M | max drawdown | -31109 | -29945 | +1164 | PASS |
+| L6a25b155 | L6M | worst week | -15728 | -16733 | -1005 | **FAIL** |
+| L6a25b155 | L6M | mean $/wk | +18755 | +19675 | +919 | PASS |
+| L6a25b155 | L3M | stack ulcer (lower = better) | +11035 | +10415 | -620 | PASS |
+| L6a25b155 | L3M | max drawdown | -31109 | -29945 | +1164 | PASS |
+| L6a25b155 | L3M | worst week | -15728 | -16733 | -1005 | **FAIL** |
+| L6a25b155 | L3M | mean $/wk | +16098 | +17400 | +1301 | PASS |
+| L6a25b155 | both | STRICT VERDICT | | | | **FAIL** |
+| L0f097450 | L6M | stack ulcer (lower = better) | +9416 | +9358 | -58 | PASS |
+| L0f097450 | L6M | max drawdown | -31109 | -29253 | +1857 | PASS |
+| L0f097450 | L6M | worst week | -15728 | -18848 | -3120 | **FAIL** |
+| L0f097450 | L6M | mean $/wk | +18755 | +21047 | +2291 | PASS |
+| L0f097450 | L3M | stack ulcer (lower = better) | +11035 | +10531 | -504 | PASS |
+| L0f097450 | L3M | max drawdown | -31109 | -28828 | +2281 | PASS |
+| L0f097450 | L3M | worst week | -15728 | -18848 | -3120 | **FAIL** |
+| L0f097450 | L3M | mean $/wk | +16098 | +19000 | +2902 | PASS |
+| L0f097450 | both | STRICT VERDICT | | | | **FAIL** |
 
 ## ENGINE RULE B: prior-year gate, stack WITH the new book vs TODAY stack in the same year (order 1122Z)
 
@@ -273,7 +304,7 @@ Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD r
 - L6a25b155 short-only ADD: pending (no prior-year rows yet)
 
 ## D8 gate under the exit-run rule (order 0213Z)
-Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 339 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 10 candidates that beat a live book now = 4380 set-months = 4.7 h at 928 set-months/h (1.5 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
+Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 343 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 10 candidates that beat a live book now = 4380 set-months = 4.7 h at 928 set-months/h (1.5 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
 
 ## All other cells: see the csv (verdict per live book: no / pending)
 
