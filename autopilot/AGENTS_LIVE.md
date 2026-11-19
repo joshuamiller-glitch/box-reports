@@ -16,10 +16,10 @@ W-NYENG update 09:57Z: cron ny_note.py :20/:50 now writes its line
 W-FASTLADDER (fast-ladder identity test builder) | fl_status.py cron :20/:50 writes '(auto)' lines to MORNING.md, autopilot/FAST_LADDER.md | yes | cron-owned (agent resumable; nothing switched in any queue) | fl_status.py cron; no supervised loops
 W-BEST (own-merit scorecards; started 18:08Z; id a591575ee08a10e3b) | owns code/th_best/best_books.py, BEST_BOOKS_ASIA/NYAM.md, _split/best_books_*.csv | yes | cron-owned (:07/:37) | agent lines 'W-BEST' + cron refresh lines
 W-XB1 (staged + swing/line-trail exit builder; started 17:50Z; id a3a5e0b878203671b) | code/th_exiteng/xb_*.py | yes | running | agent lines 'W-XB1 STATUS n'
-W-XB2 (stop-and-reverse, opposite-signal, order-flow exit builder; started 17:50Z; id ae43b5553cf4572f1) | code/th_exiteng/xb2_*.py | yes | running | agent lines 'W-XB2 STATUS n'
+W-XB2 (stop-and-reverse, opposite-signal, order-flow exit builder; started 17:50Z; id ae43b5553cf4572f1) | code/th_exiteng/xb2_*.py | yes | finished 23:00Z (work complete; frozen hooks)
 W-COVER (SEARCH_COVERAGE.md reporter; finished 18:26Z; id a8ef9f74b2c04b356) | autopilot/SEARCH_COVERAGE.md | no | finished
 W-P2A (pass-2 generic combiner builder; started 18:50Z; id a818dd3f13812f3e3) | code/th_pass2/combiner.py, PASS2_COMBINER.md | yes | running | agent lines 'W-P2A'
 W-P2B (pass-2 engine hooks builder; started 18:50Z; id adf0eb373bc00bff2) | code/th_pass2 hooks, PASS2_HOOKS.md | yes | running | agent lines 'W-P2B'
 W-P2P (pass-2 prereg/cost/plan; finished first delivery 18:55Z; id afe6fc591ea2b51c5) | PREREG_PASS2.md, PASS2_COST.md, PASS2_PLAN.md | yes | cron-owned (pass2_status.py :17 hourly) | cron lines
-W-SRVC (server C Amsterdam 67.213.127.157 setup; started 18:58Z; id ac7f16d38fb025b22) | compute-pool setup | yes | running | agent lines 'W-SRVC'
-W-SRVD (server D new Dallas 72.46.85.15 setup; started 18:58Z; id a855ef1f755bfdcc0) | compute-pool setup | yes | running | agent lines 'W-SRVD'
+W-SRVC (server C Amsterdam 67.213.127.157 setup; started 18:58Z; id ac7f16d38fb025b22) | compute-pool setup | yes | finished 23:00Z (work complete; servers registered by W-GRIDOPS)
+W-SRVD (server D new Dallas 72.46.85.15 setup; started 18:58Z; id a855ef1f755bfdcc0) | compute-pool setup | yes | finished 23:00Z (work complete; servers registered by W-GRIDOPS)
