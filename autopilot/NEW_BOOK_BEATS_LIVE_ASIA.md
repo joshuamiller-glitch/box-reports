@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 18:30Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 18:35Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 1551; cells with a finished REPLACE verdict (L6M+L3M landed) 1373; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 20 (under the looser NY rule 60); ADD rows finished 715.
+**Counts:** Asia cells with any engine row 1601; cells with a finished REPLACE verdict (L6M+L3M landed) 1397; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 20 (under the looser NY rule 61); ADD rows finished 715.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 84 | 0 | 9 |
 | P7 | 77 | 0 | 6 |
-| A7 | 1373 | 20 | 117 |
+| A7 | 1397 | 20 | 145 |
 | H7 | 80 | 0 | 8 |
 | U7 | 81 | 0 | 5 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 16 (of 582 tested; 684 cells with rows), long-only 4 (of 790 tested; 866 cells so far), short-only 0 (of 1 tested; 1 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 16 (of 591 tested; 700 cells with rows), long-only 4 (of 805 tested; 900 cells so far), short-only 0 (of 1 tested; 1 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -303,7 +303,7 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | L411f8593 dlt_30 | both-side | A7 | yes / yes | pending | 0.51 (43) fail | fail | - |
 ## STRICT TABLE (Asia REPLACE rows; strict criterion = on BOTH L6M and L3M: stack ulcer lower AND $/wk not lower AND worst week not worse AND max DD not worse; no name exemptions)
 
-**Counts (REPLACE first looks with L6M+L3M landed, distinct streams): 1695 rows; STRICT pass 20; LOOSER (NY rule: ulcer lower and $/wk not lower only) pass 61; failing exactly ONE strict criterion 25.** (20 REPLACE-yes rows below = the strict recent-months passers; every one still has to clear no-RED-prior-year and engine persistence >= 0.58 to be a candidate).
+**Counts (REPLACE first looks with L6M+L3M landed, distinct streams): 1719 rows; STRICT pass 20; LOOSER (NY rule: ulcer lower and $/wk not lower only) pass 62; failing exactly ONE strict criterion 25.** (20 REPLACE-yes rows below = the strict recent-months passers; every one still has to clear no-RED-prior-year and engine persistence >= 0.58 to be a candidate).
 
 Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is better; for $/wk, worst week, max DD higher (positive d) is better (worst week / max DD are negative levels, so d > 0 = shallower).
 
@@ -396,11 +396,11 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | L6bfd0523 tm120 | [twin of L00277b0f] | no (L6M du +2302 dm -1519 | L3M du -287 dm +152) | not run | copied |
 | L6d3f77d8 time_m_5 | [twin of L1b1788be] | no (L6M du +3564 dm -2103 | L3M du +547 dm -139) | not run | copied |
 | L718570f8 time_m_4 | [twin of Lccd499e5] | no (L6M du +1476 dm -1018 | L3M du -18 dm +715) | no (L6M du -348 dm +416 | L3M du -206 dm +1183) | copied |
-| L72f46746 dchg_14 | [twin of L5ca5030a] | pending | not run | copied |
+| L72f46746 dchg_14 | [twin of L5ca5030a] | pending | pending | copied |
 | L76cff489 time_m_3 | [twin of L1f5315f5] | no (L6M du +1457 dm +166 | L3M du +604 dm +1387) | no (L6M du +182 dm -504 | L3M du -532 dm +1081) | copied |
 | L7d279e12 time_m_7 | [twin of L2e4a48bb] | not run | no (L6M du +1184 dm -1434 | L3M du +1554 dm +86) | copied |
 | L8c63e140 tm120 | [twin of L7dfcc15f] | no (L6M du +1915 dm -213 | L3M du +1934 dm -820) | no (L6M du +349 dm +574 | L3M du +997 dm +332) | copied |
-| L8d3d042d tm240 | [twin of L5381b8bb] | no (L6M du +2572 dm -1315 | L3M du +753 dm -622) | not run | copied |
+| L8d3d042d tm240 | [twin of L5381b8bb] | no (L6M du +2572 dm -1315 | L3M du +753 dm -622) | pending | copied |
 | L8d866ea1 tm420 | [twin of L64313ba5] | no (L6M du +3366 dm +864 | L3M du +4699 dm -167) | no (L6M du +2441 dm +21 | L3M du +3893 dm -897) | copied |
 | L912f47c2 time_m_2 | [twin of Lfa23bc21] | no (L6M du +2210 dm -808 | L3M du +2358 dm -896) | no (L6M du +747 dm +566 | L3M du +1598 dm +514) | copied |
 | L9502269d tm45 | [twin of L780f8501] | no (L6M du +926 dm +466 | L3M du -41 dm -222) | no (L6M du +337 dm +75 | L3M du +589 dm -412) | copied |
@@ -437,6 +437,7 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | M547a303a time_m_4 | [twin of M33517594] | not run | no (L6M du -130 dm -347 | L3M du +391 dm -41) | copied |
 | M5b3fcd17 tm420 | [twin of M129d98c5] | not run | no (L6M du -476 dm -369 | L3M du -378 dm -69) | copied |
 | M5d2fdeae tm120 | [twin of M58190669] | no (L6M du +29 dm +917 | L3M du -146 dm +926) | no (L6M du +125 dm -438 | L3M du +235 dm +556) | copied |
+| M6b319584 mrenko_10 | [twin of M05838df6] | not run | pending | copied |
 | M717d326e tm120 | [twin of M1e8dd48e] | no (L6M du +1359 dm +281 | L3M du +903 dm -111) | no (L6M du -528 dm +274 | L3M du -186 dm +697) | copied |
 | M74069247 dchg_28 | [twin of M017a3be5] | not run | no (L6M du -331 dm -994 | L3M du -552 dm +319) | copied |
 | M76cff489 time_m_3 | [twin of M1f5315f5] | no (L6M du +847 dm +181 | L3M du +169 dm -326) | no (L6M du -280 dm -887 | L3M du +41 dm -181) | copied |
@@ -451,22 +452,21 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | M994e0374 time_m_2 | [twin of M05236f50] | no (L6M du +992 dm +56 | L3M du -350 dm +323) | no (L6M du -1069 dm +45 | L3M du -1037 dm +426) | copied |
 | M9b318012 tm60 | [twin of M65624cfa] | no (L6M du +535 dm +606 | L3M du +1118 dm -48) | no (L6M du -144 dm +32 | L3M du -103 dm +378) | copied |
 | M9f4f763f cusum_28 | [twin of M101a6caf] | not run | no (L6M du +199 dm -1572 | L3M du -1025 dm -731) | copied |
+| Mb36b29c2 kagi_10 | [twin of M44da21b1] | not run | pending | copied |
 | Mbf55376d trend_20 | [twin of M8ba13b89] | not run | no (L6M du +1222 dm -1589 | L3M du +1757 dm -373) | copied |
 | Mc132feb3 kagi_56 | [twin of Mbb476f9f] | not run | no (L6M du -559 dm -766 | L3M du -295 dm -452) | copied |
+| Mc15c23ad kagi_10 | [twin of M44da21b1] | not run | pending | copied |
 | Mc57557da tm30 | [twin of M43ae1f08] | no (L6M du +6668 dm -2436 | L3M du +8638 dm -4193) | no (L6M du +5323 dm -1754 | L3M du +8658 dm -3565) | copied |
 | Mc744594f renko_14 | [twin of M37eb029c] | not run | no (L6M du -342 dm -985 | L3M du -258 dm +711) | copied |
+| Mc7a74da2 vol_350 | [twin of Ma4782de6] | not run | pending | copied |
 | Mccd499e5 time_m_4 | [twin of M718570f8] | no (L6M du +180 dm +165 | L3M du -1464 dm +1300) | no (L6M du -1097 dm +263 | L3M du -1081 dm +975) | copied |
 | Md5bb4faa cusum_28 | [twin of M50ed07e0] | not run | no (L6M du +224 dm -1868 | L3M du -977 dm -662) | copied |
 | Me7bb12d3 tm240 | [twin of M9805fd73] | no (L6M du +566 dm +207 | L3M du +946 dm -848) | no (L6M du -768 dm -599 | L3M du -919 dm -269) | copied |
+| Meab19352 dchg_10 | [twin of M44da21b1] | not run | pending | copied |
 | Meac77639 time_m_4 | [twin of M394daa00] | not run | no (L6M du +560 dm -3181 | L3M du +754 dm -2638) | copied |
 | Mf105607a cusum_56 | [twin of Mc551769e] | not run | no (L6M du -531 dm -587 | L3M du -790 dm +471) | copied |
 | Mf3d1eadb time_m_2 | [twin of Mb3f85ddc] | not run | no (L6M du +792 dm -873 | L3M du +1553 dm -936) | copied |
 | Mf4ed7e30 time_m_4 | [twin of M35596060] | no (L6M du -608 dm +693 | L3M du -1183 dm +1104) | no (L6M du -858 dm +450 | L3M du -930 dm +1934) | copied |
-| Mf66e961d wrenko_20 | [twin of M8ee9c7bb] | not run | no (L6M du -409 dm -1267 | L3M du -771 dm -711) | copied |
-| Mf6d23227 kagi_56 | [twin of M8efb6308] | not run | no (L6M du -609 dm -662 | L3M du -350 dm +708) | copied |
-| Mf7c7ee18 tm240 | [twin of M6f0b4896] | no (L6M du +181 dm +157 | L3M du -1462 dm +1297) | no (L6M du -1094 dm +256 | L3M du -1079 dm +974) | copied |
-| Mf9dce6ce cusum_80 | [twin of M8abffeae] | not run | no (L6M du +44 dm -1526 | L3M du +583 dm -1021) | copied |
-| Mfa22406c renko_40 | [twin of Me8e8d491] | not run | no (L6M du +1200 dm -842 | L3M du +2211 dm -668) | copied |
 
 # ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T18:15:01Z)
 
@@ -490,15 +490,15 @@ Rate now: Asia landed last hour 1561 set-months/h (box-1 tree view; see MORNING.
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 1830, last 3 h 5999; Asia queue lines pending (not DONE): 20407.
+Asia set-months landed: last 1 h 2016, last 3 h 6331; Asia queue lines pending (not DONE): 20131.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 10, _nye/pending_w , _lon 11 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > STK > EXE > NYL > NYF > FR > NYE > NYW
-- box1 running engine sets by tag: 18 TL3_NYL_      18 TL3_NYE_      10 TL3_EXE_       9 TL3_ASI_       8 TL3_LON_
-- server2 running engine sets by tag: 20 TL3_NYE_      16 TL3_NYL_      14 TL3_ASI_
-- A running engine sets by tag: 86 TL3_ASI_      58 TL3_NYE_      38 TL3_NYL_      22 TL3_STK_
-- B running engine sets by tag: 66 TL3_NYE_      65 TL3_ASI_      48 TL3_NYL_       6 TL3_STK_
+- box1 running engine sets by tag: 22 TL3_NYE_      16 TL3_NYL_      12 TL3_LON_      10 TL3_EXE_       7 TL3_ASI_
+- server2 running engine sets by tag: 20 TL3_NYE_      18 TL3_ASI_      16 TL3_NYL_
+- A running engine sets by tag: 80 TL3_ASI_      59 TL3_NYL_      53 TL3_NYE_
+- B running engine sets by tag: 79 TL3_ASI_      57 TL3_NYE_      55 TL3_NYL_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |

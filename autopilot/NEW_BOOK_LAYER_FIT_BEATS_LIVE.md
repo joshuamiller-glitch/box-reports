@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 18:25Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 18:35Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 4318 set-months/h (HEALTH.md at 18:25Z); layer queue (tag NYL, quota 5) landed 848 set-months in the last hour, 4059 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 12973, landed 6194, remaining 6743; hours at the HEALTH rate (whole fleet) 1.6 h; at the measured NYL rate 8 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 4506 set-months/h (HEALTH.md at 18:35Z); layer queue (tag NYL, quota 5) landed 755 set-months in the last hour, 3826 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 12541, landed 6212, remaining 6293; hours at the HEALTH rate (whole fleet) 1.4 h; at the measured NYL rate 8 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -15,19 +15,18 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | Lcb276f27xA7 | 752 | 432 |
 | L0a809c2exA7 | 672 | 432 |
 | Lf77e374bxA7 | 432 | 99 |
-| L7c368a4fxA7 | 1004 | 452 |
-| L1edb9fabxA7 | 432 | 386 |
+| L7c368a4fxA7 | 1004 | 453 |
+| L1edb9fabxA7 | 432 | 395 |
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
 | L21f079b6xK7 | 623 | 432 |
 | L4d206c8cxA7 | 432 | 0 |
-| L411f8593xA7 | 432 | 100 |
-| Ldcdb0b6exA7 | 348 | 2 |
-| L86781ac0xA7 | 348 | 0 |
+| Ldcdb0b6exA7 | 348 | 13 |
+| L86781ac0xA7 | 348 | 8 |
 | Lc4e74264xA7 | 348 | 0 |
-| L7ea48296xA7 | 348 | 0 |
+| L7ea48296xA7 | 348 | 9 |
 | L548972b6xA7 | 348 | 0 |
-| L2b25565axK7 | 348 | 0 |
+| L2b25565axK7 | 348 | 80 |
 | Lb44a3e99xK7 | 348 | 0 |
 | L678ebaddxK7 | 348 | 0 |
 | L6c84f416xK7 | 348 | 0 |
@@ -38,9 +37,8 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 
 | label | tier | rule B verdict (and screen note) | 2023 d ulcer / d DD / d worst wk / d $/wk (% worse) colour | 2024 | 2025 | engine persistence |
 |---|---|---|---|---|---|---|
-| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | GATE PASS: 3 prior years none RED (AMBER 2023), engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
-| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
-| L411f8593xA7 | FIRST | FIRST (Asia gate-pass rank 1 by engine persistence) | W-ASIA PASS LIST: pass (pick REPLACE, pooled engine persistence 0.62 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.62 |
+| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
+| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
 | L2b25565axK7 | FIRST | OWN-MERIT rank 1.0 (score 0.9449126094523477) | strict criterion (column only, not a gate): FAIL - L6M ulcer +533 mean +3080 worst wk -1545 max DD -1539 NOT strict; L3M ulcer +608 mean +1912 worst wk -1545 max DD -1539 NOT strict | n/a | n/a | n/a | n/a |
 | Ldcdb0b6exA7 | FIRST | OWN-MERIT rank 2.0 (score 0.7681206556417058) | strict criterion (column only, not a gate): FAIL - L6M ulcer -373 mean +1317 worst wk -214 max DD +1570 NOT strict; L3M ulcer -65 mean +1637 worst wk -214 max DD +1570 NOT strict | n/a | n/a | n/a | n/a |
 | Lb44a3e99xK7 | FIRST | OWN-MERIT rank 2.0 (score 0.9070675250511713) | strict criterion (column only, not a gate): FAIL - L6M ulcer +1113 mean +1878 worst wk -3333 max DD -5791 NOT strict; L3M ulcer +1583 mean +1307 worst wk -3333 max DD -5791 NOT strict | n/a | n/a | n/a | n/a |
@@ -208,10 +206,11 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L5d9e7166xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L05222ff9xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | M15f14debxA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
+| L411f8593xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L0b1d7882xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | Mc817d9e3xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L30aad100xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
-| L0f097450xK7 | 3 | NOT first tier: strict criterion FAIL - W-NYENG strict table | B FAIL: RED in 2023 | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only 0.606 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
+| L0f097450xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -58 mean +2291 worst wk -3120 max DD +1857 NOT strict; L3M ulcer -504 mean +2902 worst wk -3120 max DD +2281 NOT strict) | B FAIL: RED in 2023 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
 | L5a49e86dxK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -418 mean +713 worst wk +2050 max DD -5582 NOT strict; L3M ulcer -1885 mean +3361 worst wk +4777 max DD +6800 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L09ae66e3xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -178 mean +919 worst wk -1005 max DD +1164 NOT strict; L3M ulcer -620 mean +1301 worst wk -1005 max DD +1164 NOT strict) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L96205086xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -26 mean +1294 worst wk -1155 max DD +1427 NOT strict; L3M ulcer -460 mean +2376 worst wk +1815 max DD +1427 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
@@ -255,12 +254,21 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L34d66961xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L01811caaxH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L09ae66e3xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L11631333xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L96205086xH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L09ae66e3xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L5a49e86dxH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L34d66961xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| Lbbdd1236xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L34d66961xH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L09ae66e3xH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L59b66d32xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| Lbbdd1236xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L6ff237d4xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L4ed22711xH7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L4fd10b76xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L11631333xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
+| L4fd10b76xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L21f079b6xP7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | L21f079b6xM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
 | Lf967df3bxM7 | 9 | PARKED: other-slot variant (same cell vs another live book) - order 1806Z own-merit: the book's own first form is REPLACE-K7 / REPLACE-A7; layers are refitted jointly on the final stacks by W-COMBO | n/a | n/a | n/a | n/a |
@@ -409,6 +417,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L09ae66e3xP7 | NYAM | P7 | both | TL3_NYE_L09ae66e3_RP7 | fit queued | 72 | - | 0 | 0 |
 | L2010fec9xK7 | NYAM | K7 | both | TL3_NYE_L2010fec9_RK7 | new | 0 | - | 0 | 0 |
 | L09ae66e3xK7 | NYAM | K7 | both | TL3_NYE_L09ae66e3_RK7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
+| L11631333xP7 | NYAM | P7 | both | TL3_NYE_L11631333_RP7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L908c5381xK7 | NYAM | K7 | both | TL3_NYE_L908c5381_RK7 | new | 0 | - | 0 | 0 |
 | L96205086xH7 | NYAM | H7 | both | TL3_NYE_L96205086_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | Ld45733dbxK7 | NYAM | K7 | both | TL3_NYE_Ld45733db_RK7 | new | 0 | - | 0 | 0 |
@@ -421,20 +430,27 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | Lfa1de080xK7 | NYAM | K7 | both | TL3_NYE_Lfa1de080_RK7 | new | 0 | - | 0 | 0 |
 | L34d66961xM7 | NYAM | M7 | both | TL3_NYE_L34d66961_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | Lddba3fabxK7 | NYAM | K7 | both | TL3_NYE_Lddba3fab_RK7 | new | 0 | - | 0 | 0 |
+| Lbbdd1236xP7 | NYAM | P7 | both | TL3_NYE_Lbbdd1236_RP7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L34d66961xH7 | NYAM | H7 | both | TL3_NYE_L34d66961_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L33bc9e87xK7 | NYAM | K7 | both | TL3_NYE_L33bc9e87_RK7 | new | 0 | - | 0 | 0 |
 | L0e94fadexK7 | NYAM | K7 | both | TL3_NYE_L0e94fade_RK7 | new | 0 | - | 0 | 0 |
 | L12e67af0xK7 | NYAM | K7 | both | TL3_NYE_L12e67af0_RK7 | new | 0 | - | 0 | 0 |
 | L09ae66e3xH7 | NYAM | H7 | both | TL3_NYE_L09ae66e3_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L59b66d32xK7 | NYAM | K7 | both | TL3_NYE_L59b66d32_RK7 | new | 0 | - | 0 | 0 |
+| L59b66d32xM7 | NYAM | M7 | both | TL3_NYE_L59b66d32_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | Le0d40091xK7 | NYAM | K7 | both | TL3_NYE_Le0d40091_RK7 | new | 0 | - | 0 | 0 |
 | Ld37dea46xK7 | NYAM | K7 | both | TL3_NYE_Ld37dea46_RK7 | new | 0 | - | 0 | 0 |
 | L1b44d5f3xK7 | NYAM | K7 | both | TL3_NYE_L1b44d5f3_RK7 | new | 0 | - | 0 | 0 |
 | L34d66961xK7 | NYAM | K7 | both | TL3_NYE_L34d66961_RK7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
+| Lbbdd1236xM7 | NYAM | M7 | both | TL3_NYE_Lbbdd1236_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | Ld5cdb3c6xK7 | NYAM | K7 | both | TL3_NYE_Ld5cdb3c6_RK7 | new | 0 | - | 0 | 0 |
+| L6ff237d4xM7 | NYAM | M7 | both | TL3_NYE_L6ff237d4_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L06eab808xK7 | NYAM | K7 | both | TL3_NYE_L06eab808_RK7 | new | 0 | - | 0 | 0 |
 | L21f079b6xK7 | NYAM | K7 | both | TL3_NYE_L21f079b6_RK7 | scored | 72 | 2026-11-19 15:15Z | 5 | 1 |
+| L4ed22711xH7 | NYAM | H7 | both | TL3_NYE_L4ed22711_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
+| L4fd10b76xP7 | NYAM | P7 | both | TL3_NYE_L4fd10b76_RP7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L7678a6c4xK7 | NYAM | K7 | both | TL3_NYE_L7678a6c4_RK7 | new | 0 | - | 0 | 0 |
+| L11631333xM7 | NYAM | M7 | both | TL3_NYE_L11631333_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L0dc67ba7xK7 | NYAM | K7 | both | TL3_NYE_L0dc67ba7_RK7 | new | 0 | - | 0 | 0 |
 | L9e98b767xK7 | NYAM | K7 | both | TL3_NYE_L9e98b767_RK7 | new | 0 | - | 0 | 0 |
 | Lfe9994ffxK7 | NYAM | K7 | both | TL3_NYE_Lfe9994ff_RK7 | new | 0 | - | 0 | 0 |
@@ -443,6 +459,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L1ba33a2bxK7 | NYAM | K7 | both | TL3_NYE_L1ba33a2b_RK7 | new | 0 | - | 0 | 0 |
 | L04aaa969xK7 | NYAM | K7 | both | TL3_NYE_L04aaa969_RK7 | new | 0 | - | 0 | 0 |
 | L1af20032xK7 | NYAM | K7 | both | TL3_NYE_L1af20032_RK7 | new | 0 | - | 0 | 0 |
+| L4fd10b76xM7 | NYAM | M7 | both | TL3_NYE_L4fd10b76_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L37c9625axK7 | NYAM | K7 | both | TL3_NYE_L37c9625a_RK7 | new | 0 | - | 0 | 0 |
 | Lb92ba8f9xK7 | NYAM | K7 | both | TL3_NYE_Lb92ba8f9_RK7 | new | 0 | - | 0 | 0 |
 | L79cd626bxK7 | NYAM | K7 | both | TL3_NYE_L79cd626b_RK7 | new | 0 | - | 0 | 0 |
@@ -522,7 +539,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | M15f14debxA7 | Asia | A7 | long | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | M32bddb74xA7 | Asia | A7 | long | W-ASIA list: pick REPLACE, pooled engine persistence 0.54 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | L0b1d7882xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.46 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
-| L411f8593xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.62 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
+| L411f8593xA7 | Asia | A7 | both | W-ASIA list: pick REPLACE, pooled engine persistence 0.51 (ADD pick = reference only; REPLACE ONLY order 1407Z) |
 | Ldcdb0b6exA7 | Asia | A7 | both | own-merit rank 2 |
 | L86781ac0xA7 | Asia | A7 | both | own-merit rank 3 |
 | Lc4e74264xA7 | Asia | A7 | both | own-merit rank 4 |
@@ -620,6 +637,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | Lc739d497xK7 | NYAM | K7 | both | own-merit rank 8 |
 | L4eba93d7xK7 | NYAM | K7 | both | own-merit rank 9 |
 | L2010fec9xK7 | NYAM | K7 | both | own-merit rank 10 |
+| L11631333xP7 | NYAM | P7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | L908c5381xK7 | NYAM | K7 | both | own-merit rank 11 |
 | L96205086xH7 | NYAM | H7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | Ld45733dbxK7 | NYAM | K7 | both | own-merit rank 12 |
@@ -635,14 +653,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L0e94fadexK7 | NYAM | K7 | both | own-merit rank 19 |
 | L12e67af0xK7 | NYAM | K7 | both | own-merit rank 20 |
 | L59b66d32xK7 | NYAM | K7 | both | own-merit rank 21 |
+| L59b66d32xM7 | NYAM | M7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | Le0d40091xK7 | NYAM | K7 | both | own-merit rank 22 |
 | Ld37dea46xK7 | NYAM | K7 | both | own-merit rank 23 |
 | L1b44d5f3xK7 | NYAM | K7 | both | own-merit rank 24 |
 | L34d66961xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | Ld5cdb3c6xK7 | NYAM | K7 | both | own-merit rank 26 |
+| L6ff237d4xM7 | NYAM | M7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | L06eab808xK7 | NYAM | K7 | both | own-merit rank 27 |
 | L21f079b6xK7 | NYAM | K7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| L4ed22711xH7 | NYAM | H7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
+| L4fd10b76xP7 | NYAM | P7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | L7678a6c4xK7 | NYAM | K7 | both | own-merit rank 29 |
+| L11631333xM7 | NYAM | M7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) [twin of Ld14659a9 here: same stream, one programme] |
 | L0dc67ba7xK7 | NYAM | K7 | both | own-merit rank 30 |
 | L9e98b767xK7 | NYAM | K7 | both | own-merit rank 31 |
 | Lfe9994ffxK7 | NYAM | K7 | both | own-merit rank 32 |
@@ -651,6 +674,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L1ba33a2bxK7 | NYAM | K7 | both | own-merit rank 35 |
 | L04aaa969xK7 | NYAM | K7 | both | own-merit rank 36 |
 | L1af20032xK7 | NYAM | K7 | both | own-merit rank 37 |
+| L4fd10b76xM7 | NYAM | M7 | both | both-side variant of a long cell (engine-tested; judged by the engine, order 1014Z) |
 | L37c9625axK7 | NYAM | K7 | both | own-merit rank 38 |
 | Lb92ba8f9xK7 | NYAM | K7 | both | own-merit rank 39 |
 | L79cd626bxK7 | NYAM | K7 | both | own-merit rank 40 |
