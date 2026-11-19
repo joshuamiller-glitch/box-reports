@@ -7065,3 +7065,7 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-19 00:06Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
 00:07Z W-LA: LA cell-months done 867, jobs outstanding 52, chains 10; auto-expansions launched: 207 (cumulative new sets)
 - 2026-11-19T00:09Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- 00:10Z SUPERVISOR restarted 13 dead loop(s): server2: <repo>/.venv/bin/python3 -I code/th_gr; server2: <repo>/.venv/bin/python3 -I code/th_gr; server2: <repo>/.venv/bin/python3 -I code/th_gr; serverA: <repo>/.venv/bin/python3 -I code/th_gr; serverA: /home/u
+- (wall 00:10Z) W-MD hourly: page DS3_REBUILD_S3_ENV.md W-MD sections refreshed; MBO older-day features 973 extracted (finished workers 3 of 3); engine state: identity True real evaluated ['H7_TUW10', 'H7_SUWBE', 'K7_TUWN10'] controls done []
+- (wall 00:14Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 71.17 70.90 72.34 load; auto-expansions 0 (battery stopped by user order)
+- 2026-11-19T00:14Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
