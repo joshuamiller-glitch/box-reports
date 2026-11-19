@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-19T19:20Z
+## TREND (TL) update 2026-11-19T19:50Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-19T19:19:00Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-19T19:49:00Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -8873,3 +8873,7 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - LEAD NOTE: DELIVERABLES page 2026-11-19 19:49Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-SWB', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
 - 19:50Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_EXE_L[0-9a-f]{8}_v25_t2_RK7_OM$ (e.g. TL3_EXE_L641a7c4d_v25_t2_RK7_OM,TL3_EXE_L678ebadd_v25_t2_RK7_OM): identity pairs started (8 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
 - 19:50Z W-FAST2 (auto): identity pairs for ^TL3_EXE_L[0-9a-f]{8}_bricks3_v25_RA7_OM$ started (retry)
+- 19:50Z W-FAST2 (auto): identity pairs for ^TL3_EXE_L[0-9a-f]{8}_v25_t2_RA7_OM$ started (retry)
+- 19:50Z W-FAST2 (auto): identity pairs for ^TL3_EXE_L[0-9a-f]{8}_bricks3_v25_RK7_OM$ started (retry)
+- 19:50Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 2012 / 3 h 5982 (NY AM is behind Asia in the queue by order); fleet 5440.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 273, 'looked': 463, 'B': 3, 'C': 4}; ladder queue 35771 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L01811caa ; L09ae66e3 ; L0bd23639 ; L0f097450 ; L11631333 ; L21f079b6 ; L34d66961 ; L3701b464 ; L4560e541 ; L4ed22711 ; L4fd10b76 ; L59b66d32 ; L5a49e86d ; L6a25b155 ; L6ff237d4 ; L77a763af ; L9513708b ; L96205086 ; L9f026abc ; Lac37d7eb ; Lbbb39855 ; Lbbdd1236 ; Ld14659a9 ; Le728b0a3 ; Lf967df3b. EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 19:50Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 14/17 (82%); Dallas 20/28 (71%); Frankfurt 71/101 (70%); Singapore 73/101 (72%) | EXACT-path slots by kind: TL3_EXE_L*_bricks3_v25_RK7_OM 16, TL3_STK_AX_Ldcdb 14, TL3_EXE_L*_v25_t2_RA7_OM 11, TL3_ASI_AX1_RA7 4, TL3_EXE_L*_v25_t2_RK7_OM 4, TL3_EXE_L*_bricks3_v25_RA7_OM 4, TL3_ASI_AX38_RH7 2, TL3_ASI_AX5_RH7 2; fast path ON for the kinds in FAST_KINDS.txt (85 kinds); details autopilot/FAST_LADDER.md section 7.
