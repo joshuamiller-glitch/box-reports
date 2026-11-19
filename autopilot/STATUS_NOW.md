@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 03:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 03:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 03:15Z | box1: busy 100%, load1 63.91, workers 26, MemAvail 58 GB | server2: busy 100%, load1 97.64, workers 14, MemAvail 1071 GB | pending box1-eligible 112404 / server2-eligible 112404 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 188.82, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1323 GB | serverB: busy 100%, load1 173.07, workers 61 (grid) + 64 (engine), 128 threads, MemAvail 1296 GB
+LATEST CORES.md LINE: 2026-11-19 03:30Z | box1: busy 100%, load1 68.26, workers 25, MemAvail 70 GB | server2: busy 100%, load1 105.53, workers 14, MemAvail 1204 GB | pending box1-eligible 116796 / server2-eligible 116796 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 177.77, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1305 GB | serverB: busy 100%, load1 160.91, workers 61 (grid) + 71 (engine), 128 threads, MemAvail 1283 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 03:15Z
+2026-11-19 03:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 03:15Z | box1: busy 100%, load1 63.91, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 58.8 GB; live reservations 1 (1 GB); workers 26, of which TP-adopted 25 (RSS 42.2 GB) vs others 1 (RSS 0.8 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 64.40, 64.77, 65.36
-  by tag: ASI quota 16 running 5 hungry True RSS 8.5 GB PSS 7.9 GB; NYR quota 16 running 15 hungry True RSS 24.4 GB PSS 22.6 GB; LON quota 12 running 5 hungry True RSS 9.4 GB PSS 8.8 GB; REST quota 0 running 1 hungry False RSS 0.8 GB PSS 0.6 GB
-  cell-months finished last hour (DONE markers): 1186
-  top running jobs: TL3_NYW_L19abb182_ADD (x28);TL3_ASI_AB1_RP7 (x12);TL3_LON_LA5_CT105p (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 97.59, 98.84, 101.65|/dev/md2         28T  1.7T   27T   6% /mnt/l2|24|
+Server 1 (this box): MemAvail 70.0 GB; live reservations 0 (0 GB); workers 25, of which TP-adopted 25 (RSS 43.6 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 78.01, 69.22, 67.24
+  by tag: ASI quota 16 running 5 hungry True RSS 8.4 GB PSS 7.2 GB; NYR quota 16 running 14 hungry True RSS 23.9 GB PSS 22.1 GB; LON quota 12 running 6 hungry True RSS 11.3 GB PSS 10.5 GB
+  cell-months finished last hour (DONE markers): 1208
+  top running jobs: TL3_NYW_Lcb97bb95_ADD (x28);TL3_LON_LA5_CT91m (x12);TL3_ASI_AB2_RA7 (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 105.86, 105.61, 103.52|/dev/md2         28T  1.7T   27T   6% /mnt/l2|24|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,6 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 97.59, 98.84, 101.65|/dev/m
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261119_0213Z_CORRECTION-no-book-enters-D8-without-the-exit-run.md 20261119_0216Z_PRIORITY-Asia-and-NYAM-first-London-NYPM-last.md 20261119_0220Z_PRIORITY-ORDER-Asia-NYAM-London-NYPM.md 20261119_0224Z_NO-SHORTCUTS-full-exit-run-and-100pct-machines.md 20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md
+20261119_0216Z_PRIORITY-Asia-and-NYAM-first-London-NYPM-last.md 20261119_0220Z_PRIORITY-ORDER-Asia-NYAM-London-NYPM.md 20261119_0224Z_NO-SHORTCUTS-full-exit-run-and-100pct-machines.md 20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md 20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md
+- lead 03:23Z INBOX 20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md received (auto-ack by inbox_watch.sh; the lead reads it next
+- 03:23Z INBOX 20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md received: Frankfurt grid output 166 then 115 per 30 min vs usual
