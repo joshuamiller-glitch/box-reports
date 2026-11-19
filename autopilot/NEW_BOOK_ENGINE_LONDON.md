@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-19 07:00Z
+# NEW_BOOK_ENGINE_LONDON - London replacement rows (W-LONENG), refreshed 2026-11-19 07:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'. London is decided after Asia (clock order Asia -> London -> NY AM -> NY PM): London results stay PROVISIONAL.**
 
@@ -56,7 +56,7 @@ Combos: {"key": "LA5,LA1|LA5,LA1,LA6|P7|LA5", "sets": ["TL3_LON_C2_LA5_LA1", "TL
 Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot dollars at $4.84 RT/contract proxy plus an x1.75 live-lot column; deltas = WITH candidate minus the reference on the same months; ulcer and worst week FIRST, then mean $/week. ADD = new book at 1 base lot (2 live lots); R* = the live London book (K7/M7/U7/P7) suppressed in London and replaced; ADDM = ADD plus the confirmed setting M7 London lots 4 live -> 0 (ev_panel, = TL3_CT_JL3_N_M7L) and is compared with TL3_CT_JL3_N_M7L (the base alternative: the stack without M7 London) and with JL3.
 **EQUAL RISK (1447Z):** risk-matched c = 60/stop pts; shown as reference + c x the new book daily P&L (exact when the book does not change other books through caps/locks); wide (120-clip) rows are judged on the same-bracket null, not marked down. Day cap: MF1 loss cap $4,800/day: one 120-pt stop = $2,400 at 1 base lot (2 stops trip), $4,800 at 2 live lots (ONE stop trips).
 **Identity of the M7-London mechanism (TL3_LON_ID = inert event + M7L0 vs TL3_CT_JL3_N_M7L):** 202610: PASS (645 trades, net 47685.32); 202504: PASS (575 trades, net 53447.62). JL3 identity of the injection (TL3_NYE_ID, W-NYENG): 202610 691 / 37,159.82, 202504 637 / 41,239.76.
-**Set-months done:** 774 of 3727 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
+**Set-months done:** 788 of 3713 queued. Controls (date-shift) not run yet, so NO LABEL (BUILD-READY / NEEDS MORE / DROPPED need controls). Every row was picked as best-of-many on the same L6M it is judged on.
 
 | cell | bar | trigger | stop/tgt pts ($ stop per base lot) | variant | reference | window | d ulcer x1 / x1.75 | d worst wk x1 | d mean $/wk x1 / x1.75 | d maxDD x1 | RISK-MATCHED c: d ulcer / d worst / d mean | trades | R/trade | R/wk | flag vs ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -101,6 +101,8 @@ Stack = JL3 (TL3_EV_JL3, all live layers ON) + the candidate; engine BASE-lot do
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | ADDM | CT_JL3_N_M7L | L3M | +1512 / +2647 | -2062 | -114 / -200 | -6062 | c=0.50: +1116 / -1882 / -1074 | 99 | +0.105 | +0.800 | AMBER |
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RK7 | EV_JL3 | L6M | -464 / -812 | -4118 | +1363 / +2385 | +3602 | c=0.50: -670 / -3246 / +699 | 218 | +0.069 | +0.554 | ok |
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RK7 | EV_JL3 | L3M | -1342 / -2349 | -2802 | +1435 / +2511 | +3602 | c=0.50: -957 / -3246 / +290 | 98 | +0.126 | +0.954 | ok |
+| LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RK7 | EV_JL3 | Y2024 | -1496 / -2617 | +472 | -4 / -8 | +7231 | c=0.50: -1739 / +2264 / -84 | 350 | +0.010 | +0.066 | ok |
+| LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RK7 | EV_JL3 | Y2023 | -1469 / -2570 | -5908 | +267 / +467 | -5114 | c=0.50: -845 / -5136 / +73 | 238 | +0.027 | +0.162 | ok |
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RM7 | EV_JL3 | L6M | +367 / +642 | -8848 | +1260 / +2204 | +289 | c=0.50: -278 / -3372 / +684 | 221 | +0.059 | +0.480 | ok |
 | LA4 | time_m_5 | levels_vwap.reject_native {"tol": 1.0, "conf": "body"} | 120/120 ($2400) | RM7 | EV_JL3 | L3M | -88 / -153 | -1120 | +330 / +578 | +289 | c=0.50: -484 / -940 / -630 | 99 | +0.105 | +0.800 | ok |
 | LA5 | vol_500 | levels_vwap.break {"n": 3, "k": 0.25} | 120/120 ($2400) | ADD | EV_JL3 | L6M | -151 / -265 | +1434 | +1902 / +3328 | +3529 | c=0.50: -138 / +1081 / +798 | 194 | +0.128 | +0.920 | ok |

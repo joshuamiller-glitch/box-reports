@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 07:00Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 07:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -224,6 +224,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RH7 | Y2023 | +3251 / +5689 | -1815 | -6294 | -692 / -1211 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | L6M | +1845 / +3229 | -4232 | -5423 | -3190 / -5582 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | L3M | +2814 / +4924 | -1505 | -5423 | -4118 / -7207 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | Y2025 | +130983 / +229220 | -475546 | -477120 | -9845 / -17229 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | Y2024 | -1786 / -3125 | +959 | +14629 | -228 / -399 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | Y2023 | -1046 / -1831 | -2938 | +1401 | +423 / +741 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | L6M | +3005 / +5259 | -14510 | -8841 | -2942 / -5148 | 30 |
@@ -238,6 +239,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2023 | -1114 / -1949 | -529 | -338 | +788 / +1380 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L6M | +1231 / +2154 | -5946 | -9683 | -600 / -1050 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L3M | +1724 / +3016 | -5946 | -9683 | -1051 / -1840 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | Y2025 | +135376 / +236907 | -473331 | -500364 | -9429 / -16500 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | Y2024 | +2007 / +3513 | +7825 | +3245 | -576 / -1007 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | Y2023 | -1282 / -2243 | +741 | +2737 | +732 / +1281 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | L6M | -42 / -74 | +2380 | -2741 | -1658 / -2901 | 30 |
