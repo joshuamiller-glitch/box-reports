@@ -1,0 +1,6 @@
+# PREREG_ASIA_LADDER (W-ASIA, order 0400Z, 2026-11-19) - written before any Asia ladder set is scored
+Cells: /mnt/l2/l2vast/_lon/ladder_cells.json session=Asia (1,890 cells, W-SHORT screen rank; NOT calibrated), all queued, no cap, rank order.
+Sets: TL3_ASI_<id>_ADD and TL3_ASI_<id>_R<book> (REPLACE: book's Asia entries OFF, session code 0) vs TL3_EV_JL3 (today's stack, today's DAY-DONE), base lots, $4.84 RT proxy; entries = own bracket, first print >= signal + 2 s (ny_build.events, same as NY ladder). Default mf_inject cap [12000,4800] (same as NY ladder).
+Stages exactly as ny_ladder: A = ADD + REPLACE-weakest-non-P7 Asia book, L6M; if L6M d mean >= 0 -> a2 = REPLACE vs every other live Asia book (K7,P7,A7,H7,U7) L6M and B = prior years 202304-202604; if no RED prior year -> C = 30 date-shift controls (L6M).
+Verdict 'beats' a live book (D8 order 0210Z/0400Z): REPLACE row has stack ulcer lower (d ulcer < 0) AND d mean $/wk >= 0 in BOTH L6M and L3M, drawdown first; Asia bar is higher: additionally worst week and maxDD not worse than the live book and no RED (>30% worse) prior year; labels BETTER-calibration-pending only; nothing is claimed CONFIRMED.
+Order: Asia sets are queued in _asi/pending.txt (tag ASI, ahead of NYL/NYR in QUEUES.txt and PRIORITY.txt). Guard: no Asia set-month for 60 min = trigger E.
