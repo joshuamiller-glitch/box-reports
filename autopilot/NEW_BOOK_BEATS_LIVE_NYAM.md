@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 11:30Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 11:45Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
@@ -17,28 +17,28 @@
 |---|---|---|---|---|---|
 | L6a25b155 | both sides | RK7 | -178 / -1005 / +1164 / +919 | -620 / -1005 / +1164 / +1301 | yes |
 | L6a25b155 | both sides | ADD | -436 / -144 / +2621 / +460 | -876 / -144 / +2621 / +936 | yes |
-| L6a25b155 (both) | long-only | RK7 | not run yet | | |
-| L6a25b155 (both) | long-only | ADD | not run yet | | |
+| L6a25b155 | long-only | RK7 | +nan / +nan / +nan / +nan | +nan / +nan / +nan / +nan | pending |
+| L6a25b155 | long-only | ADD | +nan / +nan / +nan / +nan | +nan / +nan / +nan / +nan | pending |
 | L6a25b155 (both) | short-only | RK7 | not run yet | | |
 | L6a25b155 (both) | short-only | ADD | not run yet | | |
 | L01811caa | both sides | RK7 | -75 / +620 / +1857 / +1755 | -448 / +2462 / +2114 / +2609 | yes |
 | L01811caa | both sides | ADD | -453 / +1209 / +3571 / +1117 | -870 / +4026 / +3571 / +1542 | yes |
-| L01811caa | long-only | RK7 | +nan / +nan / +nan / +nan | +254 / -1959 / -1162 / +1639 | pending |
-| L01811caa | long-only | ADD | +nan / +nan / +nan / +nan | +nan / +nan / +nan / +nan | pending |
-| L01811caa | short-only | RK7 | +nan / +nan / +nan / +nan | +nan / +nan / +nan / +nan | pending |
+| L01811caa | long-only | RK7 | +387 / -1959 / -1162 / +594 | +254 / -1959 / -1162 / +1639 | no |
+| L01811caa | long-only | ADD | -112 / -11 / +1210 / +115 | -384 / +521 / +1210 / +843 | yes |
+| L01811caa | short-only | RK7 | +721 / -725 / -1929 / +1227 | +988 / -725 / -1929 / +1253 | no |
 | L01811caa | short-only | ADD | -252 / +2360 / +2360 / +806 | -452 / +2360 / +2360 / +487 | yes |
 | L0f097450 | both sides | RK7 | -58 / -3120 / +1857 / +2291 | -504 / -3120 / +2281 / +2902 | yes |
 | L0f097450 | both sides | ADD | -795 / -796 / +5375 / +1691 | -1573 / +95 / +6571 / +2075 | yes |
 | L0f097450 | long-only | RK7 | +1429 / -5925 / -8593 / +46 | +1728 / -5925 / -8593 / +1303 | no |
 | L0f097450 | long-only | ADD | +615 / -2710 / -5829 / -714 | +607 / -2710 / -5829 / -100 | no |
-| L0f097450 (long) | short-only | RK7 | not run yet | | |
-| L0f097450 | short-only | ADD | +nan / +nan / +nan / +nan | +nan / +nan / +nan / +nan | pending |
+| L0f097450 | short-only | RK7 | +1364 / -5067 / -5499 / +1324 | +2130 / -5067 / -5499 / +405 | no |
+| L0f097450 | short-only | ADD | +277 / -1616 / +1181 / +776 | +470 / -1616 / +1181 / -471 | no |
 | L3701b464 | both sides | RK7 | -58 / -3120 / +1857 / +2291 | -504 / -3120 / +2281 / +2902 | yes |
 | L3701b464 | both sides | ADD | -795 / -796 / +5375 / +1691 | -1573 / +95 / +6571 / +2075 | yes |
 | L3701b464 | long-only | RK7 | +1429 / -5925 / -8593 / +46 | +1728 / -5925 / -8593 / +1303 | no |
 | L3701b464 | long-only | ADD | +615 / -2710 / -5829 / -714 | +607 / -2710 / -5829 / -100 | no |
-| L3701b464 (long) | short-only | RK7 | not run yet | | |
-| L3701b464 (long) | short-only | ADD | not run yet | | |
+| L3701b464 | short-only | RK7 | +1364 / -5067 / -5499 / +1324 | +2130 / -5067 / -5499 / +405 | no |
+| L3701b464 | short-only | ADD | +nan / +nan / +nan / +nan | +470 / -1616 / +1181 / -471 | pending |
 
 ## ENGINE RULE B: prior-year gate, stack WITH the new book vs TODAY stack in the same year (order 1122Z)
 
