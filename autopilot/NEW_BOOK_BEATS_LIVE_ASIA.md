@@ -1,27 +1,27 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 07:00Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 07:05Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 182; cells with a finished REPLACE verdict (L6M+L3M landed) 67; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 3 (under the looser NY rule 7); ADD rows finished 177.
+**Counts:** Asia cells with any engine row 189; cells with a finished REPLACE verdict (L6M+L3M landed) 76; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 3 (under the looser NY rule 7); ADD rows finished 187.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
-| K7 | 7 | 0 | 1 |
-| P7 | 3 | 0 | 0 |
-| A7 | 67 | 3 | 19 |
-| H7 | 7 | 0 | 0 |
-| U7 | 7 | 0 | 0 |
+| K7 | 8 | 0 | 0 |
+| P7 | 3 | 0 | 1 |
+| A7 | 76 | 3 | 15 |
+| H7 | 7 | 0 | 1 |
+| U7 | 7 | 0 | 2 |
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 1789, last 3 h 3806; Asia queue lines pending (not DONE): 31234.
+Asia set-months landed: last 1 h 1857, last 3 h 3917; Asia queue lines pending (not DONE): 32823.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 4, _nye/pending_l 11, _nye/pending_w , _lon 12 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON > ME
-- box1 running engine sets by tag: 32 TL3_NYW_      12 TL3_LON_      12 TL3_ASI_
-- server2 running engine sets by tag: 54 TL3_ASI_
-- A running engine sets by tag: 186 TL3_ASI_
-- B running engine sets by tag: 192 TL3_ASI_
+- box1 running engine sets by tag: 28 TL3_NYW_      12 TL3_LON_      10 TL3_ASI_
+- server2 running engine sets by tag: 52 TL3_ASI_
+- A running engine sets by tag: 190 TL3_ASI_
+- B running engine sets by tag: 193 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
