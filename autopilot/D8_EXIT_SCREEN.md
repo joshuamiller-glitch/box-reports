@@ -1,4 +1,4 @@
-# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 15:45Z
+# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 16:00Z
 Research only. Screen = points per lot (base lots), 68 recipes (7 families) on the candidate cell's OWN entries, run on real entries and on 2 random-entry draws (same count / side mix). Pick rule (PREREG_D8EXIT.md sha in DECISIONS.md): eligible = L6M>0, L3M>0, trades L6M>=20, no prior year (2023-25) >30% worse; best = lowest ulcer then highest L6M. A cell BEATS-NULL when its best eligible recipe L6M exceeds the best eligible recipe of BOTH null draws (2 draws = screen only; finalists get more draws). Data week index 189 (as EXIT_YIELD). Fixed reference = best fixed bracket of the cell from pass-1 (p1real).
 Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. Until a family is built, a recipe of that family cannot be the best TESTED exit in the D8 spec (screen result stands).
 
@@ -7,9 +7,9 @@ Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. 
 | session | candidate cells | screened | pending | with an eligible exit (real) | BEATS-NULL | beat fixed ref too | ETA |
 |---|---|---|---|---|---|---|---|
 | Asia | 1992 | 1992 | 0 | 400 | 359 | 303 | done |
-| NY AM | 4569 | 4302 | 267 | 1052 | 931 | 742 | about 2.0 h after the sessions above (fleet 130 cells/h) |
+| NY AM | 4571 | 4349 | 222 | 1061 | 939 | 750 | about 1.7 h after the sessions above (fleet 134 cells/h) |
 | London | 0 | 0 | 0 | 0 | 0 | 0 | done |
-| NY PM | 396 | 266 | 130 | 30 | 28 | 17 | about 3.0 h after the sessions above (fleet 130 cells/h) |
+| NY PM | 396 | 266 | 130 | 30 | 28 | 17 | about 2.6 h after the sessions above (fleet 134 cells/h) |
 
 Asia and London candidates appear here when W-LONENG's engine rows land in D8_CANDIDATES (0 now = none listed yet, not "none exist").
 
@@ -322,19 +322,19 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 
 | family | cells where it is the best eligible exit (real) | same on null (mean of 2 draws) |
 |---|---|---|
-| market target | 468 | 122.5 |
+| market target | 471 | 123.5 |
 | order flow | 0 | 0.5 |
-| staged | 187 | 34.0 |
+| staged | 189 | 34.0 |
 | stop-and-reverse | 50 | 6.0 |
-| structure stop | 52 | 7.0 |
+| structure stop | 53 | 7.0 |
 | time / behaviour | 230 | 62.5 |
-| trailing | 495 | 148.5 |
+| trailing | 498 | 151.0 |
 
-Screened cells with an eligible exit: real 1482 of 6560 (23%), null 381.0 of 6560 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
+Screened cells with an eligible exit: real 1491 of 6607 (23%), null 384.5 of 6607 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
 
 ## c2. BEATS-LIVE set (orders 0740Z item 3 and 1014Z): D8 candidates that beat a live book in the EXACT ENGINE - screened FIRST (front of every host list). Both-side engine winners are VALID: the engine ran them as both-side books, so the BOTH-SIDE screen row below is the one that describes the engine book ("both-side, engine-tested"); the long-only / short-only rows are the one-sided variants (earlier screen results kept; engine M sets / LO sets pending). Same entries as the engine run for each row.
 
-Set size 66 cells (NY AM 6, Asia 51). Screened rows: both-side 56, long-only 37, short-only 56 (of 66 each). Fleet rate last hour 169 cells/h; the 3 rows of a cell run together (one simulation), so a newly listed beats-live cell is screened within about 20 min of the list refresh. Date the whole set is screened on all three variants: not yet (variant rows still running).
+Set size 68 cells (NY AM 7, Asia 51). Screened rows: both-side 56, long-only 38, short-only 56 (of 68 each). Fleet rate last hour 213 cells/h; the 3 rows of a cell run together (one simulation), so a newly listed beats-live cell is screened within about 20 min of the list refresh. Date the whole set is screened on all three variants: not yet (variant rows still running).
 REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes rows, beats_NYAM / beats_rows replace rows, the Asia page yes rows, replace_extra.txt); ADD-only rows are not candidates; cells screened earlier that are no longer REPLACE candidates drop out of this table (their rows stay in sections a / b). The exit screen is a RANKING only: it ranks recipes by the recent rule (drawdown first) on points; the engine (W-EXITENG) judges. Fixed reference = the cell's own fixed bracket on the same entries (points per lot, L6M; from the D8 pass-2 run, "n/a" until that run has landed for the cell).
 
 | cell id | session | variant | cell | fixed bracket ref (own: L6M / ulcer) | #1 recipe: L6M / L3M / ulcer | #2 | #3 | screen gain of #1 over the fixed bracket (pts, L6M) | null a / b best eligible L6M | beats nulls |
@@ -507,6 +507,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | L77a763af | NY AM | both (both-side, engine-tested) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/both | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | L77a763af | NY AM | long-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/long | n/a yet | stop=('vol', 2.5) trail=('chand', 3.0) (trailing): +25 / +709 / u 673 | stage=([1.0], [0.5], True) stop=('swing', 4) target=('R', 3.0) trail=('chand', 3.0) (staged): +88 / +502 / u 677 | - | n/a yet | - / - | yes |
 | L77a763af | NY AM | short-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/short | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
+| L96205086 | NY AM | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| L96205086 | NY AM | long-only (engine M set pending) | NYAM/tick_500/trig_levels_profile_va/false_break_native/{"M": 1, "k": 0.5}/plain60/60/long | n/a yet | stop=('vol', 2.5) target=('R', 2.0) (market target): +182 / +386 / u 237 | - | - | n/a yet | - / - | yes |
+| L96205086 | NY AM | short-only (engine M set pending) | not screened yet | | | | | | | |
 | Le728b0a3 | NY AM | both (both-side, engine-tested) | NYAM/trend_20/trig_levels_profile_va/break/{"n": 1, "k": 0.0}/sym15u/both | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
 | Le728b0a3 | NY AM | long-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break/{"n": 1, "k": 0.0}/sym15u/long | n/a yet | stop=('vol', 2.5) trail=('chand', 3.0) (trailing): +25 / +709 / u 673 | stage=([1.0], [0.5], True) stop=('swing', 4) target=('R', 3.0) trail=('chand', 3.0) (staged): +88 / +502 / u 677 | - | n/a yet | - / - | yes |
 | Le728b0a3 | NY AM | short-only (engine M set pending) | NYAM/trend_20/trig_levels_profile_va/break/{"n": 1, "k": 0.0}/sym15u/short | n/a yet | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a yet | - / - | no |
@@ -516,6 +519,9 @@ REPLACE-ONLY (order 1407Z): a candidate is a REPLACE yes row (D8_CANDIDATES yes 
 | L21f079b6 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
 | L21f079b6 |  | long-only (engine M set pending) | not screened yet | | | | | | | |
 | L21f079b6 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
+| L9f026abc |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
+| L9f026abc |  | long-only (engine M set pending) | not screened yet | | | | | | | |
+| L9f026abc |  | short-only (engine M set pending) | not screened yet | | | | | | | |
 | Lbbb39855 |  | both (both-side, engine-tested) | not screened yet | | | | | | | |
 | Lbbb39855 |  | long-only (engine M set pending) | not screened yet | | | | | | | |
 | Lbbb39855 |  | short-only (engine M set pending) | not screened yet | | | | | | | |
@@ -583,7 +589,7 @@ Reading: the both-side screen rows describe the same entries the engine traded; 
 | box 1 | 0 | - | memory guard (MemAvail > 40 GB) |
 
 
-Measured: 4526 groups finished, 7308 cells, mean 284 s per cell (3 tags: real + 2 null) per worker.
+Measured: 4572 groups finished, 7362 cells, mean 285 s per cell (3 tags: real + 2 null) per worker.
 
 ## e. STAGE 1 work list for this pipeline stage (order 0228Z), hours on the current fleet, 02:33Z
 | item | size | core-hours (measured) | workers now | wall hours at today's workers | wall hours if every A+B thread (256) |
