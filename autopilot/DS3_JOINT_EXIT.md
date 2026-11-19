@@ -1,7 +1,7 @@
 # DS3_JOINT_EXIT - joint exit design (T-JOINT-EXIT, owner W-JV). STATUS: DESIGN, no engine run yet (engine starts 21:00Z 11-16, JV quota set by the lead then)
 > VALIDATION (W-DV, FIRST PASS, 2026-11-16): trials counted design 16 cells x 7 books = 112 stage-1 cells, N_used 112 (TRIALS_LEDGER.csv JV; stage 2 picks inside it); correction will be RC / SPA / DSR over the stage-1 family and PBO on stage-2 picks; no result on this page yet; number shown will be IN-SAMPLE until a walk-forward or untouched window exists.
 
-**Plain verdict line: STAGE 1 + STAGE 2 FIRST TABLE (refreshed 2026-11-19 22:45 UTC): no cell reaches LEAD or CONFIRMED under the calibrated rule (controls and all six windows missing); stage-1 cells improving ulcer in both HOLD and L6M: TL3_JE_P7_01000; stage-2 sets doing so: TL3_JE_JOINT_B; stage 2: 14 cell-windows landed; older windows: 15 landed; profit-line controls per section 11.**
+**Plain verdict line: STAGE 1 + STAGE 2 FIRST TABLE (refreshed 2026-11-19 23:16 UTC): no cell reaches LEAD or CONFIRMED under the calibrated rule (controls and all six windows missing); stage-1 cells improving ulcer in both HOLD and L6M: TL3_JE_P7_01000; stage-2 sets doing so: TL3_JE_JOINT_B; stage 2: 14 cell-windows landed; older windows: 15 landed; profit-line controls per section 11.**
 
 Base TL3_EV_JN05W2JL2 (JL2: live caps, base lots, engine fee $1.18, x1.75 for live lots, $4.84 column). Books K7 P7 M7 U7 H7 A7 O7. Windows L3M, L6M, HOLD, PRE, X', GAP; recents first (L3M, L6M, HOLD). Drawdown on both bases (weekly series, daily cumulative) shown in every table; mean second; any setting that only works in L3M is flagged. Controls: persistent draw (bucket 300).
 
@@ -42,7 +42,7 @@ Every result on this page is on the JL2 base (without live take/lock lines). The
 
 ## 8. STAGE 1 RESULTS (FIRST PASS)
 
-Header: refreshed 2026-11-19 22:45 UTC; data end 2026-10-30 (windows HOLD = 2025-11..2026-04 and L6M = 2026-05..10 are the 12 stage months; older windows as listed); base JL2 = TL3_EV_JN05W2JL2 (without live take/lock lines; the live-equivalent JL3 base is W-EV work; re-judge on JL3 when it lands); trials counted so far = 33 cells (stage 1 23 + stage 2 7 + profit-line singles 3); no family correction applied here (see DS3_PASS_RULE.md block for White/SPA/DSR/BH/PBO). Base lots; x1.75 for user lots; $4.84 column. Reference for every book is JL2 except P7 cells and the joint sets (TL3_EV_FB_A_KP = K7 45 + P7 42 flat through la_hooks).
+Header: refreshed 2026-11-19 23:16 UTC; data end 2026-10-30 (windows HOLD = 2025-11..2026-04 and L6M = 2026-05..10 are the 12 stage months; older windows as listed); base JL2 = TL3_EV_JN05W2JL2 (without live take/lock lines; the live-equivalent JL3 base is W-EV work; re-judge on JL3 when it lands); trials counted so far = 33 cells (stage 1 23 + stage 2 7 + profit-line singles 3); no family correction applied here (see DS3_PASS_RULE.md block for White/SPA/DSR/BH/PBO). Base lots; x1.75 for user lots; $4.84 column. Reference for every book is JL2 except P7 cells and the joint sets (TL3_EV_FB_A_KP = K7 45 + P7 42 flat through la_hooks).
 
 | cell | window | ulcer ref -> cell | ulcer gain % (+ better) | DD cut weekly % | DD cut daily % | worst wk ref -> cell | d mean $/wk base (x1.75) | d mean @4.84 | full stops/wk ref -> cell | win->lose |
 |--|--|--|--|--|--|--|--|--|--|--|
