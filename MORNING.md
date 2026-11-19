@@ -7245,3 +7245,5 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 2026-11-19T03:28:15Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - (wall 03:34Z) W-PM status: load1 67.34, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795059236; P5 page done, P8 grid np_m15_x10_y15 2898
 - 2026-11-19T03:34:53Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+2026-11-19T03:36:02Z W-NT hourly: NT set-months landed 698 (rate 0/h since last line); identity 4/4 landed (target 04:35Z); K7 L6M cells landed 0 (target table 06:00Z; first.txt 1 lines; controls K7+M7 target 12:00Z, pf.txt 50 lines built); page autopilot/DS3_NEAR_TARGET.md; closest to live: see page section 2
+- (wall 03:37Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 65.77 66.80 66.80, epoch 1795059459
