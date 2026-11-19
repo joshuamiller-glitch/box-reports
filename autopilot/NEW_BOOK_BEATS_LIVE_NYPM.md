@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 09:45Z
+# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 10:14Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY PM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYPM.csv.
 
@@ -6,6 +6,10 @@
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | ADD | prior years run | controls |
+|---|---|---|---|---|---|
+
+## Both-side / long-only / short-only rows side by side (order 1014Z; both-side sets are VALID engine results for the both-side book; LO / SO = mode-correct sets, engine-tested separately; replace K7 and ADD; vs the live stack, engine base lots; d = change vs JL3, ulcer first)
+| cell (id) | row | variant | L6M d ulcer / d worst wk / d max DD / d mean $/wk | L3M d ulcer / d worst / d max DD / d mean | beats K7 (yes/no/pending) |
 |---|---|---|---|---|---|
 
 ## D8 gate under the exit-run rule (order 0213Z)
