@@ -7451,3 +7451,7 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - 07:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 - 07:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 - (wall 07:34Z) W-PM status: load1 77.84, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795073646; P5 page done, P8 grid np_m15_x10_y15 2898
+- 07:35Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 07:35Z): ladder stages {'B': 46, 'out': 39, 'A': 1805} of 1890 cells; Asia cells with engine rows 212, REPLACE verdicts finished 95, beat a live Asia book on L6M+L3M 3 (looser NY rule 10); Asia set-months landed 1 h 2158 / 3 h 4557; Asia lines pending 32687 (+~59023 still to be appended as cells pass stage A); fleet 2190 sm/h, engine queue 130427 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 2158/h = 42 h => Nov 21 02:05Z; Asia+NY AM at the fleet rate = 87 h => Nov 22 22:05Z. D8_CANDIDATES Asia rows listed 2448.
+- (wall 07:37Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 79.83 79.65 79.67, epoch 1795073877
+- lead 07:39Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+- 07:40Z WATCHDOG fired: A
