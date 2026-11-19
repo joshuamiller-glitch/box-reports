@@ -1,4 +1,4 @@
-# COMBO side by side: every move in BOTH forms (ADD beside the session books / REPLACE of each book / from-empty), no form preferred, headlined or dropped (order 2212Z). DRY RUN / LEAD at best: no joint layer refit yet, controls only where stated. Updated 2026-11-19 22:19Z.
+# COMBO side by side: every move in BOTH forms (ADD beside the session books / REPLACE of each book / from-empty), no form preferred, headlined or dropped (order 2212Z). DRY RUN / LEAD at best: no joint layer refit yet, controls only where stated. Updated 2026-11-19 22:24Z.
 Today (JL3) L6M: 9416 / -31109 / -15728 / 18755 ; L3M: 11035 / -31109 / -15728 / 16098. Rule B vs today's stack: positive % = worse (> 30% RED, 15-30% AMBER). Base lots; rest of the day = JL3.
 
 STALE: a NY AM row using a cell on _nye/stale_cells.json / STALE_CONTENT_TEST.md is withdrawn and redone after the first-look re-run (checked at write time: NY AM cells on stale_cells.json: none of L01811caa, L678ebadd, Lb44a3e99, L2b25565a; Asia cells not on _best/stale_cells.txt).
