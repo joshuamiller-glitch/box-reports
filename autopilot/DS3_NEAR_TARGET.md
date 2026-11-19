@@ -1,6 +1,6 @@
 # DS3_NEAR_TARGET - W-NT near-target take that catches a touch-and-reverse (user relay 11-18 01:25Z) 
 
-Generated 2026-11-19 04:06Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
+Generated 2026-11-19 04:37Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
 
 ## Five lines
 1. Tried: counted, per book x session, the JL3 trades whose 1-s print extreme reached 85/90/95/97.5/100% of the target without a Target fill, and how they ended (live take, live lock, other exit).
@@ -352,7 +352,7 @@ Real JL3: 6,173 of 19,881 trades reach 95% (31%; placebo paths 23-24%, so real p
 
 Families not yet run: (5) persist-counter fix and (6) order-book latch need the book features and the ptr grammar hook on the JL3 hooklist (batch 2 after the identity cells land); two-step exit needs live-lot (x1.75) partials, the base-lot engine cannot split 1 lot. Live K7 target is already 59 (4 ticks nearer than the engine 60), P7 58, M7 59.5: the incident trade had a 59-pt target.
 
-## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-19 04:06Z)
+## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-19 04:37Z)
 
 ### Identity (inert == JL3 trade for trade)
 | set | month | trades | JL3 trades | net | JL3 net | identical |
@@ -406,14 +406,14 @@ Families not yet run: (5) persist-counter fix and (6) order-book latch need the 
 | TL3_NT_SH_P7_k2 | 13 | 202511..202611 | 43 | 79 | -0.2 | 2 | 14413 |
 | TL3_NT_SH_P7_k4 | 13 | 202511..202611 | 45 | 86 | -0.1 | 2 | 14413 |
 
-## 4. FULL TABLE WITH CONTROLS (W-NT2, order 2013Z item 4; PREREG_NT2.md sha256 9d09c259eb8a8694; written 2026-11-19 04:06Z)
+## 4. FULL TABLE WITH CONTROLS (W-NT2, order 2013Z item 4; PREREG_NT2.md sha256 9d09c259eb8a8694; written 2026-11-19 04:37Z)
 
 All numbers: stack-level delta vs the live JL3 stack (TL3_EV_JL3) on the same months, exact engine, every layer ON, base lots at $4.84 RT with the x1.75 live-lot dollars in brackets. Cell format: d stack ulcer % (PRIMARY; negative = better) / d worst week $ (positive = better) / d max drawdown $ (negative = better) / d mean $/wk (x1.75). L6M = 2026-05-14..2026-11-13; L6X = 2026-05-14..2026-10-31 and HOLD = 2025-11-11..2026-05-11 are the windows the controls share (months 202511..202610). Selection caution: the variants were picked as the best of many on the same last 6 months they are judged on; controls B (random lock settings) are the selection null for the K7 lock family; controls A (random half activation) show whether the effect scales with how often the rule is applied, and cannot confer a label (PREREG_NT2.md).
 
 | variant | what it does | L6M | L3M | HOLD | 2025 | 2024 | 2023 | controls B (beats n of N: d mean / d ulcer) | controls A | label | what DS7 needs |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | LK_K7_a80_L50 | K7 lock: after the 80% touch of the target, stop to +30 pts (lock line 0.80 / 30.0) | -3.2% / -477 / -2731 / +1011 (+2010) | -0.1% / -477 / -2731 / +2341 (+4729) | -11.8% / +1426 / -8372 / +675 (+1323) | +0.7% / -2274 / +4631 / -431 (-861) RED | +6.7% / -2025 / +733 / -470 (-918) RED | +1.5% / +671 / +3001 / -283 (-566) RED | 28 of 30 / 17 of 30 (controls median d mean +460, d ulcer -5.1%) | none | **WEAK-BUT-POSITIVE** | POLICY FILE only: add one K7 profit-lock line [0.80 of target, +30 pts] (same grammar as the live P7/H7 locks) |
-| LKX_K7_a80_L50 | K7 latch-lock (same rule, modelled as a market exit at the first print <= entry+30 after the 80% latch) | pending | pending | -11.6% / +1401 / -9294 / +364 (+701) | +14.3% / -2274 / +15964 / -686 (-1371) RED | +6.0% / -2025 / +872 / -228 (-434) RED | +1.7% / +671 / +2966 / -407 (-813) RED | 25 of 30 / 24 of 30 (controls median d mean +460, d ulcer -5.1%) | n=29: median +665 best +1032, 79% > 0, dose 0.56 | **BEST-AVAILABLE-NOT-PROVEN** | POLICY FILE only (same K7 lock line; the engine models it as a latch exit) |
+| LKX_K7_a80_L50 | K7 latch-lock (same rule, modelled as a market exit at the first print <= entry+30 after the 80% latch) | pending | pending | -11.6% / +1401 / -9294 / +364 (+701) | +14.3% / -2274 / +15964 / -686 (-1371) RED | +6.0% / -2025 / +872 / -228 (-434) RED | +1.7% / +671 / +2966 / -407 (-813) RED | 25 of 30 / 24 of 30 (controls median d mean +460, d ulcer -5.1%) | n=30: median +665 best +1032, 80% > 0, dose 0.58 | **BEST-AVAILABLE-NOT-PROVEN** | POLICY FILE only (same K7 lock line; the engine models it as a latch exit) |
 | LK_K7_a70_L50 | K7 lock 70% / +30 pts | -12.6% / +3303 / -2898 / +696 (+1387) | -13.4% / +3303 / -2898 / +1910 (+3821) | -16.7% / +3268 / -10920 / -985 (-2020) | -9.7% / +2592 / -8866 / -381 (-788) RED | -22.4% / +4156 / -13771 / +261 (+544) GREEN | +8.8% / -1993 / +8083 / +250 (+499) RED | 18 of 30 / 25 of 30 (controls median d mean +460, d ulcer -5.1%) | none | **WEAK-BUT-POSITIVE** | POLICY FILE only |
 | SH_K7_k2 | K7 resting target 2 ticks nearer | +0.6% / -70 / +10 / +512 (+1023) | +0.2% / -70 / +10 / +1271 (+2542) | -0.9% / -60 / -5 / +55 (+110) | -0.1% / +165 / +65 / +31 (+62) GREEN | +1.1% / -90 / +170 / +8 (+17) GREEN | +0.3% / -10 / -45 / -12 (-25) AMBER | n/a (not a lock setting) | n=30: median +387 best +615, 83% > 0, dose 0.54 | **WEAK-BUT-POSITIVE** (no selection control B for this family (A cannot confer a label)) | POLICY FILE only (target ticks) |
 | SH_K7_k1 | K7 resting target 1 tick nearer | +0.5% / -35 / +45 / +424 (+847) | +0.2% / -35 / +45 / +1045 (+2090) | -1.0% / -30 / +15 / +81 (+162) | pending ? | pending ? | pending ? | n/a (not a lock setting) | none | **WEAK-BUT-POSITIVE** (prior years not landed yet; no selection control B for this family (A cannot confer a label)) | POLICY FILE only |

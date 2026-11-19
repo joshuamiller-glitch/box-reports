@@ -4,7 +4,7 @@ W-NYENG (a2ac20ed36cb00e42) | NY AM + NY PM ladder/engine queues, D8_SPEC_STATUS
 W-ASIA (a2cf9d86c085a4f9f) | Asia engine/ladder, NEW_BOOK_BEATS_LIVE_ASIA | yes | finished first pass 04:06Z | asia ladder loop supervised; progress cron lx_cron.sh 10 min; asia_cron.sh 30 min
 W-D8EXIT (a6473a449fa968cf4) | D8-candidate exit screen + broad exit run | yes | finished 03:2xZ (workers + cron keep running; writes no MORNING.md lines of its own) | d8_cycle.sh cron 15 min and worker pools supervised (registered 03:2xZ)
 W-GRIDOPS (aafc0a5dadae3a88b) | grid ops, result stamp, nice ladder, ag_nice | yes | resumable | ag_nice_ctl.sh cron, supervise.py; loops continue without the agent
-W-SHORT (a4b931c164d0337bb) | R3, calibration by family, staleness knock-on | yes | finished earlier; owes calibration by family | gr3 shards box 1 (<=3) may not be supervised
+W-SHORT (a4b931c164d0337bb) | R3, calibration by family, staleness knock-on | yes | running (resumed 04:5xZ) | gr3 shards box 1 (<=3) may not be supervised
 W-NIGHT (id not in lead list) | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons keep running) | crons guard/health/wd continue
 W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh keep running | no | gone |
 W-NIGHT2 (fork of lead) | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | guard/health crons (th_night); agent only edits

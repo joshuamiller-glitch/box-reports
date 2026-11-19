@@ -1,4 +1,3 @@
-2026-11-18 10:35Z | AUTO-FILL step run: dispatcher alive pid 1240823/3743916
 2026-11-18 10:35Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 45 min)
 2026-11-18 10:40Z | box1: busy 98%, load1 34.34, workers 0, MemAvail 89 GB | server2: busy 44%, load1 27.14, workers 28, MemAvail 1318 GB | pending box1-eligible 3036 / server2-eligible 42249 (shared queues count in both; unleased, not DONE)
 2026-11-18 10:40Z | WARNING server2 below 85% busy for 59 readings in a row with jobs pending
@@ -298,3 +297,4 @@
 2026-11-19 04:20Z | HOST server2 PRODUCING NOTHING (unreachable (IndexError('list index out of range')))
 2026-11-19 04:25Z | box1: busy 100%, load1 82.90, workers 25, MemAvail 58 GB | server2: busy 100%, load1 91.22, workers 12, MemAvail 1194 GB | pending box1-eligible 148930 / server2-eligible 148930 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.29, workers 61 (grid) + 71 (engine), 128 threads, MemAvail 1336 GB | serverB: busy 100%, load1 155.70, workers 61 (grid) + 73 (engine), 128 threads, MemAvail 1306 GB
 2026-11-19 04:30Z | box1: busy 100%, load1 74.82, workers 23, MemAvail 67 GB | server2: busy 100%, load1 89.95, workers 11, MemAvail 1262 GB | pending box1-eligible 153422 / server2-eligible 153434 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.24, workers 61 (grid) + 73 (engine), 128 threads, MemAvail 1327 GB | serverB: busy 100%, load1 158.27, workers 61 (grid) + 73 (engine), 128 threads, MemAvail 1319 GB
+2026-11-19 04:35Z | box1: busy 100%, load1 77.87, workers 27, MemAvail 59 GB | server2: busy 100%, load1 101.18, workers 14, MemAvail 1110 GB | pending box1-eligible 156630 / server2-eligible 156690 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.63, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1317 GB | serverB: busy 100%, load1 156.97, workers 61 (grid) + 67 (engine), 128 threads, MemAvail 1318 GB
