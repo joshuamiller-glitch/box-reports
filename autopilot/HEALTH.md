@@ -1,30 +1,30 @@
 # HEALTH (written by cron every 5 min, not by the lead)
 
-UTC now: 2026-11-19T22:35:01Z | CORES reading: 2026-11-19 22:30Z | guard sample: 2026-11-19T22:30:01Z
-Lead: last LEAD NOTE 3 min ago | last transcript activity 0 min ago | last watchdog line: 2026-11-19 22:34Z WATCHDOG L1 fired: G
-github relay last pull OK at 2026-11-19T22:34Z
+UTC now: 2026-11-19T22:40:01Z | CORES reading: 2026-11-19 22:35Z | guard sample: 2026-11-19T22:30:01Z
+Lead: last LEAD NOTE 2 min ago | last transcript activity 2 min ago | last watchdog line: 2026-11-19 22:34Z WATCHDOG L1 fired: G
+github relay last pull OK at 2026-11-19T22:39Z
 
 | machine | busy % | threads | load | workers | grid results / 30 min | error stubs / 30 min | engine set-months / 30 min (host-local, do not add up) | grid todo (own rows) | grid queue hours | data disk free GB | root disk free GB (fill GB/h, hours left) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| box1 | 100 | 32 | 90.68 | 15 | 35 | 131 | 4386 | n/a | n/a | 285 | 58.2 (0.178 GB/h, 327.5 h) |
-| server2 | 100 | 64 | 126.88 | 27 | 1622 | 131 | 442 | 92747 | 28.6 h | 26175 | 407.1 (0.016 GB/h, n/a h) |
-| serverA | 100 | 128 | 226.9 | 105 (grid) + 102 (engine) | 1028 | 0 | 845 | 67085 | 32.6 h | 6223 | 829.7 (0.0 GB/h, n/a h) |
-| serverB | 100 | 128 | 222.2 | 105 (grid) + 97 (engine) | 421 | 0 | 946 | 51933 | 61.7 h | 6163 | 411.9 (0.006 GB/h, n/a h) |
-| serverC | 76 | 128 | 97.62 | 1 (grid) + 98 (engine) | 0 | 0 | 1068 | 0 | n/a | 27694 | 411.4 (0.0 GB/h, n/a h) |
-| serverD | 51 | 64 | 32.74 | 1 (grid) + 64 (engine) | 0 | 0 | 694 | 0 | n/a | 27760 | 411.4 (0.001 GB/h, n/a h) |
+| box1 | 100 | 32 | 79.89 | 17 | 35 | 131 | 4386 | n/a | n/a | 285 | 58.2 (0.178 GB/h, 327.5 h) |
+| server2 | 100 | 64 | 126.08 | 28 | 1622 | 131 | 442 | 92747 | 28.6 h | 26175 | 407.1 (0.016 GB/h, n/a h) |
+| serverA | 100 | 128 | 217.4 | 105 (grid) + 102 (engine) | 1028 | 0 | 845 | 67085 | 32.6 h | 6223 | 829.7 (0.0 GB/h, n/a h) |
+| serverB | 100 | 128 | 222.86 | 105 (grid) + 96 (engine) | 421 | 0 | 946 | 51933 | 61.7 h | 6163 | 411.9 (0.006 GB/h, n/a h) |
+| serverC | 75 | 128 | 96.55 | 1 (grid) + 100 (engine) | 0 | 0 | 1068 | 0 | n/a | 27694 | 411.4 (0.0 GB/h, n/a h) |
+| serverD | 78 | 64 | 50.88 | 1 (grid) + 48 (engine) | 0 | 0 | 694 | 0 | n/a | 27760 | 411.4 (0.001 GB/h, n/a h) |
 
 questions for Josh: 13 open
-Rule A (no machine < 90% of its real threads while work exists anywhere): BELOW 90%%: serverC 76%, serverD 51%
+Rule A (no machine < 90% of its real threads while work exists anywhere): BELOW 90%%: serverC 75%, serverD 78%
 
 
 Engine slots (running engine JOBS / cap; a job = a tp_launch.py wrapper and its child; caps from the cap files; every 5 min): box1 16/36 (44%); server2 27/28 (96%); serverA 102/102 (100%); serverB 99/102 (97%); serverC 96/100 (96%); serverD 64/64 (100%)
 Stale-result detector (ex_pullback_scan, every 30 min): 597 results older than their lease launch, 0 of them with code/data edited after the old result (stale_vs_code); the pullers now reject a DONE older than the launch and park results whose code signature changed
 Feeders (age min / max min): W-BEST rank Asia 5/90; W-BEST rank NY AM 5/90; ny_mix3 ranked stream 0/5; ny_refill 0/20; layer_cron 5/30; ex_ownmerit batch release 6/90; pass2_status 13/90
-Fast share (running engine jobs whose set kind is in FAST_KINDS.txt, as of 2026-11-19T22:30Z): box1 13/14 (93%); Dallas 27/27 (100%); Frankfurt 85/102 (83%); Singapore 88/97 (91%); C Amsterdam 93/100 (93%); D Dallas-2 64/64 (100%); fleet 92%; exact-path kinds: TL3_STK_NR_Lb44_MN 6, TL3_STK_NR_Lb44_HN 4, TL3_STK_NR_L2b2_ON 3, TL3_STK_NR_Lb44_KN 2, TL3_STK_NR_L678_KN 2. Identity sets (_IDN) excluded from the share; kinds still waiting for their fast identity: 34 slots (TL3_STK_NR_Lb44_MN 6, TL3_STK_NR_Lb44_HN 4, TL3_STK_NR_L2b2_ON 3, TL3_STK_NR_Lb44_KN 2)
+Fast share (running engine jobs whose set kind is in FAST_KINDS.txt, as of 2026-11-19T22:35Z): box1 15/17 (88%); Dallas 26/28 (93%); Frankfurt 90/100 (90%); Singapore 79/89 (89%); C Amsterdam 81/96 (84%); D Dallas-2 43/49 (88%); fleet 88%; exact-path kinds: TL3_NYE_L<h>_ALONE 6, TL3_STK_ZA_73934923_dcdb 5, TL3_STK_ZA_245dd157_dN 4, TL3_STK_ZA_23e7e129_6cff 3, TL3_STK_NR_Lb44_HN 2. Identity sets (_IDN) excluded from the share; kinds still waiting for their fast identity: 39 slots (TL3_STK_ZA_73934923_dcdb 5, TL3_STK_ZA_245dd157_dN 4, TL3_STK_ZA_23e7e129_6cff 3, TL3_STK_NR_Lb44_HN 2)
 
 Calibration pools (W-SHORT gr3, stage-1 judge work; records done/left per host, every 5-10 min): box1: 11 gr3 procs, 0 XC records, B-C tasks 0/0 done (0 left); server2: 22 gr3 procs, 1304 XC records, B-C tasks 18/18 done (0 left); serverA: 21 gr3 procs, 1494 XC records, B-C tasks 1/1 done (0 left); serverB: 17 gr3 procs, 1413 XC records, B-C tasks 1/1 done (0 left); serverC: 3 gr3 procs, 0 XC records, B-C tasks 0/0 done (0 left); serverD: 3 gr3 procs, 0 XC records, B-C tasks 0/0 done (0 left)
 
-Engine queue (shared by box 1, server 2, A, B): 124304 lines pending; fleet rate 8772 set-months/h (method: DONE files in the box-1 result tree in the last 30 min x 2; box 1 holds the results pulled back from Dallas, A and B; the per-host columns above are host-local and must not be summed) => 14.2 h of queue left
+Engine queue (shared by box 1, server 2, A, B): 113153 lines pending; fleet rate 8772 set-months/h (method: DONE files in the box-1 result tree in the last 30 min x 2; box 1 holds the results pulled back from Dallas, A and B; the per-host columns above are host-local and must not be summed) => 12.9 h of queue left
 Alerts from the guard (E = host producing nothing / unreachable, F = disk < 100 GB, G = stage-1 agent gone or silent): none
 
 Rule of thumb: every machine needs >= 12 h of queued work with no decision (grid queue hours per machine above; engine queue hours above).
@@ -32,25 +32,25 @@ Rule of thumb: every machine needs >= 12 h of queued work with no decision (grid
 ## Live agents (from autopilot/AGENTS_LIVE.md + last MORNING.md line per agent; guard alert G = stage-1 owner gone or silent > 60 min)
 | agent | owns | stage-1 | state | last MORNING.md lines (cron vs agent) | supervised loops (registry) | what stops with the agent |
 |---|---|---|---|---|---|---|
-| W-NYENG | NY AM + NY PM ladder/engine queues, D8_SPEC_STATUS, D8_CANDIDATES (NY) | yes | resumable on demand | cron line -1 min ago, agent line -1 min ago (22:36Z) | 1 of 148 entries | ny_ladder_loop.sh supervised (registry fixed 04:10Z); 15-min cron re-order; pages cron 30 min |
-| W-ASIA | Asia engine/ladder, NEW_BOOK_BEATS_LIVE_ASIA | yes | running (resumed ~10:0xZ; posts own line | cron line 29 min ago, agent line 16 min ago (22:19Z) | 1 of 148 entries | asia ladder loop supervised; crons asia_note.py :05/:35, reorder_pending.py, lx_cron.sh 10 min; the crons keep |
-| W-D8EXIT | D8-candidate exit screen + broad exit run | yes | cron-owned (agent finished 03:2xZ; worke | no cron line, agent line 6 min ago (22:29Z) [cron-owned: exempt] | 104 of 148 entries | d8_cycle.sh cron 15 min and worker pools supervised (registered 03:2xZ) |
-| W-GRIDOPS | grid ops, result stamp, nice ladder, ag_nice | yes | resumable | cron line 30 min ago, agent line 43 min ago (21:52Z) | 22 of 148 entries | ag_nice_ctl.sh cron, supervise.py; loops continue without the agent |
-| W-SHORT | R3, calibration by family, staleness knock-on | yes | running (resumed 04:5xZ) | cron line 5 min ago, agent line 11 min ago (22:24Z) | 0 of 148 entries | gr3 shards box 1 (<=3) may not be supervised |
-| W-NIGHT | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons | no cron line, agent line 95 min ago (21:00Z) | 0 of 148 entries | crons guard/health/wd continue |
-| W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh k | no | gone | no cron line, agent line 72 min ago (21:23Z) | 0 of 148 entries |  |
-| W-NIGHT2 | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | cron line 12.6 h ago, agent line 7.4 h ago (15:09Z) | 0 of 148 entries | guard/health crons (th_night); agent only edits |
-| W-EXITENG | owns D8_EXIT_ENGINE_SUPPORT build, D8_EXIT_ENGINE_RESULTS.md | yes | running | cron line 20 min ago, agent line 6 min ago (22:29Z) | 0 of 148 entries | agent lines 'W-EXITENG STATUS n'; cron status line from its state file; ex_* code is edit-only (nothing superv |
-| W-LAYERS | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | cron-owned (built 10:0xZ; layer_cron.py  | cron line 10 min ago, agent line 5 min ago (22:30Z) [cron-owned: exempt] | 0 of 148 entries | layer_cron.py every 30 min writes '(auto)' lines; agent posts real lines when it works |
-| W-FASTLADDER | fl_status.py cron :20/:50 writes '(auto)' lines to MORNING.md, autopil | yes | cron-owned (agent resumable; nothing swi | cron line 15 min ago, agent line 37 min ago (21:58Z) [cron-owned: exempt] | 0 of 148 entries | fl_status.py cron; no supervised loops |
-| W-BEST | owns code/th_best/best_books.py, BEST_BOOKS_ASIA/NYAM.md, _split/best_ | yes | cron-owned (:07/:37) | no cron line, agent line 4 min ago (22:31Z) [cron-owned: exempt] | 0 of 148 entries | agent lines 'W-BEST' + cron refresh lines |
-| W-XB1 | code/th_exiteng/xb_*.py | yes | running | no cron line, agent line 15 min ago (22:20Z) | 0 of 148 entries | agent lines 'W-XB1 STATUS n' |
-| W-XB2 | code/th_exiteng/xb2_*.py | yes | running | no cron line, agent line 83 min ago (21:12Z) | 0 of 148 entries | agent lines 'W-XB2 STATUS n' |
-| W-P2A | code/th_pass2/combiner.py, PASS2_COMBINER.md | yes | running | cron line 3.2 h ago, agent line 32 min ago (22:03Z) | 0 of 148 entries | agent lines 'W-P2A' |
-| W-P2B | code/th_pass2 hooks, PASS2_HOOKS.md | yes | running | no cron line, agent line 2 min ago (22:33Z) | 0 of 148 entries | agent lines 'W-P2B' |
-| W-P2P | PREREG_PASS2.md, PASS2_COST.md, PASS2_PLAN.md | yes | cron-owned (pass2_status.py :17 hourly) | cron line 18 min ago, agent line 3.2 h ago (19:22Z) [cron-owned: exempt] | 0 of 148 entries | cron lines |
-| W-SRVC | compute-pool setup | yes | running | no cron line, agent line 91 min ago (21:04Z) | 0 of 148 entries | agent lines 'W-SRVC' |
-| W-SRVD | compute-pool setup | yes | running | no cron line, agent line 50 min ago (21:45Z) | 0 of 148 entries | agent lines 'W-SRVD' |
-Alert G now: agent W-XB2 has no line for 83 min; agent W-SRVC has no line for 91 min
+| W-NYENG | NY AM + NY PM ladder/engine queues, D8_SPEC_STATUS, D8_CANDIDATES (NY) | yes | resumable on demand | cron line 4 min ago, agent line 4 min ago (22:36Z) | 1 of 148 entries | ny_ladder_loop.sh supervised (registry fixed 04:10Z); 15-min cron re-order; pages cron 30 min |
+| W-ASIA | Asia engine/ladder, NEW_BOOK_BEATS_LIVE_ASIA | yes | running (resumed ~10:0xZ; posts own line | cron line 4 min ago, agent line 2 min ago (22:38Z) | 1 of 148 entries | asia ladder loop supervised; crons asia_note.py :05/:35, reorder_pending.py, lx_cron.sh 10 min; the crons keep |
+| W-D8EXIT | D8-candidate exit screen + broad exit run | yes | cron-owned (agent finished 03:2xZ; worke | no cron line, agent line 11 min ago (22:29Z) [cron-owned: exempt] | 104 of 148 entries | d8_cycle.sh cron 15 min and worker pools supervised (registered 03:2xZ) |
+| W-GRIDOPS | grid ops, result stamp, nice ladder, ag_nice | yes | resumable | cron line 35 min ago, agent line 48 min ago (21:52Z) | 22 of 148 entries | ag_nice_ctl.sh cron, supervise.py; loops continue without the agent |
+| W-SHORT | R3, calibration by family, staleness knock-on | yes | running (resumed 04:5xZ) | cron line 10 min ago, agent line 16 min ago (22:24Z) | 0 of 148 entries | gr3 shards box 1 (<=3) may not be supervised |
+| W-NIGHT | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons | no cron line, agent line 100 min ago (21:00Z) | 0 of 148 entries | crons guard/health/wd continue |
+| W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh k | no | gone | no cron line, agent line 77 min ago (21:23Z) | 0 of 148 entries |  |
+| W-NIGHT2 | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | cron line 12.7 h ago, agent line 7.5 h ago (15:09Z) | 0 of 148 entries | guard/health crons (th_night); agent only edits |
+| W-EXITENG | owns D8_EXIT_ENGINE_SUPPORT build, D8_EXIT_ENGINE_RESULTS.md | yes | running | cron line 25 min ago, agent line 11 min ago (22:29Z) | 0 of 148 entries | agent lines 'W-EXITENG STATUS n'; cron status line from its state file; ex_* code is edit-only (nothing superv |
+| W-LAYERS | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | cron-owned (built 10:0xZ; layer_cron.py  | cron line 15 min ago, agent line 3 min ago (22:37Z) [cron-owned: exempt] | 0 of 148 entries | layer_cron.py every 30 min writes '(auto)' lines; agent posts real lines when it works |
+| W-FASTLADDER | fl_status.py cron :20/:50 writes '(auto)' lines to MORNING.md, autopil | yes | cron-owned (agent resumable; nothing swi | cron line 20 min ago, agent line 42 min ago (21:58Z) [cron-owned: exempt] | 0 of 148 entries | fl_status.py cron; no supervised loops |
+| W-BEST | owns code/th_best/best_books.py, BEST_BOOKS_ASIA/NYAM.md, _split/best_ | yes | cron-owned (:07/:37) | no cron line, agent line 9 min ago (22:31Z) [cron-owned: exempt] | 0 of 148 entries | agent lines 'W-BEST' + cron refresh lines |
+| W-XB1 | code/th_exiteng/xb_*.py | yes | running | no cron line, agent line 20 min ago (22:20Z) | 0 of 148 entries | agent lines 'W-XB1 STATUS n' |
+| W-XB2 | code/th_exiteng/xb2_*.py | yes | running | no cron line, agent line 88 min ago (21:12Z) | 0 of 148 entries | agent lines 'W-XB2 STATUS n' |
+| W-P2A | code/th_pass2/combiner.py, PASS2_COMBINER.md | yes | running | cron line 3.3 h ago, agent line 37 min ago (22:03Z) | 0 of 148 entries | agent lines 'W-P2A' |
+| W-P2B | code/th_pass2 hooks, PASS2_HOOKS.md | yes | running | no cron line, agent line 7 min ago (22:33Z) | 0 of 148 entries | agent lines 'W-P2B' |
+| W-P2P | PREREG_PASS2.md, PASS2_COST.md, PASS2_PLAN.md | yes | cron-owned (pass2_status.py :17 hourly) | cron line 23 min ago, agent line 3.3 h ago (19:22Z) [cron-owned: exempt] | 0 of 148 entries | cron lines |
+| W-SRVC | compute-pool setup | yes | running | no cron line, agent line 96 min ago (21:04Z) | 0 of 148 entries | agent lines 'W-SRVC' |
+| W-SRVD | compute-pool setup | yes | running | no cron line, agent line 55 min ago (21:45Z) | 0 of 148 entries | agent lines 'W-SRVD' |
+Alert G now: agent W-XB2 has no line for 88 min; agent W-SRVC has no line for 96 min
 G: agent W-SRVC has no line for 86 min UNANSWERED since 22:10Z
 G: agent W-XB2 has no line for 78 min UNANSWERED since 22:20Z

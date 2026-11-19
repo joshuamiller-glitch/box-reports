@@ -42,3 +42,25 @@ stack selection (this page) -> pass 2 (filters / confluence / regime / windows /
 
 ### Status of the factor wiring (W-LAYERS 22:4xZ, W-COMBO decision)
 Wired in the generators (offline-tested, not run): per-book TK, LK, CU, CX, CP, BO, NT (NT needs the ID7 identity run on a real stack before any NT set is trusted) and account-level DAY-DONE, own day caps, ER sizer (thr/lo), same-side lots cap (4/6/8), ATR-skip on the new books (1.3/1.6/2.0), same-side-loser skip (off / after 3). NOT wired (no parameter map in the JL3 hooklist): book-lock thresholds, zone / no-trade-window lists of the live stack, session lot table, daily profit/loss caps for new books beyond CP. Decision: these four stay at the D7 stand-in (never off) and are reported as 'not varied' in the J1 effect table until their parameter maps exist; the claim 'every layer fitted jointly' is therefore PARTIAL until they are wired; the plan's factor count falls accordingly (about 7B + 6 instead of 7B + 8).
+
+## W-LAYERS UPDATE 22:4xZ (Josh addendum 2233Z: EVERY layer's settings fitted jointly; the four 'not wired' layers are wired and VARIED)
+**Factor count back to FULL (all layers).** Book level per book (tag): TK, LK (Trade Health PROFIT side), CU, CX (Trade Health LOSS side), CP (own day cap), BO (post-stop blackout), NT (new-book no-trade windows = the NTZ layer for the new books), **BKL** (book give-back lock, NEW), **LOTS** (session lot table = the events' lots, NEW) = **9 per book**. Account / stack level: DD (DAY-DONE), CAP6 (same-side lots cap), SLS (same-side-loser skip), ER (ER sizer), ATR (ATR-skip on the new books), **ZONE** (points-of-interest no-trade set = the zone layer, NEW), **SCAP** (daily profit / loss caps on the sum of the new books, beyond each book's own cap, NEW) = **7**. **F = 9 B + 7** (B = 2 -> 25, B = 3 -> 34 (L81), B = 4 -> 43 (> 40: L243), B = 5 -> 52, B = 6 -> 61).
+Trade Health on BOTH sides is in (profit: TK take / LK lock; loss: CU loss cut / CX context cut) and so is the zone layer (ZONE POI set + NT windows): confirmed.
+**Parameter maps (found in sim.py / the JL3 hooklist; hook code/th_layers/lay_hooks.py, appended last in the set, identical to its base at every D7 default):**
+| layer | where D7 keeps it | stand-in (level 0) | screen / joint range (centred on D7, rows far from it) | reference row (never a level) |
+|---|---|---|---|---|
+| BKL book lock | sim.py check_book_lock L3413 constants, overridden per tag by lay_hooks par.bl | peak 2.0 R, give-back 50%, weekly floor 12 R | peak 1.0 / 1.5 / 3.0 / 4.0 R with give-back 70 / 60 / 40 / 30% and weekly floor 8 / 10 / 15 / 20 R (4 settings) | off (peak 1e9) |
+| ZONE | sim.py ntz_check on the POI set (PT.PoiSet) within 20 pts ahead, Half (x0.5) after P1_START; lay_hooks par.zone | dist 20, Half | dist 10 / 30 / 50 Half; dist 20 / 30 / 50 Skip (6 settings) | off (dist 0) |
+| SCAP stack caps | engine has per-book caps only (check_limits); lay_hooks par.stack_caps sums the new books' day P&L | none beyond each book's own 12,000 / 4,800 | profit / loss 6,000 / 2,400; 12,000 / 3,600; 12,000 / 7,200; 24,000 / 4,800; 24,000 / 9,600 (5 settings) | none |
+| LOTS session lot table | ev_panel sess_tl / the events' lots column (a new book's lots come from its events; whole lots only) | 1 base lot | x2 / x3 / x4 per book (3 settings) | - |
+| NT windows / live NTZ | mf_multi stream ntz (D7's own GUARDS / SLOTLIST / on_gate act on the named live books only) | none | 5 windows per session (done) | - |
+**Screen additions (per stack):** BKL 4 x B + LOTS 3 x B + ZONE 6 + SCAP 5 = 7 B + 11 settings x 6 months. **Identity (small, urgent):** ID_LH (lay_hooks at every D7 default) and ID_LOTS1 (lots x1 events) must reproduce the unlayered stack trade for trade; ID7 (ntz = []) likewise; two effect probes (zone Skip 50, book lock 1.0R/70%/8R) must DIFFER from the base or the wiring is flagged (broken-test rule).
+**Cost per stack (set-months):** screen = 18 B (ID) + 366 B (61 settings x 6) + 222 (37 account settings x 6) + 4 (hook identity) ; joint J1 = 81 x 12 = 972 (F <= 40) or 243 x 12 = 2,916 (F <= 121) + J2 480 + J3 294 ; controls 180.
+| B | F | screen | joint | controls | total per stack |
+|---|---|---|---|---|---|
+| 2 | 25 (L81) | 36 + 732 + 226 = 994 | 972 + 480 + 294 = 1,746 | 180 | **2,920** |
+| 3 | 34 (L81) | 54 + 1,098 + 226 = 1,378 | 1,746 | 180 | **3,304** |
+| 4 | 43 (L243) | 72 + 1,464 + 226 = 1,762 | 2,916 + 480 + 294 = 3,690 | 180 | **5,632** |
+| 6 | 61 (L243) | 108 + 2,196 + 226 = 2,530 | 3,690 | 180 | **6,400** |
+At 3,500-3,800 set-months/h: 0.8-1.8 h of the whole fleet per stack (two stacks per session double it).
+**Re-fit control (plan e2):** unchanged. **Not wired, stated plainly:** the live stack's own GUARDS / SLOTLIST / on_gate rules (they act on the named live books, not on injected books); DAY-DONE per-book variants beyond the 18 settings.
