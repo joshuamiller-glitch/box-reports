@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 18:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 18:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 18:30Z | box1: busy 100%, load1 69.98, workers 30, MemAvail 81 GB | server2: busy 100%, load1 158.36, workers 28, MemAvail 944 GB | pending box1-eligible 60384 / server2-eligible 65932 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 234.20, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1134 GB | serverB: busy 100%, load1 220.87, workers 105 (grid) + 93 (engine), 128 threads, MemAvail 1112 GB
+LATEST CORES.md LINE: 2026-11-19 18:40Z | box1: busy 100%, load1 71.34, workers 32, MemAvail 74 GB | server2: busy 100%, load1 141.30, workers 27, MemAvail 976 GB | pending box1-eligible 58722 / server2-eligible 65130 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 234.62, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1124 GB | serverB: busy 100%, load1 222.40, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 1053 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 18:30Z
+2026-11-19 18:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 18:30Z | box1: busy 100%, load1 69.98, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 80.4 GB; live reservations 13 (13 GB); workers 30, of which TP-adopted 30 (RSS 42.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 70.54, 75.61, 78.78
-  by tag: NYR quota 12 running 12 hungry False RSS 18.1 GB PSS 13.2 GB; ASI quota 14 running 6 hungry True RSS 7.8 GB PSS 6.0 GB; EXE quota 2 running 5 hungry False RSS 8.1 GB PSS 6.8 GB; NYL quota 5 running 6 hungry False RSS 8.0 GB PSS 5.8 GB; LON quota 12 running 1 hungry True RSS 0.6 GB PSS 0.5 GB
-  cell-months finished last hour (DONE markers): 4668
-  top running jobs: TL3_NYE_L8ef6b970_RK7 (x12);TL3_ASI_L548972b6_RA7CT49p (x10);TL3_NYE_L6d04112a_RK7 (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 161.68, 146.89, 143.30|/dev/md2         28T  2.2T   26T   8% /mnt/l2|50|
+Server 1 (this box): MemAvail 57.9 GB; live reservations 3 (3 GB); workers 33, of which TP-adopted 33 (RSS 49.6 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 91.62, 80.51, 77.74
+  by tag: NYR quota 12 running 12 hungry False RSS 17.2 GB PSS 13.1 GB; ASI quota 14 running 4 hungry True RSS 5.2 GB PSS 3.8 GB; EXE quota 2 running 5 hungry False RSS 9.4 GB PSS 6.9 GB; NYL quota 5 running 7 hungry False RSS 10.4 GB PSS 6.8 GB; LON quota 12 running 5 hungry True RSS 7.5 GB PSS 6.3 GB
+  cell-months finished last hour (DONE markers): 5516
+  top running jobs: TL3_NYE_L34d66961_RK7CT21p (x12);TL3_NYE_L34d66961_RK7CT28p (x6);TL3_NYE_L34d66961_RK7CT14p (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 128.30, 136.06, 140.89|/dev/md2         28T  2.2T   26T   8% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 161.68, 146.89, 143.30|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261119_1457Z_Fleet-rate-halved-why.md 20261119_1534Z_Fast-share-zero-first-looks-share-exit-driver.md 20261119_1750Z_Rate-dip-exit-families-base-lots.md 20261119_1806Z_Josh-best-books-on-own-merit-not-vs-D7.md 20261119_1823Z_STATUS-QUESTION-coverage-by-component.md
+20261119_1534Z_Fast-share-zero-first-looks-share-exit-driver.md 20261119_1750Z_Rate-dip-exit-families-base-lots.md 20261119_1806Z_Josh-best-books-on-own-merit-not-vs-D7.md 20261119_1823Z_STATUS-QUESTION-coverage-by-component.md 20261119_1850Z_PASS-2-plan-prepare-now-start-when-first-looks-finish.md

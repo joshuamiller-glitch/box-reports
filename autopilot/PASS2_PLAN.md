@@ -1,0 +1,27 @@
+# PASS2_PLAN - plain words (W-P2P, first version 2026-11-19 18:50Z; hourly updates below)
+
+## What pass 2 is
+Pass 1 (the big search) picks the best-looking books: a bar type, an entry trigger, a side and one fixed stop/target pair, per session. It does not try the things a live book carries on top: extra confirmation conditions, a trend-or-range switch, time-of-day windows, smarter entries, exits other than a fixed bracket, in-trade cuts, no-repeat-after-loss rules, sizing. Pass 2 takes the top books of each session (start with 50 per session, keep going down the list with no cap) and tries all of those, first one at a time on a fast screen (keep the top few settings of every component, no component dropped), then all together in the exact engine, drawdown first (ulcer, max drawdown, worst week), then dollars. Every filter has to beat a random skipper that keeps the same number of trades. A book never gets below a stated trade count. The verdict is the joint exact-engine run: recent 6 months picked, 3 months beside, prior years not a disaster, persistence, 30 shifted-calendar controls, a 2-week roll through history, and a correction for how many settings were tried. Then the stack is rebuilt from empty with the upgraded books and only then compared with today's D7. Rules are fixed in PREREG_PASS2.md (hash in DECISIONS.md 18:47Z, amendment 1 18:47Z).
+
+## Order of components
+1. Exits (68 recipes, 7 families) and filters / confluence (the generic any-trigger k-of-N combiner, never built before): the two biggest expected effects.
+2. In-trade management and re-entry, entry method (limit / dip / split / book-confirmed).
+3. Market-type gate (trend vs range), time-of-day windows, sizers (judged at equal average risk).
+4. Joint stage per book as soon as its screens are done; books do not wait for each other.
+5. Stack per session from empty (W-COMBO).
+
+## Who builds what
+- W-P2A: the generic combiner (any trigger x k-of-N conditions, condition library from the existing level / momentum / tape / book / cross-market code, random-skip null built in) -> PASS2_COMBINER.md, with per-book cpu-seconds.
+- W-P2B: engine hooks (entry filter flags, regime gate, time windows, entry methods, in-trade cut/take, re-entry cooldown, sizer), each with an identity test on the production driver (inert hook = plain book trade for trade; active hook vs the screen walker) -> PASS2_HOOKS.md.
+- W-XB1 / W-XB2: the missing exit recipes in the engine, ETA ~21:00Z (W-XB1 status 18:44Z: inert pass for both stage and trail families, trails vs the screen walker in progress).
+- W-FASTLADDER: adds every pass-2 kind to the fast-path templates the moment its identity pair passes (fast share 96% today).
+- W-BEST: BEST_BOOKS lists with the "what it is" and L3M-rank columns (order item E); the ranked source of the pass-2 books.
+- W-COMBO: the stack from empty with the upgraded books.
+- W-P2P (me): PREREG_PASS2.md, PASS2_COST.md, this page, hourly status.
+
+## Ready by ~23:20Z (Asia first looks end) - plan, to be confirmed hourly
+Ready by design: prereg and its hash (done 18:47Z); cost table (done, with dates); book lists (top 50 per session exist now in BEST_BOOKS 18:12Z). Needs building: combiner (W-P2A), hooks + identity (W-P2B), exit recipes (W-XB1/W-XB2 ~21:00Z). Nothing in my information says that any of these cannot be done by 23:20Z; the combiner and the hooks are the long poles and neither agent's page exists yet (checked 18:50Z: no PASS2_COMBINER.md, no PASS2_HOOKS.md, so I cannot confirm). IF NOT READY at 23:20Z the order in which pass 2 starts is: (1) EXITS on the top 50 Asia books in the exact engine, because the exit hooks (W-XB1/W-XB2) and the fast-path inert/trail identities are closest to done; (2) the time-of-day windows and the in-trade cut / take, re-entry cooldown (simple per-trade flags, can run on the production driver as post-filters of the trade list and be verified against the screen walker); (3) filters / market-type gate once the combiner and the entry-flag hook pass identity; (4) entry method and sizer last (they change fills and lots, the hardest identity). Any component whose hook is missing runs on the screen walker flagged SCREEN-ONLY and enters the joint stage when its hook passes. The joint stage itself needs only the hooks of the components it contains, so a book can go to the joint stage with a subset (flagged "partial joint", label capped LEAD).
+
+## Hourly status
+- 18:50Z W-P2P: PREREG_PASS2.md written and hashed (6951443d... amended), PASS2_COST.md done (1,836 sm per book full path, ~1,100 funnel; top 50 per session about 11-22 07Z/13Z at 4,500/h), PASS2_PLAN.md first version. Waiting for W-P2A / W-P2B pages. Trade-count floors proposed: Asia 5/wk, NY AM 2/wk, 60% of reference trades kept.
+- 18:48Z (auto) fleet 5588 sm/h (HEALTH), queue 65130 lines, fast share 87%; PASS2_COMBINER.md ABSENT | PASS2_HOOKS.md ABSENT; FAST_KINDS pass-2 related lines 0; Asia first look end ~23:20Z (order 1850Z; recheck W-ASIA), NY AM first looks end ?; dates (Asia/NY AM done, top N per session, full 1,836 sm/book): 50: 11-21 20Z/11-22 02Z; 100: 11-23 19Z/11-24 01Z; 200: 11-27 17Z/11-27 23Z; funnel 1,102: 50: 11-21 01Z/11-21 07Z; 100: 11-22 05Z/11-22 11Z; 200: 11-24 13Z/11-24 20Z. Screen cost and funnel still assumptions until W-P2A/B publish.

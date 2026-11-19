@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 18:35Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 18:45Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 4506 set-months/h (HEALTH.md at 18:35Z); layer queue (tag NYL, quota 5) landed 755 set-months in the last hour, 3826 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 12541, landed 6212, remaining 6293; hours at the HEALTH rate (whole fleet) 1.4 h; at the measured NYL rate 8 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 5588 set-months/h (HEALTH.md at 18:45Z); layer queue (tag NYL, quota 5) landed 781 set-months in the last hour, 3794 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 12541, landed 6435, remaining 6070; hours at the HEALTH rate (whole fleet) 1.1 h; at the measured NYL rate 8 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -15,18 +15,18 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | Lcb276f27xA7 | 752 | 432 |
 | L0a809c2exA7 | 672 | 432 |
 | Lf77e374bxA7 | 432 | 99 |
-| L7c368a4fxA7 | 1004 | 453 |
+| L7c368a4fxA7 | 1004 | 454 |
 | L1edb9fabxA7 | 432 | 395 |
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
 | L21f079b6xK7 | 623 | 432 |
 | L4d206c8cxA7 | 432 | 0 |
-| Ldcdb0b6exA7 | 348 | 13 |
+| Ldcdb0b6exA7 | 348 | 17 |
 | L86781ac0xA7 | 348 | 8 |
 | Lc4e74264xA7 | 348 | 0 |
-| L7ea48296xA7 | 348 | 9 |
+| L7ea48296xA7 | 348 | 11 |
 | L548972b6xA7 | 348 | 0 |
-| L2b25565axK7 | 348 | 80 |
+| L2b25565axK7 | 348 | 296 |
 | Lb44a3e99xK7 | 348 | 0 |
 | L678ebaddxK7 | 348 | 0 |
 | L6c84f416xK7 | 348 | 0 |

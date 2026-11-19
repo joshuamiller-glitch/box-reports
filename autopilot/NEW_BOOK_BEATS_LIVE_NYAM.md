@@ -1,34 +1,37 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 18:30Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 18:48Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
-**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 795; cells with a finished REPLACE verdict (L6M+L3M landed) 680; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 13; twin cells listed 460.
+**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 736; cells with a finished REPLACE verdict (L6M+L3M landed) 696; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 11; twin cells listed 645.
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | REPLACE P7 | REPLACE M7 | REPLACE H7 | ADD | prior years run | controls |
 |---|---|---|---|---|---|---|---|---|
 | 24 | tick_500 / levels_profile_va.false_break_native {"M": 1, "k": 0.5} / plain60/60 / long | yes (L6M du -26 dm +1294 | L3M du -460 dm +2376) | yes (L6M du -1035 dm +336 | L3M du -2084 dm +921) | yes (L6M du -772 dm +387 | L3M du -1325 dm +694) | yes (L6M du -610 dm +557 | L3M du -1390 dm +1296) | not run | K7:0,P7:0,M7:3,H7:0 | 0 of 30 |
 | 721 | [twin of L96205086] tick_500 / levels_profile_va.false_break_native {"M": 1, "k": 0.5} / plain60/60 / long | yes (L6M du -26 dm +1294 | L3M du -460 dm +2376) | yes (L6M du -1035 dm +336 | L3M du -2084 dm +921) | yes (L6M du -772 dm +387 | L3M du -1325 dm +694) | yes (L6M du -610 dm +557 | L3M du -1390 dm +1296) | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 875 | [twin of L0f097450] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 76 | wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 303 | [twin of L0f097450] wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 229 | [twin of L0f097450] wrenko_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 988 | [twin of L0f097450] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | pending | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 867 | [twin of L0f097450] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
-| 314 | [twin of L0f097450] wrenko_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 875 | [twin of L21f079b6] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 76 | [twin of L21f079b6] wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 303 | [twin of L21f079b6] wrenko_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 229 | [twin of L21f079b6] wrenko_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 988 | [twin of L21f079b6] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | pending | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 867 | [twin of L21f079b6] trend_20 / levels_profile_va.break_native {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 314 | [twin of L21f079b6] wrenko_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | yes (L6M du -1014 dm +1313 | L3M du -2012 dm +1418) | yes (L6M du -799 dm +1497 | L3M du -1391 dm +1273) | yes (L6M du -637 dm +1537 | L3M du -1427 dm +1801) | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 290 | vrb_700 / book_micro.follow_sm {"L": 200, "z": 2.0, "sm": 3} / sym15u / both | yes (L6M du -418 dm +713 | L3M du -1885 dm +3361) | yes (L6M du -814 dm +199 | L3M du -2746 dm +2918) | yes (L6M du -882 dm +247 | L3M du -2084 dm +2458) | yes (L6M du -503 dm +229 | L3M du -2137 dm +2990) | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 107 | tick_8000 / levels_open_range.break_native {"n": 3, "k": 0.25} / plain60/60 / both | yes (L6M du -75 dm +1755 | L3M du -448 dm +2609) | yes (L6M du -713 dm +714 | L3M du -1365 dm +832) | yes (L6M du -457 dm +562 | L3M du -736 dm +505) | yes (L6M du -222 dm +753 | L3M du -590 dm +995) | yes (L6M du -453 dm +1117 | L3M du -870 dm +1542) | K7:3,P7:3,M7:3,H7:3 | 0 of 30 |
-| 282 | vrb_700 / book_dwm.dev_follow {"L": 100, "z": 1.5} / plain60/60 / long | yes (L6M du -86 dm +2540 | L3M du -685 dm +2740) | yes (L6M du -706 dm +1784 | L3M du -1630 dm +1745) | yes (L6M du -436 dm +1792 | L3M du -865 dm +1492) | yes (L6M du -428 dm +1855 | L3M du -1248 dm +1959) | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 221 | drb_2000 / book_ofi.follow_native {"L": 3600, "z": 2.0} / sym15u / both | yes (L6M du -178 dm +919 | L3M du -620 dm +1301) | yes (L6M du -684 dm +152 | L3M du -1386 dm +424) | yes (L6M du -610 dm +112 | L3M du -967 dm +84) | yes (L6M du -360 dm +313 | L3M du -798 dm +681) | not run | K7:0,P7:3,M7:0,H7:0 | 0 of 30 |
+| 282 | vrb_700 / book_dwm.dev_follow {"L": 100, "z": 1.5} / plain60/60 / long | yes (L6M du -86 dm +2540 | L3M du -685 dm +2740 RED Y2023) | yes (L6M du -706 dm +1784 | L3M du -1630 dm +1745) | yes (L6M du -436 dm +1792 | L3M du -865 dm +1492) | yes (L6M du -428 dm +1855 | L3M du -1248 dm +1959) | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 221 | [twin of L6a25b155] drb_2000 / book_ofi.follow_native {"L": 3600, "z": 2.0} / sym15u / both | yes (L6M du -178 dm +919 | L3M du -620 dm +1301) | yes (L6M du -684 dm +152 | L3M du -1386 dm +424) | yes (L6M du -610 dm +112 | L3M du -967 dm +84) | yes (L6M du -360 dm +313 | L3M du -798 dm +681) | yes (L6M du -436 dm +460 | L3M du -876 dm +936) | K7:0,P7:3,M7:0,H7:0 | 0 of 30 |
 | 178 | drb_2000 / book_ofi.follow_native {"L": 3600, "z": 2.0} / sym15u / both | yes (L6M du -178 dm +919 | L3M du -620 dm +1301) | yes (L6M du -684 dm +152 | L3M du -1386 dm +424) | yes (L6M du -610 dm +112 | L3M du -967 dm +84) | yes (L6M du -360 dm +313 | L3M du -798 dm +681) | yes (L6M du -436 dm +460 | L3M du -876 dm +936) | K7:3,P7:3,M7:0,H7:0 | 0 of 30 |
-| 183 | vsess_80 / bands_atrchan.break_ema {"n": 20, "atr": 14, "k": 3.0} / asym10u/20u / both | no (L6M du +1220 dm +2271 | L3M du +2088 dm +1786) | yes (L6M du -490 dm +1721 | L3M du -603 dm +886) | yes (L6M du -359 dm +1786 | L3M du -209 dm +757) | no (L6M du -2 dm +1722 | L3M du +154 dm +939) | yes (L6M du -218 dm +2072 | L3M du -110 dm +1486) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 85 | vol_750 / levels_profile_nodes.retest {"M": 3, "tol": 0.0} / plain60/60 / long | no (L6M du +758 dm +1556 | L3M du +1083 dm +2339) | yes (L6M du -649 dm +1077 | L3M du -1155 dm +1831) | yes (L6M du -246 dm +862 | L3M du -273 dm +1182) | pending | yes (L6M du -250 dm +1385 | L3M du -462 dm +2434) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 86 | [twin of L11631333] vol_750 / levels_profile_nodes.retest_native {"M": 3, "tol": 0.0} / plain60/60 / long | no (L6M du +758 dm +1556 | L3M du +1083 dm +2339) | yes (L6M du -649 dm +1077 | L3M du -1155 dm +1831) | yes (L6M du -246 dm +862 | L3M du -273 dm +1182) | pending | yes (L6M du -250 dm +1385 | L3M du -462 dm +2434) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 183 | [twin of L6c84f416] vsess_80 / bands_atrchan.break_ema {"n": 20, "atr": 14, "k": 3.0} / asym10u/20u / both | no (L6M du +1220 dm +2271 | L3M du +2088 dm +1786) | yes (L6M du -490 dm +1721 | L3M du -603 dm +886) | yes (L6M du -359 dm +1786 | L3M du -209 dm +757) | no (L6M du -2 dm +1722 | L3M du +154 dm +939) | yes (L6M du -218 dm +2072 | L3M du -110 dm +1486) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 132 | vol_1100 / levels_profile_va.break_native {"n": 2, "k": 0.0} / sym8u / long | no (L6M du +859 dm +2515 | L3M du +1034 dm +1658) | pending | yes (L6M du -423 dm +1647 | L3M du -818 dm +145) | no (L6M du -214 dm +1409 | L3M du -744 dm -167) | yes (L6M du -503 dm +1686 | L3M du -1124 dm +403) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 397 | kagi_14 / levels_profile_nodes.break_native {"n": 1, "k": 0.0} / sym15u / long | no (L6M du +176 dm +897 | L3M du -185 dm +1485) | not run | yes (L6M du -331 dm +142 | L3M du -650 dm +192) | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 8 | urenko_20 / levels_profile_va.false_break_native {"M": 3, "k": 0.5} / plain60/60 / long | no (L6M du +336 dm +1980 | L3M du +63 dm +2912) | pending | pending | yes (L6M du -276 dm +1216 | L3M du -925 dm +1793) | yes (L6M du -483 dm +1457 | L3M du -1172 dm +2247) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 8 | [twin of Lf82cdf44] urenko_20 / levels_profile_va.false_break_native {"M": 3, "k": 0.5} / plain60/60 / long | no (L6M du +336 dm +1980 | L3M du +63 dm +2912) | pending | pending | yes (L6M du -276 dm +1216 | L3M du -925 dm +1793) | yes (L6M du -483 dm +1457 | L3M du -1172 dm +2247) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 213 | mom_28 / levels_profile_va.false_break_native {"M": 3, "k": 0.5} / sym15u / long | no (L6M du +808 dm +2255 | L3M du +848 dm +2149) | yes (L6M du -254 dm +1397 | L3M du -813 dm +975) | yes (L6M du -64 dm +1527 | L3M du -202 dm +642) | no (L6M du +265 dm +1435 | L3M du -3 dm +970) | yes (L6M du -13 dm +1775 | L3M du -353 dm +1632) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 85 | vol_750 / levels_profile_nodes.retest {"M": 3, "tol": 0.0} / plain60/60 / long | no (L6M du +758 dm +1556 | L3M du +1083 dm +2339) | pending | yes (L6M du -246 dm +862 | L3M du -273 dm +1182) | pending | yes (L6M du -250 dm +1385 | L3M du -462 dm +2434) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 86 | [twin of L11631333] vol_750 / levels_profile_nodes.retest_native {"M": 3, "tol": 0.0} / plain60/60 / long | no (L6M du +758 dm +1556 | L3M du +1083 dm +2339) | pending | yes (L6M du -246 dm +862 | L3M du -273 dm +1182) | pending | yes (L6M du -250 dm +1385 | L3M du -462 dm +2434) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 1199 | [twin of L0f097450] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 985 | tm20 / bands_bollinger.walk {"n": 20, "k": 2.0, "N": 2} / asym20u/10u / long | yes (L6M du -207 dm +642 | L3M du -334 dm +967) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 1518 | [twin of L01811caa] tick_8000 / levels_open_range.break_native {"n": 3, "k": 0.25} / plain60/60 / both | yes (L6M du -75 dm +1755 | L3M du -448 dm +2609) | not run | not run | not run | yes (L6M du -453 dm +1117 | L3M du -870 dm +1542) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 941 | tm15 / bands_atrchan.break_ext_native {"clk": 20, "k": 2.0} / plain60/60 / both | yes (L6M du -61 dm +1033 | L3M du -316 dm +1518) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 1199 | [twin of L21f079b6] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 
 ## Both-side / long-only / short-only rows side by side (order 1014Z; both-side sets are VALID engine results for the both-side book; LO / SO = mode-correct sets, engine-tested separately; replace K7 and ADD; vs the live stack, engine base lots; d = change vs JL3, ulcer first)
 | cell (id) | row | variant | L6M d ulcer / d worst wk / d max DD / d mean $/wk | L3M d ulcer / d worst / d max DD / d mean | beats K7 (yes/no/pending) |
@@ -106,7 +109,7 @@
 | L34d66961 (long) | short-only | RK7 | not run yet | | |
 | L34d66961 (long) | short-only | ADD | not run yet | | |
 | L09ae66e3 | both sides | RK7 | -178 / -1005 / +1164 / +919 | -620 / -1005 / +1164 / +1301 | yes |
-| L09ae66e3 (both) | both sides | ADD | not run yet | | |
+| L09ae66e3 | both sides | ADD | -436 / -144 / +2621 / +460 | -876 / -144 / +2621 / +936 | yes |
 | L09ae66e3 (both) | long-only | RK7 | not run yet | | |
 | L09ae66e3 (both) | long-only | ADD | not run yet | | |
 | L09ae66e3 (both) | short-only | RK7 | not run yet | | |
@@ -117,6 +120,18 @@
 | L6a25b155 | long-only | ADD | -192 / -19 / +225 / -685 | -343 / -19 / +225 / +15 | no |
 | L6a25b155 | short-only | RK7 | +649 / -4126 / -2810 / +940 | +874 / -4126 / -2810 / +363 | no |
 | L6a25b155 | short-only | ADD | -305 / -125 / +2395 / +786 | -539 / -125 / +2395 / +254 | yes |
+| L11631333 | both sides | RK7 | +758 / -6570 / -4545 / +1556 | +1083 / -6570 / -4545 / +2339 | no |
+| L11631333 | both sides | ADD | -250 / -2791 / +527 / +1385 | -462 / -2791 / +527 / +2434 | yes |
+| L11631333 (long) | long-only | RK7 | not run yet | | |
+| L11631333 (long) | long-only | ADD | not run yet | | |
+| L11631333 (long) | short-only | RK7 | not run yet | | |
+| L11631333 (long) | short-only | ADD | not run yet | | |
+| Ld14659a9 | both sides | RK7 | +758 / -6570 / -4545 / +1556 | +1083 / -6570 / -4545 / +2339 | no |
+| Ld14659a9 | both sides | ADD | -250 / -2791 / +527 / +1385 | -462 / -2791 / +527 / +2434 | yes |
+| Ld14659a9 (long) | long-only | RK7 | not run yet | | |
+| Ld14659a9 (long) | long-only | ADD | not run yet | | |
+| Ld14659a9 (long) | short-only | RK7 | not run yet | | |
+| Ld14659a9 (long) | short-only | ADD | not run yet | | |
 | Lbbdd1236 | both sides | RK7 | +1220 / -5696 / -4913 / +2271 | +2088 / -5696 / -4913 / +1786 | no |
 | Lbbdd1236 | both sides | ADD | -218 / -1865 / +2395 / +2072 | -110 / -1865 / +2395 / +1486 | yes |
 | Lbbdd1236 (both) | long-only | RK7 | not run yet | | |
@@ -147,18 +162,24 @@
 | L4fd10b76 (long) | long-only | ADD | not run yet | | |
 | L4fd10b76 (long) | short-only | RK7 | not run yet | | |
 | L4fd10b76 (long) | short-only | ADD | not run yet | | |
-| L11631333 | both sides | RK7 | +758 / -6570 / -4545 / +1556 | +1083 / -6570 / -4545 / +2339 | no |
-| L11631333 | both sides | ADD | -250 / -2791 / +527 / +1385 | -462 / -2791 / +527 / +2434 | yes |
-| L11631333 (long) | long-only | RK7 | not run yet | | |
-| L11631333 (long) | long-only | ADD | not run yet | | |
-| L11631333 (long) | short-only | RK7 | not run yet | | |
-| L11631333 (long) | short-only | ADD | not run yet | | |
-| Ld14659a9 | both sides | RK7 | +758 / -6570 / -4545 / +1556 | +1083 / -6570 / -4545 / +2339 | no |
-| Ld14659a9 | both sides | ADD | -250 / -2791 / +527 / +1385 | -462 / -2791 / +527 / +2434 | yes |
-| Ld14659a9 (long) | long-only | RK7 | not run yet | | |
-| Ld14659a9 (long) | long-only | ADD | not run yet | | |
-| Ld14659a9 (long) | short-only | RK7 | not run yet | | |
-| Ld14659a9 (long) | short-only | ADD | not run yet | | |
+| L4560e541 | both sides | RK7 | -207 / +1832 / +549 / +642 | -334 / +1832 / +549 / +967 | yes |
+| L4560e541 (both sides, engine-tested) | both sides | ADD | not run yet | | |
+| L4560e541 (long) | long-only | RK7 | not run yet | | |
+| L4560e541 (long) | long-only | ADD | not run yet | | |
+| L4560e541 (long) | short-only | RK7 | not run yet | | |
+| L4560e541 (long) | short-only | ADD | not run yet | | |
+| Lac37d7eb | both sides | RK7 | -75 / +620 / +1857 / +1755 | -448 / +2462 / +2114 / +2609 | yes |
+| Lac37d7eb | both sides | ADD | -453 / +1209 / +3571 / +1117 | -870 / +4026 / +3571 / +1542 | yes |
+| Lac37d7eb (both) | long-only | RK7 | not run yet | | |
+| Lac37d7eb (both) | long-only | ADD | not run yet | | |
+| Lac37d7eb (both) | short-only | RK7 | not run yet | | |
+| Lac37d7eb (both) | short-only | ADD | not run yet | | |
+| L9513708b | both sides | RK7 | -61 / +45 / +1752 / +1033 | -316 / +45 / +1825 / +1518 | yes |
+| L9513708b (both) | both sides | ADD | not run yet | | |
+| L9513708b (both) | long-only | RK7 | not run yet | | |
+| L9513708b (both) | long-only | ADD | not run yet | | |
+| L9513708b (both) | short-only | RK7 | not run yet | | |
+| L9513708b (both) | short-only | ADD | not run yet | | |
 | Le728b0a3 | both sides | RK7 | -58 / -3120 / +1857 / +2291 | -504 / -3120 / +2281 / +2902 | yes |
 | Le728b0a3 | both sides | ADD | -795 / -796 / +5375 / +1691 | -1573 / +95 / +6571 / +2075 | yes |
 | Le728b0a3 (long) | long-only | RK7 | not run yet | | |
@@ -177,7 +198,134 @@ Controls = the same events moved +-7..105 days (same weekday). Real beats a cont
 | L0f097450 | ADD | +1691 / -795 | 0 | pending | | | |
 | L6a25b155 | RK7 | +919 / -178 | 24 | 21 | 23 | 21 | +1284 / -482 |
 | L6a25b155 | ADD | +460 / -436 | 0 | pending | | | |
-(pick table unavailable: FileNotFoundError(2, 'No such file or directory'))
+
+## Candidates under the persistence >= 0.58 gate and the ADD-vs-REPLACE rule (order 1324Z)
+
+Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD row is shown as a reference, not a candidate (supersedes the 1324Z ADD rule). REPLACE = the ADD stack with K7 switched off in the NY AM session, so the ADD stack WITHOUT K7 already exists as the REPLACE row: NO new "minus K7" engine set is needed (a K7-off-in-every-session set would only matter for K7's other sessions, which these rows leave untouched). Persistence = share of non-overlapping 2-week windows where the new stack is not worse than today's, POOLED over every month the set has run (last 6 months + prior years). Rule B colours from ny_ruleb (RED > 30% worse in a prior year). Stack columns are the whole stack (ulcer / max DD / worst week / mean $ per week, engine base lots, $4.84).
+
+| cell | stack | window | ulcer | max DD | worst wk | mean $/wk | rule-B colour (worst %) |
+|---|---|---|---|---|---|---|---|
+| L01811caa | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
+| L01811caa | REPLACE (candidate) | L6M | 9342 | -29253 | -15108 | +20510 | n/a (recent window) (-1%) |
+| L01811caa | ADD (reference, not a candidate) | L6M | 8963 | -27538 | -14519 | +19873 | n/a (recent window) (-5%) |
+| L01811caa | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
+| L01811caa | REPLACE (candidate) | L3M | 10587 | -28995 | -13266 | +18707 | n/a (recent window) (-4%) |
+| L01811caa | ADD (reference, not a candidate) | L3M | 10165 | -27538 | -11702 | +17640 | n/a (recent window) (-8%) |
+| L01811caa | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
+| L01811caa | REPLACE (candidate) | Y2025 | 29382 | -83155 | -34691 | +7360 | GREEN (-8%) |
+| L01811caa | ADD (reference, not a candidate) | Y2025 | 27815 | -78940 | -38025 | +7984 | GREEN (-2%) |
+| L01811caa | TODAY (JL3) | Y2024 | 28856 | -72026 | -37355 | +4549 | - |
+| L01811caa | REPLACE (candidate) | Y2024 | 24716 | -69388 | -39713 | +5169 | GREEN (+6%) |
+| L01811caa | ADD (reference, not a candidate) | Y2024 | 25450 | -71363 | -38560 | +5073 | GREEN (+3%) |
+| L01811caa | TODAY (JL3) | Y2023 | 18908 | -41848 | -17538 | +1797 | - |
+| L01811caa | REPLACE (candidate) | Y2023 | 15029 | -46397 | -21702 | +2254 | AMBER (+24%) |
+| L01811caa | ADD (reference, not a candidate) | Y2023 | 16062 | -40960 | -18785 | +2944 | GREEN (+7%) |
+| L6a25b155 | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
+| L6a25b155 | REPLACE (candidate) | L6M | 9238 | -29945 | -16733 | +19675 | n/a (recent window) (+6%) |
+| L6a25b155 | ADD (reference, not a candidate) | L6M | 8981 | -28489 | -15872 | +19216 | n/a (recent window) (+1%) |
+| L6a25b155 | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
+| L6a25b155 | REPLACE (candidate) | L3M | 10415 | -29945 | -16733 | +17400 | n/a (recent window) (+6%) |
+| L6a25b155 | ADD (reference, not a candidate) | L3M | 10159 | -28489 | -15872 | +17034 | n/a (recent window) (+1%) |
+| L6a25b155 | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
+| L6a25b155 | REPLACE (candidate) | Y2025 | 34575 | -93892 | -39081 | +7356 | GREEN (+3%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2025 | 31437 | -91723 | -43606 | +8231 | GREEN (+12%) |
+| L6a25b155 | TODAY (JL3) | Y2024 | 28814 | -72026 | -37355 | +4549 | - |
+| L6a25b155 | REPLACE (candidate) | Y2024 | 31815 | -69700 | -36113 | +5300 | GREEN (+10%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2024 | 32304 | -71936 | -34960 | +5448 | GREEN (+12%) |
+| L6a25b155 | TODAY (JL3) | Y2023 | 18908 | -41848 | -17538 | +1797 | - |
+| L6a25b155 | REPLACE (candidate) | Y2023 | 18087 | -48220 | -18408 | +2404 | AMBER (+15%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2023 | 15491 | -42932 | -16215 | +3088 | GREEN (+3%) |
+| L0f097450 (twin of L21f079b6) | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
+| L0f097450 (twin of L21f079b6) | REPLACE (candidate) | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
+| L0f097450 (twin of L21f079b6) | ADD (reference, not a candidate) | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
+| L0f097450 (twin of L21f079b6) | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
+| L0f097450 (twin of L21f079b6) | REPLACE (candidate) | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
+| L0f097450 (twin of L21f079b6) | ADD (reference, not a candidate) | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
+| L0f097450 (twin of L21f079b6) | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
+| L0f097450 (twin of L21f079b6) | REPLACE (candidate) | Y2025 | 27735 | -77634 | -32511 | +6709 | GREEN (+2%) |
+| L0f097450 (twin of L21f079b6) | ADD (reference, not a candidate) | Y2025 | 26308 | -76028 | -34457 | +7579 | GREEN (-11%) |
+| L0f097450 (twin of L21f079b6) | TODAY (JL3) | Y2024 | 28856 | -72026 | -37355 | +4549 | - |
+| L0f097450 (twin of L21f079b6) | REPLACE (candidate) | Y2024 | 26900 | -63077 | -38237 | +5219 | GREEN (+2%) |
+| L0f097450 (twin of L21f079b6) | ADD (reference, not a candidate) | Y2024 | 28023 | -66257 | -35122 | +5297 | GREEN (-3%) |
+| L0f097450 (twin of L21f079b6) | TODAY (JL3) | Y2023 | 19039 | -41848 | -17538 | +1797 | - |
+| L0f097450 (twin of L21f079b6) | REPLACE (candidate) | Y2023 | 17341 | -46048 | -25258 | +1675 | RED (+44%) |
+| L0f097450 (twin of L21f079b6) | ADD (reference, not a candidate) | Y2023 | 16744 | -46713 | -19840 | +2334 | GREEN (+13%) |
+| L3701b464 (twin of L21f079b6) | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
+| L3701b464 (twin of L21f079b6) | REPLACE (candidate) | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
+| L3701b464 (twin of L21f079b6) | ADD (reference, not a candidate) | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
+| L3701b464 (twin of L21f079b6) | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
+| L3701b464 (twin of L21f079b6) | REPLACE (candidate) | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
+| L3701b464 (twin of L21f079b6) | ADD (reference, not a candidate) | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
+| L3701b464 (twin of L21f079b6) | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
+| L3701b464 (twin of L21f079b6) | REPLACE (candidate) | Y2025 | 27735 | -77634 | -32511 | +6709 | GREEN (+2%) |
+| L3701b464 | ADD | Y2025 | pending | | | | |
+| L3701b464 (twin of L21f079b6) | TODAY (JL3) | Y2024 | 28856 | -72026 | -37355 | +4549 | - |
+| L3701b464 (twin of L21f079b6) | REPLACE (candidate) | Y2024 | 26900 | -63077 | -38237 | +5219 | GREEN (+2%) |
+| L3701b464 | ADD | Y2024 | pending | | | | |
+| L3701b464 (twin of L21f079b6) | TODAY (JL3) | Y2023 | 19039 | -41848 | -17538 | +1797 | - |
+| L3701b464 (twin of L21f079b6) | REPLACE (candidate) | Y2023 | 17341 | -46048 | -25258 | +1675 | RED (+44%) |
+| L3701b464 | ADD | Y2023 | pending | | | | |
+
+| cell | pooled persistence REPLACE (months) | pooled persistence ADD (months) | RED years REPLACE / ADD | PICK | what is still needed |
+|---|---|---|---|---|---|
+| L01811caa | 0.59 (43 mo) | 0.60 (43 mo) | none / none | **REPLACE** (REPLACE: better on ulcer and mean $/wk, no RED year, pooled persistence 0.59 >= 0.58) [STRICT PASS (ulcer, mean, worst week and max DD all not worse on L6M and L3M)] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L6a25b155 | 0.59 (43 mo) | 0.65 (43 mo) | none / none | **REPLACE** (REPLACE: better on ulcer and mean $/wk, no RED year, pooled persistence 0.59 >= 0.58) [fails the STRICT criterion: WORST WEEK L6M worse by $1005; WORST WEEK L3M worse by $1005: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L0f097450 (twin of L21f079b6) | 0.55 (43 mo) | 0.58 (43 mo) | Y2023 / none | **none yet** (REPLACE: RED Y2023; persistence 0.55 < 0.58) [fails the STRICT criterion: WORST WEEK L6M worse by $3120; WORST WEEK L3M worse by $3120: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L3701b464 (twin of L21f079b6) | 0.55 (43 mo) | 0.59 (10 mo) | Y2023 / none | **none yet** (REPLACE: RED Y2023; persistence 0.55 < 0.58) [fails the STRICT criterion: WORST WEEK L6M worse by $3120; WORST WEEK L3M worse by $3120: BEST-AVAILABLE-NOT-PROVEN, Josh decides] | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+
+**Candidates passing recent months + no RED year + persistence >= 0.58:** L01811caa (REPLACE), L6a25b155 (REPLACE).
+**Dates:** 30 controls: queued at the front (landing as the fleet reaches them, ~06 hours at 2,000 sm/h); layers + exit run: the layer programme per candidate is ~1,068 set-months (about 0.5 h of fleet) but needs the automatic layer builder (not built, my ETA 2026-11-20 12:00Z) and the exit engine families (builder not started); so the earliest "through everything" date for L01811caa and L6a25b155 (they stay first) is 2026-11-21 ~12:00Z, later if the exit engine builder starts late. L0f097450 (= L3701b464, same stream) is judged by the same ADD/REPLACE rule.
+
+## STRICT criterion table (Asia / D8 rule: stack ulcer LOWER, mean $/wk NOT LOWER, worst week NOT WORSE, max DD NOT WORSE; L6M with L3M beside; REPLACE-K7 vs TODAY stack; engine base lots, $4.84)
+| cell | window | metric | today | REPLACE-K7 | change | pass |
+|---|---|---|---|---|---|---|
+| L01811caa | L6M | stack ulcer (lower = better) | +9416 | +9342 | -75 | PASS |
+| L01811caa | L6M | max drawdown | -31109 | -29253 | +1857 | PASS |
+| L01811caa | L6M | worst week | -15728 | -15108 | +620 | PASS |
+| L01811caa | L6M | mean $/wk | +18755 | +20510 | +1755 | PASS |
+| L01811caa | L3M | stack ulcer (lower = better) | +11035 | +10587 | -448 | PASS |
+| L01811caa | L3M | max drawdown | -31109 | -28995 | +2114 | PASS |
+| L01811caa | L3M | worst week | -15728 | -13266 | +2462 | PASS |
+| L01811caa | L3M | mean $/wk | +16098 | +18707 | +2609 | PASS |
+| L01811caa | both | STRICT VERDICT | | | | **PASS** |
+| L6a25b155 | L6M | stack ulcer (lower = better) | +9416 | +9238 | -178 | PASS |
+| L6a25b155 | L6M | max drawdown | -31109 | -29945 | +1164 | PASS |
+| L6a25b155 | L6M | worst week | -15728 | -16733 | -1005 | **FAIL** |
+| L6a25b155 | L6M | mean $/wk | +18755 | +19675 | +919 | PASS |
+| L6a25b155 | L3M | stack ulcer (lower = better) | +11035 | +10415 | -620 | PASS |
+| L6a25b155 | L3M | max drawdown | -31109 | -29945 | +1164 | PASS |
+| L6a25b155 | L3M | worst week | -15728 | -16733 | -1005 | **FAIL** |
+| L6a25b155 | L3M | mean $/wk | +16098 | +17400 | +1301 | PASS |
+| L6a25b155 | both | STRICT VERDICT | | | | **FAIL** |
+| L0f097450 (twin of L21f079b6) | L6M | stack ulcer (lower = better) | +9416 | +9358 | -58 | PASS |
+| L0f097450 (twin of L21f079b6) | L6M | max drawdown | -31109 | -29253 | +1857 | PASS |
+| L0f097450 (twin of L21f079b6) | L6M | worst week | -15728 | -18848 | -3120 | **FAIL** |
+| L0f097450 (twin of L21f079b6) | L6M | mean $/wk | +18755 | +21047 | +2291 | PASS |
+| L0f097450 (twin of L21f079b6) | L3M | stack ulcer (lower = better) | +11035 | +10531 | -504 | PASS |
+| L0f097450 (twin of L21f079b6) | L3M | max drawdown | -31109 | -28828 | +2281 | PASS |
+| L0f097450 (twin of L21f079b6) | L3M | worst week | -15728 | -18848 | -3120 | **FAIL** |
+| L0f097450 (twin of L21f079b6) | L3M | mean $/wk | +16098 | +19000 | +2902 | PASS |
+| L0f097450 (twin of L21f079b6) | both | STRICT VERDICT | | | | **FAIL** |
+
+## SLOT OPTIONS per candidate (REPLACE of one live NY AM book; engine rows, today stack vs REPLACE; base lots, $4.84; strict = ulcer lower, mean not lower, worst week not worse, max DD not worse)
+| cell | replaces | window | ulcer today -> new | mean $/wk today -> new | worst week today -> new | max DD today -> new | strict (u / m / w / dd) | rule B colour 2025 / 2024 / 2023 | pooled persistence | STRICT verdict |
+|---|---|---|---|---|---|---|---|---|---|---|
+| L01811caa | K7 | L6M | 9416 -> 9342 | +18755 -> +20510 | -15728 -> -15108 | -31109 -> -29253 | PASS / PASS / PASS / PASS | GREEN (-8%) / GREEN (+6%) / AMBER (+24%) | 0.59 (43 mo) |  |
+| L01811caa | K7 | L3M | 11035 -> 10587 | +16098 -> +18707 | -15728 -> -13266 | -31109 -> -28995 | PASS / PASS / PASS / PASS |  |  | **PASS** |
+| L01811caa | P7 | L6M | 9416 -> 8703 | +18755 -> +19469 | -15728 -> -14519 | -31109 -> -26864 | PASS / PASS / PASS / PASS | GREEN (+1%) / GREEN (+1%) / AMBER (+18%) | 0.66 (43 mo) |  |
+| L01811caa | P7 | L3M | 11035 -> 9670 | +16098 -> +16931 | -15728 -> -11074 | -31109 -> -25684 | PASS / PASS / PASS / PASS |  |  | **PASS** |
+| L01811caa | M7 | L6M | 9416 -> 8960 | +18755 -> +19318 | -15728 -> -13068 | -31109 -> -28070 | PASS / PASS / PASS / PASS | GREEN (-7%) / GREEN (-2%) / GREEN (-5%) | 0.60 (43 mo) |  |
+| L01811caa | M7 | L3M | 11035 -> 10299 | +16098 -> +16604 | -15728 -> -11897 | -31109 -> -28070 | PASS / PASS / PASS / PASS |  |  | **PASS** |
+| L01811caa | H7 | L6M | 9416 -> 9194 | +18755 -> +19509 | -15728 -> -15409 | -31109 -> -28439 | PASS / PASS / PASS / PASS | GREEN (-6%) / GREEN (+4%) / GREEN (+5%) | 0.61 (43 mo) |  |
+| L01811caa | H7 | L3M | 11035 -> 10445 | +16098 -> +17094 | -15728 -> -11819 | -31109 -> -28439 | PASS / PASS / PASS / PASS |  |  | **PASS** |
+| L6a25b155 | K7 | L6M | 9416 -> 9238 | +18755 -> +19675 | -15728 -> -16733 | -31109 -> -29945 | PASS / PASS / **FAIL** / PASS | GREEN (+3%) / GREEN (+10%) / AMBER (+15%) | 0.59 (43 mo) |  |
+| L6a25b155 | K7 | L3M | 11035 -> 10415 | +16098 -> +17400 | -15728 -> -16733 | -31109 -> -29945 | PASS / PASS / **FAIL** / PASS |  |  | **FAIL** |
+| L6a25b155 | P7 | L6M | 9416 -> 8733 | +18755 -> +18907 | -15728 -> -15244 | -31109 -> -26864 | PASS / PASS / PASS / PASS | GREEN (+12%) / GREEN (+12%) / GREEN (+15%) | 0.61 (43 mo) |  |
+| L6a25b155 | P7 | L3M | 11035 -> 9649 | +16098 -> +16522 | -15728 -> -15244 | -31109 -> -26634 | PASS / PASS / PASS / PASS |  |  | **PASS** |
+| L6a25b155 | M7 | L6M | 9416 -> 8807 | +18755 -> +18867 | -15728 -> -16068 | -31109 -> -29020 | PASS / PASS / **FAIL** / PASS | n/a (pending) / n/a (pending) / n/a (pending) | 0.46 (6 mo) |  |
+| L6a25b155 | M7 | L3M | 11035 -> 10068 | +16098 -> +16183 | -15728 -> -16068 | -31109 -> -29020 | PASS / PASS / **FAIL** / PASS |  |  | **FAIL** |
+| L6a25b155 | H7 | L6M | 9416 -> 9056 | +18755 -> +19068 | -15728 -> -15989 | -31109 -> -29389 | PASS / PASS / **FAIL** / PASS | n/a (pending) / n/a (pending) / n/a (pending) | 0.54 (6 mo) |  |
+| L6a25b155 | H7 | L3M | 11035 -> 10237 | +16098 -> +16780 | -15728 -> -15989 | -31109 -> -29389 | PASS / PASS / **FAIL** / PASS |  |  | **FAIL** |
 
 ## ENGINE RULE B: prior-year gate, stack WITH the new book vs TODAY stack in the same year (order 1122Z)
 
@@ -205,36 +353,36 @@ Controls = the same events moved +-7..105 days (same weekday). Real beats a cont
 | L01811caa | short-only ADD | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L01811caa | short-only ADD | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L01811caa | short-only ADD | 2025 | pending | pending | pending | pending | pending | pending | n/a |
-| L0f097450 | both sides REPLACE K7 | 2023 | -9% | +10% | +44% | +7% | RED | 0.58 | see shortlist |
-| L0f097450 | both sides REPLACE K7 | 2024 | -7% | -12% | +2% | -15% | GREEN | 0.62 | see shortlist |
-| L0f097450 | both sides REPLACE K7 | 2025 | -17% | -15% | -16% | +2% | GREEN | 0.62 | see shortlist |
-| L0f097450 | both sides ADD | 2023 | -12% | +12% | +13% | -30% | GREEN | 0.53 | see shortlist |
-| L0f097450 | both sides ADD | 2024 | -3% | -8% | -6% | -16% | GREEN | 0.54 | see shortlist |
-| L0f097450 | both sides ADD | 2025 | -22% | -17% | -11% | -11% | GREEN | 0.69 | see shortlist |
-| L0f097450 | long-only REPLACE K7 | 2023 | -14% | +3% | +29% | +1% | AMBER | 0.63 | see shortlist |
-| L0f097450 | long-only REPLACE K7 | 2024 | -8% | -2% | -3% | -17% | GREEN | 0.58 | see shortlist |
-| L0f097450 | long-only REPLACE K7 | 2025 | +11% | +12% | +17% | +10% | AMBER | 0.50 | see shortlist |
-| L0f097450 | long-only ADD | 2023 | -19% | -14% | +5% | -35% | GREEN | 0.68 | see shortlist |
-| L0f097450 | long-only ADD | 2024 | -6% | +3% | -6% | -17% | GREEN | 0.73 | see shortlist |
-| L0f097450 | long-only ADD | 2025 | +5% | +12% | +25% | -1% | AMBER | 0.62 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides REPLACE K7 | 2023 | -9% | +10% | +44% | +7% | RED | 0.58 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides REPLACE K7 | 2024 | -7% | -12% | +2% | -15% | GREEN | 0.62 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides REPLACE K7 | 2025 | -17% | -15% | -16% | +2% | GREEN | 0.62 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides ADD | 2023 | -12% | +12% | +13% | -30% | GREEN | 0.53 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides ADD | 2024 | -3% | -8% | -6% | -16% | GREEN | 0.54 | see shortlist |
+| L0f097450 (twin of L21f079b6) | both sides ADD | 2025 | -22% | -17% | -11% | -11% | GREEN | 0.69 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only REPLACE K7 | 2023 | -14% | +3% | +29% | +1% | AMBER | 0.63 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only REPLACE K7 | 2024 | -8% | -2% | -3% | -17% | GREEN | 0.58 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only REPLACE K7 | 2025 | +11% | +12% | +17% | +10% | AMBER | 0.50 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only ADD | 2023 | -19% | -14% | +5% | -35% | GREEN | 0.68 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only ADD | 2024 | -6% | +3% | -6% | -17% | GREEN | 0.73 | see shortlist |
+| L0f097450 (twin of L21f079b6) | long-only ADD | 2025 | +5% | +12% | +25% | -1% | AMBER | 0.62 | see shortlist |
 | L0f097450 | short-only REPLACE K7 | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L0f097450 | short-only REPLACE K7 | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L0f097450 | short-only REPLACE K7 | 2025 | pending | pending | pending | pending | pending | pending | n/a |
 | L0f097450 | short-only ADD | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L0f097450 | short-only ADD | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L0f097450 | short-only ADD | 2025 | pending | pending | pending | pending | pending | pending | n/a |
-| L3701b464 (twin of L0f097450) | both sides REPLACE K7 | 2023 | -9% | +10% | +44% | +7% | RED | 0.58 | see shortlist |
-| L3701b464 (twin of L0f097450) | both sides REPLACE K7 | 2024 | -7% | -12% | +2% | -15% | GREEN | 0.62 | see shortlist |
-| L3701b464 (twin of L0f097450) | both sides REPLACE K7 | 2025 | -17% | -15% | -16% | +2% | GREEN | 0.62 | see shortlist |
+| L3701b464 (twin of L21f079b6) | both sides REPLACE K7 | 2023 | -9% | +10% | +44% | +7% | RED | 0.58 | see shortlist |
+| L3701b464 (twin of L21f079b6) | both sides REPLACE K7 | 2024 | -7% | -12% | +2% | -15% | GREEN | 0.62 | see shortlist |
+| L3701b464 (twin of L21f079b6) | both sides REPLACE K7 | 2025 | -17% | -15% | -16% | +2% | GREEN | 0.62 | see shortlist |
 | L3701b464 | both sides ADD | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | both sides ADD | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | both sides ADD | 2025 | pending | pending | pending | pending | pending | pending | n/a |
-| L3701b464 (twin of L0f097450) | long-only REPLACE K7 | 2023 | -14% | +3% | +29% | +1% | AMBER | 0.63 | see shortlist |
-| L3701b464 (twin of L0f097450) | long-only REPLACE K7 | 2024 | -8% | -2% | -3% | -17% | GREEN | 0.58 | see shortlist |
-| L3701b464 (twin of L0f097450) | long-only REPLACE K7 | 2025 | +11% | +12% | +17% | +10% | AMBER | 0.50 | see shortlist |
-| L3701b464 (twin of L0f097450) | long-only ADD | 2023 | -19% | -14% | +5% | -35% | GREEN | 0.68 | see shortlist |
-| L3701b464 (twin of L0f097450) | long-only ADD | 2024 | -6% | +3% | -6% | -17% | GREEN | 0.73 | see shortlist |
-| L3701b464 (twin of L0f097450) | long-only ADD | 2025 | +5% | +12% | +25% | -1% | AMBER | 0.62 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only REPLACE K7 | 2023 | -14% | +3% | +29% | +1% | AMBER | 0.63 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only REPLACE K7 | 2024 | -8% | -2% | -3% | -17% | GREEN | 0.58 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only REPLACE K7 | 2025 | +11% | +12% | +17% | +10% | AMBER | 0.50 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only ADD | 2023 | -19% | -14% | +5% | -35% | GREEN | 0.68 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only ADD | 2024 | -6% | +3% | -6% | -17% | GREEN | 0.73 | see shortlist |
+| L3701b464 (twin of L21f079b6) | long-only ADD | 2025 | +5% | +12% | +25% | -1% | AMBER | 0.62 | see shortlist |
 | L3701b464 | short-only REPLACE K7 | 2023 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | short-only REPLACE K7 | 2024 | pending | pending | pending | pending | pending | pending | n/a |
 | L3701b464 | short-only REPLACE K7 | 2025 | pending | pending | pending | pending | pending | pending | n/a |
@@ -287,7 +435,7 @@ Controls = the same events moved +-7..105 days (same weekday). Real beats a cont
 - L6a25b155 short-only ADD: pending (no prior-year rows yet)
 
 ## D8 gate under the exit-run rule (order 0213Z)
-Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 1255 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 22 candidates that beat a live book now = 9636 set-months = 10.4 h at 928 set-months/h (3.3 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
+Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 1381 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 25 candidates that beat a live book now = 10950 set-months = 11.8 h at 928 set-months/h (3.8 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
 
 ## All other cells: see the csv (verdict per live book: no / pending)
 
