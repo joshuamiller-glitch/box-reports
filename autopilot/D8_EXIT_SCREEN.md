@@ -1,4 +1,4 @@
-# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 09:00Z
+# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 09:15Z
 Research only. Screen = points per lot (base lots), 68 recipes (7 families) on the candidate cell's OWN entries, run on real entries and on 2 random-entry draws (same count / side mix). Pick rule (PREREG_D8EXIT.md sha in DECISIONS.md): eligible = L6M>0, L3M>0, trades L6M>=20, no prior year (2023-25) >30% worse; best = lowest ulcer then highest L6M. A cell BEATS-NULL when its best eligible recipe L6M exceeds the best eligible recipe of BOTH null draws (2 draws = screen only; finalists get more draws). Data week index 189 (as EXIT_YIELD). Fixed reference = best fixed bracket of the cell from pass-1 (p1real).
 Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. Until a family is built, a recipe of that family cannot be the best TESTED exit in the D8 spec (screen result stands).
 
@@ -7,9 +7,9 @@ Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. 
 | session | candidate cells | screened | pending | with an eligible exit (real) | BEATS-NULL | beat fixed ref too | ETA |
 |---|---|---|---|---|---|---|---|
 | Asia | 1875 | 1875 | 0 | 393 | 352 | 296 | done |
-| NY AM | 4557 | 3021 | 1536 | 707 | 625 | 494 | about 1.8 h after the sessions above (fleet 841 cells/h) |
+| NY AM | 4557 | 3134 | 1423 | 747 | 662 | 521 | about 1.8 h after the sessions above (fleet 775 cells/h) |
 | London | 0 | 0 | 0 | 0 | 0 | 0 | done |
-| NY PM | 396 | 116 | 280 | 8 | 8 | 3 | about 2.2 h after the sessions above (fleet 841 cells/h) |
+| NY PM | 396 | 116 | 280 | 8 | 8 | 3 | about 2.2 h after the sessions above (fleet 775 cells/h) |
 
 Asia and London candidates appear here when W-LONENG's engine rows land in D8_CANDIDATES (0 now = none listed yet, not "none exist").
 
@@ -322,31 +322,36 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 
 | family | cells where it is the best eligible exit (real) | same on null (mean of 2 draws) |
 |---|---|---|
-| market target | 358 | 88.0 |
-| staged | 149 | 27.0 |
-| stop-and-reverse | 36 | 5.5 |
-| structure stop | 40 | 4.5 |
-| time / behaviour | 167 | 48.5 |
-| trailing | 358 | 109.5 |
+| market target | 369 | 90.5 |
+| order flow | 0 | 0.5 |
+| staged | 154 | 27.0 |
+| stop-and-reverse | 37 | 5.5 |
+| structure stop | 40 | 5.0 |
+| time / behaviour | 175 | 50.0 |
+| trailing | 373 | 112.0 |
 
-Screened cells with an eligible exit: real 1108 of 5012 (22%), null 283.0 of 5012 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
+Screened cells with an eligible exit: real 1148 of 5125 (22%), null 290.5 of 5125 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
 
 ## c2. BEATS-LIVE set (order 0740Z item 3): D8 candidates that already beat a live book in the exact engine - screened FIRST (sorted to the front of every host list; any worker takes them before the rank order)
 
-Set size 15 cells (NY AM 4, Asia 11); screened 15, pending 0. Fleet rate last hour 917 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 09:00Z).
+Set size 19 cells (NY AM 4, Asia 15); screened 19, pending 0. Fleet rate last hour 800 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 09:15Z).
 | cell id | session | cell | best eligible exit (real) | L6M | ulcer | fixed ref | null a / b best eligible L6M | beats nulls |
 |---|---|---|---|---|---|---|---|---|
 | L03a14486 | Asia | Asia/vsess_30/trig_bands_atrchan/break_ema/{"n": 20, "atr": 14, "k": 1.5}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +80 | - / - | no |
+| L0b1d7882 | Asia | Asia/tm30/trig_bands_vwap/break/{"minbars": 10, "k": 1.0}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | L3ee2d289 | Asia | Asia/vsess_50/trig_momentum_mvote/v3of5_native/{"scale": 1.0, "thr": 0.25}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | L40bde9ea | Asia | Asia/vsess_120/trig_momentum_mvote/v4of5_native/{"scale": 1.0, "thr": 0.25}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | L5c9e11b3 | Asia | Asia/vol_750/trig_momentum_mvote/v3of5/{"scale": 0.25, "thr": 0.25}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
+| La5b5d03a | Asia | Asia/time_m_2/trig_bands_atrchan/break_ema_native/{"clk": 5, "k": 1.5}/sym8u/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | Lb68a132d | Asia | Asia/tm600/trig_bands_vwap/walk_native/{"clk": 6, "k": 1.0, "N": 2}/plain60/60/long | latch=(0.85, 3.0, 20.0) stop=('vol', 1.5) target=('R', 2.0) (time / behaviour) | +237 | 230 | n/a here | - / - | yes |
 | Lb79621ce | Asia | Asia/vol_1100/trig_bands_bollinger/break_native/{"clk": 20, "k": 2.0}/asym20u/10u/both | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +1353 | - / - | no |
 | Lb99687e2 | Asia | Asia/vol_1100/trig_momentum_mvote/v4of5/{"scale": 0.25, "thr": 0.25}/sym15u/both | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +2350 | - / - | no |
+| Lcb276f27 | Asia | Asia/tm120/trig_bands_atrchan/break_ema_native/{"clk": 5, "k": 1.5}/sym8u/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | Ld3c01012 | Asia | Asia/vol_1100/trig_bands_bollinger/break/{"n": 20, "k": 2.0}/asym20u/10u/both | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +1353 | - / - | no |
 | Lda55d973 | Asia | Asia/vol_750/trig_momentum_stoch/zone_break_native/{"len": 9, "lvl": 80}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | Ledfbf4d2 | Asia | Asia/vol_350/trig_bands_bollinger/break_native/{"clk": 20, "k": 1.5}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
 | Leee81e35 | Asia | Asia/vol_750/trig_bands_atrchan/break_ext/{"n": 20, "atr": 14, "k": 2.0}/asym15u/30u/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | n/a here | - / - | no |
+| Lf77e374b | Asia | Asia/tm240/trig_bands_donchian/break/{"n": 10, "buf": 0.0}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +184 | - / - | no |
 | L01811caa | NY AM | NYAM/tick_8000/trig_levels_open_range/break_native/{"n": 3, "k": 0.25}/plain60/60/both | stop=('vol', 2.5) trail=('bricks', 3) (trailing) | +229 | 443 | n/a here | - / - | yes |
 | L0f097450 | NY AM | NYAM/wrenko_20/trig_levels_profile_va/break_native/{"n": 1, "k": 0.0}/sym15u/long | stop=('vol', 2.5) trail=('chand', 3.0) (trailing) | +31 | 670 | n/a here | - / +189 | no |
 | L3701b464 | NY AM | NYAM/wrenko_20/trig_levels_profile_va/break/{"n": 1, "k": 0.0}/sym15u/long | stop=('vol', 2.5) trail=('chand', 3.0) (trailing) | +31 | 670 | n/a here | - / - | yes |
@@ -362,7 +367,7 @@ Set size 15 cells (NY AM 4, Asia 11); screened 15, pending 0. Fleet rate last ho
 | box 1 | 0 | - | memory guard (MemAvail > 40 GB) |
 
 
-Measured: 3297 groups finished, 5589 cells, mean 233 s per cell (3 tags: real + 2 null) per worker.
+Measured: 3384 groups finished, 5710 cells, mean 235 s per cell (3 tags: real + 2 null) per worker.
 
 ## e. STAGE 1 work list for this pipeline stage (order 0228Z), hours on the current fleet, 02:33Z
 | item | size | core-hours (measured) | workers now | wall hours at today's workers | wall hours if every A+B thread (256) |
