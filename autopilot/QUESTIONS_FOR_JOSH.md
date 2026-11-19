@@ -23,3 +23,4 @@
 11. D8 inclusion rule (order 0210Z) accepted as written; 'calibration pending' books will be listed for your decision. Nothing needed from you now.
 12. 0213Z correction accepted: D8 candidates get the exit run first; D8 spec date slips accordingly (estimate coming). Broad whole-grid exit run still waits for you.
 13. 0224Z: broad exit run approved by order and started as a queue behind the D8 path. Item 2 (full exit run) in this file is therefore answered; null draws 3-5 / broad run may starve >12 h: I will report hours.
+14. Engine depth (stage 1 NY AM): items 1-2 alone = ~257k set-months = 11-30 at the measured 989/h, 11-23 if the fleet reaches 2,894/h. Default applied: wait; stricter prior-year gate (beats live book L6M+L3M) first, rest queued behind. More machines would pull the date in; your call.
