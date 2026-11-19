@@ -1,3 +1,5 @@
+**NEWEST EDITION: 2026-11-19 -> autopilot/MORNING_SUMMARY_20261119.md (read that first; this file below is the 11-18 edition, kept).**
+
 # MORNING SUMMARY (lead, written 2026-11-18 13:15Z; late - the promised 12:30Z rewrite was missed, see "What went wrong")
 Research only. No spend, nothing rented, nothing on the execution server or live chart. Data end 2026-11-12 (NQ raw engine through 2026-11-13).
 
