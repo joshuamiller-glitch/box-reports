@@ -10,13 +10,14 @@ Books: NY AM L01811caa (tick_8000, both sides) and Asia L5c9e11b3 (vol_750, both
 | 20:55Z / 21:45Z | dip entry LIM1 (2 pt limit, through-print fill) == mf_inject lim column | NY AM / Asia | LIM1_P2V1 vs REF_LIM1 | 24 / 98 | PASS / PASS |
 | 21:12Z / 21:47Z | FC = flag file + dow window + side rule by state + signal-quality sizer tiers (lots 1/2/3) == independently pre-filtered, lots-rewritten events | NY AM / Asia | FC_P2V1 vs REF_FC | 9 / 48 | PASS / PASS |
 | 21:55Z | FA (flags + 30-min blocks + dow + gate + sizer) | NY AM | FA_P2V1 vs REF_FA | 2 | PASS (weak, 2 trades) |
-| 22:33Z | FLIP (side flip by regime, flip_col) == events with side negated | NY AM | FLIP_P2V1 vs REF_FLIP | 25 | PASS |
+| 22:33Z / 22:52Z | FLIP (side flip by regime, flip_col) == events with side negated | NY AM / Asia | FLIP_P2V1 vs REF_FLIP | 25 / 104 | PASS / PASS |
+| 22:35Z | SPLITINERT: hook in multi-stream mode (market leg + dip leg as two books) == th_combo/mf_multi on the same two event files | NY AM | SPLITINERT_P2V1 vs SPLITREF | 51 (stack 743) | PASS |
 | 20:55Z / 21:50Z | IT1 in-trade (early cut 12 pt/180 s, no-progress, take-at, lock) vs independent tape walker from each engine entry fill | NY AM / Asia | walker (exit time <= 3 s resting / 15 s market, class) | 52 / 169 | PASS 52/52, 169/169 (P2Cut 63, P2Take 18, P2NoProg 11, Stop, Target, BookLock layer exits excluded) |
 | 22:00Z | IT2 in R units (cut_at, no-progress, lock) | NY AM | walker | 41 | PASS 41/41 |
 | 21:13Z | CL1 cooldown after loss: audit (every skip justified by a prior net loss inside the window, no taken trade violates it, 101/101 events accounted for in the logs) | NY AM | audit | 21 trades, 17 skips | PASS |
 | 21:13Z | BC3 book-confirmed entry: audit (confirmation imbalance >= threshold 0.35 min 0.353, delay <= wait, 83 of 101 events expired unconfirmed) | NY AM | audit | 10 | PASS |
 Fast path: W-FASTLADDER ran exact-vs-fast pairs on INERT/LIM1/IT1/FC/CL1/BC3 (8 of 8 then 10 identical) and added the template TL3_EXE_P2_L<h>_(INERT|LIM1|IT1|FC|CL1|BC3)_P2V1 at 21:55Z; IT2, FA, FLIP and SPLIT follow as pairs land.
-Still running / not yet identity-tested: SPLIT (two streams mf_multi vs SPLITREF), Asia CL1/BC3/IT2/FA/FLIP, CL2 (same-side + day cap + no-rechase), FB (switch book by src column). NOT identity-tested at all: size_engine_er (engine 5-min ER sizer) active, er_gate active (inert only); rechase (needs the quote at the event: counted, not re-derived by the audit).
+Still running / not yet identity-tested: SPLIT with flags (reference REF_SPLIT running, ETA ~23:15Z; SPLIT run itself landed: 16 market legs + 16 dip legs, no dip leg before its signal), Asia CL1/BC3/IT2/FA, CL2 (same-side + day cap + no-rechase), FB (switch book by src column). NOT identity-tested at all: size_engine_er (engine 5-min ER sizer) active, er_gate active (inert only); rechase (needs the quote at the event: counted, not re-derived by the audit).
 Pre-freeze v0 results (INERT 722/722 + 746/746, LIM1 24, IT1 52, CL1, FC) were re-run on v1 with the same outcome; v0 results are parked by the stale checker.
 
 ## Flag-file interface (agreed with W-P2A; PASS2_COMBINER.md section 6)

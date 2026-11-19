@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-19 22:49Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-19 22:54Z.
 Method: forward selection from an EMPTY Asia session (all five live Asia books OFF, account layers ON, rest of the day = JL3) with NEW books only, exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
 Phase: wait1. Candidates tried: 100 (step 1 all; later steps the scorer-ordered top 15 exact).
 
