@@ -1,8 +1,8 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 13:42Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 14:22Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer add / swap one book in today's stack, not the rebuilt stack.** WP10 and XA3 stay leads on that basis.
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 5386.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 6876.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the live DAY-DONE rule (engine: scr_hooks gate "conj" = the stack has >= 22 closes today AND the day is <= -2R = -2,400 base = -4,200 live; it applies to every book incl. the new one and skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
@@ -46,7 +46,7 @@ Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract
 | Y2023 | +43592 | +44609 (339, -1017) | +44046 (352, -454) | +45942 (356, -2350) |
 
 ## R5 ladder (engine staged; SCREEN RANK, NOT YET CALIBRATED: the whole-search null is the judge)
-Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 96011. Everything is vs TODAY's stack, provisional until Asia and London are decided.
+Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 34044. Everything is vs TODAY's stack, provisional until Asia and London are decided.
 
 ## XA3 phase 3a (own layers; vs today's stack, provisional until Asia and London are decided)
 Identity TL3_NYL_XA3_ID1-9 PASS. Fit stage F1 (72 settings x last 6 months) landed; scored on autopilot/NEW_BOOK_LAYER_FIT_XA3.md (ulcer first, vs the ADD row and vs JL3); stage F2 (top 2 settings per layer with ulcer better and >= 80% of trades, prior years 2023-2026-04) queued; joint stage after F2.
@@ -160,6 +160,175 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | XA5 | kagi_28 | book_ofi.follow_sm | L3M | -52558 (458 tr) | -31913 (261 tr) | -1797 | blocked: SCR gate conj 564; blocked: inTrade 521; entries 261; exit: Stop 125; exit note: stack rule Asia-only, no cut 125; exit: Target 100; blocked: dayHalt 61 |
 | XA6 | renko_20 | trend_libstack.ema_hold | L6M | +5349 (1143 tr) | +48960 (533 tr) | -1076 | blocked: SCR gate conj 792; entries 533; blocked: inTrade 447; blocked: dayHalt 277; exit: Target 265; exit: Stop 208; exit note: stack rule Asia-only, no cut 208 |
 | XA6 | renko_20 | trend_libstack.ema_hold | L3M | -25068 (397 tr) | +16650 (219 tr) | -7024 | blocked: SCR gate conj 292; blocked: inTrade 246; entries 219; exit: Target 108; blocked: dayHalt 86; exit: Stop 85; exit note: stack rule Asia-only, no cut 85 |
+| La0dbbae6 | tick_5000 | levels_profile_nodes.break | L6M | -12634 (239 tr) | +9899 (147 tr) | -3914 |  |
+| La0dbbae6 | tick_5000 | levels_profile_nodes.break | L3M | +5158 (88 tr) | +12130 (60 tr) | -2330 |  |
+| L60cef2ae | drb_240 | levels_profile_nodes.false_break_native | L6M | -19359 (573 tr) | +8983 (362 tr) | -5699 |  |
+| L60cef2ae | drb_240 | levels_profile_nodes.false_break_native | L3M | +690 (201 tr) | -582 (144 tr) | -3927 |  |
+| L18117a71 | vrb_240 | levels_profile_va.break_native | L6M | -1766 (286 tr) | +13910 (188 tr) | -8566 |  |
+| L18117a71 | vrb_240 | levels_profile_va.break_native | L3M | -5654 (123 tr) | +3389 (88 tr) | -2989 |  |
+| Lb696c500 | drb_240 | levels_profile_nodes.false_break | L6M | -12376 (634 tr) | +9180 (372 tr) | -8999 |  |
+| Lb696c500 | drb_240 | levels_profile_nodes.false_break | L3M | -11806 (217 tr) | +1384 (149 tr) | -7227 |  |
+| L8ac754c9 | drb_2000 | levels_profile_nodes.false_break_native | L6M | -27807 (254 tr) | +22210 (159 tr) | -614 |  |
+| L8ac754c9 | drb_2000 | levels_profile_nodes.false_break_native | L3M | -8209 (96 tr) | +3557 (73 tr) | -614 |  |
+| L265998e4 | drb_2000 | levels_profile_nodes.false_break | L6M | -27807 (254 tr) | +22210 (159 tr) | -614 |  |
+| L265998e4 | drb_2000 | levels_profile_nodes.false_break | L3M | -8209 (96 tr) | +3557 (73 tr) | -614 |  |
+| L39470318 | vol_750 | levels_profile_va.retest | L6M | +44179 (397 tr) | +43327 (264 tr) | -4136 |  |
+| L39470318 | vol_750 | levels_profile_va.retest | L3M | +16913 (166 tr) | +18140 (127 tr) | -2364 |  |
+| L3fd2d876 | vol_6000 | levels_profile_va.false_break_native | L6M | +22010 (134 tr) | +24649 (90 tr) | +2693 |  |
+| L3fd2d876 | vol_6000 | levels_profile_va.false_break_native | L3M | +8278 (55 tr) | +10467 (41 tr) | +2693 |  |
+| Lf7bced9d | dol_350 | levels_profile_nodes.retest_native | L6M | +32887 (261 tr) | +14186 (162 tr) | +7375 |  |
+| Lf7bced9d | dol_350 | levels_profile_nodes.retest_native | L3M | -2288 (94 tr) | -12729 (71 tr) | +7375 |  |
+| L582e03e7 | drb_1200 | book_cancel.net_follow | L6M | -13226 (268 tr) | +17393 (177 tr) | -9276 |  |
+| L582e03e7 | drb_1200 | book_cancel.net_follow | L3M | -13855 (110 tr) | -2092 (80 tr) | -8948 |  |
+| L308e6047 | drb_2000 | book_ofi.follow | L6M | +14923 (318 tr) | +19285 (217 tr) | -6240 |  |
+| L308e6047 | drb_2000 | book_ofi.follow | L3M | +23543 (135 tr) | +20636 (97 tr) | -4271 |  |
+| L79892e2e | rng_20 | levels_profile_va.break_native | L6M | +29130 (209 tr) | +27327 (137 tr) | -3933 |  |
+| L79892e2e | rng_20 | levels_profile_va.break_native | L3M | -4219 (81 tr) | -12455 (61 tr) | -834 |  |
+| L3aca3c47 | rng_28 | levels_profile_va.false_break_native | L6M | +15678 (207 tr) | +33413 (141 tr) | -9606 |  |
+| L3aca3c47 | rng_28 | levels_profile_va.false_break_native | L3M | +5011 (85 tr) | +10385 (65 tr) | -2308 |  |
+| L471515d9 | rng_56 | levels_profile_va.retest_native | L6M | +7831 (384 tr) | +11404 (241 tr) | +412 |  |
+| L471515d9 | rng_56 | levels_profile_va.retest_native | L3M | +642 (145 tr) | -802 (113 tr) | -2958 |  |
+| L28f3d3c1 | rng_20 | levels_profile_va.break | L6M | +29130 (209 tr) | +27327 (137 tr) | -3933 |  |
+| L28f3d3c1 | rng_20 | levels_profile_va.break | L3M | -4219 (81 tr) | -12455 (61 tr) | -834 |  |
+| Lcfeda8c4 | rng_28 | levels_profile_va.false_break | L6M | +15678 (207 tr) | +33413 (141 tr) | -9606 |  |
+| Lcfeda8c4 | rng_28 | levels_profile_va.false_break | L3M | +5011 (85 tr) | +10385 (65 tr) | -2308 |  |
+| L21f079b6 | wrenko_20 | levels_profile_va.break_native | L6M | +16870 (205 tr) | +50552 (135 tr) | -4900 |  |
+| L21f079b6 | wrenko_20 | levels_profile_va.break_native | L3M | +18180 (82 tr) | +24230 (62 tr) | +2748 |  |
+| L875ee048 | mrenko_10 | levels_profile_va.break | L6M | -6116 (472 tr) | +6606 (288 tr) | -480 |  |
+| L875ee048 | mrenko_10 | levels_profile_va.break | L3M | -14765 (190 tr) | -5437 (141 tr) | +1665 |  |
+| Lcced15b8 | renko_14 | levels_profile_va.break | L6M | +43184 (242 tr) | +28670 (156 tr) | -2103 |  |
+| Lcced15b8 | renko_14 | levels_profile_va.break | L3M | +2926 (103 tr) | +1237 (74 tr) | -199 |  |
+| L718a3a1d | renko_14 | levels_profile_va.retest_native | L6M | +25315 (227 tr) | +33499 (153 tr) | -3523 |  |
+| L718a3a1d | renko_14 | levels_profile_va.retest_native | L3M | +6854 (90 tr) | -2109 (71 tr) | -632 |  |
+| Lf967df3b | wrenko_20 | levels_profile_va.break | L6M | +16870 (205 tr) | +50552 (135 tr) | -4900 |  |
+| Lf967df3b | wrenko_20 | levels_profile_va.break | L3M | +18180 (82 tr) | +24230 (62 tr) | +2748 |  |
+| L79cd626b | frenko_40 | levels_profile_va.false_break_native | L6M | +11767 (196 tr) | +30860 (125 tr) | +337 |  |
+| L79cd626b | frenko_40 | levels_profile_va.false_break_native | L3M | +16297 (75 tr) | +19694 (56 tr) | +337 |  |
+| Lc6e4ce81 | kagi_14 | levels_profile_nodes.false_break_native | L6M | +11193 (270 tr) | +34447 (171 tr) | -6609 |  |
+| Lc6e4ce81 | kagi_14 | levels_profile_nodes.false_break_native | L3M | +14512 (91 tr) | +24226 (68 tr) | -3012 |  |
+| L6be3bb7c | tm180 | levels_profile_va.reject | L6M | +9309 (320 tr) | +20381 (192 tr) | +2225 |  |
+| L6be3bb7c | tm180 | levels_profile_va.reject | L3M | -8633 (134 tr) | +2585 (92 tr) | -461 |  |
+| L11967aac | tm180 | levels_profile_va.reject_native | L6M | +9309 (320 tr) | +20381 (192 tr) | +2225 |  |
+| L11967aac | tm180 | levels_profile_va.reject_native | L3M | -8633 (134 tr) | +2585 (92 tr) | -461 |  |
+| Lcd368087 | tick_2000 | structure_breakout.brk_native | L6M | -602 (190 tr) | +15122 (138 tr) | -1427 |  |
+| Lcd368087 | tick_2000 | structure_breakout.brk_native | L3M | -4915 (91 tr) | +5586 (69 tr) | -4113 |  |
+| Ld47902ff | vol_1100 | levels_vwap.break | L6M | +34993 (333 tr) | +48549 (210 tr) | -9032 |  |
+| Ld47902ff | vol_1100 | levels_vwap.break | L3M | -20356 (128 tr) | -6736 (89 tr) | -9785 |  |
+| L33d1c278 | vol_750 | bands_envelope.break_ema | L6M | +614 (441 tr) | +19697 (262 tr) | +5083 |  |
+| L33d1c278 | vol_750 | bands_envelope.break_ema | L3M | -4355 (165 tr) | -2503 (105 tr) | +6426 |  |
+| L45796a06 | vsess_30 | bands_keltner.break | L6M | +16505 (230 tr) | +16366 (165 tr) | +81 |  |
+| L45796a06 | vsess_30 | bands_keltner.break | L3M | +11700 (104 tr) | +3067 (77 tr) | +2820 |  |
+| Led8baed4 | vol_4000 | levels_vwap.break | L6M | +34313 (309 tr) | +51786 (192 tr) | +15057 |  |
+| Led8baed4 | vol_4000 | levels_vwap.break | L3M | +4602 (117 tr) | +13948 (81 tr) | +12315 |  |
+| Lf0447f1d | vsess_30 | levels_vwap.retest_native | L6M | +28205 (262 tr) | -3083 (168 tr) | +14084 |  |
+| Lf0447f1d | vsess_30 | levels_vwap.retest_native | L3M | +26992 (102 tr) | +8766 (71 tr) | +14373 |  |
+| L5ee8ac30 | vol_1100 | levels_vwap.break_native | L6M | +34993 (333 tr) | +48549 (210 tr) | -9032 |  |
+| L5ee8ac30 | vol_1100 | levels_vwap.break_native | L3M | -20356 (128 tr) | -6736 (89 tr) | -9785 |  |
+| L3622205c | tick_500 | structure_breakout.brk | L6M | +54130 (486 tr) | +36517 (292 tr) | -7926 |  |
+| L3622205c | tick_500 | structure_breakout.brk | L3M | +5051 (181 tr) | +4369 (117 tr) | -2184 |  |
+| L60a286ff | swing_atr_0.25 | levels_profile_va.false_break_native | L6M | +21053 (220 tr) | +28448 (145 tr) | -4563 |  |
+| L60a286ff | swing_atr_0.25 | levels_profile_va.false_break_native | L3M | +19721 (87 tr) | +15865 (65 tr) | +1015 |  |
+| Le289ed93 | mom_28 | levels_profile_va.false_break_native | L6M | +26973 (197 tr) | +56657 (135 tr) | -8720 |  |
+| Le289ed93 | mom_28 | levels_profile_va.false_break_native | L3M | +14875 (77 tr) | +22290 (61 tr) | -1072 |  |
+| L593a5c56 | dchg_14 | levels_profile_nodes.false_break_native | L6M | +11239 (270 tr) | +34447 (171 tr) | -6609 |  |
+| L593a5c56 | dchg_14 | levels_profile_nodes.false_break_native | L3M | +14529 (91 tr) | +24226 (68 tr) | -3012 |  |
+| L8f126a83 | swing_pct_8 | levels_profile_nodes.false_break | L6M | +33179 (282 tr) | +31958 (174 tr) | -4337 |  |
+| L8f126a83 | swing_pct_8 | levels_profile_nodes.false_break | L3M | +22200 (97 tr) | +25301 (69 tr) | +204 |  |
+| Ld213a0b4 | mom_20 | levels_profile_va.false_break | L6M | +29421 (206 tr) | +38767 (135 tr) | -2624 |  |
+| Ld213a0b4 | mom_20 | levels_profile_va.false_break | L3M | +17694 (83 tr) | +21015 (64 tr) | +2954 |  |
+| L7b30753e | swing_pct_5 | levels_profile_nodes.false_break_native | L6M | -2750 (281 tr) | +37788 (178 tr) | -2016 |  |
+| L7b30753e | swing_pct_5 | levels_profile_nodes.false_break_native | L3M | -2398 (95 tr) | +8332 (73 tr) | +1581 |  |
+| Lbbb39855 | trend_20 | levels_profile_va.break_native | L6M | +16870 (205 tr) | +50552 (135 tr) | -4900 |  |
+| Lbbb39855 | trend_20 | levels_profile_va.break_native | L3M | +18180 (82 tr) | +24230 (62 tr) | +2748 |  |
+| L0bd23639 | trend_20 | levels_profile_va.break | L6M | +16870 (205 tr) | +50552 (135 tr) | -4900 |  |
+| L0bd23639 | trend_20 | levels_profile_va.break | L3M | +18180 (82 tr) | +24230 (62 tr) | +2748 |  |
+| L7ab10be1 | time_m_1 | bands_atrchan.break_ema_native | L6M | +26866 (275 tr) | +34830 (190 tr) | +766 |  |
+| L7ab10be1 | time_m_1 | bands_atrchan.break_ema_native | L3M | +16554 (119 tr) | +19704 (86 tr) | -3783 |  |
+| L7515c303 | swing_pct_5 | levels_vwap.break | L6M | +43626 (340 tr) | +45674 (212 tr) | +11585 |  |
+| L7515c303 | swing_pct_5 | levels_vwap.break | L3M | +3410 (129 tr) | +7669 (88 tr) | +14688 |  |
+| Lb3d7eb1b | urenko_28 | bands_bollinger.break_native | L6M | +14645 (450 tr) | +30585 (253 tr) | -2432 |  |
+| Lb3d7eb1b | urenko_28 | bands_bollinger.break_native | L3M | -5744 (163 tr) | -13608 (105 tr) | -2657 |  |
+| Ld2610290 | swing_atr_0.25 | levels_vwap.break_native | L6M | +44165 (347 tr) | +48584 (211 tr) | +5282 |  |
+| Ld2610290 | swing_atr_0.25 | levels_vwap.break_native | L3M | +33712 (133 tr) | +34764 (89 tr) | +9162 |  |
+| Le2a6e063 | time_m_20 | levels_fib60.break | L6M | +15679 (225 tr) | +6709 (151 tr) | +970 |  |
+| Le2a6e063 | time_m_20 | levels_fib60.break | L3M | +8365 (106 tr) | -2423 (78 tr) | -846 |  |
+| L925bb0f5 | renko_14 | structure_fvg.retest | L6M | +24740 (438 tr) | +30316 (254 tr) | -8722 |  |
+| L925bb0f5 | renko_14 | structure_fvg.retest | L3M | +27029 (162 tr) | +26627 (106 tr) | +1660 |  |
+| Lb292f65c | dib_40000 | trend_ichimoku.tk_cross_native | L6M | +21492 (297 tr) | +13945 (281 tr) | -13147 |  |
+| Lb292f65c | dib_40000 | trend_ichimoku.tk_cross_native | L3M | +17655 (148 tr) | -5083 (136 tr) | -8793 |  |
+| L27ec09c7 | dol_350 | structure_libpattern.threebar | L6M | -24993 (513 tr) | +37185 (284 tr) | +1722 |  |
+| L27ec09c7 | dol_350 | structure_libpattern.threebar | L3M | +11806 (179 tr) | +23854 (117 tr) | -285 |  |
+| L6e35bff0 | pnf_10 | bands_avwap0930.break_0930 | L6M | +25179 (463 tr) | +12842 (483 tr) | -1681 |  |
+| L6e35bff0 | pnf_10 | bands_avwap0930.break_0930 | L3M | +13028 (198 tr) | -10535 (221 tr) | -779 |  |
+| L1c19f73f | renko_28 | trend_heikin.run | L6M | +53253 (362 tr) | +49975 (220 tr) | +5294 |  |
+| L1c19f73f | renko_28 | trend_heikin.run | L3M | +47345 (134 tr) | +28369 (90 tr) | +8414 |  |
+| L932bb28e | tm240 | book_ofi.follow | L6M | +24929 (735 tr) | +13136 (444 tr) | +1060 |  |
+| L932bb28e | tm240 | book_ofi.follow | L3M | -8825 (333 tr) | -7897 (205 tr) | +1376 |  |
+| Lcdaa40bf | tm180 | book_cancel.net_follow_native | L6M | -279 (269 tr) | +27229 (180 tr) | -1185 |  |
+| Lcdaa40bf | tm180 | book_cancel.net_follow_native | L3M | +17648 (116 tr) | +32503 (84 tr) | -2043 |  |
+| L840241d1 | lbrk_3_10 | levels_fibr_on.break_native | L6M | -23935 (1047 tr) | +13425 (501 tr) | -9724 |  |
+| L840241d1 | lbrk_3_10 | levels_fibr_on.break_native | L3M | +1643 (381 tr) | +6213 (204 tr) | -2050 |  |
+| L68b147b4 | vsess_450 | momentum_mvote.v5of5_native | L6M | -6195 (324 tr) | +17786 (222 tr) | +3036 |  |
+| L68b147b4 | vsess_450 | momentum_mvote.v5of5_native | L3M | -3053 (145 tr) | -5124 (101 tr) | +4868 |  |
+| L4540ec78 | kagi_40 | levels_fibr_dev.retest_native | L6M | +11570 (457 tr) | +18982 (263 tr) | -9194 |  |
+| L4540ec78 | kagi_40 | levels_fibr_dev.retest_native | L3M | -3632 (160 tr) | +2987 (104 tr) | -2328 |  |
+| Lb44a3e99 | tm300 | tape_delta.cvd_follow | L6M | +29357 (329 tr) | +43884 (211 tr) | -4638 |  |
+| Lb44a3e99 | tm300 | tape_delta.cvd_follow | L3M | +5150 (156 tr) | +16727 (106 tr) | -5509 |  |
+| L8e5a7466 | vrb_40000 | levels_trendline.break | L6M | +14159 (128 tr) | +17943 (80 tr) | -5397 |  |
+| L8e5a7466 | vrb_40000 | levels_trendline.break | L3M | +5584 (65 tr) | +4576 (40 tr) | -4282 |  |
+| L33d4983b | renko_14 | levels_gaps.reject | L6M | +5062 (211 tr) | +35896 (132 tr) | -8366 |  |
+| L33d4983b | renko_14 | levels_gaps.reject | L3M | +33181 (73 tr) | +28004 (56 tr) | -3618 |  |
+| L0eb430f0 | dlt_100 | bands_bollinger.walk_native | L6M | +24824 (531 tr) | +34675 (341 tr) | -3660 |  |
+| L0eb430f0 | dlt_100 | bands_bollinger.walk_native | L3M | +34523 (221 tr) | +37779 (152 tr) | -6238 |  |
+| L1084d6ee | drb_10000 | bands_avwap0830.break_0830_native | L6M | +4317 (376 tr) | +3735 (253 tr) | +2621 |  |
+| L1084d6ee | drb_10000 | bands_avwap0830.break_0830_native | L3M | -8486 (185 tr) | -2739 (131 tr) | +202 |  |
+| L9d14d49d | bmsg_B030 | book_cancel.net_follow | L6M | +37545 (263 tr) | +54573 (172 tr) | -300 |  |
+| L9d14d49d | bmsg_B030 | book_cancel.net_follow | L3M | +27719 (87 tr) | +13025 (65 tr) | -1158 |  |
+| L9145e5cf | lbrk_3_10 | levels_vwap.break | L6M | +24172 (398 tr) | +51944 (241 tr) | +5103 |  |
+| L9145e5cf | lbrk_3_10 | levels_vwap.break | L3M | +920 (158 tr) | -3502 (113 tr) | +2477 |  |
+| Lee8faff6 | drb_10000 | bands_avwap0830.break_0830_native | L6M | +4317 (376 tr) | +3735 (253 tr) | +2621 |  |
+| Lee8faff6 | drb_10000 | bands_avwap0830.break_0830_native | L3M | -8486 (185 tr) | -2739 (131 tr) | +202 |  |
+| L58bcf9fc | dchg_10 | bands_keltner.break | L6M | +193 (504 tr) | +39983 (299 tr) | -4393 |  |
+| L58bcf9fc | dchg_10 | bands_keltner.break | L3M | -3447 (186 tr) | +7385 (128 tr) | -2491 |  |
+| L94ad0a1e | anch_L0200_B50 | levels_piv_floor.break_native | L6M | +7418 (482 tr) | +12258 (297 tr) | +9286 |  |
+| L94ad0a1e | anch_L0200_B50 | levels_piv_floor.break_native | L3M | +11657 (218 tr) | +7832 (140 tr) | +9601 |  |
+| L47543131 | kagi_20 | levels_vwap.break | L6M | +47636 (342 tr) | +33803 (207 tr) | +3186 |  |
+| L47543131 | kagi_20 | levels_vwap.break | L3M | +8468 (134 tr) | +8899 (88 tr) | +5234 |  |
+| Lcbda2ba7 | pasl_40 | xmarket_fast.follow_RTY | L6M | +27188 (479 tr) | +26044 (306 tr) | +14669 |  |
+| Lcbda2ba7 | pasl_40 | xmarket_fast.follow_RTY | L3M | +26779 (193 tr) | +26272 (138 tr) | +8845 |  |
+| L5332c1f1 | bmsg_B130 | trend_linreg.thresh_native | L6M | +18681 (307 tr) | +17227 (203 tr) | +6327 |  |
+| L5332c1f1 | bmsg_B130 | trend_linreg.thresh_native | L3M | +12747 (148 tr) | +456 (100 tr) | +5421 |  |
+| L97883de8 | drb_10000 | bands_envelope.break_ema | L6M | +20011 (333 tr) | +20850 (216 tr) | +345 |  |
+| L97883de8 | drb_10000 | bands_envelope.break_ema | L3M | +12566 (157 tr) | +7687 (109 tr) | -1655 |  |
+| Lb36e86fe | dol_500 | momentum_er.trend_z | L6M | +40111 (207 tr) | +33589 (148 tr) | +8786 |  |
+| Lb36e86fe | dol_500 | momentum_er.trend_z | L3M | +31609 (98 tr) | +24712 (73 tr) | +7868 |  |
+| L70d2a976 | mom_20 | bands_atrchan.break_ema | L6M | +12431 (317 tr) | +26546 (193 tr) | -2281 |  |
+| L70d2a976 | mom_20 | bands_atrchan.break_ema | L3M | +12629 (127 tr) | +15633 (83 tr) | -2220 |  |
+| L5879e162 | vol_1700 | book_ofi.follow_native | L6M | +33097 (1071 tr) | +47190 (596 tr) | +7631 |  |
+| L5879e162 | vol_1700 | book_ofi.follow_native | L3M | +30702 (427 tr) | +16988 (238 tr) | +5628 |  |
+| L72dec2a9 | dol_500 | levels_fibr_pd.reject_native | L6M | +7481 (1075 tr) | +16325 (501 tr) | -8747 |  |
+| L72dec2a9 | dol_500 | levels_fibr_pd.reject_native | L3M | +8101 (375 tr) | +17509 (211 tr) | -2518 |  |
+| Lf851abc1 | kagi_20 | levels_vwap.break_native | L6M | +47636 (342 tr) | +33803 (207 tr) | +3186 |  |
+| Lf851abc1 | kagi_20 | levels_vwap.break_native | L3M | +8468 (134 tr) | +8899 (88 tr) | +5234 |  |
+| L3ec75870 | dol_500 | bands_atrchan.break_ext_native | L6M | +29277 (466 tr) | +17650 (281 tr) | -8203 |  |
+| L3ec75870 | dol_500 | bands_atrchan.break_ext_native | L3M | +16570 (173 tr) | -14142 (111 tr) | -741 |  |
+| L13858cd5 | swing_pct_8 | pullback_ema.depth_native | L6M | +2624 (490 tr) | +13244 (276 tr) | +5815 |  |
+| L13858cd5 | swing_pct_8 | pullback_ema.depth_native | L3M | +18509 (166 tr) | +18542 (109 tr) | +8404 |  |
+| L9a245fb4 | dlt_100 | bands_vwap.break_native | L3M | -13251 (312 tr) | -14680 (190 tr) | +1989 |  |
+| L0b6dde51 | swing_pct_12 | levels_session_hl.retest_native | L6M | +26916 (386 tr) | +35025 (220 tr) | -2804 |  |
+| L0b6dde51 | swing_pct_12 | levels_session_hl.retest_native | L3M | +17650 (144 tr) | -1486 (88 tr) | -5215 |  |
+| Lad0c27eb | dol_500 | momentum_er.trend | L6M | +40111 (207 tr) | +33589 (148 tr) | +8786 |  |
+| Lad0c27eb | dol_500 | momentum_er.trend | L3M | +31609 (98 tr) | +24712 (73 tr) | +7868 |  |
+| Lac8d37cb | time_m_10 | xmarket_ym.follow | L6M | +17842 (307 tr) | +22308 (206 tr) | +8381 |  |
+| Lac8d37cb | time_m_10 | xmarket_ym.follow | L3M | -20395 (128 tr) | -20231 (89 tr) | +9310 |  |
+| L42449cac | entropy_B200 | levels_fibr_pd.false_break_native | L6M | +16057 (774 tr) | +34152 (453 tr) | -1485 |  |
+| L42449cac | entropy_B200 | levels_fibr_pd.false_break_native | L3M | +3018 (300 tr) | +18485 (188 tr) | -2343 |  |
+| Lc517931d | frenko_40 | book_ofi.follow_sm | L6M | +49990 (598 tr) | +12888 (333 tr) | +6927 |  |
+| Lc517931d | frenko_40 | book_ofi.follow_sm | L3M | +5385 (275 tr) | +2855 (158 tr) | +990 |  |
+| Ld8d9f7cd | entropy_B200 | levels_fibr_pd.false_break | L6M | +16057 (774 tr) | +34152 (453 tr) | -1485 |  |
+| Ld8d9f7cd | entropy_B200 | levels_fibr_pd.false_break | L3M | +3018 (300 tr) | +18485 (188 tr) | -2343 |  |
+| Lfa46118f | pnf_5 | levels_sdx3.break | L6M | -1533 (354 tr) | +15086 (222 tr) | -7236 |  |
+| Lfa46118f | pnf_5 | levels_sdx3.break | L3M | +5394 (139 tr) | -4985 (91 tr) | -4368 |  |
 
 ### All sets (detail)
 | cell | variant | window | d ulcer (x1 / x1.75) | d worst wk | d mean $/wk (x1 / x1.75) | d max DD | RISK-MATCHED c: d ulcer / d worst / d mean | new-book trades | R/trade | R/wk | corr daily w/ K7 / P7 / M7 | flag vs JL3 |
@@ -188,6 +357,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +798 / +1396 | -1213 | +228 / +400 | -1457 | c=1.00: +798 / -1213 / +228 | 166 | -0.001 | -0.005 | +0.16 / +0.17 / +0.14 | ok |
 |  | RK7 | L3M | +2679 / +4689 | -8240 | -452 / -791 | -7967 | c=1.00: +2679 / -8240 / -452 | 60 | -0.170 | -0.783 | +0.17 / -0.02 / +0.20 | AMBER |
 |  | RK7 | L6M | +1710 / +2993 | -8240 | +1344 / +2351 | -7967 | c=1.00: +1710 / -8240 / +1344 | 137 | +0.162 | +0.822 | +0.15 / +0.03 / +0.19 | AMBER |
+|  | RK7 | L3M | +943 / +1651 | -5635 | +2913 / +5097 | -2385 | c=1.00: +943 / -5635 / +2913 | 155 | +0.197 | +2.354 | +0.26 / +0.13 / +0.16 | ok |
+|  | RK7 | L6M | +605 / +1060 | -5635 | +1426 / +2496 | -2385 | c=1.00: +605 / -5635 / +1426 | 345 | +0.078 | +1.000 | +0.13 / +0.13 / +0.06 | ok |
 |  | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=1.00: -504 / -3120 / +2902 | 62 | +0.356 | +1.698 | +0.25 / -0.07 / +0.11 | ok |
 |  | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=1.00: -58 / -3120 / +2291 | 136 | +0.327 | +1.650 | +0.06 / -0.03 / +0.02 | ok |
 |  | RK7 | Y2023 | -1698 / -2972 | -7720 | -122 / -213 | -4200 | c=1.00: -1698 / -7720 / -122 | 182 | +0.096 | +0.448 | +0.07 / +0.04 / +0.23 | ok |
@@ -208,10 +379,14 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +307 / +538 | -3935 | +2330 / +4077 | -627 | c=1.00: +307 / -3935 / +2330 | 222 | +0.192 | +1.583 | +0.06 / +0.17 / +0.15 | ok |
 |  | RK7 | L3M | +416 / +728 | -3580 | +791 / +1384 | -130 | c=1.00: +416 / -3580 / +791 | 69 | +0.030 | +0.158 | +0.10 / -0.04 / +0.04 | ok |
 |  | RK7 | L6M | +358 / +627 | -3580 | +1374 / +2404 | -130 | c=1.00: +358 / -3580 / +1374 | 164 | +0.120 | +0.728 | +0.06 / +0.03 / +0.11 | ok |
+|  | RK7 | L3M | -283 / -496 | +3268 | -335 / -586 | +2124 | c=1.00: -283 / +3268 / -335 | 132 | -0.018 | -0.180 | +0.45 / +0.20 / +0.39 | ok |
+|  | RK7 | L6M | -93 / -163 | +3240 | +284 / +497 | +2124 | c=1.00: -93 / +3240 / +284 | 254 | +0.012 | +0.113 | +0.31 / +0.11 / +0.26 | ok |
 |  | RK7 | L3M | +1083 / +1895 | -6570 | +2339 / +4093 | -4545 | c=1.00: +1083 / -6570 / +2339 | 126 | +0.161 | +1.563 | +0.36 / +0.15 / +0.28 | ok |
 |  | RK7 | L6M | +758 / +1326 | -6570 | +1556 / +2723 | -4545 | c=1.00: +758 / -6570 / +1556 | 283 | +0.091 | +0.957 | +0.16 / +0.11 / +0.07 | ok |
 |  | RK7 | L3M | -664 / -1163 | +422 | +3941 / +6897 | +2235 | c=1.00: -664 / +422 / +3941 | 117 | +0.356 | +3.207 | +0.25 / +0.11 / +0.19 | ok |
 |  | RK7 | L6M | +143 / +251 | +422 | +1571 / +2749 | -5362 | c=1.00: +143 / +422 / +1571 | 259 | +0.125 | +1.201 | +0.13 / +0.07 / +0.10 | AMBER |
+|  | RK7 | L3M | +2729 / +4776 | -6937 | +727 / +1273 | -9245 | c=1.00: +2729 / -6937 / +727 | 88 | +0.032 | +0.219 | +0.15 / -0.05 / +0.15 | AMBER |
+|  | RK7 | L6M | +1847 / +3232 | -6937 | +975 / +1706 | -9245 | c=1.00: +1847 / -6937 / +975 | 193 | +0.066 | +0.474 | +0.12 / +0.04 / +0.14 | AMBER |
 |  | RK7 | L3M | +4595 / +8041 | -3125 | -371 / -649 | -14491 | c=1.00: +4595 / -3125 / -371 | 101 | -0.042 | -0.328 | +0.09 / +0.37 / +0.34 | RED |
 |  | RK7 | L6M | +2951 / +5163 | -3851 | +743 / +1300 | -14491 | c=1.00: +2951 / -3851 / +743 | 222 | +0.067 | +0.549 | +0.02 / +0.25 / +0.25 | RED |
 |  | RK7 | L3M | +541 / +946 | +2066 | +2017 / +3530 | -972 | c=1.00: +541 / +2066 / +2017 | 200 | +0.070 | +1.083 | +0.15 / +0.16 / +0.30 | ok |
@@ -225,6 +400,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +361 / +632 | -3010 | +1842 / +3223 | +1537 | c=1.00: +361 / -3010 / +1842 | 250 | +0.117 | +1.085 | +0.10 / +0.07 / +0.06 | ok |
 |  | RK7 | L3M | -215 / -376 | -3000 | +1586 / +2775 | +2131 | c=1.00: -215 / -3000 / +1586 | 65 | +0.162 | +0.812 | +0.17 / -0.16 / +0.04 | ok |
 |  | RK7 | L6M | +234 / +410 | -3850 | +1570 / +2747 | +1857 | c=1.00: +234 / -3850 / +1570 | 142 | +0.214 | +1.126 | +0.08 / -0.06 / +0.08 | ok |
+|  | RK7 | L3M | +2679 / +4689 | -8240 | -452 / -791 | -7967 | c=1.00: +2679 / -8240 / -452 | 60 | -0.170 | -0.783 | +0.17 / -0.02 / +0.20 | AMBER |
+|  | RK7 | L6M | +1710 / +2993 | -8240 | +1344 / +2351 | -7967 | c=1.00: +1710 / -8240 / +1344 | 137 | +0.162 | +0.822 | +0.15 / +0.03 / +0.19 | AMBER |
 |  | RK7 | L3M | +2569 / +4495 | -5990 | +609 / +1066 | -4682 | c=1.00: +2569 / -5990 / +609 | 61 | +0.133 | +0.624 | -0.08 / +0.19 / -0.01 | AMBER |
 |  | RK7 | L6M | +1615 / +2826 | -5990 | +327 / +571 | -4682 | c=1.00: +1615 / -5990 / +327 | 149 | +0.045 | +0.251 | -0.09 / +0.18 / -0.02 | AMBER |
 |  | RK7 | L3M | +3582 / +6269 | -6275 | +525 / +919 | -12520 | c=1.00: +3582 / -6275 / +525 | 79 | -0.013 | -0.079 | +0.32 / +0.29 / +0.45 | RED |
@@ -235,18 +412,26 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +100 / +175 | -3825 | +1934 / +3385 | +1857 | c=1.00: +100 / -3825 / +1934 | 136 | +0.256 | +1.288 | +0.13 / -0.04 / +0.05 | ok |
 |  | RK7 | L3M | +1317 / +2305 | +1142 | -1019 / -1783 | -4186 | c=1.00: +1317 / +1142 / -1019 | 89 | -0.183 | -1.255 | +0.07 / -0.02 / +0.03 | ok |
 |  | RK7 | L6M | +980 / +1715 | +1142 | +1275 / +2231 | -4186 | c=1.00: +980 / +1142 / +1275 | 206 | +0.093 | +0.708 | -0.04 / -0.01 / -0.12 | ok |
+|  | RK7 | L3M | -664 / -1163 | +422 | +3941 / +6897 | +2235 | c=1.00: -664 / +422 / +3941 | 117 | +0.356 | +3.207 | +0.25 / +0.11 / +0.19 | ok |
+|  | RK7 | L6M | +143 / +251 | +422 | +1571 / +2749 | -5362 | c=1.00: +143 / +422 / +1571 | 259 | +0.125 | +1.201 | +0.13 / +0.07 / +0.10 | AMBER |
 |  | RK7 | L3M | +1505 / +2634 | -1108 | +250 / +437 | -4896 | c=1.00: +1505 / -1108 / +250 | 113 | +0.021 | +0.181 | +0.29 / +0.19 / +0.58 | AMBER |
 |  | RK7 | L6M | +1185 / +2073 | -1108 | +166 / +291 | -4896 | c=1.00: +1185 / -1108 / +166 | 242 | +0.010 | +0.091 | +0.30 / +0.16 / +0.49 | AMBER |
 |  | RK7 | L3M | +379 / +664 | +1227 | +553 / +969 | -2950 | c=1.00: +379 / +1227 / +553 | 162 | +0.021 | +0.262 | +0.28 / -0.09 / -0.04 | ok |
 |  | RK7 | L6M | +306 / +536 | +1227 | +1023 / +1790 | -2950 | c=1.00: +306 / +1227 / +1023 | 337 | +0.035 | +0.436 | +0.30 / -0.05 / +0.01 | ok |
 |  | RK7 | L3M | +2208 / +3863 | -5132 | +603 / +1055 | -4880 | c=1.00: +2208 / -5132 / +603 | 84 | +0.147 | +0.947 | +0.00 / +0.25 / +0.16 | AMBER |
 |  | RK7 | L6M | +1336 / +2338 | -5132 | +822 / +1439 | -4880 | c=1.00: +1336 / -5132 / +822 | 194 | +0.110 | +0.793 | +0.07 / +0.15 / +0.20 | AMBER |
+|  | RK7 | L3M | +1051 / +1839 | +745 | +1695 / +2966 | -6259 | c=1.00: +1051 / +745 / +1695 | 97 | +0.201 | +1.499 | +0.33 / +0.10 / +0.15 | AMBER |
+|  | RK7 | L6M | +527 / +922 | +745 | +950 / +1662 | -6259 | c=1.00: +527 / +745 / +950 | 218 | +0.084 | +0.674 | +0.28 / +0.02 / +0.01 | AMBER |
 |  | RK7 | L3M | +1972 / +3452 | -3233 | +1918 / +3357 | -4963 | c=1.00: +1972 / -3233 / +1918 | 72 | +0.119 | +0.658 | +0.06 / +0.26 / +0.32 | AMBER |
 |  | RK7 | L6M | +1297 / +2269 | -3233 | +591 / +1034 | -4963 | c=1.00: +1297 / -3233 / +591 | 169 | -0.008 | -0.049 | +0.16 / +0.20 / +0.26 | AMBER |
 |  | RK7 | L3M | +2378 / +4161 | -2433 | -302 / -529 | -8118 | c=1.00: +2378 / -2433 / -302 | 106 | -0.032 | -0.259 | +0.11 / +0.32 / +0.22 | AMBER |
 |  | RK7 | L6M | +1496 / +2617 | -2433 | +839 / +1468 | -8118 | c=1.00: +1496 / -2433 / +839 | 263 | +0.058 | +0.561 | +0.03 / +0.14 / +0.19 | AMBER |
+|  | RK7 | L3M | +1153 / +2017 | -3400 | +2391 / +4184 | -3779 | c=1.00: +1153 / -3400 / +2391 | 56 | +0.417 | +1.795 | +0.05 / +0.11 / +0.26 | ok |
+|  | RK7 | L6M | +1125 / +1969 | -4905 | +1417 / +2480 | -3779 | c=1.00: +1125 / -4905 / +1417 | 132 | +0.227 | +1.108 | +0.09 / +0.13 / +0.27 | ok |
 |  | RK7 | L3M | +2242 / +3923 | -6920 | +632 / +1105 | -7811 | c=1.00: +2242 / -6920 / +632 | 91 | +0.063 | +0.444 | +0.09 / +0.01 / +0.10 | AMBER |
 |  | RK7 | L6M | +1809 / +3166 | -7255 | +34 / +60 | -7811 | c=1.00: +1809 / -7255 / +34 | 197 | -0.007 | -0.053 | +0.04 / +0.04 / +0.06 | AMBER |
+|  | RK7 | L3M | +5714 / +9999 | -8724 | +553 / +968 | -19101 | c=1.00: +5714 / -8724 / +553 | 116 | +0.036 | +0.324 | +0.05 / +0.25 / +0.31 | RED |
+|  | RK7 | L6M | +3822 / +6688 | -8724 | +1631 / +2854 | -19101 | c=1.00: +3822 / -8724 / +1631 | 292 | +0.108 | +1.163 | +0.00 / +0.16 / +0.15 | RED |
 |  | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=1.00: -504 / -3120 / +2902 | 62 | +0.356 | +1.698 | +0.25 / -0.07 / +0.11 | ok |
 |  | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=1.00: -58 / -3120 / +2291 | 136 | +0.327 | +1.650 | +0.06 / -0.03 / +0.02 | ok |
 |  | RK7LO | L3M | +1728 / +3023 | -5925 | +1303 / +2280 | -8593 | c=1.00: +1728 / -5925 / +1303 | 53 | +0.110 | +0.447 | +0.02 / +0.01 / -0.14 | AMBER |
@@ -256,19 +441,43 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7LO | Y2025 | +3581 / +6267 | -6699 | -719 / -1258 | -10694 | c=1.00: +3581 / -6699 / -719 | 264 | +0.014 | +0.067 | -0.01 / +0.04 / -0.07 | ok |
 |  | RK7SO | L3M | +2130 / +3727 | -5067 | +405 / +709 | -5499 | c=1.00: +2130 / -5067 / +405 | 57 | -0.051 | -0.223 | +0.08 / -0.01 / +0.31 | AMBER |
 |  | RK7SO | L6M | +1364 / +2387 | -5067 | +1324 / +2318 | -5499 | c=1.00: +1364 / -5067 / +1324 | 128 | +0.168 | +0.796 | +0.01 / -0.00 / +0.07 | AMBER |
+|  | RK7 | L3M | +148 / +260 | -3080 | +1607 / +2812 | +996 | c=1.00: +148 / -3080 / +1607 | 61 | +0.206 | +0.969 | +0.16 / -0.15 / +0.05 | ok |
+|  | RK7 | L6M | +409 / +715 | -3815 | +2335 / +4087 | +996 | c=1.00: +409 / -3815 / +2335 | 132 | +0.373 | +1.825 | +0.01 / -0.07 / +0.03 | ok |
 |  | RK7 | L3M | +1868 / +3269 | -5505 | +441 / +771 | -6718 | c=1.00: +1868 / -5505 / +441 | 141 | -0.039 | -0.428 | +0.02 / +0.11 / +0.17 | AMBER |
 |  | RK7 | L6M | +1272 / +2226 | -5505 | +706 / +1235 | -6718 | c=1.00: +1272 / -5505 / +706 | 290 | +0.013 | +0.144 | -0.05 / +0.02 / +0.06 | AMBER |
+|  | RK7 | L3M | +2706 / +4735 | -9015 | +1613 / +2823 | -12215 | c=1.00: +2706 / -9015 / +1613 | 127 | +0.111 | +1.086 | +0.13 / -0.00 / +0.20 | RED |
+|  | RK7 | L6M | +1860 / +3255 | -9015 | +1741 / +3046 | -12215 | c=1.00: +1860 / -9015 / +1741 | 266 | +0.126 | +1.238 | +0.02 / +0.03 / +0.01 | RED |
+|  | RK7 | L3M | +1188 / +2080 | -4065 | +1313 / +2298 | -2702 | c=1.00: +1188 / -4065 / +1313 | 59 | +0.069 | +0.313 | +0.11 / -0.02 / +0.26 | ok |
+|  | RK7 | L6M | +732 / +1281 | -4065 | +1293 / +2262 | -2702 | c=1.00: +732 / -4065 / +1293 | 134 | +0.144 | +0.717 | +0.01 / -0.01 / +0.18 | ok |
+|  | RK7 | L3M | +892 / +1561 | +969 | +1557 / +2726 | -3857 | c=1.00: +892 / +969 / +1557 | 70 | +0.273 | +1.469 | +0.16 / +0.22 / +0.25 | ok |
+|  | RK7 | L6M | +634 / +1109 | +969 | +856 / +1497 | -3857 | c=1.00: +634 / +969 / +856 | 176 | +0.114 | +0.745 | +0.12 / +0.15 / +0.24 | ok |
 |  | RK7 | L3M | +1461 / +2557 | -2202 | +713 / +1248 | -2182 | c=1.00: +1461 / -2202 / +713 | 198 | +0.005 | +0.076 | -0.02 / +0.03 / -0.04 | ok |
+|  | RK7 | L3M | +1287 / +2252 | -3120 | +1800 / +3150 | -5514 | c=1.00: +1287 / -3120 / +1800 | 63 | +0.203 | +0.981 | +0.14 / -0.21 / +0.20 | AMBER |
+|  | RK7 | L6M | +1052 / +1841 | -3870 | +1790 / +3133 | -5514 | c=1.00: +1052 / -3870 / +1790 | 141 | +0.249 | +1.299 | +0.08 / -0.07 / +0.08 | AMBER |
 |  | RK7 | L3M | +811 / +1418 | -2650 | +1481 / +2593 | -3220 | c=1.00: +811 / -2650 / +1481 | 78 | +0.160 | +0.962 | -0.03 / +0.04 / -0.17 | ok |
 |  | RK7 | L6M | +494 / +865 | -2650 | +1431 / +2505 | -3220 | c=1.00: +494 / -2650 / +1431 | 173 | +0.146 | +0.935 | +0.12 / +0.06 / -0.09 | ok |
 |  | RK7 | L3M | +2208 / +3863 | -1522 | +465 / +813 | -5294 | c=1.00: +2208 / -1522 / +465 | 112 | -0.003 | -0.029 | -0.06 / +0.30 / +0.35 | AMBER |
 |  | RK7 | L6M | +1361 / +2382 | -1522 | +972 / +1701 | -5294 | c=1.00: +1361 / -1522 / +972 | 241 | +0.045 | +0.399 | +0.07 / +0.19 / +0.27 | AMBER |
+|  | RK7 | L3M | +5937 / +10389 | -9553 | -635 / -1111 | -19250 | c=1.00: +5937 / -9553 / -635 | 111 | -0.090 | -0.765 | -0.01 / +0.27 / +0.41 | RED |
+|  | RK7 | L6M | +3710 / +6492 | -9553 | +883 / +1545 | -19250 | c=1.00: +3710 / -9553 / +883 | 281 | +0.059 | +0.613 | +0.01 / +0.19 / +0.14 | RED |
+|  | RK7 | L3M | +1877 / +3285 | -287 | +344 / +601 | -5881 | c=1.00: +1877 / -287 / +344 | 104 | +0.024 | +0.191 | +0.06 / +0.20 / +0.09 | AMBER |
+|  | RK7 | L6M | +1467 / +2567 | -287 | +791 / +1384 | -5881 | c=1.00: +1467 / -287 / +791 | 263 | +0.060 | +0.586 | +0.14 / +0.15 / +0.02 | AMBER |
+|  | RK7 | L3M | +5300 / +9275 | -9944 | +1018 / +1781 | -16481 | c=1.00: +5300 / -9944 / +1018 | 77 | +0.033 | +0.197 | -0.08 / +0.17 / +0.34 | RED |
+|  | RK7 | L6M | +3247 / +5683 | -9944 | +1020 / +1785 | -16481 | c=1.00: +3247 / -9944 / +1020 | 166 | +0.082 | +0.504 | +0.03 / +0.15 / +0.23 | RED |
+|  | RK7 | L3M | +554 / +969 | -3130 | +2238 / +3916 | -2449 | c=1.00: +554 / -3130 / +2238 | 63 | +0.246 | +1.193 | +0.19 / -0.09 / +0.13 | ok |
+|  | RK7 | L6M | +397 / +695 | -3130 | +2143 / +3751 | -2449 | c=1.00: +397 / -3130 / +2143 | 134 | +0.295 | +1.462 | +0.10 / -0.07 / +0.13 | ok |
+|  | RK7 | L3M | +2208 / +3863 | -1522 | +465 / +813 | -5294 | c=1.00: +2208 / -1522 / +465 | 112 | -0.003 | -0.029 | -0.06 / +0.30 / +0.35 | AMBER |
+|  | RK7 | L6M | +1361 / +2382 | -1522 | +972 / +1701 | -5294 | c=1.00: +1361 / -1522 / +972 | 241 | +0.045 | +0.399 | +0.07 / +0.19 / +0.27 | AMBER |
+|  | RK7 | L3M | +3766 / +6591 | -6054 | +908 / +1590 | -13173 | c=1.00: +3766 / -6054 / +908 | 90 | +0.045 | +0.314 | -0.09 / +0.43 / +0.16 | RED |
+|  | RK7 | L6M | +2534 / +4435 | -6054 | +1482 / +2593 | -13173 | c=1.00: +2534 / -6054 / +1482 | 210 | +0.117 | +0.910 | -0.05 / +0.23 / +0.05 | RED |
 |  | RK7 | L3M | +2945 / +5153 | -6070 | +190 / +332 | -10271 | c=1.00: +2945 / -6070 / +190 | 77 | +0.041 | +0.242 | +0.17 / +0.03 / +0.20 | RED |
 |  | RK7 | L6M | +1977 / +3459 | -6070 | +63 / +111 | -10271 | c=1.00: +1977 / -6070 / +63 | 178 | -0.012 | -0.081 | +0.06 / +0.04 / +0.12 | RED |
 |  | RK7 | L3M | +1835 / +3211 | -3522 | +590 / +1033 | -6107 | c=1.00: +1835 / -3522 / +590 | 69 | -0.042 | -0.223 | +0.11 / +0.12 / -0.10 | AMBER |
 |  | RK7 | L6M | +1230 / +2153 | -3522 | +1694 / +2965 | -6107 | c=1.00: +1230 / -3522 / +1694 | 153 | +0.179 | +1.014 | +0.03 / +0.09 / +0.02 | AMBER |
 |  | RK7 | L3M | +3096 / +5418 | -8795 | +1163 / +2035 | -9101 | c=1.00: +3096 / -8795 / +1163 | 75 | +0.041 | +0.238 | +0.03 / +0.04 / +0.35 | AMBER |
 |  | RK7 | L6M | +1970 / +3448 | -8795 | +1622 / +2838 | -9101 | c=1.00: +1970 / -8795 / +1622 | 158 | +0.156 | +0.912 | -0.03 / +0.01 / +0.14 | AMBER |
+|  | RK7 | L3M | +1253 / +2193 | +2078 | +762 / +1333 | -2002 | c=1.00: +1253 / +2078 / +762 | 73 | +0.095 | +0.534 | +0.11 / +0.31 / +0.28 | ok |
+|  | RK7 | L6M | +967 / +1691 | -1090 | +1486 / +2601 | -2002 | c=1.00: +967 / -1090 / +1486 | 179 | +0.172 | +1.140 | +0.12 / +0.20 / +0.29 | ok |
 |  | RK7 | L3M | +249 / +435 | -1452 | +116 / +204 | +1612 | c=1.00: +249 / -1452 / +116 | 100 | +0.004 | +0.029 | +0.31 / +0.36 / +0.39 | ok |
 |  | RK7 | L6M | +197 / +345 | -1452 | +906 / +1585 | +1612 | c=1.00: +197 / -1452 / +906 | 204 | +0.075 | +0.569 | +0.18 / +0.19 / +0.06 | ok |
 |  | RK7 | L3M | +1301 / +2276 | -3535 | +203 / +354 | -4865 | c=1.00: +1301 / -3535 / +203 | 70 | +0.029 | +0.158 | +0.02 / -0.03 / -0.10 | AMBER |
@@ -283,13 +492,24 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +313 / +547 | -5108 | +1415 / +2475 | -2856 | c=1.00: +313 / -5108 / +1415 | 216 | +0.094 | +0.751 | +0.23 / -0.12 / -0.03 | ok |
 |  | RK7 | L3M | +250 / +437 | -4905 | +2403 / +4204 | +952 | c=1.00: +250 / -4905 / +2403 | 67 | +0.217 | +1.118 | +0.04 / +0.02 / +0.00 | ok |
 |  | RK7 | L6M | +240 / +419 | -4905 | +2329 / +4075 | +952 | c=1.00: +240 / -4905 / +2329 | 140 | +0.267 | +1.386 | +0.03 / -0.00 / +0.15 | ok |
+|  | RK7 | L3M | +3305 / +5784 | -4928 | -334 / -584 | -11231 | c=1.00: +3305 / -4928 / -334 | 80 | -0.022 | -0.134 | +0.01 / +0.19 / +0.17 | RED |
+|  | RK7 | L6M | +2040 / +3571 | -4928 | +694 / +1215 | -11231 | c=1.00: +2040 / -4928 / +694 | 177 | +0.082 | +0.537 | -0.05 / +0.15 / +0.10 | RED |
+|  | RK7 | L3M | -141 / -247 | +1770 | +2175 / +3806 | +684 | c=1.00: -141 / +1770 / +2175 | 69 | +0.322 | +1.706 | +0.11 / +0.08 / +0.24 | ok |
+|  | RK7 | L6M | +250 / +438 | -3605 | +1463 / +2560 | +684 | c=1.00: +250 / -3605 / +1463 | 173 | +0.174 | +1.118 | +0.10 / +0.06 / +0.31 | ok |
 |  | RK7 | L3M | +3907 / +6837 | -8129 | +171 / +300 | -13843 | c=1.00: +3907 / -8129 / +171 | 99 | +0.025 | +0.193 | +0.23 / +0.39 / +0.40 | RED |
 |  | RK7 | L3M | -141 / -247 | +1770 | +2175 / +3806 | +684 | c=1.00: -141 / +1770 / +2175 | 69 | +0.322 | +1.706 | +0.11 / +0.08 / +0.24 | ok |
 |  | RK7 | L6M | +250 / +438 | -3605 | +1463 / +2560 | +684 | c=1.00: +250 / -3605 / +1463 | 173 | +0.174 | +1.118 | +0.10 / +0.06 / +0.31 | ok |
 |  | RK7 | L3M | +2728 / +4774 | -5935 | +1639 / +2869 | -9857 | c=1.00: +2728 / -5935 / +1639 | 65 | +0.174 | +0.871 | +0.16 / +0.14 / +0.33 | RED |
 |  | RK7 | L6M | +1955 / +3422 | -5935 | +1280 / +2240 | -9857 | c=1.00: +1955 / -5935 / +1280 | 146 | +0.155 | +0.839 | +0.04 / +0.08 / +0.21 | RED |
+|  | RK7 | L3M | +2728 / +4774 | -5935 | +1639 / +2869 | -9857 | c=1.00: +2728 / -5935 / +1639 | 65 | +0.174 | +0.871 | +0.16 / +0.14 / +0.33 | RED |
+|  | RK7 | L6M | +1955 / +3422 | -5935 | +1280 / +2240 | -9857 | c=1.00: +1955 / -5935 / +1280 | 146 | +0.155 | +0.839 | +0.04 / +0.08 / +0.21 | RED |
+|  | RK7 | L3M | +2121 / +3712 | -5705 | +129 / +226 | -7663 | c=1.00: +2121 / -5705 / +129 | 146 | -0.017 | -0.191 | +0.04 / +0.12 / +0.15 | AMBER |
+|  | RK7 | L6M | +1502 / +2629 | -5705 | +496 / +867 | -7663 | c=1.00: +1502 / -5705 / +496 | 365 | +0.012 | +0.166 | -0.03 / +0.11 / +0.03 | AMBER |
 |  | RK7 | L3M | +1430 / +2502 | -2808 | +1195 / +2091 | -1849 | c=1.00: +1430 / -2808 / +1195 | 83 | +0.105 | +0.671 | +0.02 / +0.23 / +0.19 | ok |
 |  | RK7 | L6M | +859 / +1504 | -2808 | +2164 / +3786 | -1849 | c=1.00: +859 / -2808 / +2164 | 195 | +0.206 | +1.489 | +0.05 / +0.17 / +0.05 | ok |
+|  | RK7 | L3M | +1461 / +2557 | -2202 | +713 / +1248 | -2182 | c=1.00: +1461 / -2202 / +713 | 198 | +0.005 | +0.076 | -0.02 / +0.03 / -0.04 | ok |
+|  | RK7 | L3M | +1538 / +2692 | -100 | +2236 / +3913 | -5954 | c=1.00: +1538 / -100 / +2236 | 60 | +0.335 | +1.547 | +0.06 / -0.20 / +0.17 | AMBER |
+|  | RK7 | L6M | +1043 / +1825 | -100 | +2899 / +5073 | -5954 | c=1.00: +1043 / -100 / +2899 | 135 | +0.437 | +2.185 | -0.08 / -0.05 / +0.09 | AMBER |
 |  | RK7 | L3M | +624 / +1092 | -2955 | +1718 / +3006 | -493 | c=1.00: +624 / -2955 / +1718 | 120 | +0.107 | +0.988 | +0.13 / +0.10 / +0.04 | ok |
 |  | RK7 | L6M | +476 / +833 | -2955 | +1545 / +2705 | -493 | c=1.00: +476 / -2955 / +1545 | 251 | +0.109 | +1.011 | +0.07 / +0.09 / -0.03 | ok |
 |  | RK7 | L3M | -620 / -1085 | -1005 | +1301 / +2278 | +1164 | c=1.00: -620 / -1005 / +1301 | 76 | +0.095 | +0.558 | +0.16 / +0.03 / -0.08 | ok |
@@ -303,13 +523,21 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7SO | L6M | +649 / +1135 | -4126 | +940 / +1645 | -2810 | c=1.00: +649 / -4126 / +940 | 97 | +0.131 | +0.470 | +0.09 / +0.02 / +0.04 | ok |
 |  | RK7 | L3M | +148 / +260 | -3080 | +1607 / +2812 | +996 | c=1.00: +148 / -3080 / +1607 | 61 | +0.206 | +0.969 | +0.16 / -0.15 / +0.05 | ok |
 |  | RK7 | L6M | +409 / +715 | -3815 | +2335 / +4087 | +996 | c=1.00: +409 / -3815 / +2335 | 132 | +0.373 | +1.825 | +0.01 / -0.07 / +0.03 | ok |
+|  | RK7 | L3M | +3907 / +6837 | -8129 | +171 / +300 | -13843 | c=1.00: +3907 / -8129 / +171 | 99 | +0.025 | +0.193 | +0.23 / +0.39 / +0.40 | RED |
 |  | RK7 | L3M | +4003 / +7005 | -8959 | -1005 / -1760 | -14304 | c=1.00: +4003 / -8959 / -1005 | 104 | -0.090 | -0.719 | +0.10 / +0.19 / +0.30 | RED |
 |  | RK7 | L6M | +2498 / +4372 | -8959 | +1313 / +2298 | -14304 | c=1.00: +2498 / -8959 / +1313 | 252 | +0.109 | +1.018 | +0.02 / +0.13 / +0.16 | RED |
+|  | RK7 | L3M | +3886 / +6800 | -3535 | -50 / -87 | -12264 | c=1.00: +3886 / -3535 / -50 | 54 | -0.204 | -0.848 | -0.06 / +0.05 / +0.02 | RED |
+|  | RK7 | L6M | +2484 / +4346 | -3535 | +259 / +453 | -12264 | c=1.00: +2484 / -3535 / +259 | 132 | -0.046 | -0.225 | +0.04 / -0.03 / +0.02 | RED |
 |  | RK7 | L3M | +1894 / +3314 | -3780 | +589 / +1030 | -6714 | c=1.00: +1894 / -3780 / +589 | 74 | +0.067 | +0.382 | +0.03 / +0.06 / -0.01 | AMBER |
 |  | RK7 | L6M | +1487 / +2602 | -3945 | +1090 / +1907 | -6714 | c=1.00: +1487 / -3945 / +1090 | 161 | +0.123 | +0.731 | -0.02 / +0.08 / +0.10 | AMBER |
+|  | RK7 | L3M | +3450 / +6037 | -8248 | -386 / -675 | -10354 | c=1.00: +3450 / -8248 / -386 | 119 | -0.103 | -0.946 | +0.10 / +0.17 / +0.16 | RED |
+|  | RK7 | L6M | +2149 / +3761 | -8248 | +753 / +1317 | -10354 | c=1.00: +2149 / -8248 / +753 | 231 | +0.016 | +0.134 | +0.18 / +0.10 / +0.13 | RED |
 |  | RK7 | L3M | +4454 / +7795 | -8394 | +593 / +1038 | -15124 | c=1.00: +4454 / -8394 / +593 | 127 | +0.037 | +0.363 | +0.02 / +0.39 / +0.34 | RED |
 |  | RK7 | L6M | +2688 / +4704 | -8394 | +1645 / +2878 | -15124 | c=1.00: +2688 / -8394 / +1645 | 299 | +0.107 | +1.181 | +0.08 / +0.21 / +0.22 | RED |
+|  | RK7 | L3M | +329 / +576 | -322 | +1285 / +2249 | +1123 | c=1.00: +329 / -322 / +1285 | 38 | +0.261 | +0.762 | +0.37 / -0.05 / +0.13 | ok |
 |  | RK7 | L3M | +3829 / +6701 | -7245 | +2261 / +3958 | -11200 | c=1.00: +3829 / -7245 / +2261 | 59 | +0.357 | +1.619 | -0.35 / +0.12 / -0.05 | RED |
+|  | RK7 | L3M | +2679 / +4689 | -8240 | -452 / -791 | -7967 | c=1.00: +2679 / -8240 / -452 | 60 | -0.170 | -0.783 | +0.17 / -0.02 / +0.20 | AMBER |
+|  | RK7 | L6M | +1710 / +2993 | -8240 | +1344 / +2351 | -7967 | c=1.00: +1710 / -8240 / +1344 | 137 | +0.162 | +0.822 | +0.15 / +0.03 / +0.19 | AMBER |
 |  | RK7 | L3M | +773 / +1352 | -5345 | +1432 / +2505 | -1140 | c=1.00: +773 / -5345 / +1432 | 116 | +0.032 | +0.286 | +0.24 / +0.10 / +0.21 | ok |
 |  | RK7 | L6M | +655 / +1147 | -5345 | +855 / +1496 | -1140 | c=1.00: +655 / -5345 / +855 | 252 | +0.021 | +0.198 | +0.13 / +0.13 / +0.14 | ok |
 |  | RK7 | L3M | +1508 / +2639 | -4055 | -214 / -375 | -5075 | c=1.00: +1508 / -4055 / -214 | 72 | -0.123 | -0.679 | +0.03 / +0.04 / -0.03 | AMBER |
@@ -318,14 +546,28 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +1353 / +2368 | -4538 | +651 / +1139 | -8221 | c=1.00: +1353 / -4538 / +651 | 282 | +0.042 | +0.435 | -0.10 / +0.03 / -0.10 | AMBER |
 |  | RK7 | L3M | +1538 / +2692 | -100 | +2236 / +3913 | -5954 | c=1.00: +1538 / -100 / +2236 | 60 | +0.335 | +1.547 | +0.06 / -0.20 / +0.17 | AMBER |
 |  | RK7 | L6M | +1043 / +1825 | -100 | +2899 / +5073 | -5954 | c=1.00: +1043 / -100 / +2899 | 135 | +0.437 | +2.185 | -0.08 / -0.05 / +0.09 | AMBER |
+|  | RK7 | L3M | +303 / +530 | +1651 | +2638 / +4617 | +664 | c=1.00: +303 / +1651 / +2638 | 163 | +0.125 | +1.569 | +0.17 / +0.12 / +0.38 | ok |
+|  | RK7 | L6M | +255 / +446 | +1651 | +2505 / +4384 | +664 | c=1.00: +255 / +1651 / +2505 | 382 | +0.123 | +1.742 | +0.14 / +0.08 / +0.16 | ok |
+|  | RK7 | L3M | +3766 / +6591 | -6054 | +908 / +1590 | -13173 | c=1.00: +3766 / -6054 / +908 | 90 | +0.045 | +0.314 | -0.09 / +0.43 / +0.16 | RED |
+|  | RK7 | L6M | +2534 / +4435 | -6054 | +1482 / +2593 | -13173 | c=1.00: +2534 / -6054 / +1482 | 210 | +0.117 | +0.910 | -0.05 / +0.23 / +0.05 | RED |
 |  | RK7 | L3M | +1851 / +3240 | -3495 | +1140 / +1994 | -5845 | c=1.00: +1851 / -3495 / +1140 | 184 | +0.073 | +1.036 | +0.12 / +0.24 / +0.15 | AMBER |
 |  | RK7 | L6M | +1312 / +2296 | -3495 | +1261 / +2206 | -5845 | c=1.00: +1312 / -3495 / +1261 | 450 | +0.060 | +1.007 | +0.14 / +0.14 / +0.15 | AMBER |
+|  | RK7 | L3M | +1894 / +3314 | -3780 | +589 / +1030 | -6714 | c=1.00: +1894 / -3780 / +589 | 74 | +0.067 | +0.382 | +0.03 / +0.06 / -0.01 | AMBER |
+|  | RK7 | L6M | +1487 / +2602 | -3945 | +1090 / +1907 | -6714 | c=1.00: +1487 / -3945 / +1090 | 161 | +0.123 | +0.731 | -0.02 / +0.08 / +0.10 | AMBER |
 |  | RK7 | L3M | +2902 / +5079 | -4665 | -554 / -970 | -9869 | c=1.00: +2902 / -4665 / -554 | 136 | -0.101 | -1.054 | -0.04 / -0.05 / -0.09 | RED |
 |  | RK7 | L6M | +1854 / +3245 | -4665 | +494 / +865 | -9869 | c=1.00: +1854 / -4665 / +494 | 303 | +0.002 | +0.020 | -0.00 / -0.02 / +0.04 | RED |
 |  | RK7 | L3M | +2502 / +4378 | -5116 | +596 / +1043 | -8959 | c=1.00: +2502 / -5116 / +596 | 40 | +0.095 | +0.293 | +0.02 / +0.03 / +0.22 | AMBER |
 |  | RK7 | L6M | +1611 / +2819 | -5116 | +928 / +1623 | -8959 | c=1.00: +1611 / -5116 / +928 | 81 | +0.183 | +0.550 | +0.08 / -0.04 / +0.08 | AMBER |
+|  | RK7 | L3M | +1505 / +2634 | -1108 | +250 / +437 | -4896 | c=1.00: +1505 / -1108 / +250 | 113 | +0.021 | +0.181 | +0.29 / +0.19 / +0.58 | AMBER |
+|  | RK7 | L6M | +1185 / +2073 | -1108 | +166 / +291 | -4896 | c=1.00: +1185 / -1108 / +166 | 242 | +0.010 | +0.091 | +0.30 / +0.16 / +0.49 | AMBER |
+|  | RK7 | L3M | +1509 / +2640 | -1962 | -33 / -58 | -2958 | c=1.00: +1509 / -1962 / -33 | 116 | -0.026 | -0.232 | -0.10 / +0.06 / +0.01 | ok |
+|  | RK7 | L6M | +1129 / +1976 | -1962 | +2243 / +3924 | -2958 | c=1.00: +1129 / -1962 / +2243 | 244 | +0.177 | +1.600 | -0.04 / +0.01 / +0.05 | ok |
 |  | RK7 | L3M | +1583 / +2769 | -3333 | +1307 / +2288 | -5791 | c=1.00: +1583 / -3333 / +1307 | 106 | +0.132 | +1.072 | +0.18 / +0.21 / +0.30 | AMBER |
 |  | RK7 | L6M | +1113 / +1947 | -3333 | +1878 / +3286 | -5791 | c=1.00: +1113 / -3333 / +1878 | 212 | +0.177 | +1.391 | +0.13 / +0.09 / +0.20 | AMBER |
+|  | RK7 | L3M | +1782 / +3118 | -3699 | -688 / -1203 | -5977 | c=1.00: +1782 / -3699 / -688 | 207 | -0.041 | -0.658 | +0.07 / -0.15 / +0.01 | AMBER |
+|  | RK7 | L6M | +1264 / +2212 | -3699 | +711 / +1244 | -5977 | c=1.00: +1264 / -3699 / +711 | 446 | +0.020 | +0.332 | +0.21 / +0.02 / +0.07 | AMBER |
+|  | RK7 | L3M | +1835 / +3211 | -253 | +804 / +1407 | -6109 | c=1.00: +1835 / -253 / +804 | 143 | +0.046 | +0.504 | +0.26 / +0.14 / +0.17 | AMBER |
+|  | RK7 | L6M | +1188 / +2079 | -253 | +655 / +1147 | -6109 | c=1.00: +1188 / -253 / +655 | 300 | +0.034 | +0.379 | +0.23 / +0.14 / +0.14 | AMBER |
 |  | RK7 | L3M | +892 / +1561 | +969 | +1557 / +2726 | -3857 | c=1.00: +892 / +969 / +1557 | 70 | +0.273 | +1.469 | +0.16 / +0.22 / +0.25 | ok |
 |  | RK7 | L6M | +634 / +1109 | +969 | +856 / +1497 | -3857 | c=1.00: +634 / +969 / +856 | 176 | +0.114 | +0.745 | +0.12 / +0.15 / +0.24 | ok |
 |  | RK7 | L3M | +3787 / +6626 | -6140 | +81 / +141 | -12301 | c=1.00: +3787 / -6140 / +81 | 71 | -0.120 | -0.655 | -0.04 / -0.01 / +0.30 | RED |
@@ -336,8 +578,11 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +1418 / +2482 | -2722 | +2392 / +4186 | -6010 | c=1.00: +1418 / -2722 / +2392 | 212 | +0.182 | +1.426 | -0.14 / +0.07 / -0.07 | AMBER |
 |  | RK7 | L3M | +943 / +1651 | -5635 | +2913 / +5097 | -2385 | c=1.00: +943 / -5635 / +2913 | 155 | +0.197 | +2.354 | +0.26 / +0.13 / +0.16 | ok |
 |  | RK7 | L6M | +605 / +1060 | -5635 | +1426 / +2496 | -2385 | c=1.00: +605 / -5635 / +1426 | 345 | +0.078 | +1.000 | +0.13 / +0.13 / +0.06 | ok |
+|  | RK7 | L3M | +5512 / +9646 | -8519 | +1006 / +1761 | -17768 | c=1.00: +5512 / -8519 / +1006 | 95 | +0.031 | +0.227 | +0.01 / +0.22 / +0.34 | RED |
 |  | RK7 | L3M | +1212 / +2120 | -6540 | +2530 / +4428 | -4437 | c=1.00: +1212 / -6540 / +2530 | 57 | +0.328 | +1.437 | +0.21 / +0.03 / +0.08 | ok |
 |  | RK7 | L6M | +1013 / +1772 | -6540 | +1797 / +3144 | -4437 | c=1.00: +1013 / -6540 / +1797 | 127 | +0.223 | +1.049 | +0.13 / +0.05 / +0.07 | ok |
+|  | RK7 | L3M | +892 / +1561 | +969 | +1557 / +2726 | -3857 | c=1.00: +892 / +969 / +1557 | 70 | +0.273 | +1.469 | +0.16 / +0.22 / +0.25 | ok |
+|  | RK7 | L6M | +634 / +1109 | +969 | +856 / +1497 | -3857 | c=1.00: +634 / +969 / +856 | 176 | +0.114 | +0.745 | +0.12 / +0.15 / +0.24 | ok |
 |  | RK7 | L3M | +2577 / +4510 | -10490 | +1047 / +1833 | -8025 | c=1.00: +2577 / -10490 / +1047 | 266 | +0.065 | +1.320 | +0.13 / +0.10 / +0.13 | AMBER |
 |  | RK7 | L3M | -508 / -889 | -3060 | +2315 / +4051 | +2291 | c=1.00: -508 / -3060 / +2315 | 64 | +0.250 | +1.233 | +0.19 / -0.22 / +0.05 | ok |
 |  | RK7 | L6M | +35 / +61 | -3570 | +2301 / +4028 | +1857 | c=1.00: +35 / -3570 / +2301 | 138 | +0.321 | +1.640 | +0.07 / -0.10 / +0.07 | ok |
@@ -347,12 +592,20 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +2351 / +4115 | -7325 | -236 / -414 | -11572 | c=1.00: +2351 / -7325 / -236 | 192 | -0.035 | -0.248 | +0.04 / +0.08 / +0.09 | RED |
 |  | RK7 | L3M | +2761 / +4832 | -5423 | -889 / -1556 | -8102 | c=1.00: +2761 / -5423 / -889 | 95 | -0.155 | -1.136 | -0.03 / -0.24 / -0.03 | AMBER |
 |  | RK7 | L6M | +1748 / +3059 | -5423 | -200 / -349 | -8102 | c=1.00: +1748 / -5423 / -200 | 209 | -0.066 | -0.510 | -0.01 / -0.17 / -0.07 | AMBER |
+|  | RK7 | L3M | +1317 / +2305 | +1142 | -1019 / -1783 | -4186 | c=1.00: +1317 / +1142 / -1019 | 89 | -0.183 | -1.255 | +0.07 / -0.02 / +0.03 | ok |
+|  | RK7 | L6M | +980 / +1715 | +1142 | +1275 / +2231 | -4186 | c=1.00: +980 / +1142 / +1275 | 206 | +0.093 | +0.708 | -0.04 / -0.01 / -0.12 | ok |
 |  | RK7 | L3M | +3804 / +6657 | -7194 | +555 / +972 | -12323 | c=1.00: +3804 / -7194 / +555 | 69 | +0.067 | +0.358 | +0.12 / +0.33 / +0.38 | RED |
 |  | RK7 | L6M | +2450 / +4287 | -7194 | +844 / +1477 | -12323 | c=1.00: +2450 / -7194 / +844 | 139 | +0.090 | +0.464 | +0.06 / +0.17 / +0.34 | RED |
 |  | RK7 | L3M | +1675 / +2931 | -1770 | +2019 / +3534 | -7835 | c=1.00: +1675 / -1770 / +2019 | 90 | +0.217 | +1.501 | +0.04 / +0.20 / +0.30 | AMBER |
 |  | RK7 | L6M | +1049 / +1835 | -1770 | +1871 / +3274 | -7835 | c=1.00: +1049 / -1770 / +1871 | 193 | +0.173 | +1.237 | +0.09 / +0.07 / +0.25 | AMBER |
+|  | RK7 | L3M | +811 / +1418 | -2650 | +1481 / +2593 | -3220 | c=1.00: +811 / -2650 / +1481 | 78 | +0.160 | +0.962 | -0.03 / +0.04 / -0.17 | ok |
+|  | RK7 | L6M | +494 / +865 | -2650 | +1431 / +2505 | -3220 | c=1.00: +494 / -2650 / +1431 | 173 | +0.146 | +0.935 | +0.12 / +0.06 / -0.09 | ok |
 |  | RK7 | L3M | +3155 / +5521 | -2885 | -962 / -1684 | -9046 | c=1.00: +3155 / -2885 / -962 | 221 | -0.040 | -0.675 | +0.22 / +0.20 / +0.50 | AMBER |
 |  | RK7 | L6M | +1968 / +3444 | -2885 | +532 / +932 | -9046 | c=1.00: +1968 / -2885 / +532 | 484 | +0.020 | +0.361 | +0.20 / +0.13 / +0.38 | AMBER |
+|  | RK7 | L3M | +4003 / +7005 | -8959 | -1005 / -1760 | -14304 | c=1.00: +4003 / -8959 / -1005 | 104 | -0.090 | -0.719 | +0.10 / +0.19 / +0.30 | RED |
+|  | RK7 | L6M | +2498 / +4372 | -8959 | +1313 / +2298 | -14304 | c=1.00: +2498 / -8959 / +1313 | 252 | +0.109 | +1.018 | +0.02 / +0.13 / +0.16 | RED |
+|  | RK7 | L3M | +1238 / +2166 | -5705 | +250 / +437 | -2768 | c=1.00: +1238 / -5705 / +250 | 151 | -0.006 | -0.065 | +0.04 / +0.06 / +0.11 | ok |
+|  | RK7 | L6M | +930 / +1628 | -5705 | +488 / +854 | -2768 | c=1.00: +930 / -5705 / +488 | 375 | +0.012 | +0.173 | -0.06 / +0.07 / -0.02 | ok |
 |  | RK7 | L3M | -283 / -496 | +3268 | -335 / -586 | +2124 | c=1.00: -283 / +3268 / -335 | 132 | -0.018 | -0.180 | +0.45 / +0.20 / +0.39 | ok |
 |  | RK7 | L6M | -93 / -163 | +3240 | +284 / +497 | +2124 | c=1.00: -93 / +3240 / +284 | 254 | +0.012 | +0.113 | +0.31 / +0.11 / +0.26 | ok |
 |  | RK7 | L3M | +3450 / +6037 | -8248 | -386 / -675 | -10354 | c=1.00: +3450 / -8248 / -386 | 119 | -0.103 | -0.946 | +0.10 / +0.17 / +0.16 | RED |
@@ -365,20 +618,38 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +1220 / +2134 | -5696 | +2271 / +3974 | -4913 | c=1.00: +1220 / -5696 / +2271 | 106 | +0.429 | +1.683 | -0.02 / +0.04 / +0.13 | AMBER |
 |  | RK7 | L3M | +2641 / +4621 | -4700 | +94 / +164 | -9614 | c=1.00: +2641 / -4700 / +94 | 132 | -0.057 | -0.577 | +0.01 / -0.01 / +0.19 | RED |
 |  | RK7 | L6M | +1741 / +3047 | -4700 | +211 / +369 | -9614 | c=1.00: +1741 / -4700 / +211 | 278 | -0.020 | -0.201 | -0.02 / -0.05 / +0.10 | RED |
+|  | RK7 | L3M | +2641 / +4621 | -4700 | +94 / +164 | -9614 | c=1.00: +2641 / -4700 / +94 | 132 | -0.057 | -0.577 | +0.01 / -0.01 / +0.19 | RED |
+|  | RK7 | L6M | +1741 / +3047 | -4700 | +211 / +369 | -9614 | c=1.00: +1741 / -4700 / +211 | 278 | -0.020 | -0.201 | -0.02 / -0.05 / +0.10 | RED |
+|  | RK7 | L3M | +379 / +664 | +1227 | +553 / +969 | -2950 | c=1.00: +379 / +1227 / +553 | 162 | +0.021 | +0.262 | +0.28 / -0.09 / -0.04 | ok |
+|  | RK7 | L6M | +306 / +536 | +1227 | +1023 / +1790 | -2950 | c=1.00: +306 / +1227 / +1023 | 337 | +0.035 | +0.436 | +0.30 / -0.05 / +0.01 | ok |
+|  | RK7 | L3M | +148 / +260 | -3080 | +1607 / +2812 | +996 | c=1.00: +148 / -3080 / +1607 | 61 | +0.206 | +0.969 | +0.16 / -0.15 / +0.05 | ok |
+|  | RK7 | L6M | +409 / +715 | -3815 | +2335 / +4087 | +996 | c=1.00: +409 / -3815 / +2335 | 132 | +0.373 | +1.825 | +0.01 / -0.07 / +0.03 | ok |
 |  | RK7 | L3M | +717 / +1255 | -314 | +2772 / +4851 | -2862 | c=1.00: +717 / -314 / +2772 | 139 | +0.150 | +1.608 | +0.06 / +0.06 / +0.02 | ok |
 |  | RK7 | L6M | +548 / +959 | -314 | +1604 / +2808 | -2862 | c=1.00: +548 / -314 / +1604 | 307 | +0.067 | +0.767 | +0.13 / +0.04 / +0.12 | ok |
+|  | RK7 | L3M | -141 / -247 | +1770 | +2175 / +3806 | +684 | c=1.00: -141 / +1770 / +2175 | 69 | +0.322 | +1.706 | +0.11 / +0.08 / +0.24 | ok |
+|  | RK7 | L6M | +250 / +438 | -3605 | +1463 / +2560 | +684 | c=1.00: +250 / -3605 / +1463 | 173 | +0.174 | +1.118 | +0.10 / +0.06 / +0.31 | ok |
+|  | RK7 | L3M | +303 / +530 | +1651 | +2638 / +4617 | +664 | c=1.00: +303 / +1651 / +2638 | 163 | +0.125 | +1.569 | +0.17 / +0.12 / +0.38 | ok |
+|  | RK7 | L6M | +255 / +446 | +1651 | +2505 / +4384 | +664 | c=1.00: +255 / +1651 / +2505 | 382 | +0.123 | +1.742 | +0.14 / +0.08 / +0.16 | ok |
 |  | RK7 | L3M | +1782 / +3119 | -7971 | +2358 / +4127 | -5082 | c=1.00: +1782 / -7971 / +2358 | 74 | +0.279 | +1.587 | +0.34 / +0.39 / +0.44 | AMBER |
 |  | RK7 | L6M | +1084 / +1898 | -7971 | +1578 / +2761 | -5082 | c=1.00: +1084 / -7971 / +1578 | 149 | +0.188 | +1.038 | +0.22 / +0.24 / +0.22 | AMBER |
+|  | RK7 | L3M | +717 / +1255 | -314 | +2772 / +4851 | -2862 | c=1.00: +717 / -314 / +2772 | 139 | +0.150 | +1.608 | +0.06 / +0.06 / +0.02 | ok |
+|  | RK7 | L6M | +548 / +959 | -314 | +1604 / +2808 | -2862 | c=1.00: +548 / -314 / +1604 | 307 | +0.067 | +0.767 | +0.13 / +0.04 / +0.12 | ok |
+|  | RK7 | L3M | +2101 / +3677 | -3749 | +2391 / +4184 | -6684 | c=1.00: +2101 / -3749 / +2391 | 85 | +0.295 | +1.929 | -0.00 / +0.25 / +0.17 | AMBER |
+|  | RK7 | L6M | +1277 / +2235 | -3749 | +1036 / +1812 | -6684 | c=1.00: +1277 / -3749 / +1036 | 182 | +0.108 | +0.726 | -0.04 / +0.20 / +0.15 | AMBER |
 |  | RK7 | L3M | -283 / -496 | +3268 | -335 / -586 | +2124 | c=1.00: -283 / +3268 / -335 | 132 | -0.018 | -0.180 | +0.45 / +0.20 / +0.39 | ok |
 |  | RK7 | L6M | -93 / -163 | +3240 | +284 / +497 | +2124 | c=1.00: -93 / +3240 / +284 | 254 | +0.012 | +0.113 | +0.31 / +0.11 / +0.26 | ok |
 |  | RK7 | L3M | +1835 / +3211 | -253 | +804 / +1407 | -6109 | c=1.00: +1835 / -253 / +804 | 143 | +0.046 | +0.504 | +0.26 / +0.14 / +0.17 | AMBER |
 |  | RK7 | L6M | +1188 / +2079 | -253 | +655 / +1147 | -6109 | c=1.00: +1188 / -253 / +655 | 300 | +0.034 | +0.379 | +0.23 / +0.14 / +0.14 | AMBER |
 |  | RK7 | L3M | +1083 / +1895 | -6570 | +2339 / +4093 | -4545 | c=1.00: +1083 / -6570 / +2339 | 126 | +0.161 | +1.563 | +0.36 / +0.15 / +0.28 | ok |
 |  | RK7 | L6M | +758 / +1326 | -6570 | +1556 / +2723 | -4545 | c=1.00: +758 / -6570 / +1556 | 283 | +0.091 | +0.957 | +0.16 / +0.11 / +0.07 | ok |
+|  | RK7 | L3M | -448 / -784 | -3080 | +2629 / +4601 | +2306 | c=1.00: -448 / -3080 / +2629 | 64 | +0.304 | +1.495 | +0.23 / -0.12 / +0.07 | ok |
+|  | RK7 | L6M | +100 / +175 | -3825 | +1934 / +3385 | +1857 | c=1.00: +100 / -3825 / +1934 | 136 | +0.256 | +1.288 | +0.13 / -0.04 / +0.05 | ok |
 |  | RK7 | L3M | +2674 / +4680 | -8184 | +1049 / +1836 | -8732 | c=1.00: +2674 / -8184 / +1049 | 67 | +0.138 | +0.712 | +0.22 / +0.31 / +0.41 | AMBER |
 |  | RK7 | L6M | +1802 / +3154 | -8184 | +2161 / +3782 | -8732 | c=1.00: +1802 / -8184 / +2161 | 175 | +0.258 | +1.674 | +0.26 / +0.20 / +0.31 | AMBER |
 |  | RK7 | L3M | +1253 / +2193 | +2078 | +762 / +1333 | -2002 | c=1.00: +1253 / +2078 / +762 | 73 | +0.095 | +0.534 | +0.11 / +0.31 / +0.28 | ok |
 |  | RK7 | L6M | +967 / +1691 | -1090 | +1486 / +2601 | -2002 | c=1.00: +967 / -1090 / +1486 | 179 | +0.172 | +1.140 | +0.12 / +0.20 / +0.29 | ok |
+|  | RK7 | L3M | +3202 / +5604 | -2697 | -623 / -1091 | -5915 | c=1.00: +3202 / -2697 / -623 | 89 | -0.063 | -0.432 | -0.11 / +0.15 / -0.29 | AMBER |
+|  | RK7 | L6M | +1959 / +3429 | -2697 | +1942 / +3398 | -5915 | c=1.00: +1959 / -2697 / +1942 | 211 | +0.196 | +1.529 | +0.00 / +0.11 / -0.04 | AMBER |
 |  | RK7 | L3M | +1341 / +2346 | -263 | +2262 / +3959 | -6343 | c=1.00: +1341 / -263 / +2262 | 116 | +0.181 | +1.618 | +0.28 / +0.29 / +0.46 | AMBER |
 |  | RK7 | L6M | +739 / +1293 | -263 | +1815 / +3176 | -6343 | c=1.00: +739 / -263 / +1815 | 283 | +0.114 | +1.191 | +0.27 / +0.13 / +0.23 | AMBER |
 |  | RK7 | L3M | +3202 / +5604 | -2697 | -623 / -1091 | -5915 | c=1.00: +3202 / -2697 / -623 | 89 | -0.063 | -0.432 | -0.11 / +0.15 / -0.29 | AMBER |
@@ -389,11 +660,19 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L6M | +67 / +117 | -2625 | +1707 / +2987 | +1004 | c=1.00: +67 / -2625 / +1707 | 211 | +0.111 | +0.869 | +0.14 / +0.11 / +0.24 | ok |
 |  | RK7 | L3M | +2101 / +3677 | -3749 | +2391 / +4184 | -6684 | c=1.00: +2101 / -3749 / +2391 | 85 | +0.295 | +1.929 | -0.00 / +0.25 / +0.17 | AMBER |
 |  | RK7 | L6M | +1277 / +2235 | -3749 | +1036 / +1812 | -6684 | c=1.00: +1277 / -3749 / +1036 | 182 | +0.108 | +0.726 | -0.04 / +0.20 / +0.15 | AMBER |
+|  | RK7 | L3M | +579 / +1013 | +1131 | +1965 / +3440 | -612 | c=1.00: +579 / +1131 / +1965 | 213 | +0.058 | +0.943 | +0.21 / +0.11 / +0.40 | ok |
+|  | RK7 | L6M | +362 / +634 | +1131 | +2726 / +4770 | -612 | c=1.00: +362 / +1131 / +2726 | 485 | +0.101 | +1.812 | +0.19 / +0.04 / +0.19 | ok |
 |  | RK7 | L3M | +3305 / +5784 | -4928 | -334 / -584 | -11231 | c=1.00: +3305 / -4928 / -334 | 80 | -0.022 | -0.134 | +0.01 / +0.19 / +0.17 | RED |
 |  | RK7 | L6M | +2040 / +3571 | -4928 | +694 / +1215 | -11231 | c=1.00: +2040 / -4928 / +694 | 177 | +0.082 | +0.537 | -0.05 / +0.15 / +0.10 | RED |
+|  | RK7 | L3M | +848 / +1484 | -5920 | +2149 / +3761 | -1844 | c=1.00: +848 / -5920 / +2149 | 60 | +0.308 | +1.420 | +0.20 / -0.02 / +0.06 | ok |
+|  | RK7 | L6M | +808 / +1414 | -5920 | +2255 / +3946 | -1844 | c=1.00: +808 / -5920 / +2255 | 135 | +0.351 | +1.757 | +0.05 / +0.02 / +0.04 | ok |
+|  | RK7 | L3M | +3582 / +6269 | -6275 | +525 / +919 | -12520 | c=1.00: +3582 / -6275 / +525 | 79 | -0.013 | -0.079 | +0.32 / +0.29 / +0.45 | RED |
+|  | RK7 | L6M | +2380 / +4165 | -6275 | +729 / +1276 | -12520 | c=1.00: +2380 / -6275 / +729 | 155 | +0.036 | +0.207 | +0.27 / +0.16 / +0.39 | RED |
 |  | RK7 | L3M | +5512 / +9646 | -8519 | +1006 / +1761 | -17768 | c=1.00: +5512 / -8519 / +1006 | 95 | +0.031 | +0.227 | +0.01 / +0.22 / +0.34 | RED |
 |  | RK7 | L3M | +1477 / +2585 | -3954 | +973 / +1704 | -4191 | c=1.00: +1477 / -3954 / +973 | 123 | +0.012 | +0.117 | +0.22 / +0.27 / +0.30 | ok |
 |  | RK7 | L6M | +1008 / +1763 | -3954 | +674 / +1180 | -4191 | c=1.00: +1008 / -3954 / +674 | 259 | +0.010 | +0.096 | +0.18 / +0.25 / +0.21 | ok |
+|  | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=1.00: -504 / -3120 / +2902 | 62 | +0.356 | +1.698 | +0.25 / -0.07 / +0.11 | ok |
+|  | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=1.00: -58 / -3120 / +2291 | 136 | +0.327 | +1.650 | +0.06 / -0.03 / +0.02 | ok |
 |  | RK7 | L3M | +1505 / +2635 | -6225 | +1791 / +3134 | -4696 | c=1.00: +1505 / -6225 / +1791 | 42 | +0.228 | +0.737 | -0.03 / -0.06 / +0.11 | AMBER |
 |  | RK7 | L6M | +1198 / +2096 | -6225 | +1528 / +2674 | -4696 | c=1.00: +1198 / -6225 / +1528 | 92 | +0.247 | +0.842 | -0.01 / +0.02 / +0.12 | AMBER |
 |  | RK7 | L3M | +1782 / +3118 | -3699 | -688 / -1203 | -5977 | c=1.00: +1782 / -3699 / -688 | 207 | -0.041 | -0.658 | +0.07 / -0.15 / +0.01 | AMBER |
@@ -403,14 +682,25 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | RK7 | L3M | +2729 / +4776 | -6937 | +727 / +1273 | -9245 | c=1.00: +2729 / -6937 / +727 | 88 | +0.032 | +0.219 | +0.15 / -0.05 / +0.15 | AMBER |
 |  | RK7 | L6M | +1847 / +3232 | -6937 | +975 / +1706 | -9245 | c=1.00: +1847 / -6937 / +975 | 193 | +0.066 | +0.474 | +0.12 / +0.04 / +0.14 | AMBER |
 |  | RK7 | L3M | +1894 / +3314 | -3780 | +589 / +1030 | -6714 | c=1.00: +1894 / -3780 / +589 | 74 | +0.067 | +0.382 | +0.03 / +0.06 / -0.01 | AMBER |
+|  | RK7 | L3M | +2577 / +4510 | -10490 | +1047 / +1833 | -8025 | c=1.00: +2577 / -10490 / +1047 | 266 | +0.065 | +1.320 | +0.13 / +0.10 / +0.13 | AMBER |
 |  | RK7 | L3M | +4455 / +7796 | -8750 | +1337 / +2340 | -12915 | c=1.00: +4455 / -8750 / +1337 | 60 | +0.182 | +0.840 | -0.38 / -0.01 / -0.09 | RED |
 |  | RK7 | L6M | +2971 / +5199 | -8750 | +225 / +393 | -12915 | c=1.00: +2971 / -8750 / +225 | 147 | +0.008 | +0.041 | -0.22 / -0.08 / -0.13 | RED |
 |  | RK7 | L3M | +1509 / +2640 | -1962 | -33 / -58 | -2958 | c=1.00: +1509 / -1962 / -33 | 116 | -0.026 | -0.232 | -0.10 / +0.06 / +0.01 | ok |
 |  | RK7 | L6M | +1129 / +1976 | -1962 | +2243 / +3924 | -2958 | c=1.00: +1129 / -1962 / +2243 | 244 | +0.177 | +1.600 | -0.04 / +0.01 / +0.05 | ok |
+|  | RK7 | L3M | +892 / +1561 | +969 | +1557 / +2726 | -3857 | c=1.00: +892 / +969 / +1557 | 70 | +0.273 | +1.469 | +0.16 / +0.22 / +0.25 | ok |
+|  | RK7 | L6M | +634 / +1109 | +969 | +856 / +1497 | -3857 | c=1.00: +634 / +969 / +856 | 176 | +0.114 | +0.745 | +0.12 / +0.15 / +0.24 | ok |
 |  | RK7 | L3M | +1296 / +2267 | -1865 | +617 / +1079 | -2328 | c=1.00: +1296 / -1865 / +617 | 80 | -0.033 | -0.206 | +0.18 / -0.06 / +0.35 | ok |
 |  | RK7 | L6M | +887 / +1553 | -1865 | +557 / +974 | -2328 | c=1.00: +887 / -1865 / +557 | 163 | -0.006 | -0.034 | +0.18 / -0.03 / +0.24 | ok |
+|  | RK7 | L3M | +1508 / +2639 | -4055 | -214 / -375 | -5075 | c=1.00: +1508 / -4055 / -214 | 72 | -0.123 | -0.679 | +0.03 / +0.04 / -0.03 | AMBER |
+|  | RK7 | L6M | +1032 / +1806 | -4055 | +1009 / +1766 | -5075 | c=1.00: +1032 / -4055 / +1009 | 164 | +0.078 | +0.475 | +0.04 / +0.05 / +0.07 | AMBER |
 |  | RK7 | L3M | +6285 / +10999 | -6194 | -401 / -702 | -20465 | c=1.00: +6285 / -6194 / -401 | 89 | -0.039 | -0.267 | +0.06 / +0.12 / +0.13 | RED |
 |  | RK7 | L6M | +3911 / +6844 | -6194 | +1425 / +2494 | -20465 | c=1.00: +3911 / -6194 / +1425 | 221 | +0.122 | +0.998 | +0.05 / +0.10 / +0.18 | RED |
+|  | RK7 | L3M | +3766 / +6591 | -6054 | +908 / +1590 | -13173 | c=1.00: +3766 / -6054 / +908 | 90 | +0.045 | +0.314 | -0.09 / +0.43 / +0.16 | RED |
+|  | RK7 | L6M | +2534 / +4435 | -6054 | +1482 / +2593 | -13173 | c=1.00: +2534 / -6054 / +1482 | 210 | +0.117 | +0.910 | -0.05 / +0.23 / +0.05 | RED |
+|  | RK7 | L3M | +2945 / +5153 | -6070 | +190 / +332 | -10271 | c=1.00: +2945 / -6070 / +190 | 77 | +0.041 | +0.242 | +0.17 / +0.03 / +0.20 | RED |
+|  | RK7 | L6M | +1977 / +3459 | -6070 | +63 / +111 | -10271 | c=1.00: +1977 / -6070 / +63 | 178 | -0.012 | -0.081 | +0.06 / +0.04 / +0.12 | RED |
+|  | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=1.00: -504 / -3120 / +2902 | 62 | +0.356 | +1.698 | +0.25 / -0.07 / +0.11 | ok |
+|  | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=1.00: -58 / -3120 / +2291 | 136 | +0.327 | +1.650 | +0.06 / -0.03 / +0.02 | ok |
 |  | RK7 | L3M | +2371 / +4149 | -10570 | +1932 / +3382 | -4795 | c=1.00: +2371 / -10570 / +1932 | 68 | +0.206 | +1.076 | +0.01 / +0.15 / +0.27 | AMBER |
 |  | RK7 | L6M | +1668 / +2919 | -10570 | -704 / -1233 | -4795 | c=1.00: +1668 / -10570 / -704 | 159 | -0.171 | -1.010 | +0.01 / +0.05 / +0.08 | AMBER |
 |  | RK7 | L3M | +6756 / +11822 | -7289 | -1593 / -2787 | -20323 | c=1.00: +6756 / -7289 / -1593 | 79 | -0.203 | -1.231 | +0.11 / +0.19 / +0.20 | RED |
@@ -453,6 +743,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +496 / +868 | -4696 | +866 / +1516 | -2260 | c=1.00: +496 / -4696 / +866 | 137 | +0.166 | +0.843 | +0.15 / +0.03 / +0.19 | ok |
 |  | ADD | L3M | +3496 / +6118 | -6071 | +533 / +933 | -9516 | c=1.00: +3496 / -6071 / +533 | 214 | +0.021 | +0.338 | +0.12 / +0.10 / +0.23 | RED |
 |  | ADD | L6M | +2315 / +4051 | -6071 | +306 / +535 | -9516 | c=1.00: +2315 / -6071 / +306 | 551 | +0.013 | +0.270 | +0.09 / +0.09 / +0.26 | RED |
+|  | ADD | L3M | +1090 / +1907 | -7456 | +2426 / +4246 | -2914 | c=1.00: +1090 / -7456 / +2426 | 152 | +0.207 | +2.422 | +0.23 / +0.13 / +0.13 | ok |
+|  | ADD | L6M | +563 / +985 | -7456 | +1149 / +2010 | -2914 | c=1.00: +563 / -7456 / +1149 | 341 | +0.085 | +1.070 | +0.11 / +0.13 / +0.05 | ok |
 |  | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=1.00: -1573 / +95 / +2075 | 62 | +0.326 | +1.553 | +0.23 / -0.07 / +0.10 | ok |
 |  | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=1.00: -795 / -796 / +1691 | 135 | +0.312 | +1.560 | +0.05 / -0.03 / +0.01 | ok |
 |  | ADD | Y2023 | -2295 / -4017 | -2303 | +538 / +941 | -4865 | c=1.00: -2295 / -2303 / +538 | 182 | +0.096 | +0.448 | +0.07 / +0.04 / +0.23 | ok |
@@ -476,6 +768,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2023 | +1984 / +3472 | -5098 | +85 / +148 | -9938 | c=1.00: +1984 / -5098 / +85 | 262 | +0.004 | +0.029 | +0.07 / -0.05 / +0.02 | AMBER |
 |  | ADD | Y2024 | -5156 / -9022 | +1595 | +1315 / +2301 | +2571 | c=1.00: -5156 / +1595 / +1315 | 323 | +0.181 | +1.102 | +0.07 / +0.01 / +0.14 | ok |
 |  | ADD | Y2025 | -3849 / -6735 | +1750 | +405 / +710 | -468 | c=1.00: -3849 / +1750 / +405 | 305 | +0.065 | +0.375 | +0.04 / +0.01 / +0.05 | ok |
+|  | ADD | L3M | -910 / -1593 | +5096 | -195 / -341 | +3581 | c=1.00: -910 / +5096 / -195 | 131 | -0.017 | -0.176 | +0.44 / +0.20 / +0.39 | ok |
+|  | ADD | L6M | -587 / -1028 | +3829 | +235 / +412 | +3581 | c=1.00: -587 / +3829 / +235 | 253 | +0.012 | +0.115 | +0.31 / +0.10 / +0.26 | ok |
 |  | ADD | L3M | -462 / -808 | -2791 | +2434 / +4259 | +527 | c=1.00: -462 / -2791 / +2434 | 124 | +0.155 | +1.479 | +0.38 / +0.15 / +0.31 | ok |
 |  | ADD | L6M | -250 / -437 | -2791 | +1385 / +2423 | +527 | c=1.00: -250 / -2791 / +1385 | 280 | +0.085 | +0.880 | +0.18 / +0.12 / +0.09 | ok |
 |  | ADD | Y2023 | +4227 / +7397 | -3513 | +489 / +857 | -11582 | c=1.00: +4227 / -3513 / +489 | 305 | +0.056 | +0.440 | +0.02 / +0.08 / +0.03 | AMBER |
@@ -486,6 +780,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2023 | -1812 / -3171 | -1916 | +720 / +1261 | -3146 | c=1.00: -1812 / -1916 / +720 | 348 | +0.074 | +0.656 | +0.13 / +0.09 / +0.08 | ok |
 |  | ADD | Y2024 | -1940 / -3394 | -228 | +600 / +1049 | -3154 | c=1.00: -1940 / -228 / +600 | 490 | +0.060 | +0.554 | +0.02 / +0.03 / -0.01 | ok |
 |  | ADD | Y2025 | -5668 / -9919 | +790 | +1445 / +2529 | +10314 | c=1.00: -5668 / +790 / +1445 | 495 | +0.142 | +1.326 | +0.07 / -0.04 / +0.00 | ok |
+|  | ADD | L3M | +970 / +1698 | -3845 | +31 / +54 | -2760 | c=1.00: +970 / -3845 / +31 | 88 | +0.032 | +0.217 | +0.15 / -0.05 / +0.15 | ok |
+|  | ADD | L6M | +717 / +1255 | -3845 | +198 / +346 | -2760 | c=1.00: +717 / -3845 / +198 | 188 | +0.062 | +0.429 | +0.11 / +0.04 / +0.12 | ok |
 |  | ADD | L3M | +3534 / +6184 | -1571 | -20 / -34 | -12849 | c=1.00: +3534 / -1571 / -20 | 101 | -0.042 | -0.328 | +0.09 / +0.37 / +0.34 | RED |
 |  | ADD | L6M | +2199 / +3848 | -3261 | +771 / +1350 | -12849 | c=1.00: +2199 / -3261 / +771 | 222 | +0.067 | +0.549 | +0.02 / +0.25 / +0.25 | RED |
 |  | ADD | L3M | -157 / -274 | +3661 | +2274 / +3979 | +515 | c=1.00: -157 / +3661 / +2274 | 197 | +0.082 | +1.240 | +0.13 / +0.13 / +0.29 | ok |
@@ -510,6 +806,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2025 | +834 / +1459 | -4033 | -235 / -412 | -8032 | c=1.00: +834 / -4033 / -235 | 495 | +0.023 | +0.215 | +0.08 / +0.10 / +0.12 | ok |
 |  | ADD | L3M | -1067 / -1868 | +195 | +621 / +1087 | +6421 | c=1.00: -1067 / +195 / +621 | 65 | +0.133 | +0.666 | +0.14 / -0.16 / +0.02 | ok |
 |  | ADD | L6M | -353 / -618 | -3261 | +882 / +1543 | +5375 | c=1.00: -353 / -3261 / +882 | 141 | +0.197 | +1.031 | +0.07 / -0.06 / +0.07 | ok |
+|  | ADD | L3M | +833 / +1458 | -4696 | -1022 / -1789 | -2260 | c=1.00: +833 / -4696 / -1022 | 61 | -0.170 | -0.798 | +0.16 / -0.02 / +0.20 | ok |
+|  | ADD | L6M | +496 / +868 | -4696 | +866 / +1516 | -2260 | c=1.00: +496 / -4696 / +866 | 137 | +0.166 | +0.843 | +0.15 / +0.03 / +0.19 | ok |
 |  | ADD | L3M | +484 / +847 | -2904 | +754 / +1319 | +1428 | c=1.00: +484 / -2904 / +754 | 60 | +0.168 | +0.778 | -0.05 / +0.20 / +0.01 | ok |
 |  | ADD | L6M | +225 / +394 | -2904 | +222 / +388 | +1428 | c=1.00: +225 / -2904 / +222 | 147 | +0.056 | +0.306 | -0.07 / +0.18 / -0.02 | ok |
 |  | ADD | L3M | +2170 / +3798 | -3621 | -251 / -440 | -7464 | c=1.00: +2170 / -3621 / -251 | 78 | -0.026 | -0.155 | +0.29 / +0.29 / +0.44 | AMBER |
@@ -530,14 +828,20 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +70 / +122 | +2791 | +734 / +1284 | -1494 | c=1.00: +70 / +2791 / +734 | 333 | +0.032 | +0.398 | +0.29 / -0.05 / +0.00 | ok |
 |  | ADD | L3M | +272 / +476 | -1681 | +1032 / +1806 | +1383 | c=1.00: +272 / -1681 / +1032 | 83 | +0.157 | +1.002 | -0.01 / +0.25 / +0.15 | ok |
 |  | ADD | L6M | +50 / +87 | -1681 | +899 / +1573 | +1383 | c=1.00: +50 / -1681 / +899 | 193 | +0.115 | +0.819 | +0.07 / +0.15 / +0.20 | ok |
+|  | ADD | L3M | +1168 / +2044 | +1606 | +1259 / +2203 | -6114 | c=1.00: +1168 / +1606 / +1259 | 97 | +0.177 | +1.323 | +0.30 / +0.10 / +0.14 | AMBER |
+|  | ADD | L6M | +593 / +1037 | +1606 | +483 / +845 | -6114 | c=1.00: +593 / +1606 / +483 | 217 | +0.074 | +0.595 | +0.26 / +0.02 / -0.00 | AMBER |
 |  | ADD | L3M | +1599 / +2799 | -1669 | +1780 / +3115 | -3835 | c=1.00: +1599 / -1669 / +1780 | 71 | +0.103 | +0.562 | +0.04 / +0.26 / +0.31 | ok |
 |  | ADD | L6M | +965 / +1689 | -1669 | +407 / +713 | -3835 | c=1.00: +965 / -1669 / +407 | 168 | -0.015 | -0.095 | +0.15 / +0.21 / +0.26 | ok |
 |  | ADD | L3M | +946 / +1656 | -869 | +302 / +528 | -3069 | c=1.00: +946 / -869 / +302 | 105 | -0.020 | -0.160 | +0.09 / +0.30 / +0.21 | ok |
 |  | ADD | L6M | +518 / +907 | -869 | +918 / +1606 | -3069 | c=1.00: +518 / -869 / +918 | 262 | +0.063 | +0.608 | +0.02 / +0.13 / +0.18 | ok |
+|  | ADD | L3M | -273 / -478 | -314 | +1876 / +3283 | +511 | c=1.00: -273 / -314 / +1876 | 56 | +0.417 | +1.795 | +0.05 / +0.11 / +0.26 | ok |
+|  | ADD | L6M | +195 / +342 | -4316 | +1020 / +1784 | +511 | c=1.00: +195 / -4316 / +1020 | 132 | +0.227 | +1.108 | +0.09 / +0.13 / +0.27 | ok |
 |  | ADD | L3M | +56 / +97 | -1109 | +1200 / +2099 | +2350 | c=1.00: +56 / -1109 / +1200 | 85 | +0.086 | +0.563 | +0.25 / +0.03 / +0.24 | ok |
 |  | ADD | L6M | +114 / +200 | -1206 | +981 / +1716 | +2350 | c=1.00: +114 / -1206 / +981 | 178 | +0.092 | +0.607 | +0.10 / +0.05 / +0.18 | ok |
 |  | ADD | L3M | -65 / -114 | -3256 | +642 / +1123 | +186 | c=1.00: -65 / -3256 / +642 | 90 | +0.070 | +0.487 | +0.09 / +0.01 / +0.09 | ok |
 |  | ADD | L6M | +313 / +547 | -6665 | -137 / -240 | +186 | c=1.00: +313 / -6665 / -137 | 195 | +0.000 | +0.000 | +0.03 / +0.04 / +0.05 | ok |
+|  | ADD | L3M | +6011 / +10519 | -8135 | +168 / +294 | -20481 | c=1.00: +6011 / -8135 / +168 | 117 | +0.031 | +0.280 | +0.05 / +0.26 / +0.31 | RED |
+|  | ADD | L6M | +3942 / +6898 | -8135 | +1059 / +1853 | -20481 | c=1.00: +3942 / -8135 / +1059 | 292 | +0.104 | +1.127 | +0.00 / +0.16 / +0.15 | RED |
 |  | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=1.00: -1573 / +95 / +2075 | 62 | +0.326 | +1.553 | +0.23 / -0.07 / +0.10 | ok |
 |  | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=1.00: -795 / -796 / +1691 | 135 | +0.312 | +1.560 | +0.05 / -0.03 / +0.01 | ok |
 |  | ADDLO | L3M | +607 / +1063 | -2710 | -100 / -175 | -5829 | c=1.00: +607 / -2710 / -100 | 55 | +0.162 | +0.687 | +0.07 / +0.00 / -0.14 | AMBER |
@@ -549,6 +853,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADDSO | L6M | +277 / +485 | -1616 | +776 / +1358 | +1181 | c=1.00: +277 / -1616 / +776 | 126 | +0.160 | +0.748 | -0.01 / -0.00 / +0.06 | ok |
 |  | ADD | L3M | +311 / +545 | -1686 | -290 / -508 | -1736 | c=1.00: +311 / -1686 / -290 | 141 | -0.032 | -0.349 | +0.04 / +0.11 / +0.18 | ok |
 |  | ADD | L6M | +215 / +377 | -1686 | +227 / +397 | -1736 | c=1.00: +215 / -1686 / +227 | 288 | +0.019 | +0.204 | -0.04 / +0.02 / +0.06 | ok |
+|  | ADD | L3M | -8 / -15 | -5150 | +1214 / +2124 | -3058 | c=1.00: -8 / -5150 / +1214 | 127 | +0.119 | +1.163 | +0.15 / -0.01 / +0.20 | ok |
+|  | ADD | L6M | +129 / +225 | -5150 | +1452 / +2540 | -3058 | c=1.00: +129 / -5150 / +1452 | 264 | +0.137 | +1.337 | +0.02 / +0.03 / +0.01 | ok |
 |  | ADD | L3M | +245 / +429 | +784 | -390 / -682 | +1136 | c=1.00: +245 / +784 / -390 | 71 | -0.046 | -0.252 | -0.09 / +0.07 / +0.07 | ok |
 |  | ADD | L6M | +235 / +410 | +784 | +723 / +1265 | +1136 | c=1.00: +235 / +784 / +723 | 174 | +0.113 | +0.728 | -0.00 / +0.04 / -0.01 | ok |
 |  | ADD | L3M | +403 / +706 | +1249 | +514 / +900 | +1921 | c=1.00: +403 / +1249 / +514 | 201 | +0.015 | +0.236 | +0.02 / +0.02 / -0.05 | ok |
@@ -560,10 +866,20 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2025 | -2084 / -3647 | +1554 | +998 / +1747 | +705 | c=1.00: -2084 / +1554 / +998 | 441 | +0.102 | +0.846 | +0.13 / +0.08 / +0.11 | ok |
 |  | ADD | L3M | +471 / +825 | +1929 | -289 / -506 | +1386 | c=1.00: +471 / +1929 / -289 | 113 | -0.006 | -0.051 | -0.07 / +0.31 / +0.36 | ok |
 |  | ADD | L6M | +200 / +351 | +1929 | +438 / +766 | +1386 | c=1.00: +200 / +1929 / +438 | 241 | +0.039 | +0.352 | +0.08 / +0.19 / +0.26 | ok |
+|  | ADD | L3M | +7275 / +12730 | -10060 | -1145 / -2004 | -24131 | c=1.00: +7275 / -10060 / -1145 | 111 | -0.106 | -0.907 | -0.03 / +0.27 / +0.41 | RED |
+|  | ADD | L6M | +4534 / +7934 | -10060 | +350 / +612 | -24131 | c=1.00: +4534 / -10060 / +350 | 281 | +0.052 | +0.545 | -0.00 / +0.19 / +0.14 | RED |
 |  | ADD | L3M | -912 / -1596 | -194 | +1551 / +2715 | +3421 | c=1.00: -912 / -194 / +1551 | 123 | +0.118 | +1.121 | +0.34 / +0.02 / +0.42 | ok |
 |  | ADD | L6M | -561 / -982 | -194 | +1112 / +1946 | +3421 | c=1.00: -561 / -194 / +1112 | 276 | +0.079 | +0.808 | +0.31 / +0.04 / +0.30 | ok |
 |  | ADD | L3M | +1112 / +1947 | -1804 | +815 / +1426 | -6874 | c=1.00: +1112 / -1804 / +815 | 94 | +0.077 | +0.554 | +0.25 / +0.09 / +0.11 | AMBER |
 |  | ADD | L6M | +508 / +890 | -1804 | +919 / +1608 | -6874 | c=1.00: +508 / -1804 / +919 | 201 | +0.103 | +0.766 | +0.19 / +0.07 / -0.02 | AMBER |
+|  | ADD | L3M | +2110 / +3693 | -2255 | +51 / +89 | -8987 | c=1.00: +2110 / -2255 / +51 | 104 | +0.024 | +0.191 | +0.07 / +0.20 / +0.11 | AMBER |
+|  | ADD | L6M | +1655 / +2896 | -2255 | +363 / +634 | -8987 | c=1.00: +1655 / -2255 / +363 | 263 | +0.060 | +0.586 | +0.14 / +0.15 / +0.03 | AMBER |
+|  | ADD | L3M | +5425 / +9493 | -10670 | +453 / +793 | -15899 | c=1.00: +5425 / -10670 / +453 | 77 | +0.033 | +0.197 | -0.08 / +0.17 / +0.34 | RED |
+|  | ADD | L6M | +3256 / +5697 | -10670 | +609 / +1066 | -15899 | c=1.00: +3256 / -10670 / +609 | 165 | +0.083 | +0.505 | +0.03 / +0.15 / +0.23 | RED |
+|  | ADD | L3M | +471 / +825 | +1929 | -289 / -506 | +1386 | c=1.00: +471 / +1929 / -289 | 113 | -0.006 | -0.051 | -0.07 / +0.31 / +0.36 | ok |
+|  | ADD | L6M | +200 / +351 | +1929 | +438 / +766 | +1386 | c=1.00: +200 / +1929 / +438 | 241 | +0.039 | +0.352 | +0.08 / +0.19 / +0.26 | ok |
+|  | ADD | L3M | +2834 / +4959 | -5585 | +1087 / +1902 | -9744 | c=1.00: +2834 / -5585 / +1087 | 88 | +0.084 | +0.570 | -0.08 / +0.41 / +0.15 | RED |
+|  | ADD | L6M | +1836 / +3213 | -5585 | +1370 / +2397 | -9744 | c=1.00: +1836 / -5585 / +1370 | 207 | +0.136 | +1.043 | -0.05 / +0.21 / +0.04 | RED |
 |  | ADD | L3M | +1858 / +3252 | -4908 | +86 / +151 | -7367 | c=1.00: +1858 / -4908 / +86 | 76 | +0.057 | +0.333 | +0.19 / +0.03 / +0.20 | AMBER |
 |  | ADD | L6M | +1154 / +2020 | -4908 | -43 / -75 | -7367 | c=1.00: +1154 / -4908 / -43 | 176 | +0.001 | +0.007 | +0.07 / +0.04 / +0.12 | AMBER |
 |  | ADD | L3M | +913 / +1599 | -71 | -211 / -369 | -3719 | c=1.00: +913 / -71 / -211 | 71 | -0.025 | -0.135 | +0.12 / +0.12 / -0.11 | ok |
@@ -572,8 +888,13 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +830 / +1452 | -6366 | +984 / +1722 | -3700 | c=1.00: +830 / -6366 / +984 | 156 | +0.153 | +0.885 | -0.06 / +0.01 / +0.13 | ok |
 |  | ADD | L3M | -1526 / -2671 | +145 | +1113 / +1948 | +6581 | c=1.00: -1526 / +145 / +1113 | 61 | +0.174 | +0.815 | +0.25 / -0.18 / +0.09 | ok |
 |  | ADD | L6M | -654 / -1144 | -2981 | +1483 / +2596 | +5375 | c=1.00: -654 / -2981 / +1483 | 134 | +0.286 | +1.418 | +0.10 / -0.08 / +0.09 | ok |
+|  | ADD | L3M | +527 / +923 | +3090 | +763 / +1334 | +508 | c=1.00: +527 / +3090 / +763 | 73 | +0.095 | +0.534 | +0.11 / +0.31 / +0.28 | ok |
+|  | ADD | L6M | +375 / +656 | -501 | +1325 / +2319 | +508 | c=1.00: +375 / -501 / +1325 | 178 | +0.177 | +1.166 | +0.12 / +0.20 / +0.29 | ok |
 |  | ADD | L3M | -314 / -550 | +966 | +452 / +791 | +3585 | c=1.00: -314 / +966 / +452 | 100 | +0.004 | +0.029 | +0.31 / +0.36 / +0.39 | ok |
 |  | ADD | L6M | -257 / -450 | +966 | +872 / +1527 | +3585 | c=1.00: -257 / +966 / +872 | 203 | +0.071 | +0.532 | +0.18 / +0.20 / +0.07 | ok |
+|  | ADD | Y2023 | +4095 / +7166 | -857 | +310 / +542 | -11376 | c=1.00: +4095 / -857 / +310 | 300 | +0.029 | +0.220 | +0.26 / +0.13 / +0.29 | AMBER |
+|  | ADD | Y2024 | -1069 / -1870 | -1140 | +176 / +308 | -3212 | c=1.00: -1069 / -1140 / +176 | 435 | +0.025 | +0.203 | +0.22 / +0.11 / +0.14 | ok |
+|  | ADD | Y2025 | -1711 / -2993 | -1750 | +546 / +956 | +3003 | c=1.00: -1711 / -1750 / +546 | 432 | +0.074 | +0.603 | +0.12 / +0.11 / +0.08 | ok |
 |  | ADD | L3M | +154 / +269 | -2674 | -173 / -303 | -939 | c=1.00: +154 / -2674 / -173 | 69 | +0.001 | +0.005 | -0.02 / -0.03 / -0.12 | ok |
 |  | ADD | L6M | +116 / +203 | -2674 | -255 / -447 | -939 | c=1.00: +116 / -2674 / -255 | 150 | +0.011 | +0.060 | -0.01 / +0.04 / +0.13 | ok |
 |  | ADD | L3M | -1172 / -2051 | +3906 | +2247 / +3933 | +5826 | c=1.00: -1172 / +3906 / +2247 | 129 | +0.181 | +1.793 | +0.27 / +0.08 / +0.16 | ok |
@@ -585,6 +906,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +2721 / +4762 | -545 | -747 / -1307 | -14967 | c=1.00: +2721 / -545 / -747 | 132 | -0.045 | -0.222 | +0.03 / -0.03 / +0.02 | RED |
 |  | ADD | L3M | -353 / -617 | -2705 | +1632 / +2856 | +2446 | c=1.00: -353 / -2705 / +1632 | 61 | +0.305 | +1.429 | +0.20 / -0.02 / +0.06 | ok |
 |  | ADD | L6M | -13 / -24 | -3226 | +1775 / +3107 | +2446 | c=1.00: -13 / -3226 / +1775 | 135 | +0.350 | +1.749 | +0.05 / +0.02 / +0.04 | ok |
+|  | ADD | Y2023 | -205 / -358 | -2364 | +474 / +830 | -7105 | c=1.00: -205 / -2364 / +474 | 179 | +0.086 | +0.395 | +0.06 / +0.07 / +0.21 | AMBER |
+|  | ADD | Y2024 | -517 / -905 | -2395 | +676 / +1184 | +6894 | c=1.00: -517 / -2395 / +676 | 253 | +0.124 | +0.594 | -0.02 / +0.01 / +0.17 | ok |
 |  | ADD | Y2025 | -7861 / -13757 | +3155 | +1040 / +1820 | +15161 | c=1.00: -7861 / +3155 / +1040 | 267 | +0.161 | +0.810 | +0.06 / -0.05 / +0.11 | ok |
 |  | ADD | L3M | -741 / -1297 | -1319 | +2558 / +4477 | +2141 | c=1.00: -741 / -1319 / +2558 | 98 | +0.190 | +1.433 | +0.30 / -0.08 / +0.12 | ok |
 |  | ADD | L6M | -483 / -845 | -1319 | +1146 / +2006 | +2141 | c=1.00: -483 / -1319 / +1146 | 215 | +0.086 | +0.684 | +0.22 / -0.12 / -0.04 | ok |
@@ -598,6 +921,10 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2023 | -112 / -195 | -1453 | +675 / +1181 | -3674 | c=1.00: -112 / -1453 / +675 | 294 | +0.082 | +0.618 | +0.07 / -0.01 / +0.10 | ok |
 |  | ADD | Y2024 | +3672 / +6427 | -1355 | -406 / -710 | -307 | c=1.00: +3672 / -1355 / -406 | 383 | -0.037 | -0.268 | -0.08 / +0.03 / +0.02 | ok |
 |  | ADD | Y2025 | +1151 / +2013 | +2439 | +691 / +1209 | -5872 | c=1.00: +1151 / +2439 / +691 | 328 | +0.102 | +0.630 | +0.05 / -0.02 / +0.05 | ok |
+|  | ADD | L3M | +2588 / +4529 | -4460 | -849 / -1486 | -10451 | c=1.00: +2588 / -4460 / -849 | 80 | -0.022 | -0.134 | +0.01 / +0.19 / +0.17 | RED |
+|  | ADD | L6M | +1497 / +2619 | -4460 | +301 / +526 | -10451 | c=1.00: +1497 / -4460 / +301 | 177 | +0.082 | +0.537 | -0.05 / +0.15 / +0.10 | RED |
+|  | ADD | L3M | -427 / -747 | +2630 | +1632 / +2856 | +2141 | c=1.00: -427 / +2630 / +1632 | 68 | +0.297 | +1.553 | +0.08 / +0.08 / +0.22 | ok |
+|  | ADD | L6M | -90 / -158 | -3015 | +1031 / +1804 | +2141 | c=1.00: -90 / -3015 / +1031 | 171 | +0.168 | +1.063 | +0.09 / +0.06 / +0.30 | ok |
 |  | ADD | L3M | +2763 / +4835 | -1586 | -976 / -1708 | -7216 | c=1.00: +2763 / -1586 / -976 | 190 | -0.064 | -0.941 | +0.26 / +0.44 / +0.56 | AMBER |
 |  | ADD | L3M | +4543 / +7950 | -7660 | +486 / +851 | -17817 | c=1.00: +4543 / -7660 / +486 | 99 | +0.020 | +0.155 | +0.20 / +0.36 / +0.40 | RED |
 |  | ADD | L6M | +2740 / +4796 | -7660 | +2316 / +4053 | -17817 | c=1.00: +2740 / -7660 / +2316 | 235 | +0.231 | +2.009 | +0.13 / +0.26 / +0.09 | RED |
@@ -607,6 +934,10 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +811 / +1419 | -3111 | +885 / +1548 | -3738 | c=1.00: +811 / -3111 / +885 | 145 | +0.163 | +0.878 | +0.06 / +0.08 / +0.21 | ok |
 |  | ADD | L3M | +9012 / +15770 | -8505 | -541 / -947 | -26522 | c=1.00: +9012 / -8505 / -541 | 111 | -0.065 | -0.553 | +0.02 / +0.24 / +0.38 | RED |
 |  | ADD | L6M | +5642 / +9874 | -8505 | -204 / -357 | -26522 | c=1.00: +5642 / -8505 / -204 | 279 | -0.023 | -0.242 | +0.03 / +0.14 / +0.08 | RED |
+|  | ADD | L3M | +965 / +1689 | -2980 | +1298 / +2272 | -3738 | c=1.00: +965 / -2980 / +1298 | 65 | +0.203 | +1.017 | +0.19 / +0.13 / +0.35 | ok |
+|  | ADD | L6M | +811 / +1419 | -3111 | +885 / +1548 | -3738 | c=1.00: +811 / -3111 / +885 | 145 | +0.163 | +0.878 | +0.06 / +0.08 / +0.21 | ok |
+|  | ADD | L3M | +616 / +1079 | -4543 | -347 / -607 | -2235 | c=1.00: +616 / -4543 / -347 | 144 | -0.003 | -0.037 | +0.05 / +0.12 / +0.13 | ok |
+|  | ADD | L6M | +480 / +839 | -4543 | +122 / +213 | -2235 | c=1.00: +480 / -4543 / +122 | 362 | +0.021 | +0.277 | -0.03 / +0.11 / +0.03 | ok |
 |  | ADD | L3M | +214 / +375 | -1244 | +2020 / +3535 | +736 | c=1.00: +214 / -1244 / +2020 | 81 | +0.143 | +0.894 | -0.01 / +0.20 / +0.15 | ok |
 |  | ADD | L6M | +32 / +57 | -1244 | +2476 / +4332 | +736 | c=1.00: +32 / -1244 / +2476 | 192 | +0.225 | +1.598 | +0.04 / +0.15 / +0.03 | ok |
 |  | ADD | L3M | +950 / +1662 | -7204 | -103 / -180 | -4462 | c=1.00: +950 / -7204 / -103 | 67 | +0.026 | +0.136 | +0.09 / +0.02 / +0.03 | ok |
@@ -648,6 +979,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +2031 / +3554 | -7925 | +1318 / +2307 | -13157 | c=1.00: +2031 / -7925 / +1318 | 299 | +0.111 | +1.234 | +0.07 / +0.20 / +0.21 | RED |
 |  | ADD | L3M | +1681 / +2942 | -5285 | +1772 / +3101 | -5519 | c=1.00: +1681 / -5285 / +1772 | 59 | +0.357 | +1.619 | -0.35 / +0.12 / -0.05 | AMBER |
 |  | ADD | L6M | +1219 / +2133 | -5285 | +611 / +1068 | -5519 | c=1.00: +1219 / -5285 / +611 | 149 | +0.135 | +0.747 | -0.20 / +0.12 / -0.11 | AMBER |
+|  | ADD | L3M | +833 / +1458 | -4696 | -1022 / -1789 | -2260 | c=1.00: +833 / -4696 / -1022 | 61 | -0.170 | -0.798 | +0.16 / -0.02 / +0.20 | ok |
+|  | ADD | L6M | +496 / +868 | -4696 | +866 / +1516 | -2260 | c=1.00: +496 / -4696 / +866 | 137 | +0.166 | +0.843 | +0.15 / +0.03 / +0.19 | ok |
 |  | ADD | L3M | -632 / -1106 | -1471 | +546 / +956 | +4027 | c=1.00: -632 / -1471 / +546 | 115 | +0.032 | +0.285 | +0.25 / +0.12 / +0.22 | ok |
 |  | ADD | L6M | -283 / -496 | -1471 | +255 / +446 | +4027 | c=1.00: -283 / -1471 / +255 | 249 | +0.020 | +0.185 | +0.14 / +0.14 / +0.15 | ok |
 |  | ADD | Y2023 | -157 / -275 | -1568 | +302 / +529 | -1140 | c=1.00: -157 / -1568 / +302 | 295 | +0.027 | +0.206 | +0.11 / +0.13 / +0.18 | ok |
@@ -668,16 +1001,25 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +1836 / +3213 | -5585 | +1370 / +2397 | -9744 | c=1.00: +1836 / -5585 / +1370 | 207 | +0.136 | +1.043 | -0.05 / +0.21 / +0.04 | RED |
 |  | ADD | L3M | +476 / +832 | +616 | +1242 / +2173 | -843 | c=1.00: +476 / +616 / +1242 | 188 | +0.082 | +1.185 | +0.16 / +0.23 / +0.15 | ok |
 |  | ADD | L6M | +381 / +666 | -2530 | +1210 / +2117 | -843 | c=1.00: +381 / -2530 / +1210 | 453 | +0.063 | +1.054 | +0.16 / +0.14 / +0.15 | ok |
+|  | ADD | L3M | +594 / +1040 | -2919 | +226 / +396 | -2178 | c=1.00: +594 / -2919 / +226 | 73 | +0.041 | +0.228 | -0.01 / +0.07 / -0.03 | ok |
+|  | ADD | L6M | +562 / +984 | -3356 | +800 / +1400 | -2178 | c=1.00: +562 / -3356 / +800 | 159 | +0.116 | +0.686 | -0.04 / +0.09 / +0.09 | ok |
 |  | ADD | L3M | +1815 / +3176 | -1051 | -1639 / -2869 | -6824 | c=1.00: +1815 / -1051 / -1639 | 140 | -0.100 | -1.082 | -0.05 / -0.05 / -0.09 | AMBER |
 |  | ADD | L6M | +1077 / +1885 | -1051 | -303 / -531 | -6824 | c=1.00: +1077 / -1051 / -303 | 305 | +0.002 | +0.025 | -0.01 / -0.02 / +0.05 | AMBER |
 |  | ADD | L3M | -607 / -1062 | -439 | +846 / +1480 | +2186 | c=1.00: -607 / -439 / +846 | 117 | +0.082 | +0.742 | +0.36 / +0.24 / +0.32 | ok |
 |  | ADD | L6M | -313 / -547 | -439 | +564 / +988 | +2186 | c=1.00: -313 / -439 / +564 | 283 | +0.047 | +0.488 | +0.19 / +0.16 / +0.14 | ok |
 |  | ADD | L3M | +1424 / +2492 | -3732 | +23 / +40 | -5767 | c=1.00: +1424 / -3732 / +23 | 40 | +0.095 | +0.293 | +0.02 / +0.03 / +0.22 | AMBER |
 |  | ADD | L6M | +840 / +1470 | -3732 | +465 / +813 | -5767 | c=1.00: +840 / -3732 / +465 | 80 | +0.187 | +0.554 | +0.08 / -0.04 / +0.08 | AMBER |
+|  | ADD | L3M | +49 / +85 | +529 | -79 / -138 | +2244 | c=1.00: +49 / +529 / -79 | 113 | -0.026 | -0.224 | -0.09 / +0.08 / +0.02 | ok |
+|  | ADD | L6M | +139 / +243 | +279 | +2113 / +3697 | +2244 | c=1.00: +139 / +279 / +2113 | 241 | +0.180 | +1.603 | -0.03 / +0.01 / +0.05 | ok |
 |  | ADD | L3M | -512 / -897 | +3559 | +875 / +1531 | +1894 | c=1.00: -512 / +3559 / +875 | 75 | +0.116 | +0.672 | -0.01 / -0.05 / +0.16 | ok |
 |  | ADD | L6M | -328 / -574 | +3559 | +749 / +1312 | +1894 | c=1.00: -328 / +3559 / +749 | 144 | +0.129 | +0.686 | +0.03 / +0.00 / +0.12 | ok |
 |  | ADD | L3M | +1597 / +2794 | -4060 | +863 / +1510 | -6723 | c=1.00: +1597 / -4060 / +863 | 106 | +0.132 | +1.072 | +0.18 / +0.21 / +0.30 | AMBER |
 |  | ADD | L6M | +981 / +1716 | -4060 | +1454 / +2544 | -6723 | c=1.00: +981 / -4060 / +1454 | 211 | +0.173 | +1.354 | +0.12 / +0.09 / +0.20 | AMBER |
+|  | ADD | L3M | +1185 / +2074 | -4395 | -502 / -878 | -4490 | c=1.00: +1185 / -4395 / -502 | 205 | -0.032 | -0.506 | +0.09 / -0.18 / +0.02 | ok |
+|  | ADD | L6M | +827 / +1448 | -4395 | +526 / +920 | -4490 | c=1.00: +827 / -4395 / +526 | 444 | +0.025 | +0.405 | +0.22 / +0.01 / +0.08 | ok |
+|  | ADD | L3M | +41 / +71 | +1151 | +1341 / +2347 | +591 | c=1.00: +41 / +1151 / +1341 | 140 | +0.047 | +0.502 | +0.26 / +0.14 / +0.17 | ok |
+|  | ADD | L6M | -8 / -14 | +1151 | +798 / +1396 | +591 | c=1.00: -8 / +1151 / +798 | 297 | +0.034 | +0.378 | +0.23 / +0.15 / +0.14 | ok |
+|  | ADD | L3M | +2763 / +4835 | -1586 | -976 / -1708 | -7216 | c=1.00: +2763 / -1586 / -976 | 190 | -0.064 | -0.941 | +0.26 / +0.44 / +0.56 | AMBER |
 |  | ADD | L3M | -1301 / -2276 | +80 | -681 / -1192 | +6516 | c=1.00: -1301 / +80 / -681 | 62 | +0.108 | +0.515 | +0.14 / -0.14 / -0.08 | ok |
 |  | ADD | L6M | -738 / -1291 | +80 | +96 / +168 | +5375 | c=1.00: -738 / +80 / +96 | 135 | +0.155 | +0.774 | +0.08 / -0.07 / -0.03 | ok |
 |  | ADD | L3M | -1351 / -2364 | +4160 | +1962 / +3433 | +4820 | c=1.00: -1351 / +4160 / +1962 | 69 | +0.306 | +1.622 | +0.19 / +0.23 / +0.27 | ok |
@@ -712,6 +1054,8 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +1034 / +1810 | -6735 | -506 / -886 | -5742 | c=1.00: +1034 / -6735 / -506 | 190 | -0.028 | -0.195 | +0.04 / +0.08 / +0.09 | AMBER |
 |  | ADD | L3M | +1430 / +2503 | -941 | -891 / -1559 | -4444 | c=1.00: +1430 / -941 / -891 | 95 | -0.155 | -1.136 | -0.03 / -0.24 / -0.03 | ok |
 |  | ADD | L6M | +829 / +1452 | -941 | -436 / -763 | -4444 | c=1.00: +829 / -941 / -436 | 208 | -0.071 | -0.545 | -0.00 / -0.17 / -0.07 | ok |
+|  | ADD | L3M | +1220 / +2135 | +2706 | -840 / -1470 | -5191 | c=1.00: +1220 / +2706 / -840 | 89 | -0.189 | -1.297 | +0.02 / -0.05 / +0.02 | AMBER |
+|  | ADD | L6M | +806 / +1411 | +2706 | +1137 / +1989 | -5191 | c=1.00: +806 / +2706 / +1137 | 206 | +0.090 | +0.689 | -0.06 / -0.03 / -0.12 | AMBER |
 |  | ADD | L3M | +3229 / +5652 | -7920 | +113 / +198 | -10820 | c=1.00: +3229 / -7920 / +113 | 69 | +0.067 | +0.358 | +0.12 / +0.33 / +0.38 | RED |
 |  | ADD | L6M | +1977 / +3460 | -7920 | +507 / +888 | -10820 | c=1.00: +1977 / -7920 / +507 | 138 | +0.091 | +0.467 | +0.06 / +0.17 / +0.34 | RED |
 |  | ADD | L3M | +711 / +1244 | -910 | +1225 / +2143 | -4573 | c=1.00: +711 / -910 / +1225 | 86 | +0.191 | +1.263 | +0.03 / +0.21 / +0.29 | ok |
@@ -720,6 +1064,10 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +1260 / +2205 | -2680 | +413 / +723 | -5136 | c=1.00: +1260 / -2680 / +413 | 483 | +0.022 | +0.396 | +0.20 / +0.13 / +0.37 | AMBER |
 |  | ADD | L3M | -67 / -116 | +2610 | +2117 / +3704 | +150 | c=1.00: -67 / +2610 / +2117 | 50 | +0.345 | +1.327 | +0.15 / +0.07 / +0.20 | ok |
 |  | ADD | L6M | +117 / +205 | -427 | +460 / +805 | +150 | c=1.00: +117 / -427 / +460 | 98 | +0.048 | +0.173 | +0.15 / +0.05 / +0.18 | ok |
+|  | ADD | L3M | +4995 / +8742 | -8490 | -1251 / -2189 | -19122 | c=1.00: +4995 / -8490 / -1251 | 105 | -0.108 | -0.872 | +0.09 / +0.19 / +0.31 | RED |
+|  | ADD | L6M | +3012 / +5271 | -8490 | +1043 / +1825 | -19122 | c=1.00: +3012 / -8490 / +1043 | 253 | +0.101 | +0.944 | +0.01 / +0.13 / +0.17 | RED |
+|  | ADD | L3M | +225 / +393 | -4543 | -449 / -787 | +270 | c=1.00: +225 / -4543 / -449 | 149 | +0.008 | +0.089 | +0.05 / +0.06 / +0.09 | ok |
+|  | ADD | L6M | +201 / +352 | -4543 | +7 / +12 | +270 | c=1.00: +201 / -4543 / +7 | 372 | +0.021 | +0.283 | -0.06 / +0.07 / -0.03 | ok |
 |  | ADD | L3M | -910 / -1593 | +5096 | -195 / -341 | +3581 | c=1.00: -910 / +5096 / -195 | 131 | -0.017 | -0.176 | +0.44 / +0.20 / +0.39 | ok |
 |  | ADD | L6M | -587 / -1028 | +3829 | +235 / +412 | +3581 | c=1.00: -587 / +3829 / +235 | 253 | +0.012 | +0.115 | +0.31 / +0.10 / +0.26 | ok |
 |  | ADD | L3M | +3080 / +5389 | -10100 | -1849 / -3236 | -9043 | c=1.00: +3080 / -10100 / -1849 | 118 | -0.101 | -0.921 | +0.10 / +0.16 / +0.16 | AMBER |
@@ -737,16 +1085,24 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2025 | -4916 / -8602 | +125 | +1612 / +2821 | +7911 | c=1.00: -4916 / +125 / +1612 | 257 | +0.287 | +1.390 | +0.04 / +0.07 / +0.17 | ok |
 |  | ADD | L3M | +1464 / +2563 | -881 | -924 / -1617 | -6439 | c=1.00: +1464 / -881 / -924 | 135 | -0.049 | -0.507 | +0.04 / -0.01 / +0.20 | AMBER |
 |  | ADD | L6M | +916 / +1604 | -881 | -554 / -970 | -6439 | c=1.00: +916 / -881 / -554 | 278 | -0.013 | -0.132 | -0.01 / -0.05 / +0.10 | AMBER |
+|  | ADD | L3M | +103 / +180 | +2791 | +296 / +518 | -1494 | c=1.00: +103 / +2791 / +296 | 158 | +0.015 | +0.183 | +0.26 / -0.09 / -0.04 | ok |
+|  | ADD | L6M | +70 / +122 | +2791 | +734 / +1284 | -1494 | c=1.00: +70 / +2791 / +734 | 333 | +0.032 | +0.398 | +0.29 / -0.05 / +0.00 | ok |
 |  | ADD | L3M | +920 / +1609 | -2635 | -489 / -855 | +159 | c=1.00: +920 / -2635 / -489 | 126 | +0.020 | +0.191 | +0.18 / +0.13 / +0.22 | ok |
 |  | ADD | L6M | +610 / +1067 | -2635 | -153 / -267 | +159 | c=1.00: +610 / -2635 / -153 | 298 | +0.016 | +0.178 | +0.12 / +0.08 / +0.19 | ok |
 |  | ADD | L3M | +120 / +210 | +1281 | +2701 / +4727 | -1375 | c=1.00: +120 / +1281 / +2701 | 138 | +0.159 | +1.684 | +0.07 / +0.04 / +0.02 | ok |
 |  | ADD | L6M | +101 / +177 | +1281 | +1508 / +2639 | -1375 | c=1.00: +101 / +1281 / +1508 | 306 | +0.071 | +0.804 | +0.13 / +0.03 / +0.11 | ok |
+|  | ADD | L3M | -427 / -747 | +2630 | +1632 / +2856 | +2141 | c=1.00: -427 / +2630 / +1632 | 68 | +0.297 | +1.553 | +0.08 / +0.08 / +0.22 | ok |
+|  | ADD | L6M | -90 / -158 | -3015 | +1031 / +1804 | +2141 | c=1.00: -90 / -3015 / +1031 | 171 | +0.168 | +1.063 | +0.09 / +0.06 / +0.30 | ok |
 |  | ADD | L3M | -78 / -136 | +1990 | +55 / +96 | +1134 | c=1.00: -78 / +1990 / +55 | 169 | +0.000 | +0.004 | +0.15 / +0.20 / +0.24 | ok |
 |  | ADD | L6M | +1 / +2 | +1990 | -225 / -393 | +1134 | c=1.00: +1 / +1990 / -225 | 357 | -0.015 | -0.194 | +0.15 / +0.11 / +0.10 | ok |
 |  | ADD | L3M | +918 / +1606 | -6587 | +2506 / +4386 | -2405 | c=1.00: +918 / -6587 / +2506 | 73 | +0.282 | +1.584 | +0.34 / +0.39 / +0.44 | ok |
 |  | ADD | L6M | +471 / +824 | -6587 | +1569 / +2747 | -2405 | c=1.00: +471 / -6587 / +1569 | 148 | +0.189 | +1.037 | +0.22 / +0.24 / +0.22 | ok |
 |  | ADD | L3M | +1436 / +2513 | -6366 | +270 / +472 | -3700 | c=1.00: +1436 / -6366 / +270 | 73 | +0.042 | +0.238 | -0.02 / +0.04 / +0.36 | ok |
 |  | ADD | L6M | +836 / +1463 | -6366 | +1270 / +2223 | -3700 | c=1.00: +836 / -6366 / +1270 | 157 | +0.193 | +1.123 | -0.06 / +0.00 / +0.15 | ok |
+|  | ADD | L3M | +120 / +210 | +1281 | +2701 / +4727 | -1375 | c=1.00: +120 / +1281 / +2701 | 138 | +0.159 | +1.684 | +0.07 / +0.04 / +0.02 | ok |
+|  | ADD | L6M | +101 / +177 | +1281 | +1508 / +2639 | -1375 | c=1.00: +101 / +1281 / +1508 | 306 | +0.071 | +0.804 | +0.13 / +0.03 / +0.11 | ok |
+|  | ADD | L3M | +650 / +1138 | -3280 | +2343 / +4100 | -2454 | c=1.00: +650 / -3280 / +2343 | 84 | +0.322 | +2.084 | +0.03 / +0.26 / +0.20 | ok |
+|  | ADD | L6M | +293 / +512 | -3280 | +965 / +1688 | -2454 | c=1.00: +293 / -3280 / +965 | 180 | +0.126 | +0.840 | -0.03 / +0.20 / +0.15 | ok |
 |  | ADD | L3M | -67 / -116 | -1655 | +960 / +1679 | +2499 | c=1.00: -67 / -1655 / +960 | 68 | +0.139 | +0.729 | -0.12 / +0.07 / +0.07 | ok |
 |  | ADD | L6M | +212 / +370 | -3576 | +801 / +1402 | +2499 | c=1.00: +212 / -3576 / +801 | 157 | +0.120 | +0.699 | -0.11 / +0.07 / +0.00 | ok |
 |  | ADD | L3M | -910 / -1593 | +5096 | -195 / -341 | +3581 | c=1.00: -910 / +5096 / -195 | 131 | -0.017 | -0.176 | +0.44 / +0.20 / +0.39 | ok |
@@ -758,12 +1114,16 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | Y2023 | +4227 / +7397 | -3513 | +489 / +857 | -11582 | c=1.00: +4227 / -3513 / +489 | 305 | +0.056 | +0.440 | +0.02 / +0.08 / +0.03 | AMBER |
 |  | ADD | Y2024 | -2860 / -5005 | +2285 | +147 / +257 | +343 | c=1.00: -2860 / +2285 / +147 | 441 | +0.026 | +0.216 | +0.10 / +0.17 / +0.04 | ok |
 |  | ADD | Y2025 | -888 / -1554 | -1725 | +1115 / +1952 | -4348 | c=1.00: -888 / -1725 / +1115 | 482 | +0.113 | +1.028 | +0.14 / +0.04 / +0.16 | ok |
+|  | ADD | L3M | -1497 / -2620 | +90 | +1844 / +3227 | +6596 | c=1.00: -1497 / +90 / +1844 | 64 | +0.274 | +1.347 | +0.21 / -0.12 / +0.05 | ok |
+|  | ADD | L6M | -593 / -1037 | -3236 | +1339 / +2343 | +5375 | c=1.00: -593 / -3236 / +1339 | 135 | +0.239 | +1.196 | +0.12 / -0.04 / +0.05 | ok |
 |  | ADD | L3M | +3662 / +6408 | -1370 | +478 / +836 | -13146 | c=1.00: +3662 / -1370 / +478 | 77 | +0.100 | +0.592 | -0.09 / +0.23 / +0.17 | RED |
 |  | ADD | L6M | +2313 / +4047 | -1370 | -829 / -1450 | -13146 | c=1.00: +2313 / -1370 / -829 | 212 | -0.082 | -0.646 | -0.05 / +0.16 / +0.21 | RED |
 |  | ADD | L3M | +1458 / +2551 | -7620 | +913 / +1597 | -5985 | c=1.00: +1458 / -7620 / +913 | 65 | +0.167 | +0.835 | +0.21 / +0.28 / +0.40 | AMBER |
 |  | ADD | L6M | +969 / +1695 | -7620 | +2010 / +3518 | -5985 | c=1.00: +969 / -7620 / +2010 | 172 | +0.264 | +1.684 | +0.26 / +0.18 / +0.31 | AMBER |
 |  | ADD | L3M | +527 / +923 | +3090 | +763 / +1334 | +508 | c=1.00: +527 / +3090 / +763 | 73 | +0.095 | +0.534 | +0.11 / +0.31 / +0.28 | ok |
 |  | ADD | L6M | +375 / +656 | -501 | +1325 / +2319 | +508 | c=1.00: +375 / -501 / +1325 | 178 | +0.177 | +1.166 | +0.12 / +0.20 / +0.29 | ok |
+|  | ADD | L3M | +3685 / +6449 | +66 | -1271 / -2224 | -6803 | c=1.00: +3685 / +66 / -1271 | 89 | -0.063 | -0.432 | -0.11 / +0.15 / -0.29 | RED |
+|  | ADD | L6M | +2155 / +3771 | +66 | +1464 / +2561 | -6803 | c=1.00: +2155 / +66 / +1464 | 210 | +0.193 | +1.498 | +0.00 / +0.11 / -0.03 | AMBER |
 |  | ADD | L3M | +223 / +391 | +276 | +634 / +1110 | -669 | c=1.00: +223 / +276 / +634 | 71 | +0.110 | +0.601 | -0.03 / -0.04 / +0.02 | ok |
 |  | ADD | L6M | +316 / +553 | -830 | +223 / +391 | -669 | c=1.00: +316 / -830 / +223 | 162 | +0.051 | +0.307 | -0.10 / +0.00 / +0.05 | ok |
 |  | ADD | L3M | +1522 / +2664 | -1555 | +1813 / +3173 | -8027 | c=1.00: +1522 / -1555 / +1813 | 117 | +0.170 | +1.529 | +0.27 / +0.29 / +0.46 | AMBER |
@@ -781,12 +1141,18 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +293 / +512 | -3280 | +965 / +1688 | -2454 | c=1.00: +293 / -3280 / +965 | 180 | +0.126 | +0.840 | -0.03 / +0.20 / +0.15 | ok |
 |  | ADD | L3M | +2588 / +4529 | -4460 | -849 / -1486 | -10451 | c=1.00: +2588 / -4460 / -849 | 80 | -0.022 | -0.134 | +0.01 / +0.19 / +0.17 | RED |
 |  | ADD | L6M | +1497 / +2619 | -4460 | +301 / +526 | -10451 | c=1.00: +1497 / -4460 / +301 | 177 | +0.082 | +0.537 | -0.05 / +0.15 / +0.10 | RED |
+|  | ADD | L3M | -353 / -617 | -2705 | +1632 / +2856 | +2446 | c=1.00: -353 / -2705 / +1632 | 61 | +0.305 | +1.429 | +0.20 / -0.02 / +0.06 | ok |
+|  | ADD | L6M | -13 / -24 | -3226 | +1775 / +3107 | +2446 | c=1.00: -13 / -3226 / +1775 | 135 | +0.350 | +1.749 | +0.05 / +0.02 / +0.04 | ok |
+|  | ADD | L3M | +2170 / +3798 | -3621 | -251 / -440 | -7464 | c=1.00: +2170 / -3621 / -251 | 78 | -0.026 | -0.155 | +0.29 / +0.29 / +0.44 | AMBER |
+|  | ADD | L6M | +1359 / +2379 | -3621 | +284 / +498 | -7464 | c=1.00: +1359 / -3621 / +284 | 151 | +0.037 | +0.207 | +0.25 / +0.16 / +0.38 | AMBER |
 |  | ADD | L3M | +5290 / +9258 | -8050 | +642 / +1123 | -16308 | c=1.00: +5290 / -8050 / +642 | 97 | +0.043 | +0.320 | +0.02 / +0.22 / +0.32 | RED |
 |  | ADD | L6M | +3166 / +5541 | -8050 | +782 / +1369 | -16308 | c=1.00: +3166 / -8050 / +782 | 212 | +0.067 | +0.526 | -0.01 / +0.17 / +0.15 | RED |
 |  | ADD | L3M | +1678 / +2936 | -4680 | -154 / -270 | -4798 | c=1.00: +1678 / -4680 / -154 | 122 | +0.004 | +0.040 | +0.25 / +0.28 / +0.30 | AMBER |
 |  | ADD | L6M | +1011 / +1768 | -4680 | -181 / -318 | -4798 | c=1.00: +1011 / -4680 / -181 | 257 | +0.002 | +0.023 | +0.19 / +0.25 / +0.19 | AMBER |
 |  | ADD | L3M | +387 / +677 | -3500 | +3660 / +6404 | -3595 | c=1.00: +387 / -3500 / +3660 | 171 | +0.212 | +2.794 | +0.08 / +0.06 / +0.08 | ok |
 |  | ADD | L6M | +299 / +523 | -3500 | +1283 / +2245 | -3595 | c=1.00: +299 / -3500 / +1283 | 344 | +0.079 | +1.005 | +0.05 / +0.11 / -0.03 | ok |
+|  | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=1.00: -1573 / +95 / +2075 | 62 | +0.326 | +1.553 | +0.23 / -0.07 / +0.10 | ok |
+|  | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=1.00: -795 / -796 / +1691 | 135 | +0.312 | +1.560 | +0.05 / -0.03 / +0.01 | ok |
 |  | ADD | L3M | -639 / -1119 | -3140 | +1012 / +1772 | +2561 | c=1.00: -639 / -3140 / +1012 | 41 | +0.213 | +0.671 | -0.04 / -0.06 / +0.10 | ok |
 |  | ADD | L6M | -177 / -310 | -3711 | +1013 / +1772 | +2561 | c=1.00: -177 / -3711 / +1013 | 90 | +0.228 | +0.761 | -0.01 / +0.02 / +0.12 | ok |
 |  | ADD | L3M | +1185 / +2074 | -4395 | -502 / -878 | -4490 | c=1.00: +1185 / -4395 / -502 | 205 | -0.032 | -0.506 | +0.09 / -0.18 / +0.02 | ok |
@@ -807,10 +1173,16 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | +139 / +243 | +279 | +2113 / +3697 | +2244 | c=1.00: +139 / +279 / +2113 | 241 | +0.180 | +1.603 | -0.03 / +0.01 / +0.05 | ok |
 |  | ADD | L3M | -241 / -422 | +1639 | -134 / -235 | +2654 | c=1.00: -241 / +1639 / -134 | 81 | -0.036 | -0.223 | +0.17 / -0.05 / +0.35 | ok |
 |  | ADD | L6M | -129 / -226 | +1639 | +13 / +23 | +2654 | c=1.00: -129 / +1639 / +13 | 164 | -0.007 | -0.043 | +0.18 / -0.03 / +0.24 | ok |
+|  | ADD | L3M | +1066 / +1865 | -4319 | -412 / -721 | -3503 | c=1.00: +1066 / -4319 / -412 | 71 | -0.149 | -0.816 | -0.00 / +0.04 / -0.05 | ok |
+|  | ADD | L6M | +648 / +1134 | -4319 | +799 / +1397 | -3503 | c=1.00: +648 / -4319 / +799 | 162 | +0.073 | +0.438 | +0.02 / +0.05 / +0.07 | ok |
 |  | ADD | L3M | +7102 / +12429 | -5745 | -515 / -902 | -22905 | c=1.00: +7102 / -5745 / -515 | 88 | -0.014 | -0.095 | +0.08 / +0.12 / +0.14 | RED |
 |  | ADD | L6M | +4352 / +7615 | -5745 | +1193 / +2088 | -22905 | c=1.00: +4352 / -5745 / +1193 | 220 | +0.133 | +1.081 | +0.07 / +0.10 / +0.19 | RED |
+|  | ADD | L3M | +2834 / +4959 | -5585 | +1087 / +1902 | -9744 | c=1.00: +2834 / -5585 / +1087 | 88 | +0.084 | +0.570 | -0.08 / +0.41 / +0.15 | RED |
+|  | ADD | L6M | +1836 / +3213 | -5585 | +1370 / +2397 | -9744 | c=1.00: +1836 / -5585 / +1370 | 207 | +0.136 | +1.043 | -0.05 / +0.21 / +0.04 | RED |
 |  | ADD | L3M | +1943 / +3400 | -8722 | +92 / +161 | -5220 | c=1.00: +1943 / -8722 / +92 | 105 | +0.067 | +0.545 | +0.09 / +0.12 / +0.20 | AMBER |
 |  | ADD | L6M | +1179 / +2063 | -8722 | +555 / +971 | -5220 | c=1.00: +1179 / -8722 / +555 | 248 | +0.074 | +0.681 | -0.04 / +0.08 / +0.14 | AMBER |
+|  | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=1.00: -1573 / +95 / +2075 | 62 | +0.326 | +1.553 | +0.23 / -0.07 / +0.10 | ok |
+|  | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=1.00: -795 / -796 / +1691 | 135 | +0.312 | +1.560 | +0.05 / -0.03 / +0.01 | ok |
 |  | ADD | L3M | +1284 / +2248 | -8609 | +1939 / +3393 | -1542 | c=1.00: +1284 / -8609 / +1939 | 67 | +0.239 | +1.230 | +0.05 / +0.16 / +0.30 | ok |
 |  | ADD | L6M | +889 / +1556 | -8609 | -848 / -1483 | -1542 | c=1.00: +889 / -8609 / -848 | 157 | -0.157 | -0.910 | +0.02 / +0.05 / +0.09 | ok |
 |  | ADD | L3M | +5487 / +9602 | -6820 | -1511 / -2644 | -16398 | c=1.00: +5487 / -6820 / -1511 | 79 | -0.184 | -1.118 | +0.12 / +0.19 / +0.19 | RED |
@@ -826,22 +1198,90 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L02dedbed | RK7 | L6M | +1502 / +2629 | -5705 | +496 / +867 | -7663 | c=1.00: +1502 / -5705 / +496 | 365 | +0.012 | +0.166 | -0.03 / +0.11 / +0.03 | AMBER |
 | L02dedbed | ADD | L3M | +616 / +1079 | -4543 | -347 / -607 | -2235 | c=1.00: +616 / -4543 / -347 | 144 | -0.003 | -0.037 | +0.05 / +0.12 / +0.13 | ok |
 | L02dedbed | ADD | L6M | +480 / +839 | -4543 | +122 / +213 | -2235 | c=1.00: +480 / -4543 / +122 | 362 | +0.021 | +0.277 | -0.03 / +0.11 / +0.03 | ok |
+| L03842e9c | RK7 | L3M | -508 / -889 | -3060 | +2315 / +4051 | +2291 | c=0.50: +301 / -3073 / +1575 | 64 | +0.125 | +0.617 | +0.19 / -0.22 / +0.05 | ok |
+| L03842e9c | RK7 | L6M | +35 / +61 | -3570 | +2301 / +4028 | +1857 | c=0.50: +370 / -3073 / +1318 | 138 | +0.160 | +0.820 | +0.07 / -0.10 / +0.07 | ok |
+| L03bf70b4 | RK7 | L3M | +77 / +135 | -317 | +479 / +839 | +1478 | c=1.00: +77 / -317 / +479 | 134 | +0.040 | +0.413 | +0.22 / +0.20 / +0.52 | ok |
+| L03bf70b4 | RK7 | L6M | +147 / +258 | -317 | +960 / +1679 | +1478 | c=1.00: +147 / -317 / +960 | 274 | +0.069 | +0.700 | +0.19 / +0.19 / +0.27 | ok |
+| L04aaa969 | RK7 | L3M | -508 / -889 | -3060 | +2315 / +4051 | +2291 | c=0.50: +301 / -3073 / +1575 | 64 | +0.125 | +0.617 | +0.19 / -0.22 / +0.05 | ok |
+| L04aaa969 | RK7 | L6M | +35 / +61 | -3570 | +2301 / +4028 | +1857 | c=0.50: +370 / -3073 / +1318 | 138 | +0.160 | +0.820 | +0.07 / -0.10 / +0.07 | ok |
+| L0529c773 | RK7 | L3M | +486 / +851 | -5108 | +2629 / +4602 | -2856 | c=0.50: +922 / -4449 / +1686 | 99 | +0.103 | +0.786 | +0.33 / -0.08 / +0.14 | ok |
+| L0529c773 | RK7 | L6M | +313 / +547 | -5108 | +1415 / +2475 | -2856 | c=0.50: +580 / -4449 / +964 | 216 | +0.047 | +0.375 | +0.23 / -0.12 / -0.03 | ok |
 | L06c0e4cb | RK7 | L3M | +4567 / +7992 | -7038 | +1219 / +2134 | -13898 | c=0.50: +2740 / -4864 / +1077 | 90 | +0.017 | +0.119 | -0.16 / +0.43 / +0.18 | RED |
 | L06c0e4cb | RK7 | L6M | +3025 / +5294 | -7038 | +2044 / +3577 | -13898 | c=0.50: +1790 / -4864 / +1307 | 215 | +0.077 | +0.614 | -0.09 / +0.20 / +0.13 | RED |
 | L06c0e4cb | ADD | L3M | +3101 / +5426 | -4559 | +1720 / +3010 | -9032 | c=0.50: +626 / -2384 / +1425 | 88 | +0.036 | +0.246 | -0.16 / +0.42 / +0.19 | AMBER |
 | L06c0e4cb | ADD | L6M | +2012 / +3522 | -4559 | +2121 / +3711 | -9032 | c=0.50: +408 / -2384 / +1275 | 212 | +0.090 | +0.705 | -0.08 / +0.19 / +0.13 | AMBER |
+| L0b6dde51 | RK7 | L3M | +6285 / +10999 | -6194 | -401 / -702 | -20465 | c=0.50: +2859 / -4549 / -241 | 89 | -0.020 | -0.134 | +0.06 / +0.12 / +0.13 | RED |
+| L0b6dde51 | RK7 | L6M | +3911 / +6844 | -6194 | +1425 / +2494 | -20465 | c=0.50: +1738 / -4549 / +826 | 221 | +0.061 | +0.499 | +0.05 / +0.10 / +0.18 | RED |
+| L0b6dde51 | ADD | L3M | +7102 / +12429 | -5745 | -515 / -902 | -22905 | c=0.50: +3524 / -4090 / -458 | 88 | -0.007 | -0.048 | +0.08 / +0.12 / +0.14 | RED |
+| L0b6dde51 | ADD | L6M | +4352 / +7615 | -5745 | +1193 / +2088 | -22905 | c=0.50: +2046 / -4090 / +545 | 220 | +0.066 | +0.541 | +0.07 / +0.10 / +0.19 | RED |
+| L0bd23639 | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=0.50: +290 / -3103 / +1882 | 62 | +0.178 | +0.849 | +0.25 / -0.07 / +0.11 | ok |
+| L0bd23639 | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=0.50: +318 / -3103 / +1302 | 136 | +0.164 | +0.825 | +0.06 / -0.03 / +0.02 | ok |
+| L0bd23639 | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=0.50: -916 / +48 / +1143 | 62 | +0.163 | +0.777 | +0.23 / -0.07 / +0.10 | ok |
+| L0bd23639 | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=0.50: -500 / +48 / +755 | 135 | +0.156 | +0.780 | +0.05 / -0.03 / +0.01 | ok |
 | L0f2d7c91 | ADD | L3M | +527 / +923 | +3090 | +1129 / +1975 | +508 | c=0.50: +28 / +1545 / +625 | 73 | +0.075 | +0.420 | +0.11 / +0.30 / +0.29 | ok |
 | L0f2d7c91 | ADD | L6M | +375 / +657 | -501 | +1448 / +2534 | +508 | c=0.50: +27 / +1545 / +687 | 180 | +0.095 | +0.635 | +0.12 / +0.20 / +0.29 | ok |
+| L11967aac | RK7 | L3M | +1601 / +2803 | -3390 | +1088 / +1904 | -4065 | c=1.00: +1601 / -3390 / +1088 | 92 | +0.016 | +0.112 | -0.07 / -0.00 / -0.08 | ok |
+| L11967aac | RK7 | L6M | +1022 / +1788 | -3390 | +1365 / +2389 | -4065 | c=1.00: +1022 / -3390 / +1365 | 193 | +0.079 | +0.566 | -0.04 / -0.05 / -0.08 | ok |
+| L11967aac | ADD | L3M | +38 / +67 | +134 | +163 / +286 | +1505 | c=1.00: +38 / +134 / +163 | 92 | +0.023 | +0.166 | -0.08 / -0.03 / -0.08 | ok |
+| L11967aac | ADD | L6M | -35 / -62 | +134 | +837 / +1465 | +1505 | c=1.00: -35 / +134 / +837 | 192 | +0.088 | +0.629 | -0.05 / -0.06 / -0.08 | ok |
+| L124ae942 | RK7 | L3M | +1083 / +1895 | -6570 | +2339 / +4093 | -4545 | c=1.00: +1083 / -6570 / +2339 | 126 | +0.161 | +1.563 | +0.36 / +0.15 / +0.28 | ok |
+| L124ae942 | RK7 | L6M | +758 / +1326 | -6570 | +1556 / +2723 | -4545 | c=1.00: +758 / -6570 / +1556 | 283 | +0.091 | +0.957 | +0.16 / +0.11 / +0.07 | ok |
 | L12caec95 | RK7 | L3M | +6885 / +12050 | -8104 | -649 / -1136 | -19527 | c=0.53: +3434 / -5677 / -258 | 92 | -0.053 | -0.373 | +0.10 / +0.24 / +0.28 | RED |
 | L12caec95 | RK7 | L6M | +4427 / +7747 | -8104 | +510 / +893 | -19527 | c=0.53: +2201 / -5677 / +346 | 224 | +0.019 | +0.156 | +0.02 / +0.17 / +0.24 | RED |
 | L12caec95 | ADD | L3M | +6563 / +11485 | -8760 | -719 / -1259 | -17768 | c=0.53: +3308 / -6334 / -541 | 91 | -0.024 | -0.170 | +0.14 / +0.24 / +0.30 | RED |
 | L12caec95 | ADD | L6M | +4109 / +7191 | -8760 | +291 / +509 | -17768 | c=0.53: +1991 / -6334 / +30 | 222 | +0.030 | +0.248 | +0.04 / +0.17 / +0.25 | RED |
 | L12e67af0 | ADD | L3M | +566 / +991 | -415 | +442 / +774 | -418 | c=1.00: +566 / -415 / +442 | 133 | +0.079 | +0.812 | -0.10 / -0.10 / +0.02 | ok |
 | L12e67af0 | ADD | L6M | +246 / +431 | -415 | +1122 / +1963 | -418 | c=1.00: +246 / -415 / +1122 | 268 | +0.116 | +1.148 | -0.12 / -0.07 / +0.03 | ok |
+| L13858cd5 | RK7 | L3M | +5014 / +8774 | -8974 | +2186 / +3825 | -16907 | c=0.50: +2515 / -5939 / +1380 | 108 | +0.081 | +0.671 | -0.04 / +0.39 / +0.31 | RED |
+| L13858cd5 | RK7 | L6M | +3102 / +5429 | -8974 | +974 / +1705 | -16907 | c=0.50: +1540 / -5939 / +685 | 275 | +0.024 | +0.241 | +0.01 / +0.20 / +0.14 | RED |
+| L13858cd5 | ADD | L3M | +5465 / +9564 | -8505 | +2073 / +3627 | -20246 | c=0.50: +2560 / -5470 / +1360 | 109 | +0.071 | +0.594 | -0.06 / +0.39 / +0.32 | RED |
+| L13858cd5 | ADD | L6M | +3368 / +5894 | -8505 | +706 / +1235 | -20246 | c=0.50: +1467 / -5470 / +461 | 276 | +0.020 | +0.204 | -0.00 / +0.20 / +0.15 | RED |
+| L18fce9f2 | RK7 | L3M | +1301 / +2276 | -3535 | +203 / +354 | -4865 | c=0.50: +892 / -2198 / +108 | 70 | +0.015 | +0.079 | +0.02 / -0.03 / -0.10 | AMBER |
+| L18fce9f2 | RK7 | L6M | +941 / +1646 | -3535 | +128 / +224 | -4865 | c=0.50: +667 / -2198 / +65 | 152 | +0.009 | +0.052 | +0.01 / +0.04 / +0.13 | AMBER |
+| L1af20032 | RK7 | L3M | +107 / +188 | +690 | +2626 / +4595 | +1537 | c=1.00: +107 / +690 / +2626 | 133 | +0.144 | +1.469 | +0.24 / +0.08 / +0.20 | ok |
+| L1af20032 | RK7 | L6M | +361 / +632 | -3010 | +1842 / +3223 | +1537 | c=1.00: +361 / -3010 / +1842 | 250 | +0.117 | +1.085 | +0.10 / +0.07 / +0.06 | ok |
+| L1c19f73f | RK7 | L3M | +469 / +822 | -3935 | +2811 / +4920 | -627 | c=0.50: +938 / -4328 / +1677 | 91 | +0.135 | +0.945 | +0.24 / +0.27 / +0.20 | ok |
+| L1c19f73f | RK7 | L6M | +307 / +538 | -3935 | +2330 / +4077 | -627 | c=0.50: +612 / -4328 / +1380 | 222 | +0.096 | +0.791 | +0.06 / +0.17 / +0.15 | ok |
+| L1c19f73f | ADD | L3M | -573 / -1003 | -1431 | +2829 / +4952 | +3696 | c=0.50: -413 / -1823 / +1738 | 90 | +0.131 | +0.909 | +0.23 / +0.27 / +0.19 | ok |
+| L1c19f73f | ADD | L6M | -382 / -668 | -1431 | +2047 / +3582 | +3696 | c=0.50: -262 / -1823 / +1122 | 220 | +0.095 | +0.771 | +0.05 / +0.17 / +0.15 | ok |
+| L1e50e8ae | RK7 | L3M | +1083 / +1895 | -6570 | +2339 / +4093 | -4545 | c=1.00: +1083 / -6570 / +2339 | 126 | +0.161 | +1.563 | +0.36 / +0.15 / +0.28 | ok |
+| L1e50e8ae | RK7 | L6M | +758 / +1326 | -6570 | +1556 / +2723 | -4545 | c=1.00: +758 / -6570 / +1556 | 283 | +0.091 | +0.957 | +0.16 / +0.11 / +0.07 | ok |
 | L213c2767 | ADD | L3M | +467 / +817 | -3885 | +1322 / +2314 | -1802 | c=0.50: +109 / -1942 / +720 | 67 | +0.097 | +0.502 | +0.12 / +0.17 / +0.26 | ok |
 | L213c2767 | ADD | L6M | +511 / +894 | -3885 | +1005 / +1758 | -1802 | c=0.50: +157 / -1942 / +427 | 153 | +0.085 | +0.481 | +0.03 / +0.15 / +0.20 | ok |
+| L21f079b6 | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=0.50: +290 / -3103 / +1882 | 62 | +0.178 | +0.849 | +0.25 / -0.07 / +0.11 | ok |
+| L21f079b6 | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=0.50: +318 / -3103 / +1302 | 136 | +0.164 | +0.825 | +0.06 / -0.03 / +0.02 | ok |
+| L21f079b6 | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=0.50: -916 / +48 / +1143 | 62 | +0.163 | +0.777 | +0.23 / -0.07 / +0.10 | ok |
+| L21f079b6 | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=0.50: -500 / +48 / +755 | 135 | +0.156 | +0.780 | +0.05 / -0.03 / +0.01 | ok |
+| L265998e4 | RK7 | L3M | +1894 / +3314 | -3780 | +589 / +1030 | -6714 | c=0.50: +1046 / -2320 / +360 | 74 | +0.034 | +0.191 | +0.03 / +0.06 / -0.01 | AMBER |
+| L265998e4 | RK7 | L6M | +1487 / +2602 | -3945 | +1090 / +1907 | -6714 | c=0.50: +846 / -2320 / +651 | 161 | +0.061 | +0.366 | -0.02 / +0.08 / +0.10 | AMBER |
+| L265998e4 | ADD | L3M | +594 / +1040 | -2919 | +226 / +396 | -2178 | c=0.50: +118 / -1460 / +90 | 73 | +0.020 | +0.114 | -0.01 / +0.07 / -0.03 | ok |
+| L265998e4 | ADD | L6M | +562 / +984 | -3356 | +800 / +1400 | -2178 | c=0.50: +148 / -1460 / +389 | 159 | +0.058 | +0.343 | -0.04 / +0.09 / +0.09 | ok |
+| L27ec09c7 | RK7 | L3M | +1341 / +2346 | -263 | +2262 / +3959 | -6343 | c=0.57: +867 / -821 / +1430 | 116 | +0.104 | +0.925 | +0.28 / +0.29 / +0.46 | AMBER |
+| L27ec09c7 | RK7 | L6M | +739 / +1293 | -263 | +1815 / +3176 | -6343 | c=0.57: +494 / -821 / +1202 | 283 | +0.065 | +0.680 | +0.27 / +0.13 / +0.23 | AMBER |
+| L27ec09c7 | ADD | L3M | +1522 / +2664 | -1555 | +1813 / +3173 | -8027 | c=0.57: +957 / +743 / +1027 | 117 | +0.097 | +0.874 | +0.27 / +0.29 / +0.46 | AMBER |
+| L27ec09c7 | ADD | L6M | +789 / +1380 | -1555 | +1441 / +2522 | -8027 | c=0.57: +426 / +743 / +851 | 284 | +0.062 | +0.656 | +0.26 / +0.13 / +0.23 | AMBER |
 | L31db2acf | ADD | L3M | +1411 / +2469 | -2459 | +82 / +144 | -4492 | c=0.50: +275 / -1230 / -14 | 70 | +0.015 | +0.080 | +0.06 / +0.22 / -0.02 | ok |
 | L31db2acf | ADD | L6M | +841 / +1472 | -2459 | +11 / +19 | -4492 | c=0.50: +156 / -1230 / -110 | 146 | +0.019 | +0.101 | +0.05 / +0.18 / +0.18 | ok |
+| L33d1c278 | RK7 | L3M | +2378 / +4161 | -2433 | -302 / -529 | -8118 | c=0.50: +1536 / -1998 / -147 | 106 | -0.016 | -0.129 | +0.11 / +0.32 / +0.22 | AMBER |
+| L33d1c278 | RK7 | L6M | +1496 / +2617 | -2433 | +839 / +1468 | -8118 | c=0.50: +978 / -1998 / +502 | 263 | +0.029 | +0.280 | +0.03 / +0.14 / +0.19 | AMBER |
+| L33d1c278 | ADD | L3M | +946 / +1656 | -869 | +302 / +528 | -3069 | c=0.50: +344 / -435 / +398 | 105 | -0.010 | -0.080 | +0.09 / +0.30 / +0.21 | ok |
+| L33d1c278 | ADD | L6M | +518 / +907 | -869 | +918 / +1606 | -3069 | c=0.50: +138 / -435 / +553 | 262 | +0.031 | +0.304 | +0.02 / +0.13 / +0.18 | ok |
+| L3a102d84 | RK7 | L3M | +541 / +946 | +2066 | +2017 / +3530 | -972 | c=1.00: +541 / +2066 / +2017 | 200 | +0.070 | +1.083 | +0.15 / +0.16 / +0.30 | ok |
+| L3a102d84 | RK7 | L6M | +413 / +722 | +1007 | +2434 / +4260 | -972 | c=1.00: +413 / +1007 / +2434 | 436 | +0.100 | +1.615 | +0.17 / +0.07 / +0.12 | ok |
+| L3aca3c47 | RK7 | L3M | -215 / -376 | -3000 | +1586 / +2775 | +2131 | c=0.50: +484 / -3043 / +1099 | 65 | +0.081 | +0.406 | +0.17 / -0.16 / +0.04 | ok |
+| L3aca3c47 | RK7 | L6M | +234 / +410 | -3850 | +1570 / +2747 | +1857 | c=0.50: +486 / -3043 / +894 | 142 | +0.107 | +0.563 | +0.08 / -0.06 / +0.08 | ok |
+| L3aca3c47 | ADD | L3M | -1067 / -1868 | +195 | +621 / +1087 | +6421 | c=0.50: -529 / +98 / +222 | 65 | +0.067 | +0.333 | +0.14 / -0.16 / +0.02 | ok |
+| L3aca3c47 | ADD | L6M | -353 / -618 | -3261 | +882 / +1543 | +5375 | c=0.50: -215 / +98 / +263 | 141 | +0.099 | +0.516 | +0.07 / -0.06 / +0.07 | ok |
+| L3af9b5b8 | RK7 | L3M | +2902 / +5079 | -4665 | -554 / -970 | -9869 | c=1.00: +2902 / -4665 / -554 | 136 | -0.101 | -1.054 | -0.04 / -0.05 / -0.09 | RED |
+| L3af9b5b8 | RK7 | L6M | +1854 / +3245 | -4665 | +494 / +865 | -9869 | c=1.00: +1854 / -4665 / +494 | 303 | +0.002 | +0.020 | -0.00 / -0.02 / +0.04 | RED |
+| L3fd2d876 | RK7 | L3M | +1505 / +2635 | -6225 | +1791 / +3134 | -4696 | c=0.50: +1191 / -4656 / +1349 | 42 | +0.114 | +0.369 | -0.03 / -0.06 / +0.11 | AMBER |
+| L3fd2d876 | RK7 | L6M | +1198 / +2096 | -6225 | +1528 / +2674 | -4696 | c=0.50: +906 / -4656 / +1022 | 92 | +0.124 | +0.421 | -0.01 / +0.02 / +0.12 | AMBER |
+| L3fd2d876 | ADD | L3M | -639 / -1119 | -3140 | +1012 / +1772 | +2561 | c=0.50: -422 / -1570 / +610 | 41 | +0.106 | +0.335 | -0.04 / -0.06 / +0.10 | ok |
+| L3fd2d876 | ADD | L6M | -177 / -310 | -3711 | +1013 / +1772 | +2561 | c=0.50: -173 / -1570 / +556 | 90 | +0.114 | +0.380 | -0.01 / +0.02 / +0.12 | ok |
+| L42449cac | RK7 | L3M | +1851 / +3240 | -3495 | +1140 / +1994 | -5845 | c=1.00: +1851 / -3495 / +1140 | 184 | +0.073 | +1.036 | +0.12 / +0.24 / +0.15 | AMBER |
+| L42449cac | RK7 | L6M | +1312 / +2296 | -3495 | +1261 / +2206 | -5845 | c=1.00: +1312 / -3495 / +1261 | 450 | +0.060 | +1.007 | +0.14 / +0.14 / +0.15 | AMBER |
+| L42449cac | ADD | L3M | +476 / +832 | +616 | +1242 / +2173 | -843 | c=1.00: +476 / +616 / +1242 | 188 | +0.082 | +1.185 | +0.16 / +0.23 / +0.15 | ok |
+| L42449cac | ADD | L6M | +381 / +666 | -2530 | +1210 / +2117 | -843 | c=1.00: +381 / -2530 / +1210 | 453 | +0.063 | +1.054 | +0.16 / +0.14 / +0.15 | ok |
 | L42ca039a | ADD | L3M | +2741 / +4796 | -1616 | -555 / -972 | -6960 | c=0.50: +1260 / -638 / -132 | 110 | -0.042 | -0.353 | -0.18 / -0.13 / -0.18 | AMBER |
 | L42ca039a | ADD | L6M | +1930 / +3378 | -1616 | -396 / -693 | -6960 | c=0.50: +857 / -638 / -231 | 240 | -0.015 | -0.138 | +0.02 / -0.04 / -0.13 | AMBER |
 | L4702b598 | ADD | L3M | +2394 / +4189 | -12852 | +1604 / +2808 | -11040 | c=0.50: +1137 / -7860 / +1226 | 115 | +0.036 | +0.315 | +0.18 / +0.25 / +0.28 | RED |
@@ -853,10 +1293,28 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L4871f65f | ADD | L6M | +2153 / +3768 | -5460 | +485 / +848 | -14507 | c=0.50: +957 / -3292 / +128 | 177 | +0.045 | +0.297 | -0.17 / +0.13 / -0.00 | RED |
 | L4b0ddacb | ADD | L3M | +453 / +792 | -4444 | -146 / -256 | -1612 | c=0.50: +183 / -2785 / -468 | 69 | +0.050 | +0.268 | +0.20 / -0.01 / +0.20 | ok |
 | L4b0ddacb | ADD | L6M | +392 / +687 | -4444 | +362 / +634 | -1612 | c=0.50: +133 / -2785 / +6 | 161 | +0.050 | +0.297 | +0.05 / +0.00 / +0.26 | ok |
+| L4ce93efc | RK7 | L3M | +4455 / +7796 | -8750 | +1337 / +2340 | -12915 | c=0.55: +2818 / -6211 / +885 | 60 | +0.100 | +0.463 | -0.38 / -0.01 / -0.09 | RED |
+| L4ce93efc | RK7 | L6M | +2971 / +5199 | -8750 | +225 / +393 | -12915 | c=0.55: +1885 / -6211 / +203 | 147 | +0.004 | +0.023 | -0.22 / -0.08 / -0.13 | RED |
+| L4e53d2d0 | RK7 | L3M | +773 / +1352 | -5345 | +1432 / +2505 | -1140 | c=1.00: +773 / -5345 / +1432 | 116 | +0.032 | +0.286 | +0.24 / +0.10 / +0.21 | ok |
+| L4e53d2d0 | RK7 | L6M | +655 / +1147 | -5345 | +855 / +1496 | -1140 | c=1.00: +655 / -5345 / +855 | 252 | +0.021 | +0.198 | +0.13 / +0.13 / +0.14 | ok |
 | L4ff77392 | RK7 | L3M | +1877 / +3285 | -287 | +344 / +601 | -5881 | c=0.50: +1116 / -302 / +229 | 104 | +0.012 | +0.096 | +0.06 / +0.20 / +0.09 | AMBER |
 | L4ff77392 | RK7 | L6M | +1467 / +2567 | -287 | +791 / +1384 | -5881 | c=0.50: +972 / -302 / +440 | 263 | +0.030 | +0.293 | +0.14 / +0.15 / +0.02 | AMBER |
 | L4ff77392 | ADD | L3M | +2110 / +3693 | -2255 | +51 / +89 | -8987 | c=0.50: +1190 / +1555 / -64 | 104 | +0.012 | +0.096 | +0.07 / +0.20 / +0.11 | AMBER |
 | L4ff77392 | ADD | L6M | +1655 / +2896 | -2255 | +363 / +634 | -8987 | c=0.50: +1052 / +1555 / +11 | 263 | +0.030 | +0.293 | +0.14 / +0.15 / +0.03 | AMBER |
+| L51cd4408 | RK7 | L3M | +1477 / +2585 | -3954 | +973 / +1704 | -4191 | c=1.00: +1477 / -3954 / +973 | 123 | +0.012 | +0.117 | +0.22 / +0.27 / +0.30 | ok |
+| L51cd4408 | RK7 | L6M | +1008 / +1763 | -3954 | +674 / +1180 | -4191 | c=1.00: +1008 / -3954 / +674 | 259 | +0.010 | +0.096 | +0.18 / +0.25 / +0.21 | ok |
+| L5332c1f1 | RK7 | L3M | +249 / +435 | -1452 | +116 / +204 | +1612 | c=1.00: +249 / -1452 / +116 | 100 | +0.004 | +0.029 | +0.31 / +0.36 / +0.39 | ok |
+| L5332c1f1 | RK7 | L6M | +197 / +345 | -1452 | +906 / +1585 | +1612 | c=1.00: +197 / -1452 / +906 | 204 | +0.075 | +0.569 | +0.18 / +0.19 / +0.06 | ok |
+| L5332c1f1 | ADD | L3M | -314 / -550 | +966 | +452 / +791 | +3585 | c=1.00: -314 / +966 / +452 | 100 | +0.004 | +0.029 | +0.31 / +0.36 / +0.39 | ok |
+| L5332c1f1 | ADD | L6M | -257 / -450 | +966 | +872 / +1527 | +3585 | c=1.00: -257 / +966 / +872 | 203 | +0.071 | +0.532 | +0.18 / +0.20 / +0.07 | ok |
+| L5879e162 | RK7 | L3M | +180 / +316 | -1962 | +1276 / +2234 | -2585 | c=1.00: +180 / -1962 / +1276 | 238 | +0.053 | +0.964 | +0.34 / +0.34 / +0.23 | ok |
+| L5879e162 | RK7 | L6M | +137 / +240 | -1962 | +2049 / +3586 | -2585 | c=1.00: +137 / -1962 / +2049 | 596 | +0.063 | +1.396 | +0.28 / +0.24 / +0.12 | ok |
+| L5879e162 | ADD | L3M | -495 / -866 | +295 | +1740 / +3044 | -436 | c=1.00: -495 / +295 / +1740 | 238 | +0.059 | +1.089 | +0.38 / +0.34 / +0.25 | ok |
+| L5879e162 | ADD | L6M | -360 / -629 | +295 | +2030 / +3553 | -436 | c=1.00: -360 / +295 / +2030 | 596 | +0.066 | +1.456 | +0.30 / +0.24 / +0.12 | ok |
+| L58bcf9fc | RK7 | L3M | +4454 / +7795 | -8394 | +593 / +1038 | -15124 | c=0.59: +2832 / -6157 / +416 | 127 | +0.022 | +0.215 | +0.02 / +0.39 / +0.34 | RED |
+| L58bcf9fc | RK7 | L6M | +2688 / +4704 | -8394 | +1645 / +2878 | -15124 | c=0.59: +1679 / -6157 / +1067 | 299 | +0.063 | +0.700 | +0.08 / +0.21 / +0.22 | RED |
+| L58bcf9fc | ADD | L3M | +3467 / +6068 | -7925 | +376 / +659 | -13157 | c=0.59: +1890 / -5689 / +145 | 128 | +0.028 | +0.281 | +0.00 / +0.37 / +0.33 | RED |
+| L58bcf9fc | ADD | L6M | +2031 / +3554 | -7925 | +1318 / +2307 | -13157 | c=0.59: +1008 / -5689 / +715 | 299 | +0.066 | +0.731 | +0.07 / +0.20 / +0.21 | RED |
 | L59b66d32 | RK7 | L3M | +1034 / +1810 | -3645 | +1658 / +2902 | -1417 | c=0.61: +1100 / -3425 / +1249 | 63 | +0.108 | +0.524 | -0.06 / -0.14 / +0.07 | ok |
 | L59b66d32 | RK7 | L6M | +859 / +1503 | -3730 | +2515 / +4402 | -1417 | c=0.61: +827 / -3425 / +1644 | 146 | +0.207 | +1.117 | -0.06 / -0.08 / -0.00 | ok |
 | L59b66d32 | ADD | L3M | -1124 / -1967 | -585 | +403 / +705 | +5291 | c=0.61: -772 / -354 / +55 | 63 | +0.092 | +0.446 | -0.07 / -0.13 / +0.05 | ok |
@@ -864,12 +1322,50 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L59b66d32 | ADD | Y2023 | +1526 / +2670 | -3883 | +95 / +167 | -3271 | c=0.61: +234 / -2026 / +77 | 230 | +0.004 | +0.023 | +0.06 / +0.09 / +0.03 | ok |
 | L59b66d32 | ADD | Y2024 | -2770 / -4847 | -2130 | -41 / -71 | +8495 | c=0.61: -1787 / -1291 / -59 | 297 | +0.004 | +0.024 | -0.07 / -0.01 / +0.06 | ok |
 | L59b66d32 | ADD | Y2025 | -6110 / -10692 | +1909 | +1116 / +1953 | +4892 | c=0.61: -4084 / +1527 / +672 | 279 | +0.108 | +0.570 | +0.08 / -0.04 / +0.03 | ok |
+| L5ee8ac30 | RK7 | L3M | +3202 / +5604 | -2697 | -623 / -1091 | -5915 | c=0.50: +1303 / -1507 / -364 | 89 | -0.032 | -0.216 | -0.11 / +0.15 / -0.29 | AMBER |
+| L5ee8ac30 | RK7 | L6M | +1959 / +3429 | -2697 | +1942 / +3398 | -5915 | c=0.50: +832 / -1507 / +1025 | 211 | +0.098 | +0.764 | +0.00 / +0.11 / -0.04 | AMBER |
+| L5ee8ac30 | ADD | L3M | +3685 / +6449 | +66 | -1271 / -2224 | -6803 | c=0.50: +1640 / -530 / -1012 | 89 | -0.032 | -0.216 | -0.11 / +0.15 / -0.29 | RED |
+| L5ee8ac30 | ADD | L6M | +2155 / +3771 | +66 | +1464 / +2561 | -6803 | c=0.50: +915 / -530 / +565 | 210 | +0.096 | +0.749 | +0.00 / +0.11 / -0.03 | AMBER |
+| L5fefb6e9 | RK7 | L3M | -664 / -1163 | +422 | +3941 / +6897 | +2235 | c=0.80: -421 / +25 / +3172 | 117 | +0.285 | +2.566 | +0.25 / +0.11 / +0.19 | ok |
+| L5fefb6e9 | RK7 | L6M | +143 / +251 | +422 | +1571 / +2749 | -5362 | c=0.80: +211 / +25 / +1283 | 259 | +0.100 | +0.961 | +0.13 / +0.07 / +0.10 | AMBER |
+| L61c9f6b4 | RK7 | L3M | +917 / +1606 | -1213 | +777 / +1361 | -1457 | c=1.00: +917 / -1213 / +777 | 74 | +0.083 | +0.473 | +0.28 / +0.20 / +0.29 | ok |
+| L61c9f6b4 | RK7 | L6M | +798 / +1396 | -1213 | +228 / +400 | -1457 | c=1.00: +798 / -1213 / +228 | 166 | -0.001 | -0.005 | +0.16 / +0.17 / +0.14 | ok |
 | L63700f14 | RK7 | L3M | +1601 / +2803 | -3390 | +1088 / +1904 | -4065 | c=1.00: +1601 / -3390 / +1088 | 92 | +0.016 | +0.112 | -0.07 / -0.00 / -0.08 | ok |
 | L63700f14 | RK7 | L6M | +1022 / +1788 | -3390 | +1365 / +2389 | -4065 | c=1.00: +1022 / -3390 / +1365 | 193 | +0.079 | +0.566 | -0.04 / -0.05 / -0.08 | ok |
 | L63700f14 | ADD | L3M | +38 / +67 | +134 | +163 / +286 | +1505 | c=1.00: +38 / +134 / +163 | 92 | +0.023 | +0.166 | -0.08 / -0.03 / -0.08 | ok |
 | L63700f14 | ADD | L6M | -35 / -62 | +134 | +837 / +1465 | +1505 | c=1.00: -35 / +134 / +837 | 192 | +0.088 | +0.629 | -0.05 / -0.06 / -0.08 | ok |
+| L68b147b4 | RK7 | L3M | +4595 / +8041 | -3125 | -371 / -649 | -14491 | c=0.51: +2147 / -2011 / -177 | 101 | -0.021 | -0.167 | +0.09 / +0.37 / +0.34 | RED |
+| L68b147b4 | RK7 | L6M | +2951 / +5163 | -3851 | +743 / +1300 | -14491 | c=0.51: +1396 / -2011 / +418 | 222 | +0.034 | +0.279 | +0.02 / +0.25 / +0.25 | RED |
+| L68b147b4 | ADD | L3M | +3534 / +6184 | -1571 | -20 / -34 | -12849 | c=0.51: +1117 / -457 / +174 | 101 | -0.021 | -0.167 | +0.09 / +0.37 / +0.34 | RED |
+| L68b147b4 | ADD | L6M | +2199 / +3848 | -3261 | +771 / +1350 | -12849 | c=0.51: +670 / -457 / +447 | 222 | +0.034 | +0.279 | +0.02 / +0.25 / +0.25 | RED |
+| L6be3bb7c | RK7 | L3M | +1601 / +2803 | -3390 | +1088 / +1904 | -4065 | c=1.00: +1601 / -3390 / +1088 | 92 | +0.016 | +0.112 | -0.07 / -0.00 / -0.08 | ok |
+| L6be3bb7c | RK7 | L6M | +1022 / +1788 | -3390 | +1365 / +2389 | -4065 | c=1.00: +1022 / -3390 / +1365 | 193 | +0.079 | +0.566 | -0.04 / -0.05 / -0.08 | ok |
+| L6be3bb7c | ADD | L3M | +38 / +67 | +134 | +163 / +286 | +1505 | c=1.00: +38 / +134 / +163 | 92 | +0.023 | +0.166 | -0.08 / -0.03 / -0.08 | ok |
+| L6be3bb7c | ADD | L6M | -35 / -62 | +134 | +837 / +1465 | +1505 | c=1.00: -35 / +134 / +837 | 192 | +0.088 | +0.629 | -0.05 / -0.06 / -0.08 | ok |
+| L6c84f416 | RK7 | L3M | +2088 / +3655 | -5696 | +1786 / +3125 | -4913 | c=0.67: +1907 / -5132 / +1280 | 54 | +0.203 | +0.843 | +0.04 / +0.12 / +0.24 | AMBER |
+| L6c84f416 | RK7 | L6M | +1220 / +2134 | -5696 | +2271 / +3974 | -4913 | c=0.67: +1147 / -5132 / +1597 | 106 | +0.286 | +1.122 | -0.02 / +0.04 / +0.13 | AMBER |
+| L6e35bff0 | RK7 | L3M | +3155 / +5521 | -2885 | -962 / -1684 | -9046 | c=1.00: +3155 / -2885 / -962 | 221 | -0.040 | -0.675 | +0.22 / +0.20 / +0.50 | AMBER |
+| L6e35bff0 | RK7 | L6M | +1968 / +3444 | -2885 | +532 / +932 | -9046 | c=1.00: +1968 / -2885 / +532 | 484 | +0.020 | +0.361 | +0.20 / +0.13 / +0.38 | AMBER |
+| L6e35bff0 | ADD | L3M | +2166 / +3790 | -2680 | -870 / -1523 | -5136 | c=1.00: +2166 / -2680 / -870 | 221 | -0.040 | -0.675 | +0.22 / +0.20 / +0.50 | AMBER |
+| L6e35bff0 | ADD | L6M | +1260 / +2205 | -2680 | +413 / +723 | -5136 | c=1.00: +1260 / -2680 / +413 | 483 | +0.022 | +0.396 | +0.20 / +0.13 / +0.37 | AMBER |
+| L6fa8234b | RK7 | L3M | +1782 / +3119 | -7971 | +2358 / +4127 | -5082 | c=0.76: +1641 / -7026 / +1905 | 74 | +0.212 | +1.209 | +0.34 / +0.39 / +0.44 | AMBER |
+| L6fa8234b | RK7 | L6M | +1084 / +1898 | -7971 | +1578 / +2761 | -5082 | c=0.76: +1010 / -7026 / +1281 | 149 | +0.143 | +0.791 | +0.22 / +0.24 / +0.22 | AMBER |
+| L6fa8234b | ADD | L3M | +918 / +1606 | -6587 | +2506 / +4386 | -2405 | c=0.76: +708 / -5642 / +2054 | 73 | +0.215 | +1.207 | +0.34 / +0.39 / +0.44 | ok |
+| L6fa8234b | ADD | L6M | +471 / +824 | -6587 | +1569 / +2747 | -2405 | c=0.76: +349 / -5642 / +1273 | 148 | +0.144 | +0.790 | +0.22 / +0.24 / +0.22 | ok |
+| L70d2a976 | RK7 | L3M | +2208 / +3863 | -5132 | +603 / +1055 | -4880 | c=0.50: +1569 / -2725 / +35 | 84 | +0.073 | +0.474 | +0.00 / +0.25 / +0.16 | AMBER |
+| L70d2a976 | RK7 | L6M | +1336 / +2338 | -5132 | +822 / +1439 | -4880 | c=0.50: +977 / -2725 / +347 | 194 | +0.055 | +0.396 | +0.07 / +0.15 / +0.20 | AMBER |
+| L70d2a976 | ADD | L3M | +272 / +476 | -1681 | +1032 / +1806 | +1383 | c=0.50: +166 / +463 / +430 | 83 | +0.078 | +0.501 | -0.01 / +0.25 / +0.15 | ok |
+| L70d2a976 | ADD | L6M | +50 / +87 | -1681 | +899 / +1573 | +1383 | c=0.50: +17 / +463 / +407 | 193 | +0.057 | +0.410 | +0.07 / +0.15 / +0.20 | ok |
+| L718a3a1d | RK7 | L3M | +1835 / +3211 | -3522 | +590 / +1033 | -6107 | c=0.60: +1586 / -2977 / +698 | 69 | -0.025 | -0.134 | +0.11 / +0.12 / -0.10 | AMBER |
+| L718a3a1d | RK7 | L6M | +1230 / +2153 | -3522 | +1694 / +2965 | -6107 | c=0.60: +1043 / -2977 / +1207 | 153 | +0.107 | +0.608 | +0.03 / +0.09 / +0.02 | AMBER |
+| L718a3a1d | ADD | L3M | +913 / +1599 | -71 | -211 / -369 | -3719 | c=0.60: +719 / +108 / -146 | 71 | -0.015 | -0.081 | +0.12 / +0.12 / -0.11 | ok |
+| L718a3a1d | ADD | L6M | +561 / +981 | -71 | +1110 / +1943 | -3719 | c=0.60: +395 / +108 / +614 | 153 | +0.109 | +0.620 | +0.04 / +0.09 / +0.02 | ok |
 | L726fa6ff | ADD | L3M | -360 / -631 | +351 | +798 / +1397 | +1311 | c=1.00: -360 / +351 / +798 | 58 | +0.142 | +0.635 | +0.48 / +0.08 / +0.25 | ok |
 | L726fa6ff | ADD | L6M | -80 / -140 | +351 | +539 / +943 | +1311 | c=1.00: -80 / +351 / +539 | 110 | +0.121 | +0.493 | +0.32 / +0.12 / +0.20 | ok |
+| L72dec2a9 | RK7 | L3M | +1912 / +3345 | -1734 | +1964 / +3436 | -7092 | c=1.00: +1912 / -1734 / +1964 | 213 | +0.072 | +1.187 | -0.12 / -0.08 / +0.18 | AMBER |
+| L72dec2a9 | RK7 | L6M | +1360 / +2379 | -2148 | +931 / +1629 | -7092 | c=1.00: +1360 / -2148 / +931 | 503 | +0.029 | +0.535 | -0.05 / +0.02 / +0.15 | AMBER |
+| L72dec2a9 | ADD | L3M | +1505 / +2634 | -1265 | +1153 / +2018 | -6828 | c=1.00: +1505 / -1265 / +1153 | 211 | +0.069 | +1.122 | -0.18 / -0.08 / +0.14 | AMBER |
+| L72dec2a9 | ADD | L6M | +1067 / +1868 | -1559 | +281 / +491 | -6828 | c=1.00: +1067 / -1559 / +281 | 501 | +0.027 | +0.504 | -0.08 / +0.02 / +0.13 | AMBER |
 | L732f05d4 | ADD | L3M | +764 / +1337 | +773 | +1727 / +3022 | -341 | c=0.50: +208 / +1571 / +1366 | 85 | +0.046 | +0.301 | -0.14 / +0.20 / +0.05 | ok |
 | L732f05d4 | ADD | L6M | +668 / +1169 | +354 | +1489 / +2605 | -341 | c=0.50: +211 / +1571 / +948 | 206 | +0.059 | +0.450 | -0.05 / +0.03 / +0.07 | ok |
 | L73f2c64b | RK7 | L3M | +5300 / +9275 | -9944 | +1018 / +1781 | -16481 | c=0.50: +2892 / -6424 / +900 | 77 | +0.017 | +0.098 | -0.08 / +0.17 / +0.34 | RED |
@@ -878,26 +1374,113 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L73f2c64b | ADD | L6M | +3256 / +5697 | -10670 | +609 / +1066 | -15899 | c=0.50: +1423 / -7151 / +306 | 165 | +0.041 | +0.253 | +0.03 / +0.15 / +0.23 | RED |
 | L74bff562 | ADD | L3M | +42 / +73 | -650 | -763 / -1335 | +1568 | c=1.00: +42 / -650 / -763 | 114 | -0.033 | -0.286 | +0.13 / +0.04 / +0.14 | ok |
 | L74bff562 | ADD | L6M | -82 / -143 | -650 | -117 / -204 | +1568 | c=1.00: -82 / -650 / -117 | 246 | +0.008 | +0.075 | +0.15 / +0.01 / +0.29 | ok |
+| L7515c303 | RK7 | L3M | +4567 / +7992 | -7038 | +1219 / +2134 | -13898 | c=0.50: +2740 / -4864 / +1077 | 90 | +0.017 | +0.119 | -0.16 / +0.43 / +0.18 | RED |
+| L7515c303 | RK7 | L6M | +3025 / +5294 | -7038 | +2044 / +3577 | -13898 | c=0.50: +1790 / -4864 / +1307 | 215 | +0.077 | +0.614 | -0.09 / +0.20 / +0.13 | RED |
+| L7515c303 | ADD | L3M | +3101 / +5426 | -4559 | +1720 / +3010 | -9032 | c=0.50: +626 / -2384 / +1425 | 88 | +0.036 | +0.246 | -0.16 / +0.42 / +0.19 | AMBER |
+| L7515c303 | ADD | L6M | +2012 / +3522 | -4559 | +2121 / +3711 | -9032 | c=0.50: +408 / -2384 / +1275 | 212 | +0.090 | +0.705 | -0.08 / +0.19 / +0.13 | AMBER |
+| L77a763af | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=0.50: +290 / -3103 / +1882 | 62 | +0.178 | +0.849 | +0.25 / -0.07 / +0.11 | ok |
+| L77a763af | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=0.50: +318 / -3103 / +1302 | 136 | +0.164 | +0.825 | +0.06 / -0.03 / +0.02 | ok |
+| L77a763af | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=0.50: -916 / +48 / +1143 | 62 | +0.163 | +0.777 | +0.23 / -0.07 / +0.10 | ok |
+| L77a763af | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=0.50: -500 / +48 / +755 | 135 | +0.156 | +0.780 | +0.05 / -0.03 / +0.01 | ok |
+| L79cd626b | RK7 | L3M | +1212 / +2120 | -6540 | +2530 / +4428 | -4437 | c=0.55: +1100 / -4992 / +1758 | 57 | +0.181 | +0.793 | +0.21 / +0.03 / +0.08 | ok |
+| L79cd626b | RK7 | L6M | +1013 / +1772 | -6540 | +1797 / +3144 | -4437 | c=0.55: +846 / -4992 / +1232 | 127 | +0.123 | +0.579 | +0.13 / +0.05 / +0.07 | ok |
+| L79cd626b | ADD | L3M | -389 / -680 | -3780 | +1541 / +2696 | +1336 | c=0.55: -304 / -2085 / +862 | 56 | +0.162 | +0.697 | +0.18 / +0.03 / +0.06 | ok |
+| L79cd626b | ADD | L6M | -35 / -62 | -3780 | +1155 / +2022 | +1336 | c=0.55: -99 / -2085 / +643 | 125 | +0.114 | +0.526 | +0.11 / +0.05 / +0.06 | ok |
 | L7a544778 | ADD | L3M | -1452 / -2542 | +90 | +978 / +1712 | +6626 | c=0.50: -837 / +45 / +557 | 64 | +0.071 | +0.351 | +0.20 / -0.15 / +0.07 | ok |
 | L7a544778 | ADD | L6M | -618 / -1082 | -3171 | +1301 / +2276 | +5375 | c=0.50: -412 / +45 / +541 | 139 | +0.123 | +0.633 | +0.05 / -0.08 / +0.04 | ok |
+| L7ab10be1 | RK7 | L3M | +1675 / +2931 | -1770 | +2019 / +3534 | -7835 | c=0.50: +1435 / -1315 / +1119 | 90 | +0.108 | +0.750 | +0.04 / +0.20 / +0.30 | AMBER |
+| L7ab10be1 | RK7 | L6M | +1049 / +1835 | -1770 | +1871 / +3274 | -7835 | c=0.50: +915 / -1315 / +1128 | 193 | +0.087 | +0.619 | +0.09 / +0.07 / +0.25 | AMBER |
+| L7ab10be1 | ADD | L3M | +711 / +1244 | -910 | +1225 / +2143 | -4573 | c=0.50: +258 / -455 / +467 | 86 | +0.095 | +0.632 | +0.03 / +0.21 / +0.29 | ok |
+| L7ab10be1 | ADD | L6M | +348 / +610 | -910 | +1318 / +2307 | -4573 | c=0.50: +87 / -455 / +673 | 190 | +0.076 | +0.538 | +0.08 / +0.08 / +0.25 | ok |
+| L7b30753e | RK7 | L3M | +1253 / +2193 | +2078 | +762 / +1333 | -2002 | c=0.50: +544 / +685 / +442 | 73 | +0.048 | +0.267 | +0.11 / +0.31 / +0.28 | ok |
+| L7b30753e | RK7 | L6M | +967 / +1691 | -1090 | +1486 / +2601 | -2002 | c=0.50: +485 / +685 / +803 | 179 | +0.086 | +0.570 | +0.12 / +0.20 / +0.29 | ok |
+| L7b30753e | ADD | L3M | +527 / +923 | +3090 | +763 / +1334 | +508 | c=0.50: +28 / +1545 / +442 | 73 | +0.048 | +0.267 | +0.11 / +0.31 / +0.28 | ok |
+| L7b30753e | ADD | L6M | +375 / +656 | -501 | +1325 / +2319 | +508 | c=0.50: +27 / +1545 / +625 | 178 | +0.088 | +0.583 | +0.12 / +0.20 / +0.29 | ok |
 | L7e414dd6 | RK7 | L3M | +1238 / +2166 | -5705 | +250 / +437 | -2768 | c=1.00: +1238 / -5705 / +250 | 151 | -0.006 | -0.065 | +0.04 / +0.06 / +0.11 | ok |
 | L7e414dd6 | RK7 | L6M | +930 / +1628 | -5705 | +488 / +854 | -2768 | c=1.00: +930 / -5705 / +488 | 375 | +0.012 | +0.173 | -0.06 / +0.07 / -0.02 | ok |
 | L7e414dd6 | ADD | L3M | +225 / +393 | -4543 | -449 / -787 | +270 | c=1.00: +225 / -4543 / -449 | 149 | +0.008 | +0.089 | +0.05 / +0.06 / +0.09 | ok |
 | L7e414dd6 | ADD | L6M | +201 / +352 | -4543 | +7 / +12 | +270 | c=1.00: +201 / -4543 / +7 | 372 | +0.021 | +0.283 | -0.06 / +0.07 / -0.03 | ok |
+| L840241d1 | RK7 | L3M | +2116 / +3702 | -3106 | +655 / +1147 | -5497 | c=1.00: +2116 / -3106 / +655 | 204 | +0.031 | +0.494 | +0.22 / +0.19 / +0.30 | AMBER |
+| L840241d1 | RK7 | L6M | +1767 / +3093 | -3106 | +658 / +1152 | -5497 | c=1.00: +1767 / -3106 / +658 | 501 | +0.025 | +0.460 | +0.04 / +0.08 / +0.11 | AMBER |
+| L840241d1 | ADD | L3M | +1536 / +2688 | -2958 | +320 / +560 | -4034 | c=1.00: +1536 / -2958 / +320 | 204 | +0.025 | +0.398 | +0.21 / +0.19 / +0.31 | ok |
+| L840241d1 | ADD | L6M | +1489 / +2605 | -2958 | +137 / +240 | -4687 | c=1.00: +1489 / -2958 / +137 | 501 | +0.022 | +0.414 | +0.03 / +0.08 / +0.11 | AMBER |
+| L875ee048 | RK7 | L3M | +1868 / +3269 | -5505 | +441 / +771 | -6718 | c=1.00: +1868 / -5505 / +441 | 141 | -0.039 | -0.428 | +0.02 / +0.11 / +0.17 | AMBER |
+| L875ee048 | RK7 | L6M | +1272 / +2226 | -5505 | +706 / +1235 | -6718 | c=1.00: +1272 / -5505 / +706 | 290 | +0.013 | +0.144 | -0.05 / +0.02 / +0.06 | AMBER |
+| L875ee048 | ADD | L3M | +311 / +545 | -1686 | -290 / -508 | -1736 | c=1.00: +311 / -1686 / -290 | 141 | -0.032 | -0.349 | +0.04 / +0.11 / +0.18 | ok |
+| L875ee048 | ADD | L6M | +215 / +377 | -1686 | +227 / +397 | -1736 | c=1.00: +215 / -1686 / +227 | 288 | +0.019 | +0.204 | -0.04 / +0.02 / +0.06 | ok |
+| L8e5a7466 | RK7 | L3M | +2502 / +4378 | -5116 | +596 / +1043 | -8959 | c=1.00: +2502 / -5116 / +596 | 40 | +0.095 | +0.293 | +0.02 / +0.03 / +0.22 | AMBER |
+| L8e5a7466 | RK7 | L6M | +1611 / +2819 | -5116 | +928 / +1623 | -8959 | c=1.00: +1611 / -5116 / +928 | 81 | +0.183 | +0.550 | +0.08 / -0.04 / +0.08 | AMBER |
+| L8e5a7466 | ADD | L3M | +1424 / +2492 | -3732 | +23 / +40 | -5767 | c=1.00: +1424 / -3732 / +23 | 40 | +0.095 | +0.293 | +0.02 / +0.03 / +0.22 | AMBER |
+| L8e5a7466 | ADD | L6M | +840 / +1470 | -3732 | +465 / +813 | -5767 | c=1.00: +840 / -3732 / +465 | 80 | +0.187 | +0.554 | +0.08 / -0.04 / +0.08 | AMBER |
+| L8f126a83 | RK7 | L3M | +892 / +1561 | +969 | +1557 / +2726 | -3857 | c=0.50: +1115 / -403 / +676 | 70 | +0.136 | +0.734 | +0.16 / +0.22 / +0.25 | ok |
+| L8f126a83 | RK7 | L6M | +634 / +1109 | +969 | +1034 / +1809 | -3857 | c=0.50: +744 / -403 / +498 | 176 | +0.069 | +0.447 | +0.12 / +0.15 / +0.25 | ok |
+| L8f126a83 | ADD | L3M | -1351 / -2364 | +4160 | +1962 / +3433 | +4820 | c=0.50: -774 / +2787 / +989 | 69 | +0.153 | +0.811 | +0.19 / +0.23 / +0.27 | ok |
+| L8f126a83 | ADD | L6M | -796 / -1393 | +4160 | +1023 / +1790 | +4820 | c=0.50: -501 / +2787 / +431 | 174 | +0.077 | +0.493 | +0.13 / +0.15 / +0.26 | ok |
+| L908c5381 | RK7 | L3M | +250 / +437 | -4905 | +2403 / +4204 | +952 | c=0.89: +331 / -4703 / +2253 | 67 | +0.193 | +0.994 | +0.04 / +0.02 / +0.00 | ok |
+| L908c5381 | RK7 | L6M | +240 / +419 | -4905 | +2329 / +4075 | +952 | c=0.89: +287 / -4703 / +2144 | 140 | +0.238 | +1.232 | +0.03 / -0.00 / +0.15 | ok |
+| L925bb0f5 | RK7 | L3M | +2839 / +4968 | -7507 | +2540 / +4445 | -8113 | c=0.50: +1296 / -3912 / +1487 | 106 | +0.108 | +0.877 | -0.06 / +0.09 / +0.31 | AMBER |
+| L925bb0f5 | RK7 | L6M | +2345 / +4104 | -7507 | +1343 / +2351 | -8113 | c=0.50: +1185 / -3912 / +771 | 255 | +0.050 | +0.477 | +0.05 / +0.01 / +0.18 | AMBER |
+| L925bb0f5 | ADD | L3M | +2883 / +5046 | -4056 | +2176 / +3808 | -10298 | c=0.50: +905 / -462 / +1152 | 106 | +0.105 | +0.853 | -0.06 / +0.09 / +0.32 | RED |
+| L925bb0f5 | ADD | L6M | +2420 / +4236 | -4056 | +800 / +1400 | -10298 | c=0.50: +998 / -462 / +238 | 254 | +0.050 | +0.468 | +0.05 / +0.01 / +0.18 | RED |
+| L960fd79a | RK7 | L3M | +1461 / +2557 | -2202 | +713 / +1248 | -2182 | c=1.00: +1461 / -2202 / +713 | 198 | +0.005 | +0.076 | -0.02 / +0.03 / -0.04 | ok |
+| L97883de8 | RK7 | L3M | +432 / +755 | -2233 | +651 / +1139 | -589 | c=1.00: +432 / -2233 / +651 | 110 | +0.067 | +0.569 | +0.23 / +0.01 / +0.20 | ok |
+| L97883de8 | RK7 | L6M | +398 / +697 | -2233 | +973 / +1703 | -589 | c=1.00: +398 / -2233 / +973 | 218 | +0.080 | +0.644 | +0.17 / +0.02 / +0.22 | ok |
+| L97883de8 | ADD | L3M | -1053 / -1843 | +247 | +464 / +812 | +4764 | c=1.00: -1053 / +247 / +464 | 109 | +0.059 | +0.493 | +0.21 / +0.01 / +0.19 | ok |
+| L97883de8 | ADD | L6M | -625 / -1093 | +247 | +785 / +1374 | +4764 | c=1.00: -625 / +247 / +785 | 216 | +0.080 | +0.644 | +0.16 / +0.02 / +0.20 | ok |
 | L9c7289bd | RK7 | L3M | +1153 / +2017 | -3400 | +2391 / +4184 | -3779 | c=1.26: +1058 / -3483 / +2958 | 56 | +0.526 | +2.268 | +0.05 / +0.11 / +0.26 | ok |
 | L9c7289bd | RK7 | L6M | +1125 / +1969 | -4905 | +1417 / +2480 | -3779 | c=1.26: +1197 / -7178 / +1767 | 132 | +0.286 | +1.399 | +0.09 / +0.13 / +0.27 | ok |
 | L9c7289bd | ADD | L3M | -273 / -478 | -314 | +1876 / +3283 | +511 | c=1.26: -351 / -397 / +2443 | 56 | +0.526 | +2.268 | +0.05 / +0.11 / +0.26 | ok |
 | L9c7289bd | ADD | L6M | +195 / +342 | -4316 | +1020 / +1784 | +511 | c=1.26: +289 / -6588 / +1370 | 132 | +0.286 | +1.399 | +0.09 / +0.13 / +0.27 | ok |
+| L9c81a783 | RK7 | L3M | +1929 / +3376 | -7400 | -437 / -765 | -3756 | c=1.07: +1977 / -7688 / -460 | 72 | -0.055 | -0.304 | -0.21 / +0.02 / -0.06 | AMBER |
+| L9c81a783 | RK7 | L6M | +1383 / +2420 | -7400 | +56 / +99 | -3756 | c=1.07: +1422 / -7688 / +52 | 173 | -0.010 | -0.064 | -0.11 / -0.01 / +0.05 | ok |
+| L9d14d49d | RK7 | L3M | +2674 / +4680 | -8184 | +1049 / +1836 | -8732 | c=0.50: +2090 / -5544 / +622 | 67 | +0.069 | +0.356 | +0.22 / +0.31 / +0.41 | AMBER |
+| L9d14d49d | RK7 | L6M | +1802 / +3154 | -8184 | +2161 / +3782 | -8732 | c=0.50: +1393 / -5544 / +1157 | 175 | +0.129 | +0.837 | +0.26 / +0.20 / +0.31 | AMBER |
+| L9d14d49d | ADD | L3M | +1458 / +2551 | -7620 | +913 / +1597 | -5985 | c=0.50: +924 / -5028 / +412 | 65 | +0.083 | +0.417 | +0.21 / +0.28 / +0.40 | AMBER |
+| L9d14d49d | ADD | L6M | +969 / +1695 | -7620 | +2010 / +3518 | -5985 | c=0.50: +582 / -5028 / +999 | 172 | +0.132 | +0.842 | +0.26 / +0.18 / +0.31 | AMBER |
+| L9df1be5a | RK7 | L3M | +216 / +379 | -2625 | +3043 / +5325 | +1004 | c=0.50: +307 / -1743 / +2014 | 94 | +0.119 | +0.858 | +0.24 / +0.11 / +0.42 | ok |
+| L9df1be5a | RK7 | L6M | +67 / +117 | -2625 | +1707 / +2987 | +1004 | c=0.50: +193 / -1743 / +1185 | 211 | +0.056 | +0.435 | +0.14 / +0.11 / +0.24 | ok |
+| La0dbbae6 | RK7 | L3M | +2569 / +4495 | -5990 | +609 / +1066 | -4682 | c=0.50: +1895 / -4538 / +235 | 61 | +0.066 | +0.312 | -0.08 / +0.19 / -0.01 | AMBER |
+| La0dbbae6 | RK7 | L6M | +1615 / +2826 | -5990 | +327 / +571 | -4682 | c=0.50: +1218 / -4538 / +176 | 149 | +0.023 | +0.125 | -0.09 / +0.18 / -0.02 | AMBER |
+| La0dbbae6 | ADD | L3M | +484 / +847 | -2904 | +754 / +1319 | +1428 | c=0.50: +258 / -1452 / +287 | 60 | +0.084 | +0.389 | -0.05 / +0.20 / +0.01 | ok |
+| La0dbbae6 | ADD | L6M | +225 / +394 | -2904 | +222 / +388 | +1428 | c=0.50: +105 / -1452 / +38 | 147 | +0.028 | +0.153 | -0.07 / +0.18 / -0.02 | ok |
 | La3d84d38 | RK7 | L3M | +1929 / +3376 | -7400 | -437 / -765 | -3756 | c=1.07: +1977 / -7688 / -460 | 72 | -0.055 | -0.304 | -0.21 / +0.02 / -0.06 | AMBER |
 | La3d84d38 | RK7 | L6M | +1383 / +2420 | -7400 | +56 / +99 | -3756 | c=1.07: +1422 / -7688 / +52 | 173 | -0.010 | -0.064 | -0.11 / -0.01 / +0.05 | ok |
 | La3d84d38 | ADD | L3M | +187 / +328 | -4314 | -528 / -925 | +2483 | c=1.07: +234 / -4602 / -563 | 71 | -0.086 | -0.468 | -0.24 / +0.02 / -0.08 | ok |
 | La3d84d38 | ADD | L6M | +213 / +372 | -4314 | -260 / -455 | +2483 | c=1.07: +251 / -4602 / -273 | 171 | -0.026 | -0.167 | -0.13 / -0.01 / +0.04 | ok |
+| Lad0c27eb | RK7 | L3M | +1782 / +3119 | -7971 | +2358 / +4127 | -5082 | c=0.76: +1641 / -7026 / +1905 | 74 | +0.212 | +1.209 | +0.34 / +0.39 / +0.44 | AMBER |
+| Lad0c27eb | RK7 | L6M | +1084 / +1898 | -7971 | +1578 / +2761 | -5082 | c=0.76: +1010 / -7026 / +1281 | 149 | +0.143 | +0.791 | +0.22 / +0.24 / +0.22 | AMBER |
+| Lad0c27eb | ADD | L3M | +918 / +1606 | -6587 | +2506 / +4386 | -2405 | c=0.76: +708 / -5642 / +2054 | 73 | +0.215 | +1.207 | +0.34 / +0.39 / +0.44 | ok |
+| Lad0c27eb | ADD | L6M | +471 / +824 | -6587 | +1569 / +2747 | -2405 | c=0.76: +349 / -5642 / +1273 | 148 | +0.144 | +0.790 | +0.22 / +0.24 / +0.22 | ok |
+| Lae0baee6 | RK7 | L3M | +2242 / +3923 | -6920 | +632 / +1105 | -7811 | c=0.97: +2201 / -6804 / +616 | 91 | +0.061 | +0.430 | +0.09 / +0.01 / +0.10 | AMBER |
+| Lae0baee6 | RK7 | L6M | +1809 / +3166 | -7255 | +34 / +60 | -7811 | c=0.97: +1770 / -6922 / +36 | 197 | -0.007 | -0.051 | +0.04 / +0.04 / +0.06 | AMBER |
 | Lb1b89688 | RK7 | L3M | +1894 / +3314 | -3780 | +589 / +1030 | -6714 | c=0.50: +1046 / -2320 / +360 | 74 | +0.034 | +0.191 | +0.03 / +0.06 / -0.01 | AMBER |
 | Lb1b89688 | RK7 | L6M | +1487 / +2602 | -3945 | +1090 / +1907 | -6714 | c=0.50: +846 / -2320 / +651 | 161 | +0.061 | +0.366 | -0.02 / +0.08 / +0.10 | AMBER |
 | Lb1b89688 | ADD | L3M | +594 / +1040 | -2919 | +226 / +396 | -2178 | c=0.50: +118 / -1460 / +90 | 73 | +0.020 | +0.114 | -0.01 / +0.07 / -0.03 | ok |
 | Lb1b89688 | ADD | L6M | +562 / +984 | -3356 | +800 / +1400 | -2178 | c=0.50: +148 / -1460 / +389 | 159 | +0.058 | +0.343 | -0.04 / +0.09 / +0.09 | ok |
+| Lb292f65c | RK7 | L3M | +1996 / +3493 | -4538 | -314 / -550 | -8221 | c=1.00: +1996 / -4538 / -314 | 137 | -0.030 | -0.317 | -0.08 / +0.01 / -0.10 | AMBER |
+| Lb292f65c | RK7 | L6M | +1353 / +2368 | -4538 | +651 / +1139 | -8221 | c=1.00: +1353 / -4538 / +651 | 282 | +0.042 | +0.435 | -0.10 / +0.03 / -0.10 | AMBER |
+| Lb292f65c | ADD | L3M | +1678 / +2937 | -4571 | -1067 / -1868 | -7943 | c=1.00: +1678 / -4571 / -1067 | 136 | -0.031 | -0.326 | -0.08 / +0.01 / -0.10 | AMBER |
+| Lb292f65c | ADD | L6M | +1082 / +1893 | -4571 | +30 / +52 | -7943 | c=1.00: +1082 / -4571 / +30 | 281 | +0.041 | +0.430 | -0.10 / +0.03 / -0.10 | AMBER |
+| Lb36e86fe | RK7 | L3M | +1782 / +3119 | -7971 | +2358 / +4127 | -5082 | c=0.76: +1641 / -7026 / +1905 | 74 | +0.212 | +1.209 | +0.34 / +0.39 / +0.44 | AMBER |
+| Lb36e86fe | RK7 | L6M | +1084 / +1898 | -7971 | +1578 / +2761 | -5082 | c=0.76: +1010 / -7026 / +1281 | 149 | +0.143 | +0.791 | +0.22 / +0.24 / +0.22 | AMBER |
+| Lb36e86fe | ADD | L3M | +918 / +1606 | -6587 | +2506 / +4386 | -2405 | c=0.76: +708 / -5642 / +2054 | 73 | +0.215 | +1.207 | +0.34 / +0.39 / +0.44 | ok |
+| Lb36e86fe | ADD | L6M | +471 / +824 | -6587 | +1569 / +2747 | -2405 | c=0.76: +349 / -5642 / +1273 | 148 | +0.144 | +0.790 | +0.22 / +0.24 / +0.22 | ok |
+| Lb44a3e99 | RK7 | L3M | +1583 / +2769 | -3333 | +1307 / +2288 | -5791 | c=1.00: +1583 / -3333 / +1307 | 106 | +0.132 | +1.072 | +0.18 / +0.21 / +0.30 | AMBER |
+| Lb44a3e99 | RK7 | L6M | +1113 / +1947 | -3333 | +1878 / +3286 | -5791 | c=1.00: +1113 / -3333 / +1878 | 212 | +0.177 | +1.391 | +0.13 / +0.09 / +0.20 | AMBER |
+| Lb44a3e99 | ADD | L3M | +1597 / +2794 | -4060 | +863 / +1510 | -6723 | c=1.00: +1597 / -4060 / +863 | 106 | +0.132 | +1.072 | +0.18 / +0.21 / +0.30 | AMBER |
+| Lb44a3e99 | ADD | L6M | +981 / +1716 | -4060 | +1454 / +2544 | -6723 | c=1.00: +981 / -4060 / +1454 | 211 | +0.173 | +1.354 | +0.12 / +0.09 / +0.20 | AMBER |
+| Lba6f7f20 | RK7 | L3M | +3281 / +5742 | -6615 | +1025 / +1793 | -12433 | c=0.50: +1897 / -4851 / +948 | 75 | +0.011 | +0.064 | -0.07 / +0.11 / +0.16 | RED |
+| Lbbb39855 | RK7 | L3M | -504 / -881 | -3120 | +2902 / +5078 | +2281 | c=0.50: +290 / -3103 / +1882 | 62 | +0.178 | +0.849 | +0.25 / -0.07 / +0.11 | ok |
+| Lbbb39855 | RK7 | L6M | -58 / -102 | -3120 | +2291 / +4010 | +1857 | c=0.50: +318 / -3103 / +1302 | 136 | +0.164 | +0.825 | +0.06 / -0.03 / +0.02 | ok |
+| Lbbb39855 | ADD | L3M | -1573 / -2752 | +95 | +2075 / +3632 | +6571 | c=0.50: -916 / +48 / +1143 | 62 | +0.163 | +0.777 | +0.23 / -0.07 / +0.10 | ok |
+| Lbbb39855 | ADD | L6M | -795 / -1391 | -796 | +1691 / +2959 | +5375 | c=0.50: -500 / +48 / +755 | 135 | +0.156 | +0.780 | +0.05 / -0.03 / +0.01 | ok |
+| Lc34e9ecb | RK7 | L3M | +1461 / +2557 | -2202 | +713 / +1248 | -2182 | c=1.00: +1461 / -2202 / +713 | 198 | +0.005 | +0.076 | -0.02 / +0.03 / -0.04 | ok |
 | Lc573e500 | ADD | L3M | +502 / +878 | -5236 | +1876 / +3283 | +1947 | c=1.00: +502 / -5236 / +1876 | 168 | +0.090 | +1.163 | -0.03 / +0.11 / +0.10 | ok |
 | Lc573e500 | ADD | L6M | +417 / +730 | -5236 | +359 / +628 | +1947 | c=1.00: +417 / -5236 / +359 | 359 | +0.002 | +0.028 | +0.01 / +0.06 / -0.03 | ok |
+| Lc60d142a | RK7 | L3M | +416 / +728 | -3580 | +791 / +1384 | -130 | c=0.59: +447 / -2472 / +713 | 69 | +0.018 | +0.094 | +0.10 / -0.04 / +0.04 | ok |
+| Lc60d142a | RK7 | L6M | +358 / +627 | -3580 | +1374 / +2404 | -130 | c=0.59: +379 / -2472 / +1018 | 164 | +0.071 | +0.432 | +0.06 / +0.03 / +0.11 | ok |
+| Lcad54215 | RK7 | L3M | +148 / +260 | -3080 | +1607 / +2812 | +996 | c=0.50: +751 / -3083 / +1026 | 61 | +0.103 | +0.484 | +0.16 / -0.15 / +0.05 | ok |
+| Lcad54215 | RK7 | L6M | +409 / +715 | -3815 | +2335 / +4087 | +996 | c=0.50: +627 / -3083 / +1241 | 132 | +0.187 | +0.912 | +0.01 / -0.07 / +0.03 | ok |
 | Lcb3c99eb | ADD | L3M | +4051 / +7090 | -8375 | -783 / -1371 | -13244 | c=0.53: +1817 / -5603 / -400 | 91 | -0.052 | -0.365 | -0.04 / +0.25 / +0.16 | RED |
 | Lcb3c99eb | ADD | L6M | +2462 / +4309 | -8375 | +64 / +111 | -13244 | c=0.53: +1054 / -5603 / -7 | 213 | +0.008 | +0.067 | +0.07 / +0.19 / +0.17 | RED |
 | Lcb97bb95 | RK7 | L3M | +554 / +969 | -3130 | +2238 / +3916 | -2449 | c=0.59: +788 / -3112 / +1655 | 63 | +0.146 | +0.707 | +0.19 / -0.09 / +0.13 | ok |
@@ -907,18 +1490,55 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | Lcb97bb95 | ADD | Y2023 | +1217 / +2129 | -2818 | -110 / -193 | -2319 | c=0.59: +664 / -1332 / -77 | 238 | -0.007 | -0.040 | +0.09 / +0.03 / +0.22 | ok |
 | Lcb97bb95 | ADD | Y2024 | +3325 / +5819 | -2390 | +2 / +4 | +686 | c=0.59: +1695 / -1416 / -7 | 299 | +0.002 | +0.012 | -0.05 / -0.01 / +0.14 | ok |
 | Lcb97bb95 | ADD | Y2025 | -4962 / -8684 | +343 | +1180 / +2065 | +4259 | c=0.59: -2915 / +1699 / +658 | 283 | +0.119 | +0.633 | +0.03 / -0.00 / +0.03 | ok |
+| Lcced15b8 | RK7 | L3M | +3096 / +5418 | -8795 | +1163 / +2035 | -9101 | c=1.20: +3530 / -9937 / +1220 | 75 | +0.050 | +0.286 | +0.03 / +0.04 / +0.35 | AMBER |
+| Lcced15b8 | RK7 | L6M | +1970 / +3448 | -8795 | +1622 / +2838 | -9101 | c=1.20: +2250 / -9937 / +1840 | 158 | +0.187 | +1.094 | -0.03 / +0.01 / +0.14 | AMBER |
+| Lcced15b8 | ADD | L3M | +1436 / +2513 | -6366 | +80 / +140 | -3700 | c=1.20: +1889 / -7553 / +99 | 74 | +0.017 | +0.095 | -0.02 / +0.04 / +0.33 | ok |
+| Lcced15b8 | ADD | L6M | +830 / +1452 | -6366 | +984 / +1722 | -3700 | c=1.20: +1115 / -7553 / +1196 | 156 | +0.184 | +1.062 | -0.06 / +0.01 / +0.13 | ok |
+| Lcd368087 | RK7 | L3M | +3804 / +6657 | -7194 | +555 / +972 | -12323 | c=0.50: +2507 / -5049 / +341 | 69 | +0.034 | +0.179 | +0.12 / +0.33 / +0.38 | RED |
+| Lcd368087 | RK7 | L6M | +2450 / +4287 | -7194 | +844 / +1477 | -12323 | c=0.50: +1617 / -5049 / +565 | 139 | +0.045 | +0.232 | +0.06 / +0.17 / +0.34 | RED |
+| Lcd368087 | ADD | L3M | +3229 / +5652 | -7920 | +113 / +198 | -10820 | c=0.50: +1675 / -5776 / -102 | 69 | +0.034 | +0.179 | +0.12 / +0.33 / +0.38 | RED |
+| Lcd368087 | ADD | L6M | +1977 / +3460 | -7920 | +507 / +888 | -10820 | c=0.50: +986 / -5776 / +227 | 138 | +0.046 | +0.233 | +0.06 / +0.17 / +0.34 | RED |
+| Lcfeda8c4 | RK7 | L3M | -215 / -376 | -3000 | +1586 / +2775 | +2131 | c=0.50: +484 / -3043 / +1099 | 65 | +0.081 | +0.406 | +0.17 / -0.16 / +0.04 | ok |
+| Lcfeda8c4 | RK7 | L6M | +234 / +410 | -3850 | +1570 / +2747 | +1857 | c=0.50: +486 / -3043 / +894 | 142 | +0.107 | +0.563 | +0.08 / -0.06 / +0.08 | ok |
+| Lcfeda8c4 | ADD | L3M | -1067 / -1868 | +195 | +621 / +1087 | +6421 | c=0.50: -529 / +98 / +222 | 65 | +0.067 | +0.333 | +0.14 / -0.16 / +0.02 | ok |
+| Lcfeda8c4 | ADD | L6M | -353 / -618 | -3261 | +882 / +1543 | +5375 | c=0.50: -215 / +98 / +263 | 141 | +0.099 | +0.516 | +0.07 / -0.06 / +0.07 | ok |
+| Ld2610290 | RK7 | L3M | +1920 / +3360 | -2722 | +3391 / +5934 | -6010 | c=0.50: +1312 / -1520 / +2146 | 90 | +0.150 | +1.038 | -0.20 / +0.26 / +0.12 | AMBER |
+| Ld2610290 | RK7 | L6M | +1418 / +2482 | -2722 | +2392 / +4186 | -6010 | c=0.50: +947 / -1520 / +1537 | 212 | +0.091 | +0.713 | -0.14 / +0.07 / -0.07 | AMBER |
+| Ld2610290 | ADD | L3M | +1111 / +1945 | +728 | +3379 / +5913 | -3137 | c=0.50: -6 / +1653 / +2042 | 89 | +0.163 | +1.114 | -0.17 / +0.26 / +0.13 | ok |
+| Ld2610290 | ADD | L6M | +847 / +1483 | +728 | +1995 / +3491 | -3137 | c=0.50: +62 / +1653 / +1095 | 211 | +0.096 | +0.750 | -0.13 / +0.07 / -0.06 | ok |
+| Ld8d9f7cd | RK7 | L3M | +1851 / +3240 | -3495 | +1140 / +1994 | -5845 | c=1.00: +1851 / -3495 / +1140 | 184 | +0.073 | +1.036 | +0.12 / +0.24 / +0.15 | AMBER |
+| Ld8d9f7cd | RK7 | L6M | +1312 / +2296 | -3495 | +1261 / +2206 | -5845 | c=1.00: +1312 / -3495 / +1261 | 450 | +0.060 | +1.007 | +0.14 / +0.14 / +0.15 | AMBER |
+| Ld8d9f7cd | ADD | L3M | +476 / +832 | +616 | +1242 / +2173 | -843 | c=1.00: +476 / +616 / +1242 | 188 | +0.082 | +1.185 | +0.16 / +0.23 / +0.15 | ok |
+| Ld8d9f7cd | ADD | L6M | +381 / +666 | -2530 | +1210 / +2117 | -843 | c=1.00: +381 / -2530 / +1210 | 453 | +0.063 | +1.054 | +0.16 / +0.14 / +0.15 | ok |
 | Lde06bb47 | RK7 | L3M | +432 / +755 | -2233 | +651 / +1139 | -589 | c=1.00: +432 / -2233 / +651 | 110 | +0.067 | +0.569 | +0.23 / +0.01 / +0.20 | ok |
 | Lde06bb47 | RK7 | L6M | +398 / +697 | -2233 | +973 / +1703 | -589 | c=1.00: +398 / -2233 / +973 | 218 | +0.080 | +0.644 | +0.17 / +0.02 / +0.22 | ok |
 | Lde06bb47 | ADD | L3M | -1053 / -1843 | +247 | +464 / +812 | +4764 | c=1.00: -1053 / +247 / +464 | 109 | +0.059 | +0.493 | +0.21 / +0.01 / +0.19 | ok |
 | Lde06bb47 | ADD | L6M | -625 / -1093 | +247 | +785 / +1374 | +4764 | c=1.00: -625 / +247 / +785 | 216 | +0.080 | +0.644 | +0.16 / +0.02 / +0.20 | ok |
+| Lde06bb47 | ADD | Y2023 | +2905 / +5083 | -237 | +416 / +728 | -7244 | c=1.00: +2905 / -237 / +416 | 240 | +0.050 | +0.308 | +0.15 / -0.04 / +0.08 | AMBER |
+| Lde06bb47 | ADD | Y2024 | -1454 / -2545 | +2285 | +330 / +578 | +1450 | c=1.00: -1454 / +2285 / +330 | 365 | +0.038 | +0.261 | +0.17 / +0.05 / +0.18 | ok |
+| Lde06bb47 | ADD | Y2025 | -4721 / -8262 | +4055 | +654 / +1145 | +13780 | c=1.00: -4721 / +4055 / +654 | 402 | +0.080 | +0.608 | +0.13 / -0.04 / +0.03 | ok |
 | Le2688065 | ADD | L3M | +5100 / +8925 | -7995 | -34 / -59 | -15319 | c=0.50: +2086 / -5215 / +93 | 86 | -0.016 | -0.106 | +0.18 / +0.31 / +0.45 | RED |
 | Le2688065 | ADD | L6M | +3055 / +5346 | -7995 | +486 / +851 | -15319 | c=0.50: +1173 / -5215 / +311 | 190 | +0.021 | +0.146 | +0.13 / +0.22 / +0.25 | RED |
+| Led8baed4 | RK7 | L3M | +1430 / +2502 | -2808 | +1195 / +2091 | -1849 | c=0.50: +1194 / -2186 / +792 | 83 | +0.053 | +0.336 | +0.02 / +0.23 / +0.19 | ok |
+| Led8baed4 | RK7 | L6M | +859 / +1504 | -2808 | +2164 / +3786 | -1849 | c=0.50: +734 / -2186 / +1271 | 195 | +0.103 | +0.744 | +0.05 / +0.17 / +0.05 | ok |
+| Led8baed4 | ADD | L3M | +214 / +375 | -1244 | +2020 / +3535 | +736 | c=0.50: +108 / -622 / +1484 | 81 | +0.072 | +0.447 | -0.01 / +0.20 / +0.15 | ok |
+| Led8baed4 | ADD | L6M | +32 / +57 | -1244 | +2476 / +4332 | +736 | c=0.50: -34 / -622 / +1517 | 192 | +0.112 | +0.799 | +0.04 / +0.15 / +0.03 | ok |
+| Lee8faff6 | RK7 | L3M | -283 / -496 | +3268 | -335 / -586 | +2124 | c=1.00: -283 / +3268 / -335 | 132 | -0.018 | -0.180 | +0.45 / +0.20 / +0.39 | ok |
+| Lee8faff6 | RK7 | L6M | -93 / -163 | +3240 | +284 / +497 | +2124 | c=1.00: -93 / +3240 / +284 | 254 | +0.012 | +0.113 | +0.31 / +0.11 / +0.26 | ok |
+| Lee8faff6 | ADD | L3M | -910 / -1593 | +5096 | -195 / -341 | +3581 | c=1.00: -910 / +5096 / -195 | 131 | -0.017 | -0.176 | +0.44 / +0.20 / +0.39 | ok |
+| Lee8faff6 | ADD | L6M | -587 / -1028 | +3829 | +235 / +412 | +3581 | c=1.00: -587 / +3829 / +235 | 253 | +0.012 | +0.115 | +0.31 / +0.10 / +0.26 | ok |
+| Lf0447f1d | RK7 | L3M | +1972 / +3452 | -3233 | +1918 / +3357 | -4963 | c=0.50: +933 / -2398 / +1523 | 72 | +0.059 | +0.329 | +0.06 / +0.26 / +0.32 | AMBER |
+| Lf0447f1d | RK7 | L6M | +1297 / +2269 | -3233 | +591 / +1034 | -4963 | c=0.50: +641 / -2398 / +620 | 169 | -0.004 | -0.025 | +0.16 / +0.20 / +0.26 | AMBER |
+| Lf0447f1d | ADD | L3M | +1599 / +2799 | -1669 | +1780 / +3115 | -3835 | c=0.50: +113 / -835 / +1443 | 71 | +0.051 | +0.281 | +0.04 / +0.26 / +0.31 | ok |
+| Lf0447f1d | ADD | L6M | +965 / +1689 | -1669 | +407 / +713 | -3835 | c=0.50: +35 / -835 / +465 | 168 | -0.008 | -0.048 | +0.15 / +0.21 / +0.26 | ok |
 | Lf1339997 | ADD | L3M | -330 / -577 | -1560 | -565 / -988 | +2086 | c=0.50: -341 / -780 / -95 | 63 | -0.081 | -0.391 | +0.21 / +0.10 / +0.16 | ok |
 | Lf1339997 | ADD | L6M | +11 / +20 | -1560 | -35 / -61 | +2086 | c=0.50: -193 / -780 / +11 | 156 | -0.007 | -0.038 | +0.27 / +0.07 / +0.02 | ok |
 | Lf2905267 | RK7 | L3M | +3766 / +6591 | -6054 | +908 / +1590 | -13173 | c=0.50: +2332 / -4479 / +720 | 90 | +0.023 | +0.157 | -0.09 / +0.43 / +0.16 | RED |
 | Lf2905267 | RK7 | L6M | +2534 / +4435 | -6054 | +1482 / +2593 | -13173 | c=0.50: +1563 / -4479 / +935 | 210 | +0.059 | +0.455 | -0.05 / +0.23 / +0.05 | RED |
 | Lf2905267 | ADD | L3M | +2834 / +4959 | -5585 | +1087 / +1902 | -9744 | c=0.50: +730 / -4010 / +745 | 88 | +0.042 | +0.285 | -0.08 / +0.41 / +0.15 | RED |
 | Lf2905267 | ADD | L6M | +1836 / +3213 | -5585 | +1370 / +2397 | -9744 | c=0.50: +483 / -4010 / +744 | 207 | +0.068 | +0.522 | -0.05 / +0.21 / +0.04 | RED |
+| Lf82cdf44 | RK7 | L3M | +63 / +111 | +690 | +2912 / +5097 | +1537 | c=1.00: +63 / +690 / +2912 | 129 | +0.172 | +1.707 | +0.25 / +0.08 / +0.16 | ok |
+| Lf82cdf44 | RK7 | L6M | +336 / +588 | -3010 | +1980 / +3464 | +1537 | c=1.00: +336 / -3010 / +1980 | 246 | +0.132 | +1.200 | +0.10 / +0.07 / +0.04 | ok |
 | Lfa1de080 | RK7 | L3M | +579 / +1013 | +1131 | +1965 / +3440 | -612 | c=1.00: +579 / +1131 / +1965 | 213 | +0.058 | +0.943 | +0.21 / +0.11 / +0.40 | ok |
 | Lfa1de080 | RK7 | L6M | +362 / +634 | +1131 | +2726 / +4770 | -612 | c=1.00: +362 / +1131 / +2726 | 485 | +0.101 | +1.812 | +0.19 / +0.04 / +0.19 | ok |
 | Lfa1de080 | ADD | L3M | -39 / -68 | +2726 | +2148 / +3759 | +875 | c=1.00: -39 / +2726 / +2148 | 211 | +0.065 | +1.055 | +0.22 / +0.12 / +0.41 | ok |
@@ -926,6 +1546,10 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | Lfa1de080 | ADD | Y2023 | -2350 / -4113 | -4017 | +868 / +1519 | +1565 | c=1.00: -2350 / -4017 / +868 | 441 | +0.063 | +0.714 | +0.13 / +0.15 / +0.19 | ok |
 | Lfa1de080 | ADD | Y2024 | -281 / -492 | -2465 | +757 / +1325 | +4158 | c=1.00: -281 / -2465 / +757 | 691 | +0.053 | +0.690 | +0.19 / +0.16 / +0.19 | ok |
 | Lfa1de080 | ADD | Y2025 | +803 / +1406 | -757 | +630 / +1103 | -8148 | c=1.00: +803 / -757 / +630 | 850 | +0.041 | +0.658 | +0.19 / +0.03 / +0.22 | ok |
+| Lfa46118f | RK7 | L3M | +6885 / +12050 | -8104 | -649 / -1136 | -19527 | c=0.53: +3434 / -5677 / -258 | 92 | -0.053 | -0.373 | +0.10 / +0.24 / +0.28 | RED |
+| Lfa46118f | RK7 | L6M | +4427 / +7747 | -8104 | +510 / +893 | -19527 | c=0.53: +2201 / -5677 / +346 | 224 | +0.019 | +0.156 | +0.02 / +0.17 / +0.24 | RED |
+| Lfa46118f | ADD | L3M | +6563 / +11485 | -8760 | -719 / -1259 | -17768 | c=0.53: +3308 / -6334 / -541 | 91 | -0.024 | -0.170 | +0.14 / +0.24 / +0.30 | RED |
+| Lfa46118f | ADD | L6M | +4109 / +7191 | -8760 | +291 / +509 | -17768 | c=0.53: +1991 / -6334 / +30 | 222 | +0.030 | +0.248 | +0.04 / +0.17 / +0.25 | RED |
 | NA1 | CT | L3M | +2562 / +4484 | -10610 | -3062 / -5358 | -9861 | c=0.50: +629 / -4141 / -1308 | 137 | -0.139 | -1.462 | -0.17 / +0.10 / -0.03 | RED |
 | NA1 | CT | L6M | +1333 / +2334 | -10610 | +633 / +1108 | -9861 | c=0.50: +55 / -4141 / +538 | 330 | +0.006 | +0.079 | -0.07 / +0.06 / -0.02 | RED |
 | NA1 | ADD | L3M | +5762 / +10083 | +360 | -2340 / -4095 | -15707 | c=0.50: +2009 / +378 / -1141 | 95 | -0.137 | -0.999 | -0.21 / +0.12 / -0.09 | RED |
