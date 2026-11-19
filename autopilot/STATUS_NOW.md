@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 06:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 06:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 06:10Z | box1: busy 100%, load1 68.58, workers 28, MemAvail 66 GB | server2: busy 100%, load1 101.27, workers 14, MemAvail 884 GB | pending box1-eligible 191912 / server2-eligible 191924 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 198.79, workers 61 (grid) + 68 (engine), 128 threads, MemAvail 1224 GB | serverB: busy 100%, load1 195.27, workers 61 (grid) + 70 (engine), 128 threads, MemAvail 1189 GB
+LATEST CORES.md LINE: 2026-11-19 06:30Z | box1: busy 100%, load1 73.41, workers 27, MemAvail 69 GB | server2: busy 100%, load1 113.06, workers 21, MemAvail 1088 GB | pending box1-eligible 129912 / server2-eligible 129935 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 213.34, workers 61 (grid) + 85 (engine), 128 threads, MemAvail 1203 GB | serverB: busy 100%, load1 210.56, workers 61 (grid) + 82 (engine), 128 threads, MemAvail 1171 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 06:15Z
+2026-11-19 06:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 06:10Z | box1: busy 100%, load1 68.58, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 76.0 GB; live reservations 6 (6 GB); workers 19, of which TP-adopted 19 (RSS 31.3 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 74.00, 69.03, 64.61
-  by tag: ASI quota 16 running 5 hungry True RSS 7.9 GB PSS 7.3 GB; NYR quota 16 running 9 hungry True RSS 14.7 GB PSS 13.6 GB; LON quota 12 running 5 hungry True RSS 8.8 GB PSS 8.1 GB
-  cell-months finished last hour (DONE markers): 1395
-  top running jobs: TL3_NYW_Ld14659a9_ADD (x14);TL3_ASI_AB4_RH7 (x12);TL3_NYW_L11631333_ADD (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 101.52, 102.26, 100.38|/dev/md2         28T  1.8T   27T   7% /mnt/l2|11|
+Server 1 (this box): MemAvail 68.7 GB; live reservations 1 (1 GB); workers 27, of which TP-adopted 27 (RSS 45.3 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 73.41, 71.88, 69.51
+  by tag: ASI quota 16 running 6 hungry True RSS 11.2 GB PSS 10.4 GB; NYR quota 16 running 15 hungry True RSS 24.3 GB PSS 22.4 GB; LON quota 12 running 6 hungry True RSS 9.9 GB PSS 9.0 GB
+  cell-months finished last hour (DONE markers): 1458
+  top running jobs: TL3_NYW_L818fb433_ADD (x16);TL3_NYW_Ld14659a9_ADD (x14);TL3_ASI_AB4_RK7 (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 113.36, 108.55, 103.60|/dev/md2         28T  1.8T   27T   7% /mnt/l2|34|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 101.52, 102.26, 100.38|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md 20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md 20261119_0400Z_ASIA-status-page-Asia-is-first.md 20261119_0432Z_Dallas-guard-E-and-live-agent-list.md 20261119_0613Z_cap-step-beyond-70-restate-dates-answer-alert-G.md
+20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md 20261119_0400Z_ASIA-status-page-Asia-is-first.md 20261119_0432Z_Dallas-guard-E-and-live-agent-list.md 20261119_0613Z_cap-step-beyond-70-restate-dates-answer-alert-G.md 20261119_0633Z_engine-is-the-bottleneck-make-the-ladder-engine-faster.md
+- lead 06:29Z INBOX 20261119_0633Z_engine-is-the-bottleneck-make-the-ladder-engine-faster.md received (auto-ack by inbox_watch.sh; the lead reads it next and lo
