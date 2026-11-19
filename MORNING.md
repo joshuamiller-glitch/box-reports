@@ -7088,3 +7088,4 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 - 2026-11-19T00:33Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
 - (wall 00:32Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
 - (wall 00:34Z) W-PM status: load1 69.14, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795048428; P5 page done, P8 grid np_m15_x10_y15 2898
+- (wall 00:37Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 82.97 76.50 73.82, epoch 1795048643
