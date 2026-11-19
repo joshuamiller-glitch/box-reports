@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 10:25Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 10:55Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Identity (inert hook = base row, trade for trade)
 - Asia: PASS 9/9 inert sets equal to TL3_ASI_Lda55d973_RA7 on 202610,202608 trade for trade
-- NYAM: pending 
+- NYAM: PASS 9/9 inert sets equal to TL3_NYE_L6a25b155_RK7 on 202610,202608 trade for trade
 
 ## Candidates
 | label | session | replaced book | variant | stage | fit sets | L6M scored | top-2 prior-year sets | joint sets |
@@ -23,10 +23,10 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L7c368a4fxA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
 | L0b1d7882xA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
 | L1edb9fabxA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
-| L6a25b155xK7 | NYAM | K7 | both | new | 0 | - | 0 | 0 |
-| L01811caaxK7 | NYAM | K7 | both | new | 0 | - | 0 | 0 |
-| L0f097450xK7 | NYAM | K7 | both | new | 0 | - | 0 | 0 |
-| L3701b464xK7 | NYAM | K7 | both | new | 0 | - | 0 | 0 |
+| L6a25b155xK7 | NYAM | K7 | both | fit queued | 72 | - | 0 | 0 |
+| L01811caaxK7 | NYAM | K7 | both | fit queued | 72 | - | 0 | 0 |
+| L0f097450xK7 | NYAM | K7 | both | fit queued | 72 | - | 0 | 0 |
+| L3701b464xK7 | NYAM | K7 | both | fit queued | 72 | - | 0 | 0 |
 
 ## Variant notes (order 1014Z: every yes row counts, the engine is the judge)
 | label | session | book | variant | note |
