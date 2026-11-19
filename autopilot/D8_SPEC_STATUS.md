@@ -1,23 +1,23 @@
-Updated 2026-11-19 14:06Z by W-NYENG. **RULE (order 1337Z): NO D8 build spec until the Asia AND NY AM ladders are COMPLETE**: every ladder cell has its first look, and every cell that beats a live book has prior years, controls, layers, exit run and the today / REPLACE / ADD pick. No wave dates. London and NY PM follow (stages 2 and 3). Funnel model redone at 14:00Z from landed data (order 1400Z).
+Updated 2026-11-19 14:30Z by W-NYENG. **RULE (order 1337Z): NO D8 build spec until the Asia AND NY AM ladders are COMPLETE**: every ladder cell has its first look, and every cell that beats a live book has prior years, controls, layers, exit run and the today / REPLACE / ADD pick. No wave dates. London and NY PM follow (stages 2 and 3). Funnel model redone at 14:00Z from landed data (order 1400Z).
 
-## STAGE 1 COMPLETE (Asia + NY AM): THREE dates from a funnel with explicit stage pass rates, at the current rate **3307 set-months/h** (tp_admit last hour; HEALTH 13:35Z says 3,566; W-FASTLADDER fast share not included)
+## STAGE 1 COMPLETE (Asia + NY AM): THREE dates from a funnel with explicit stage pass rates, at the current rate **2245 set-months/h** (tp_admit last hour; HEALTH 13:35Z says 3,566; W-FASTLADDER fast share not included)
 
-**Funnel stages and rates read from landed NY AM data:** (1) first look: 182 of 9081 ladder cells have ADD or REPLACE-K7 last-6-month + last-3-month rows; (2) BEATER = a yes row (ADD or REPLACE, ulcer < 0 and mean >= 0 on L6M and L3M): **26.4% of looked-at cells with any yes row; 1.6% with a REPLACE-K7 yes row** (uncalibrated, label BETTER; calibration caveat: the whole-search null gives per-mode FDR both-side 8-25%, long-only 12-18%, i.e. a share of these yes rows is noise); (3) PASS prior years + persistence (rule B: no RED year in 2023/24/25; pooled persistence >= 0.58): **21 of 33 yes rows with all three prior years landed pass = 64%** (19 of 30 cells); the 4 REPLACE-K7 beaters: 3 pass (L01811caa, L6a25b155 pass, L0f097450 RED 2023); Asia: 8 passers among the beaters evaluated (W-ASIA); (4) only PASSERS get 30 controls (ADD and REPLACE variants: 2 x 180), layers (347, W-LAYERS cost) and exit rows (438) = 976 set-months per passer; every beater gets prior years (2 variants x 37 = 74).
+**Funnel stages and rates read from landed NY AM data:** (1) first look: 118 of 9081 ladder cells have REPLACE last-6-month + last-3-month rows; (2) BEATER under the W-ASIA gate (a REPLACE row beats today stack on BOTH L6M and L3M: ulcer lower, mean not lower, worst week and max DD not worse): **0.8% of looked-at cells (1 of 118); 0.8% with a REPLACE-K7 row; the looser rule (ulcer < 0 and mean >= 0 only) gives 2.5% (3)** (uncalibrated, label BETTER; calibration caveat: the whole-search null gives per-mode FDR both-side 8-25%, long-only 12-18%, i.e. a share of these yes rows is noise); (3) PASS prior years + persistence (rule B: no RED year in 2023/24/25; pooled persistence >= 0.58): **1 of 1 yes rows with all three prior years landed pass = 100%** (1 of 1 cells); the 4 REPLACE-K7 beaters: 3 pass (L01811caa, L6a25b155 pass, L0f097450 RED 2023); Asia: 8 passers among the beaters evaluated (W-ASIA); (4) only PASSERS get 30 controls (ADD and REPLACE variants: 2 x 180), layers (347, W-LAYERS cost) and exit rows (438) = 836 set-months per passer; every beater gets prior years (37 per beating REPLACE set). REPLACE ONLY (order 1407Z): ADD rows are reference, not candidates, and are no longer queued; exit rows = top 3 recipes x REPLACE x (6+37) + 30 controls x 6 = 309.
 
-**Remaining set-months that do NOT depend on the funnel:** NY AM first looks 83586 (52530 queued + 2588 unbuilt cells x 12; 6493 of 9081 cells built) + NY AM REPLACE vs the other live books for alive cells 148248 + Asia useful work as W-ASIA counts it after its gate (first looks 27k + a2 35k = 62000; follow-ups 4k prior years + 20k controls + 1.6k passer controls + 8 passers x layers/exit = 31880; total ~88k+). GATE applied to NY AM in the advance step at 14:25Z (same as Asia): prior years and controls only for sets that beat today stack on BOTH L6M and L3M; other cells wait in stage A2 for their a2 rows and drop out if none beats; 6,290 prior-year/control lines of non-beating sets were PARKED (parked_gate_1415.txt, 112 cells; 76 cells returned to A2).
+**Remaining set-months that do NOT depend on the funnel:** NY AM first looks, REPLACE rows only, 42163 (26635 queued + 2588 unbuilt cells x 6; 6493 of 9081 cells built) + NY AM REPLACE vs the other live books for alive cells 148248 + Asia useful work as W-ASIA counts it after its gate (first looks 27k + a2 35k = 62000; follow-ups 4k prior years + 20k controls + 1.6k passer controls + 8 passers x layers/exit = 31880; total ~88k+). GATE applied to NY AM in the advance step at 14:25Z (same as Asia): prior years and controls only for sets that beat today stack on BOTH L6M and L3M; other cells wait in stage A2 for their a2 rows and drop out if none beats; 6,290 prior-year/control lines of non-beating sets were PARKED (parked_gate_1415.txt, 112 cells; 76 cells returned to A2).
 
 | scenario | NY AM beaters share / pass rate | NY AM beaters -> passers | Asia beaters share / pass | NY AM follow-ups | Asia follow-ups | TOTAL set-months | hours | **STAGE 1 COMPLETE** |
 |---|---|---|---|---|---|---|---|---|
-| LOW | 1.6% / 50% | 150 -> 75 | 2.2% / 50% | 78950 | 15940 | 388724 | 118 | **2026-11-24 11:39Z** |
-| BASE | 22.0% / 64% | 2000 -> 1273 | 3.0% / 64% | 1321003 | 21736 | 1636574 | 495 | **2026-12-10 04:59Z** |
-| HIGH | 26.4% / 80% | 2395 -> 1916 | 4.4% / 80% | 1964639 | 31880 | 2290353 | 693 | **2026-12-18 10:40Z** |
-| UPPER BOUND: every beater gets everything (26.5% NY AM / 6.5% Asia, ADD and REPLACE) | 26.4% / 100% | 2395 -> 2395 | 6.5% / 100% | 2432261 | 47095 | 2773190 | 839 | 2026-12-24 12:41Z |
+| LOW | 0.8% / 50% | 77 -> 38 | 2.2% / 50% | 35016 | 15940 | 303367 | 135 | **2026-11-25 05:38Z** |
+| BASE | 0.7% / 100% | 64 -> 64 | 3.0% / 100% | 56099 | 21736 | 330246 | 147 | **2026-11-25 17:36Z** |
+| HIGH | 0.8% / 80% | 77 -> 62 | 4.4% / 80% | 54317 | 31880 | 338608 | 151 | **2026-11-25 21:19Z** |
+| UPPER BOUND: every beater gets everything (26.5% NY AM / 6.5% Asia, ADD and REPLACE) | 0.8% / 100% | 77 -> 77 | 6.5% / 100% | 67184 | 47095 | 366690 | 163 | 2026-11-26 09:50Z |
 
-Scenario assumptions: LOW = only REPLACE-K7 beaters count (1.6%), 50% of beaters pass; BASE = beater share with a yes row minus the mid FDR 16.5% (calibration), pass rate = the observed 64%; HIGH = every yes row is a beater (26.4%), 80% pass. Asia beater share 2.4% (W-ASIA strict rule: 15 of 614) / 4.4% / 6.5% (looser rule 50 of 766), Asia pass rates as NY AM. First looks alone (NY AM 83586 + Asia 62000) end 2026-11-21 10:07Z. CAVEAT: the observed beater share comes from the cells looked at so far, which are the BEST screen-ranked ones (the ladder runs in rank order), so extrapolating it to all 9,081 cells over-states the BASE and HIGH rows; the true beater share of the tail is probably lower (LOW is the REPLACE-only bound). The biggest remaining uncertainty is the beater and pass share; the null calibration (R4) and the persistence/rule-B gates move it.
+Scenario assumptions: LOW = only REPLACE-K7 beaters count (0.8%), 50% of beaters pass; BASE = beater share with a yes row minus the mid FDR 16.5% (calibration), pass rate = the observed 100%; HIGH = every yes row is a beater (0.8%), 80% pass. Asia beater share 2.4% (W-ASIA strict rule: 15 of 614) / 4.4% / 6.5% (looser rule 50 of 766), Asia pass rates as NY AM. First looks alone (NY AM 42163 + Asia 62000) end 2026-11-21 12:54Z. CAVEAT: the observed beater share comes from the cells looked at so far, which are the BEST screen-ranked ones (the ladder runs in rank order), so extrapolating it to all 9,081 cells over-states the BASE and HIGH rows; the true beater share of the tail is probably lower (LOW is the REPLACE-only bound). The biggest remaining uncertainty is the beater and pass share; the null calibration (R4) and the persistence/rule-B gates move it.
 
 ## ENGINE-SLOT SPLIT (re-proposed from remaining FIRST LOOKS, then gate-pass follow-ups; NOT applied)
 
-Remaining first looks: Asia 62000 vs NY AM 83586 (+148248 NY AM other-book rows) => **Asia 43% / NY AM 57%** (21% / 79% with the other-book rows) = ~698 / ~2609 set-months/h at 3307/h; with the base-case follow-ups added the work ratio is NY AM 95% / Asia 5% (NY AM follow-ups 1321003 vs Asia 21736): the follow-ups only exist for cells that pass, so they come AFTER the first looks, are small until prior years land, and are taken first by the mix when they appear. Proposal: start at **Asia 43% / NY AM 57%** (remaining first looks only; the other-book REPLACE rows are ordered behind the first looks of both ladders) and re-propose when the funnel is re-measured (each refresh of this page recomputes it). W-ASIA's passer controls (_asi/first.txt) stay first, my gate-pass follow-ups stay first in pending_l.txt / the front of pending_r5.txt; the mix file puts both unmixed ahead of the interleaved block. NY AM at the order's ~120/h would leave 12940 h of work. NOT applied: the QUEUES.txt edit (replace the _asi/pending.txt and _nye/pending_r5.txt lines by /mnt/l2/l2vast/_split/pending_mix.txt, built by code/th_nyeng/ny_mix.py <NYAM share>, e.g. 0.41) waits for the lead.
+Remaining first looks: Asia 62000 vs NY AM 42163 (+148248 NY AM other-book rows) => **Asia 60% / NY AM 40%** (25% / 75% with the other-book rows) = ~551 / ~1694 set-months/h at 2245/h; with the base-case follow-ups added the work ratio is NY AM 75% / Asia 25% (NY AM follow-ups 56099 vs Asia 21736): the follow-ups only exist for cells that pass, so they come AFTER the first looks, are small until prior years land, and are taken first by the mix when they appear. Proposal: start at **Asia 60% / NY AM 40%** (remaining first looks only; the other-book REPLACE rows are ordered behind the first looks of both ladders) and re-propose when the funnel is re-measured (each refresh of this page recomputes it). W-ASIA's passer controls (_asi/first.txt) stay first, my gate-pass follow-ups stay first in pending_l.txt / the front of pending_r5.txt; the mix file puts both unmixed ahead of the interleaved block. NY AM at the order's ~120/h would leave 2054 h of work. NOT applied: the QUEUES.txt edit (replace the _asi/pending.txt and _nye/pending_r5.txt lines by /mnt/l2/l2vast/_split/pending_mix.txt, built by code/th_nyeng/ny_mix.py <NYAM share>, e.g. 0.41) waits for the lead.
 
 ## Early-rung exits (4c): lines queued for cells that already left the ladder
 
@@ -26,73 +26,73 @@ Cells with stage "out" in the NY advance state: 6. Later-rung lines (other-book,
 
 ## Candidates under the persistence >= 0.58 gate and the ADD-vs-REPLACE rule (order 1324Z)
 
-Rules: REPLACE is the default. ADD only when (a) the whole stack is better with ADD than with REPLACE (ulcer first, then $/wk; last 6 months with last 3 months; no RED prior year) AND (b) removing K7 from the ADD stack makes L6M and L3M worse. REPLACE = the ADD stack with K7 switched off in the NY AM session, so the ADD stack WITHOUT K7 already exists as the REPLACE row: NO new "minus K7" engine set is needed (a K7-off-in-every-session set would only matter for K7's other sessions, which these rows leave untouched). Persistence = share of non-overlapping 2-week windows where the new stack is not worse than today's, POOLED over every month the set has run (last 6 months + prior years). Rule B colours from ny_ruleb (RED > 30% worse in a prior year). Stack columns are the whole stack (ulcer / max DD / worst week / mean $ per week, engine base lots, $4.84).
+Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD row is shown as a reference, not a candidate (supersedes the 1324Z ADD rule). REPLACE = the ADD stack with K7 switched off in the NY AM session, so the ADD stack WITHOUT K7 already exists as the REPLACE row: NO new "minus K7" engine set is needed (a K7-off-in-every-session set would only matter for K7's other sessions, which these rows leave untouched). Persistence = share of non-overlapping 2-week windows where the new stack is not worse than today's, POOLED over every month the set has run (last 6 months + prior years). Rule B colours from ny_ruleb (RED > 30% worse in a prior year). Stack columns are the whole stack (ulcer / max DD / worst week / mean $ per week, engine base lots, $4.84).
 
 | cell | stack | window | ulcer | max DD | worst wk | mean $/wk | rule-B colour (worst %) |
 |---|---|---|---|---|---|---|---|
 | L01811caa | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
-| L01811caa | REPLACE | L6M | 9342 | -29253 | -15108 | +20510 | n/a (recent window) (-1%) |
-| L01811caa | ADD | L6M | 8963 | -27538 | -14519 | +19873 | n/a (recent window) (-5%) |
+| L01811caa | REPLACE (candidate) | L6M | 9342 | -29253 | -15108 | +20510 | n/a (recent window) (-1%) |
+| L01811caa | ADD (reference, not a candidate) | L6M | 8963 | -27538 | -14519 | +19873 | n/a (recent window) (-5%) |
 | L01811caa | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
-| L01811caa | REPLACE | L3M | 10587 | -28995 | -13266 | +18707 | n/a (recent window) (-4%) |
-| L01811caa | ADD | L3M | 10165 | -27538 | -11702 | +17640 | n/a (recent window) (-8%) |
+| L01811caa | REPLACE (candidate) | L3M | 10587 | -28995 | -13266 | +18707 | n/a (recent window) (-4%) |
+| L01811caa | ADD (reference, not a candidate) | L3M | 10165 | -27538 | -11702 | +17640 | n/a (recent window) (-8%) |
 | L01811caa | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
-| L01811caa | REPLACE | Y2025 | 29382 | -83155 | -34691 | +7360 | GREEN (-8%) |
-| L01811caa | ADD | Y2025 | 27815 | -78940 | -38025 | +7984 | GREEN (-2%) |
+| L01811caa | REPLACE (candidate) | Y2025 | 29382 | -83155 | -34691 | +7360 | GREEN (-8%) |
+| L01811caa | ADD (reference, not a candidate) | Y2025 | 27815 | -78940 | -38025 | +7984 | GREEN (-2%) |
 | L01811caa | TODAY (JL3) | Y2024 | 28856 | -72026 | -37355 | +4549 | - |
-| L01811caa | REPLACE | Y2024 | 24716 | -69388 | -39713 | +5169 | GREEN (+6%) |
-| L01811caa | ADD | Y2024 | 25450 | -71363 | -38560 | +5073 | GREEN (+3%) |
+| L01811caa | REPLACE (candidate) | Y2024 | 24716 | -69388 | -39713 | +5169 | GREEN (+6%) |
+| L01811caa | ADD (reference, not a candidate) | Y2024 | 25450 | -71363 | -38560 | +5073 | GREEN (+3%) |
 | L01811caa | TODAY (JL3) | Y2023 | 18908 | -41848 | -17538 | +1797 | - |
-| L01811caa | REPLACE | Y2023 | 15029 | -46397 | -21702 | +2254 | AMBER (+24%) |
-| L01811caa | ADD | Y2023 | 16062 | -40960 | -18785 | +2944 | GREEN (+7%) |
+| L01811caa | REPLACE (candidate) | Y2023 | 15029 | -46397 | -21702 | +2254 | AMBER (+24%) |
+| L01811caa | ADD (reference, not a candidate) | Y2023 | 16062 | -40960 | -18785 | +2944 | GREEN (+7%) |
 | L6a25b155 | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
-| L6a25b155 | REPLACE | L6M | 9238 | -29945 | -16733 | +19675 | n/a (recent window) (+6%) |
-| L6a25b155 | ADD | L6M | 8981 | -28489 | -15872 | +19216 | n/a (recent window) (+1%) |
+| L6a25b155 | REPLACE (candidate) | L6M | 9238 | -29945 | -16733 | +19675 | n/a (recent window) (+6%) |
+| L6a25b155 | ADD (reference, not a candidate) | L6M | 8981 | -28489 | -15872 | +19216 | n/a (recent window) (+1%) |
 | L6a25b155 | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
-| L6a25b155 | REPLACE | L3M | 10415 | -29945 | -16733 | +17400 | n/a (recent window) (+6%) |
-| L6a25b155 | ADD | L3M | 10159 | -28489 | -15872 | +17034 | n/a (recent window) (+1%) |
+| L6a25b155 | REPLACE (candidate) | L3M | 10415 | -29945 | -16733 | +17400 | n/a (recent window) (+6%) |
+| L6a25b155 | ADD (reference, not a candidate) | L3M | 10159 | -28489 | -15872 | +17034 | n/a (recent window) (+1%) |
 | L6a25b155 | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
-| L6a25b155 | REPLACE | Y2025 | 34575 | -93892 | -39081 | +7356 | GREEN (+3%) |
-| L6a25b155 | ADD | Y2025 | 31437 | -91723 | -43606 | +8231 | GREEN (+12%) |
+| L6a25b155 | REPLACE (candidate) | Y2025 | 34575 | -93892 | -39081 | +7356 | GREEN (+3%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2025 | 31437 | -91723 | -43606 | +8231 | GREEN (+12%) |
 | L6a25b155 | TODAY (JL3) | Y2024 | 28814 | -72026 | -37355 | +4549 | - |
-| L6a25b155 | REPLACE | Y2024 | 31815 | -69700 | -36113 | +5300 | GREEN (+10%) |
-| L6a25b155 | ADD | Y2024 | 32304 | -71936 | -34960 | +5448 | GREEN (+12%) |
+| L6a25b155 | REPLACE (candidate) | Y2024 | 31815 | -69700 | -36113 | +5300 | GREEN (+10%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2024 | 32304 | -71936 | -34960 | +5448 | GREEN (+12%) |
 | L6a25b155 | TODAY (JL3) | Y2023 | 18908 | -41848 | -17538 | +1797 | - |
-| L6a25b155 | REPLACE | Y2023 | 18087 | -48220 | -18408 | +2404 | AMBER (+15%) |
-| L6a25b155 | ADD | Y2023 | 15491 | -42932 | -16215 | +3088 | GREEN (+3%) |
+| L6a25b155 | REPLACE (candidate) | Y2023 | 18087 | -48220 | -18408 | +2404 | AMBER (+15%) |
+| L6a25b155 | ADD (reference, not a candidate) | Y2023 | 15491 | -42932 | -16215 | +3088 | GREEN (+3%) |
 | L0f097450 | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
-| L0f097450 | REPLACE | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
-| L0f097450 | ADD | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
+| L0f097450 | REPLACE (candidate) | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
+| L0f097450 | ADD (reference, not a candidate) | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
 | L0f097450 | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
-| L0f097450 | REPLACE | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
-| L0f097450 | ADD | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
+| L0f097450 | REPLACE (candidate) | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
+| L0f097450 | ADD (reference, not a candidate) | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
 | L0f097450 | TODAY (JL3) | Y2025 | 33572 | -91441 | -38896 | +6846 | - |
-| L0f097450 | REPLACE | Y2025 | 27735 | -77634 | -32511 | +6709 | GREEN (+2%) |
-| L0f097450 | ADD | Y2025 | 26308 | -76028 | -34457 | +7579 | GREEN (-11%) |
+| L0f097450 | REPLACE (candidate) | Y2025 | 27735 | -77634 | -32511 | +6709 | GREEN (+2%) |
+| L0f097450 | ADD (reference, not a candidate) | Y2025 | 26308 | -76028 | -34457 | +7579 | GREEN (-11%) |
 | L0f097450 | TODAY (JL3) | Y2024 | 28856 | -72026 | -37355 | +4549 | - |
-| L0f097450 | REPLACE | Y2024 | 26900 | -63077 | -38237 | +5219 | GREEN (+2%) |
-| L0f097450 | ADD | Y2024 | 28023 | -66257 | -35122 | +5297 | GREEN (-3%) |
+| L0f097450 | REPLACE (candidate) | Y2024 | 26900 | -63077 | -38237 | +5219 | GREEN (+2%) |
+| L0f097450 | ADD (reference, not a candidate) | Y2024 | 28023 | -66257 | -35122 | +5297 | GREEN (-3%) |
 | L0f097450 | TODAY (JL3) | Y2023 | 19039 | -41848 | -17538 | +1797 | - |
-| L0f097450 | REPLACE | Y2023 | 17341 | -46048 | -25258 | +1675 | RED (+44%) |
-| L0f097450 | ADD | Y2023 | 16744 | -46713 | -19840 | +2334 | GREEN (+13%) |
+| L0f097450 | REPLACE (candidate) | Y2023 | 17341 | -46048 | -25258 | +1675 | RED (+44%) |
+| L0f097450 | ADD (reference, not a candidate) | Y2023 | 16744 | -46713 | -19840 | +2334 | GREEN (+13%) |
 | L3701b464 (twin of L0f097450) | TODAY (JL3) | L6M | 9416 | -31109 | -15728 | +18755 | - |
-| L3701b464 (twin of L0f097450) | REPLACE | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
-| L3701b464 (twin of L0f097450) | ADD | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
+| L3701b464 (twin of L0f097450) | REPLACE (candidate) | L6M | 9358 | -29253 | -18848 | +21047 | n/a (recent window) (+20%) |
+| L3701b464 (twin of L0f097450) | ADD (reference, not a candidate) | L6M | 8621 | -25734 | -16524 | +20446 | n/a (recent window) (+5%) |
 | L3701b464 (twin of L0f097450) | TODAY (JL3) | L3M | 11035 | -31109 | -15728 | +16098 | - |
-| L3701b464 (twin of L0f097450) | REPLACE | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
-| L3701b464 (twin of L0f097450) | ADD | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
+| L3701b464 (twin of L0f097450) | REPLACE (candidate) | L3M | 10531 | -28828 | -18848 | +19000 | n/a (recent window) (+20%) |
+| L3701b464 (twin of L0f097450) | ADD (reference, not a candidate) | L3M | 9463 | -24538 | -15633 | +18174 | n/a (recent window) (-1%) |
 | L3701b464 | all | Y2025 | pending | | | | |
 | L3701b464 | all | Y2024 | pending | | | | |
 | L3701b464 | all | Y2023 | pending | | | | |
 
 | cell | pooled persistence REPLACE (months) | pooled persistence ADD (months) | RED years REPLACE / ADD | PICK | what is still needed |
 |---|---|---|---|---|---|
-| L01811caa | 0.59 (43 mo) | 0.60 (43 mo) | none / none | **ADD** (ADD better than REPLACE on L6M+L3M, K7 contributes) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L6a25b155 | 0.59 (43 mo) | 0.65 (43 mo) | none / none | **ADD** (ADD better than REPLACE on L6M+L3M, K7 contributes) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L0f097450 | 0.55 (43 mo) | 0.58 (43 mo) | Y2023 / none | **ADD** (ADD stack better than REPLACE on L6M and L3M (so K7 contributes), no RED year, persistence 0.58 >= 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
-| L3701b464 (twin of L0f097450) | 0.54 (6 mo) | 0.69 (6 mo) | none / none | **none yet** (REPLACE: prior years pending (0/3); persistence 0.54 < 0.58 | ADD: prior years pending (0/3)) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L01811caa | 0.59 (43 mo) | 0.60 (43 mo) | none / none | **REPLACE** (REPLACE passes: recent months, no RED year, pooled persistence 0.59 >= 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L6a25b155 | 0.59 (43 mo) | 0.65 (43 mo) | none / none | **REPLACE** (REPLACE passes: recent months, no RED year, pooled persistence 0.59 >= 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L0f097450 | 0.55 (43 mo) | 0.58 (43 mo) | Y2023 / none | **none yet** (REPLACE: RED Y2023; persistence 0.55 < 0.58) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
+| L3701b464 (twin of L0f097450) | 0.68 (17 mo) | 0.59 (10 mo) | none / none | **none yet** (REPLACE: prior years pending (0/3)) | 30 date-shift controls (queued; scored in the controls section), layers one at a time then joint (not started: ~1,068 set-months, layer-set builder manual), exit run 68 recipes + engine exit rows (families unbuilt) |
 
-**Candidates passing recent months + no RED year + persistence >= 0.58:** L01811caa (ADD), L6a25b155 (ADD), L0f097450 (ADD).
+**Candidates passing recent months + no RED year + persistence >= 0.58:** L01811caa (REPLACE), L6a25b155 (REPLACE).
 **Dates:** 30 controls: queued at the front (landing as the fleet reaches them, ~06 hours at 2,000 sm/h); layers + exit run: the layer programme per candidate is ~1,068 set-months (about 0.5 h of fleet) but needs the automatic layer builder (not built, my ETA 2026-11-20 12:00Z) and the exit engine families (builder not started); so the earliest "through everything" date for L01811caa and L6a25b155 (they stay first) is 2026-11-21 ~12:00Z, later if the exit engine builder starts late. L0f097450 (= L3701b464, same stream) is judged by the same ADD/REPLACE rule.
 
 ## ENGINE RULE B (prior-year gate) for the 4 NY AM K7 beaters (order 1122Z; full table also on NEW_BOOK_BEATS_LIVE_NYAM.md)
