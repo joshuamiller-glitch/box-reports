@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 03:30Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 04:00Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -86,23 +86,38 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2025 | +135018 / +236281 | -472169 | -498187 | -9543 / -16700 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2024 | -1912 / -3346 | +3185 | +4230 | +389 / +681 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ADD | Y2023 | -2181 / -3817 | -1619 | -180 | +469 / +821 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ALL | L6M | +18436 / +32264 | -27127 | -46194 | -17883 / -31295 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_ALL | L3M | +22785 / +39874 | -27127 | -46194 | -15529 / -27175 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RA7 | L6M | -271 / -474 | -12405 | -2701 | -948 / -1659 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RA7 | L3M | -376 / -658 | -12405 | -2701 | +14 / +24 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RA7 | Y2024 | +2570 / +4498 | +8590 | +258 | -737 / -1289 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RH7 | L6M | -259 / -453 | -3414 | -424 | -648 / -1134 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RH7 | L3M | +243 / +425 | -3414 | -424 | -914 / -1599 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RH7 | Y2023 | -1072 / -1876 | -1896 | +3214 | -593 / -1037 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | L6M | +2017 / +3530 | -12447 | -1529 | -4391 / -7685 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | L3M | +3402 / +5954 | -12447 | -1529 | -6784 / -11872 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RP7 | L6M | +6520 / +11409 | -1109 | -19758 | -10007 / -17511 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RP7 | L3M | +9814 / +17175 | -1109 | -19758 | -8871 / -15524 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | L6M | +969 / +1696 | +1007 | -157 | -2041 / -3572 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | L3M | +951 / +1664 | +1262 | -157 | -1558 / -2726 | 30 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L6M | +2055 / +3597 | -21205 | -10544 | -287 / -503 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L3M | -940 / -1645 | +3685 | +6881 | +542 / +949 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L6M | +26967 / +47192 | -30872 | -64604 | -17894 / -31314 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L3M | +29632 / +51856 | -30872 | -61111 | -15655 / -27396 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L6M | +1564 / +2737 | -7969 | -3883 | -1798 / -3146 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L3M | +993 / +1738 | -7969 | -3883 | -1815 / -3177 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L6M | +255 / +447 | -4741 | +4277 | -1768 / -3094 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L3M | +464 / +812 | -4741 | +4277 | -4674 / -8180 | 0 |
-| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RU7 | L3M | +213 / +372 | +2488 | -436 | -227 / -397 | 0 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L6M | +2055 / +3597 | -21205 | -10544 | -287 / -503 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L3M | -940 / -1645 | +3685 | +6881 | +542 / +949 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | Y2025 | +2045 / +3578 | -2515 | -18016 | +9557 / +16725 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | Y2024 | -2199 / -3848 | +1061 | +10018 | +537 / +939 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | Y2023 | -1090 / -1908 | -244 | +1857 | +222 / +389 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L6M | +26967 / +47192 | -30872 | -64604 | -17894 / -31314 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L3M | +29632 / +51856 | -30872 | -61111 | -15655 / -27396 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | L6M | +1279 / +2238 | -2271 | -4417 | -606 / -1061 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | L3M | +1087 / +1903 | +1987 | -4417 | +1079 / +1888 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | Y2023 | -1896 / -3319 | +545 | +3884 | +453 / +792 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L6M | +1564 / +2737 | -7969 | -3883 | -1798 / -3146 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L3M | +993 / +1738 | -7969 | -3883 | -1815 / -3177 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L6M | +255 / +447 | -4741 | +4277 | -1768 / -3094 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L3M | +464 / +812 | -4741 | +4277 | -4674 / -8180 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RP7 | L6M | +6817 / +11929 | -1915 | -19527 | -9542 / -16699 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RP7 | L3M | +8922 / +15614 | +4920 | -19527 | -8425 / -14744 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RU7 | L6M | +2505 / +4384 | -19194 | -6151 | -1137 / -1990 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RU7 | L3M | +213 / +372 | +2488 | -436 | -227 / -397 | 30 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L6M | -434 / -759 | -9949 | +3150 | +1 / +2 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L3M | -1849 / -3236 | +5283 | +7619 | +1732 / +3032 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | Y2025 | +136746 / +239305 | -468631 | -500893 | -9230 / -16152 | 29 |
@@ -110,24 +125,39 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | Y2023 | -473 / -827 | -485 | -3167 | +544 / +952 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RA7 | L6M | -260 / -455 | -4727 | +3230 | -1113 / -1947 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RA7 | L3M | -395 / -691 | -393 | +3230 | +1001 / +1752 | 29 |
+| AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RA7 | Y2023 | -922 / -1613 | -475 | -92 | +621 / +1087 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RH7 | L6M | +1262 / +2208 | -17554 | -15464 | -1480 / -2589 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RH7 | L3M | +2231 / +3904 | -17554 | -15464 | -199 / -349 | 29 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_RK7 | L3M | -584 / -1021 | -9096 | -2260 | -4368 / -7644 | 29 |
 | AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L6M | +1641 / +2871 | -5672 | -2194 | -1079 / -1888 | 0 |
 | AB5 | dlt_45 | momentum_willr.break_native {"len": 21, "lvl": 30} | 60.0/60.0 | AB5_ADD | L3M | +2408 / +4214 | -1552 | -2194 | -1040 / -1819 | 0 |
-| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L6M | +335 / +586 | -3583 | -631 | +1217 / +2131 | 0 |
-| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L3M | +511 / +895 | -3583 | -631 | -702 / -1228 | 0 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L6M | +335 / +586 | -3583 | -631 | +1217 / +2131 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | L3M | +511 / +895 | -3583 | -631 | -702 / -1228 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | Y2025 | +3312 / +5796 | -1095 | -6314 | -239 / -419 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ADD | Y2023 | -1291 / -2260 | -1479 | -2934 | +840 / +1469 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RA7 | L6M | +49 / +87 | -733 | -3348 | +370 / +647 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RA7 | L3M | +377 / +659 | -733 | -3348 | -199 / -347 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RH7 | L6M | -296 / -519 | +5234 | +3496 | -526 / -920 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RH7 | L3M | -327 / -572 | +5234 | +3496 | -1249 / -2185 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RK7 | L6M | +2242 / +3924 | -1474 | -6062 | -2808 / -4914 | 6 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RK7 | L3M | +3964 / +6936 | -1474 | -6062 | -6870 / -12022 | 6 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L6M | +2304 / +4032 | -9683 | -9855 | -584 / -1023 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | L3M | +2644 / +4626 | -9343 | -9855 | -469 / -820 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | Y2025 | +132043 / +231075 | -471832 | -481388 | -8711 / -15244 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | Y2024 | -2490 / -4357 | -1088 | +9482 | +634 / +1109 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | Y2023 | +476 / +832 | -3334 | -5440 | +520 / +911 | 30 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L6M | +1498 / +2621 | -1026 | -9588 | -927 / -1622 | 25 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L3M | +1563 / +2736 | -1026 | -9588 | -2352 / -4116 | 25 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2025 | +132527 / +231921 | -472705 | -493086 | -9063 / -15861 | 25 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2024 | -841 / -1472 | +5728 | +5542 | +388 / +680 | 25 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2023 | -1114 / -1949 | -529 | -338 | +788 / +1380 | 25 |
-| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L3M | +1724 / +3016 | -5946 | -9683 | -1051 / -1840 | 25 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | L6M | +3005 / +5259 | -14510 | -8841 | -2942 / -5148 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | L3M | +3265 / +5714 | -14510 | -8841 | -2652 / -4641 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L6M | +1498 / +2621 | -1026 | -9588 | -927 / -1622 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L3M | +1563 / +2736 | -1026 | -9588 | -2352 / -4116 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2025 | +132527 / +231921 | -472705 | -493086 | -9063 / -15861 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2024 | -841 / -1472 | +5728 | +5542 | +388 / +680 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2023 | -1114 / -1949 | -529 | -338 | +788 / +1380 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L6M | +1231 / +2154 | -5946 | -9683 | -600 / -1050 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L3M | +1724 / +3016 | -5946 | -9683 | -1051 / -1840 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | L6M | -42 / -74 | +2380 | -2741 | -1658 / -2901 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | L3M | -211 / -369 | +2380 | -2741 | -1226 / -2145 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RK7 | L3M | +534 / +934 | +1716 | +2851 | -5951 / -10415 | 30 |
 
 Reading: a replacement/add must lower the Asia contribution to stack ulcer or worst week AND beat the live book in $ on L6M and L3M; the rows above are the dollars and ulcer it has to beat. Nothing else is claimed. Candidates, controls and the selection-corrected test are not started (phase 2 of 1722Z).
 

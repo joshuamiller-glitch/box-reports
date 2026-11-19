@@ -1,4 +1,4 @@
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 03:40Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 04:00Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -8,16 +8,16 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 03:40Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 04:00Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
 | session | R0 passing cells | of which stale level cells | family-bests | stale family-bests | real-on-null-coverage tested (stage A) | stale level cells there | null draw tested (stage A) | stale level cells there |
 |---|---|---|---|---|---|---|---|---|
 | Asia | 4,541 | 211 (4.6%) | 2,902 | 116 | 900 | 36 (4%) | 364 | 68 (19%) |
-| London | 2,177 | 51 (2.3%) | 1,672 | 42 | 333 | 17 (5%) | 390 | 52 (13%) |
-| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 1814 | 167 (9%) | 399 | 73 (18%) |
-| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 32 (14%) |
+| London | 2,177 | 51 (2.3%) | 1,672 | 42 | 333 | 17 (5%) | 454 | 61 (13%) |
+| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 1814 | 167 (9%) | 649 | 122 (19%) |
+| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 31 (13%) |
 
 Reading: the stale share is NOT symmetric in the calibration: among tested family-bests 3-11% of the real-search cells but 17-26% of the null-draw cells rest on pre-06:00Z level files (the null draws were run early with the old level code), so the 01:16Z FDR table can be biased by the stale null side; it is redone after the forced re-run of draws 1-2 (last in the queue).
 
@@ -28,7 +28,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 6,461,292 | - | 6,456,751 | by first rule: R1 L6M<=0 3,461,640; R2 trades<100 1,395,903; R3 L3M<=0 526,793; R4 persistence<=0.60 945,197; RED prior year 127,218 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 4,541 (R0 passers) | 2,902 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 15.1 core-h for 4,541 cells | 0.0 h |
 | R2 | trust + look-ahead | 4,541 (upper bound: all R1 cells) | 2,902 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 629 core-h for 2,030 (row, module) pairs | 2.0 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 444, C (1,000) 34, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1232 / 1621 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1232 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 484, C (1,000) 39, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1230 / 1620 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1230 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 34,824 set-months = 1741 core-h | 45.6 h on the measured fleet (763/h), 12.0 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 2,902 families (upper bound) | 2,902 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+208,944 set-months) then 30 date-shift controls (+522,360 set-months = 26118 core-h) for the rows still alive | **274 h (> 48 h: Josh decides between more machines and waiting)** / **685 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -42,7 +42,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 7,329,472 | - | 7,327,295 | by first rule: R1 L6M<=0 4,123,672; R2 trades<100 1,740,334; R3 L3M<=0 488,397; R4 persistence<=0.60 893,506; RED prior year 81,386 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 2,177 (R0 passers) | 1,672 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 7.3 core-h for 2,177 cells | 0.0 h |
 | R2 | trust + look-ahead | 2,177 (upper bound: all R1 cells) | 1,672 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 418 core-h for 1,348 (row, module) pairs | 1.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 187, C (1,000) 10, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 314 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 221, C (1,000) 15, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 313 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 20,064 set-months = 1003 core-h | 26.3 h on the measured fleet (763/h), 6.9 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 1,672 families (upper bound) | 1,672 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+120,384 set-months) then 30 date-shift controls (+300,960 set-months = 15048 core-h) for the rows still alive | **158 h (> 48 h: Josh decides between more machines and waiting)** / **394 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -56,7 +56,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,027,865 | - | 8,012,031 | by first rule: R1 L6M<=0 4,785,951; R2 trades<100 1,102,417; R3 L3M<=0 632,439; R4 persistence<=0.60 1,374,346; RED prior year 116,878 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 15,834 (R0 passers) | 8,510 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 52.8 core-h for 15,834 cells | 0.2 h |
 | R2 | trust + look-ahead | 15,834 (upper bound: all R1 cells) | 8,510 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 1667 core-h for 5,376 (row, module) pairs | 5.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1241, C (1,000) 104, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3474 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3474 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1255, C (1,000) 122, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3474 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3474 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 102,120 set-months = 5106 core-h | **134 h (> 48 h: Josh decides between more machines and waiting)** on the measured fleet (763/h), 35.3 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 8,510 families (upper bound) | 8,510 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+612,720 set-months) then 30 date-shift controls (+1,531,800 set-months = 76590 core-h) for the rows still alive | **803 h (> 48 h: Josh decides between more machines and waiting)** / **2008 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -70,7 +70,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,043,245 | - | 8,042,093 | by first rule: R1 L6M<=0 4,336,708; R2 trades<100 1,739,114; R3 L3M<=0 532,730; R4 persistence<=0.60 1,408,416; RED prior year 25,125 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 1,152 (R0 passers) | 861 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 3.8 core-h for 1,152 cells | 0.0 h |
 | R2 | trust + look-ahead | 1,152 (upper bound: all R1 cells) | 861 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 229 core-h for 740 (row, module) pairs | 0.7 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 193, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 296 / 369 at q 5% / 10% / 20% | SET 1: 0, SET 2: 296 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 206, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 296 / 370 at q 5% / 10% / 20% | SET 1: 0, SET 2: 296 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 10,332 set-months = 517 core-h | 13.5 h on the measured fleet (763/h), 3.6 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 861 families (upper bound) | 861 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+61,992 set-months) then 30 date-shift controls (+154,980 set-months = 7749 core-h) for the rows still alive | **81 h (> 48 h: Josh decides between more machines and waiting)** / **203 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -84,10 +84,10 @@ SET 1 (strict, current rule) = inside BH on p_L6M (last 26 weeks, equal-risk sum
 
 | session | family-bests | tested | SET 1 q5 / q10 / q20 | SET 1 expected false (q10) | SET 1 engine core-h / h | SET 2 q5 / q10 / q20 | SET 2 expected false (q10) | SET 2 engine core-h / h | SET 2 flagged recent no better than random (q10) | smallest p: L6M / ALL |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1232 / 1621 | 123.2 | 16262 / 426.3 h | 916 | 0.0249 / 0.0003 |
-| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 314 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0050 |
-| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3474 / 4220 | 347.4 | 45857 / 1202.0 h | 3097 | 0.0299 / 0.0002 |
-| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 296 / 369 | 29.6 | 3907 / 102.4 h | 227 | 0.0199 / 0.0050 |
+| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1230 / 1620 | 123.0 | 16236 / 425.6 h | 915 | 0.0249 / 0.0003 |
+| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 313 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0010 |
+| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3474 / 4220 | 347.4 | 45857 / 1202.0 h | 3098 | 0.0323 / 0.0002 |
+| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 296 / 370 | 29.6 | 3907 / 102.4 h | 227 | 0.0199 / 0.0050 |
 
 ## CALIBRATION: measured false-discovery rate from the whole-search null (order 2218Z, partial draw 1)
 
@@ -97,10 +97,10 @@ Label: PARTIAL / coarse (draw p1rand1 only, files that exist so far; the real se
 |---|---|---|---|---|---|---|---|---|
 | Asia | 380 / 963 (0.39) | 372 / 904 | 364 / 900 | p_L6M (null / real families at threshold = FDR) | 88 / 281 = 31% | 28 / 93 = 30% | 14 / 13 = 110% | 7 / 2 = 356% |
 |  |  /  (0.00) |  /  | 364 / 900 | p_ALL (null / real families at threshold = FDR) | 227 / 840 = 27% | 169 / 744 = 23% | 112 / 604 = 19% | 66 / 428 = 16% |
-| London | 466 / 347 (1.34) | 457 / 335 | 390 / 333 | p_L6M (null / real families at threshold = FDR) | 45 / 18 = 246% | 14 / 3 = 466% | 4 / 2 = 175% | 4 / 0 = n/a |
-|  |  /  (0.00) |  /  | 390 / 333 | p_ALL (null / real families at threshold = FDR) | 318 / 261 = 122% | 247 / 197 = 125% | 168 / 121 = 139% | 100 / 91 = 110% |
-| NYAM | 763 / 1,915 (0.40) | 730 / 1,821 | 399 / 1814 | p_L6M (null / real families at threshold = FDR) | 79 / 223 = 35% | 35 / 66 = 52% | 13 / 20 = 64% | 5 / 8 = 68% |
-|  |  /  (0.00) |  /  | 399 / 1814 | p_ALL (null / real families at threshold = FDR) | 485 / 1746 = 28% | 397 / 1617 = 25% | 291 / 1328 = 22% | 188 / 994 = 19% |
+| London | 466 / 347 (1.34) | 457 / 335 | 454 / 333 | p_L6M (null / real families at threshold = FDR) | 48 / 18 = 267% | 13 / 3 = 434% | 4 / 2 = 200% | 4 / 0 = n/a |
+|  |  /  (0.00) |  /  | 454 / 333 | p_ALL (null / real families at threshold = FDR) | 316 / 261 = 121% | 242 / 197 = 123% | 164 / 121 = 136% | 93 / 91 = 102% |
+| NYAM | 763 / 1,915 (0.40) | 730 / 1,821 | 649 / 1814 | p_L6M (null / real families at threshold = FDR) | 90 / 223 = 40% | 44 / 66 = 66% | 16 / 20 = 78% | 6 / 8 = 70% |
+|  |  /  (0.00) |  /  | 649 / 1814 | p_ALL (null / real families at threshold = FDR) | 486 / 1746 = 28% | 396 / 1617 = 24% | 294 / 1328 = 22% | 197 / 994 = 20% |
 | NYPM | 238 / 195 (1.22) | 233 / 193 | 230 / 191 | p_L6M (null / real families at threshold = FDR) | 55 / 45 = 120% | 31 / 31 = 100% | 10 / 17 = 59% | 4 / 9 = 45% |
 |  |  /  (0.00) |  /  | 230 / 191 | p_ALL (null / real families at threshold = FDR) | 186 / 188 = 99% | 167 / 176 = 95% | 137 / 131 = 104% | 99 / 92 = 108% |
 
@@ -213,110 +213,110 @@ Each live D7 book run BARE (its own signal_fn from code/th_swap, on its live bar
 | session structure | time | 17 / 4 | 6 | 1 | 17% |  | 24% |
 | momentum | tick | 10 / 1 | 5 | 1 | 20% |  | 10% |
 
-### London (real tested 333 of 335 family-bests, null tested 390 of 457)
+### London (real tested 333 of 335 family-bests, null tested 454 of 457)
 
 **by TRIGGER family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| cross-market | 36 / 18 | 5 | 0 | 0% |  | 33 | 15 | 46% |
-| bands | 18 / 31 | 2 | 4 |  |  | 14 | 29 | 208% |
-| bar-native | 7 / 3 | 0 | 0 |  |  | 6 | 4 | 58% |
-| confluence | 3 / 5 | 0 | 1 |  |  | 3 | 5 |  |
-| levels:Fibonacci | 45 / 43 | 3 | 5 |  |  | 31 | 32 | 101% |
-| levels:VWAP | 23 / 18 | 1 | 0 |  |  | 21 | 15 | 72% |
-| levels:pivots | 4 / 3 | 1 | 0 |  |  | 3 | 4 |  |
-| levels:profile / stack / walls / UW | 1 / 14 | 0 | 2 |  |  | 1 | 13 |  |
-| levels:session / prior / round / opens / gaps | 15 / 21 | 0 | 0 |  |  | 13 | 19 | 143% |
-| levels:swing S/R, trendline, channel | 23 / 13 | 0 | 1 |  |  | 17 | 5 | 27% |
-| levels:zones / supply-demand | 13 / 47 | 0 | 7 |  |  | 12 | 28 | 233% |
-| mean reversion / manual indicators | 6 / 21 | 0 | 6 |  |  | 4 | 18 |  |
-| momentum | 33 / 34 | 0 | 4 |  |  | 24 | 29 | 121% |
-| order book | 25 / 18 | 1 | 2 |  |  | 20 | 14 | 70% |
-| other trigger | 0 / 5 | 0 | 1 |  |  | 0 | 5 |  |
-| pullback | 3 / 2 | 0 | 0 |  |  | 1 | 1 |  |
-| session structure | 3 / 16 | 0 | 2 |  |  | 2 | 15 |  |
-| tape / order flow | 36 / 43 | 2 | 4 |  |  | 27 | 37 | 138% |
-| trend | 39 / 35 | 3 | 6 |  |  | 27 | 30 | 112% |
+| cross-market | 36 / 21 | 5 | 0 | 0% |  | 33 | 16 | 49% |
+| bands | 18 / 32 | 2 | 3 |  |  | 14 | 26 | 186% |
+| bar-native | 7 / 4 | 0 | 0 |  |  | 6 | 4 | 67% |
+| confluence | 3 / 5 | 0 | 1 |  |  | 3 | 4 |  |
+| levels:Fibonacci | 45 / 51 | 3 | 4 |  |  | 31 | 33 | 107% |
+| levels:VWAP | 23 / 20 | 1 | 0 |  |  | 21 | 14 | 67% |
+| levels:pivots | 4 / 3 | 1 | 0 |  |  | 3 | 3 |  |
+| levels:profile / stack / walls / UW | 1 / 20 | 0 | 3 |  |  | 1 | 16 |  |
+| levels:session / prior / round / opens / gaps | 15 / 28 | 0 | 2 |  |  | 13 | 19 | 146% |
+| levels:swing S/R, trendline, channel | 23 / 15 | 0 | 1 |  |  | 17 | 5 | 29% |
+| levels:zones / supply-demand | 13 / 52 | 0 | 6 |  |  | 12 | 26 | 217% |
+| mean reversion / manual indicators | 6 / 22 | 0 | 6 |  |  | 4 | 15 |  |
+| momentum | 33 / 41 | 0 | 5 |  |  | 24 | 31 | 129% |
+| order book | 25 / 19 | 1 | 2 |  |  | 20 | 13 | 65% |
+| other trigger | 0 / 6 | 0 | 1 |  |  | 0 | 4 |  |
+| pullback | 3 / 3 | 0 | 0 |  |  | 1 | 2 |  |
+| session structure | 3 / 22 | 0 | 3 |  |  | 2 | 17 |  |
+| tape / order flow | 36 / 49 | 2 | 4 |  |  | 27 | 36 | 133% |
+| trend | 39 / 41 | 3 | 7 |  |  | 27 | 30 | 111% |
 
 **by BAR family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| time | 95 / 89 | 9 | 7 | 78% |  | 71 | 76 | 107% |
-| composite / micro | 6 / 1 | 0 | 0 |  |  | 5 | 0 | 0% |
-| delta | 7 / 9 | 0 | 2 |  |  | 7 | 9 | 133% |
-| dollar | 5 / 6 | 1 | 2 |  |  | 4 | 1 |  |
-| event / swing / other | 24 / 48 | 2 | 6 |  |  | 16 | 45 | 277% |
-| imbalance / run (information) | 36 / 43 | 4 | 5 |  |  | 29 | 42 | 145% |
-| kagi / P&F / line-break | 26 / 25 | 0 | 6 |  |  | 19 | 6 | 31% |
-| range | 27 / 31 | 0 | 4 |  |  | 21 | 33 | 155% |
-| renko-type | 37 / 46 | 0 | 6 |  |  | 29 | 21 | 72% |
-| tick | 21 / 14 | 1 | 4 |  |  | 14 | 15 | 108% |
-| volume | 49 / 78 | 1 | 4 |  |  | 44 | 69 | 156% |
+| time | 95 / 106 | 9 | 8 | 89% |  | 71 | 80 | 111% |
+| composite / micro | 6 / 2 | 0 | 0 |  |  | 5 | 1 | 20% |
+| delta | 7 / 11 | 0 | 3 |  |  | 7 | 10 | 143% |
+| dollar | 5 / 7 | 1 | 2 |  |  | 4 | 1 |  |
+| event / swing / other | 24 / 52 | 2 | 6 |  |  | 16 | 42 | 263% |
+| imbalance / run (information) | 36 / 50 | 4 | 6 |  |  | 29 | 38 | 131% |
+| kagi / P&F / line-break | 26 / 28 | 0 | 5 |  |  | 19 | 6 | 32% |
+| range | 27 / 33 | 0 | 3 |  |  | 21 | 29 | 138% |
+| renko-type | 37 / 56 | 0 | 7 |  |  | 29 | 22 | 76% |
+| tick | 21 / 18 | 1 | 3 |  |  | 14 | 16 | 114% |
+| volume | 49 / 91 | 1 | 5 |  |  | 44 | 70 | 159% |
 
-**(trigger x bar) blocks**: 148 blocks with any tested family-best, 1 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
+**(trigger x bar) blocks**: 151 blocks with any tested family-best, 1 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
 
 | trigger family | bar family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL FDR(24) |
 |---|---|---|---|---|---|---|---|
-| cross-market | time | 16 / 6 | 5 | 0 | 0% |  | 50% |
+| cross-market | time | 16 / 8 | 5 | 0 | 0% |  | 57% |
 
-### NYAM (real tested 1814 of 1,821 family-bests, null tested 399 of 730)
+### NYAM (real tested 1814 of 1,821 family-bests, null tested 649 of 730)
 
 **by TRIGGER family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| bands | 253 / 30 | 15 | 0 | 0% | 0% | 249 | 46 | 18% |
-| levels:profile / stack / walls / UW | 284 / 14 | 118 | 11 | 9% | 15% | 280 | 20 | 7% |
-| levels:session / prior / round / opens / gaps | 230 / 33 | 15 | 2 | 12% |  | 221 | 40 | 18% |
-| momentum | 121 / 23 | 9 | 2 | 20% |  | 116 | 35 | 30% |
-| levels:Fibonacci | 210 / 30 | 14 | 4 | 26% |  | 202 | 37 | 18% |
-| levels:VWAP | 118 / 9 | 9 | 4 | 41% |  | 114 | 16 | 14% |
-| trend | 72 / 24 | 9 | 4 | 41% |  | 69 | 37 | 53% |
-| order book | 82 / 21 | 8 | 4 | 46% |  | 75 | 29 | 39% |
-| session structure | 115 / 14 | 6 | 4 | 61% |  | 112 | 22 | 20% |
-| tape / order flow | 66 / 24 | 5 | 9 | 182% |  | 61 | 31 | 51% |
-| bar-native | 17 / 5 | 1 | 0 |  |  | 17 | 5 | 32% |
-| confluence | 11 / 4 | 0 | 0 |  |  | 10 | 5 | 55% |
-| cross-market | 45 / 23 | 3 | 0 |  |  | 42 | 35 | 82% |
-| levels:pivots | 33 / 2 | 1 | 0 |  |  | 30 | 2 | 6% |
-| levels:swing S/R, trendline, channel | 86 / 14 | 4 | 4 |  |  | 76 | 11 | 14% |
-| levels:zones / supply-demand | 37 / 115 | 4 | 27 |  |  | 36 | 97 | 268% |
-| mean reversion / manual indicators | 17 / 10 | 1 | 5 |  |  | 16 | 11 | 68% |
-| other trigger | 4 / 0 | 0 | 0 |  |  | 4 | 0 |  |
-| pullback | 13 / 4 | 0 | 0 |  |  | 13 | 5 | 42% |
+| bands | 253 / 48 | 15 | 1 | 7% | 0% | 249 | 48 | 19% |
+| levels:profile / stack / walls / UW | 284 / 19 | 118 | 9 | 8% | 12% | 280 | 16 | 6% |
+| levels:VWAP | 118 / 15 | 9 | 2 | 25% |  | 114 | 13 | 12% |
+| trend | 72 / 35 | 9 | 2 | 25% |  | 69 | 35 | 50% |
+| levels:session / prior / round / opens / gaps | 230 / 57 | 15 | 4 | 30% |  | 221 | 43 | 19% |
+| momentum | 121 / 39 | 9 | 6 | 62% |  | 116 | 38 | 33% |
+| levels:Fibonacci | 210 / 52 | 14 | 9 | 64% |  | 202 | 40 | 20% |
+| order book | 82 / 38 | 8 | 6 | 70% |  | 75 | 29 | 39% |
+| session structure | 115 / 21 | 6 | 4 | 75% |  | 112 | 18 | 16% |
+| tape / order flow | 66 / 45 | 5 | 8 | 157% |  | 61 | 36 | 59% |
+| bar-native | 17 / 9 | 1 | 2 |  |  | 17 | 8 | 46% |
+| confluence | 11 / 5 | 0 | 0 |  |  | 10 | 3 | 34% |
+| cross-market | 45 / 35 | 3 | 2 |  |  | 42 | 34 | 80% |
+| levels:pivots | 33 / 2 | 1 | 0 |  |  | 30 | 1 | 4% |
+| levels:swing S/R, trendline, channel | 86 / 21 | 4 | 3 |  |  | 76 | 11 | 15% |
+| levels:zones / supply-demand | 37 / 190 | 4 | 27 |  |  | 36 | 98 | 271% |
+| mean reversion / manual indicators | 17 / 11 | 1 | 3 |  |  | 16 | 8 | 49% |
+| other trigger | 4 / 2 | 0 | 0 |  |  | 4 | 1 |  |
+| pullback | 13 / 5 | 0 | 0 |  |  | 13 | 4 | 34% |
 
 **by BAR family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| delta | 88 / 9 | 13 | 0 | 0% | 0% | 85 | 15 | 17% |
-| range | 95 / 34 | 5 | 0 | 0% |  | 88 | 42 | 48% |
-| tick | 134 / 20 | 26 | 0 | 0% |  | 132 | 35 | 26% |
-| event / swing / other | 198 / 54 | 24 | 4 | 15% |  | 190 | 73 | 39% |
-| volume | 268 / 50 | 32 | 5 | 17% | 18% | 266 | 73 | 28% |
-| dollar | 35 / 5 | 7 | 2 | 26% |  | 34 | 2 | 5% |
-| imbalance / run (information) | 227 / 67 | 33 | 13 | 39% | 42% | 213 | 79 | 37% |
-| renko-type | 271 / 45 | 25 | 15 | 58% | 109% | 260 | 29 | 11% |
-| time | 327 / 83 | 40 | 27 | 68% | 73% | 316 | 126 | 40% |
-| kagi / P&F / line-break | 171 / 31 | 17 | 13 | 75% | 109% | 162 | 11 | 7% |
-| composite / micro | 0 / 1 | 0 | 0 |  |  | 0 | 0 |  |
+| tick | 134 / 37 | 26 | 1 | 4% |  | 132 | 36 | 27% |
+| dollar | 35 / 9 | 7 | 1 | 16% |  | 34 | 1 | 3% |
+| delta | 88 / 23 | 13 | 2 | 17% | 16% | 85 | 21 | 25% |
+| volume | 268 / 75 | 32 | 7 | 21% | 34% | 266 | 69 | 26% |
+| event / swing / other | 198 / 92 | 24 | 6 | 23% |  | 190 | 73 | 39% |
+| imbalance / run (information) | 227 / 99 | 33 | 15 | 44% | 52% | 213 | 74 | 35% |
+| range | 95 / 56 | 5 | 2 | 45% |  | 88 | 46 | 52% |
+| renko-type | 271 / 80 | 25 | 15 | 58% | 157% | 260 | 35 | 13% |
+| time | 327 / 128 | 40 | 27 | 67% | 82% | 316 | 121 | 38% |
+| kagi / P&F / line-break | 171 / 46 | 17 | 12 | 73% | 134% | 162 | 8 | 5% |
+| composite / micro | 0 / 4 | 0 | 2 |  |  | 0 | 1 |  |
 
-**(trigger x bar) blocks**: 169 blocks with any tested family-best, 10 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
+**(trigger x bar) blocks**: 173 blocks with any tested family-best, 10 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
 
 | trigger family | bar family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL FDR(24) |
 |---|---|---|---|---|---|---|---|
-| bands | time | 76 / 7 | 6 | 0 | 0% |  | 15% |
 | levels:profile / stack / walls / UW | delta | 16 / 0 | 12 | 0 | 0% | 0% | 0% |
 | levels:profile / stack / walls / UW | dollar | 5 / 0 | 5 | 0 | 0% |  | 0% |
-| levels:profile / stack / walls / UW | imbalance / run (information) | 32 / 1 | 20 | 0 | 0% | 0% | 6% |
 | levels:profile / stack / walls / UW | tick | 23 / 0 | 13 | 0 | 0% |  | 0% |
 | levels:profile / stack / walls / UW | volume | 46 / 0 | 17 | 0 | 0% | 0% | 0% |
-| levels:profile / stack / walls / UW | renko-type | 44 / 1 | 13 | 2 | 14% |  | 0% |
-| levels:profile / stack / walls / UW | kagi / P&F / line-break | 31 / 2 | 8 | 2 | 23% |  | 0% |
-| levels:profile / stack / walls / UW | event / swing / other | 45 / 3 | 14 | 4 | 26% |  | 12% |
-| levels:profile / stack / walls / UW | time | 19 / 5 | 12 | 4 | 30% | 0% | 57% |
+| levels:profile / stack / walls / UW | imbalance / run (information) | 32 / 5 | 20 | 1 | 6% | 0% | 14% |
+| levels:profile / stack / walls / UW | kagi / P&F / line-break | 31 / 2 | 8 | 1 | 14% |  | 0% |
+| levels:profile / stack / walls / UW | event / swing / other | 45 / 3 | 14 | 2 | 16% |  | 7% |
+| levels:profile / stack / walls / UW | renko-type | 44 / 2 | 13 | 2 | 17% |  | 0% |
+| bands | time | 76 / 10 | 6 | 1 | 19% |  | 13% |
+| levels:profile / stack / walls / UW | time | 19 / 5 | 12 | 2 | 19% | 0% | 35% |
 
 ### NYPM (real tested 191 of 193 family-bests, null tested 230 of 233)
 
