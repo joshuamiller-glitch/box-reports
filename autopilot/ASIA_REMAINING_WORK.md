@@ -1,13 +1,13 @@
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T17:45:02Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T17:50:17Z)
 
-Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 1233; WITHOUT a first look: 1964** (11473 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 802, 'B': 130, 'out': 114, 'out (RED B)': 2, 'A': 2041, 'A2': 49}.
+Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 1257; WITHOUT a first look: 1940** (11301 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 880, 'B': 130, 'out': 114, 'out (RED B)': 2, 'A': 1955, 'A2': 57}.
 
 | part | queued now (not DONE) | still to be appended (estimate) | basis |
 |---|---|---|---|
-| stage A first look (ADD + REPLACE-vs-A7, L6M) | 10533 | 0 | queue lines |
-| a2 REPLACE vs K7/P7/H7/U7 (L6M) | 5706 | ~8971 | 24 lines x alive share 0.19 x cells without first look |
-| prior years (2023-04..2026-04, ADD/REPLACE sets) | 3968 | ~1020 | 37 months x ~1.5 sets x beater share 0.014 (follow-ups gated to cells that beat a live book) |
-| controls (30 date-shift x 6 months per set) | 4644 (+ 0 passer-control lines in first.txt, same lines) | ~4723 | 180 x ~1.5 sets x beater share 0.014 x C share 0.95 |
+| stage A first look (ADD + REPLACE-vs-A7, L6M) | 10360 | 0 | queue lines |
+| a2 REPLACE vs K7/P7/H7/U7 (L6M) | 5898 | ~8216 | 24 lines x alive share 0.18 x cells without first look |
+| prior years (2023-04..2026-04, ADD/REPLACE sets) | 3968 | ~1007 | 37 months x ~1.5 sets x beater share 0.014 (follow-ups gated to cells that beat a live book) |
+| controls (30 date-shift x 6 months per set) | 4633 (+ 0 passer-control lines in first.txt, same lines) | ~4665 | 180 x ~1.5 sets x beater share 0.014 x C share 0.95 |
 | F-set re-runs (202511 capped exits) | 0 | cron :20/:50 adds new ones | contaminated 202511 set-months |
 | older AB/AX lines (W-LONENG) | 2412 | 0 | queue lines |
 | layers (W-LAYERS, tag NYL) | not in _asi | ~4.5 h per passer (W-LAYERS 11:07Z) | 8 passers |
