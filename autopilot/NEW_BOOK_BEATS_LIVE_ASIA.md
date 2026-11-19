@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:30Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:35Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 757; cells with a finished REPLACE verdict (L6M+L3M landed) 609; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 15 (under the looser NY rule 50); ADD rows finished 749.
+**Counts:** Asia cells with any engine row 757; cells with a finished REPLACE verdict (L6M+L3M landed) 613; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 15 (under the looser NY rule 50); ADD rows finished 749.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 72 | 0 | 4 |
-| P7 | 65 | 0 | 4 |
-| A7 | 609 | 15 | 7 |
-| H7 | 69 | 0 | 3 |
-| U7 | 69 | 0 | 2 |
+| P7 | 66 | 0 | 3 |
+| A7 | 613 | 15 | 3 |
+| H7 | 69 | 0 | 4 |
+| U7 | 69 | 0 | 3 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 379 tested; 517 cells with rows), long-only 1 (of 230 tested; 240 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 380 tested; 517 cells with rows), long-only 1 (of 233 tested; 240 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -180,15 +180,15 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 1927, last 3 h 6878; Asia queue lines pending (not DONE): 52596.
+Asia set-months landed: last 1 h 1621, last 3 h 6705; Asia queue lines pending (not DONE): 53837.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 6, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 25 TL3_NYL_      12 TL3_LON_       9 TL3_NYE_       7 TL3_ASI_       4 TL3_NYW_
-- server2 running engine sets by tag: 42 TL3_NYL_
-- A running engine sets by tag: 186 TL3_NYL_
-- B running engine sets by tag: 175 TL3_NYL_
+- box1 running engine sets by tag: 24 TL3_NYE_      18 TL3_NYL_      11 TL3_ASI_       6 TL3_LON_
+- server2 running engine sets by tag: 52 TL3_NYL_
+- A running engine sets by tag: 133 TL3_NYL_      16 TL3_NYE_
+- B running engine sets by tag: 102 TL3_NYL_      41 TL3_NYE_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
