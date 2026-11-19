@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 01:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 01:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 01:30Z | box1: busy 100%, load1 79.23, workers 29, MemAvail 52 GB | server2: busy 99%, load1 119.67, workers 14, MemAvail 1193 GB | pending box1-eligible 68476 / server2-eligible 68475 (shared queues count in both; unleased, not DONE) | serverA: busy 99%, load1 149.07, workers 61 (grid) + 57 (engine), 128 threads, MemAvail 1322 GB | serverB: busy 100%, load1 171.53, workers 99 (grid) + 57 (engine), 128 threads, MemAvail 1135 GB
+LATEST CORES.md LINE: 2026-11-19 01:45Z | box1: busy 100%, load1 71.01, workers 29, MemAvail 49 GB | server2: busy 100%, load1 100.14, workers 12, MemAvail 1122 GB | pending box1-eligible 71606 / server2-eligible 71606 (shared queues count in both; unleased, not DONE) | serverA: busy 99%, load1 139.34, workers 61 (grid) + 57 (engine), 128 threads, MemAvail 1310 GB | serverB: busy 100%, load1 180.26, workers 99 (grid) + 52 (engine), 128 threads, MemAvail 1123 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 01:30Z
+2026-11-19 01:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 01:30Z | box1: busy 100%, load1 79.23, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 50.6 GB; live reservations 6 (6 GB); workers 29, of which TP-adopted 29 (RSS 48.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 79.23, 79.22, 78.18
-  by tag: NT quota 8 running 5 hungry True RSS 7.6 GB PSS 6.9 GB; NYL quota 12 running 11 hungry True RSS 18.1 GB PSS 14.9 GB; NYR quota 16 running 9 hungry True RSS 15.5 GB PSS 14.0 GB; LON quota 12 running 3 hungry True RSS 5.4 GB PSS 5.0 GB; ASI quota 16 running 1 hungry True RSS 1.6 GB PSS 1.4 GB; NT quota 0 running 5 hungry False RSS 7.6 GB PSS 6.9 GB
-  cell-months finished last hour (DONE markers): 967
-  top running jobs: TL3_NT_CT26_SH_K7_k2 (x10);TL3_NYE_L6be98834_RK7 (x8);TL3_NYE_L9c3ebee9_RK7 (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 118.87, 105.88, 99.69|/dev/md2         28T  1.6T   27T   6% /mnt/l2|24|
+Server 1 (this box): MemAvail 47.8 GB; live reservations 13 (13 GB); workers 29, of which TP-adopted 29 (RSS 49.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 71.01, 73.98, 76.41
+  by tag: NYL quota 12 running 12 hungry False RSS 22.1 GB PSS 16.7 GB; NYR quota 16 running 10 hungry True RSS 16.9 GB PSS 14.7 GB; LON quota 12 running 4 hungry True RSS 5.4 GB PSS 4.9 GB; ASI quota 16 running 3 hungry True RSS 4.6 GB PSS 4.2 GB
+  cell-months finished last hour (DONE markers): 947
+  top running jobs: TL3_NYE_L7959252d_RK7 (x8);TL3_LON_LA5_ALL (x8);TL3_NYE_Lfa5912ed_RK7 (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 99.07, 106.95, 106.91|/dev/md2         28T  1.6T   27T   6% /mnt/l2|21|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 118.87, 105.88, 99.69|/dev/
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261118_2128Z_R3-null-sanity-check-NYAM-below-chance.md 20261118_2218Z_after-R3-sanity-null-is-the-judge-queues-real-pass1-rate.md 20261118_2236Z_box1-root-disk-9GB-guard-it-and-engine-queue.md 20261119_0017Z_exit-yield-to-150-pairs-oversubscription-dallas-queue.md 20261119_0125Z_calibration-by-family-and-live-books-as-reference.md
+20261118_2218Z_after-R3-sanity-null-is-the-judge-queues-real-pass1-rate.md 20261118_2236Z_box1-root-disk-9GB-guard-it-and-engine-queue.md 20261119_0017Z_exit-yield-to-150-pairs-oversubscription-dallas-queue.md 20261119_0125Z_calibration-by-family-and-live-books-as-reference.md 20261119_0143Z_staleness-check-ALL-modules-and-stamp-results.md
