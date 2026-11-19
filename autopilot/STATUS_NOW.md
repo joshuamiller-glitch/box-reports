@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 10:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 10:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 09:55Z | box1: busy 100%, load1 77.02, workers 25, MemAvail 68 GB | server2: busy 100%, load1 115.86, workers 27, MemAvail 1031 GB | pending box1-eligible 133703 / server2-eligible 133703 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 242.14, workers 77 (grid) + 101 (engine), 128 threads, MemAvail 1217 GB | serverB: busy 100%, load1 245.93, workers 77 (grid) + 96 (engine), 128 threads, MemAvail 1170 GB
+LATEST CORES.md LINE: 2026-11-19 10:15Z | box1: busy 100%, load1 95.78, workers 32, MemAvail 58 GB | server2: busy 100%, load1 132.53, workers 29, MemAvail 926 GB | pending box1-eligible 139133 / server2-eligible 139145 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 262.32, workers 97 (grid) + 102 (engine), 128 threads, MemAvail 1168 GB | serverB: busy 100%, load1 262.11, workers 97 (grid) + 101 (engine), 128 threads, MemAvail 1120 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 10:00Z
+2026-11-19 10:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 09:55Z | box1: busy 100%, load1 77.02, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 79.5 GB; live reservations 1 (1 GB); workers 23, of which TP-adopted 23 (RSS 39.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 74.01, 76.20, 76.58
-  by tag: ASI quota 16 running 5 hungry True RSS 8.9 GB PSS 8.1 GB; NYR quota 16 running 14 hungry True RSS 24.6 GB PSS 22.9 GB; LON quota 12 running 4 hungry True RSS 5.7 GB PSS 5.1 GB
-  cell-months finished last hour (DONE markers): 2505
-  top running jobs: TL3_NYW_Lbbdd1236_ADD (x28);TL3_ASI_L7c368a4f_RA7 (x11);TL3_LON_LA4_ALL (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 121.86, 118.09, 114.33|/dev/md2         28T  1.9T   27T   7% /mnt/l2|59|
+Server 1 (this box): MemAvail 57.3 GB; live reservations 3 (3 GB); workers 32, of which TP-adopted 32 (RSS 51.3 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 95.78, 96.58, 89.05
+  by tag: EXE quota 24 running 3 hungry False RSS 3.8 GB PSS 3.2 GB; ASI quota 16 running 8 hungry True RSS 13.2 GB PSS 11.1 GB; NYL quota 12 running 10 hungry True RSS 17.4 GB PSS 13.5 GB; NYR quota 16 running 7 hungry True RSS 10.6 GB PSS 9.7 GB; LON quota 12 running 4 hungry True RSS 6.3 GB PSS 5.8 GB
+  cell-months finished last hour (DONE markers): 2598
+  top running jobs: TL3_NYW_Ld8b394e5_ADD (x14);TL3_LON_LA4_ALL (x8);TL3_EXE_L01811caa_bricks3_v25_ADD_IDN (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 133.11, 129.25, 123.63|/dev/md2         28T  1.9T   27T   7% /mnt/l2|55|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 121.86, 118.09, 114.33|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261119_0613Z_cap-step-beyond-70-restate-dates-answer-alert-G.md 20261119_0633Z_engine-is-the-bottleneck-make-the-ladder-engine-faster.md 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md 20261119_0849Z_Asia-counts-frozen-and-Frankfurt-real-pass1.md 20261119_0956Z_Answer-alert-G-NYENG-and-explain-real-pass1-finished.md
+20261119_0633Z_engine-is-the-bottleneck-make-the-ladder-engine-faster.md 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md 20261119_0849Z_Asia-counts-frozen-and-Frankfurt-real-pass1.md 20261119_0956Z_Answer-alert-G-NYENG-and-explain-real-pass1-finished.md 20261119_1014Z_Mode-bug-do-not-void-engine-winners.md
