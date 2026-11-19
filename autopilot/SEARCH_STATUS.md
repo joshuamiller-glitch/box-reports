@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-19 02:05Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-19 02:35Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,16 +6,16 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 132003 result files | 10998 jobs | 3652 | 3.0 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 22992 (a top cells 648, a2 exit families 4165, c family cells 18179) | 982 | 23.4 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 134051 result files | 11617 jobs | 3334 | 3.5 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 24242 (a top cells 749, a2 exit families 3949, c family cells 19544) | 662 | 36.6 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 60914, null draw 1 27545, null draw 2 27119, extra draws (3-25) 14088 files. Pass-1 results still waiting for their pass-2 upgrade: real 50194.
+Pass-1 results on disk by tag: real 61222, null draw 1 28080, null draw 2 27621, extra draws (3-25) 14125 files. Pass-1 results still waiting for their pass-2 upgrade: real 50463.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 116.96 workers 60; 109.94.96.39 load 131.52 workers 60; 206.223.224.21 load 120.78 workers 60; grid workers 180 (174 computing), engine workers 130; forward-path tables built (summed over servers) 583.
+Machines (grid partitioned across servers): 207.188.7.103 load 112.03 workers 60; 109.94.96.39 load 171.17 workers 60; 206.223.224.21 load 189.88 workers 60; grid workers 180 (122 computing), engine workers 172; forward-path tables built (summed over servers) 586.
 
-Since 17:23Z: pass-1 todo 80818 -> 10998 (-69820), pass-2 todo 25951 -> 22992 (-2959). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 11617 (-69201), pass-2 todo 25951 -> 24242 (-1709). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search: FIVE draws, calibration check of the ladder (orders 1932Z + 2042Z; prereg sha 125fd12566e72aa6 + amendment)
 
@@ -23,11 +23,11 @@ What it is: 5 random-entry draws (tags p1rand1..p1rand5; draws 6-20 cancelled 20
 
 | item | now |
 |---|---|
-| results/hour, REAL search (p1real files, pass 1 and 2 together) | 1956 |
-| results/hour, NULL draws (p1rand1..20 files) | 1841 |
-| null result files on disk, draws 1 / 2 | 27545 / 27119 (real: 60914) |
-| null result files, draws 3-20 (all) | 13585 |
-| share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 44%, draw 2 44%, draw 3 4%, draw 4 4%, draw 5 4% |
+| results/hour, REAL search (p1real files, pass 1 and 2 together) | 1107 |
+| results/hour, NULL draws (p1rand1..20 files) | 1784 |
+| null result files on disk, draws 1 / 2 | 28080 / 27621 (real: 61222) |
+| null result files, draws 3-20 (all) | 13622 |
+| share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 45%, draw 2 44%, draw 3 4%, draw 4 4%, draw 5 4% |
 | draws complete (files incl. error stubs >= 99.5 percent of ~65.8k) | 0 of 5 |
 | draws accepted by the null audit and counted | see null_summary below |
 
@@ -35,7 +35,7 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 02:01Z
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 02:31Z
 
 | tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
 |---|---|---|---|---|---|
@@ -63,9 +63,9 @@ Dallas (64 threads) now also owns rows 6 and 11 (from A and B) so its queue is ~
 
 | host | stale real | stale null draw 1 | stale null draw 2 | fresh level files (real / draw 1 / draw 2) |
 |---|---|---|---|---|
-| Dallas | 4573 | 4512 | 4527 | 17411 / 5794 / 5612 |
-| Frankfurt | 2997 | 2191 | 2189 | 6224 / 1931 / 1909 |
-| Singapore | 3030 | 1791 | 1790 | 6598 / 1803 / 1722 |
+| Dallas | 4477 | 4420 | 4442 | 17628 / 6090 / 5866 |
+| Frankfurt | 2982 | 2184 | 2184 | 6285 / 2092 / 2044 |
+| Singapore | 2901 | 1783 | 1784 | 6731 / 1860 / 1787 |
 
 Counts are the files on each host before the merge (A and B results are copied to Dallas every ~5 min); a host shows 0 stale for its own rows when its re-run is complete. Old copies of other hosts rows still on Dallas disappear as the merge overwrites them.
 
@@ -73,10 +73,10 @@ Counts are the files on each host before the merge (A and B results are copied t
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 100.0 | 116.96 | 180 (174) | 65 | 0 | 4634 |
-| A Frankfurt | 128 | 98.6 | 131.52 | 60 (60) | 28 | 0 | 2381 |
-| B Singapore | 128 | 95.1 | 120.78 | 60 (60) | 25 | 0 | 1227 |
-| box 1 London (lead, engine fillers) | 32 | 100 | 68.32 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 100.0 | 112.03 | 180 (122) | 86 | 0 | 4008 |
+| A Frankfurt | 128 | 100.0 | 171.17 | 60 (51) | 37 | 0 | 2066 |
+| B Singapore | 128 | 100.0 | 189.88 | 60 (34) | 37 | 0 | 1100 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 69.02 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
@@ -129,7 +129,7 @@ Engine capacity decides the ORDER cells are tested in (best first), never WHETHE
 
 ### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 02:00Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 02:21Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -139,16 +139,16 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 02:00Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 02:20Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
 | session | R0 passing cells | of which stale level cells | family-bests | stale family-bests | real-on-null-coverage tested (stage A) | stale level cells there | null draw tested (stage A) | stale level cells there |
 |---|---|---|---|---|---|---|---|---|
-| Asia | 4,541 | 211 (4.6%) | 2,902 | 116 | 900 | 40 (4%) | 245 | 50 (20%) |
-| London | 2,177 | 51 (2.3%) | 1,672 | 42 | 304 | 15 (5%) | 249 | 41 (16%) |
-| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 542 | 48 (9%) | 250 | 63 (25%) |
-| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 46 (20%) |
+| Asia | 4,541 | 211 (4.6%) | 2,902 | 116 | 900 | 40 (4%) | 277 | 52 (19%) |
+| London | 2,177 | 51 (2.3%) | 1,672 | 42 | 333 | 17 (5%) | 249 | 37 (15%) |
+| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 943 | 100 (11%) | 250 | 57 (23%) |
+| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 45 (20%) |
 
 Reading: the stale share is NOT symmetric in the calibration: among tested family-bests 3-11% of the real-search cells but 17-26% of the null-draw cells rest on pre-06:00Z level files (the null draws were run early with the old level code), so the 01:16Z FDR table can be biased by the stale null side; it is redone after the forced re-run of draws 1-2 (last in the queue).
 
@@ -159,7 +159,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 6,461,292 | - | 6,456,751 | by first rule: R1 L6M<=0 3,461,640; R2 trades<100 1,395,903; R3 L3M<=0 526,793; R4 persistence<=0.60 945,197; RED prior year 127,218 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 4,541 (R0 passers) | 2,902 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 15.1 core-h for 4,541 cells | 0.0 h |
 | R2 | trust + look-ahead | 4,541 (upper bound: all R1 cells) | 2,902 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 629 core-h for 2,030 (row, module) pairs | 2.0 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 379, C (1,000) 29, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1231 / 1618 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1231 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 392, C (1,000) 29, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1233 / 1617 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1233 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 34,824 set-months = 1741 core-h | 45.6 h on the measured fleet (763/h), 12.0 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 2,902 families (upper bound) | 2,902 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+208,944 set-months) then 30 date-shift controls (+522,360 set-months = 26118 core-h) for the rows still alive | **274 h (> 48 h: Josh decides between more machines and waiting)** / **685 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -173,7 +173,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 7,329,472 | - | 7,327,295 | by first rule: R1 L6M<=0 4,123,672; R2 trades<100 1,740,334; R3 L3M<=0 488,397; R4 persistence<=0.60 893,506; RED prior year 81,386 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 2,177 (R0 passers) | 1,672 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 7.3 core-h for 2,177 cells | 0.0 h |
 | R2 | trust + look-ahead | 2,177 (upper bound: all R1 cells) | 1,672 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 418 core-h for 1,348 (row, module) pairs | 1.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 38, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 304 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 67, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 305 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 20,064 set-months = 1003 core-h | 26.3 h on the measured fleet (763/h), 6.9 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 1,672 families (upper bound) | 1,672 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+120,384 set-months) then 30 date-shift controls (+300,960 set-months = 15048 core-h) for the rows still alive | **158 h (> 48 h: Josh decides between more machines and waiting)** / **394 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -187,7 +187,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,027,865 | - | 8,012,031 | by first rule: R1 L6M<=0 4,785,951; R2 trades<100 1,102,417; R3 L3M<=0 632,439; R4 persistence<=0.60 1,374,346; RED prior year 116,878 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 15,834 (R0 passers) | 8,510 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 52.8 core-h for 15,834 cells | 0.2 h |
 | R2 | trust + look-ahead | 15,834 (upper bound: all R1 cells) | 8,510 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 1667 core-h for 5,376 (row, module) pairs | 5.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1207, C (1,000) 61, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3467 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3467 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1217, C (1,000) 65, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3469 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3469 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 102,120 set-months = 5106 core-h | **134 h (> 48 h: Josh decides between more machines and waiting)** on the measured fleet (763/h), 35.3 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 8,510 families (upper bound) | 8,510 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+612,720 set-months) then 30 date-shift controls (+1,531,800 set-months = 76590 core-h) for the rows still alive | **803 h (> 48 h: Josh decides between more machines and waiting)** / **2008 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -201,7 +201,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,043,245 | - | 8,042,093 | by first rule: R1 L6M<=0 4,336,708; R2 trades<100 1,739,114; R3 L3M<=0 532,730; R4 persistence<=0.60 1,408,416; RED prior year 25,125 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 1,152 (R0 passers) | 861 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 3.8 core-h for 1,152 cells | 0.0 h |
 | R2 | trust + look-ahead | 1,152 (upper bound: all R1 cells) | 861 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 229 core-h for 740 (row, module) pairs | 0.7 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 177, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 296 / 367 at q 5% / 10% / 20% | SET 1: 0, SET 2: 296 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 179, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 296 / 367 at q 5% / 10% / 20% | SET 1: 0, SET 2: 296 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 10,332 set-months = 517 core-h | 13.5 h on the measured fleet (763/h), 3.6 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 861 families (upper bound) | 861 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+61,992 set-months) then 30 date-shift controls (+154,980 set-months = 7749 core-h) for the rows still alive | **81 h (> 48 h: Josh decides between more machines and waiting)** / **203 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -215,10 +215,10 @@ SET 1 (strict, current rule) = inside BH on p_L6M (last 26 weeks, equal-risk sum
 
 | session | family-bests | tested | SET 1 q5 / q10 / q20 | SET 1 expected false (q10) | SET 1 engine core-h / h | SET 2 q5 / q10 / q20 | SET 2 expected false (q10) | SET 2 engine core-h / h | SET 2 flagged recent no better than random (q10) | smallest p: L6M / ALL |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1231 / 1618 | 123.1 | 16249 / 425.9 h | 912 | 0.0249 / 0.0003 |
-| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 304 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0100 |
-| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3467 / 4220 | 346.7 | 45764 / 1199.6 h | 3091 | 0.0299 / 0.0002 |
-| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 296 / 367 | 29.6 | 3907 / 102.4 h | 226 | 0.0199 / 0.0050 |
+| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1233 / 1617 | 123.3 | 16276 / 426.6 h | 913 | 0.0249 / 0.0003 |
+| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 305 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0050 |
+| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3469 / 4220 | 346.9 | 45791 / 1200.3 h | 3093 | 0.0299 / 0.0002 |
+| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 296 / 367 | 29.6 | 3907 / 102.4 h | 227 | 0.0199 / 0.0050 |
 
 ## CALIBRATION: measured false-discovery rate from the whole-search null (order 2218Z, partial draw 1)
 
@@ -226,12 +226,12 @@ Label: PARTIAL / coarse (draw p1rand1 only, files that exist so far; the real se
 
 | session | R0 pass cells null / real (ratio) | R0 families null / real | tested null / real (sampled family-bests) | stat | b = 24 | 27 | 29 | 30 |
 |---|---|---|---|---|---|---|---|---|
-| Asia | 380 / 963 (0.39) | 372 / 904 | 245 / 900 | p_L6M (null / real families at threshold = FDR) | 100 / 281 = 36% | 32 / 93 = 34% | 15 / 13 = 116% | 9 / 2 = 453% |
-|  |  /  (0.00) |  /  | 245 / 900 | p_ALL (null / real families at threshold = FDR) | 237 / 840 = 28% | 173 / 744 = 23% | 117 / 604 = 19% | 73 / 428 = 17% |
-| London | 466 / 347 (1.34) | 457 / 335 | 249 / 304 | p_L6M (null / real families at threshold = FDR) | 48 / 19 = 255% | 18 / 3 = 555% | 4 / 2 = 167% | 4 / 0 = n/a |
-|  |  /  (0.00) |  /  | 249 / 304 | p_ALL (null / real families at threshold = FDR) | 319 / 266 = 120% | 239 / 203 = 118% | 162 / 127 = 127% | 99 / 96 = 103% |
-| NYAM | 763 / 1,915 (0.40) | 730 / 1,821 | 250 / 542 | p_L6M (null / real families at threshold = FDR) | 79 / 245 = 32% | 44 / 84 = 52% | 12 / 30 = 39% | 6 / 10 = 58% |
-|  |  /  (0.00) |  /  | 250 / 542 | p_ALL (null / real families at threshold = FDR) | 491 / 1737 = 28% | 400 / 1609 = 25% | 298 / 1324 = 22% | 181 / 1038 = 17% |
+| Asia | 380 / 963 (0.39) | 372 / 904 | 277 / 900 | p_L6M (null / real families at threshold = FDR) | 94 / 281 = 33% | 30 / 93 = 32% | 13 / 13 = 103% | 8 / 2 = 401% |
+|  |  /  (0.00) |  /  | 277 / 900 | p_ALL (null / real families at threshold = FDR) | 239 / 840 = 28% | 177 / 744 = 24% | 117 / 604 = 19% | 75 / 428 = 18% |
+| London | 466 / 347 (1.34) | 457 / 335 | 249 / 333 | p_L6M (null / real families at threshold = FDR) | 48 / 18 = 264% | 18 / 3 = 608% | 4 / 2 = 182% | 4 / 0 = n/a |
+|  |  /  (0.00) |  /  | 249 / 333 | p_ALL (null / real families at threshold = FDR) | 319 / 261 = 123% | 239 / 197 = 121% | 162 / 121 = 134% | 99 / 91 = 109% |
+| NYAM | 763 / 1,915 (0.40) | 730 / 1,821 | 250 / 943 | p_L6M (null / real families at threshold = FDR) | 79 / 241 = 33% | 44 / 73 = 60% | 12 / 21 = 55% | 6 / 6 = 101% |
+|  |  /  (0.00) |  /  | 250 / 943 | p_ALL (null / real families at threshold = FDR) | 491 / 1750 = 28% | 400 / 1628 = 25% | 298 / 1338 = 22% | 181 / 1020 = 18% |
 | NYPM | 238 / 195 (1.22) | 233 / 193 | 230 / 191 | p_L6M (null / real families at threshold = FDR) | 55 / 45 = 120% | 31 / 31 = 100% | 10 / 17 = 59% | 4 / 9 = 45% |
 |  |  /  (0.00) |  /  | 230 / 191 | p_ALL (null / real families at threshold = FDR) | 186 / 188 = 99% | 167 / 176 = 95% | 137 / 131 = 104% | 99 / 92 = 108% |
 
@@ -288,165 +288,165 @@ Each live D7 book run BARE (its own signal_fn from code/th_swap, on its live bar
 
 **UNVERIFIED FOR ALL "levels:*" TRIGGER FAMILIES (W-GRIDOPS 0145Z)**: trig_levels_* results written before 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run); real AND null level cells are partly stale until the forced re-run lands (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z); read the levels:* rows as provisional and treat level-cell rows on the ladder lists as UNVERIFIED (ranked after verified cells). FDR(b) = null family-bests beating >= b of 30 draws / real family-bests beating >= b, per trigger family, bar family and (trigger x bar) block; counts are scaled to ALL family-bests of each set when only a part is tested (tested n shown). b = 24 / 27 shown on p_L6M with p_ALL beside. FDR < 100% = real > null; a block with real >> null is where the engine and the deeper stages go first; null >= real = last, not dropped. A block needs >= 5 real family-bests at b = 24 to be ranked (small counts give an unstable ratio). The best-of-many effect is shown by the number of blocks tested.
 
-### Asia (real tested 900 of 904 family-bests, null tested 245 of 372)
+### Asia (real tested 900 of 904 family-bests, null tested 277 of 372)
 
 **by TRIGGER family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| pullback | 34 / 4 | 18 | 0 | 0% | 0% | 33 | 3 | 9% |
-| bands | 139 / 21 | 61 | 9 | 15% | 19% | 137 | 24 | 18% |
-| session structure | 46 / 9 | 9 | 2 | 17% |  | 39 | 9 | 23% |
-| levels:Fibonacci | 111 / 23 | 37 | 9 | 25% | 0% | 96 | 21 | 22% |
-| momentum | 142 / 18 | 47 | 12 | 26% | 19% | 136 | 21 | 16% |
-| levels:VWAP | 43 / 9 | 8 | 3 | 38% |  | 40 | 8 | 19% |
-| levels:swing S/R, trendline, channel | 32 / 9 | 11 | 5 | 41% |  | 28 | 9 | 32% |
-| levels:session / prior / round / opens / gaps | 61 / 17 | 10 | 5 | 45% |  | 57 | 15 | 27% |
-| tape / order flow | 41 / 13 | 12 | 6 | 50% | 76% | 39 | 14 | 35% |
-| levels:profile / stack / walls / UW | 46 / 10 | 6 | 3 | 50% |  | 45 | 9 | 20% |
-| trend | 89 / 28 | 27 | 15 | 56% | 101% | 85 | 33 | 39% |
-| cross-market | 26 / 15 | 15 | 14 | 91% | 30% | 22 | 21 | 96% |
-| bar-native | 15 / 1 | 2 | 2 |  |  | 15 | 2 | 10% |
-| confluence | 4 / 1 | 2 | 0 |  |  | 4 | 2 |  |
-| levels:pivots | 17 / 6 | 4 | 0 |  |  | 15 | 3 | 20% |
-| levels:zones / supply-demand | 14 / 35 | 2 | 5 |  |  | 11 | 15 | 137% |
-| mean reversion / manual indicators | 13 / 8 | 3 | 3 |  |  | 11 | 9 | 82% |
-| order book | 18 / 14 | 2 | 6 |  |  | 16 | 15 | 94% |
-| other trigger | 9 / 4 | 4 | 3 |  |  | 9 | 3 | 34% |
+| pullback | 34 / 7 | 18 | 1 | 7% | 0% | 33 | 7 | 20% |
+| bands | 139 / 23 | 61 | 8 | 13% | 17% | 137 | 24 | 18% |
+| session structure | 46 / 11 | 9 | 1 | 15% |  | 39 | 9 | 24% |
+| levels:Fibonacci | 111 / 28 | 37 | 9 | 25% | 0% | 96 | 23 | 24% |
+| momentum | 142 / 22 | 47 | 12 | 26% | 17% | 136 | 23 | 17% |
+| levels:VWAP | 43 / 9 | 8 | 3 | 33% |  | 40 | 7 | 17% |
+| levels:swing S/R, trendline, channel | 32 / 10 | 11 | 4 | 36% |  | 28 | 9 | 33% |
+| levels:session / prior / round / opens / gaps | 61 / 19 | 10 | 4 | 40% |  | 57 | 15 | 26% |
+| tape / order flow | 41 / 14 | 12 | 5 | 45% | 67% | 39 | 13 | 34% |
+| levels:profile / stack / walls / UW | 46 / 10 | 6 | 3 | 45% |  | 45 | 8 | 18% |
+| trend | 89 / 31 | 27 | 13 | 50% | 89% | 85 | 32 | 38% |
+| cross-market | 26 / 16 | 15 | 13 | 89% | 53% | 22 | 20 | 91% |
+| bar-native | 15 / 2 | 2 | 1 |  |  | 15 | 3 | 18% |
+| confluence | 4 / 2 | 2 | 0 |  |  | 4 | 3 |  |
+| levels:pivots | 17 / 6 | 4 | 0 |  |  | 15 | 3 | 18% |
+| levels:zones / supply-demand | 14 / 38 | 2 | 4 |  |  | 11 | 15 | 134% |
+| mean reversion / manual indicators | 13 / 9 | 3 | 3 |  |  | 11 | 9 | 85% |
+| order book | 18 / 15 | 2 | 5 |  |  | 16 | 13 | 84% |
+| other trigger | 9 / 5 | 4 | 3 |  |  | 9 | 3 | 30% |
 
 **by BAR family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| imbalance / run (information) | 76 / 14 | 19 | 3 | 16% | 0% | 72 | 14 | 19% |
-| tick | 45 / 7 | 13 | 3 | 23% |  | 43 | 11 | 25% |
-| volume | 115 / 27 | 45 | 11 | 24% | 11% | 109 | 35 | 32% |
-| time | 318 / 56 | 145 | 38 | 26% | 23% | 304 | 67 | 22% |
-| event / swing / other | 129 / 51 | 21 | 11 | 50% | 76% | 118 | 49 | 41% |
-| delta | 28 / 6 | 5 | 3 | 60% |  | 24 | 8 | 31% |
-| kagi / P&F / line-break | 56 / 27 | 13 | 11 | 81% |  | 53 | 15 | 29% |
-| renko-type | 87 / 32 | 11 | 12 | 110% |  | 77 | 20 | 26% |
-| range | 32 / 23 | 5 | 9 | 181% |  | 25 | 20 | 79% |
-| dollar | 14 / 2 | 4 | 0 |  |  | 13 | 0 | 0% |
+| imbalance / run (information) | 76 / 17 | 19 | 3 | 14% | 0% | 72 | 15 | 20% |
+| tick | 45 / 10 | 13 | 3 | 21% |  | 43 | 12 | 28% |
+| volume | 115 / 28 | 45 | 9 | 21% | 10% | 109 | 32 | 29% |
+| time | 318 / 65 | 145 | 36 | 25% | 23% | 304 | 70 | 23% |
+| event / swing / other | 129 / 56 | 21 | 11 | 51% | 67% | 118 | 46 | 39% |
+| delta | 28 / 9 | 5 | 3 | 53% |  | 24 | 11 | 45% |
+| kagi / P&F / line-break | 56 / 29 | 13 | 9 | 72% |  | 53 | 15 | 28% |
+| renko-type | 87 / 35 | 11 | 11 | 97% |  | 77 | 19 | 24% |
+| range | 32 / 25 | 5 | 8 | 160% |  | 25 | 20 | 80% |
+| dollar | 14 / 3 | 4 | 1 |  |  | 13 | 0 | 0% |
 
-**(trigger x bar) blocks**: 146 blocks with any tested family-best, 16 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
+**(trigger x bar) blocks**: 150 blocks with any tested family-best, 16 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
 
 | trigger family | bar family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL FDR(24) |
 |---|---|---|---|---|---|---|---|
 | bands | imbalance / run (information) | 17 / 0 | 5 | 0 | 0% |  | 0% |
-| bands | volume | 19 / 3 | 7 | 0 | 0% |  | 16% |
+| bands | volume | 19 / 3 | 7 | 0 | 0% |  | 14% |
 | levels:swing S/R, trendline, channel | time | 11 / 0 | 8 | 0 | 0% |  | 0% |
-| momentum | volume | 32 / 2 | 8 | 0 | 0% |  | 5% |
-| pullback | time | 15 / 1 | 12 | 0 | 0% | 0% | 0% |
-| levels:Fibonacci | time | 52 / 2 | 21 | 2 | 7% | 0% | 7% |
-| bands | time | 67 / 6 | 38 | 6 | 16% | 30% | 11% |
-| momentum | event / swing / other | 28 / 2 | 9 | 2 | 17% |  | 11% |
-| cross-market | volume | 8 / 1 | 6 | 2 | 25% |  | 22% |
-| session structure | time | 17 / 2 | 6 | 2 | 25% |  | 18% |
+| momentum | volume | 32 / 2 | 8 | 0 | 0% |  | 4% |
+| levels:Fibonacci | time | 52 / 2 | 21 | 1 | 6% | 0% | 6% |
+| pullback | time | 15 / 3 | 12 | 1 | 11% | 0% | 18% |
+| bands | time | 67 / 7 | 38 | 5 | 14% | 27% | 12% |
+| cross-market | volume | 8 / 1 | 6 | 1 | 22% |  | 19% |
+| session structure | time | 17 / 2 | 6 | 1 | 22% |  | 16% |
+| momentum | tick | 10 / 1 | 5 | 1 | 27% |  | 13% |
 
-### London (real tested 304 of 335 family-bests, null tested 249 of 457)
+### London (real tested 333 of 335 family-bests, null tested 249 of 457)
 
 **by TRIGGER family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| cross-market | 36 / 11 | 6 | 0 | 0% |  | 36 | 17 | 45% |
-| bands | 16 / 14 | 2 | 4 |  |  | 13 | 20 | 153% |
-| bar-native | 7 / 1 | 0 | 0 |  |  | 7 | 2 | 28% |
+| cross-market | 36 / 11 | 5 | 0 | 0% |  | 33 | 17 | 50% |
+| bands | 18 / 14 | 2 | 4 |  |  | 14 | 20 | 143% |
+| bar-native | 7 / 1 | 0 | 0 |  |  | 6 | 2 | 30% |
 | confluence | 3 / 3 | 0 | 2 |  |  | 3 | 4 |  |
-| levels:Fibonacci | 41 / 35 | 3 | 6 |  |  | 33 | 44 | 133% |
-| levels:VWAP | 22 / 14 | 1 | 0 |  |  | 22 | 17 | 75% |
+| levels:Fibonacci | 45 / 35 | 3 | 6 |  |  | 31 | 44 | 141% |
+| levels:VWAP | 23 / 14 | 1 | 0 |  |  | 21 | 17 | 78% |
 | levels:pivots | 4 / 0 | 1 | 0 |  |  | 3 | 0 |  |
 | levels:profile / stack / walls / UW | 1 / 7 | 0 | 2 |  |  | 1 | 9 |  |
-| levels:session / prior / round / opens / gaps | 14 / 10 | 0 | 0 |  |  | 14 | 15 | 102% |
-| levels:swing S/R, trendline, channel | 19 / 9 | 0 | 2 |  |  | 15 | 4 | 24% |
-| levels:zones / supply-demand | 11 / 26 | 0 | 6 |  |  | 12 | 29 | 242% |
+| levels:session / prior / round / opens / gaps | 15 / 10 | 0 | 0 |  |  | 13 | 15 | 112% |
+| levels:swing S/R, trendline, channel | 23 / 9 | 0 | 2 |  |  | 17 | 4 | 21% |
+| levels:zones / supply-demand | 13 / 26 | 0 | 6 |  |  | 12 | 29 | 243% |
 | mean reversion / manual indicators | 6 / 12 | 0 | 6 |  |  | 4 | 13 |  |
-| momentum | 30 / 23 | 0 | 6 |  |  | 24 | 33 | 136% |
-| order book | 22 / 14 | 1 | 2 |  |  | 20 | 17 | 83% |
+| momentum | 33 / 23 | 0 | 6 |  |  | 24 | 33 | 137% |
+| order book | 25 / 14 | 1 | 2 |  |  | 20 | 17 | 82% |
 | other trigger | 0 / 3 | 0 | 2 |  |  | 0 | 4 |  |
-| pullback | 2 / 1 | 0 | 0 |  |  | 1 | 2 |  |
-| session structure | 2 / 13 | 0 | 2 |  |  | 1 | 18 |  |
-| tape / order flow | 32 / 27 | 1 | 2 |  |  | 26 | 37 | 139% |
-| trend | 36 / 26 | 3 | 9 |  |  | 28 | 37 | 133% |
+| pullback | 3 / 1 | 0 | 0 |  |  | 1 | 2 |  |
+| session structure | 3 / 13 | 0 | 2 |  |  | 2 | 18 |  |
+| tape / order flow | 36 / 27 | 2 | 2 |  |  | 27 | 37 | 135% |
+| trend | 39 / 26 | 3 | 9 |  |  | 27 | 37 | 135% |
 
 **by BAR family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| time | 88 / 59 | 10 | 7 | 74% |  | 75 | 83 | 110% |
-| composite / micro | 5 / 1 | 0 | 0 |  |  | 4 | 0 |  |
-| delta | 6 / 6 | 0 | 4 |  |  | 7 | 11 | 167% |
+| time | 95 / 59 | 9 | 7 | 81% |  | 71 | 83 | 116% |
+| composite / micro | 6 / 1 | 0 | 0 |  |  | 5 | 0 | 0% |
+| delta | 7 / 6 | 0 | 4 |  |  | 7 | 11 | 156% |
 | dollar | 5 / 5 | 1 | 4 |  |  | 4 | 2 |  |
-| event / swing / other | 22 / 25 | 2 | 6 |  |  | 17 | 37 | 222% |
-| imbalance / run (information) | 30 / 27 | 3 | 6 |  |  | 28 | 40 | 147% |
-| kagi / P&F / line-break | 25 / 18 | 0 | 6 |  |  | 20 | 7 | 37% |
-| range | 24 / 20 | 0 | 6 |  |  | 21 | 31 | 149% |
-| renko-type | 32 / 30 | 0 | 6 |  |  | 29 | 20 | 70% |
-| tick | 20 / 9 | 1 | 4 |  |  | 15 | 15 | 95% |
-| volume | 47 / 49 | 1 | 2 |  |  | 46 | 73 | 159% |
+| event / swing / other | 24 / 25 | 2 | 6 |  |  | 16 | 37 | 228% |
+| imbalance / run (information) | 36 / 27 | 4 | 6 |  |  | 29 | 40 | 138% |
+| kagi / P&F / line-break | 26 / 18 | 0 | 6 |  |  | 19 | 7 | 38% |
+| range | 27 / 20 | 0 | 6 |  |  | 21 | 31 | 148% |
+| renko-type | 37 / 30 | 0 | 6 |  |  | 29 | 20 | 69% |
+| tick | 21 / 9 | 1 | 4 |  |  | 14 | 15 | 104% |
+| volume | 49 / 49 | 1 | 2 |  |  | 44 | 73 | 166% |
 
-**(trigger x bar) blocks**: 133 blocks with any tested family-best, 1 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
+**(trigger x bar) blocks**: 136 blocks with any tested family-best, 1 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
 
 | trigger family | bar family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL FDR(24) |
 |---|---|---|---|---|---|---|---|
-| cross-market | time | 16 / 5 | 6 | 0 | 0% |  | 59% |
+| cross-market | time | 16 / 5 | 5 | 0 | 0% |  | 65% |
 
-### NYAM (real tested 542 of 1,821 family-bests, null tested 250 of 730)
+### NYAM (real tested 943 of 1,821 family-bests, null tested 250 of 730)
 
 **by TRIGGER family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| bands | 83 / 21 | 24 | 0 | 0% | 0% | 272 | 47 | 17% |
-| session structure | 36 / 8 | 10 | 0 | 0% |  | 118 | 20 | 17% |
-| levels:session / prior / round / opens / gaps | 63 / 21 | 20 | 3 | 14% |  | 192 | 38 | 20% |
-| levels:profile / stack / walls / UW | 70 / 10 | 104 | 18 | 17% | 20% | 228 | 23 | 10% |
-| levels:VWAP | 38 / 6 | 17 | 3 | 17% |  | 124 | 18 | 14% |
-| levels:Fibonacci | 56 / 16 | 10 | 3 | 29% |  | 181 | 35 | 19% |
-| tape / order flow | 17 / 14 | 10 | 3 | 29% |  | 54 | 29 | 54% |
-| levels:swing S/R, trendline, channel | 27 / 11 | 7 | 3 | 43% |  | 84 | 18 | 21% |
-| trend | 31 / 18 | 13 | 6 | 43% |  | 101 | 41 | 41% |
-| momentum | 41 / 15 | 7 | 3 | 43% |  | 128 | 38 | 30% |
-| order book | 24 / 13 | 10 | 6 | 58% | 0% | 77 | 26 | 34% |
-| bar-native | 6 / 4 | 0 | 0 |  |  | 20 | 6 | 29% |
-| confluence | 3 / 1 | 0 | 0 |  |  | 7 | 3 | 43% |
-| cross-market | 11 / 16 | 3 | 0 |  |  | 37 | 38 | 103% |
-| levels:pivots | 15 / 1 | 3 | 0 |  |  | 47 | 0 | 0% |
-| levels:zones / supply-demand | 9 / 67 | 3 | 26 |  |  | 27 | 96 | 359% |
-| mean reversion / manual indicators | 4 / 5 | 3 | 6 |  |  | 13 | 9 | 65% |
-| other trigger | 2 / 0 | 0 | 0 |  |  | 7 | 0 | 0% |
-| pullback | 6 / 3 | 0 | 0 |  |  | 20 | 6 | 29% |
+| bands | 131 / 21 | 21 | 0 | 0% | 0% | 247 | 47 | 19% |
+| session structure | 56 / 8 | 8 | 0 | 0% |  | 104 | 20 | 20% |
+| levels:profile / stack / walls / UW | 148 / 10 | 126 | 18 | 14% | 22% | 280 | 23 | 8% |
+| levels:Fibonacci | 121 / 16 | 14 | 3 | 22% |  | 228 | 35 | 15% |
+| levels:session / prior / round / opens / gaps | 124 / 21 | 14 | 3 | 22% |  | 228 | 38 | 17% |
+| levels:VWAP | 59 / 6 | 12 | 3 | 25% |  | 108 | 18 | 16% |
+| momentum | 56 / 15 | 6 | 3 | 50% |  | 102 | 38 | 37% |
+| levels:swing S/R, trendline, channel | 38 / 11 | 6 | 3 | 50% |  | 66 | 18 | 27% |
+| trend | 49 / 18 | 12 | 6 | 50% |  | 91 | 41 | 45% |
+| tape / order flow | 27 / 14 | 6 | 3 | 50% |  | 48 | 29 | 60% |
+| order book | 42 / 13 | 6 | 6 | 101% |  | 77 | 26 | 34% |
+| levels:zones / supply-demand | 17 / 67 | 6 | 26 | 454% |  | 31 | 96 | 312% |
+| bar-native | 8 / 4 | 0 | 0 |  |  | 15 | 6 | 38% |
+| confluence | 6 / 1 | 0 | 0 |  |  | 10 | 3 | 30% |
+| cross-market | 22 / 16 | 4 | 0 |  |  | 41 | 38 | 94% |
+| levels:pivots | 20 / 1 | 2 | 0 |  |  | 37 | 0 | 0% |
+| mean reversion / manual indicators | 8 / 5 | 2 | 6 |  |  | 15 | 9 | 57% |
+| other trigger | 3 / 0 | 0 | 0 |  |  | 6 | 0 | 0% |
+| pullback | 8 / 3 | 0 | 0 |  |  | 15 | 6 | 38% |
 
 **by BAR family**
 
 | family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL: real >= 24 | null >= 24 | FDR |
 |---|---|---|---|---|---|---|---|---|
-| delta | 11 / 8 | 7 | 0 | 0% |  | 37 | 20 | 55% |
-| dollar | 12 / 3 | 7 | 0 | 0% | 0% | 40 | 3 | 7% |
-| tick | 59 / 11 | 37 | 0 | 0% | 0% | 195 | 29 | 15% |
-| volume | 75 / 33 | 37 | 3 | 8% | 0% | 249 | 82 | 33% |
-| event / swing / other | 55 / 35 | 17 | 6 | 35% |  | 178 | 82 | 46% |
-| renko-type | 90 / 25 | 44 | 18 | 40% | 43% | 292 | 29 | 10% |
-| imbalance / run (information) | 73 / 41 | 27 | 12 | 43% | 87% | 225 | 73 | 32% |
-| kagi / P&F / line-break | 44 / 21 | 20 | 12 | 58% | 130% | 141 | 12 | 8% |
-| time | 97 / 55 | 47 | 29 | 62% | 72% | 306 | 128 | 42% |
-| range | 26 / 18 | 3 | 0 |  |  | 74 | 32 | 43% |
+| delta | 33 / 8 | 10 | 0 | 0% |  | 64 | 20 | 32% |
+| dollar | 14 / 3 | 6 | 0 | 0% |  | 27 | 3 | 11% |
+| tick | 78 / 11 | 27 | 0 | 0% |  | 149 | 29 | 20% |
+| range | 49 / 18 | 6 | 0 | 0% |  | 85 | 32 | 38% |
+| volume | 150 / 33 | 35 | 3 | 8% | 0% | 284 | 82 | 29% |
+| event / swing / other | 100 / 35 | 21 | 6 | 27% |  | 187 | 82 | 44% |
+| imbalance / run (information) | 109 / 41 | 29 | 12 | 40% | 76% | 195 | 73 | 37% |
+| renko-type | 150 / 25 | 37 | 18 | 48% | 76% | 282 | 29 | 10% |
+| kagi / P&F / line-break | 91 / 21 | 21 | 12 | 55% | 151% | 164 | 12 | 7% |
+| time | 169 / 55 | 50 | 29 | 58% | 76% | 313 | 128 | 41% |
 
-**(trigger x bar) blocks**: 143 blocks with any tested family-best, 12 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
+**(trigger x bar) blocks**: 153 blocks with any tested family-best, 11 with >= 5 real family-bests at b = 24 (ranked); the 10 lowest measured FDR(24):
 
 | trigger family | bar family | tested real / null | real >= 24 | null >= 24 | FDR(24) | FDR(27) | p_ALL FDR(24) |
 |---|---|---|---|---|---|---|---|
-| bands | time | 21 / 5 | 10 | 0 | 0% |  | 17% |
-| levels:VWAP | volume | 5 / 1 | 7 | 0 | 0% |  | 17% |
-| levels:profile / stack / walls / UW | delta | 2 / 0 | 7 | 0 | 0% |  | 0% |
-| levels:profile / stack / walls / UW | dollar | 2 / 0 | 7 | 0 | 0% | 0% | 0% |
-| levels:profile / stack / walls / UW | imbalance / run (information) | 7 / 1 | 10 | 0 | 0% | 0% | 12% |
-| levels:profile / stack / walls / UW | tick | 9 / 0 | 17 | 0 | 0% |  | 0% |
-| levels:session / prior / round / opens / gaps | kagi / P&F / line-break | 7 / 2 | 7 | 0 | 0% |  | 0% |
-| levels:profile / stack / walls / UW | volume | 12 / 0 | 20 | 0 | 0% | 0% | 0% |
-| order book | imbalance / run (information) | 5 / 0 | 7 | 0 | 0% |  | 0% |
-| session structure | tick | 7 / 2 | 7 | 0 | 0% |  | 25% |
+| bands | time | 36 / 5 | 10 | 0 | 0% |  | 17% |
+| levels:Fibonacci | time | 19 / 3 | 6 | 0 | 0% |  | 24% |
+| levels:profile / stack / walls / UW | delta | 5 / 0 | 10 | 0 | 0% |  | 0% |
+| levels:profile / stack / walls / UW | imbalance / run (information) | 13 / 1 | 14 | 0 | 0% | 0% | 12% |
+| levels:profile / stack / walls / UW | range | 11 / 0 | 6 | 0 | 0% |  | 0% |
+| levels:profile / stack / walls / UW | tick | 9 / 0 | 10 | 0 | 0% |  | 0% |
+| levels:profile / stack / walls / UW | volume | 31 / 0 | 25 | 0 | 0% | 0% | 0% |
+| levels:profile / stack / walls / UW | renko-type | 28 / 1 | 21 | 3 | 14% | 50% | 0% |
+| levels:profile / stack / walls / UW | kagi / P&F / line-break | 17 / 1 | 10 | 3 | 30% |  | 0% |
+| levels:profile / stack / walls / UW | time | 12 / 4 | 15 | 6 | 38% | 0% | 55% |
 
 ### NYPM (real tested 191 of 193 family-bests, null tested 230 of 233)
 
@@ -513,6 +513,21 @@ Result: NO code mismatch; the below-chance upper tail is a MEASURED selection ef
 - **XA3** (NY AM, tick_5000 | levels_vwap.retest_native {M 6, tol 0.5} | plain 60/60 | both): R0 pass. Own-stop (screen, W-DAYMASK arrays): 1.5 stops L6M +1,313 pts (L3M +1,433; 2023 +1,364, 2024 +1,192, 2025 +1,950), 3 stops L6M +1,579 pts (L3M +1,692; +1,932 / +1,643 / +2,342); bare L6M +1,644 (L3M +1,408; +1,810 / +2,669 / +2,566); the 2-stop array is not built for this pair. R2 pass. R3: beats 25/30 same-bracket random draws (pass at the 24 threshold, fail at 27 and 29). Engine date-shift: +$54,428 vs best control +$24,259, beats 30/30. At the FRONT of the queue. K7 / P7 / M7 swap rows: see NEW_BOOK_ENGINE.md.
 - **WP10** (NY PM, vol_350 | tape_libvol.cmf {len 10} | asym20u/10u | both): relabelled **lead for add-to-today's-stack at most; NOT a rebuilt-stack candidate**. R3: beats only 15/30 same-bracket random draws (median; random entries with its own wide bracket earn +787 pts on average vs its +1,236), best date-shift control within $135 of it (+$41,748 vs +$41,613), own-stop weak (W-DAYMASK 17:37Z: engine-$ 26 wk bare +24.7k, 1.5 stops +1.7k, 2 stops +4.3k, 3 stops +11.3k; 13 wk bare +10.0k but 2 stops -12.4k: its profits come after a bad start to the day). No more engine spent on it ahead of R3 passers.
 
+## D8 spec date: Asia + NY AM only (order 0216Z; from D8_SPEC_STATUS.md, W-NYENG)
+
+Updated 2026-11-19 02:30Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
+
+| order | session | D8 candidates | REPLACE rows finished | beats live book: yes / no / pending | exit run | date decided |
+|---|---|---|---|---|---|---|
+| 1 | Asia | W-LONENG / ASI rows (none from W-NYENG) | n/a here | n/a here | pending | not decided (the later of Asia and NY AM sets the combined date) |
+| 2 | NY AM | 5192 REPLACE rows listed in D8_CANDIDATES.txt (187 cells with engine rows; 4 cells beat a live book) | 122 | 4 / 118 / 19 | pending (NOT started) | not decided; earliest 2026-11-20 12:00Z if the exit screen starts by 11-19 06:00Z |
+| 3 | London | W-LONENG: NEW_BOOK_ENGINE_LONDON.md | n/a here | n/a here | pending | not decided |
+| 4 | NY PM (behind NY AM in every W-NYENG file) | 391 REPLACE rows listed (0 cells with engine rows) | 0 | 0 / 0 / 0 | pending | not decided (nothing run yet; queued behind NY AM) |
+
+Missing for each candidate: prior years 2023-25 without a RED year, the 30 date-shift controls, persistence > 0.60, exit run (68 recipes): NOT started on these candidates (screen stage owner; engine families trailing / staged / SAR 11-19 18:00Z, order flow 11-20 12:00Z, D8_EXIT_ENGINE_SUPPORT.md), then the engine confirmation of the top 3 recipes (ADD + REPLACE, L6M + L3M, prior years, 30 controls = 438 set-months per candidate).
+
+D8 SPEC DATE (Asia + NY AM only): the engine cost after the exit screen for the 4 NY AM cells that beat a live book today is 1752 set-months = 1.9 h at the measured 928 set-months/h (0.6 h at 2,894/h). The date is set by the exit-screen stage and the unbuilt engine exit families, not by the engine queue: earliest 2026-11-20 12:00Z for NY AM, conditional on the exit screen starting by 11-19 06:00Z (duration not measured, candidate list still growing). Asia: W-LONENG's date; the combined date is the later of the two.
+
 ## Clock order (addendum 1731Z): sessions are decided Asia -> London -> NY AM -> NY PM
 
 Phase 1 is NOT split by session (one grid job feeds all four sessions), so the grid cores cannot be re-ordered by session without cost; what follows the clock order is the scoring and the later phases: scoring/ranking runs Asia first; in phases 3-4 each session is decided on the exact engine after the earlier session is final. Asia is NOT add-only: replace / add / mixed with a higher bar (drawdown first AND dollars, last 6 and 3 months, no red prior year, 30 controls, selection-corrected test).
@@ -524,45 +539,45 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | mrenko_20 | momentum_er.trend_z {"len": 10, "thr": 0.4} | plain60/60 | +870 | +360 | +0.56 | 432 | ok/ok/AMBER | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
-| 2 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +713 | -429 | +0.46 | 293 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +749 |
-| 3 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +634 | +74 | +0.41 | 386 | ok/ok/ok | L6M @1.5 stops +634 / @3 stops +598 |
-| 4 | mrenko_20 | momentum_er.trend {"len": 10, "thr": 0.4} | plain60/60 | +603 | +34 | +0.39 | 428 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
-| 5 | tick_500 | levels_vwap.break {"n": 3, "k": 0.0} | plain60/60 | +674 | +1041 | +0.43 | 417 | AMBER/AMBER/AMBER | L6M @1.5 stops +674 / @3 stops +550 |
-| 6 | tick_500 | levels_vwap.break_native {"n": 3, "k": 0.0} | plain60/60 | +674 | +1041 | +0.43 | 417 | ok/AMBER/AMBER | L6M @1.5 stops +674 / @3 stops +550 |
-| 7 | tick_300 | trend_libstack.ema_stack {"set": "10-20-50"} | plain60/60 | +664 | +550 | +0.43 | 343 | AMBER/AMBER/AMBER | L6M @1.5 stops +664 / @3 stops <=0 or <100 tr |
-| 8 | cusum_40 | levels_fib15.break_native {"n": 3, "k": 0.5} | plain60/60 | +673 | +70 | +0.43 | 555 | AMBER/ok/ok | L6M @1.5 stops +673 / @3 stops <=0 or <100 tr |
-| 9 | tick_300 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +468 | +319 | +0.30 | 404 | ok/ok/ok | L6M @1.5 stops +468 / @3 stops <=0 or <100 tr |
-| 10 | rng_20 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +535 | +899 | +0.34 | 500 | ok/ok/ok | L6M @1.5 stops +535 / @3 stops +266 |
+| 2 | tsf_5_100 | structure_breakout.brk {"n": 40, "buf": 0.0} | sym15u | +670 | -804 | +0.43 | 236 | ok/ok/ok | L6M @1.5 stops +706 / @3 stops +248 |
+| 3 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +713 | -429 | +0.46 | 293 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +749 |
+| 4 | tsf_5_100 | bands_donchian.break_native {"clk": 5, "buf": 0.0} | sym15u | +738 | -862 | +0.47 | 260 | AMBER/AMBER/ok | L6M @1.5 stops +620 / @3 stops +386 |
+| 5 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +634 | +74 | +0.41 | 386 | ok/ok/ok | L6M @1.5 stops +634 / @3 stops +598 |
+| 6 | cusum_40 | momentum_rsi.mom_native {"len": 21, "lvl": 55} | plain60/60 | +562 | -75 | +0.36 | 470 | ok/ok/ok | L6M @1.5 stops +562 / @3 stops <=0 or <100 tr |
+| 7 | tsf_5_100 | levels_fib5.break {"n": 3, "k": 0.5} | sym15u | +548 | -417 | +0.35 | 295 | ok/ok/ok | L6M @1.5 stops +502 / @3 stops +435 |
+| 8 | mrenko_20 | momentum_er.trend {"len": 10, "thr": 0.4} | plain60/60 | +603 | +34 | +0.39 | 428 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
+| 9 | tsf_5_100 | bands_donchian.break {"n": 40, "buf": 0.0} | sym15u | +670 | -804 | +0.43 | 236 | ok/AMBER/AMBER | L6M @1.5 stops +706 / @3 stops +248 |
+| 10 | tsf_10_30 | pullback_brick.brick {"k": 2, "m": 1} | sym15u | +511 | -327 | +0.33 | 222 | ok/ok/ok | L6M @1.5 stops +259 / @3 stops +400 |
 
 (a) BARE ranking:
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | plain60/60 | +616 | +1066 | +0.39 | 777 | ok/ok/ok | bare only (not positive on own-stop) |
-| 2 | tm180 | levels_vwap.break_native {"n": 3, "k": 0.5} | plain60/60 | +605 | +1164 | +0.39 | 562 | ok/ok/ok | strong on (b) too |
-| 3 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +561 | -724 | +0.36 | 313 | ok/ok/ok | strong on (b) too |
-| 4 | drb_2000 | levels_piv_cama.reject_native {"tol": 0.5, "conf": "body"} | plain60/60 | +764 | +351 | +0.49 | 573 | AMBER/ok/ok | bare only (not positive on own-stop) |
-| 5 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | plain60/60 | +632 | +93 | +0.40 | 806 | ok/AMBER/ok | bare only (not positive on own-stop) |
-| 6 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +601 | +126 | +0.38 | 444 | ok/ok/ok | strong on (b) too |
-| 7 | tick_300 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +502 | +600 | +0.32 | 483 | ok/ok/ok | strong on (b) too |
-| 8 | vsess_30 | bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | strong on (b) too |
-| 9 | vsess_30 | bands_atrchan.break_ema_native {"clk": 10, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | strong on (b) too |
-| 10 | vsess_30 | bands_envelope.break_ema_native {"clk": 10, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | strong on (b) too |
+| 1 | cusum_40 | momentum_rsi.mom_native {"len": 14, "lvl": 55} | plain60/60 | +624 | -45 | +0.40 | 608 | ok/ok/ok | bare only (not positive on own-stop) |
+| 2 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | plain60/60 | +616 | +1066 | +0.39 | 777 | ok/ok/ok | bare only (not positive on own-stop) |
+| 3 | tm180 | levels_vwap.break_native {"n": 3, "k": 0.5} | plain60/60 | +605 | +1164 | +0.39 | 562 | ok/ok/ok | strong on (b) too |
+| 4 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +561 | -724 | +0.36 | 313 | ok/ok/ok | strong on (b) too |
+| 5 | drb_2000 | levels_piv_cama.reject_native {"tol": 0.5, "conf": "body"} | plain60/60 | +764 | +351 | +0.49 | 573 | AMBER/ok/ok | bare only (not positive on own-stop) |
+| 6 | tsf_10_60 | tape_delta.follow_native {"L": 900, "z": 1.0} | sym15u | +534 | +291 | +0.34 | 252 | ok/ok/ok | bare only (not positive on own-stop) |
+| 7 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | plain60/60 | +632 | +93 | +0.40 | 806 | ok/AMBER/ok | bare only (not positive on own-stop) |
+| 8 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +601 | +126 | +0.38 | 444 | ok/ok/ok | strong on (b) too |
+| 9 | tick_300 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +502 | +600 | +0.32 | 483 | ok/ok/ok | strong on (b) too |
+| 10 | tsf_5_50 | trend_libstack.ema_hold {"len": 13, "hold": 3} | sym15u | +610 | +507 | +0.39 | 297 | AMBER/ok/ok | bare only (not positive on own-stop) |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | tm180 | levels_vwap.break_native {"n": 3, "k": 0.5} | plain60/60 | +626 | +1202 | +0.40 | 556 | ok/ok/ok | also positive on (b) |
-| 2 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +551 | -724 | +0.35 | 312 | ok/ok/ok | also positive on (b) |
-| 3 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | plain60/60 | +622 | +97 | +0.40 | 799 | ok/ok/ok | depends on today's stack |
-| 4 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +693 | +194 | +0.44 | 440 | ok/AMBER/AMBER | also positive on (b) |
-| 5 | tick_300 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +525 | +600 | +0.34 | 482 | ok/ok/ok | also positive on (b) |
-| 6 | vsess_30 | bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | also positive on (b) |
-| 7 | vsess_30 | bands_atrchan.break_ema_native {"clk": 10, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | also positive on (b) |
-| 8 | vsess_30 | bands_envelope.break_ema_native {"clk": 10, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | also positive on (b) |
-| 9 | tick_500 | levels_vwap.break {"n": 3, "k": 0.0} | plain60/60 | +474 | +1566 | +0.30 | 533 | ok/ok/ok | also positive on (b) |
-| 10 | tick_500 | levels_vwap.break_native {"n": 3, "k": 0.0} | plain60/60 | +474 | +1566 | +0.30 | 533 | ok/ok/ok | also positive on (b) |
+| 1 | cusum_40 | momentum_rsi.mom_native {"len": 14, "lvl": 55} | plain60/60 | +723 | +62 | +0.46 | 604 | ok/AMBER/ok | depends on today's stack |
+| 2 | tm180 | levels_vwap.break_native {"n": 3, "k": 0.5} | plain60/60 | +626 | +1202 | +0.40 | 556 | ok/ok/ok | also positive on (b) |
+| 3 | vib_3500 | momentum_stoch.zone_break_native {"len": 14, "lvl": 70} | sym15u | +551 | -724 | +0.35 | 312 | ok/ok/ok | also positive on (b) |
+| 4 | dib_2000 | momentum_rsi.mom {"len": 21, "lvl": 55} | plain60/60 | +537 | -340 | +0.34 | 727 | ok/ok/ok | also positive on (b) |
+| 5 | tsf_10_60 | tape_delta.follow_native {"L": 900, "z": 1.0} | sym15u | +535 | +291 | +0.34 | 251 | ok/ok/ok | depends on today's stack |
+| 6 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | plain60/60 | +622 | +97 | +0.40 | 799 | ok/ok/ok | depends on today's stack |
+| 7 | time_m_7 | xmarket_rty.confirm {"w": 30} | plain60/60 | +693 | +194 | +0.44 | 440 | ok/AMBER/AMBER | also positive on (b) |
+| 8 | tick_300 | momentum_mvote.v3of5 {"scale": 1.0, "thr": 0.25} | plain60/60 | +525 | +600 | +0.34 | 482 | ok/ok/ok | also positive on (b) |
+| 9 | tsf_5_50 | trend_libstack.ema_hold {"len": 13, "hold": 3} | sym15u | +610 | +507 | +0.39 | 297 | AMBER/ok/ok | depends on today's stack |
+| 10 | vsess_30 | bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} | plain60/60 | +551 | +122 | +0.35 | 182 | ok/ok/ok | also positive on (b) |
 
 ## Top 10 London
 
@@ -570,31 +585,31 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +861 | -83 | +0.55 | 230 | ok/ok/AMBER | L6M @1.5 stops +861 / @3 stops +783 |
-| 2 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +687 | +276 | +0.44 | 269 | ok/ok/ok | L6M @1.5 stops +687 / @3 stops +877 |
-| 3 | bmsg_B500 | book_pslope.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +898 | -1732 | +0.58 | 229 | AMBER/ok/AMBER | L6M @1.5 stops +898 / @3 stops <=0 or <100 tr |
-| 4 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | plain60/60 | +744 | +972 | +0.48 | 364 | ok/ok/ok | L6M @1.5 stops +370 / @3 stops +431 |
-| 5 | entropy_B200 | book_micro.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +701 | +653 | +0.45 | 238 | ok/ok/ok | L6M @1.5 stops +701 / @3 stops <=0 or <100 tr |
-| 6 | bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | sym15u | +627 | +78 | +0.40 | 245 | ok/ok/ok | L6M @1.5 stops +627 / @3 stops +825 |
-| 7 | kal_bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | sym15u | +627 | +78 | +0.40 | 245 | ok/ok/ok | L6M @1.5 stops +627 / @3 stops +825 |
-| 8 | med_bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | sym15u | +627 | +78 | +0.40 | 245 | ok/ok/ok | L6M @1.5 stops +627 / @3 stops +825 |
-| 9 | t3_bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | sym15u | +627 | +78 | +0.40 | 245 | ok/ok/ok | L6M @1.5 stops +627 / @3 stops +825 |
-| 10 | bmsg_B320 | manual_macd.sigcross_native {"f": 20, "s": 45, "g": 15} | sym15u | +784 | +400 | +0.50 | 241 | AMBER/ok/ok | L6M @1.5 stops +784 / @3 stops <=0 or <100 tr |
+| 1 | t3_entropy_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +1034 | +62 | +0.66 | 225 | AMBER/AMBER/ok | L6M @1.5 stops +1034 / @3 stops <=0 or <100 tr |
+| 2 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +861 | -83 | +0.55 | 230 | ok/ok/AMBER | L6M @1.5 stops +861 / @3 stops +783 |
+| 3 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +687 | +276 | +0.44 | 269 | ok/ok/ok | L6M @1.5 stops +687 / @3 stops +877 |
+| 4 | bmsg_B500 | book_pslope.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +898 | -1732 | +0.58 | 229 | AMBER/ok/AMBER | L6M @1.5 stops +898 / @3 stops <=0 or <100 tr |
+| 5 | tsf_10_120 | xmarket_commod.against_CL {"w": 1, "thr": 1.0} | sym15u | +677 | +1721 | +0.43 | 175 | ok/ok/ok | L6M @1.5 stops +799 / @3 stops <=0 or <100 tr |
+| 6 | t3_bmsg_B200 | trend_macd.signal_native {"len": 12, "width": 0.05} | sym15u | +825 | +379 | +0.53 | 242 | ok/AMBER/ok | L6M @1.5 stops +825 / @3 stops <=0 or <100 tr |
+| 7 | cusum_28 | trend_macd.hist_turn_native {"len": 26, "width": 0.03} | plain60/60 | +744 | +972 | +0.48 | 364 | ok/ok/ok | L6M @1.5 stops +370 / @3 stops +431 |
+| 8 | t3_volor_B200 | trend_hma_turn.turn {"len": 60, "width": 0.08} | sym15u | +666 | -36 | +0.43 | 232 | ok/ok/ok | L6M @1.5 stops +666 / @3 stops +702 |
+| 9 | entropy_B200 | book_micro.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +701 | +653 | +0.45 | 238 | ok/ok/ok | L6M @1.5 stops +701 / @3 stops <=0 or <100 tr |
+| 10 | bmsgq_B080 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | sym15u | +627 | +78 | +0.40 | 245 | ok/ok/ok | L6M @1.5 stops +627 / @3 stops +825 |
 
 (a) BARE ranking:
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +783 | -106 | +0.50 | 240 | ok/ok/ok | strong on (b) too |
-| 2 | med_rngor_B200 | trend_ma_hma.cross {"len": 34, "width": 4, "hyst": 0.0} | sym15u | +736 | -344 | +0.47 | 260 | ok/ok/ok | strong on (b) too |
-| 3 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +702 | +131 | +0.45 | 287 | ok/ok/ok | strong on (b) too |
-| 4 | entropy_B200 | book_micro.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +852 | +899 | +0.55 | 255 | ok/AMBER/AMBER | strong on (b) too |
-| 5 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +964 | -521 | +0.62 | 225 | ok/AMBER/AMBER | bare only (not positive on own-stop) |
-| 6 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +666 | -175 | +0.43 | 140 | ok/ok/ok | strong on (b) too |
-| 7 | ha_micro_B200 | trend_ma_hma.cross_native {"len": 34, "width": 1.0, "ratio": 3} | plain60/60 | +802 | +520 | +0.51 | 260 | ok/AMBER/ok | bare only (not positive on own-stop) |
-| 8 | ha_qmid_B200 | trend_ma_hma.cross_native {"len": 34, "width": 1.0, "ratio": 3} | plain60/60 | +743 | +460 | +0.48 | 257 | ok/ok/ok | bare only (not positive on own-stop) |
-| 9 | kal_bmsg_B200 | trend_ma_hma.cross {"len": 21, "width": 2, "hyst": 0.0} | sym15u | +914 | +1528 | +0.59 | 260 | AMBER/AMBER/AMBER | bare only (not positive on own-stop) |
-| 10 | ha_qmid_B200 | trend_ma_hma.cross_native {"len": 34, "width": 1.0, "ratio": 3} | plain60/60 | +623 | +1129 | +0.40 | 502 | ok/ok/ok | bare only (not positive on own-stop) |
+| 2 | vol_2600 | levels_fib5.retest_native {"M": 10, "tol": 0.5} | plain60/60 | +791 | +384 | +0.51 | 611 | ok/ok/ok | bare only (not positive on own-stop) |
+| 3 | med_rngor_B200 | trend_ma_hma.cross {"len": 34, "width": 4, "hyst": 0.0} | sym15u | +736 | -344 | +0.47 | 260 | ok/ok/ok | strong on (b) too |
+| 4 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +702 | +131 | +0.45 | 287 | ok/ok/ok | strong on (b) too |
+| 5 | entropy_B200 | book_micro.fade_sm {"L": 100, "z": 1.5, "sm": 3} | sym15u | +852 | +899 | +0.55 | 255 | ok/AMBER/AMBER | strong on (b) too |
+| 6 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +964 | -521 | +0.62 | 225 | ok/AMBER/AMBER | bare only (not positive on own-stop) |
+| 7 | bmsg_B320 | barnative_speed.burst_go {"len": 10, "r": 0.25} | sym15u | +666 | -175 | +0.43 | 140 | ok/ok/ok | strong on (b) too |
+| 8 | ha_micro_B200 | trend_ma_hma.cross_native {"len": 34, "width": 1.0, "ratio": 3} | plain60/60 | +802 | +520 | +0.51 | 260 | ok/AMBER/ok | bare only (not positive on own-stop) |
+| 9 | ha_qmid_B200 | trend_ma_hma.cross_native {"len": 34, "width": 1.0, "ratio": 3} | plain60/60 | +743 | +460 | +0.48 | 257 | ok/ok/ok | bare only (not positive on own-stop) |
+| 10 | kal_bmsg_B200 | trend_ma_hma.cross {"len": 21, "width": 2, "hyst": 0.0} | sym15u | +914 | +1528 | +0.59 | 260 | AMBER/AMBER/AMBER | bare only (not positive on own-stop) |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
@@ -605,11 +620,11 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 | 3 | kal_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
 | 4 | med_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
 | 5 | t3_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
-| 6 | rngor_B320 | book_queue.follow_sm {"thr": 0.3, "min": 3, "sm": 3} | sym15u | +704 | +434 | +0.45 | 122 | ok/ok/ok | also positive on (b) |
-| 7 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +677 | -374 | +0.43 | 189 | ok/ok/ok | also positive on (b) |
-| 8 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +674 | -435 | +0.43 | 182 | ok/ok/ok | depends on today's stack |
-| 9 | kal_entropy_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +670 | -420 | +0.43 | 193 | ok/ok/ok | also positive on (b) |
-| 10 | sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
+| 6 | typ_sessrng_B080 | xmarket_rates.with_ZB {"w": 5, "thr": 1.0} | sym15u | +954 | +1179 | +0.61 | 186 | AMBER/ok/ok | depends on today's stack |
+| 7 | rngor_B320 | book_queue.follow_sm {"thr": 0.3, "min": 3, "sm": 3} | sym15u | +704 | +434 | +0.45 | 122 | ok/ok/ok | also positive on (b) |
+| 8 | t3_bmsg_B200 | trend_supertrend.native {"len": 14, "width": 3.0} | sym15u | +970 | +1287 | +0.62 | 228 | AMBER/AMBER/ok | also positive on (b) |
+| 9 | med_bmsgq_B080 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +677 | -374 | +0.43 | 189 | ok/ok/ok | also positive on (b) |
+| 10 | dlt_70 | levels_zones.reject {"tol": 1.0, "conf": "body"} | plain60/60 | +674 | -435 | +0.43 | 182 | ok/ok/ok | depends on today's stack |
 
 ## Top 10 NY AM
 
@@ -618,15 +633,15 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | trend_20 | levels_vwap.break_native {"n": 2, "k": 0.25} | sym15u | +2161 | +1183 | +1.39 | 258 | AMBER/ok/ok | L6M @1.5 stops +2298 / @3 stops <=0 or <100 tr |
-| 2 | med_volor_B200 | structure_level.round_break {"grid": 100, "buf": 0.25} | sym15u | +1842 | +959 | +1.18 | 289 | ok/ok/ok | L6M @1.5 stops +900 / @3 stops <=0 or <100 tr |
-| 3 | t3_dltor_B080 | levels_round.break {"n": 2, "k": 0.25} | sym15u | +2133 | +679 | +1.37 | 380 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
-| 4 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +2026 | +333 | +1.30 | 496 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +579 |
-| 5 | kal_micro_B200 | pullback_ema.count {"len": 10, "n": 2} | sym15u | +1389 | +271 | +0.89 | 318 | ok/ok/ok | L6M @1.5 stops +1501 / @3 stops <=0 or <100 tr |
-| 6 | trend_20 | levels_vwap.reject {"tol": 1.0, "conf": "body"} | sym15u | +1375 | -248 | +0.88 | 260 | ok/ok/ok | L6M @1.5 stops +763 / @3 stops +1879 |
-| 7 | qmid_B050 | levels_round.retest_native {"M": 10, "tol": 0.5} | sym15u | +1606 | -181 | +1.03 | 383 | ok/ok/ok | L6M @1.5 stops +1615 / @3 stops <=0 or <100 tr |
-| 8 | kal_qmid_B200 | pullback_ema.count {"len": 10, "n": 2} | sym15u | +1348 | +276 | +0.86 | 317 | ok/ok/ok | L6M @1.5 stops +1582 / @3 stops <=0 or <100 tr |
-| 9 | qmid_B500 | bands_envelope.break_ema {"n": 10, "pct": 0.05} | sym15u | +1312 | +359 | +0.84 | 413 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +1083 |
-| 10 | med_volor_B200 | bands_keltner.walk {"ema": 10, "atr": 10, "mult": 1.0, "N": 2} | sym15u | +1452 | -520 | +0.93 | 392 | ok/ok/ok | L6M @1.5 stops +1120 / @3 stops +1590 |
+| 2 | trb_2000 | levels_vwap.break {"n": 3, "k": 0.5} | sym15u | +1967 | -1066 | +1.26 | 242 | ok/ok/ok | L6M @1.5 stops +1725 / @3 stops +1714 |
+| 3 | t3_qmid_B200 | bands_envelope.break_ema {"n": 10, "pct": 0.05} | sym15u | +1627 | +1246 | +1.04 | 347 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +991 |
+| 4 | med_volor_B200 | structure_level.round_break {"grid": 100, "buf": 0.25} | sym15u | +1842 | +959 | +1.18 | 289 | ok/ok/ok | L6M @1.5 stops +900 / @3 stops <=0 or <100 tr |
+| 5 | t3_dltor_B080 | levels_round.break {"n": 2, "k": 0.25} | sym15u | +2133 | +679 | +1.37 | 380 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
+| 6 | t3_micro_B200 | bands_envelope.break_ema {"n": 10, "pct": 0.05} | sym15u | +1552 | +1171 | +1.00 | 345 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +985 |
+| 7 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +2026 | +333 | +1.30 | 496 | AMBER/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +579 |
+| 8 | vrb_1200 | xmarket_fast.revert_ES {"w": 60, "thr": 2.0} | sym15u | +1549 | +422 | +0.99 | 305 | ok/ok/ok | L6M @1.5 stops +1530 / @3 stops +1671 |
+| 9 | trend_14 | levels_vwap.retest {"M": 10, "tol": 0.5} | sym15u | +1566 | +354 | +1.00 | 248 | ok/ok/ok | L6M @1.5 stops +1562 / @3 stops +1096 |
+| 10 | kal_micro_B200 | pullback_ema.count {"len": 10, "n": 2} | sym15u | +1389 | +271 | +0.89 | 318 | ok/ok/ok | L6M @1.5 stops +1501 / @3 stops <=0 or <100 tr |
 
 (a) BARE ranking:
 
@@ -647,16 +662,16 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +1493 | +667 | +0.96 | 633 | ok/ok/ok | also positive on (b) |
-| 2 | ha_bmsgq_B200 | levels_round.retest {"M": 6, "tol": 0.5} | sym15u | +1885 | -312 | +1.21 | 318 | ok/AMBER/ok | depends on today's stack |
-| 3 | med_volor_B080 | structure_breakout.brk_native {"minutes": 5, "buf": 0.0} | sym15u | +1448 | -307 | +0.93 | 257 | ok/ok/ok | depends on today's stack |
-| 4 | t3_dltor_B080 | bands_bollinger.walk_native {"clk": 20, "k": 2.0, "N": 3} | sym15u | +1441 | +781 | +0.92 | 216 | ok/ok/ok | also positive on (b) |
-| 5 | t3_sessrng_B080 | levels_round.break_native {"n": 3, "k": 0.5} | sym15u | +1372 | +500 | +0.88 | 121 | ok/ok/ok | also positive on (b) |
-| 6 | ha_sessrng_B200 | bands_keltner.walk {"ema": 30, "atr": 10, "mult": 1.5, "N": 3} | sym15u | +1356 | +918 | +0.87 | 235 | ok/ok/ok | depends on today's stack |
-| 7 | med_bmsgq_B200 | tape_stoprun.fade {"N": 10, "k": 0.0} | sym15u | +1835 | +1003 | +1.18 | 323 | AMBER/AMBER/ok | depends on today's stack |
-| 8 | dchg_40 | manual_macd.sigcross_native {"f": 5, "s": 13, "g": 4} | plain60/60 | +1357 | -639 | +0.87 | 604 | ok/ok/ok | depends on today's stack |
-| 9 | trend_20 | levels_fibr_dev.retest {"M": 3, "tol": 0.0} | sym15u | +1354 | +338 | +0.87 | 234 | ok/ok/ok | depends on today's stack |
-| 10 | trend_20 | levels_fibr_dev.retest_native {"M": 3, "tol": 0.0} | sym15u | +1354 | +338 | +0.87 | 234 | ok/ok/ok | depends on today's stack |
+| 1 | dol_1100 | bands_keltner.walk_native {"clk": 5, "k": 1.0, "N": 2} | sym15u | +1556 | -107 | +1.00 | 204 | ok/ok/ok | also positive on (b) |
+| 2 | dol_1100 | book_dwm.drift_follow_native {"L": 1800, "z": 1.5} | sym15u | +2142 | +502 | +1.37 | 299 | AMBER/ok/AMBER | depends on today's stack |
+| 3 | cusum_20 | book_ofi.follow {"L": 200, "z": 2.0} | plain60/60 | +1493 | +667 | +0.96 | 633 | ok/ok/ok | also positive on (b) |
+| 4 | ha_bmsgq_B200 | levels_round.retest {"M": 6, "tol": 0.5} | sym15u | +1885 | -312 | +1.21 | 318 | ok/AMBER/ok | depends on today's stack |
+| 5 | med_volor_B080 | structure_breakout.brk_native {"minutes": 5, "buf": 0.0} | sym15u | +1448 | -307 | +0.93 | 257 | ok/ok/ok | depends on today's stack |
+| 6 | t3_dltor_B080 | bands_bollinger.walk_native {"clk": 20, "k": 2.0, "N": 3} | sym15u | +1441 | +781 | +0.92 | 216 | ok/ok/ok | also positive on (b) |
+| 7 | t3_sessrng_B080 | levels_round.break_native {"n": 3, "k": 0.5} | sym15u | +1372 | +500 | +0.88 | 121 | ok/ok/ok | also positive on (b) |
+| 8 | ha_sessrng_B200 | bands_keltner.walk {"ema": 30, "atr": 10, "mult": 1.5, "N": 3} | sym15u | +1356 | +918 | +0.87 | 235 | ok/ok/ok | depends on today's stack |
+| 9 | vib_15000 | book_ofi.follow_native {"L": 3600, "z": 2.0} | sym15u | +1346 | -533 | +0.86 | 244 | ok/ok/ok | depends on today's stack |
+| 10 | med_bmsgq_B200 | tape_stoprun.fade {"N": 10, "k": 0.0} | sym15u | +1835 | +1003 | +1.18 | 323 | AMBER/AMBER/ok | depends on today's stack |
 
 ## Top 10 NY PM
 
@@ -666,70 +681,46 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | micro_B130 | book_sweep.resil_fade {"r": 1.0} | sym15u | +1112 | +1430 | +0.71 | 166 | ok/ok/ok | L6M @1.5 stops +597 / @3 stops +1385 |
 | 2 | qmid_B130 | book_sweep.resil_fade {"r": 1.0} | sym15u | +1112 | +1430 | +0.71 | 166 | ok/ok/ok | L6M @1.5 stops +597 / @3 stops +1385 |
-| 3 | ha_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 4 | kal_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 5 | kal_qmid_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 6 | med_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 7 | micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 8 | qmid_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 9 | t3_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
-| 10 | t3_qmid_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
+| 3 | trb_700 | tape_libvol.vwmacd {"f": 8, "s": 17} | sym15u | +1153 | -184 | +0.74 | 217 | ok/ok/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops +560 |
+| 4 | tsf_10_60 | manual_macd.sigcross {"f": 5, "s": 13, "g": 5} | sym15u | +1208 | -331 | +0.77 | 204 | AMBER/AMBER/ok | L6M @1.5 stops +408 / @3 stops <=0 or <100 tr |
+| 5 | tsf_10_60 | trend_macd.signal {"len": 6, "width": 0.0} | sym15u | +1176 | -355 | +0.75 | 204 | ok/AMBER/ok | L6M @1.5 stops <=0 or <100 tr / @3 stops <=0 or <100 tr |
+| 6 | trb_700 | manual_macd.sigcross {"f": 12, "s": 26, "g": 9} | sym15u | +937 | +397 | +0.60 | 197 | ok/ok/ok | L6M @1.5 stops +1174 / @3 stops <=0 or <100 tr |
+| 7 | ha_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
+| 8 | kal_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
+| 9 | kal_qmid_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
+| 10 | med_micro_B080 | book_ice.follow_sm {"thr": 2, "sm": 3} | sym15u | +954 | +514 | +0.61 | 131 | ok/ok/ok | L6M @1.5 stops +1097 / @3 stops +776 |
 
 (a) BARE ranking:
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | dib_400 | tape_libvol.cmf {"len": 10} | plain60/60 | +1160 | +1543 | +0.74 | 1086 | ok/ok/ok | bare only (not positive on own-stop) |
-| 2 | lbrk_3_10 | momentum_rsi.mom_native {"len": 7, "lvl": 55} | plain60/60 | +1323 | +1957 | +0.85 | 778 | AMBER/ok/AMBER | bare only (not positive on own-stop) |
-| 3 | entropy_B500 | trend_macd.hist_turn_native {"len": 12, "width": 0.01} | plain60/60 | +1133 | +880 | +0.73 | 973 | ok/ok/ok | bare only (not positive on own-stop) |
-| 4 | tm1800 | xmarket_ym.follow {"w": 5, "thr": 1.0} | plain60/60 | +981 | +520 | +0.63 | 151 | ok/ok/ok | strong on (b) too |
-| 5 | tm900 | xmarket_es.follow {"w": 5, "thr": 1.0} | plain60/60 | +1194 | +1168 | +0.77 | 280 | ok/ok/AMBER | bare only (not positive on own-stop) |
-| 6 | entropy_B080 | levels_trendline.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +957 | -186 | +0.61 | 253 | ok/ok/ok | strong on (b) too |
-| 7 | time_s_20 | bands_atrchan.break_ext {"n": 10, "atr": 14, "k": 2.0} | plain60/60 | +1084 | -624 | +0.69 | 893 | ok/ok/ok | strong on (b) too |
-| 8 | med_rngor_B200 | barnative_absorb.absorb {"len": 50, "dz": 1.5, "prog": 0.25} | sym15u | +1186 | +3135 | +0.76 | 328 | AMBER/ok/ok | bare only (not positive on own-stop) |
-| 9 | kal_volor_B200 | tape_stack.r5_follow {"k": 2} | sym15u | +886 | -623 | +0.57 | 310 | ok/ok/ok | bare only (not positive on own-stop) |
-| 10 | med_volor_B200 | tape_stack.r5_follow {"k": 2} | sym15u | +886 | -623 | +0.57 | 310 | ok/ok/ok | bare only (not positive on own-stop) |
+| 1 | vib_15000 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1580 | +308 | +1.01 | 224 | AMBER/AMBER/ok | bare only (not positive on own-stop) |
+| 2 | tsf_2_100 | levels_trendline.break {"n": 3, "k": 0.5} | sym15u | +1489 | +512 | +0.95 | 264 | AMBER/AMBER/ok | strong on (b) too |
+| 3 | dib_400 | tape_libvol.cmf {"len": 10} | plain60/60 | +1160 | +1543 | +0.74 | 1086 | ok/ok/ok | bare only (not positive on own-stop) |
+| 4 | dol_1700 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1099 | -1207 | +0.70 | 234 | ok/ok/ok | strong on (b) too |
+| 5 | t3_sessrng_B200 | tape_libvol.obv {"len": 10} | plain60/60 | +1193 | +1124 | +0.76 | 794 | ok/ok/ok | bare only (not positive on own-stop) |
+| 6 | lbrk_3_10 | momentum_rsi.mom_native {"len": 7, "lvl": 55} | plain60/60 | +1323 | +1957 | +0.85 | 778 | AMBER/ok/AMBER | bare only (not positive on own-stop) |
+| 7 | entropy_B500 | trend_macd.hist_turn_native {"len": 12, "width": 0.01} | plain60/60 | +1133 | +880 | +0.73 | 973 | ok/ok/ok | bare only (not positive on own-stop) |
+| 8 | tm1800 | xmarket_ym.follow {"w": 5, "thr": 1.0} | plain60/60 | +981 | +520 | +0.63 | 151 | ok/ok/ok | strong on (b) too |
+| 9 | tsf_5_700 | levels_trendline.reject_native {"tol": 0.5, "conf": "body"} | sym15u | +1376 | +357 | +0.88 | 209 | AMBER/AMBER/ok | bare only (not positive on own-stop) |
+| 10 | tm900 | xmarket_es.follow {"w": 5, "thr": 1.0} | plain60/60 | +1194 | +1168 | +0.77 | 280 | ok/ok/AMBER | bare only (not positive on own-stop) |
 
 (c) CURRENT-STACK MASK ranking (valid for ADDING a book to today's stack only; information, never the sole reason to shortlist or drop; strong only here = depends on today's stack):
 
 | rank | bar row | module.variant params | bracket | L6M pts | L3M pts | R/week | trades L6M | prior yrs (R flags 23/24/25) | flag |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | kal_rngor_B080 | levels_round.retest {"M": 6, "tol": 0.5} | sym15u | +1024 | +671 | +0.66 | 210 | ok/ok/ok | depends on today's stack |
-| 2 | micro_B030 | xmarket_fast.follow_RTY {"w": 5, "thr": 1.0} | sym15u | +1283 | +430 | +0.82 | 130 | ok/AMBER/ok | depends on today's stack |
-| 3 | kal_sessrng_B200 | levels_round.retest {"M": 6, "tol": 0.5} | plain60/60 | +1186 | +925 | +0.76 | 646 | ok/AMBER/ok | depends on today's stack |
-| 4 | kal_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
-| 5 | med_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
-| 6 | rng_10 | levels_fibr_dev.break_native {"n": 3, "k": 0.5} | plain60/60 | +1334 | +361 | +0.86 | 530 | ok/AMBER/AMBER | depends on today's stack |
-| 7 | mom_14 | bands_atrchan.break_ext_native {"clk": 5, "k": 1.5} | plain60/60 | +1008 | +1874 | +0.65 | 605 | ok/ok/ok | also positive on (b) |
-| 8 | bmsg_B130 | levels_round.reject {"tol": 0.0, "conf": "close"} | sym15u | +1172 | +549 | +0.75 | 196 | ok/AMBER/ok | depends on today's stack |
-| 9 | bmsg_B130 | levels_round.reject_native {"tol": 0.0, "conf": "close"} | sym15u | +1172 | +549 | +0.75 | 196 | ok/AMBER/ok | depends on today's stack |
-| 10 | renko_10 | tape_delta.cvd_fade {"N": 5, "L": 100, "z": 1.0} | plain60/60 | +1219 | +206 | +0.78 | 527 | AMBER/AMBER/ok | depends on today's stack |
+| 1 | vib_15000 | book_pslope.follow {"L": 100, "z": 1.5} | sym15u | +1137 | +614 | +0.73 | 173 | ok/ok/ok | also positive on (b) |
+| 2 | kal_rngor_B080 | levels_round.retest {"M": 6, "tol": 0.5} | sym15u | +1024 | +671 | +0.66 | 210 | ok/ok/ok | depends on today's stack |
+| 3 | micro_B030 | xmarket_fast.follow_RTY {"w": 5, "thr": 1.0} | sym15u | +1283 | +430 | +0.82 | 130 | ok/AMBER/ok | depends on today's stack |
+| 4 | kal_sessrng_B200 | levels_round.retest {"M": 6, "tol": 0.5} | plain60/60 | +1186 | +925 | +0.76 | 646 | ok/AMBER/ok | depends on today's stack |
+| 5 | kal_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
+| 6 | med_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
+| 7 | t3_volor_B200 | book_imb.delta_fade {"lv": 5, "thr": 0.2} | sym15u | +1074 | -249 | +0.69 | 208 | ok/ok/ok | depends on today's stack |
+| 8 | vib_15000 | levels_trendline.reject_native {"tol": 1.0, "conf": "body"} | sym15u | +951 | -159 | +0.61 | 140 | ok/ok/ok | depends on today's stack |
+| 9 | rng_10 | levels_fibr_dev.break_native {"n": 3, "k": 0.5} | plain60/60 | +1334 | +361 | +0.86 | 530 | ok/AMBER/AMBER | depends on today's stack |
+| 10 | mom_14 | bands_atrchan.break_ext_native {"clk": 5, "k": 1.5} | plain60/60 | +1008 | +1874 | +0.65 | 605 | ok/ok/ok | also positive on (b) |
 
 ## Honest limits
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
-
-<!-- ENGINE_PLAN_ETAS -->
-**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-19 02:05Z):**
-
-- phase 1 pass 1: 11845 jobs left at 5183/h = 2.3 h (rate from the grid line above; sums over machines).
-- phase 1 pass 2: 23470 jobs left at 624/h = 37.6 h at today's allocation.
-- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 19 h at the current fleet (1572/h) or 16.9 h with A and B engine-ready (projected 1798/h). Full table: ENGINE_PLAN.md section 11.
-- luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
-- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
-
-**DATED ESTIMATES (W-PLAN, written 2026-11-19 00:10Z; inputs: W-GRIDOPS 22:25Z / 23:05Z, W-SHORT R3 state at 23:32Z, engine queue report 00:00Z; rates change, the script re-prints this block as written until W-PLAN edits it):**
-
-| milestone | estimate | basis |
-|---|---|---|
-| REAL pass 1 end | Nov 19 ~03:00-08:00Z | W-GRIDOPS 03:00-06:00Z; measured 1,904 real jobs/h at 23:05Z with ~11.5k left at 00:00Z = ~6 h (06:00Z) |
-| pass 2 + exit families end | Nov 20 ~04:00-10:00Z | 23.6k jobs left at 690/h = 34 h (SEARCH_STATUS); W-GRIDOPS ~30 h |
-| null draws 1-2 end (calibration check, first full table) | Nov 19 ~23:00Z to Nov 21 ~00:00Z (95.5k jobs at nice 10, 25-50 h); a PARTIAL calibration table (sessions covered so far) was due ~23:55Z and is not on SURVIVOR_COUNTS.md yet | W-GRIDOPS |
-| null draws 3-5 end (5-draw calibration complete) | ~Nov 21 midday - Nov 22 (200k jobs, parked until real pass 1 ends, then ~5-6k jobs/h) | ASSUMED rate |
-| R3 compute end per session (stages A-D, clock order Asia, London, NY AM, NY PM) | stage A for all 7,650 family-bests: Nov 19 ~00:00-02:00Z (restarted 20:59Z, wall 3-5 h); stages B-D: Nov 19 ~08:00Z (ASSUMED, W-SHORT owns); the pass SET decision waits for the calibrated rule (draws 1-2): Nov 20-21 | W-SHORT |
-| engine queue (R5a on the 2,333-cell seed: NY AM 1,937 + NY PM 396, XA3 layers, London/Asia stages 2-3, NT2 controls) | 44.4k set-months = 30.7 h at 1,450/h -> drains ~Nov 20 07:00Z if nothing is added (R5a only: 12 set-months per cell; prior years and controls are added only for cells not negative) | lead report 00:00Z |
-| engine hours for the passers after calibration: per passer 264 set-months (12 + 72 + 180; W-SHORT) + layers ~1,133 set-months (640 with a validated fast replay) = ~1,400 set-months | at the measured 1,450 set-months/h (engine share today): P = 50 / 100 / 200 / 400 -> 48 / 96 / 193 / 386 h (31 / 62 / 125 / 250 h with the screen); at the whole pool after phase 1 (262 core-eq = ~5,800 set-months/h): 12 / 24 / 48 / 96 h (8 / 16 / 31 / 62 h) | 0.045 core-h per set-month |
-| D8 spec page (clock-order chain 4-8 h + 2 h after the last engine link) | P <= 100: Nov 21 ~20:00Z - Nov 22 ~04:00Z; P = 200: Nov 22 ~20:00Z - Nov 23 ~04:00Z; P = 400: Nov 24 ~20:00Z; earliest possible Nov 21 evening; +-12 h; moves with (a) the calibrated pass counts P, (b) the engine rate on A/B (A 69-118, B 132-168 set-months/h, oversubscribed), (c) whether the engine gets the whole pool after phase 1 | assumes phase 1 done Nov 20 ~10:00Z and the engine on the whole pool after it |
-48 h flag: the engine queue (30.7 h) is under 48 h; the passer engine work exceeds 48 h of the measured engine share for P >= 50 and of the whole pool for P >= ~200 (no screen). Josh decides between more machines and waiting once P is known.
-<!-- /ENGINE_PLAN_ETAS -->
