@@ -1,4 +1,4 @@
-# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 05:00Z
+# NEW_BOOK_ENGINE_ASIA - the bar to beat in Asia: what each live Asia book earns in JL3 (W-LONENG, order 1731Z item 4), refreshed 2026-11-19 05:30Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer 'add / swap one book in today's stack', not 'the rebuilt stack'.** Asia is decided FIRST in clock order (Asia -> London -> NY AM -> NY PM).
 
@@ -99,6 +99,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RH7 | Y2023 | -1072 / -1876 | -1896 | +3214 | -593 / -1037 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | L6M | +2017 / +3530 | -12447 | -1529 | -4391 / -7685 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | L3M | +3402 / +5954 | -12447 | -1529 | -6784 / -11872 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | Y2025 | +135576 / +237258 | -476396 | -499207 | -10231 / -17904 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | Y2024 | +1497 / +2619 | +3919 | +4511 | -485 / -848 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RK7 | Y2023 | -2454 / -4294 | -2684 | +3225 | +225 / +393 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RP7 | L6M | +6520 / +11409 | -1109 | -19758 | -10007 / -17511 | 30 |
@@ -106,6 +107,8 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RP7 | Y2023 | +6228 / +10900 | -7827 | -14668 | -290 / -508 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | L6M | +969 / +1696 | +1007 | -157 | -2041 / -3572 | 30 |
 | AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | L3M | +951 / +1664 | +1262 | -157 | -1558 / -2726 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | Y2024 | +1129 / +1975 | +4224 | -10139 | -289 / -506 | 30 |
+| AB2 | drb_400 | structure_orb.orb {"or_min": 5, "buf": 0.0} | 60.0/60.0 | AB2_RU7 | Y2023 | +664 / +1162 | -4666 | -5841 | +88 / +154 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L6M | +2055 / +3597 | -21205 | -10544 | -287 / -503 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | L3M | -940 / -1645 | +3685 | +6881 | +542 / +949 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | Y2025 | +2045 / +3578 | -2515 | -18016 | +9557 / +16725 | 30 |
@@ -113,6 +116,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ADD | Y2023 | -1090 / -1908 | -244 | +1857 | +222 / +389 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L6M | +26967 / +47192 | -30872 | -64604 | -17894 / -31314 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | L3M | +29632 / +51856 | -30872 | -61111 | -15655 / -27396 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_ALL | Y2023 | +17476 / +30583 | -9644 | -43010 | -1777 / -3110 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | L6M | +1279 / +2238 | -2271 | -4417 | -606 / -1061 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | L3M | +1087 / +1903 | +1987 | -4417 | +1079 / +1888 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | Y2025 | -1573 / -2753 | -854 | -4836 | +9151 / +16014 | 30 |
@@ -120,11 +124,14 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RA7 | Y2023 | -1896 / -3319 | +545 | +3884 | +453 / +792 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L6M | +1564 / +2737 | -7969 | -3883 | -1798 / -3146 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | L3M | +993 / +1738 | -7969 | -3883 | -1815 / -3177 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RH7 | Y2023 | +321 / +562 | -521 | -265 | -746 / -1306 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L6M | +255 / +447 | -4741 | +4277 | -1768 / -3094 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | L3M | +464 / +812 | -4741 | +4277 | -4674 / -8180 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | Y2024 | +2334 / +4084 | -3340 | +7448 | -259 / -454 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RK7 | Y2023 | -1734 / -3034 | -2438 | -340 | +167 / +293 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RP7 | L6M | +6817 / +11929 | -1915 | -19527 | -9542 / -16699 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RP7 | L3M | +8922 / +15614 | +4920 | -19527 | -8425 / -14744 | 30 |
+| AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RP7 | Y2023 | +6796 / +11893 | -6612 | -13015 | -417 / -730 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RU7 | L6M | +2505 / +4384 | -19194 | -6151 | -1137 / -1990 | 30 |
 | AB3 | trb_240 | xmarket_ym.confirm {"w": 5} | 90.0/90.0 | AB3_RU7 | L3M | +213 / +372 | +2488 | -436 | -227 / -397 | 30 |
 | AB4 | mom_56 | trend_psar.flip {"af0": 0.02, "step": 0.03, "max": 0.2} | 60.0/60.0 | AB4_ADD | L6M | -434 / -759 | -9949 | +3150 | +1 / +2 | 29 |
@@ -153,6 +160,7 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_ALL | L3M | +24579 / +43014 | -22310 | -40920 | -16380 / -28666 | 30 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RA7 | L6M | +49 / +87 | -733 | -3348 | +370 / +647 | 30 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RA7 | L3M | +377 / +659 | -733 | -3348 | -199 / -347 | 30 |
+| AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RA7 | Y2023 | -1780 / -3115 | -680 | +141 | +783 / +1371 | 30 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RH7 | L6M | -296 / -519 | +5234 | +3496 | -526 / -920 | 30 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RH7 | L3M | -327 / -572 | +5234 | +3496 | -1249 / -2185 | 30 |
 | AB6 | trb_240 | levels_fib15.break_native {"n": 3, "k": 0.5} | 60.0/60.0 | AB6_RH7 | Y2023 | -381 / -667 | -1756 | +1575 | -245 / -429 | 30 |
@@ -167,13 +175,17 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_ADD | Y2023 | +476 / +832 | -3334 | -5440 | +520 / +911 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RA7 | L6M | +2043 / +3575 | -4020 | -10136 | -270 / -472 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RA7 | L3M | +2259 / +3953 | -4020 | -10136 | +1659 / +2903 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RA7 | Y2023 | +16 / +29 | +46 | -2414 | +699 / +1223 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RH7 | L6M | +1833 / +3208 | -12337 | -7864 | -1998 / -3496 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RH7 | L3M | +2412 / +4220 | -12337 | -7864 | -548 / -959 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RH7 | Y2023 | +3251 / +5689 | -1815 | -6294 | -692 / -1211 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | L6M | +1845 / +3229 | -4232 | -5423 | -3190 / -5582 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | L3M | +2814 / +4924 | -1505 | -5423 | -4118 / -7207 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RK7 | Y2023 | -1046 / -1831 | -2938 | +1401 | +423 / +741 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | L6M | +3005 / +5259 | -14510 | -8841 | -2942 / -5148 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | L3M | +3265 / +5714 | -14510 | -8841 | -2652 / -4641 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | Y2025 | +133343 / +233350 | -466509 | -489705 | -9393 / -16438 | 30 |
+| AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | Y2024 | +1607 / +2813 | +2166 | -7621 | +32 / +56 | 30 |
 | AB7 | dib_240 | momentum_mvote.v3of5_native {"scale": 1.0, "thr": 0.25} | 60.0/60.0 | AB7_RU7 | Y2023 | +3700 / +6475 | -3086 | -11101 | +151 / +264 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L6M | +1498 / +2621 | -1026 | -9588 | -927 / -1622 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | L3M | +1563 / +2736 | -1026 | -9588 | -2352 / -4116 | 30 |
@@ -182,13 +194,18 @@ Asia is NOT add-only. Same three tests as every session (replace, add, mixed). B
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_ADD | Y2023 | -1114 / -1949 | -529 | -338 | +788 / +1380 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L6M | +1231 / +2154 | -5946 | -9683 | -600 / -1050 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | L3M | +1724 / +3016 | -5946 | -9683 | -1051 / -1840 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RA7 | Y2023 | -1282 / -2243 | +741 | +2737 | +732 / +1281 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | L6M | -42 / -74 | +2380 | -2741 | -1658 / -2901 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | L3M | -211 / -369 | +2380 | -2741 | -1226 / -2145 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | Y2025 | +134670 / +235673 | -476250 | -494640 | -9469 / -16571 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | Y2024 | +2623 / +4590 | +1202 | -1827 | -1052 / -1840 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RH7 | Y2023 | +524 / +917 | -806 | +2665 | -333 / -583 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RK7 | L6M | -246 / -431 | +1716 | +2851 | -2813 / -4923 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RK7 | L3M | +534 / +934 | +1716 | +2851 | -5951 / -10415 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RK7 | Y2023 | -1802 / -3153 | -2208 | +2540 | +430 / +752 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RU7 | L6M | +241 / +422 | +8420 | -3998 | -2218 / -3882 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RU7 | L3M | -523 / -915 | +9068 | +3834 | -4307 / -7537 | 30 |
+| AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RU7 | Y2025 | +131066 / +229366 | -462795 | -490600 | -9602 / -16803 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RU7 | Y2024 | -75 / -132 | +2691 | -13684 | -217 / -380 | 30 |
 | AB8 | cusum_10 | momentum_cci.brk {"len": 30, "lvl": 200} | 60.0/60.0 | AB8_RU7 | Y2023 | +1354 / +2370 | -3576 | -5999 | +393 / +688 | 30 |
 

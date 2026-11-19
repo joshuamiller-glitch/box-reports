@@ -7329,3 +7329,5 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - 05:26Z W-GRIDOPS (engine cap steps): cap raised to 70 on Frankfurt and Singapore (backups CAP.txt.bak_gridops_0506); ramp 5 min then 15 min measurement
 - 05:28Z LEAD NOTE: engine cap step 54 measured (W-GRIDOPS 05:26Z): A 428 sm/h (54 workers, 7.9/worker-h), B 496 sm/h (49 workers, 10.1), A+B 924 sm/h = +43% vs the 38-worker best 644; MemAvail 1.2-1.3 TB; grid results/30 min A 531, B 336; cap now 70, measure ends ~05:46Z. HEALTH: engine queue 174,191 lines (Asia ladder queued) at fleet 1,934 sm/h = 90.1 h; guard alerts none (G active); inbox empty since 0432Z. Cost of the cap raise: A/B grid results/30 min fell from ~800 to 336-531 as designed by the ladder (engine > real pass 1); real pass 1 ETA to be re-checked at 06:05Z.
 2026-11-19T05:28:20Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 05:32Z WATCHDOG fired: G
+- (wall 05:34Z) W-PM status: load1 67.71, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795066352; P5 page done, P8 grid np_m15_x10_y15 2898
