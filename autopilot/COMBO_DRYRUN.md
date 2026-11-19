@@ -1,3 +1,5 @@
+> LABELS (lead 16:47Z): all three stacks are TOOLING PROOFS on provisional passers. M8 includes Lda55d973, which is NOT a REPLACE candidate (pooled persistence 0.516 < 0.58: BEST-AVAILABLE-NOT-PROVEN); L5c9e11b3 vs A7 is borderline (persistence 0.581, 1 of 30 controls as good, p~0.065); L6a25b155 fails the strict K7/M7/H7 rows. None is a D8 result.
+
 ## COMBO_DRYRUN: exact combined engine (production driver jn05_run2) vs fast scorer A / B
 
 Base lots, p484 net ($4.84 per lot RT). Months 202605-202610 (L6M) only; prior-year months were not run (engine budget). today = TL3_EV_JL3 landed (identical to a fresh run). Stats: ulcer = RMS drawdown of the cumulative daily curve; max DD; worst calendar week; mean $/week.
@@ -9,7 +11,7 @@ Base lots, p484 net ($4.84 per lot RT). Months 202605-202610 (L6M) only; prior-y
 | TODAY (JL3) | 9416 / -31109 / -15728 / 18755 | | | |
 | M1: A7(Asia)<-L5c9e11b3 + K7(NYAM)<-L01811caa | 8807 / -26193 / -11905 / 20805 | 8679 / -26193 / -11905 / 21572 | 9268 / -29495 / -13858 / 20865 | -609 (-6.5%) / +2050 |
 | M7: P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 (same session) | 8642 / -30383 / -15322 / 20527 | 8611 / -30383 / -15322 / 20389 | 8379 / -28646 / -15322 / 20312 | -774 (-8.2%) / +1772 |
-| M8: A7(Asia)<-Lda55d973 + P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 | 7501 / -23024 / -11753 / 20733 | 7327 / -23024 / -11753 / 21299 | 6937 / -25311 / -12240 / 21350 | -1916 (-20.3%) / +1978 |
+| M8 [TOOLING PROOF, includes a non-candidate: Lda55d973 fails persistence 0.516 < 0.58]: A7(Asia)<-Lda55d973 + P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 | 7501 / -23024 / -11753 / 20733 | 7327 / -23024 / -11753 / 21299 | 6937 / -25311 / -12240 / 21350 | -1916 (-20.3%) / +1978 |
 
 ### L3M: ulcer / max DD / worst week / mean $ per week
 
@@ -18,7 +20,7 @@ Base lots, p484 net ($4.84 per lot RT). Months 202605-202610 (L6M) only; prior-y
 | TODAY (JL3) | 11035 / -31109 / -15728 / 16098 | | | |
 | M1: A7(Asia)<-L5c9e11b3 + K7(NYAM)<-L01811caa | 9636 / -26193 / -11905 / 21088 | 9523 / -26193 / -11905 / 22168 | 10526 / -29495 / -13858 / 20496 | -1399 (-12.7%) / +4989 |
 | M7: P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 (same session) | 9143 / -24519 / -12782 / 18445 | 9134 / -24519 / -12078 / 18232 | 8854 / -23986 / -12782 / 18522 | -1892 (-17.1%) / +2346 |
-| M8: A7(Asia)<-Lda55d973 + P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 | 7863 / -23024 / -7622 / 19533 | 7824 / -23024 / -7622 / 20375 | 7198 / -25311 / -5276 / 20458 | -3172 (-28.7%) / +3434 |
+| M8 [TOOLING PROOF, includes a non-candidate: Lda55d973 fails persistence 0.516 < 0.58]: A7(Asia)<-Lda55d973 + P7(NYAM)<-L01811caa + K7(NYAM)<-L6a25b155 | 7863 / -23024 / -7622 / 19533 | 7824 / -23024 / -7622 / 20375 | 7198 / -25311 / -5276 / 20458 | -3172 (-28.7%) / +3434 |
 
 ### Scorer error (L6M, 3 combined stacks, 6 months each)
 

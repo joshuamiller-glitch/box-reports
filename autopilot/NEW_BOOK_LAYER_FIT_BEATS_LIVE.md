@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 16:35Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 16:45Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 4900 set-months/h (HEALTH.md at 16:35Z); layer queue (tag NYL, quota 5) landed 1378 set-months in the last hour, 3599 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 4814, landed 3403, remaining 1375; hours at the HEALTH rate (whole fleet) 0.3 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 4818 set-months/h (HEALTH.md at 16:45Z); layer queue (tag NYL, quota 5) landed 1328 set-months in the last hour, 3509 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 4814, landed 3439, remaining 1339; hours at the HEALTH rate (whole fleet) 0.3 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -14,7 +14,7 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L01811caaxP7 | 783 | 432 |
 | L6a25b155xP7 | 432 | 0 |
 | L01811caaxM7 | 869 | 432 |
-| L01811caaxH7 | 432 | 284 |
+| L01811caaxH7 | 432 | 320 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Gate (order 1324Z, Josh): L6M + L3M beat (the candidate rows) + no RED prior year (rule B) + ENGINE persistence >= 0.58 (share of 2-week windows where the new stack is not worse than today's); persistence not yet published = PENDING, never fail (W-LAYERS' own pooled prior-year value is shown as provisional and is not used to fail). Tier -1/FIRST = coordinator-ordered first tier, 0 = gate pass, 2 = pending, 3 = rule-B RED / persistence fail / duplicate stream; Asia before NY inside a tier.
@@ -98,7 +98,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | label | session | replaced book | variant | layer base set (REPLACE = default; ADD only when the three-row rule picks it) | stage | fit sets | L6M scored | top-2 prior-year sets | joint sets |
 |---|---|---|---|---|---|---|---|---|---|
 | Lda55d973xA7 | Asia | A7 | both | TL3_ASI_Lda55d973_RA7 | scored | 72 | 2026-11-19 14:07Z | 12 | 7 |
-| La5b5d03axA7 | Asia | A7 | both | TL3_ASI_La5b5d03a_RA7 | fit queued | 72 | - | 0 | 0 |
+| La5b5d03axA7 | Asia | A7 | both | TL3_ASI_La5b5d03a_RA7 | scored | 72 | 2026-11-19 16:45Z | 8 | 4 |
 | Lcb276f27xA7 | Asia | A7 | both | TL3_ASI_Lcb276f27_RA7 | fit queued | 72 | - | 0 | 0 |
 | L7c368a4fxA7 | Asia | A7 | both | TL3_ASI_L7c368a4f_RA7 | fit queued | 72 | - | 0 | 0 |
 | L1edb9fabxA7 | Asia | A7 | both | TL3_ASI_L1edb9fab_RA7 | fit queued | 72 | - | 0 | 0 |
@@ -195,6 +195,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | LK | lock at 65% -> stop to entry+20 pts | -335 | -28 | +1684 | -1203 | 1.17 | -344 / -2685 | n/a | n/a | n/a |
 | NT | no new entries 1830-1900 ET | -508 | +3162 | +6741 | +167 | 0.98 | -833 / +382 | n/a | n/a | n/a |
 | TK | take at 65% of target after 15 s without a new extreme | -160 | +472 | +3544 | -308 | 1.19 | +224 / -1750 | n/a | n/a | n/a |
+
+## La5b5d03axA7 (Asia, replaces A7; base TL3_ASI_La5b5d03a_RA7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 60 min | -52 | +0 | +0 | -503 | 0.98 | -232 / +114 | n/a | n/a | n/a |
+| CP | own day loss cap 3 stops ($2340 base), profit cap 12,000 | -91 | +0 | +0 | -1130 | 0.88 | -233 / -75 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -39 pts (1.0 x stop) | +1721 | +161 | -1999 | -1938 | 1.48 | +1524 / -1074 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -31 pts | +335 | -1410 | -63 | +82 | 1.11 | +141 / -14 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -1800 base (1.5R) | -49 | +0 | +0 | -311 | 1.00 | -112 / +195 | n/a | n/a | n/a |
+| FR | W-FASTR pick: lock 80% -> +20 | -91 | -320 | +1632 | -882 | 1.05 | -288 / +142 | n/a | n/a | n/a |
+| LK | lock at 80% -> stop to entry+0 pts | -131 | +0 | +1562 | -397 | 1.03 | -302 / +242 | n/a | n/a | n/a |
+| NT | no new entries 1900-1930 ET | +47 | +0 | +690 | -490 | 0.97 | -25 / -128 | n/a | n/a | n/a |
+| TK | take at 95% of target after 30 s without a new extreme | +54 | -35 | -165 | -180 | 1.00 | +28 / -18 | n/a | n/a | n/a |
 
 ## L0a809c2exA7 (Asia, replaces A7; base TL3_ASI_L0a809c2e_RA7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
