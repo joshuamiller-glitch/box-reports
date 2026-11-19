@@ -1,4 +1,4 @@
-# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-19 07:34Z
+# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-19 09:11Z
 
 RULE USED: trailing 6 months to the newest session (3 months beside it), refit bi-weekly, validated by rolling the same procedure through history (month-end pick from 2023-09-30, trade the next 1M / 3M, also a 2-week re-pick), same procedure on the existing random controls, older years = tolerant AMBER 15-30% / RED >30% worse than the live setting. NO new engine cells were run; only results that had already landed.
 PICK WINDOW END: 2026-10-31. REFIT DATE: 2026-11-22 (bi-weekly). DATA END: 2026-10-31 (last session 2026-10-30; engine months 202304..202610, nothing from 202611). PRIOR-YEAR PERCENTAGES: on every row below (ulcer / max DD / mean, % worse than the reference, rolled OOS series; "not run" where the older months of the candidate sets have not landed).
