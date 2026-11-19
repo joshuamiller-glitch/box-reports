@@ -5,6 +5,7 @@
 
 
 ## 2026-11-19 18:30Z (order 1806Z: best books on own merit)
+23b. UPDATE 19:00Z (W-NYENG restated with 4,557 distinct NY AM cells, duplicates and other-book rows parked, measured 5,530 sm/h): queued work ends 11-20 07:19Z (12 h); ranked follow-ups (873 sm/cell) stage 1 ends: top 50 per session 11-20 23:07Z, top 100 11-21 14:55Z, top 200 11-22 22:25Z, top 500 11-26 21:13Z. (Item 23's earlier dates are superseded.)
 23. HOW DEEP DO FOLLOW-UPS GO? Under own-merit ordering (no cap, just order, per your 1806Z order) each cell costs ~873 set-months of follow-ups (prior years 37, 30 controls 180, layers 347, exit rows 309). Stage 1 end by number of ranked cells per session (W-NYENG simulation at 4,499 sm/h, queued first looks included): top 50 -> 2026-11-21 06:23Z (36 h); top 100 -> 11-22 01:47Z; top 200 -> 11-23 16:41Z; top 500 -> 11-28 13:05Z. Queued work without ranked follow-ups ends ~11-20 10:59Z (17 h). The other-book rows (vs P7/M7/H7/K7, ~28.5k sm) are PARKED (14.7k Asia + 13.8k NY AM freed, rollback available). SAFE DEFAULT APPLIED: follow-ups run in rank order until you say stop; the lead proposes to CLOSE stage 1 at top 50 per session (matches your 'top 50' tables) unless you set another number. The combination step (forward selection from an empty stack, live books as equal candidates, layers jointly refit, production driver) is built by W-COMBO and is not in these dates.
 
 
