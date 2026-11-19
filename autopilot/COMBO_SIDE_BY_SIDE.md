@@ -1,4 +1,4 @@
-# COMBO side by side: every move in BOTH forms (ADD beside the session books / REPLACE of each book / from-empty), no form preferred, headlined or dropped (order 2212Z). DRY RUN / LEAD at best: no joint layer refit yet, controls only where stated. Updated 2026-11-19 22:14Z.
+# COMBO side by side: every move in BOTH forms (ADD beside the session books / REPLACE of each book / from-empty), no form preferred, headlined or dropped (order 2212Z). DRY RUN / LEAD at best: no joint layer refit yet, controls only where stated. Updated 2026-11-19 22:19Z.
 Today (JL3) L6M: 9416 / -31109 / -15728 / 18755 ; L3M: 11035 / -31109 / -15728 / 16098. Rule B vs today's stack: positive % = worse (> 30% RED, 15-30% AMBER). Base lots; rest of the day = JL3.
 
 STALE: a NY AM row using a cell on _nye/stale_cells.json / STALE_CONTENT_TEST.md is withdrawn and redone after the first-look re-run (checked at write time: NY AM cells on stale_cells.json: none of L01811caa, L678ebadd, Lb44a3e99, L2b25565a; Asia cells not on _best/stale_cells.txt).
@@ -121,7 +121,7 @@ STALE: a NY AM row using a cell on _nye/stale_cells.json / STALE_CONTENT_TEST.md
 |---|---|---|---|---|---|---|---|
 | PICK (from-empty forward): K7 H7 + L01811caa L678ebadd Lb44a3e99 | `N_SEL` | 8797 / -27960 / -14183 / 22536 | 9901 / -27422 / -13994 / 18837 | AMBER (-4% ulcer) | GREEN (-0% ulcer) | GREEN (-22% ulcer) | 0.56 (<0.58) |
 | NV1 = pick without Lb44a3e99 | `NV1_noLb44` | 8504 / -25535 / -15014 / 21080 | 9493 / -25021 / -8284 / 17497 | AMBER (-18% ulcer) | AMBER (+27% ulcer) | GREEN (-17% ulcer) | 0.57 (<0.58) |
-| NV2 = NV1 + L2b25565a | `NV2_noLb44_L2b2` | 8487 / -25535 / -17393 / 23823 | 9420 / -23725 / -8968 / 19098 | RED (+1% ulcer) | not landed | GREEN (-30% ulcer) | n/a (prior years incomplete) |
+| NV2 = NV1 + L2b25565a | `NV2_noLb44_L2b2` | 8487 / -25535 / -17393 / 23823 | 9420 / -23725 / -8968 / 19098 | RED (+1% ulcer) | AMBER (+19% ulcer) | GREEN (-30% ulcer) | 0.59 |
 | NV3 = pick + L2b25565a | `NV3_SEL_L2b2` | 9219 / -29297 / -18844 / 25186 | 10595 / -29297 / -18844 / 20211 | not landed | not landed | not landed | n/a (prior years incomplete) |
 | NV4 = pick without H7 | `NV4_noH7` | 9022 / -29155 / -15073 / 22247 | 10157 / -28323 / -14111 / 18373 | not landed | not landed | not landed | n/a (prior years incomplete) |
 | ADD form of NV1 new books beside the five live | `NVA1` | not run / not landed | | | | | |
