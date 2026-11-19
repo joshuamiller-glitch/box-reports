@@ -49,3 +49,13 @@ Exact micro patches: 1.54x measured so far (target in the order: >= 10x). Candid
 ## 6. Status log
 - 07:50Z: rev A identity: 52 of 52 identical (sample items 0-51 of 217; runner stopped to switch to rev B). Rev B (P1-P11, hashes in id_results_fastb.csv) identity on all 217 started 07:50Z, 8 procs at nice 5 on box 1 (MemAvail 50 GB), ETA ~09:30Z; results: /mnt/l2/l2vast/_fastladder/id_results_fastb.csv
 - 07:17Z: P1-P8 1.54x on Asia ADD 202608; identity batch 1 (24 cases, older patch revisions): 15 of 15 finished identical; batch 2 (193 cases, final revision sha 819eaa97...) started 07:17Z, 4 procs.
+
+<!--FLSTATUS-->
+## 7. Identity status (auto, 08:00Z)
+- rev A (P1-P8): 52 identical of 52 tested (failures: 0)
+- rev B (P1-P11): 11 identical of 11 tested of 217 sample set-months (runner alive: yes); mean CPU per set-month in the test (contended host) 135 s
+  - ASI ADD identical: 4
+  - ASI RA7 identical: 1
+  - NY ADD identical: 1
+  - NY RK7 identical: 5
+<!--/FLSTATUS-->
