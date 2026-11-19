@@ -1,56 +1,56 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 13:15Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 13:24Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 3776 set-months/h (HEALTH.md at 13:15Z); layer queue (tag NYL, quota 36) landed 3479 set-months in the last hour, 4120 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 9764, landed 4098, remaining 5630; hours at the HEALTH rate (whole fleet) 1.5 h; at the measured NYL rate 2 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 3776 set-months/h (HEALTH.md at 13:20Z); layer queue (tag NYL, quota 36) landed 3537 set-months in the last hour, 4689 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 10053, landed 4682, remaining 5335; hours at the HEALTH rate (whole fleet) 1.4 h; at the measured NYL rate 2 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
-| Lda55d973xA7 | 432 | 298 |
-| L5c9e11b3xA7 | 795 | 726 |
+| Lda55d973xA7 | 432 | 379 |
+| L5c9e11b3xA7 | 795 | 781 |
 | La5b5d03axA7 | 432 | 0 |
-| Ledfbf4d2xA7 | 746 | 547 |
+| Ledfbf4d2xA7 | 746 | 700 |
 | Lcb276f27xA7 | 432 | 0 |
-| L0a809c2exA7 | 432 | 133 |
+| L0a809c2exA7 | 432 | 183 |
 | Lf77e374bxA7 | 432 | 8 |
-| L5d9e7166xA7 | 672 | 432 |
+| L5d9e7166xA7 | 672 | 600 |
 | L17ce266fxA7 | 432 | 0 |
 | L63ff9ae8xA7 | 432 | 83 |
-| L05222ff9xA7 | 432 | 425 |
-| L7c368a4fxA7 | 432 | 32 |
-| L0b1d7882xA7 | 432 | 21 |
-| L1edb9fabxA7 | 432 | 23 |
-| L6a25b155xK7 | 561 | 553 |
-| L01811caaxK7 | 906 | 800 |
+| L05222ff9xA7 | 721 | 432 |
+| L7c368a4fxA7 | 432 | 38 |
+| L0b1d7882xA7 | 432 | 31 |
+| L1edb9fabxA7 | 432 | 25 |
+| L6a25b155xK7 | 561 | 561 |
+| L01811caaxK7 | 906 | 835 |
 | L0f097450xK7 | 432 | 0 |
 | L3701b464xK7 | 432 | 16 |
-| M15f14debxA7 | 432 | 1 |
+| M15f14debxA7 | 432 | 10 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Tier 0 = B pass, 1 = pending (screen pass / years landing), 2 = pending (screen not passing), 3 = B fail; Asia before NY inside a tier.
 
 | label | tier | rule B verdict (and screen note) | 2023 d ulcer / d DD / d worst wk / d $/wk (% worse) colour | 2024 | 2025 | engine persistence |
 |---|---|---|---|---|---|---|
-| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | B FAIL: persistence 0.58 <= 0.60 (engine weekly difference) | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
-| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | B FAIL: persistence 0.58 <= 0.60 (engine weekly difference) | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
-| L5c9e11b3xA7 | FIRST | FIRST (coordinator order 1156Z, position 3) | B PASS: 3 years, none RED (AMBER 2025) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.35/+0.63/+0.42 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 AMBER | -1% / +1% / +1% / -24% GREEN | +5% / +1% / -15% / +8% GREEN | +410% / +85% / +92% / +381% RED | 0.51 |
-| Ledfbf4d2xA7 | FIRST | FIRST (coordinator order 1156Z, position 4) | B PASS: 3 years, none RED | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.23/+0.43/+0.29 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | +1% / +7% / -3% / -17% GREEN | -1% / -4% / -12% / +6% GREEN | +415% / +85% / +92% / +306% RED | 0.42 |
-| L5d9e7166xA7 | FIRST | FIRST (coordinator order 1156Z, position 5) | B PASS: 3 years, none RED (AMBER 2024) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.07/+0.21/+0.18 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -14% GREEN | +8% / -4% / -16% / +19% AMBER | +411% / +85% / +92% / +302% RED | 0.39 |
-| L05222ff9xA7 | FIRST | FIRST (coordinator order 1156Z, position 6) | B PASS: 3 years, none RED (AMBER 2024) | screen A (bare stream, ordering only): persistence 0.598, prior years R/wk +0.08/+0.18/+0.26 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -15% GREEN | +8% / -4% / -16% / +20% AMBER | +411% / +85% / +92% / +305% RED | 0.39 |
-| Lda55d973xA7 | FIRST | FIRST (coordinator order 1156Z, position 7) | B PASS: 3 years, none RED (AMBER 2024,2025) | screen A (bare stream, ordering only): persistence 0.561, prior years R/wk +0.06/+0.24/+0.15 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 AMBER | +1% / +9% / -3% / -6% GREEN | +3% / -1% / -17% / +19% AMBER | +411% / +85% / +92% / +330% RED | 0.44 |
-| L0a809c2exA7 | 1 | B PASS: 3 years, none RED (AMBER 2024) | screen A (bare stream, ordering only): persistence 0.549, prior years R/wk +0.20/+0.01/+0.45 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | -13% / -7% / -4% / -26% GREEN | +21% / -2% / -17% / +25% AMBER | +402% / +84% / +92% / +327% RED | 0.44 |
-| L7c368a4fxA7 | 1 | B PASS: 3 years, none RED | screen A (bare stream, ordering only): persistence 0.537, prior years R/wk +0.07/+0.48/+0.26 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | -5% / -2% / +4% / -16% GREEN | -6% / -9% / -21% / +1% GREEN | +417% / +85% / +92% / +304% RED | 0.44 |
-| Lf77e374bxA7 | 1 | B PASS: 3 years, none RED (AMBER 2023,2024,2025) | screen A (bare stream, ordering only): persistence 0.512, prior years R/wk +0.02/+0.07/-0.09, negative 2025 | rule B from W-ASIA FIXED table: 2023 AMBER/2024 AMBER/2025 AMBER | +13% / +15% / -4% / -4% AMBER | +4% / -6% / -13% / +25% AMBER | +411% / +85% / +92% / +279% RED | 0.38 |
-| L1edb9fabxA7 | 1 | B PASS: 3 years, none RED | screen A (bare stream, ordering only): persistence 0.500, prior years R/wk +0.07/+0.49/+0.22 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | -4% / -2% / +4% / -16% GREEN | -5% / -9% / -21% / +4% GREEN | +416% / +85% / +92% / +312% RED | 0.44 |
-| L0b1d7882xA7 | 1 | B PASS: 3 years, none RED (AMBER 2024) | screen A (bare stream, ordering only): persistence 0.488, prior years R/wk +0.07/+0.02/-0.16, negative 2025 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | -10% / -6% / -0% / -17% GREEN | +4% / -15% / -9% / +27% AMBER | +410% / +85% / +92% / +284% RED | 0.41 |
+| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
+| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
 | M15f14debxA7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L5c9e11b3xA7 | 2 | pending: 3 prior years none RED (AMBER 2025); engine persistence not published yet (W-LAYERS provisional 0.507, not used to fail) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.35/+0.63/+0.42 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 AMBER | -1% / +1% / +1% / -24% GREEN | +5% / +1% / -15% / +8% GREEN | +410% / +85% / +92% / +381% RED | 0.51 |
+| Lda55d973xA7 | 2 | pending: 3 prior years none RED (AMBER 2024,2025); engine persistence not published yet (W-LAYERS provisional 0.437, not used to fail) | screen A (bare stream, ordering only): persistence 0.561, prior years R/wk +0.06/+0.24/+0.15 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 AMBER | +1% / +9% / -3% / -6% GREEN | +3% / -1% / -17% / +19% AMBER | +411% / +85% / +92% / +330% RED | 0.44 |
+| L0a809c2exA7 | 2 | pending: 3 prior years none RED (AMBER 2024); engine persistence not published yet (W-LAYERS provisional 0.437, not used to fail) | screen A (bare stream, ordering only): persistence 0.549, prior years R/wk +0.20/+0.01/+0.45 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | -13% / -7% / -4% / -26% GREEN | +21% / -2% / -17% / +25% AMBER | +402% / +84% / +92% / +327% RED | 0.44 |
+| L7c368a4fxA7 | 2 | pending: 3 prior years none RED; engine persistence not published yet (W-LAYERS provisional 0.437, not used to fail) | screen A (bare stream, ordering only): persistence 0.537, prior years R/wk +0.07/+0.48/+0.26 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | -5% / -2% / +4% / -16% GREEN | -6% / -9% / -21% / +1% GREEN | +417% / +85% / +92% / +304% RED | 0.44 |
+| L1edb9fabxA7 | 2 | pending: 3 prior years none RED; engine persistence not published yet (W-LAYERS provisional 0.437, not used to fail) | screen A (bare stream, ordering only): persistence 0.500, prior years R/wk +0.07/+0.49/+0.22 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | -4% / -2% / +4% / -16% GREEN | -5% / -9% / -21% / +4% GREEN | +416% / +85% / +92% / +312% RED | 0.44 |
+| Ledfbf4d2xA7 | 2 | pending: 3 prior years none RED; engine persistence not published yet (W-LAYERS provisional 0.423, not used to fail) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.23/+0.43/+0.29 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 GREEN/2025 GREEN | +1% / +7% / -3% / -17% GREEN | -1% / -4% / -12% / +6% GREEN | +415% / +85% / +92% / +306% RED | 0.42 |
+| L0b1d7882xA7 | 2 | pending: 3 prior years none RED (AMBER 2024); engine persistence not published yet (W-LAYERS provisional 0.408, not used to fail) | screen A (bare stream, ordering only): persistence 0.488, prior years R/wk +0.07/+0.02/-0.16, negative 2025 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | -10% / -6% / -0% / -17% GREEN | +4% / -15% / -9% / +27% AMBER | +410% / +85% / +92% / +284% RED | 0.41 |
+| L5d9e7166xA7 | 2 | pending: 3 prior years none RED (AMBER 2024); engine persistence not published yet (W-LAYERS provisional 0.394, not used to fail) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.07/+0.21/+0.18 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -14% GREEN | +8% / -4% / -16% / +19% AMBER | +411% / +85% / +92% / +302% RED | 0.39 |
+| L05222ff9xA7 | 2 | pending: 3 prior years none RED (AMBER 2024); engine persistence not published yet (W-LAYERS provisional 0.394, not used to fail) | screen A (bare stream, ordering only): persistence 0.598, prior years R/wk +0.08/+0.18/+0.26 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -15% GREEN | +8% / -4% / -16% / +20% AMBER | +411% / +85% / +92% / +305% RED | 0.39 |
+| Lf77e374bxA7 | 2 | pending: 3 prior years none RED (AMBER 2023,2024,2025); engine persistence not published yet (W-LAYERS provisional 0.380, not used to fail) | screen A (bare stream, ordering only): persistence 0.512, prior years R/wk +0.02/+0.07/-0.09, negative 2025 | rule B from W-ASIA FIXED table: 2023 AMBER/2024 AMBER/2025 AMBER | +13% / +15% / -4% / -4% AMBER | +4% / -6% / -13% / +25% AMBER | +411% / +85% / +92% / +279% RED | 0.38 |
 | L3701b464xK7 | 2 | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | La5b5d03axA7 | 3 | B FAIL: RED in 2023 | screen A (bare stream, ordering only): persistence 0.573, prior years R/wk +0.20/+0.17/-0.06, negative 2025 | rule B from W-ASIA FIXED table: 2023 RED/2024 GREEN/2025 GREEN | +30% / +27% / +3% / -28% RED | +1% / +2% / -26% / +4% GREEN | -27% / -23% / -11% / -59% GREEN | 0.52 |
 | Lcb276f27xA7 | 3 | B FAIL: RED in 2023 | screen A (bare stream, ordering only): persistence 0.573, prior years R/wk +0.19/+0.20/-0.03, negative 2025 | rule B from W-ASIA FIXED table: 2023 RED/2024 GREEN/2025 GREEN | +30% / +27% / +3% / -29% RED | +2% / +4% / -25% / +4% GREEN | -28% / -23% / -12% / -59% GREEN | 0.52 |
 | L0f097450xK7 | 3 | B FAIL: RED in 2023 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
-| L17ce266fxA7 | 3 | same stream as L5d9e7166xA7: its layer programme serves both (queued after, not dropped) | B PASS: 3 years, none RED (AMBER 2024) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.07/+0.21/+0.18 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -14% GREEN | +8% / -4% / -16% / +19% AMBER | +411% / +85% / +92% / +302% RED | 0.39 |
+| L17ce266fxA7 | 3 | same stream as L5d9e7166xA7: its layer programme serves both (queued after, not dropped) | pending: 3 prior years none RED (AMBER 2024); engine persistence not published yet (W-LAYERS provisional 0.394, not used to fail) | screen A (bare stream, ordering only): persistence 0.622, prior years R/wk +0.07/+0.21/+0.18 | rule B from W-ASIA FIXED table: 2023 GREEN/2024 AMBER/2025 GREEN | +5% / +9% / -2% / -14% GREEN | +8% / -4% / -16% / +19% AMBER | +411% / +85% / +92% / +302% RED | 0.39 |
 | L63ff9ae8xA7 | 3 | same stream as L05222ff9xA7: its layer programme serves both (queued after, not dropped) | pending: no engine prior year landed yet | screen A (bare stream, ordering only): persistence 0.598, prior years R/wk +0.08/+0.18/+0.26 | n/a | n/a | n/a | n/a |
 
 ## Identity (inert hook = base row, trade for trade)
@@ -70,7 +70,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L5d9e7166xA7 | Asia | A7 | both | scored | 72 | 2026-11-19 12:55Z | 6 | 3 |
 | L17ce266fxA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
 | L63ff9ae8xA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
-| L05222ff9xA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
+| L05222ff9xA7 | Asia | A7 | both | scored | 72 | 2026-11-19 13:23Z | 7 | 5 |
 | L7c368a4fxA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
 | L0b1d7882xA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
 | L1edb9fabxA7 | Asia | A7 | both | fit queued | 72 | - | 0 | 0 |
@@ -139,6 +139,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | LK | lock at 65% -> stop to entry+10 pts | -49 | +3584 | +1100 | -1397 | 1.16 | -69 / -737 | n/a | n/a | n/a |
 | NT | no new entries 1930-2000 ET | +52 | +0 | -615 | -421 | 0.99 | +9 / +82 | n/a | n/a | n/a |
 | TK | take at 95% of target after 15 s without a new extreme | -442 | +1880 | +1380 | +123 | 1.00 | -683 / +183 | n/a | n/a | n/a |
+
+## L05222ff9xA7 (Asia, replaces A7; base TL3_ASI_L05222ff9_RA7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 15 min | +40 | +0 | +0 | -47 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CP | own day loss cap 1 stops ($1200 base), profit cap 12,000 | -221 | -3962 | +930 | -453 | 0.75 | -612 / -528 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -60 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -36 pts | +739 | -6781 | -4824 | +243 | 1.04 | +1436 / +65 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -2400 base (2.0R) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| FR | W-FASTR pick: take 95%/30 s | -403 | +2050 | +1440 | +83 | 1.00 | -703 / +211 | n/a | n/a | n/a |
+| LK | lock at 50% -> stop to entry+20 pts | -249 | +1993 | -1851 | +333 | 1.32 | -234 / +286 | n/a | n/a | n/a |
+| NT | no new entries 1930-2000 ET | +38 | +0 | -610 | +151 | 0.98 | +8 / +92 | n/a | n/a | n/a |
+| TK | take at 95% of target after 15 s without a new extreme | -442 | +1955 | +1385 | +116 | 1.00 | -688 / +178 | n/a | n/a | n/a |
 
 ## L6a25b155xK7 (NYAM, replaces K7; base TL3_NYE_L6a25b155_RK7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
