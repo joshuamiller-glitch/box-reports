@@ -8575,3 +8575,7 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
   - W-LAYERS 17:26Z push_layers: 121 sets covered, 135 files 9 dirs; per host (needed, pushed): {'dallas': (5, 5), 'A': (5, 5), 'B': (5, 5)}
 2026-11-19T17:28:55Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 17:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 30 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 43866
+- 17:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done  of 3,574 (errors ), workers limit , Dallas engine DONE/30min  vs baseline 371 (guard: cut if < 95% twice).
+- 17:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 34 1285 115/116; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 35 1466 77/81; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 31 1390 62/123; SURVIVOR_COUNTS.md refreshed 17:20Z; stale-level re-run: Dallas stale real 12 null1 1011; Frankfurt stale real 1660 null1 1481; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-19T15  box1  4216  Dallas  700  A  1431  B  1509  tot  7856 ;  11-19T16  box1  5701  Dallas  1012  A  1990  B  2135  tot  10838 ;  11-19T17  box1  109  Dallas  59  A  181  B  149  tot  498 ; 
+- 17:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 17:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
