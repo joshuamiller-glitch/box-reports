@@ -7103,3 +7103,8 @@ LEAD NOTE: WAKE TEST received at 01:45Z, woken by heartbeat.
 
 [S2 hourly 01:01Z] server 2: workers 12/cap 12, cell-months last hour: server-2 672, all 981; idle 0 min; cost ~$299 (54.9 h x $5.44).
 - 2026-11-19T01:01:53Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (01:05Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- 01:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7298 (real 3232), pass 2 359 (total results 7657); todo pass 1 13553 (ETA 1.9 h at this rate), pass 2 22407 (ETA 62.4 h); server 2 load 207.18:110.89 109.94:137.95 206.22:181.14, grid workers 218 (218 computing), engine workers 126; error stubs 5182. Page autopilot/SEARCH_STATUS.md.
+01:07Z W-LA: LA cell-months done 867, jobs outstanding 52, chains 10; auto-expansions launched: 207 (cumulative new sets)
+- 2026-11-19 01:07Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- 2026-11-19T01:09Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
