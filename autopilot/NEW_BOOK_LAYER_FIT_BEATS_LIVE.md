@@ -1,35 +1,35 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 21:15Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 21:25Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 8100 set-months/h (HEALTH.md at 21:15Z); layer queue (tag NYL, quota 5) landed 745 set-months in the last hour, 1763 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 11995, landed 6930, remaining 5029; hours at the HEALTH rate (whole fleet) 0.6 h; at the measured NYL rate 7 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 8462 set-months/h (HEALTH.md at 21:25Z); layer queue (tag NYL, quota 5) landed 1105 set-months in the last hour, 2085 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 11995, landed 7329, remaining 4630; hours at the HEALTH rate (whole fleet) 0.5 h; at the measured NYL rate 4 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
-| Lda55d973xA7 | 918 | 451 |
+| Lda55d973xA7 | 918 | 461 |
 | L5c9e11b3xA7 | 795 | 788 |
 | La5b5d03axA7 | 752 | 432 |
 | Ledfbf4d2xA7 | 746 | 740 |
 | Lcb276f27xA7 | 752 | 440 |
 | Lf77e374bxA7 | 432 | 99 |
-| L7c368a4fxA7 | 1004 | 475 |
-| L1edb9fabxA7 | 432 | 399 |
+| L7c368a4fxA7 | 1004 | 492 |
+| L1edb9fabxA7 | 432 | 400 |
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
 | L21f079b6xK7 | 623 | 432 |
-| L4d206c8cxA7 | 432 | 43 |
+| L4d206c8cxA7 | 432 | 59 |
 | Ldcdb0b6exA7 | 390 | 390 |
-| L86781ac0xA7 | 348 | 294 |
-| Lc4e74264xA7 | 348 | 64 |
-| L7ea48296xA7 | 348 | 51 |
-| L548972b6xA7 | 348 | 27 |
-| Lb44a3e99xK7 | 348 | 268 |
-| L678ebaddxK7 | 348 | 25 |
+| L86781ac0xA7 | 348 | 347 |
+| Lc4e74264xA7 | 348 | 108 |
+| L7ea48296xA7 | 348 | 104 |
+| L548972b6xA7 | 348 | 49 |
+| Lb44a3e99xK7 | 348 | 343 |
+| L678ebaddxK7 | 348 | 69 |
 | L6c84f416xK7 | 348 | 32 |
-| L641a7c4dxK7 | 348 | 13 |
-| Lfea1c9fcxA7 | 432 | 0 |
+| L641a7c4dxK7 | 348 | 48 |
+| Lfea1c9fcxA7 | 432 | 29 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Gate (order 1324Z, Josh): L6M + L3M beat (the candidate rows) + no RED prior year (rule B) + ENGINE persistence >= 0.58 (share of 2-week windows where the new stack is not worse than today's); persistence not yet published = PENDING, never fail (W-LAYERS' own pooled prior-year value is shown as provisional and is not used to fail). Tier -1/FIRST = coordinator-ordered first tier, 0 = gate pass, 2 = pending, 3 = rule-B RED / persistence fail / duplicate stream; Asia before NY inside a tier.
