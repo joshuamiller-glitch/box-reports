@@ -1,32 +1,32 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 13:05Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 13:15Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 3542 set-months/h (HEALTH.md at 13:05Z); layer queue (tag NYL, quota 36) landed 3172 set-months in the last hour, 3479 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 9764, landed 3443, remaining 6285; hours at the HEALTH rate (whole fleet) 1.8 h; at the measured NYL rate 2 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 3776 set-months/h (HEALTH.md at 13:15Z); layer queue (tag NYL, quota 36) landed 3479 set-months in the last hour, 4120 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 9764, landed 4098, remaining 5630; hours at the HEALTH rate (whole fleet) 1.5 h; at the measured NYL rate 2 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
-| Lda55d973xA7 | 432 | 237 |
-| L5c9e11b3xA7 | 795 | 512 |
+| Lda55d973xA7 | 432 | 298 |
+| L5c9e11b3xA7 | 795 | 726 |
 | La5b5d03axA7 | 432 | 0 |
-| Ledfbf4d2xA7 | 746 | 432 |
+| Ledfbf4d2xA7 | 746 | 547 |
 | Lcb276f27xA7 | 432 | 0 |
-| L0a809c2exA7 | 432 | 24 |
-| Lf77e374bxA7 | 432 | 4 |
+| L0a809c2exA7 | 432 | 133 |
+| Lf77e374bxA7 | 432 | 8 |
 | L5d9e7166xA7 | 672 | 432 |
 | L17ce266fxA7 | 432 | 0 |
 | L63ff9ae8xA7 | 432 | 83 |
-| L05222ff9xA7 | 432 | 422 |
-| L7c368a4fxA7 | 432 | 14 |
-| L0b1d7882xA7 | 432 | 0 |
-| L1edb9fabxA7 | 432 | 18 |
-| L6a25b155xK7 | 561 | 497 |
-| L01811caaxK7 | 906 | 752 |
+| L05222ff9xA7 | 432 | 425 |
+| L7c368a4fxA7 | 432 | 32 |
+| L0b1d7882xA7 | 432 | 21 |
+| L1edb9fabxA7 | 432 | 23 |
+| L6a25b155xK7 | 561 | 553 |
+| L01811caaxK7 | 906 | 800 |
 | L0f097450xK7 | 432 | 0 |
 | L3701b464xK7 | 432 | 16 |
-| M15f14debxA7 | 432 | 0 |
+| M15f14debxA7 | 432 | 1 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Tier 0 = B pass, 1 = pending (screen pass / years landing), 2 = pending (screen not passing), 3 = B fail; Asia before NY inside a tier.
