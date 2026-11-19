@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 20:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 21:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 20:45Z | box1: busy 100%, load1 70.41, workers 32, MemAvail 49 GB | server2: busy 100%, load1 152.46, workers 27, MemAvail 800 GB | pending box1-eligible 47424 / server2-eligible 53963 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 223.80, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 1093 GB | serverB: busy 100%, load1 216.39, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 1018 GB | serverC: busy 88%, load1 112.44, workers 1 (grid) + 111 (engine), 128 threads, MemAvail 1366 GB
+LATEST CORES.md LINE: 2026-11-19 21:00Z | box1: busy 100%, load1 80.72, workers 31, MemAvail 58 GB | server2: busy 100%, load1 142.72, workers 25, MemAvail 936 GB | pending box1-eligible 46303 / server2-eligible 52342 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 219.07, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 1107 GB | serverB: busy 100%, load1 211.22, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 1049 GB | serverC: busy 82%, load1 99.81, workers 1 (grid) + 99 (engine), 128 threads, MemAvail 1377 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 20:45Z
+2026-11-19 21:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 20:45Z | box1: busy 100%, load1 70.41, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 48.3 GB; live reservations 11 (11 GB); workers 32, of which TP-adopted 32 (RSS 47.8 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 70.41, 74.45, 77.57
-  by tag: NYR quota 12 running 11 hungry True RSS 16.5 GB PSS 13.8 GB; ASI quota 14 running 3 hungry True RSS 4.5 GB PSS 3.7 GB; EXE quota 2 running 8 hungry False RSS 13.3 GB PSS 10.8 GB; NYL quota 5 running 5 hungry False RSS 6.1 GB PSS 4.7 GB; LON quota 12 running 5 hungry True RSS 7.3 GB PSS 5.7 GB
-  cell-months finished last hour (DONE markers): 6191
-  top running jobs: TL3_NYE_L59b66d32_RK7CT7p (x8);TL3_NYE_L59b66d32_RK7CT14p (x6);TL3_NYE_L4560e541_RK7 (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 147.16, 151.44, 147.10|/dev/md2         28T  2.3T   26T   9% /mnt/l2|52|
+Server 1 (this box): MemAvail 58.2 GB; live reservations 14 (14 GB); workers 31, of which TP-adopted 31 (RSS 45.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 80.72, 80.72, 79.51
+  by tag: NYR quota 12 running 11 hungry True RSS 15.5 GB PSS 12.9 GB; ASI quota 14 running 6 hungry True RSS 9.0 GB PSS 6.9 GB; EXE quota 2 running 6 hungry False RSS 9.7 GB PSS 8.0 GB; NYL quota 5 running 3 hungry True RSS 3.1 GB PSS 2.6 GB; LON quota 12 running 5 hungry True RSS 7.7 GB PSS 5.9 GB
+  cell-months finished last hour (DONE markers): 7040
+  top running jobs: TL3_NYE_L59b66d32_RK7CT28p (x10);TL3_ASI_Leee81e35_RA7CT42p (x10);TL3_NYE_Le3193838_RK7 (x9);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 143.47, 143.55, 144.62|/dev/md2         28T  2.4T   26T   9% /mnt/l2|55|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
