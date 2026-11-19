@@ -1,9 +1,9 @@
-Updated 2026-11-19 02:16Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
+Updated 2026-11-19 02:30Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
 
 | order | session | D8 candidates | REPLACE rows finished | beats live book: yes / no / pending | exit run | date decided |
 |---|---|---|---|---|---|---|
 | 1 | Asia | W-LONENG / ASI rows (none from W-NYENG) | n/a here | n/a here | pending | not decided (the later of Asia and NY AM sets the combined date) |
-| 2 | NY AM | 5192 REPLACE rows listed in D8_CANDIDATES.txt (186 cells with engine rows; 4 cells beat a live book) | 121 | 4 / 117 / 19 | pending (NOT started) | not decided; earliest 2026-11-20 12:00Z if the exit screen starts by 11-19 06:00Z |
+| 2 | NY AM | 5192 REPLACE rows listed in D8_CANDIDATES.txt (187 cells with engine rows; 4 cells beat a live book) | 122 | 4 / 118 / 19 | pending (NOT started) | not decided; earliest 2026-11-20 12:00Z if the exit screen starts by 11-19 06:00Z |
 | 3 | London | W-LONENG: NEW_BOOK_ENGINE_LONDON.md | n/a here | n/a here | pending | not decided |
 | 4 | NY PM (behind NY AM in every W-NYENG file) | 391 REPLACE rows listed (0 cells with engine rows) | 0 | 0 / 0 / 0 | pending | not decided (nothing run yet; queued behind NY AM) |
 
