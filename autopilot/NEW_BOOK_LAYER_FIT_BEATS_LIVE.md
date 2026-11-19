@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 16:15Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 16:25Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 4860 set-months/h (HEALTH.md at 16:15Z); layer queue (tag NYL, quota 5) landed 1584 set-months in the last hour, 4246 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 4382, landed 3364, remaining 982; hours at the HEALTH rate (whole fleet) 0.2 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 4846 set-months/h (HEALTH.md at 16:25Z); layer queue (tag NYL, quota 5) landed 1513 set-months in the last hour, 3746 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 4814, landed 3385, remaining 1393; hours at the HEALTH rate (whole fleet) 0.3 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -12,20 +12,22 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
 | L01811caaxP7 | 783 | 432 |
+| L6a25b155xP7 | 432 | 0 |
 | L01811caaxM7 | 869 | 432 |
-| L01811caaxH7 | 432 | 245 |
+| L01811caaxH7 | 432 | 266 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Gate (order 1324Z, Josh): L6M + L3M beat (the candidate rows) + no RED prior year (rule B) + ENGINE persistence >= 0.58 (share of 2-week windows where the new stack is not worse than today's); persistence not yet published = PENDING, never fail (W-LAYERS' own pooled prior-year value is shown as provisional and is not used to fail). Tier -1/FIRST = coordinator-ordered first tier, 0 = gate pass, 2 = pending, 3 = rule-B RED / persistence fail / duplicate stream; Asia before NY inside a tier.
 
 | label | tier | rule B verdict (and screen note) | 2023 d ulcer / d DD / d worst wk / d $/wk (% worse) colour | 2024 | 2025 | engine persistence |
 |---|---|---|---|---|---|---|
-| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
-| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | FAIL: engine persistence 0.577 < 0.58 (order 1324Z) | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
+| L01811caaxK7 | FIRST | FIRST (coordinator order 1156Z, position 1) | GATE PASS: 3 prior years none RED (AMBER 2023), engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -21% / +10% / +19% / -20% AMBER | -14% / -4% / +6% / -12% GREEN | -12% / -10% / -12% / -7% GREEN | 0.58 |
+| L6a25b155xK7 | FIRST | FIRST (coordinator order 1156Z, position 2) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.577 | -4% / +13% / +5% / -25% GREEN | +10% / -3% / -3% / -14% GREEN | +3% / +3% / +0% / -7% GREEN | 0.58 |
 | L5c9e11b3xA7 | FIRST | FIRST (coordinator order 1349Z, position 3) | W-ASIA PASS LIST: pass (pick REPLACE, pooled engine persistence 0.58 >= 0.58, 3 prior years no RED) | n/a | n/a | n/a | 0.58 |
-| L01811caaxP7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -713 mean +714 worst wk +1209 max DD +4245 ok; L3M ulcer -1365 mean +832 worst wk +4654 max DD +5426 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.690 >= 0.58 | -11% / +9% / +15% / -29% GREEN | -14% / -1% / +1% / -16% GREEN | -18% / -18% / +1% / -15% GREEN | 0.69 |
-| L01811caaxM7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -457 mean +562 worst wk +2660 max DD +3039 ok; L3M ulcer -736 mean +505 worst wk +3831 max DD +3039 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.606 >= 0.58 | -28% / -16% / -5% / -42% GREEN | -10% / -8% / -3% / -2% GREEN | -16% / -9% / -8% / -10% GREEN | 0.61 |
-| L01811caaxH7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -222 mean +753 worst wk +319 max DD +2671 ok; L3M ulcer -590 mean +995 worst wk +3909 max DD +2671 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.662 >= 0.58 | -20% / -6% / +5% / -36% GREEN | -16% / +0% / +4% / -15% GREEN | -16% / -15% / -7% / -14% GREEN | 0.66 |
+| L01811caaxP7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -713 mean +714 worst wk +1209 max DD +4245 ok; L3M ulcer -1365 mean +832 worst wk +4654 max DD +5426 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.690 | -11% / +9% / +15% / -29% GREEN | -14% / -1% / +1% / -16% GREEN | -18% / -18% / +1% / -15% GREEN | 0.69 |
+| L6a25b155xP7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -684 mean +152 worst wk +484 max DD +4245 ok; L3M ulcer -1386 mean +424 worst wk +484 max DD +4475 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.592 | -12% / +13% / +3% / -33% GREEN | +12% / -0% / -9% / -21% GREEN | -9% / -1% / +11% / -17% GREEN | 0.59 |
+| L01811caaxM7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -457 mean +562 worst wk +2660 max DD +3039 ok; L3M ulcer -736 mean +505 worst wk +3831 max DD +3039 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.606 | -28% / -16% / -5% / -42% GREEN | -10% / -8% / -3% / -2% GREEN | -16% / -9% / -8% / -10% GREEN | 0.61 |
+| L01811caaxH7 | 1 | tier 1 (strict PASS, after the K7 / first-tier programmes): strict criterion computed by W-LAYERS (L6M ulcer -222 mean +753 worst wk +319 max DD +2671 ok; L3M ulcer -590 mean +995 worst wk +3909 max DD +2671 ok) | GATE PASS: 3 prior years none RED, engine persistence 0.590 >= 0.58 | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only 0.662 | -20% / -6% / +5% / -36% GREEN | -16% / +0% / +4% / -15% GREEN | -16% / -15% / -7% / -14% GREEN | 0.66 |
 | L0a809c2exA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L63ff9ae8xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | M32bddb74xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
@@ -42,13 +44,12 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | Lf77e374bxA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L0b1d7882xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L30aad100xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
-| L6a25b155xP7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -684 mean +152 worst wk +484 max DD +4245 ok; L3M ulcer -1386 mean +424 worst wk +484 max DD +4475 ok) | pending: 2/3 engine prior years landed, none RED so far | n/a | +12% / -0% / -9% / -21% GREEN | -9% / -1% / +11% / -17% GREEN | 0.58 |
-| L0f097450xP7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -1014 mean +1313 worst wk -796 max DD +4245 NOT strict; L3M ulcer -2012 mean +1418 worst wk +724 max DD +8426 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
-| L0f097450xM7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -799 mean +1497 worst wk -100 max DD +6039 NOT strict; L3M ulcer -1391 mean +1273 worst wk -100 max DD +6039 NOT strict) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
-| L0f097450xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -58 mean +2291 worst wk -3120 max DD +1857 NOT strict; L3M ulcer -504 mean +2902 worst wk -3120 max DD +2281 NOT strict) | B FAIL: RED in 2023 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
-| L0f097450xH7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -637 mean +1537 worst wk -1686 max DD +4180 NOT strict; L3M ulcer -1427 mean +1801 worst wk -21 max DD +5671 NOT strict) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
-| L6a25b155xM7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -610 mean +112 worst wk -340 max DD +2089 NOT strict; L3M ulcer -967 mean +84 worst wk -340 max DD +2089 NOT strict) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
-| L6a25b155xH7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -360 mean +313 worst wk -261 max DD +1720 NOT strict; L3M ulcer -798 mean +681 worst wk -261 max DD +1720 NOT strict) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L0f097450xP7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -1014 mean +1313 worst wk -796 max DD +4245 NOT strict; L3M ulcer -2012 mean +1418 worst wk +724 max DD +8426 ok) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
+| L0f097450xM7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -799 mean +1497 worst wk -100 max DD +6039 NOT strict; L3M ulcer -1391 mean +1273 worst wk -100 max DD +6039 NOT strict) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
+| L0f097450xK7 | 3 | NOT first tier: strict criterion FAIL - W-NYENG strict table | B FAIL: RED in 2023 | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only 0.606 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
+| L0f097450xH7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -637 mean +1537 worst wk -1686 max DD +4180 NOT strict; L3M ulcer -1427 mean +1801 worst wk -21 max DD +5671 NOT strict) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
+| L6a25b155xM7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -610 mean +112 worst wk -340 max DD +2089 NOT strict; L3M ulcer -967 mean +84 worst wk -340 max DD +2089 NOT strict) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
+| L6a25b155xH7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -360 mean +313 worst wk -261 max DD +1720 NOT strict; L3M ulcer -798 mean +681 worst wk -261 max DD +1720 NOT strict) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.59 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
 | L96205086xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -26 mean +1294 worst wk -1155 max DD +1427 NOT strict; L3M ulcer -460 mean +2376 worst wk +1815 max DD +1427 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L21f079b6xK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -58 mean +2291 worst wk -3120 max DD +1857 NOT strict; L3M ulcer -504 mean +2902 worst wk -3120 max DD +2281 NOT strict) | B FAIL: RED in 2023 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
 | Lf967df3bxK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -58 mean +2291 worst wk -3120 max DD +1857 NOT strict; L3M ulcer -504 mean +2902 worst wk -3120 max DD +2281 NOT strict) | B FAIL: RED in 2023 | -9% / +9% / +31% / +7% RED | -7% / -14% / +2% / -13% GREEN | -17% / -18% / -20% / +2% GREEN | 0.61 |
@@ -100,7 +101,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L7c368a4fxA7 | Asia | A7 | both | TL3_ASI_L7c368a4f_RA7 | fit queued | 72 | - | 0 | 0 |
 | L1edb9fabxA7 | Asia | A7 | both | TL3_ASI_L1edb9fab_RA7 | fit queued | 72 | - | 0 | 0 |
 | L0a809c2exA7 | Asia | A7 | both | TL3_ASI_L0a809c2e_RA7 | scored | 72 | 2026-11-19 13:55Z | 6 | 3 |
-| L17ce266fxA7 | Asia | A7 | both | TL3_ASI_L17ce266f_RA7 | fit queued | 72 | - | 0 | 0 |
+| L17ce266fxA7 | Asia | A7 | both | TL3_ASI_L17ce266f_RA7 | scored | 72 | 2026-11-19 16:25Z | 6 | 3 |
 | L5d9e7166xA7 | Asia | A7 | both | TL3_ASI_L5d9e7166_RA7 | scored | 72 | 2026-11-19 12:55Z | 6 | 3 |
 | L05222ff9xA7 | Asia | A7 | both | TL3_ASI_L05222ff9_RA7 | scored | 72 | 2026-11-19 13:23Z | 7 | 5 |
 | L63ff9ae8xA7 | Asia | A7 | both | TL3_ASI_L63ff9ae8_RA7 | fit queued | 72 | - | 0 | 0 |
@@ -116,7 +117,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L0f097450xM7 | NYAM | M7 | both | TL3_NYE_L0f097450_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L01811caaxP7 | NYAM | P7 | both | TL3_NYE_L01811caa_RP7 | scored | 72 | 2026-11-19 15:55Z | 9 | 3 |
 | L01811caaxK7 | NYAM | K7 | both | TL3_NYE_L01811caa_RK7 | scored | 72 | 2026-11-19 12:45Z | 12 | 5 |
-| L6a25b155xP7 | NYAM | P7 | both | TL3_NYE_L6a25b155_RP7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
+| L6a25b155xP7 | NYAM | P7 | both | TL3_NYE_L6a25b155_RP7 | fit queued | 72 | - | 0 | 0 |
 | L0f097450xK7 | NYAM | K7 | both | TL3_NYE_L0f097450_RK7 | fit queued | 72 | - | 0 | 0 |
 | L0f097450xH7 | NYAM | H7 | both | TL3_NYE_L0f097450_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L6a25b155xM7 | NYAM | M7 | both | TL3_NYE_L6a25b155_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
@@ -202,6 +203,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | LK | lock at 65% -> stop to entry+10 pts | -268 | +4141 | -1595 | +497 | 1.09 | +217 / +845 | n/a | n/a | n/a |
 | NT | no new entries 1830-1900 ET | -246 | +639 | +1059 | +12 | 0.96 | -275 / +119 | n/a | n/a | n/a |
 | TK | take at 95% of target after 30 s without a new extreme | +165 | -75 | -1369 | -165 | 0.99 | +242 / -192 | n/a | n/a | n/a |
+
+## L17ce266fxA7 (Asia, replaces A7; base TL3_ASI_L17ce266f_RA7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 15 min | +40 | +0 | +0 | -47 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CP | own day loss cap 1 stops ($1200 base), profit cap 12,000 | -231 | -2757 | +930 | -397 | 0.75 | -600 / -540 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -60 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -36 pts | +753 | -6771 | -4814 | -441 | 1.05 | +1437 / -186 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -2400 base (2.0R) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| FR | W-FASTR pick: take 95%/30 s | -417 | +2045 | +1505 | +93 | 1.00 | -721 / +222 | n/a | n/a | n/a |
+| LK | lock at 65% -> stop to entry+10 pts | -49 | +3584 | +1100 | -1397 | 1.16 | -69 / -737 | n/a | n/a | n/a |
+| NT | no new entries 1930-2000 ET | +52 | +0 | -615 | -421 | 0.99 | +9 / +82 | n/a | n/a | n/a |
+| TK | take at 95% of target after 15 s without a new extreme | -442 | +1880 | +1380 | +123 | 1.00 | -683 / +183 | n/a | n/a | n/a |
 
 ## L5d9e7166xA7 (Asia, replaces A7; base TL3_ASI_L5d9e7166_RA7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
