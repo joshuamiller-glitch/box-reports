@@ -1,8 +1,8 @@
-# ASIA BOTH-SIDE SCREEN + NULL (W-SHORT for W-ASIA, order 1014Z item 5; refreshed 12:01Z UTC)
+# ASIA BOTH-SIDE SCREEN + NULL (W-SHORT for W-ASIA, order 1014Z item 5; refreshed 12:21Z UTC)
 
 The 1307 Asia ladder cells whose screen mode was long/short but whose engine sets traded BOTH sides, re-screened as mode = both (same row / module / variant / params / bracket). (a) screen numbers from the grid cache on the both-side stream: L6M / L3M points, trades, persistence, prior years in R per week, R0 (same thresholds: L6M > 0, L3M > 0, >= 100 trades, persistence > 0.60, no RED prior year) and own-stop (2 stops; only where the own-stop array exists). (b) random-entry draws with the SAME bracket on the both-side stream (gr3 mode 0: same count and side mix as the real both-side signals), p = (1 + k) / (1 + n): 30 draws for all cells, 200 for the beating cells; p_L6M / p_ALL / p_PRIOR as in the R3 ladder. Priority: beating cells (ids from NEW_BOOK_BEATS_LIVE_ASIA.md) first. Data: code/th_short/pulled_r3/asia_bothside.csv (all cells, all columns).
 
-Drawn so far: 1246 of 1307 cells (beating 15 of 15). R0 on the both-side stream passes for 16 of 1307 cells (os2 positive: 701 of 1023 with the array).
+Drawn so far: 1304 of 1307 cells (beating 15 of 15). R0 on the both-side stream passes for 16 of 1307 cells (os2 positive: 701 of 1023 with the array).
 
 ## Beating cells (priority)
 
@@ -28,6 +28,6 @@ Drawn so far: 1246 of 1307 cells (beating 15 of 15). R0 on the both-side stream 
 
 | cells drawn | R0 pass (both-side) | p_L6M <= 0.05 | p_L6M <= 0.20 | p_ALL <= 0.05 | beat >= 24 of 30 | beat >= 27 of 30 |
 |---|---|---|---|---|---|---|
-| 1246 | 14 | 48 | 398 | 520 | 476 | 237 |
+| 1304 | 16 | 48 | 413 | 548 | 497 | 246 |
 
 Note: the null comparison here is stage-A / B per cell (screen, random entries with the same bracket on the both-side stream); the calibrated pass rule (false-discovery rate by mode and statistic) is in the CALIBRATION sections of SURVIVOR_COUNTS.md; both-side Asia cells had the lowest measured FDR there.
