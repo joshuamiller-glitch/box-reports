@@ -1,15 +1,15 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 11:22Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 11:25Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 2424 set-months/h (HEALTH.md at 11:20Z); layer queue (tag NYL, quota 36) landed 78 set-months in the last hour, 102 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 7812, landed 66, remaining 7710; hours at the HEALTH rate (whole fleet) 3.2 h; at the measured NYL rate 99 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 2424 set-months/h (HEALTH.md at 11:25Z); layer queue (tag NYL, quota 36) landed 76 set-months in the last hour, 105 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 7812, landed 69, remaining 7707; hours at the HEALTH rate (whole fleet) 3.2 h; at the measured NYL rate 101 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
-| Lda55d973xA7 | 432 | 61 |
-| L5c9e11b3xA7 | 432 | 5 |
+| Lda55d973xA7 | 432 | 62 |
+| L5c9e11b3xA7 | 432 | 7 |
 | La5b5d03axA7 | 432 | 0 |
 | Ledfbf4d2xA7 | 432 | 0 |
 | Lcb276f27xA7 | 432 | 0 |

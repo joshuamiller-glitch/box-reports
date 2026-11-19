@@ -2,17 +2,17 @@
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 608; cells with a finished REPLACE verdict (L6M+L3M landed) 422; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 31); ADD rows finished 600.
+**Counts:** Asia cells with any engine row 614; cells with a finished REPLACE verdict (L6M+L3M landed) 422; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 31); ADD rows finished 600.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 66 | 0 | 5 |
 | P7 | 59 | 0 | 5 |
-| A7 | 422 | 14 | 28 |
+| A7 | 422 | 14 | 34 |
 | H7 | 62 | 0 | 6 |
-| U7 | 62 | 0 | 4 |
+| U7 | 62 | 0 | 5 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 361 tested; 514 cells with rows), long-only 0 (of 61 tested; 94 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 361 tested; 514 cells with rows), long-only 0 (of 61 tested; 100 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -126,20 +126,59 @@ Gate A pass 4, Gate B pass 0 among the both-side beaters listed (see MORNING.md 
 | L0b1d7882 tm30 | both-side | A7 | 2023 | -10 | -6 | -0 | -21 | GREEN | GREEN | RED | RED / no RED, all 3 years |  | 0.488 |
 | L0b1d7882 tm30 | both-side | A7 | 2024 | +4 | -13 | -9 | +21 | AMBER | AMBER | RED |  |  |  |
 | L0b1d7882 tm30 | both-side | A7 | 2025 | +410 | +550 | +1218 | +154 | RED | GREEN | RED |  |  |  |
+**Prior years against ALL live Asia books and ADD (where the A7-removal effect is absent or different): both-side beaters, rule B colours as run / ex-artefact, landed years only (pending = not run).**
+
+| cell | variant | 2023 as run / ex-art | 2024 as run / ex-art | 2025 as run / ex-art |
+|---|---|---|---|---|
+| Lda55d973 vol_750 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| Lda55d973 vol_750 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / AMBER |
+| La5b5d03a time_m_2 (both-side) | ADD | RED / RED | GREEN / GREEN | GREEN / GREEN |
+| La5b5d03a time_m_2 (both-side) | RA7 | RED / RED | GREEN / GREEN | GREEN / GREEN |
+| Ma5b5d03a time_m_2 (long-only) | ADD | pending | pending | GREEN / GREEN |
+| Lcb276f27 tm120 (both-side) | ADD | RED / RED | GREEN / GREEN | GREEN / GREEN |
+| Lcb276f27 tm120 (both-side) | RA7 | RED / RED | GREEN / GREEN | GREEN / GREEN |
+| L1edb9fab tm300 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| L1edb9fab tm300 (both-side) | RA7 | GREEN / GREEN | GREEN / GREEN | RED / GREEN |
+| L1edb9fab tm300 (both-side) | RH7 | pending | GREEN / GREEN | RED / GREEN |
+| L1edb9fab tm300 (both-side) | RU7 | AMBER / AMBER | GREEN / GREEN | RED / GREEN |
+| M1edb9fab tm300 (long-only) | ADD | pending | pending | RED / AMBER |
+| L0a809c2e kagi_40 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| L0a809c2e kagi_40 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / GREEN |
+| L17ce266f tm240 (both-side) | ADD | AMBER / AMBER | GREEN / GREEN | RED / AMBER |
+| L17ce266f tm240 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / GREEN |
+| L5d9e7166 tm240 (both-side) | ADD | AMBER / AMBER | GREEN / GREEN | RED / AMBER |
+| L5d9e7166 tm240 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / GREEN |
+| L05222ff9 time_m_4 (both-side) | ADD | AMBER / AMBER | GREEN / GREEN | RED / AMBER |
+| L05222ff9 time_m_4 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / GREEN |
+| L7c368a4f time_m_5 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| L7c368a4f time_m_5 (both-side) | RA7 | GREEN / GREEN | GREEN / GREEN | RED / GREEN |
+| L7c368a4f time_m_5 (both-side) | RH7 | RED / RED | GREEN / GREEN | RED / GREEN |
+| L7c368a4f time_m_5 (both-side) | RU7 | AMBER / AMBER | GREEN / GREEN | RED / GREEN |
+| L5c9e11b3 vol_750 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| L5c9e11b3 vol_750 (both-side) | RA7 | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| L5c9e11b3 vol_750 (both-side) | RH7 | RED / RED | GREEN / GREEN | RED / AMBER |
+| M5c9e11b3 vol_750 (long-only) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| Ledfbf4d2 vol_350 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / AMBER |
+| Ledfbf4d2 vol_350 (both-side) | RA7 | GREEN / GREEN | GREEN / GREEN | RED / GREEN |
+| Lf77e374b tm240 (both-side) | ADD | AMBER / AMBER | GREEN / GREEN | RED / AMBER |
+| Lf77e374b tm240 (both-side) | RA7 | AMBER / AMBER | AMBER / AMBER | RED / AMBER |
+| L0b1d7882 tm30 (both-side) | ADD | GREEN / GREEN | GREEN / GREEN | RED / GREEN |
+| L0b1d7882 tm30 (both-side) | RA7 | GREEN / GREEN | AMBER / AMBER | RED / GREEN |
+
 
 Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed have a RED year, 0 none; EX-ARTEFACT (see note) 2 RED, 11 none. Rows without any landed engine prior year are not listed (pending).
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 2015, last 3 h 6716; Asia queue lines pending (not DONE): 51054.
+Asia set-months landed: last 1 h 2022, last 3 h 6715; Asia queue lines pending (not DONE): 51041.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 5, _nye/pending_l 12, _nye/pending_w , _lon 13 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 14 TL3_NYE_      10 TL3_NYW_      10 TL3_NYL_      10 TL3_LON_       9 TL3_ASI_       2 TL3_EXE_
-- server2 running engine sets by tag: 47 TL3_ASI_
-- A running engine sets by tag: 197 TL3_ASI_
-- B running engine sets by tag: 194 TL3_ASI_
+- box1 running engine sets by tag: 16 TL3_NYL_      14 TL3_NYW_      14 TL3_NYE_      11 TL3_ASI_       6 TL3_LON_       2 TL3_EXE_
+- server2 running engine sets by tag: 54 TL3_ASI_
+- A running engine sets by tag: 198 TL3_ASI_
+- B running engine sets by tag: 190 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
