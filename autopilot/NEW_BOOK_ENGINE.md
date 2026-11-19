@@ -1,8 +1,8 @@
-# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 07:38Z
+# NEW_BOOK_ENGINE - replacement of the NY AM / NY PM books on the exact engine (W-NYENG), refreshed 2026-11-19 08:08Z
 
 **These rows are vs TODAY's stack (JL3) with today's DAY-DONE setting; they answer add / swap one book in today's stack, not the rebuilt stack.** WP10 and XA3 stay leads on that basis.
 
-Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 4652.
+Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract proxy with an x1.75 live-lot column in brackets. Deltas = WITH minus the live JL3 stack on the same months; drawdown first: d ulcer / d worst week / d max DD / d mean $/wk (x1.75 in brackets). Negative ulcer / DD change = better. PROVISIONAL cells (selection-biased picks); no label without controls (none yet). Prereg PREREG_NYE.md + AMEND1 (DECISIONS.md). Identity (injection = JL3 with an inert event): 202610: PASS (691 trades, net 37159.82); 202504: PASS (637 trades, net 41239.76). Set-months done: 4715.
 
 ## What acts on a new book in these runs (plain words; full list NEW_BOOK_LAYER_FACTS.md)
 - ON the new book: the live DAY-DONE rule (engine: scr_hooks gate "conj" = the stack has >= 22 closes today AND the day is <= -2R = -2,400 base = -4,200 live; it applies to every book incl. the new one and skipped 334 of ~800 signals of NA1 in 202610), one position at a time, the book day caps (loss 4,800 $ / profit 12,000 $ default; a 120-pt stop = 2,400 $ at 1 base lot, 4,800 $ at 2 live lots = one stop trips it), the book give-back lock, measured slippage, the stack rule.
@@ -46,7 +46,7 @@ Stack = JL3 (all live layers ON). Dollars: engine BASE lots at $4.84 RT/contract
 | Y2023 | +43592 | +44609 (339, -1017) | +44046 (352, -454) | +45942 (356, -2350) |
 
 ## R5 ladder (engine staged; SCREEN RANK, NOT YET CALIBRATED: the whole-search null is the judge)
-Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 96732. Everything is vs TODAY's stack, provisional until Asia and London are decided.
+Cells seeded in rank order from /mnt/l2/l2vast/_nye/ladder_cells.json (NY AM by R3 p6 then p_all; NY PM family-bests of the bare rule, R3 not yet run for NY PM). Stage A = last 6 + 3 months as ADD and as replacement of the weakest live book of the session (K7), 12 set-months per cell; B = prior years for rows not negative; C = 30 date-shift controls for rows still alive; D = layer programme in clock order. Built so far: 7285 cells ({'A': 7285}); set-months still queued: 99506. Everything is vs TODAY's stack, provisional until Asia and London are decided.
 
 ## XA3 phase 3a (own layers; vs today's stack, provisional until Asia and London are decided)
 Identity TL3_NYL_XA3_ID1-9 PASS. Fit stage F1 (72 settings x last 6 months) landed; scored on autopilot/NEW_BOOK_LAYER_FIT_XA3.md (ulcer first, vs the ADD row and vs JL3); stage F2 (top 2 settings per layer with ulcer better and >= 80% of trades, prior years 2023-2026-04) queued; joint stage after F2.
@@ -166,6 +166,9 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 |  | RK7 | L3M | -448 / -784 | +2462 | +2609 / +4565 | +2114 | c=1.00: -448 / +2462 / +2609 | 141 | +0.129 | +1.394 | +0.26 / +0.22 / +0.37 | ok |
 |  | RK7 | L6M | -75 / -130 | +620 | +1755 / +3071 | +1857 | c=1.00: -75 / +620 / +1755 | 290 | +0.081 | +0.866 | +0.23 / +0.13 / +0.22 | ok |
+|  | RK7 | Y2023 | -3880 / -6789 | -4164 | +458 / +801 | -4549 | c=1.00: -3880 / -4164 / +458 | 373 | +0.098 | +0.934 | +0.39 / +0.02 / +0.32 | ok |
+|  | RK7 | Y2024 | -4140 / -7245 | -2358 | +620 / +1085 | +2638 | c=1.00: -4140 / -2358 / +620 | 565 | +0.054 | +0.576 | +0.35 / +0.15 / +0.39 | ok |
+|  | RK7 | Y2025 | -4190 / -7333 | +4205 | +515 / +901 | +8286 | c=1.00: -4190 / +4205 / +515 | 586 | +0.102 | +1.128 | +0.09 / +0.06 / +0.17 | ok |
 |  | RK7 | L3M | +3594 / +6289 | -6905 | -1417 / -2480 | -9674 | c=1.00: +3594 / -6905 / -1417 | 66 | -0.327 | -1.660 | -0.11 / +0.08 / +0.04 | RED |
 |  | RK7 | L6M | +2399 / +4198 | -6905 | -1175 / -2057 | -9674 | c=1.00: +2399 / -6905 / -1175 | 164 | -0.210 | -1.275 | -0.06 / +0.05 / -0.14 | RED |
 |  | RK7 | L3M | +1188 / +2080 | -4065 | +1313 / +2298 | -2702 | c=1.00: +1188 / -4065 / +1313 | 59 | +0.069 | +0.313 | +0.11 / -0.02 / +0.26 | ok |
@@ -613,6 +616,9 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 |  | ADD | L6M | -738 / -1291 | +80 | +96 / +168 | +5375 | c=1.00: -738 / +80 / +96 | 135 | +0.155 | +0.774 | +0.08 / -0.07 / -0.03 | ok |
 |  | ADD | L3M | -1351 / -2364 | +4160 | +1962 / +3433 | +4820 | c=1.00: -1351 / +4160 / +1962 | 69 | +0.306 | +1.622 | +0.19 / +0.23 / +0.27 | ok |
 |  | ADD | L6M | -796 / -1393 | +4160 | +845 / +1478 | +4820 | c=1.00: -796 / +4160 / +845 | 174 | +0.130 | +0.838 | +0.14 / +0.15 / +0.25 | ok |
+|  | ADD | Y2023 | +1133 / +1982 | -3552 | +1027 / +1797 | -3664 | c=1.00: +1133 / -3552 / +1027 | 210 | +0.159 | +0.856 | +0.05 / +0.12 / +0.12 | ok |
+|  | ADD | Y2024 | -998 / -1746 | -2875 | +711 / +1245 | +2175 | c=1.00: -998 / -2875 / +711 | 287 | +0.113 | +0.613 | +0.18 / +0.08 / +0.28 | ok |
+|  | ADD | Y2025 | -3944 / -6902 | +949 | +1299 / +2273 | +603 | c=1.00: -3944 / +949 / +1299 | 295 | +0.188 | +1.045 | +0.12 / -0.01 / +0.12 | ok |
 |  | ADD | L3M | +3631 / +6355 | -5279 | -461 / -807 | -11052 | c=1.00: +3631 / -5279 / -461 | 70 | -0.150 | -0.809 | -0.08 / -0.01 / +0.29 | RED |
 |  | ADD | L6M | +2248 / +3933 | -5279 | +269 / +471 | -11052 | c=1.00: +2248 / -5279 / +269 | 161 | -0.011 | -0.063 | +0.00 / +0.02 / +0.24 | RED |
 |  | ADD | L3M | +1536 / +2688 | -2958 | +320 / +560 | -4034 | c=1.00: +1536 / -2958 / +320 | 204 | +0.025 | +0.398 | +0.21 / +0.19 / +0.31 | ok |
@@ -780,6 +786,7 @@ Reference row (not a deliverable) "all live NY AM books OFF" (engine set TL3_NYE
 | L59b66d32 | RK7 | L6M | +859 / +1503 | -3730 | +2515 / +4402 | -1417 | c=0.61: +827 / -3425 / +1644 | 146 | +0.207 | +1.117 | -0.06 / -0.08 / -0.00 | ok |
 | L59b66d32 | ADD | L3M | -1124 / -1967 | -585 | +403 / +705 | +5291 | c=0.61: -772 / -354 / +55 | 63 | +0.092 | +0.446 | -0.07 / -0.13 / +0.05 | ok |
 | L59b66d32 | ADD | L6M | -503 / -880 | -3141 | +1686 / +2951 | +5291 | c=0.61: -382 / -354 / +853 | 145 | +0.199 | +1.069 | -0.07 / -0.08 / -0.02 | ok |
+| L59b66d32 | ADD | Y2025 | -6110 / -10692 | +1909 | +1116 / +1953 | +4892 | c=0.61: -4084 / +1527 / +672 | 279 | +0.108 | +0.570 | +0.08 / -0.04 / +0.03 | ok |
 | L63700f14 | RK7 | L3M | +1601 / +2803 | -3390 | +1088 / +1904 | -4065 | c=1.00: +1601 / -3390 / +1088 | 92 | +0.016 | +0.112 | -0.07 / -0.00 / -0.08 | ok |
 | L63700f14 | RK7 | L6M | +1022 / +1788 | -3390 | +1365 / +2389 | -4065 | c=1.00: +1022 / -3390 / +1365 | 193 | +0.079 | +0.566 | -0.04 / -0.05 / -0.08 | ok |
 | L63700f14 | ADD | L3M | +38 / +67 | +134 | +163 / +286 | +1505 | c=1.00: +38 / +134 / +163 | 92 | +0.023 | +0.166 | -0.08 / -0.03 / -0.08 | ok |
