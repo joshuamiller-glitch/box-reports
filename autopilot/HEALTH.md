@@ -1,21 +1,21 @@
 # HEALTH (written by cron every 5 min, not by the lead)
 
-UTC now: 2026-11-19T12:20:01Z | CORES reading: 2026-11-19 12:15Z | guard sample: 2026-11-19T12:10:01Z
-Lead: last LEAD NOTE 7 min ago | last transcript activity 4 min ago | last watchdog line: 2026-11-19 11:52Z WATCHDOG L1 fired: E
-github relay last pull OK at 2026-11-19T12:19Z
+UTC now: 2026-11-19T12:25:01Z | CORES reading: 2026-11-19 12:20Z | guard sample: 2026-11-19T12:20:01Z
+Lead: last LEAD NOTE 12 min ago | last transcript activity 1 min ago | last watchdog line: 2026-11-19 11:52Z WATCHDOG L1 fired: E
+github relay last pull OK at 2026-11-19T12:24Z
 
 | machine | busy % | threads | load | workers | grid results / 30 min | error stubs / 30 min | engine set-months / 30 min (host-local, do not add up) | grid todo (own rows) | grid queue hours | data disk free GB | root disk free GB (fill GB/h, hours left) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| box1 | 100 | 32 | 95.28 | 31 | 90 | 78 | 1151 | n/a | n/a | 294 | 60.6 (0.123 GB/h, 494.6 h) |
-| server2 | 100 | 64 | 144.99 | 30 | 346 | 41 | 354 | 117932 | 170.4 h | 26694 | 407.4 (0.018 GB/h, n/a h) |
-| serverA | 100 | 128 | 257.65 | 101 (grid) + 102 (engine) | 690 | 0 | 624 | 79349 | 57.5 h | 6270 | 829.8 (0.015 GB/h, n/a h) |
-| serverB | 100 | 128 | 240.24 | 101 (grid) + 101 (engine) | 1523 | 0 | 732 | 70985 | 23.3 h | 6234 | 412.1 (0.02 GB/h, n/a h) |
+| box1 | 100 | 32 | 85.86 | 31 | 82 | 80 | 1403 | n/a | n/a | 294 | 60.6 (0.126 GB/h, 480.8 h) |
+| server2 | 100 | 64 | 151.46 | 30 | 1362 | 80 | 307 | 117707 | 43.2 h | 26681 | 407.4 (0.018 GB/h, n/a h) |
+| serverA | 100 | 128 | 256.59 | 101 (grid) + 101 (engine) | 657 | 0 | 567 | 78679 | 59.9 h | 6270 | 829.8 (0.015 GB/h, n/a h) |
+| serverB | 100 | 128 | 238.99 | 101 (grid) + 99 (engine) | 1365 | 0 | 686 | 70923 | 26.0 h | 6233 | 412.0 (0.022 GB/h, n/a h) |
 
 questions for Josh: 7 open
 Rule A (no machine < 90% of its real threads while work exists anywhere): OK: all four >= 90%
 
 
-Engine queue (shared by box 1, server 2, A, B): 157313 lines pending; fleet rate 2302 set-months/h (method: DONE files in the box-1 result tree in the last 30 min x 2; box 1 holds the results pulled back from Dallas, A and B; the per-host columns above are host-local and must not be summed) => 68.3 h of queue left
+Engine queue (shared by box 1, server 2, A, B): 158106 lines pending; fleet rate 2806 set-months/h (method: DONE files in the box-1 result tree in the last 30 min x 2; box 1 holds the results pulled back from Dallas, A and B; the per-host columns above are host-local and must not be summed) => 56.3 h of queue left
 Alerts from the guard (E = host producing nothing / unreachable, F = disk < 100 GB, G = stage-1 agent gone or silent): none
 
 Rule of thumb: every machine needs >= 12 h of queued work with no decision (grid queue hours per machine above; engine queue hours above).
@@ -23,15 +23,15 @@ Rule of thumb: every machine needs >= 12 h of queued work with no decision (grid
 ## Live agents (from autopilot/AGENTS_LIVE.md + last MORNING.md line per agent; guard alert G = stage-1 owner gone or silent > 60 min)
 | agent | owns | stage-1 | state | last MORNING.md lines (cron vs agent) | supervised loops (registry) | what stops with the agent |
 |---|---|---|---|---|---|---|
-| W-NYENG | NY AM + NY PM ladder/engine queues, D8_SPEC_STATUS, D8_CANDIDATES (NY) | yes | resumable on demand | cron line 20 min ago, agent line 55 min ago (11:25Z) | 1 of 147 entries | ny_ladder_loop.sh supervised (registry fixed 04:10Z); 15-min cron re-order; pages cron 30 min |
-| W-ASIA | Asia engine/ladder, NEW_BOOK_BEATS_LIVE_ASIA | yes | running (resumed ~10:0xZ; posts own line | cron line 15 min ago, agent line 50 min ago (11:30Z) | 1 of 147 entries | asia ladder loop supervised; crons asia_note.py :05/:35, reorder_pending.py, lx_cron.sh 10 min; the crons keep |
+| W-NYENG | NY AM + NY PM ladder/engine queues, D8_SPEC_STATUS, D8_CANDIDATES (NY) | yes | resumable on demand | cron line 5 min ago, agent line 60 min ago (11:25Z) | 1 of 147 entries | ny_ladder_loop.sh supervised (registry fixed 04:10Z); 15-min cron re-order; pages cron 30 min |
+| W-ASIA | Asia engine/ladder, NEW_BOOK_BEATS_LIVE_ASIA | yes | running (resumed ~10:0xZ; posts own line | cron line 20 min ago, agent line 55 min ago (11:30Z) | 1 of 147 entries | asia ladder loop supervised; crons asia_note.py :05/:35, reorder_pending.py, lx_cron.sh 10 min; the crons keep |
 | W-D8EXIT | D8-candidate exit screen + broad exit run | yes | cron-owned (agent finished 03:2xZ; worke | no cron line, no agent line found [cron-owned: exempt] | 106 of 147 entries | d8_cycle.sh cron 15 min and worker pools supervised (registered 03:2xZ) |
-| W-GRIDOPS | grid ops, result stamp, nice ladder, ag_nice | yes | resumable | cron line 15 min ago, agent line 2.6 h ago (09:44Z) | 20 of 147 entries | ag_nice_ctl.sh cron, supervise.py; loops continue without the agent |
-| W-SHORT | R3, calibration by family, staleness knock-on | yes | running (resumed 04:5xZ) | cron line 20 min ago, agent line 24 min ago (11:56Z) | 0 of 147 entries | gr3 shards box 1 (<=3) may not be supervised |
-| W-NIGHT | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons | no cron line, agent line 12.0 h ago (00:20Z) | 0 of 147 entries | crons guard/health/wd continue |
-| W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh k | no | gone | no cron line, agent line 9.9 h ago (02:28Z) | 0 of 147 entries |  |
-| W-NIGHT2 | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | cron line 2.4 h ago, agent line 2.1 h ago (10:15Z) | 0 of 147 entries | guard/health crons (th_night); agent only edits |
-| W-EXITENG | owns D8_EXIT_ENGINE_SUPPORT build, D8_EXIT_ENGINE_RESULTS.md | yes | running | cron line 5 min ago, agent line 50 min ago (11:30Z) | 0 of 147 entries | agent lines 'W-EXITENG STATUS n'; cron status line from its state file; ex_* code is edit-only (nothing superv |
-| W-LAYERS | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | cron-owned (built 10:0xZ; layer_cron.py  | cron line 7 min ago, agent line 7 min ago (12:13Z) [cron-owned: exempt] | 0 of 147 entries | layer_cron.py every 30 min writes '(auto)' lines; agent posts real lines when it works |
-| W-FASTLADDER | fl_status.py cron :20/:50 writes '(auto)' lines to MORNING.md, autopil | yes | cron-owned (agent resumable; nothing swi | cron line 30 min ago, agent line 5 min ago (12:15Z) [cron-owned: exempt] | 0 of 147 entries | fl_status.py cron; no supervised loops |
+| W-GRIDOPS | grid ops, result stamp, nice ladder, ag_nice | yes | resumable | cron line 20 min ago, agent line 2.7 h ago (09:44Z) | 20 of 147 entries | ag_nice_ctl.sh cron, supervise.py; loops continue without the agent |
+| W-SHORT | R3, calibration by family, staleness knock-on | yes | running (resumed 04:5xZ) | cron line 25 min ago, agent line 29 min ago (11:56Z) | 0 of 147 entries | gr3 shards box 1 (<=3) may not be supervised |
+| W-NIGHT | guard.py, health.py, wd_levels | yes | gone (replaced by W-NIGHT2 04:41Z; crons | no cron line, agent line 12.1 h ago (00:20Z) | 0 of 147 entries | crons guard/health/wd continue |
+| W-LONENG | gone (replaced by W-ASIA); crons lon_cron.sh/asia_cron.sh/lx_cron.sh k | no | gone | no cron line, agent line 10.0 h ago (02:28Z) | 0 of 147 entries |  |
+| W-NIGHT2 | guard.py/health.py/agents_live.py, alert G, HEALTH live-agent section | yes | finished 04:4xZ | cron line 2.5 h ago, agent line 2.2 h ago (10:15Z) | 0 of 147 entries | guard/health crons (th_night); agent only edits |
+| W-EXITENG | owns D8_EXIT_ENGINE_SUPPORT build, D8_EXIT_ENGINE_RESULTS.md | yes | running | cron line 10 min ago, agent line 55 min ago (11:30Z) | 0 of 147 entries | agent lines 'W-EXITENG STATUS n'; cron status line from its state file; ex_* code is edit-only (nothing superv |
+| W-LAYERS | owns code/th_layers, TL3_NYL layer programme for beats-live cells | yes | cron-owned (built 10:0xZ; layer_cron.py  | cron line 12 min ago, agent line 12 min ago (12:13Z) [cron-owned: exempt] | 0 of 147 entries | layer_cron.py every 30 min writes '(auto)' lines; agent posts real lines when it works |
+| W-FASTLADDER | fl_status.py cron :20/:50 writes '(auto)' lines to MORNING.md, autopil | yes | cron-owned (agent resumable; nothing swi | cron line 5 min ago, agent line 1 min ago (12:24Z) [cron-owned: exempt] | 0 of 147 entries | fl_status.py cron; no supervised loops |
 Alert G now: none
