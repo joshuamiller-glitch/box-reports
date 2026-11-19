@@ -1,10 +1,10 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 20:35Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 20:45Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 6056 set-months/h (HEALTH.md at 20:35Z); layer queue (tag NYL, quota 5) landed 237 set-months in the last hour, 1658 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 11563, landed 6308, remaining 5219; hours at the HEALTH rate (whole fleet) 0.9 h; at the measured NYL rate 22 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 6824 set-months/h (HEALTH.md at 20:45Z); layer queue (tag NYL, quota 5) landed 192 set-months in the last hour, 1476 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 11563, landed 6337, remaining 5190; hours at the HEALTH rate (whole fleet) 0.8 h; at the measured NYL rate 27 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
@@ -20,14 +20,14 @@ Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byt
 | L01811caaxK7 | 906 | 906 |
 | L21f079b6xK7 | 623 | 432 |
 | L4d206c8cxA7 | 432 | 17 |
-| Ldcdb0b6exA7 | 390 | 348 |
+| Ldcdb0b6exA7 | 390 | 353 |
 | L86781ac0xA7 | 348 | 71 |
-| Lc4e74264xA7 | 348 | 17 |
+| Lc4e74264xA7 | 348 | 23 |
 | L7ea48296xA7 | 348 | 25 |
 | L548972b6xA7 | 348 | 7 |
-| Lb44a3e99xK7 | 348 | 105 |
+| Lb44a3e99xK7 | 348 | 120 |
 | L678ebaddxK7 | 348 | 18 |
-| L6c84f416xK7 | 348 | 11 |
+| L6c84f416xK7 | 348 | 14 |
 | L641a7c4dxK7 | 348 | 6 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
@@ -213,7 +213,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | Mc817d9e3xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L30aad100xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | Le3193838xK7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -269 mean +2068 worst wk +396 max DD +4136 ok; L3M ulcer -349 mean +1697 worst wk +396 max DD +4136 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
-| L4560e541xK7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -207 mean +642 worst wk +1832 max DD +549 ok; L3M ulcer -334 mean +967 worst wk +1832 max DD +549 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L4560e541xK7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -207 mean +642 worst wk +1832 max DD +549 ok; L3M ulcer -334 mean +967 worst wk +1832 max DD +549 ok) | pending: 2/3 engine prior years landed, none RED so far | n/a | -2% / +1% / -6% / -5% GREEN | -7% / -9% / -0% / -3% GREEN | 0.54 |
 | L9513708bxK7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -61 mean +1033 worst wk +45 max DD +1752 ok; L3M ulcer -316 mean +1518 worst wk +45 max DD +1825 ok) | FAIL: engine persistence 0.465 < 0.58 (order 1324Z) | +16% / +24% / +21% / +3% AMBER | -12% / -0% / +5% / -13% GREEN | +4% / -1% / -5% / +11% GREEN | 0.46 |
 | Lac37d7ebxK7 | 2 | NOT first tier: strict criterion not available yet (strict criterion computed by W-LAYERS (not DONE)) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L5a49e86dxK7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -418 mean +713 worst wk +2050 max DD -5582 NOT strict; L3M ulcer -1885 mean +3361 worst wk +4777 max DD +6800 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
