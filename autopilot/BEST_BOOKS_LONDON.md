@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 23:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 23:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 300 s.
+**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 374 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -16,10 +16,10 @@
 | 5 | new | LA4 | BOTH SIDES | time bar 5 min | trig_levels_vwap / reject_native {"tol": 1.0, "conf": "body"} | sym15u | 1187 | 8659 | ok |
 | 6 | new | LB4 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 913 | 7374 | ok |
 | 7 | new | LA1 | BOTH SIDES | range bar 80 ticks | trig_levels_zones / reject_native {"tol": 1.0, "conf": "body"} | sym8u | 751 | 6794 | ok |
-| 8 | new | LA6 | BOTH SIDES | tick-count bar 1300 prints | trig_levels_opens / reject_native {"tol": 1.0, "conf": "close"} | asym20u/10u | 657 | 11236 | ok |
-| 9 | new | LA2 | BOTH SIDES | volume bar 4000 contracts | trig_levels_vwap_bands / reject_native {"tol": 1.0, "conf": "close"} | sym30u | 410 | 8484 | ok |
-| 10 | new | LB6 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 708 | 17740 | ok |
-| 11 | new | LB8 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 437 | 12645 | ok |
+| 8 | new | LB8 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 725 | 12275 | ok |
+| 9 | new | LA6 | BOTH SIDES | tick-count bar 1300 prints | trig_levels_opens / reject_native {"tol": 1.0, "conf": "close"} | asym20u/10u | 657 | 11236 | ok |
+| 10 | new | LA2 | BOTH SIDES | volume bar 4000 contracts | trig_levels_vwap_bands / reject_native {"tol": 1.0, "conf": "close"} | sym30u | 410 | 8484 | ok |
+| 11 | new | LB6 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 708 | 17740 | ok |
 
 Stale-pending cells (their old results are NOT ranked until re-run; listed in the _full.csv with stale=1 and no rank): 0; of them in the OLD top 50: 0 (none in the old top 10).
 
@@ -135,10 +135,10 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 | 5 |  | 3 | YES | time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_levels_vwap / reject_native {"tol": 1.0, "conf": "body"}; SIDE: BOTH SIDES; bracket sym15u | 12 | LA4 | NEW | RM7 | 0.137 | 0.545 | 1187 | 1920 | 8659 | 3525 | -23834 | -10953 | 8.4 | 0.54 | 1683 | -1691 | 0.57 | 0.52 | 388 | 4949 | +67 | RED | 161 | 6285 | +86 | RED | 557 | 7407 | +53 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 6 |  | 8 | YES | unresolved (cell not in ladder_cells.json) |  | LB4 | NEW | RM7 | 0.124 | 0.237 | 913 | 1160 | 7374 | 4895 | -15711 | -8339 | 7.5 | 0.51 | 1653 | -1457 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
 | 7 |  | 1 | YES | range bar 80 ticks [rng_80]; ~3 bars/hour; trigger trig_levels_zones / reject_native {"tol": 1.0, "conf": "body"}; SIDE: BOTH SIDES; bracket sym8u | 3 | LA1 | NEW | RM7 | 0.111 | 0.680 | 751 | 2284 | 6794 | 3360 | -14518 | -9369 | 6.1 | 0.54 | 1559 | -1589 | 0.64 | 0.56 | 582 | 2818 | +22 | AMBER | 342 | 5252 | +54 | RED | 212 | 6632 | +72 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
-| 8 |  | 6 | YES | tick-count bar 1300 prints [tick_1300]; ~5 bars/hour; trigger trig_levels_opens / reject_native {"tol": 1.0, "conf": "close"}; SIDE: BOTH SIDES; bracket asym20u/10u | 5 | LA6 | NEW | RM7 | 0.058 | 0.383 | 657 | 2053 | 11236 | 5362 | -24998 | -13363 | 6.9 | 0.54 | 1656 | -1707 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
-| 9 |  | 19 | YES | volume bar 4000 contracts [vol_4000]; ~2 bars/hour; trigger trig_levels_vwap_bands / reject_native {"tol": 1.0, "conf": "close"}; SIDE: BOTH SIDES; bracket sym30u | 2 | LA2 | NEW | RM7 | 0.048 | -0.041 | 410 | -442 | 8484 | 10887 | -23025 | -9414 | 7.9 | 0.48 | 1679 | -1455 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
-| 10 |  | 14 | YES | unresolved (cell not in ladder_cells.json) |  | LB6 | NEW | RM7 | 0.040 | 0.023 | 708 | 387 | 17740 | 17006 | -42968 | -8522 | 18.7 | 0.51 | 1082 | -1037 | 0.43 | 0.43 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
-| 11 |  | 23 | YES | unresolved (cell not in ladder_cells.json) |  | LB8 | NEW | ADD | 0.035 | -0.082 | 437 | -1393 | 12645 | 17080 | -25061 | -10874 | 8.7 | 0.48 | 1850 | -1585 | 0.29 | 0.29 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
+| 8 |  | 23 | YES | unresolved (cell not in ladder_cells.json) |  | LB8 | NEW | RM7 | 0.059 | -0.081 | 725 | -1356 | 12275 | 16763 | -24586 | -5943 | 9.0 | 0.49 | 1834 | -1571 | 0.36 | 0.36 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
+| 9 |  | 6 | YES | tick-count bar 1300 prints [tick_1300]; ~5 bars/hour; trigger trig_levels_opens / reject_native {"tol": 1.0, "conf": "close"}; SIDE: BOTH SIDES; bracket asym20u/10u | 5 | LA6 | NEW | RM7 | 0.058 | 0.383 | 657 | 2053 | 11236 | 5362 | -24998 | -13363 | 6.9 | 0.54 | 1656 | -1707 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
+| 10 |  | 19 | YES | volume bar 4000 contracts [vol_4000]; ~2 bars/hour; trigger trig_levels_vwap_bands / reject_native {"tol": 1.0, "conf": "close"}; SIDE: BOTH SIDES; bracket sym30u | 2 | LA2 | NEW | RM7 | 0.048 | -0.041 | 410 | -442 | 8484 | 10887 | -23025 | -9414 | 7.9 | 0.48 | 1679 | -1455 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
+| 11 |  | 14 | YES | unresolved (cell not in ladder_cells.json) |  | LB6 | NEW | RM7 | 0.040 | 0.023 | 708 | 387 | 17740 | 17006 | -42968 | -8522 | 18.7 | 0.51 | 1082 | -1037 | 0.43 | 0.43 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
 | 12 |  | 10 | YES | live book M7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_M7 | LIVE | JL3 | 0.017 | 0.146 | 144 | 1130 | 8679 | 7722 | -17285 | -11717 | 19.8 | 0.40 | 1172 | -762 | 0.43 | 0.40 | 95 | 5555 | +34 | RED | -376 | 26105 | +360 | RED | -356 | 16712 | +347 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 13 |  | 12 | YES | range bar 80 ticks [rng_80]; ~3 bars/hour; trigger trig_levels_round / retest {"M": 6, "tol": 0.0}; SIDE: BOTH SIDES; bracket sym8u | 3 | WL2 | NEW | RM7 | 0.003 | 0.067 | 42 | 722 | 12945 | 10818 | -27581 | -9149 | 7.6 | 0.52 | 1559 | -1645 | 0.43 | 0.43 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
 | 14 |  | 4 | YES | unresolved (cell not in ladder_cells.json) |  | LB2 | NEW | RM7 | 0.003 | 0.535 | 53 | 2212 | 19008 | 4135 | -29863 | -10777 | 17.0 | 0.50 | 1069 | -1058 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
@@ -159,8 +159,12 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
+| K7 | -2142 | 461 | 1 | 3872 | 3872 / 3872 | 6014 | 280.7% | 482 |
+| P7 | 27768 | 400 | 2 | 24381 | 20278 / 28485 | 4104 | 14.8% | 412 |
+| U7 | 18214 | 110 | 2 | 16207 | 12734 / 19680 | 3473 | 19.1% | 117 |
+| M7 | -7247 | 518 | 1 | -4602 | -4602 / -4602 | 2645 | 36.5% | 524 |
 
-The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 32 pairs over 16 cells): mean abs difference of its own L6M total $4712 = 310.5% of |total| (median 31.6%, 90th pct 342.0%); trade-count differences: mean abs 5.6 trades (primary mean 246).
+The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 34 pairs over 17 cells): mean abs difference of its own L6M total $4898 = 294.7% of |total| (median 37.1%, 90th pct 320.6%); trade-count differences: mean abs 5.5 trades (primary mean 245).
 
 Reading: the day halt / stack cuts / re-entry rules mean a book's own trades differ slightly between stacks. Rankings use the primary (REPLACE) stack for every cell, so the effect is a common-mode offset in the ordering; it is bounded by the percentages above.
 
