@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:13Z 11-19 (t+586.2 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 23:28Z 11-19 (t+586.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 100% min 100% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-19T23:13:11Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-19T23:28:13Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -399,7 +399,7 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 21:25Z 11-19 (t+632.7 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 23:25Z 11-19 (t+634.7 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
@@ -9376,3 +9376,16 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 23:20Z SUPERVISOR restarted 1 dead loop(s): box1: START_DISPATCH 67.213.127.157 C
 - 23:22Z W-PROOF D1 PASS (clean re-drill): killed C s3_dispatch pid 2159687 at 23:15:31 (C 98/100); cron supervisor restarted it 23:20:02 (4.5 min, nobody touched it); C 99/100 at 23:21:26 (5.9 min after kill, 99% of cap, limit 10 min). Remote workers kept running during the gap (the dispatcher only launches). Supervisor now matches startswith (W-GRIDOPS 2325Z).
 - 23:22Z W-PROOF D2 START: killed S3_TAG_D s3_pull pid 974765 (explicit) at 23:22:12; D slots 64/64; expect supervisor cron 23:25Z (puller now part of the s3 alive test); pulls from D must resume and D slots stay >= 90%
+- 23:25Z SUPERVISOR restarted 1 dead loop(s): box1: START_DISPATCH 72.46.85.15 D
+- (wall 23:26Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 1115, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
+- 23:26Z W-PROOF D2 PASS: killed S3_TAG_D s3_pull pid 974765 at 23:22:12; cron supervisor restarted it 23:25:03 (2.9 min, untouched; new pid 2218765); pulls from D resumed 23:25:14; D slots stayed 59-63 of 64 (92-98%) throughout (min 92%).
+- 23:26Z W-PROOF D3 START: removed the 3 ControlMaster socket files /tmp/mux_pull_67_213_127_157_{0,1,2} (host C pulls; masters orphaned = stale socket case)
+- 23:26Z W-COMBO ALL-NEW ASIA step 1: add Ld3302219 -> stack ulcer 3234 / maxDD -9245 / worst wk -8932 / mean 2119 (L6M), L3M ulcer 4107 (tried 60 at this step)
+- 23:27Z W-PROOF box1_guard: paused 1 side jobs (mem 48.5 GB, disk 283 GB): ny_bothside/London shards, other builders, pass-2 screens/loop
+23:27Z W-GRIDOPS RERUN COUNT (rerun_gen): NY AM 1,525 + G1/G3 282 = 1,807: landed 1,798, running+pending ~9; G4 background (3,999): landed 1,367, running 106, pending 2,526 (~20 min at fleet rate). LOST-suspect 6 (lease local/failed, auto re-added). Final line + W-BEST/W-NYENG/W-COMBO notes when the 1,807 are all landed.
+- 23:27Z W-PROOF D3 PASS (stale socket): rm of C's 3 pull mux sockets at 23:26:34; ssh ControlMaster=auto rebuilt all three by 23:26:44 (10 s); C pulls continued without a gap (PULLED lines every few s, no errors in s3_pull.out). D3b next: HUNG master test of mux_watch.py (SIGSTOP the D slot-2 master by explicit pid)
+- 23:29Z W-PROOF box1_guard: trickle: MemAvailable 48.4 GB >= 45 GB, resumed paused other builders pid 2230004 (rss 0.9 GB), immune 10 min so paused jobs still make progress
+- 23:29Z W-PROOF box1_guard: paused 1 side jobs (mem 48.4 GB, disk 283 GB): ny_bothside/London shards, other builders, pass-2 screens/loop
+2026-11-19T23:29:11Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 23:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 189180
+- 23:30Z WATCHDOG fired: E/F

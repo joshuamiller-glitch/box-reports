@@ -1,12 +1,29 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-19 23:24Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-19 23:27Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: wait1. Candidates tried: 60 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: select. Candidates tried: 60 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
+| 1 | Ld3302219 | `TL3_ALN_AS_Ld3302219_BASE` | 3234 / -9245 / -8932 / 2119 | 4107 / -9245 / -8932 / 1140 | 0.66 | Ld3302219 / L1716c153 | 60 |
 
 Selected books in order (what each is):
 
+- Ld3302219: W-BEST score 0.680, L6M wk 2196.2, persistence 0.92; ALONE (from empty Asia, rest JL3): 3234 / -9245 / -8932 / 2119; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for Ld3302219 (both sides as engine-run for L-ids).
+
+Top 10 candidates alone (from empty Asia, rest of day JL3), by L6M ulcer:
+
+| cell | L6M | L3M |
+|---|---|---|
+| L1716c153 | 3140 / -8738 / -8738 / 1415 | 4007 / -8738 / -8738 / 718 |
+| Lb68a132d | 3158 / -8621 / -3718 / 1090 | 2757 / -6498 / -2303 / 1273 |
+| Ld3302219 | 3234 / -9245 / -8932 / 2119 | 4107 / -9245 / -8932 / 1140 |
+| Lbf4492a6 | 3250 / -8451 / -6613 / 1012 | 1564 / -4819 / -3549 / 1231 |
+| M7423c0d9 | 3251 / -9723 / -3649 / 1055 | 3501 / -9723 / -3329 / 860 |
+| L15f14deb | 3329 / -9477 / -6922 / 1482 | 3086 / -8048 / -6922 / 1208 |
+| Lb328c0d1 | 3417 / -9887 / -6800 / 1633 | 2633 / -7065 / -3543 / 1624 |
+| L566a451d | 3573 / -9820 / -6368 / 1520 | 2744 / -7891 / -2971 / 1650 |
+| L9aa7805c | 3604 / -8595 / -6065 / 1691 | 3141 / -6337 / -2953 / 1635 |
+| L40bde9ea | 3638 / -9517 / -4372 / 1417 | 2813 / -9517 / -2418 / 2010 |
 
 Reference line, today, as run: JL3 ASIA-session trades only (all five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
 
