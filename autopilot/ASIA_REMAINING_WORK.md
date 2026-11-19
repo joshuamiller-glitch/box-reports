@@ -1,4 +1,4 @@
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T13:59:23Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T14:00:46Z)
 
 Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 608; WITHOUT a first look: 2589** (30380 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 305, 'B': 240, 'out (RED B)': 2, 'A': 2591}.
 
@@ -6,13 +6,13 @@ Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side
 |---|---|---|---|
 | stage A first look (ADD + REPLACE-vs-A7, L6M) | 26989 | 0 | queue lines |
 | a2 REPLACE vs K7/P7/H7/U7 (L6M) | 4272 | ~30657 | 24 lines x alive share 0.49 x cells without first look |
-| prior years (2023-04..2026-04, ADD/REPLACE sets) | 8868 | ~70896 | 37 months x ~1.5 alive sets x alive share |
-| controls (30 date-shift x 6 months per set) | 13958 (+ 1634 passer-control lines in first.txt, same lines) | ~328212 | 180 x ~1.5 sets x alive share x measured C share 0.95 |
+| prior years (2023-04..2026-04, ADD/REPLACE sets) | 8868 | ~4372 | 37 months x ~1.5 sets x beater share 0.030 (follow-ups gated to cells that beat a live book) |
+| controls (30 date-shift x 6 months per set) | 13891 (+ 1568 passer-control lines in first.txt, same lines) | ~20241 | 180 x ~1.5 sets x beater share 0.030 x C share 0.95 |
 | F-set re-runs (202511 capped exits) | 0 | cron :20/:50 adds new ones | contaminated 202511 set-months |
-| older AB/AX lines (W-LONENG) | 8851 | 0 | queue lines |
+| older AB/AX lines (W-LONENG) | 8875 | 0 | queue lines |
 | layers (W-LAYERS, tag NYL) | not in _asi | ~4.5 h per passer (W-LAYERS 11:07Z) | 8 passers |
 | exit run (W-EXITENG / W-D8EXIT) | not in _asi | D8_EXIT_SCREEN.md | per candidate |
 
 **Cells already OUT at an early rung with later-rung lines still queued: 0 cells, 0 lines** (these are wasted work for W-DEDUP; the 8 passers and the 59-cell stage-C reset are NOT among them if the next line says 0).
 
-Rate now: Asia landed last hour 608 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
+Rate now: Asia landed last hour 645 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).

@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 13:57Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 14:00Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -304,7 +304,7 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | L05222ff9 time_m_4 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.51 (93) fail | fail | - |
 | L63ff9ae8 time_m_4 | both-side | yes / no | no | no | REPLACE | pending | 0.54 (13) fail | fail | - |
 | L7c368a4f time_m_5 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
-| L5c9e11b3 vol_750 | both-side | yes / no | yes | yes | REPLACE | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls (10 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
+| L5c9e11b3 vol_750 | both-side | yes / no | yes | yes | REPLACE | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls (16 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
 | Ledfbf4d2 vol_350 | both-side | yes / no | yes | yes | REPLACE | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
 | M15f14deb tm120 | long-only | yes / no | no | no | REPLACE | pending | 0.51 (67) fail | fail | - |
 | M41ef5c77 time_m_7 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
@@ -313,9 +313,9 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | L0b1d7882 tm30 | both-side | yes / no | no | no | REPLACE | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.46 (93) fail | fail | - |
 | L4d206c8c dlt_70 | both-side | no / yes | yes | yes | ADD | 2023 AMBER / 2024 GREEN / 2025 GREEN | 0.61 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
 | Mac4916e6 tm180 | long-only | no / yes | yes | yes | ADD | pending | 0.54 (13) fail | fail | - |
-| M98c7ae1d time_m_3 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
+| M98c7ae1d time_m_3 | long-only | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (1 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
 | L34e2c5ab lbrk_3_40 | both-side | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.63 (93) PASS | PASS (3 prior years landed) | 30 controls (0 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
-| Lb5e883f6 vol_500 | both-side | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (15 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
+| Lb5e883f6 vol_500 | both-side | no / yes | yes | yes | ADD | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.66 (93) PASS | PASS (3 prior years landed) | 30 controls (19 of 30 landed); layers (W-LAYERS); exit run (68 recipes, D8_EXIT_SCREEN.md) |
 
 **Asia pass list so far: 8 candidate rows** (Lda55d973 both-side ADD, L5c9e11b3 both-side REPLACE, M41ef5c77 long-only ADD, Mdcdb0b6e long-only ADD, L4d206c8c both-side ADD, M98c7ae1d long-only ADD, L34e2c5ab both-side ADD, Lb5e883f6 both-side ADD). A candidate that passes on all of recent months, no RED prior year and persistence >= 0.58 still needs the 30 date-shift controls, layers and the exit run before it can enter D8 (see the table; dates in MORNING.md).
 
@@ -373,23 +373,43 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | Mf4ed7e30 time_m_4 | [twin of M35596060] | no (L6M du -608 dm +693 | L3M du -1183 dm +1104) | no (L6M du -858 dm +450 | L3M du -930 dm +1934) | copied |
 | Mf7c7ee18 tm240 | [twin of M6f0b4896] | no (L6M du +181 dm +157 | L3M du -1462 dm +1297) | no (L6M du -1094 dm +256 | L3M du -1079 dm +974) | copied |
 
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-19T14:00:46Z)
+
+Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 608; WITHOUT a first look: 2589** (30380 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 305, 'B': 240, 'out (RED B)': 2, 'A': 2591}.
+
+| part | queued now (not DONE) | still to be appended (estimate) | basis |
+|---|---|---|---|
+| stage A first look (ADD + REPLACE-vs-A7, L6M) | 26989 | 0 | queue lines |
+| a2 REPLACE vs K7/P7/H7/U7 (L6M) | 4272 | ~30657 | 24 lines x alive share 0.49 x cells without first look |
+| prior years (2023-04..2026-04, ADD/REPLACE sets) | 8868 | ~4372 | 37 months x ~1.5 sets x beater share 0.030 (follow-ups gated to cells that beat a live book) |
+| controls (30 date-shift x 6 months per set) | 13891 (+ 1568 passer-control lines in first.txt, same lines) | ~20241 | 180 x ~1.5 sets x beater share 0.030 x C share 0.95 |
+| F-set re-runs (202511 capped exits) | 0 | cron :20/:50 adds new ones | contaminated 202511 set-months |
+| older AB/AX lines (W-LONENG) | 8875 | 0 | queue lines |
+| layers (W-LAYERS, tag NYL) | not in _asi | ~4.5 h per passer (W-LAYERS 11:07Z) | 8 passers |
+| exit run (W-EXITENG / W-D8EXIT) | not in _asi | D8_EXIT_SCREEN.md | per candidate |
+
+**Cells already OUT at an early rung with later-rung lines still queued: 0 cells, 0 lines** (these are wasted work for W-DEDUP; the 8 passers and the 59-cell stage-C reset are NOT among them if the next line says 0).
+
+Rate now: Asia landed last hour 645 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
+
+
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 608, last 3 h 4362; Asia queue lines pending (not DONE): 62988.
+Asia set-months landed: last 1 h 687, last 3 h 4337; Asia queue lines pending (not DONE): 62905.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 5, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 26 TL3_NYW_      14 TL3_NYL_      12 TL3_ASI_       6 TL3_LON_
-- server2 running engine sets by tag: 52 TL3_ASI_
-- A running engine sets by tag: 276 TL3_ASI_
-- B running engine sets by tag: 194 TL3_ASI_
+- box1 running engine sets by tag: 28 TL3_NYL_      13 TL3_ASI_      12 TL3_NYW_       7 TL3_LON_
+- server2 running engine sets by tag: 54 TL3_ASI_
+- A running engine sets by tag: 222 TL3_ASI_
+- B running engine sets by tag: 198 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
 |---|---|---|---|---|---|---|---|
 | AB6 trb_240 / levels_fib15.break_native {"n": 3, "k": 0.5} / plain60/60 / both | no (L6M du +335 dm +1217 | L3M du +511 dm -702) | no (L6M du +2242 dm -2808 | L3M du +3964 dm -6870) | not run | no (L6M du +49 dm +370 | L3M du +377 dm -199) | no (L6M du -296 dm -526 | L3M du -327 dm -1249) | no (L6M du -1396 dm -146 | L3M du -2236 dm -914) | 0 of 30 |
-| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | 38 of 30 |
+| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | 43 of 30 |
 | La5b5d03a time_m_2 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +222 dm +485 | L3M du +463 dm -51 RED Y2023) | no (L6M du +926 dm -2686 | L3M du +2289 dm -5618) | no (L6M du +3399 dm -9027 | L3M du +3705 dm -6504) | yes (L6M du -1197 dm +1547 | L3M du -892 dm +1038 RED Y2023) | no (L6M du +1058 dm -152 | L3M du -311 dm -616) | no (L6M du +99 dm -575 | L3M du -1062 dm -419) | 0 of 30 |
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +269 dm +872 | L3M du +546 dm +19 RED Y2023) | no (L6M du +985 dm -2570 | L3M du +2381 dm -5549) | no (L6M du +3438 dm -8996 | L3M du +3770 dm -6434) | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085 RED Y2023) | no (L6M du +1110 dm -122 | L3M du -214 dm -547) | no (L6M du +134 dm -550 | L3M du -996 dm -348) | 0 of 30 |
 | M718570f8 time_m_4 / momentum_squeeze.fire_slope {"len": 14, "wd": 1.0} / asym10u/20u / long-only | no (L6M du +180 dm +165 | L3M du -1464 dm +1300) | not run | not run | no (L6M du -1097 dm +263 | L3M du -1081 dm +975) | not run | not run | 0 of 30 |
@@ -397,12 +417,12 @@ Asia set-months landed: last 1 h 608, last 3 h 4362; Asia queue lines pending (n
 ## Cells that beat a live Asia book (Asia rule, yes), drawdown first
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | prior years run | controls |
 |---|---|---|---|---|---|---|---|---|
-| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | K7:0,P7:0,A7:3,H7:0,U7:0 | 38 of 30 |
+| Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | K7:0,P7:0,A7:3,H7:0,U7:0 | 43 of 30 |
 | La5b5d03a time_m_2 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +222 dm +485 | L3M du +463 dm -51 RED Y2023) | no (L6M du +926 dm -2686 | L3M du +2289 dm -5618) | no (L6M du +3399 dm -9027 | L3M du +3705 dm -6504) | yes (L6M du -1197 dm +1547 | L3M du -892 dm +1038 RED Y2023) | no (L6M du +1058 dm -152 | L3M du -311 dm -616) | no (L6M du +99 dm -575 | L3M du -1062 dm -419) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +269 dm +872 | L3M du +546 dm +19 RED Y2023) | no (L6M du +985 dm -2570 | L3M du +2381 dm -5549) | no (L6M du +3438 dm -8996 | L3M du +3770 dm -6434) | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085 RED Y2023) | no (L6M du +1110 dm -122 | L3M du -214 dm -547) | no (L6M du +134 dm -550 | L3M du -996 dm -348) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | L0a809c2e kagi_40 / trend_ma_t3.price_native {"len": 13, "width": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -47 dm +1439 | L3M du -1599 dm +1297 RED Y2025) | no (L6M du -464 dm -2469 | L3M du -671 dm -4382) | no (L6M du +3556 dm -9315 | L3M du +3509 dm -8084) | yes (L6M du -789 dm +402 | L3M du -1498 dm +1029 RED Y2025) | no (L6M du -554 dm -71 | L3M du -1326 dm +708) | no (L6M du -84 dm -1395 | L3M du -2134 dm -968) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | L7c368a4f time_m_5 / pullback_ema.depth {"len": 10, "w": 0.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du +682 dm +2019 | L3M du -454 dm +1240 RED Y2025) | no (L6M du -649 dm -1287 | L3M du -1529 dm -2786) | no (L6M du +2892 dm -7177 | L3M du +3173 dm -4564) | yes (L6M du -199 dm +1810 | L3M du -1260 dm +3199 RED Y2025) | no (L6M du +334 dm +628 | L3M du -711 dm +811 RED Y2025,Y2023) | no (L6M du +52 dm +184 | L3M du -2119 dm +569 RED Y2025) | K7:0,P7:0,A7:3,H7:3,U7:3 | 0 of 30 |
-| L5c9e11b3 vol_750 / momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -815 dm +2152 | L3M du -1706 dm +3570 RED Y2025) | no (L6M du +1530 dm -2252 | L3M du +2684 dm -3703) | no (L6M du +2680 dm -9625 | L3M du +2168 dm -6262) | yes (L6M du -603 dm +1062 | L3M du -1151 dm +3460 RED Y2025) | no (L6M du -451 dm +87 | L3M du -636 dm +2865 RED Y2025,Y2023) | no (L6M du -169 dm -472 | L3M du -651 dm +1123) | K7:0,P7:0,A7:3,H7:3,U7:0 | 10 of 30 |
+| L5c9e11b3 vol_750 / momentum_mvote.v3of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -815 dm +2152 | L3M du -1706 dm +3570 RED Y2025) | no (L6M du +1530 dm -2252 | L3M du +2684 dm -3703) | no (L6M du +2680 dm -9625 | L3M du +2168 dm -6262) | yes (L6M du -603 dm +1062 | L3M du -1151 dm +3460 RED Y2025) | no (L6M du -451 dm +87 | L3M du -636 dm +2865 RED Y2025,Y2023) | no (L6M du -169 dm -472 | L3M du -651 dm +1123) | K7:0,P7:0,A7:3,H7:3,U7:0 | 16 of 30 |
 | L1edb9fab tm300 / pullback_ema.depth {"len": 10, "w": 0.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du +747 dm +1854 | L3M du -411 dm +1205 RED Y2025) | no (L6M du -584 dm -1527 | L3M du -1448 dm -2924) | no (L6M du +3214 dm -7331 | L3M du +3583 dm -4483) | yes (L6M du -142 dm +1606 | L3M du -1252 dm +3083 RED Y2025) | no (L6M du +391 dm +413 | L3M du -685 dm +692 RED Y2025,Y2023) | no (L6M du +246 dm +17 | L3M du -1893 dm +426 RED Y2025) | K7:0,P7:0,A7:3,H7:3,U7:3 | 0 of 30 |
 | Ledfbf4d2 vol_350 / bands_bollinger.break_native {"clk": 20, "k": 1.5} / plain60/60 / both (both sides, engine-tested; screen mode long) | no (L6M du -813 dm +880 | L3M du -949 dm +64 RED Y2025) | no (L6M du -567 dm -1956 | L3M du -296 dm -3836) | no (L6M du +3368 dm -10349 | L3M du +3215 dm -7631) | yes (L6M du -459 dm +384 | L3M du -548 dm +1331 RED Y2025) | no (L6M du -541 dm -839 | L3M du -443 dm -582) | no (L6M du -421 dm -1230 | L3M du -860 dm -2636) | K7:0,P7:0,A7:3,H7:0,U7:0 | 0 of 30 |
 | M15f14deb tm120 / momentum_mvote.v4of5 {"scale": 0.25, "thr": 0.25} / plain60/60 / long-only | no (L6M du +524 dm +624 | L3M du +558 dm +83 RED Y2025) | no (L6M du +1100 dm -3442 | L3M du +2476 dm -5291) | no (L6M du +6705 dm -10031 | L3M du +9565 dm -8755) | yes (L6M du -480 dm +276 | L3M du -176 dm +390) | no (L6M du -505 dm -645 | L3M du +68 dm -958) | no (L6M du -318 dm -866 | L3M du -713 dm -952) | K7:0,P7:0,A7:0,H7:0,U7:0 | 0 of 30 |
