@@ -1,4 +1,4 @@
-# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 08:15Z
+# D8_EXIT_SCREEN - 68 exit recipes on the D8 candidates (W-D8EXIT, orders 0213Z / 0220Z / 0224Z), refreshed 2026-11-19 08:30Z
 Research only. Screen = points per lot (base lots), 68 recipes (7 families) on the candidate cell's OWN entries, run on real entries and on 2 random-entry draws (same count / side mix). Pick rule (PREREG_D8EXIT.md sha in DECISIONS.md): eligible = L6M>0, L3M>0, trades L6M>=20, no prior year (2023-25) >30% worse; best = lowest ulcer then highest L6M. A cell BEATS-NULL when its best eligible recipe L6M exceeds the best eligible recipe of BOTH null draws (2 draws = screen only; finalists get more draws). Data week index 189 (as EXIT_YIELD). Fixed reference = best fixed bracket of the cell from pass-1 (p1real).
 Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. Until a family is built, a recipe of that family cannot be the best TESTED exit in the D8 spec (screen result stands).
 
@@ -6,10 +6,10 @@ Engine support per family and build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md. 
 
 | session | candidate cells | screened | pending | with an eligible exit (real) | BEATS-NULL | beat fixed ref too | ETA |
 |---|---|---|---|---|---|---|---|
-| Asia | 1875 | 1820 | 55 | 388 | 347 | 292 | about 0.1 h after the sessions above (fleet 809 cells/h) |
-| NY AM | 4557 | 2525 | 2032 | 573 | 510 | 398 | about 2.6 h after the sessions above (fleet 809 cells/h) |
+| Asia | 1875 | 1875 | 0 | 393 | 352 | 296 | done |
+| NY AM | 4557 | 2687 | 1870 | 613 | 544 | 421 | about 2.2 h after the sessions above (fleet 844 cells/h) |
 | London | 0 | 0 | 0 | 0 | 0 | 0 | done |
-| NY PM | 396 | 59 | 337 | 2 | 2 | 2 | about 3.0 h after the sessions above (fleet 809 cells/h) |
+| NY PM | 396 | 61 | 335 | 2 | 2 | 2 | about 2.6 h after the sessions above (fleet 844 cells/h) |
 
 Asia and London candidates appear here when W-LONENG's engine rows land in D8_CANDIDATES (0 now = none listed yet, not "none exist").
 
@@ -41,6 +41,7 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | Asia | A7 | Leee24dbe | Asia/tick_1300/trig_momentum_er/trend_z_native/{"len": 30, "thr": 0.3}/plain60/60/long | n/a on this host | stage=([1.0], [0.5], True) stop=('vol', 1.5) target=('R', 3.0) trail=('chand', 3.0) (staged) | +19 | +480 | 142 | 0.62 | +185 / +677 / +797 / +565 | 54% / +39.5 / -45.5 / 77 | 121 | - / - | stage=([1.0], [0.5], True) stop=('vol', 2.5) target=('R', 3. +253 (u 203) |
 | Asia | A7 | L40bd6bf5 | Asia/dchg_20/trig_levels_prior_day/retest_native/{"M": 6, "tol": 0.5}/plain60/60/long | n/a on this host | stop=('wall', 2) trail=('swing', 1) (trailing) | +116 | +83 | 142 | 0.52 | +137 / +1321 / +763 / +342 | 27% / +50.9 / -18.6 / 44 | 255 | - / - | stop=('wall', 2) trail=('chand', 3.0) +128 (u 194) ; clock=('0825', '0955', '1155') stop=('vol', 1.5) +19 (u 277) |
 | Asia | A7 | L7669e599 | Asia/cdr_100/trig_trend_libstack/ema_stack/{"set": "10-20-50"}/sym15u/long | plain60/60 +303 / 219 | minrr=1.5 stop=('swing', 8) target=('mm', 1.27) (market target) | +85 | +193 | 145 | 0.56 | +189 / +231 / +551 / -111 | 35% / +68.2 / -34.6 / 95 | 57 | - / - | minrr=1.5 stop=('swing', 4) target=('mm', 1.27) +40 (u 168) |
+| Asia | A7 | L8449e4d3 | Asia/wrenko_14/trig_levels_opens/break/{"n": 2, "k": 0.25}/sym15u/long | n/a on this host | stage=([1.0], [0.5], True) stop=('vol', 2.5) target=('R', 3.0) trail=('chand', 3.0) (staged) | +28 | +245 | 145 | 0.62 | +171 / +243 / +390 / +818 | 45% / +41.6 / -33.2 / 54 | 283 | - / - | be=(1.0, 0) stop=('vol', 1.5) trail=('chand', 3.0) +319 (u 194) ; stop=('vol', 1.5) trail=('chand', 3.0) +123 (u 215) |
 | Asia | A7 | L2d67ff13 | Asia/vol_4000/trig_pullback_ema/count_native/{"len": 20, "n": 2}/plain60/60/both | n/a on this host | stop=('swing', 4) target=('R', 2.0) (market target) | +253 | +363 | 148 | 0.64 | +275 / +903 / +818 / +1238 | 52% / +80.8 / -82.6 / 172 | 84 | - / - | be=(0.5, 0) stop=('vol', 1.5) target=('R', 2.0) +7 (u 154) |
 | Asia | A7 | L4332eb4b | Asia/dlt_70/trig_pullback_ema/count_native/{"len": 20, "n": 2}/plain60/60/both | n/a on this host | minrr=2.0 stop=('inval', 2) target=('opp',) (market target) | +84 | +260 | 148 | 0.57 | +122 / +186 / +1026 / +397 | 29% / +57.7 / -22.5 / 37 | 196 | - / - |  |
 | Asia | A7 | L20308a34 | Asia/pnf_10/trig_momentum_rsi/mom/{"len": 14, "lvl": 55}/sym15u/long | n/a on this host | stage=([1.0], [0.5], True) stop=('vol', 1.5) target=('R', 3.0) trail=('chand', 3.0) (staged) | +134 | +385 | 149 | 0.62 | +302 / +738 / +304 / +392 | 51% / +37.3 / -37.7 / 53 | 279 | - / +5 | opp_exit=True stop=('vol', 1.5) +50 (u 258) ; minrr=1.5 stop=('vol', 1.5) target=('mm', 1.27) +164 (u 261) |
@@ -56,6 +57,7 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | Asia | A7 | L5e8027ee | Asia/tib_3500/trig_xmarket_fx/with_6J/{"w": 1, "thr": 1.0}/plain60/60/long | sym15u +679 / 307 | stop=('wall', 2) target=('R', 2.0) (market target) | +216 | +88 | 161 | 0.54 | +263 / +1442 / +498 / +28 | 36% / +67.1 / -35.8 / 107 | 178 | - / - |  |
 | Asia | A7 | L599e3ce9 | Asia/drb_3500/trig_barnative_run/cont/{"n": 2}/sym15u/long | n/a on this host | clock=('0825', '0955', '1155') stop=('vol', 1.5) (time / behaviour) | +82 | +37 | 162 | 0.62 | +161 / +903 / +472 / +450 | 36% / +108.7 / -58.9 / 164 | 121 | +6 / - | minrr=1.5 stop=('vol', 1.5) target=('mm', 1.27) +106 (u 164) ; stop=('vol', 1.5) trail=('chand', 3.0) +71 (u 175) |
 | Asia | A7 | La32316a4 | Asia/pnf_20/trig_levels_swsr60/break_native/{"n": 3, "k": 0.5}/plain60/60/both | plain60/60 +105 / 251 | stage=([1.0], [0.5], True) stop=('vol', 1.5) target=('R', 3.0) trail=('chand', 3.0) (staged) | +237 | +340 | 162 | 0.58 | +395 / +1042 / +482 / +366 | 50% / +66.6 / -63.8 / 124 | 166 | - / - | noprog=(4, 0.5) stop=('inval', 2) target=('R', 2.0) +158 (u 246) ; stop=('inval', 2) target=('R', 2.0) +9 (u 298) |
+| Asia | A7 | L1b40b322 | Asia/cusum_28/trig_levels_profile_nodes/retest_native/{"M": 6, "tol": 0.5}/sym15u/long | n/a on this host | minrr=1.5 stop=('vol', 2.5) target=('mm', 1.27) (market target) | +94 | +28 | 164 | 0.57 | +155 / +340 / +889 / +492 | 38% / +80.2 / -47.9 / 63 | 196 | - / - |  |
 | Asia | A7 | Lba865acd | Asia/wrenko_10/trig_xmarket_fx/with_6E/{"w": 5, "thr": 1.0}/sym15u/long | n/a on this host | stop=('wall', 2) target=('R', 2.0) (market target) | +130 | +125 | 165 | 0.53 | +253 / +816 / +1063 / -19 | 39% / +58.3 / -35.2 / 105 | 161 | - / - |  |
 | Asia | A7 | Lccc6b1e7 | Asia/mom_80/trig_tape_libvol/adline/{"len": 10}/plain60/60/long | n/a on this host | stage=([1.0], [0.5], True) stop=('vol', 2.5) target=('R', 3.0) trail=('chand', 3.0) (staged) | +110 | +169 | 165 | 0.59 | +241 / +434 / +650 / +135 | 54% / +92.7 / -102.7 / 207 | 56 | - / - | stop=('vol', 1.5) trail=('swing', 1) +36 (u 178) ; clock=('0825', '0955', '1155') stop=('vol', 1.5) +198 (u 253) |
 | Asia | A7 | Laf6bbde8 | Asia/drb_400/trig_tape_delta/cvd_follow/{"N": 10, "L": 100, "z": 1.5}/plain60/60/long | n/a on this host | minrr=1.5 stop=('vol', 1.5) target=('mm', 1.27) (market target) | +8 | +32 | 167 | 0.57 | +163 / +138 / +476 / +575 | 28% / +47.4 / -18.8 / 20 | 271 | - / - | opp_exit=True stop=('vol', 1.5) +88 (u 184) |
@@ -114,6 +116,7 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | Asia | A7 | L137511ae | Asia/urenko_112/trig_levels_fibr_pd/reject_native/{"tol": 1.0, "conf": "body"}/plain60/60/long | n/a on this host | stop=('inval', 2) trail=('chand', 2.0) (trailing) | +56 | +510 | 207 | 0.62 | +130 / +1338 / +1746 / +782 | 41% / +99.2 / -68.1 / 153 | 95 | - / - | stop=('vol', 2.5) target=('R', 2.0) +199 (u 209) ; stop=('vol', 2.5) trail=('chand', 3.0) +19 (u 219) |
 | Asia | A7 | L0cac932a | Asia/kagi_20/trig_book_cancel/net_follow_native/{"L": 900, "z": 1.0}/sym15u/long | n/a on this host | minrr=1.5 stop=('vol', 2.5) target=('mm', 1.27) (market target) | +207 | +97 | 207 | 0.59 | +229 / +1450 / +1273 / +768 | 39% / +85.1 / -52.8 / 84 | 239 | - / - |  |
 | Asia | A7 | L176d6b90 | Asia/dchg_20/trig_book_cancel/net_follow_native/{"L": 900, "z": 1.0}/sym15u/long | n/a on this host | minrr=1.5 stop=('vol', 2.5) target=('mm', 1.27) (market target) | +207 | +94 | 208 | 0.59 | +233 / +1457 / +1267 / +768 | 39% / +85.2 / -52.8 / 84 | 239 | - / - | stage=([1.0], [0.5], True) stop=('swing', 8) target=('R', 3. +40 (u 247) |
+| Asia | A7 | L88fb29cc | Asia/mrenko_14/trig_levels_opens/reject_native/{"tol": 1.0, "conf": "body"}/asym20u/10u/long | n/a on this host | stop=('swing', 4) target=('R', 2.0) (market target) | +52 | +272 | 209 | 0.59 | +136 / +567 / +424 / +840 | 40% / +66.5 / -43.3 / 74 | 212 | - / - | stop=('swing', 8) target=('R', 2.0) +92 (u 240) |
 | Asia | A7 | Lfa660bca | Asia/kagi_14/trig_levels_prior_day/break/{"n": 2, "k": 0.5}/sym15u/long | n/a on this host | stop=('swing', 4) trail=('swing', 1) (trailing) | +30 | +652 | 210 | 0.56 | +243 / +94 / +771 / +663 | 34% / +42.4 / -21.6 / 28 | 422 | - / - | stop=('swing', 8) trail=('swing', 1) +30 (u 210) |
 | Asia | A7 | L80992d8e | Asia/time_m_20/trig_levels_fib5/reject_native/{"tol": 0.0, "conf": "close"}/sym15u/long | n/a on this host | stop=('wall', 2) trail=('chand', 2.0) (trailing) | +103 | +213 | 210 | 0.60 | +268 / +1883 / +1352 / +439 | 30% / +86.8 / -36.0 / 116 | 171 | - / +71 | be=(1.0, 0) stop=('vol', 1.5) trail=('chand', 3.0) +297 (u 239) ; stage=([1.0], [0.5], True) stop=('vol', 1.5) target=('R', 3. +262 (u 246) |
 | Asia | A7 | L1edb9fab | Asia/tm300/trig_pullback_ema/depth/{"len": 10, "w": 0.5}/plain60/60/long | n/a on this host | clock=('0825', '0955', '1155') stop=('vol', 1.5) (time / behaviour) | +196 | +660 | 210 | 0.67 | +215 / +2742 / +1137 / +713 | 26% / +107.6 / -36.6 / 123 | 227 | - / - |  |
@@ -163,6 +166,7 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | Asia | A7 | L81fdf70f | Asia/cdr_100/trig_trend_libstack/ema_stack/{"set": "5-13-34"}/sym15u/long | plain60/60 +855 / 299 | minrr=1.5 stop=('swing', 8) target=('mm', 1.27) (market target) | +89 | +556 | 240 | 0.56 | +138 / +669 / +275 / +499 | 34% / +75.5 / -37.6 / 84 | 118 | - / - |  |
 | Asia | A7 | L59a6d32a | Asia/time_m_15/trig_book_cancel/ratio_follow/{"L": 100, "z": 1.5}/plain60/60/long | n/a on this host | stop=('swing', 8) trail=('chand', 3.0) (trailing) | +180 | +663 | 241 | 0.65 | +215 / +1289 / +1490 / +317 | 42% / +83.2 / -57.5 / 191 | 107 | +5 / - | be=(1.0, 0) stop=('vol', 1.5) trail=('chand', 3.0) +316 (u 250) ; stop=('vol', 2.5) trail=('chand', 3.0) +312 (u 474) |
 | Asia | A7 | Lf696f5fe | Asia/swing_atr_0.25/trig_xmarket_fx/against_6E/{"w": 1, "thr": 1.0}/sym15u/long | n/a on this host | stop=('wall', 2) trail=('chand', 2.0) (trailing) | +65 | +71 | 241 | 0.56 | +171 / +545 / +732 / +119 | 36% / +42.6 / -23.7 / 47 | 277 | - / - |  |
+| Asia | A7 | Lc104c6f9 | Asia/tm300/trig_levels_gaps/break/{"n": 2, "k": 0.25}/plain60/60/long | plain60/60 +205 / 252 | minrr=1.5 stop=('inval', 2) target=('mm', 1.27) (market target) | +66 | +95 | 241 | 0.56 | +86 / +424 / +748 / -354 | 27% / +65.0 / -23.2 / 60 | 240 | - / - |  |
 | Asia | A7 | Lfecbd5e5 | Asia/rng_56/trig_tape_stoprun/fade/{"N": 10, "k": 0.25}/plain60/60/long | n/a on this host | stop=('vol', 2.5) trail=('swing', 1) (trailing) | +22 | +454 | 242 | 0.56 | +239 / +962 / +63 / +250 | 38% / +79.1 / -47.7 / 106 | 151 | - / - | noprog=(4, 0.5) stop=('swing', 8) target=('R', 2.0) +20 (u 394) ; noprog=(4, 0.5) stop=('swing', 4) target=('R', 2.0) +35 (u 402) |
 | Asia | A7 | L089ebe19 | Asia/tm900/trig_book_cancel/ratio_follow/{"L": 50, "z": 1.0}/plain60/60/long | plain60/60 +90 / 200 | be=(1.0, 0) stop=('vol', 1.5) trail=('chand', 3.0) (trailing) | +402 | +56 | 242 | 0.63 | +651 / +2020 / +1846 / +793 | 33% / +104.0 / -45.8 / 167 | 135 | - / - | stage=([1.0, 2.0], [0.34, 0.33], True) stop=('vol', 1.5) tar +98 (u 267) ; stop=('vol', 1.5) trail=('chand', 3.0) +430 (u 282) |
 | Asia | A7 | L17282933 | Asia/vol_1100/trig_levels_round/break_native/{"n": 3, "k": 0.25}/plain60/60/long | plain60/60 +140 / 237 | noprog=(4, 0.5) stop=('vol', 1.5) target=('R', 2.0) (time / behaviour) | +18 | +72 | 242 | 0.57 | +70 / +642 / +106 / +484 | 37% / +55.9 / -32.8 / 45 | 305 | - / - |  |
@@ -313,27 +317,23 @@ Asia and London candidates appear here when W-LONENG's engine rows land in D8_CA
 | Asia | A7 | L83d2af7d | Asia/vol_2600/trig_book_cancel/net_follow_native/{"L": 900, "z": 1.0}/plain60/60/long | n/a on this host | noprog=(4, 0.5) stop=('vol', 2.5) target=('R', 2.0) (time / behaviour) | +86 | +1039 | 396 | 0.69 | +97 / +1668 / +1913 / +578 | 40% / +82.0 / -54.9 / 112 | 183 | - / - | stop=('vol', 2.5) target=('R', 2.0) +20 (u 437) |
 | Asia | A7 | AB4 | Asia/mom_56/trig_trend_psar/flip/{"af0": 0.02, "step": 0.03, "max": 0.2}/plain60/60/both | n/a on this host | opp_exit=True stop=('vol', 1.5) (structure stop) | +234 | +96 | 401 | 0.63 | +300 / +1360 / +1621 / +159 | 37% / +92.0 / -52.7 / 119 | 251 | - / - |  |
 | Asia | A7 | L6f51709c | Asia/tm420/trig_momentum_er/trend/{"len": 20, "thr": 0.4}/plain60/60/both | n/a on this host | opp_exit=True stop=('vol', 1.5) (structure stop) | +37 | +992 | 405 | 0.52 | +187 / +1875 / +1071 / +306 | 31% / +93.4 / -41.9 / 111 | 209 | - / - |  |
-| Asia | A7 | Lcb45704d | Asia/mom_28/trig_structure_libpattern/threebar/{"filt": 20}/sym15u/long | sym8u +3 / 380 | stop=('inval', 2) trail=('swing', 1) (trailing) | +153 | +507 | 406 | 0.57 | +200 / +1278 / +413 / +1072 | 34% / +73.2 / -36.2 / 76 | 325 | - / - |  |
-| Asia | A7 | Lfddd2d86 | Asia/vrb_15000/trig_levels_mmove/retest_native/{"M": 10, "tol": 0.5}/plain60/60/short | plain60/60 +18 / 236 | stop=('vol', 2.5) trail=('chand', 2.0) (trailing) | +41 | +73 | 409 | 0.58 | +123 / +501 / +64 / +938 | 49% / +94.4 / -90.4 / 217 | 67 | - / - |  |
-| Asia | A7 | Le6d4dfc2 | Asia/tm3600/trig_levels_fib5/break/{"n": 2, "k": 0.25}/plain60/60/both | n/a on this host | be=(1.0, 0) stop=('vol', 1.5) trail=('chand', 3.0) (trailing) | +94 | +493 | 409 | 0.64 | +1026 / +2099 / +1039 / +358 | 45% / +110.0 / -90.2 / 275 | 161 | - / - | stop=('vol', 1.5) trail=('chand', 2.0) +19 (u 555) |
-| Asia | A7 | L0da7a010 | Asia/renko_20/trig_structure_level/round_break/{"grid": 50, "buf": 0.25}/sym8u/long | plain60/60 +1272 / 255 | noprog=(4, 0.5) stop=('swing', 8) target=('R', 2.0) (time / behaviour) | +1 | +292 | 409 | 0.56 | +25 / +873 / +609 / +1623 | 44% / +46.5 / -35.9 / 48 | 521 | - / - |  |
 
 ## c. what the screen has found per exit family (best eligible exit of each screened cell, real vs null)
 
 | family | cells where it is the best eligible exit (real) | same on null (mean of 2 draws) |
 |---|---|---|
-| market target | 314 | 76.0 |
-| staged | 127 | 24.5 |
-| stop-and-reverse | 32 | 4.0 |
-| structure stop | 32 | 3.5 |
-| time / behaviour | 135 | 43.5 |
-| trailing | 323 | 93.0 |
+| market target | 329 | 78.5 |
+| staged | 135 | 25.5 |
+| stop-and-reverse | 35 | 4.5 |
+| structure stop | 33 | 4.0 |
+| time / behaviour | 143 | 46.0 |
+| trailing | 333 | 97.5 |
 
-Screened cells with an eligible exit: real 963 of 4404 (22%), null 244.5 of 4404 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
+Screened cells with an eligible exit: real 1008 of 4623 (22%), null 256.0 of 4623 (6%). Null/real ratio is the false-positive reading for "best of 68": a cell that clears its own nulls and sits in a session where this ratio is low is the one to take to the engine.
 
 ## c2. BEATS-LIVE set (order 0740Z item 3): D8 candidates that already beat a live book in the exact engine - screened FIRST (sorted to the front of every host list; any worker takes them before the rank order)
 
-Set size 14 cells (NY AM 4, Asia 10); screened 14, pending 0. Fleet rate last hour 877 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 08:15Z).
+Set size 14 cells (NY AM 4, Asia 10); screened 14, pending 0. Fleet rate last hour 895 cells/h (all cells); the set needs 0 cells, so a newly listed beats-live cell is screened within about 21 min of the list refresh (cron 15 min) once a worker is free. Date the whole set is screened: DONE (2026-11-19 08:30Z).
 | cell id | session | cell | best eligible exit (real) | L6M | ulcer | fixed ref | null a / b best eligible L6M | beats nulls |
 |---|---|---|---|---|---|---|---|---|
 | L03a14486 | Asia | Asia/vsess_30/trig_bands_atrchan/break_ema/{"n": 20, "atr": 14, "k": 1.5}/plain60/60/long | no eligible exit (none of 68 passes L6M>0, L3M>0, trades>=20, no red year) | - | - | plain60/60 +80 | - / - | no |
@@ -361,7 +361,7 @@ Set size 14 cells (NY AM 4, Asia 10); screened 14, pending 0. Fleet rate last ho
 | box 1 | 0 | - | memory guard (MemAvail > 40 GB) |
 
 
-Measured: 2830 groups finished, 4909 cells, mean 235 s per cell (3 tags: real + 2 null) per worker.
+Measured: 2976 groups finished, 5147 cells, mean 234 s per cell (3 tags: real + 2 null) per worker.
 
 ## e. STAGE 1 work list for this pipeline stage (order 0228Z), hours on the current fleet, 02:33Z
 | item | size | core-hours (measured) | workers now | wall hours at today's workers | wall hours if every A+B thread (256) |
