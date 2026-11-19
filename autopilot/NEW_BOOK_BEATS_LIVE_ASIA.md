@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:00Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-19 12:05Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 738; cells with a finished REPLACE verdict (L6M+L3M landed) 529; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 39); ADD rows finished 708.
+**Counts:** Asia cells with any engine row 745; cells with a finished REPLACE verdict (L6M+L3M landed) 539; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 14 (under the looser NY rule 42); ADD rows finished 710.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
-| K7 | 68 | 0 | 7 |
-| P7 | 62 | 0 | 6 |
-| A7 | 529 | 14 | 51 |
-| H7 | 67 | 0 | 4 |
+| K7 | 70 | 0 | 5 |
+| P7 | 64 | 0 | 4 |
+| A7 | 539 | 14 | 54 |
+| H7 | 67 | 0 | 5 |
 | U7 | 67 | 0 | 4 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 363 tested; 514 cells with rows), long-only 0 (of 166 tested; 224 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 14 (of 363 tested; 515 cells with rows), long-only 0 (of 176 tested; 230 cells so far), short-only 0 (of 0 tested; 0 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -176,15 +176,15 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 2786, last 3 h 7304; Asia queue lines pending (not DONE): 51636.
+Asia set-months landed: last 1 h 2722, last 3 h 7231; Asia queue lines pending (not DONE): 52129.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position 6, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > EXE > ASI > NYL > NYR > NYF > FR > NYE > NYW > LON
-- box1 running engine sets by tag: 25 TL3_NYE_      24 TL3_NYL_       6 TL3_LON_       5 TL3_ASI_
-- server2 running engine sets by tag: none
-- A running engine sets by tag: 61 TL3_ASI_
-- B running engine sets by tag: 142 TL3_NYL_      26 TL3_ASI_
+- box1 running engine sets by tag: 17 TL3_ASI_      14 TL3_NYW_      12 TL3_LON_       7 TL3_NYE_       4 TL3_NYL_
+- server2 running engine sets by tag: 50 TL3_NYL_
+- A running engine sets by tag: 121 TL3_ASI_      60 TL3_NYL_
+- B running engine sets by tag: 192 TL3_NYL_      12 TL3_ASI_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
@@ -193,7 +193,7 @@ Asia set-months landed: last 1 h 2786, last 3 h 7304; Asia queue lines pending (
 | Lda55d973 vol_750 / momentum_stoch.zone_break_native {"len": 9, "lvl": 80} / plain60/60 / both (both sides, engine-tested; screen mode long) | yes (L6M du -1672 dm +2260 | L3M du -2265 dm +1965 RED Y2025) | no (L6M du +360 dm -2813 | L3M du +724 dm -4895) | no (L6M du +1702 dm -8194 | L3M du +2043 dm -6482) | yes (L6M du -1222 dm +911 | L3M du -1416 dm +2143 RED Y2025) | no (L6M du -99 dm -268 | L3M du -1462 dm +1191) | no (L6M du -1348 dm -66 | L3M du -1355 dm -1789) | 0 of 30 |
 | La5b5d03a time_m_2 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +222 dm +485 | L3M du +463 dm -51 RED Y2023) | no (L6M du +926 dm -2686 | L3M du +2289 dm -5618) | no (L6M du +3399 dm -9027 | L3M du +3705 dm -6504) | yes (L6M du -1197 dm +1547 | L3M du -892 dm +1038 RED Y2023) | no (L6M du +1058 dm -152 | L3M du -311 dm -616) | no (L6M du +99 dm -575 | L3M du -1062 dm -419) | 0 of 30 |
 | Lcb276f27 tm120 / bands_atrchan.break_ema_native {"clk": 5, "k": 1.5} / sym8u / both (both sides, engine-tested; screen mode long) | no (L6M du +269 dm +872 | L3M du +546 dm +19 RED Y2023) | no (L6M du +985 dm -2570 | L3M du +2381 dm -5549) | no (L6M du +3438 dm -8996 | L3M du +3770 dm -6434) | yes (L6M du -1146 dm +1567 | L3M du -811 dm +1085 RED Y2023) | no (L6M du +1110 dm -122 | L3M du -214 dm -547) | no (L6M du +134 dm -550 | L3M du -996 dm -348) | 0 of 30 |
-| M1edb9fab tm300 / pullback_ema.depth {"len": 10, "w": 0.5} / plain60/60 / long-only | no (L6M du +785 dm +115 | L3M du +6 dm +623 RED Y2025) | no (L6M du +379 dm -3451 | L3M du +1059 dm -4561) | no (L6M du +6363 dm -9554 | L3M du +8245 dm -7213) | no (L6M du -1085 dm +630 | L3M du -1067 dm +1519 RED Y2025) | no (L6M du -419 dm -977 | L3M du -736 dm +165) | no (L6M du -48 dm -1323 | L3M du -1535 dm -1128) | 0 of 30 |
+| Mccd499e5 time_m_4 / momentum_squeeze.fire_slope_native {"len": 14, "wd": 1.0} / asym10u/20u / long-only | no (L6M du +180 dm +165 | L3M du -1464 dm +1300) | not run | not run | no (L6M du -1097 dm +263 | L3M du -1081 dm +975) | not run | not run | 0 of 30 |
 
 ## Cells that beat a live Asia book (Asia rule, yes), drawdown first
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | prior years run | controls |
