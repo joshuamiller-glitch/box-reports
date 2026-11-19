@@ -1,4 +1,4 @@
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 16:01Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 16:21Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -8,14 +8,14 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 16:00Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 16:20Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
 | session | R0 passing cells | of which stale level cells | family-bests | stale family-bests | real-on-null-coverage tested (stage A) | stale level cells there | null draw tested (stage A) | stale level cells there |
 |---|---|---|---|---|---|---|---|---|
 | Asia | 6,487 | 6 (0.1%) | 3,847 | 3 | 900 | 2 (0%) | 364 | 15 (4%) |
-| London | 3,158 | 0 (0.0%) | 2,237 | 0 | 333 | 0 (0%) | 454 | 17 (4%) |
+| London | 3,158 | 0 (0.0%) | 2,237 | 0 | 333 | 0 (0%) | 454 | 15 (3%) |
 | NYAM | 24,702 | 5 (0.0%) | 11,460 | 1 | 1814 | 0 (0%) | 728 | 45 (6%) |
 | NYPM | 1,638 | 1 (0.1%) | 1,168 | 1 | 191 | 1 (1%) | 230 | 10 (4%) |
 
@@ -158,13 +158,13 @@ Each live D7 book run BARE (its own signal_fn from code/th_swap, on its live bar
 | session | mode | statistic | p<=0.02 null / real = FDR | p<=0.005 | p<=0.001 | tested null / real (family-bests) |
 |---|---|---|---|---|---|---|
 | Asia | both | p_L6M | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 35 / 298 |
-| Asia | both | p_ALL | 11 / 174 = 6% | 5 / 74 = 7% | 0 / 1 = 0% | 35 / 298 |
+| Asia | both | p_ALL | 11 / 179 = 6% | 5 / 76 = 7% | 0 / 1 = 0% | 35 / 298 |
 | Asia | long | p_L6M | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 328 / 600 |
-| Asia | long | p_ALL | 30 / 194 = 15% | 10 / 84 = 12% | 1 / 5 = 20% | 328 / 600 |
+| Asia | long | p_ALL | 30 / 198 = 15% | 10 / 86 = 12% | 1 / 5 = 20% | 328 / 600 |
 | NYAM | both | p_L6M | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 146 / 467 |
-| NYAM | both | p_ALL | 68 / 283 = 24% | 33 / 114 = 29% | 0 / 1 = 0% | 146 / 467 |
+| NYAM | both | p_ALL | 70 / 290 = 24% | 34 / 120 = 28% | 1 / 1 = 100% | 146 / 467 |
 | NYAM | long | p_L6M | 3 / 0 = n/a | 2 / 0 = n/a | 0 / 0 = n/a | 578 / 1346 |
-| NYAM | long | p_ALL | 89 / 537 = 17% | 33 / 248 = 13% | 0 / 9 = 0% | 578 / 1346 |
+| NYAM | long | p_ALL | 90 / 553 = 16% | 34 / 255 = 13% | 0 / 10 = 0% | 578 / 1346 |
 | London | both | p_L6M | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 76 / 43 |
 | London | both | p_ALL | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 76 / 43 |
 | London | long | p_L6M | 0 / 0 = n/a | 0 / 0 = n/a | 0 / 0 = n/a | 378 / 290 |
@@ -180,10 +180,10 @@ p = (1+k)/(1+n) on p_L6M (L6M sum of R) and p_ALL (whole history); a cell counts
 
 | session | statistic | p<=0.02 null / real | FDR | p<=0.005 null / real | FDR | p<=0.001 null / real | FDR | tested null / real | cells at B+ null / real |
 |---|---|---|---|---|---|---|---|---|---|
-| Asia | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 364 / 900 | 214 / 754 |
-| Asia | p_ALL | 42 / 369 | 11% | 15 / 160 | 10% | 1 / 6 | 17% | 364 / 900 | 214 / 754 |
-| NYAM | p_L6M | 3 / 0 | n/a | 2 / 0 | n/a | 0 / 0 | n/a | 728 / 1814 | 456 / 1558 |
-| NYAM | p_ALL | 158 / 821 | 19% | 66 / 362 | 18% | 0 / 10 | 0% | 728 / 1814 | 456 / 1558 |
+| Asia | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 364 / 900 | 215 / 769 |
+| Asia | p_ALL | 42 / 378 | 11% | 15 / 164 | 9% | 1 / 6 | 17% | 364 / 900 | 215 / 769 |
+| NYAM | p_L6M | 3 / 0 | n/a | 2 / 0 | n/a | 0 / 0 | n/a | 728 / 1814 | 470 / 1606 |
+| NYAM | p_ALL | 161 / 844 | 19% | 68 / 375 | 18% | 1 / 11 | 9% | 728 / 1814 | 470 / 1606 |
 | London | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 454 / 333 | 0 / 0 |
 | London | p_ALL | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 454 / 333 | 0 / 0 |
 | NYPM | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 230 / 191 | 0 / 0 |
