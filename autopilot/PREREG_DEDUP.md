@@ -1,0 +1,7 @@
+# PREREG W-DEDUP (order 1337Z items 4b/4c) - written 2026-11-19 ~13:40Z, before any queue edit or result copy
+Twin key (duplicate stream): sha256 of the set JSON in /mnt/l2/l2vast/_th_sz/ijk/exact/sets/<set>.json with the 'cell' (name) field removed and every hook 'events' parquet path replaced by the CONTENT hash (sha256 over column names and column data bytes; parquet metadata ignored) of that event file. Two queued sets with the same key are twins: one engine run per key.
+Canonical choice: a set of a protected cell (Asia passers Lda55d973, L5c9e11b3, M41ef5c77, Mdcdb0b6e, L4d206c8c, M98c7ae1d, L34e2c5ab, Lb5e883f6; NY AM L01811caa, L6a25b155, L0f097450) else the set with most DONE months else lexicographic smallest.
+Never touched: lines of protected cells and their controls, layer sets (TL3_NYL_), exit-engine sets (TL3_EXE_), identity sets.
+Trust test (before any copy is used): twin pairs that both have DONE results for the same set-month are compared trade for trade (all columns exact) per class; a class is trusted only with 0 differences (and >= 2 pairs); copies carry a TWIN_OF provenance file. Result of that test is in autopilot/DEDUP_TWINS.md.
+Cells 'out' at an early rung: later-rung lines of non-protected cells are parked (appended to a parked file, never deleted); multiset check: remaining + parked = original.
+Bug fixed on the way (not a scoring change): control event files (shifted copies) were never written by the builders' controls(): fix_ct_events.py writes them exactly as the builder defines them.
