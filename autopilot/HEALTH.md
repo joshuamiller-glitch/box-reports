@@ -1,7 +1,7 @@
 # HEALTH (written by cron every 5 min, not by the lead)
 
-UTC now: 2026-11-19T23:49:35Z | CORES reading: 2026-11-19 23:45Z | guard sample: 2026-11-19T23:40:01Z
-Lead: last LEAD NOTE 4 min ago | last transcript activity 0 min ago | last watchdog line: 2026-11-19 23:42Z WATCHDOG L1 fired: E/F/G
+UTC now: 2026-11-19T23:50:01Z | CORES reading: 2026-11-19 23:45Z | guard sample: 2026-11-19T23:40:01Z
+Lead: last LEAD NOTE 4 min ago | last transcript activity 1 min ago | last watchdog line: 2026-11-19 23:42Z WATCHDOG L1 fired: E/F/G
 github relay last pull OK at 2026-11-19T23:49Z
 
 | machine | busy % | threads | load | workers | grid results / 30 min | error stubs / 30 min | engine set-months / 30 min (host-local, do not add up) | grid todo (own rows) | grid queue hours | data disk free GB | root disk free GB (fill GB/h, hours left) |
