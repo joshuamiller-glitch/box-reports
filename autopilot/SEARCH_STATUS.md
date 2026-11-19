@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-19 04:35Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-19 05:05Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,16 +6,16 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 137584 result files | 7193 jobs | 4675 | 1.5 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 23959 (a top cells 342, a2 exit families 3773, c family cells 19844) | 278 | 86.2 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 141944 result files | 5607 jobs | 7825 | 0.7 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 23566 (a top cells 341, a2 exit families 3381, c family cells 19844) | 556 | 42.4 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 61293, null draw 1 28673, null draw 2 28249, extra draws (3-25) 16145 files. Pass-1 results still waiting for their pass-2 upgrade: real 50621.
+Pass-1 results on disk by tag: real 64044, null draw 1 29183, null draw 2 28785, extra draws (3-25) 16441 files. Pass-1 results still waiting for their pass-2 upgrade: real 53322.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 100.85 workers 60; 109.94.96.39 load 171.74 workers 60; 206.223.224.21 load 156.44 workers 60; grid workers 180 (179 computing), engine workers 164; forward-path tables built (summed over servers) 596.
+Machines (grid partitioned across servers): 207.188.7.103 load 101.74 workers 60; 109.94.96.39 load 176.74 workers 60; 206.223.224.21 load 163.22 workers 60; grid workers 180 (179 computing), engine workers 157; forward-path tables built (summed over servers) 620.
 
-Since 17:23Z: pass-1 todo 80818 -> 7193 (-73625), pass-2 todo 25951 -> 23959 (-1992). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 5607 (-75211), pass-2 todo 25951 -> 23566 (-2385). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search: FIVE draws, calibration check of the ladder (orders 1932Z + 2042Z; prereg sha 125fd12566e72aa6 + amendment)
 
@@ -23,11 +23,11 @@ What it is: 5 random-entry draws (tags p1rand1..p1rand5; draws 6-20 cancelled 20
 
 | item | now |
 |---|---|
-| results/hour, REAL search (p1real files, pass 1 and 2 together) | 2186 |
-| results/hour, NULL draws (p1rand1..20 files) | 2612 |
-| null result files on disk, draws 1 / 2 | 28673 / 28249 (real: 61293) |
-| null result files, draws 3-20 (all) | 15642 |
-| share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 46%, draw 2 45%, draw 3 5%, draw 4 5%, draw 5 5% |
+| results/hour, REAL search (p1real files, pass 1 and 2 together) | 4524 |
+| results/hour, NULL draws (p1rand1..20 files) | 3485 |
+| null result files on disk, draws 1 / 2 | 29183 / 28785 (real: 64044) |
+| null result files, draws 3-20 (all) | 15938 |
+| share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 47%, draw 2 46%, draw 3 6%, draw 4 5%, draw 5 5% |
 | draws complete (files incl. error stubs >= 99.5 percent of ~65.8k) | 0 of 5 |
 | draws accepted by the null audit and counted | see null_summary below |
 
@@ -35,7 +35,7 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 04:31Z
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 05:01Z
 
 | tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
 |---|---|---|---|---|---|
@@ -63,9 +63,9 @@ Dallas (64 threads) now also owns rows 6 and 11 (from A and B) so its queue is ~
 
 | host | stale real | stale null draw 1 | stale null draw 2 | fresh level files (real / draw 1 / draw 2) |
 |---|---|---|---|---|
-| Dallas | 2305 | 3836 | 3858 | 19843 / 6852 / 6655 |
-| Frankfurt | 2493 | 2056 | 2054 | 6806 / 2222 / 2179 |
-| Singapore | 2276 | 1459 | 1458 | 7352 / 2380 / 2281 |
+| Dallas | 2095 | 3673 | 3723 | 20933 / 7184 / 6970 |
+| Frankfurt | 2493 | 1989 | 2016 | 6947 / 2317 / 2246 |
+| Singapore | 2276 | 1459 | 1458 | 7352 / 2480 / 2415 |
 
 Counts are the files on each host before the merge (A and B results are copied to Dallas every ~5 min); a host shows 0 stale for its own rows when its re-run is complete. Old copies of other hosts rows still on Dallas disappear as the merge overwrites them.
 
@@ -73,10 +73,10 @@ Counts are the files on each host before the merge (A and B results are copied t
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 100.0 | 100.85 | 180 (179) | 82 | 0 | 5028 |
-| A Frankfurt | 128 | 99.9 | 171.74 | 60 (60) | 37 | 0 | 753 |
-| B Singapore | 128 | 99.6 | 156.44 | 60 (60) | 33 | 0 | 2039 |
-| box 1 London (lead, engine fillers) | 32 | 100 | 79.27 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 100.0 | 101.74 | 180 (179) | 78 | 0 | 8466 |
+| A Frankfurt | 128 | 100.0 | 176.74 | 60 (60) | 37 | 0 | 1278 |
+| B Singapore | 128 | 99.9 | 163.22 | 60 (60) | 30 | 0 | 2586 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 74.24 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
@@ -129,7 +129,7 @@ Engine capacity decides the ORDER cells are tested in (best first), never WHETHE
 
 ### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 04:20Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-19 05:01Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -139,16 +139,16 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 04:20Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 05:00Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
 | session | R0 passing cells | of which stale level cells | family-bests | stale family-bests | real-on-null-coverage tested (stage A) | stale level cells there | null draw tested (stage A) | stale level cells there |
 |---|---|---|---|---|---|---|---|---|
-| Asia | 4,541 | 211 (4.6%) | 2,902 | 116 | 900 | 36 (4%) | 364 | 67 (18%) |
+| Asia | 4,541 | 211 (4.6%) | 2,902 | 116 | 900 | 36 (4%) | 364 | 64 (18%) |
 | London | 2,177 | 51 (2.3%) | 1,672 | 42 | 333 | 17 (5%) | 454 | 57 (13%) |
-| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 1814 | 167 (9%) | 728 | 139 (19%) |
-| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 31 (13%) |
+| NYAM | 15,834 | 924 (5.8%) | 8,510 | 483 | 1814 | 167 (9%) | 728 | 133 (18%) |
+| NYPM | 1,152 | 17 (1.5%) | 861 | 16 | 191 | 5 (3%) | 230 | 30 (13%) |
 
 Reading: the stale share is NOT symmetric in the calibration: among tested family-bests 3-11% of the real-search cells but 17-26% of the null-draw cells rest on pre-06:00Z level files (the null draws were run early with the old level code), so the 01:16Z FDR table can be biased by the stale null side; it is redone after the forced re-run of draws 1-2 (last in the queue).
 
@@ -159,7 +159,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 6,461,292 | - | 6,456,751 | by first rule: R1 L6M<=0 3,461,640; R2 trades<100 1,395,903; R3 L3M<=0 526,793; R4 persistence<=0.60 945,197; RED prior year 127,218 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 4,541 (R0 passers) | 2,902 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 15.1 core-h for 4,541 cells | 0.0 h |
 | R2 | trust + look-ahead | 4,541 (upper bound: all R1 cells) | 2,902 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 629 core-h for 2,030 (row, module) pairs | 2.0 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 518, C (1,000) 39, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1229 / 1622 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1229 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 4,541 (upper bound) | 2,902 | RUNNING: stage A (30 draws, same bracket, equal-risk) 1,885 of 2,902 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 521 / 182 / 31; reached stage B (200 draws) 591, C (1,000) 39, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 2,902 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 1235 / 1622 at q 5% / 10% / 20% | SET 1: 0, SET 2: 1235 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 34,824 set-months = 1741 core-h | 45.6 h on the measured fleet (763/h), 12.0 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 2,902 families (upper bound) | 2,902 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+208,944 set-months) then 30 date-shift controls (+522,360 set-months = 26118 core-h) for the rows still alive | **274 h (> 48 h: Josh decides between more machines and waiting)** / **685 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -173,7 +173,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 7,329,472 | - | 7,327,295 | by first rule: R1 L6M<=0 4,123,672; R2 trades<100 1,740,334; R3 L3M<=0 488,397; R4 persistence<=0.60 893,506; RED prior year 81,386 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 2,177 (R0 passers) | 1,672 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 7.3 core-h for 2,177 cells | 0.0 h |
 | R2 | trust + look-ahead | 2,177 (upper bound: all R1 cells) | 1,672 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 418 core-h for 1,348 (row, module) pairs | 1.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 228, C (1,000) 16, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 311 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 2,177 (upper bound) | 1,672 | RUNNING: stage A (30 draws, same bracket, equal-risk) 806 of 1,672 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 49 / 9 / 2; reached stage B (200 draws) 242, C (1,000) 16, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 1,672 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 0 / 325 at q 5% / 10% / 20% | SET 1: 0, SET 2: 0 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 20,064 set-months = 1003 core-h | 26.3 h on the measured fleet (763/h), 6.9 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 1,672 families (upper bound) | 1,672 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+120,384 set-months) then 30 date-shift controls (+300,960 set-months = 15048 core-h) for the rows still alive | **158 h (> 48 h: Josh decides between more machines and waiting)** / **394 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -187,7 +187,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,027,865 | - | 8,012,031 | by first rule: R1 L6M<=0 4,785,951; R2 trades<100 1,102,417; R3 L3M<=0 632,439; R4 persistence<=0.60 1,374,346; RED prior year 116,878 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 15,834 (R0 passers) | 8,510 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 52.8 core-h for 15,834 cells | 0.2 h |
 | R2 | trust + look-ahead | 15,834 (upper bound: all R1 cells) | 8,510 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 1667 core-h for 5,376 (row, module) pairs | 5.3 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1279, C (1,000) 157, D (10,000) 1 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3475 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3475 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 15,834 (upper bound) | 8,510 | RUNNING: stage A (30 draws, same bracket, equal-risk) 4,542 of 8,510 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 571 / 164 / 44; reached stage B (200 draws) 1304, C (1,000) 200, D (10,000) 1 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 8,510 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 3477 / 4220 at q 5% / 10% / 20% | SET 1: 0, SET 2: 3477 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 102,120 set-months = 5106 core-h | **134 h (> 48 h: Josh decides between more machines and waiting)** on the measured fleet (763/h), 35.3 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 8,510 families (upper bound) | 8,510 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+612,720 set-months) then 30 date-shift controls (+1,531,800 set-months = 76590 core-h) for the rows still alive | **803 h (> 48 h: Josh decides between more machines and waiting)** / **2008 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -201,7 +201,7 @@ Reading: the stale share is NOT symmetric in the calibration: among tested famil
 | R0 | bare rule | 8,043,245 | - | 8,042,093 | by first rule: R1 L6M<=0 4,336,708; R2 trades<100 1,739,114; R3 L3M<=0 532,730; R4 persistence<=0.60 1,408,416; RED prior year 25,125 | ~0.1 (scoring) | R1: ~0 (re-score; own-stop arrays: see below) | - |
 | R1 | OWN-STOP (same thresholds) | 1,152 (R0 passers) | 861 | n/a (full-grid A_os arrays not built: only ~1,700 pairs carry them; the grid is re-running the rest, W-GRIDOPS) | n/a | 0 | R2: 3.8 core-h for 1,152 cells | 0.0 h |
 | R2 | trust + look-ahead | 1,152 (upper bound: all R1 cells) | 861 | not run (sample audit: 47 of 48 shortlisted cells pass, 1 look-ahead fail; XA3 and WP10 pass) | n/a | ~0 | R3: 229 core-h for 740 (row, module) pairs | 0.7 h |
-| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 212, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 297 / 370 at q 5% / 10% / 20% | SET 1: 0, SET 2: 297 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
+| R3 | per-cell p-value, adaptive 30 -> 200 -> 1,000 -> 10,000 same-bracket random draws, BH q = 10% over all family-bests (smallest p reachable: 30 draws 0.032, 200 0.0050, 1,000 0.0010, 10,000 0.0001; no cell can pass on 30 draws alone) | 1,152 (upper bound) | 861 | RUNNING: stage A (30 draws, same bracket, equal-risk) 393 of 861 family-bests tested; beat >= 24 / 27 / 29 of 30 on L6M: 92 / 65 / 32; reached stage B (200 draws) 227, C (1,000) 0, D (10,000) 0 (advance if EITHER the L6M or the whole-history statistic meets the stage rule); BH over all 861 family-bests (untested = p 1): SET 1 (p_L6M) 0 / 0 / 0, SET 2 (p_ALL) 0 / 301 / 370 at q 5% / 10% / 20% | SET 1: 0, SET 2: 301 inside BH (q 10%) so far | measured on the run | R4: 1,585 core-h shared by all four sessions, 25% of A+B: 27.5 h; whole fleet 5.0 h | |
 | R4 | selection-corrected null (5 full null draws: calibration check = cells passing R0-R3 in a null draw vs real, plus the best-pick comparison) | all | all | not started as a full set (draws 1-2 partly on disk; W-GRIDOPS owns it) | n/a | 0 | R5a: 10,332 set-months = 517 core-h | 13.5 h on the measured fleet (763/h), 3.6 h when A and B are engine-ready (2894/h) |
 | R5a | engine L6M (+L3M) as ADD and as replacement, family-best members in rank order | 861 families (upper bound) | 861 | engine rows negative on both -> out; not run for this session | n/a | engine rows on disk only for the leads | prior years (+61,992 set-months) then 30 date-shift controls (+154,980 set-months = 7749 core-h) for the rows still alive | **81 h (> 48 h: Josh decides between more machines and waiting)** / **203 h (> 48 h: Josh decides between more machines and waiting)** (prior years / controls, at 763/h) |
 
@@ -215,10 +215,10 @@ SET 1 (strict, current rule) = inside BH on p_L6M (last 26 weeks, equal-risk sum
 
 | session | family-bests | tested | SET 1 q5 / q10 / q20 | SET 1 expected false (q10) | SET 1 engine core-h / h | SET 2 q5 / q10 / q20 | SET 2 expected false (q10) | SET 2 engine core-h / h | SET 2 flagged recent no better than random (q10) | smallest p: L6M / ALL |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1229 / 1622 | 122.9 | 16223 / 425.2 h | 915 | 0.0249 / 0.0003 |
-| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 311 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0010 |
-| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3475 / 4220 | 347.5 | 45870 / 1202.4 h | 3099 | 0.0323 / 0.0002 |
-| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 297 / 370 | 29.7 | 3920 / 102.8 h | 228 | 0.0199 / 0.0050 |
+| Asia | 1,890 | 1,885 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 1235 / 1622 | 123.5 | 16302 / 427.3 h | 923 | 0.0249 / 0.0003 |
+| London | 808 | 806 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 0 / 325 | 0.0 | 0 / 0.0 h | 0 | 0.0645 / 0.0010 |
+| NYAM | 4,556 | 4,542 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 3477 / 4220 | 347.7 | 45896 / 1203.1 h | 3101 | 0.0323 / 0.0001 |
+| NYPM | 396 | 393 | 0 / 0 / 0 | 0.0 | 0 / 0.0 h | 0 / 301 / 370 | 30.1 | 3973 / 104.1 h | 232 | 0.0199 / 0.0050 |
 
 ## CALIBRATION: measured false-discovery rate from the whole-search null (order 2218Z, partial draw 1)
 
@@ -283,6 +283,21 @@ Each live D7 book run BARE (its own signal_fn from code/th_swap, on its live bar
 - The seven books are single parameter sets (live defaults); there is no selection, so the p-values are plain one-test p-values with no search penalty (they are not comparable to the family-best p-values of searched cells, which carry multiplicity).
 - O7 trades only NYAM (09:30 start); zero signals in other sessions is by design. Sessions marked 'not traded live' are shown for completeness (the JL3 engine has no live trades there). Live engine session = the entry session in the JL3 trades.
 - Own-stop columns use the grid table path (forward-path table) at N = 1.5/2/3; 'n' = fails R0 at that N.
+
+## CALIBRATION, DEEPER RUNGS (order 0125Z item 3): FDR at p <= 0.02 / 0.005 / 0.001 (null draw 1 vs real search on the same coverage; stage A+B+C records, XC_*; counts scaled to all family-bests of each set)
+
+p = (1+k)/(1+n) on p_L6M (L6M sum of R) and p_ALL (whole history); a cell counts at the threshold when it has reached the stage whose floor allows it (B: 0.005, C: 0.001; p<=0.02 from B). Cells not yet advanced count as not passing; the table is therefore a LOWER bound on both sides until all B/C tasks are done (tasks issued / done shown).
+
+| session | statistic | p<=0.02 null / real | FDR | p<=0.005 null / real | FDR | p<=0.001 null / real | FDR | tested null / real | cells at B+ null / real |
+|---|---|---|---|---|---|---|---|---|---|
+| Asia | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 364 / 900 | 0 / 0 |
+| Asia | p_ALL | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 364 / 900 | 0 / 0 |
+| NYAM | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 728 / 1814 | 0 / 0 |
+| NYAM | p_ALL | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 728 / 1814 | 0 / 0 |
+| London | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 454 / 333 | 0 / 0 |
+| London | p_ALL | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 454 / 333 | 0 / 0 |
+| NYPM | p_L6M | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 230 / 191 | 0 / 0 |
+| NYPM | p_ALL | 0 / 0 | n/a | 0 / 0 | n/a | 0 / 0 | n/a | 230 / 191 | 0 / 0 |
 
 ## CALIBRATION BY FAMILY (order 0125Z; same footing as the table above: null draw 1 through the same stage A, p_L6M and p_ALL)
 
@@ -516,12 +531,12 @@ Result: NO code mismatch; the below-chance upper tail is a MEASURED selection ef
 
 ## D8 spec date: Asia + NY AM only (order 0216Z; from D8_SPEC_STATUS.md, W-NYENG)
 
-Updated 2026-11-19 04:30Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
+Updated 2026-11-19 05:00Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
 
 | order | session | D8 candidates | REPLACE rows finished | beats live book: yes / no / pending | exit run | date decided |
 |---|---|---|---|---|---|---|
-| 1 | Asia | 260 REPLACE rows listed in D8_CANDIDATES.txt (8 cells with engine rows; 0 beat a live Asia book) | 7 | 0 yes / 7 finished-no / 6 pending | pending (exit screen takes Asia cells as their REPLACE rows land) | not decided; engine-only estimate Asia first ~Nov 21 04:00Z (W-ASIA, page NEW_BOOK_BEATS_LIVE_ASIA.md) |
-| 2 | NY AM | 6827 REPLACE rows listed in D8_CANDIDATES.txt (187 cells with engine rows; 4 cells beat a live book) | 122 | 4 / 118 / 19 | pending (NOT started) | not decided; earliest 2026-11-20 12:00Z if the exit screen starts by 11-19 06:00Z |
+| 1 | Asia | 1369 REPLACE rows listed in D8_CANDIDATES.txt (13 cells with engine rows; 0 beat a live Asia book) | 7 | 0 yes / 7 finished-no / 2 pending | pending (exit screen takes Asia cells as their REPLACE rows land) | not decided; engine-only estimate Asia first ~Nov 21 04:00Z (W-ASIA, page NEW_BOOK_BEATS_LIVE_ASIA.md) |
+| 2 | NY AM | 6828 REPLACE rows listed in D8_CANDIDATES.txt (187 cells with engine rows; 4 cells beat a live book) | 122 | 4 / 118 / 19 | pending (NOT started) | not decided; earliest 2026-11-20 12:00Z if the exit screen starts by 11-19 06:00Z |
 | 3 | London | W-LONENG: NEW_BOOK_ENGINE_LONDON.md | n/a here | n/a here | pending | not decided |
 | 4 | NY PM (behind NY AM in every W-NYENG file) | 787 REPLACE rows listed (0 cells with engine rows) | 0 | 0 / 0 / 0 | pending | not decided (nothing run yet; queued behind NY AM) |
 
@@ -725,27 +740,3 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
-
-<!-- ENGINE_PLAN_ETAS -->
-**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-19 04:05Z):**
-
-- phase 1 pass 1: 8309 jobs left at 4846/h = 1.7 h (rate from the grid line above; sums over machines).
-- phase 1 pass 2: 23897 jobs left at 143/h = 167.1 h at today's allocation.
-- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 16 h at the current fleet (1883/h) or 14.1 h with A and B engine-ready (projected 2153/h). Full table: ENGINE_PLAN.md section 11.
-- luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
-- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
-
-**DATED ESTIMATES (W-PLAN, written 2026-11-19 00:10Z; inputs: W-GRIDOPS 22:25Z / 23:05Z, W-SHORT R3 state at 23:32Z, engine queue report 00:00Z; rates change, the script re-prints this block as written until W-PLAN edits it):**
-
-| milestone | estimate | basis |
-|---|---|---|
-| REAL pass 1 end | Nov 19 ~03:00-08:00Z | W-GRIDOPS 03:00-06:00Z; measured 1,904 real jobs/h at 23:05Z with ~11.5k left at 00:00Z = ~6 h (06:00Z) |
-| pass 2 + exit families end | Nov 20 ~04:00-10:00Z | 23.6k jobs left at 690/h = 34 h (SEARCH_STATUS); W-GRIDOPS ~30 h |
-| null draws 1-2 end (calibration check, first full table) | Nov 19 ~23:00Z to Nov 21 ~00:00Z (95.5k jobs at nice 10, 25-50 h); a PARTIAL calibration table (sessions covered so far) was due ~23:55Z and is not on SURVIVOR_COUNTS.md yet | W-GRIDOPS |
-| null draws 3-5 end (5-draw calibration complete) | ~Nov 21 midday - Nov 22 (200k jobs, parked until real pass 1 ends, then ~5-6k jobs/h) | ASSUMED rate |
-| R3 compute end per session (stages A-D, clock order Asia, London, NY AM, NY PM) | stage A for all 7,650 family-bests: Nov 19 ~00:00-02:00Z (restarted 20:59Z, wall 3-5 h); stages B-D: Nov 19 ~08:00Z (ASSUMED, W-SHORT owns); the pass SET decision waits for the calibrated rule (draws 1-2): Nov 20-21 | W-SHORT |
-| engine queue (R5a on the 2,333-cell seed: NY AM 1,937 + NY PM 396, XA3 layers, London/Asia stages 2-3, NT2 controls) | 44.4k set-months = 30.7 h at 1,450/h -> drains ~Nov 20 07:00Z if nothing is added (R5a only: 12 set-months per cell; prior years and controls are added only for cells not negative) | lead report 00:00Z |
-| engine hours for the passers after calibration: per passer 264 set-months (12 + 72 + 180; W-SHORT) + layers ~1,133 set-months (640 with a validated fast replay) = ~1,400 set-months | at the measured 1,450 set-months/h (engine share today): P = 50 / 100 / 200 / 400 -> 48 / 96 / 193 / 386 h (31 / 62 / 125 / 250 h with the screen); at the whole pool after phase 1 (262 core-eq = ~5,800 set-months/h): 12 / 24 / 48 / 96 h (8 / 16 / 31 / 62 h) | 0.045 core-h per set-month |
-| D8 spec page (clock-order chain 4-8 h + 2 h after the last engine link) | P <= 100: Nov 21 ~20:00Z - Nov 22 ~04:00Z; P = 200: Nov 22 ~20:00Z - Nov 23 ~04:00Z; P = 400: Nov 24 ~20:00Z; earliest possible Nov 21 evening; +-12 h; moves with (a) the calibrated pass counts P, (b) the engine rate on A/B (A 69-118, B 132-168 set-months/h, oversubscribed), (c) whether the engine gets the whole pool after phase 1 | assumes phase 1 done Nov 20 ~10:00Z and the engine on the whole pool after it |
-48 h flag: the engine queue (30.7 h) is under 48 h; the passer engine work exceeds 48 h of the measured engine share for P >= 50 and of the whole pool for P >= ~200 (no screen). Josh decides between more machines and waiting once P is known.
-<!-- /ENGINE_PLAN_ETAS -->
