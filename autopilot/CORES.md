@@ -1,5 +1,3 @@
-2026-11-18 10:30Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 40 min)
-2026-11-18 10:35Z | box1: busy 98%, load1 37.39, workers 1, MemAvail 104 GB | server2: busy 52%, load1 31.64, workers 30, MemAvail 1191 GB | pending box1-eligible 3062 / server2-eligible 42275 (shared queues count in both; unleased, not DONE)
 2026-11-18 10:35Z | WARNING server2 below 85% busy for 58 readings in a row with jobs pending
 2026-11-18 10:35Z | AUTO-FILL step run: dispatcher alive pid 1240823/3743916
 2026-11-18 10:35Z | LEAD SILENT 40 MIN (no real lead note in MORNING.md for 45 min)
@@ -299,3 +297,4 @@
 2026-11-19 04:15Z | box1: busy 100%, load1 74.44, workers 24, MemAvail 58 GB | server2: busy 100%, load1 91.05, workers 13, MemAvail 1216 GB | pending box1-eligible 141602 / server2-eligible 141626 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 168.57, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1333 GB | serverB: busy 100%, load1 159.99, workers 61 (grid) + 67 (engine), 128 threads, MemAvail 1329 GB
 2026-11-19 04:20Z | box1: busy 100%, load1 76.69, workers 25, MemAvail 61 GB | server2: busy 100%, load1 91.08, workers 11, MemAvail 1183 GB | pending box1-eligible 145187 / server2-eligible 145195 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 168.55, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1333 GB | serverB: busy 100%, load1 156.70, workers 61 (grid) + 69 (engine), 128 threads, MemAvail 1306 GB
 2026-11-19 04:20Z | HOST server2 PRODUCING NOTHING (unreachable (IndexError('list index out of range')))
+2026-11-19 04:25Z | box1: busy 100%, load1 82.90, workers 25, MemAvail 58 GB | server2: busy 100%, load1 91.22, workers 12, MemAvail 1194 GB | pending box1-eligible 148930 / server2-eligible 148930 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.29, workers 61 (grid) + 71 (engine), 128 threads, MemAvail 1336 GB | serverB: busy 100%, load1 155.70, workers 61 (grid) + 73 (engine), 128 threads, MemAvail 1306 GB
