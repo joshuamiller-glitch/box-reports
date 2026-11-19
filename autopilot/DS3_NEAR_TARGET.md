@@ -1,6 +1,6 @@
 # DS3_NEAR_TARGET - W-NT near-target take that catches a touch-and-reverse (user relay 11-18 01:25Z) 
 
-Generated 2026-11-19 05:09Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
+Generated 2026-11-19 05:41Z. Data end 2026-11-13 (JL3 months 202304..202611, 44 months, exact engine TL3_EV_JL3 trades + 1-s tape p_high/p_low/mid). Pick window (trailing 6M) 2026-05-14..2026-11-13, 3M beside 2026-08-14..2026-11-13; refit date 2026-11-22 (2-week roll); prior-year percentages to follow with the engine rows (this page version = COUNT TABLE only, no selection yet, no trials counted). Standing selection rule applies to every pick below. The earlier near-target page (user order 17:25Z, first-order screen on LPB_BASE) is kept at the bottom and in autopilot/DS3_NEAR_TARGET_1725Z_prev.md.
 
 ## Five lines
 1. Tried: counted, per book x session, the JL3 trades whose 1-s print extreme reached 85/90/95/97.5/100% of the target without a Target fill, and how they ended (live take, live lock, other exit).
@@ -352,7 +352,7 @@ Real JL3: 6,173 of 19,881 trades reach 95% (31%; placebo paths 23-24%, so real p
 
 Families not yet run: (5) persist-counter fix and (6) order-book latch need the book features and the ptr grammar hook on the JL3 hooklist (batch 2 after the identity cells land); two-step exit needs live-lot (x1.75) partials, the base-lot engine cannot split 1 lot. Live K7 target is already 59 (4 ticks nearer than the engine 60), P7 58, M7 59.5: the incident trade had a 59-pt target.
 
-## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-19 05:09Z)
+## 3. ENGINE ROWS (TL3_NT_* vs TL3_EV_JL3 on the same landed months; written 2026-11-19 05:41Z)
 
 ### Identity (inert == JL3 trade for trade)
 | set | month | trades | JL3 trades | net | JL3 net | identical |
@@ -406,7 +406,7 @@ Families not yet run: (5) persist-counter fix and (6) order-book latch need the 
 | TL3_NT_SH_P7_k2 | 13 | 202511..202611 | 43 | 79 | -0.2 | 2 | 14413 |
 | TL3_NT_SH_P7_k4 | 13 | 202511..202611 | 45 | 86 | -0.1 | 2 | 14413 |
 
-## 4. FULL TABLE WITH CONTROLS (W-NT2, order 2013Z item 4; PREREG_NT2.md sha256 9d09c259eb8a8694; written 2026-11-19 05:09Z)
+## 4. FULL TABLE WITH CONTROLS (W-NT2, order 2013Z item 4; PREREG_NT2.md sha256 9d09c259eb8a8694; written 2026-11-19 05:41Z)
 
 All numbers: stack-level delta vs the live JL3 stack (TL3_EV_JL3) on the same months, exact engine, every layer ON, base lots at $4.84 RT with the x1.75 live-lot dollars in brackets. Cell format: d stack ulcer % (PRIMARY; negative = better) / d worst week $ (positive = better) / d max drawdown $ (negative = better) / d mean $/wk (x1.75). L6M = 2026-05-14..2026-11-13; L6X = 2026-05-14..2026-10-31 and HOLD = 2025-11-11..2026-05-11 are the windows the controls share (months 202511..202610). Selection caution: the variants were picked as the best of many on the same last 6 months they are judged on; controls B (random lock settings) are the selection null for the K7 lock family; controls A (random half activation) show whether the effect scales with how often the rule is applied, and cannot confer a label (PREREG_NT2.md).
 
