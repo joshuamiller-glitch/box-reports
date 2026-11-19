@@ -7226,3 +7226,7 @@ W-LIVEREF 01:41Z: TABLE DONE autopilot/LIVE_BOOKS_REFERENCE.md + code/th_short/l
 - 2026-11-19T03:04:24Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 
 [S2 hourly 03:04Z] server 2: workers 12/cap 12, cell-months last hour: server-2 871, all 1136; idle 0 min; cost ~$310 (57.0 h x $5.44).
+- 03:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 3924 (real 1212), pass 2 554 (total results 4478); todo pass 1 10747 (ETA 2.7 h at this rate), pass 2 24055 (ETA 43.4 h); server 2 load 207.18:99.94 109.94:208.83 206.22:169.12, grid workers 180 (131 computing), engine workers 170; error stubs 5182. Page autopilot/SEARCH_STATUS.md.
+- (03:05Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+03:07Z W-LA: LA cell-months done 867, jobs outstanding 52, chains 10; auto-expansions launched: 207 (cumulative new sets)
+- 2026-11-19 03:09Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).

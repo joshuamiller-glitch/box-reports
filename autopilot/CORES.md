@@ -1,5 +1,3 @@
-2026-11-18 10:15Z | box1: busy 82%, load1 27.28, workers 0, MemAvail 91 GB | server2: busy 43%, load1 27.20, workers 29, MemAvail 1318 GB | pending box1-eligible 3188 / server2-eligible 42401 (shared queues count in both; unleased, not DONE)
-2026-11-18 10:15Z | WARNING box1 below 85% busy for 2 readings in a row with jobs pending
 2026-11-18 10:15Z | WARNING server2 below 85% busy for 54 readings in a row with jobs pending
 2026-11-18 10:15Z | box1 AUTO-FILL: SIGCONT of 0 stopped admission/launch/driver procs []; admit.log silent -3 s; ql_drivers alive before=19 restarted=[]; workers 0
 2026-11-18 10:15Z | AUTO-FILL step run: dispatcher alive pid 1240823/3721169
@@ -299,3 +297,4 @@
 2026-11-19 02:55Z | box1: busy 100%, load1 59.66, workers 21, MemAvail 52 GB | server2: busy 100%, load1 96.62, workers 11, MemAvail 1250 GB | pending box1-eligible 107873 / server2-eligible 107873 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 201.95, workers 61 (grid) + 77 (engine), 128 threads, MemAvail 1305 GB | serverB: busy 100%, load1 184.65, workers 61 (grid) + 77 (engine), 128 threads, MemAvail 1291 GB
 2026-11-19 03:00Z | box1: busy 100%, load1 64.10, workers 25, MemAvail 53 GB | server2: busy 100%, load1 97.07, workers 14, MemAvail 1249 GB | pending box1-eligible 108635 / server2-eligible 108647 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 209.38, workers 61 (grid) + 75 (engine), 128 threads, MemAvail 1295 GB | serverB: busy 100%, load1 181.05, workers 61 (grid) + 77 (engine), 128 threads, MemAvail 1275 GB
 2026-11-19 03:00Z | HOST serverA PRODUCING NOTHING (grid workers 60 but 166 results in 30 min (usual 903))
+2026-11-19 03:05Z | box1: busy 100%, load1 62.18, workers 19, MemAvail 65 GB | server2: busy 100%, load1 100.03, workers 14, MemAvail 1134 GB | pending box1-eligible 110333 / server2-eligible 110345 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 209.16, workers 61 (grid) + 73 (engine), 128 threads, MemAvail 1299 GB | serverB: busy 100%, load1 169.15, workers 61 (grid) + 71 (engine), 128 threads, MemAvail 1262 GB
