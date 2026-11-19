@@ -1,20 +1,20 @@
-# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 17:15Z)
+# NEW_BOOK_LAYER_FIT_BEATS_LIVE - own fitted layers of every D8 candidate that beats a live book (W-LAYERS, refreshed 2026-11-19 17:25Z)
 
 Generator: code/th_layers/layer_gen.py (verified: reproduces all 81 XA3 sets byte-identically), cron code/th_layers/layer_cron.py every 30 min. Basis: each layer setting is the new book's own REPLACE row (base) + ONE layer on the exact engine vs TODAY's stack, fitted on the last 6 months (3 months beside), every live layer stays ON; prior years / 30 layered controls / 2-week roll still to run; provisional until Asia, London are decided (clock order). Columns = layered set minus its base row: stack ulcer (negative = better), worst week, max DD, mean $/wk (engine base lots, $4.84 RT proxy); a setting must keep trades >= 80% of the base.
 
 ## Progress and engine hours (read from autopilot/HEALTH.md at every refresh, never a fixed rate)
-- engine rate: 4262 set-months/h (HEALTH.md at 17:15Z); layer queue (tag NYL, quota 5) landed 1293 set-months in the last hour, 4048 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
-- layer set-months queued 4814, landed 3548, remaining 1230; hours at the HEALTH rate (whole fleet) 0.3 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
+- engine rate: 3704 set-months/h (HEALTH.md at 17:25Z); layer queue (tag NYL, quota 5) landed 1290 set-months in the last hour, 4303 in 3 h; fast-path share of engine slots (W-FASTLADDER): 90%
+- layer set-months queued 5171, landed 3587, remaining 1548; hours at the HEALTH rate (whole fleet) 0.4 h; at the measured NYL rate 1 h; at the fast-path rate: once W-FASTLADDER reports >= 90% of engine slots on the fast path the same remaining work counts at the fast-path speed-up (2.3x measured on one Asia ADD month; NY AM / REPLACE not yet timed)
 
 | label | layer set-months queued | landed |
 |---|---|---|
 | L5c9e11b3xA7 | 795 | 788 |
 | L6a25b155xK7 | 561 | 561 |
 | L01811caaxK7 | 906 | 906 |
-| L01811caaxP7 | 783 | 432 |
+| L01811caaxP7 | 783 | 468 |
 | L6a25b155xP7 | 432 | 0 |
 | L01811caaxM7 | 869 | 432 |
-| L01811caaxH7 | 432 | 429 |
+| L01811caaxH7 | 789 | 432 |
 
 ## D8 gates per candidate: ENGINE rule B (order 1122Z)
 Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME prior year. Sign convention: every percentage is "% WORSE than today's stack" (positive = worse): stack ulcer higher, max DD deeper, worst week lower, mean $/wk lower; negative = better. RED if any > 30%, AMBER 15-30%, else GREEN; persistence = share of 2-week windows where the new stack is not below today's (engine weekly difference). Until a candidate has engine prior years its tier is PENDING (never fail); the screen rule A (bare stream) is shown only as a note and orders the queue. Gate (order 1324Z, Josh): L6M + L3M beat (the candidate rows) + no RED prior year (rule B) + ENGINE persistence >= 0.58 (share of 2-week windows where the new stack is not worse than today's); persistence not yet published = PENDING, never fail (W-LAYERS' own pooled prior-year value is shown as provisional and is not used to fail). Tier -1/FIRST = coordinator-ordered first tier, 0 = gate pass, 2 = pending, 3 = rule-B RED / persistence fail / duplicate stream; Asia before NY inside a tier.
@@ -45,7 +45,7 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L0b1d7882xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | Mc817d9e3xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
 | L30aad100xA7 | 2 | reference / pending: not on W-ASIA's REPLACE pass list (pass_replace.json); REPLACE ONLY (order 1407Z): nothing started, lines wait behind the Asia ladder | n/a | n/a | n/a | n/a |
-| L96205086xM7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -772 mean +387 worst wk +885 max DD +5184 ok; L3M ulcer -1325 mean +694 worst wk +4458 max DD +5184 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
+| L96205086xM7 | 2 | strict PASS but not gate pass yet: strict criterion computed by W-LAYERS (L6M ulcer -772 mean +387 worst wk +885 max DD +5184 ok; L3M ulcer -1325 mean +694 worst wk +4458 max DD +5184 ok) | pending: 1/3 engine prior years landed, none RED so far | n/a | n/a | +10% / +13% / +8% / +9% GREEN | 0.46 |
 | L0f097450xP7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -1014 mean +1313 worst wk -796 max DD +4245 NOT strict; L3M ulcer -2012 mean +1418 worst wk +724 max DD +8426 ok) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
 | L96205086xP7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -1035 mean +336 worst wk -566 max DD +4245 NOT strict; L3M ulcer -2084 mean +921 worst wk +5529 max DD +7571 ok) | pending: no engine prior year landed yet | n/a | n/a | n/a | n/a |
 | L0f097450xM7 | 3 | NOT first tier: strict criterion FAIL - strict criterion computed by W-LAYERS (L6M ulcer -799 mean +1497 worst wk -100 max DD +6039 NOT strict; L3M ulcer -1391 mean +1273 worst wk -100 max DD +6039 NOT strict) | pending: no engine prior year landed yet | W-NYENG pooled 43-month engine persistence 0.55 (REPLACE base); W-LAYERS 2023-25-only n/a | n/a | n/a | n/a | n/a |
@@ -127,12 +127,12 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | L01811caaxK7 | NYAM | K7 | both | TL3_NYE_L01811caa_RK7 | scored | 72 | 2026-11-19 12:45Z | 12 | 5 |
 | L6a25b155xP7 | NYAM | P7 | both | TL3_NYE_L6a25b155_RP7 | fit queued | 72 | - | 0 | 0 |
 | L96205086xM7 | NYAM | M7 | both | TL3_NYE_L96205086_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
-| L0f097450xK7 | NYAM | K7 | both | TL3_NYE_L0f097450_RK7 | fit queued | 72 | - | 0 | 0 |
+| L0f097450xK7 | NYAM | K7 | both | TL3_NYE_L0f097450_RK7 | scored | 72 | 2026-11-19 17:25Z | 5 | 1 |
 | L0f097450xH7 | NYAM | H7 | both | TL3_NYE_L0f097450_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L6a25b155xM7 | NYAM | M7 | both | TL3_NYE_L6a25b155_RM7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L01811caaxM7 | NYAM | M7 | both | TL3_NYE_L01811caa_RM7 | scored | 72 | 2026-11-19 16:15Z | 11 | 5 |
 | L6a25b155xH7 | NYAM | H7 | both | TL3_NYE_L6a25b155_RH7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
-| L01811caaxH7 | NYAM | H7 | both | TL3_NYE_L01811caa_RH7 | fit queued | 72 | - | 0 | 0 |
+| L01811caaxH7 | NYAM | H7 | both | TL3_NYE_L01811caa_RH7 | scored | 72 | 2026-11-19 17:25Z | 9 | 4 |
 | L5a49e86dxK7 | NYAM | K7 | both | TL3_NYE_L5a49e86d_RK7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L09ae66e3xK7 | NYAM | K7 | both | TL3_NYE_L09ae66e3_RK7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
 | L96205086xK7 | NYAM | K7 | both | TL3_NYE_L96205086_RK7 | waiting for the gate (pending / fail): no fit programme started | 0 | - | 0 | 0 |
@@ -337,6 +337,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | NT | no new entries 1130-1200 ET | -8 | -350 | +0 | +18 | 0.89 | -20 / +164 | n/a | n/a | n/a |
 | TK | take at 80% of target after 30 s without a new extreme | -4 | +610 | +0 | -145 | 1.03 | +8 / -90 | n/a | n/a | n/a |
 
+## L0f097450xK7 (NYAM, replaces K7; base TL3_NYE_L0f097450_RK7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 60 min | +387 | +0 | -2606 | +260 | 0.99 | +849 / -514 | n/a | n/a | n/a |
+| CP | own day loss cap 1 stops ($2400 base), profit cap 12,000 | -23 | +0 | +0 | +40 | 0.99 | -42 / +82 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -120 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -96 pts | +412 | -2662 | -1669 | -420 | 1.04 | +743 / -356 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -2400 base (2.0R) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| FR | W-FASTR pick: own day cap loss $2400, profit 9000 | -24 | +0 | +0 | +218 | 0.97 | -42 / +82 | n/a | n/a | n/a |
+| LK | lock at 50% -> stop to entry+0 pts | -4 | +0 | +0 | -1402 | 1.30 | -95 / -663 | n/a | n/a | n/a |
+| NT | no new entries 1100-1130 ET | -48 | +0 | +0 | -28 | 0.97 | -84 / +98 | n/a | n/a | n/a |
+| TK | take at 95% of target after 30 s without a new extreme | +18 | +0 | +0 | +133 | 1.01 | +23 / -52 | n/a | n/a | n/a |
+
 ## L01811caaxM7 (NYAM, replaces M7; base TL3_NYE_L01811caa_RM7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -349,6 +362,19 @@ Rule B: the stack WITH the new book (REPLACE row) vs TODAY'S stack in the SAME p
 | LK | lock at 65% -> stop to entry+10 pts | -60 | -544 | +185 | +6 | 1.05 | -27 / +25 | n/a | n/a | n/a |
 | NT | no new entries 1130-1200 ET | -11 | -350 | -15 | -38 | 0.89 | -21 / +119 | n/a | n/a | n/a |
 | TK | take at 80% of target after 15 s without a new extreme | -5 | +421 | -235 | -90 | 1.03 | +46 / -171 | n/a | n/a | n/a |
+
+## L01811caaxH7 (NYAM, replaces H7; base TL3_NYE_L01811caa_RH7)
+| layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BO | post-stop same-side blackout 60 min | -92 | +845 | +0 | -575 | 0.89 | -106 / -504 | n/a | n/a | n/a |
+| CP | own day loss cap 2 stops ($2400 base), profit cap 12,000 | -4 | +0 | +0 | -11 | 0.99 | -7 / -23 | n/a | n/a | n/a |
+| CU | loss cut when unrealised <= -60 pts (1.0 x stop) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| CX | context cut (fresh) at -24 pts | -14 | +397 | +0 | -30 | 1.01 | -2 / -573 | n/a | n/a | n/a |
+| DD | DAY-DONE: stack >= 22 closes and day <= -2400 base (2.0R) | +0 | +0 | +0 | +0 | 1.00 | +0 / +0 | n/a | n/a | n/a |
+| FR | W-FASTR pick: no-follow-through: < +5 pts after 20 min | -26 | +0 | -56 | +257 | 1.03 | -67 / +199 | n/a | n/a | n/a |
+| LK | lock at 65% -> stop to entry+10 pts | -46 | +1440 | +185 | -184 | 1.05 | -71 / +12 | n/a | n/a | n/a |
+| NT | no new entries 1130-1200 ET | -11 | -350 | -15 | -5 | 0.89 | -23 / +117 | n/a | n/a | n/a |
+| TK | take at 95% of target after 15 s without a new extreme | +1 | +0 | +0 | -7 | 1.00 | +1 / -5 | n/a | n/a | n/a |
 
 ## L21f079b6xK7 (NYAM, replaces K7; base TL3_NYE_L21f079b6_RK7)
 | layer | best setting (L6M ulcer) | d ulcer | d worst wk | d max DD | d mean $/wk | trades x base | L3M d ulcer / d mean | 2025 | 2024 | 2023 |
