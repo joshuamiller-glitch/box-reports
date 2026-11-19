@@ -1,8 +1,8 @@
-# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 13:45Z
+# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-19 13:54Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY PM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYPM.csv.
 
-**Counts:** cells with any engine row 0; cells with a finished REPLACE verdict (L6M+L3M landed) 0; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 0.
+**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 0; cells with a finished REPLACE verdict (L6M+L3M landed) 0; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 0; twin cells listed 0.
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | ADD | prior years run | controls |
