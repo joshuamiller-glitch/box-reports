@@ -20,3 +20,25 @@ Cost of the all-new base (set TL3_NYE_<id>_ALN, 4 live books off): 6 test set-mo
 - Cost per set-month: 225-298 s measured (mean 270 s), i.e. the same class as 195 s; the whole month's tape is replayed whatever trades.
 - FAST path: only for kinds with identity pairs (W-FASTLADDER); ALN has none yet: 3 identical pairs (ALN vs the full engine on a cell-month where the tape-level result is known) are needed; until then ALN runs on the full engine.
 - The builder was ready within ~20 minutes (generator + conversion script); the fleet stays full meanwhile: first looks (NY AM re-runs, B books, Asia remaining), London flag, ranked controls.
+
+## UPDATE 23:3xZ (lead order 2310Z): W-GRIDOPS numbers vs mine
+Their 34.5k prior-year lines on the live-book base were BEFORE my move: at 23:0xZ 28,395 RK7 prior-year lines were parked and 33,153 ALN lines (L6M + prior years, all-new base) queued; the move cost ~4 h of fleet time is what those ALN lines are (they are the same months, base changed). Controls 47.8k: keep. Exits ~100: hold new starts (the 83-112 queued ones are tiny). First looks stay.
+## D4: ny_refill.py ACTED ONCE FOR REAL (--target=17 --london, new flags added, backup .bak_force_2310)
+- Queue before 12.1 h (112,215 lines at 9,294/h) -> 17.6 h (166,413 lines at 9,468/h) after the extension: +69,059 lines in pending_r5.txt (RK7CT controls 37,440, ALN prior-year/L6M 31,433, RK7 210). Multiset check: 0 duplicates, only 8 lines removed from the file by the ladder advance (DONE ones), additions all in the ranked order, new lines of 2023/24/25/26 months 6.6k/8.8k/8.8k/45k. Mix rebuilt: ALN and RK7 lines now first among the follow-ups; first looks/re-runs keep their 70% share (weights unchanged).
+- BUG FOUND by the drill: the London step crashed at its report line (literal '15%' in a % format string; never reached before). Fixed ('15%%'). The shards had already started and the flag london_on is written.
+- London first looks ON (flag london_on): 6 shards started, memory guard added: 1 shard if MemAvailable <48 GB, 3 if <55 GB or load>90 (code ny_refill.py). 
+- Memory: ny_bothside shards 0-5 and London shards were found STOPPED (state T, not by me) by the memory guard at ~48 GB; my SIGTERMs to bothside 3,4,5 and London 3,4,5 will take effect when they resume (they die; 0-2 continue). ny_bothside.py is now gated (shard 0 only <48 GB, shards 0-2 <55 GB, all above, checked before each cell; unregistered half-built events are rebuilt). B-set builds are at 1,377 of ~1,469 books: nearly done, so no move to C/D is needed (bars/events need box-1 data).
+
+## (c/4) QUEUE FOR THE WHOLE NIGHT (23:4xZ, rate 8,900 sm/h, no decision needed)
+Unstarted/unfinished/unleased lines in all QUEUES.txt files: 186,106 = 20.9 h -> covers to ~20:20Z Nov 20 (need >= 16:00Z = ~17 h = 150k).
+| source | lines | hours | automatic? |
+|---|---|---|---|
+| date-shift controls (RK7CT) | 81,873 | 9.2 | queued (refill added 37k) |
+| ALN prior years + L6M (all-new base) | 64,562 | 7.3 | queued (refill added 31k) |
+| B-id / one-side first looks, re-runs, RK7 | 29,373 | 3.3 | queued; B builds 1,377/1,469 done, rest auto |
+| Asia first/ranked (RA7 L/M, AX) | ~3,600 | 0.4 | queued |
+| all-new NY/AS base (W-COMBO allnew_pending) | 5,040 | 0.6 | queued |
+| London first looks (london_on, 3 shards) | 78 now, 808 cells coming | ~0.1 now, ~2-3 h when built | automatic, memory-gated |
+| exit batches (W-EXITENG) | ~100 | 0 | by cron, small |
+| pass-2 joint runs | 0 | - | MISSING until hooks cleared (W-P2B) |
+Missing: nothing for the queue to 16:00Z (+4.3 h margin). Fixes automatic: ny_refill (cron */10) adds ranked follow-ups below 12 h (now cron-safe: crash fixed). Risk: the memory guard stops builders (London shards); controls/ALN are enough to keep slots full without them. Follow-up share cut to 10% (GRIDOPS) lengthens the follow-up tail, not the first-look end (~02:30Z).
