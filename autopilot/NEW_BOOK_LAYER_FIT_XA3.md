@@ -1,11 +1,11 @@
-# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-19 00:01Z
+# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-19 00:31Z
 
 **All rows are vs TODAY's stack (JL3, today's DAY-DONE) and vs the cell's own ADD row; provisional until Asia and London are decided.** Each layer setting is fitted on the trailing 6 months (3 months beside) one layer at a time; 'off' = the ADD row (reference only, every live layer stays ON). Engine base lots, $4.84 RT proxy. Columns: stack ulcer change vs ADD (negative = better), worst week change, max DD change, mean $/week change (all WITH setting minus the ADD row), then the same ulcer / mean vs JL3, the new book's own ulcer x ADD and trades x ADD (a setting must keep trades >= 80 percent). Selection: every setting is the best of a grid on the same window; prior years / 2-week roll / 30 layered controls still to run. Identity: TL3_NYL_XA3_ID1-9 PASS (autopilot NEW_BOOK_LAYER_PLAN.md).
 
 ## L1 profit take
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_TK7 | take at 80% of target after 5 s without a new extreme | -361 | +1992 | +3058 | -94 | 1.06 | 0.93 | -769 / +444 | +929 / -285 | n/a | n/a | -623 | ulcer better |
+| XA3_TK7 | take at 80% of target after 5 s without a new extreme | -361 | +1992 | +3058 | -94 | 1.06 | 0.93 | -769 / +444 | +929 / -285 | +1344 / -579 | -1134 / +165 | -623 | ulcer better |
 | XA3_TK6 | take at 65% of target after 30 s without a new extreme | -339 | +797 | +1428 | +364 | 1.12 | 0.63 | -542 / +301 | +1017 / -146 | +2189 / -671 | -1476 / +183 | -601 | ulcer better |
 | XA3_TK9 | take at 80% of target after 30 s without a new extreme | -323 | +1027 | +2912 | +172 | 1.06 | 0.93 | -702 / +245 | -14 / +102 | +984 / -248 | -210 / +24 | -585 | ulcer better |
 | XA3_TK8 | take at 80% of target after 15 s without a new extreme | -220 | +977 | +2222 | +170 | 1.06 | 1.00 | -483 / +19 | n/a | n/a | n/a | -482 | ulcer better |
@@ -95,7 +95,7 @@
 ## W-FASTR screen picks (take / lock / nft / scratch / caps / DAY-DONE)
 | set | setting | L6M d ulcer vs ADD | d worst wk | d max DD | d mean $/wk | trades x ADD | own ulcer x ADD | L3M d ulcer vs ADD / d mean | 2025 d ulcer / d mean | 2024 | 2023 | d ulcer vs JL3 (L6M) | flag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| XA3_FR9 | W-FASTR pick: scratch: after -45 exit at -5 | -413 | -289 | +1104 | +687 | 1.07 | 0.64 | -740 / +1602 | +984 / -386 | n/a | n/a | -675 | ulcer better |
+| XA3_FR9 | W-FASTR pick: scratch: after -45 exit at -5 | -413 | -289 | +1104 | +687 | 1.07 | 0.64 | -740 / +1602 | +984 / -386 | +903 / -123 | -183 / +21 | -675 | ulcer better |
 | XA3_FR6 | W-FASTR pick: lock 80% -> +30 | -339 | -258 | +2928 | -77 | 1.07 | 0.74 | -678 / +323 | +1050 / -267 | n/a | n/a | -601 | ulcer better |
 | XA3_FR7 | W-FASTR pick: no-follow-through: < +10 pts after 20 min | -233 | +605 | +557 | +34 | 1.08 | 1.20 | -453 / +29 | n/a | n/a | n/a | -495 | ulcer better |
 | XA3_FR10 | W-FASTR pick: own day cap loss $2400, profit 6000 | -176 | +0 | +1195 | +155 | 0.93 | 0.78 | -354 / +130 | n/a | n/a | n/a | -438 | ulcer better |

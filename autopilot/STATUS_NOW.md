@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 00:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 00:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 00:10Z | box1: busy 100%, load1 67.38, workers 28, MemAvail 64 GB | server2: busy 100%, load1 89.12, workers 13, MemAvail 1236 GB | pending box1-eligible 45797 / server2-eligible 46697 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 231.19, workers 97 (grid) + 57 (engine), 128 threads, MemAvail 1310 GB | serverB: busy 98%, load1 176.63, workers 99 (grid) + 55 (engine), 128 threads, MemAvail 1235 GB
+LATEST CORES.md LINE: 2026-11-19 00:30Z | box1: busy 100%, load1 73.05, workers 28, MemAvail 60 GB | server2: busy 100%, load1 103.46, workers 18, MemAvail 1261 GB | pending box1-eligible 50742 / server2-eligible 51459 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 223.90, workers 97 (grid) + 53 (engine), 128 threads, MemAvail 1274 GB | serverB: busy 100%, load1 169.66, workers 99 (grid) + 55 (engine), 128 threads, MemAvail 1188 GB
 
 ## UTC TIME WRITTEN
-2026-11-19 00:15Z
+2026-11-19 00:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 00:10Z | box1: busy 100%, load1 67.38, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 57.0 GB; live reservations 6 (6 GB); workers 30, of which TP-adopted 30 (RSS 53.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 70.94, 70.85, 72.31
-  by tag: NT quota 8 running 4 hungry True RSS 7.1 GB PSS 6.6 GB; NYL quota 12 running 12 hungry False RSS 20.6 GB PSS 15.9 GB; NYR quota 16 running 12 hungry True RSS 21.5 GB PSS 18.3 GB; LON quota 12 running 1 hungry True RSS 2.0 GB PSS 1.9 GB; ASI quota 16 running 1 hungry True RSS 2.0 GB PSS 1.9 GB; NT quota 0 running 4 hungry False RSS 7.1 GB PSS 6.6 GB
-  cell-months finished last hour (DONE markers): 892
-  top running jobs: TL3_NYE_Lb8f8e8fc_RK7 (x8);TL3_NYE_L73f2c64b_RK7 (x8);TL3_NYL_XA3_LK6 (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 65.70, 79.66, 101.45|/dev/md2         28T  1.6T   27T   6% /mnt/l2|24|
+Server 1 (this box): MemAvail 59.1 GB; live reservations 3 (3 GB); workers 28, of which TP-adopted 28 (RSS 48.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=32 LOAD_CAP=40 | load1/5/15: 73.61, 71.07, 71.59
+  by tag: NT quota 8 running 4 hungry True RSS 6.7 GB PSS 6.2 GB; NYL quota 12 running 12 hungry False RSS 21.3 GB PSS 16.6 GB; NYR quota 16 running 11 hungry True RSS 18.3 GB PSS 16.5 GB; ASI quota 16 running 1 hungry True RSS 1.9 GB PSS 1.8 GB; NT quota 0 running 4 hungry False RSS 6.7 GB PSS 6.2 GB
+  cell-months finished last hour (DONE markers): 924
+  top running jobs: TL3_NYE_L3cecc1d9_RK7 (x12);TL3_NYE_Lf2905267_RK7 (x6);TL3_NYE_L9bf82f44_RK7 (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 103.69, 94.76, 94.51|/dev/md2         28T  1.6T   27T   6% /mnt/l2|32|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 65.70, 79.66, 101.45|/dev/m
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261118_2118Z_NIGHT-STANDING-ORDERS-act-without-new-orders.md 20261118_2057Z_luck-test-add-whole-history-column-beside-L6M.md 20261118_2128Z_R3-null-sanity-check-NYAM-below-chance.md 20261118_2218Z_after-R3-sanity-null-is-the-judge-queues-real-pass1-rate.md 20261118_2236Z_box1-root-disk-9GB-guard-it-and-engine-queue.md
+20261118_2057Z_luck-test-add-whole-history-column-beside-L6M.md 20261118_2128Z_R3-null-sanity-check-NYAM-below-chance.md 20261118_2218Z_after-R3-sanity-null-is-the-judge-queues-real-pass1-rate.md 20261118_2236Z_box1-root-disk-9GB-guard-it-and-engine-queue.md 20261119_0017Z_exit-yield-to-150-pairs-oversubscription-dallas-queue.md
