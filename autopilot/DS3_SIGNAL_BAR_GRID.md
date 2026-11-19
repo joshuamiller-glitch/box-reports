@@ -1,7 +1,7 @@
 # DS3_SIGNAL_BAR_GRID - whole trigger library x every bar row x session (W-GRIDA), FIRST PASS, NAKED SCREEN
 VERDICT (data ends 2026-11-12; naked screen with bar-scaled brackets, no layers, NOT an engine verdict; first heat table on built bars; nulls: random-entry replicas rand1,randd8a,randd8ax,randd8b,randd8bx): see the headline table - a trigger x bar counts only by EXCESS over the null distribution of the BEST pick; nothing here is a pass until the engine row with layers exists.
 
-Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-19 20:07Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
+Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-19 20:37Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
 
 **CORRECTION 02:30Z (read first): every random-entry null file produced by the fast path before 02:30Z was an exact COPY of the real result (the fast runner did not recognise the tag p1randN), so all earlier excess / percentile / null columns and the claim of null draws were INVALID (excess 0.0, percentile 1.00 = no null). 31,413 such files were deleted; the 1,411 legacy-runner null files are valid. Nulls are being regenerated; a null column is shown only when the null pool covers >= 80% of the real pool, otherwise it reads NO NULL YET. Real results are unaffected.**
 
@@ -40,7 +40,7 @@ Header: pick window end = newest data week (2026-11-12); refit date = every 2 we
 | p1rand9 | 427 | 400 | 0.000 | -0.66 / -0.58 / -0.57 / -0.99 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 Draws per cell = number of accepted null tags covering the pool (see per-session null_cover); needs >= 5 before any LEAD label.
 
-**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-19 20:07Z):** result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 6, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 53589, "p1rand10": 427, "p1rand11": 427, "p1rand12": 421, "p1rand13": 316, "p1rand14": 285, "p1rand15": 285, "p1rand16": 285, "p1rand17": 285, "p1rand18": 285, "p1rand19": 368, "p1rand2": 53383, "p1rand20": 495, "p1rand21": 103, "p1rand22": 103, "p1rand23": 103, "p1rand24": 103, "p1rand25": 103, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 6429, "p1rand30": 2, "p1rand4": 6329, "p1rand5": 6220, "p1rand6": 428, "p1rand7": 427, "p1rand8": 427, "p1rand9": 427, "p1real": 69321, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 0, "London": 0, "NYAM": 0, "NYPM": 0}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
+**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-19 20:37Z):** result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 16, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 54388, "p1rand10": 427, "p1rand11": 427, "p1rand12": 421, "p1rand13": 316, "p1rand14": 285, "p1rand15": 285, "p1rand16": 285, "p1rand17": 285, "p1rand18": 285, "p1rand19": 368, "p1rand2": 53982, "p1rand20": 495, "p1rand21": 103, "p1rand22": 103, "p1rand23": 103, "p1rand24": 103, "p1rand25": 103, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 6445, "p1rand30": 2, "p1rand4": 6329, "p1rand5": 6220, "p1rand6": 428, "p1rand7": 427, "p1rand8": 427, "p1rand9": 427, "p1real": 69321, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 0, "London": 0, "NYAM": 0, "NYPM": 0}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
 
 **Every number on this page comes from: PASS 1 (coarse grid: 2-3 settings per variant spanning the range; brackets plain 60/60 + sym15u; real + rand1/rand2 nulls; long/short = side split).**
 
@@ -51,9 +51,9 @@ Draws per cell = number of accepted null tags covering the pool (see per-session
 4. Needs in D7: trigger modules are bar-indicator only (no new feed) except book/tape families flagged in TRIGGER_REGISTRY.md; non-time bars need a custom BarsType (BAR_REGISTRY.md).
 5. Next: top cells -> live layers (fast replay) -> exact JL3 engine with controls (identity first); then Asia.
 
-## Progress (2026-11-19 20:07Z)
-COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 6, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 53589, "p1rand10": 427, "p1rand11": 427, "p1rand12": 421, "p1rand13": 316, "p1rand14": 285, "p1rand15": 285, "p1rand16": 285, "p1rand17": 285, "p1rand18": 285, "p1rand19": 368, "p1rand2": 53383, "p1rand20": 495, "p1rand21": 103, "p1rand22": 103, "p1rand23": 103, "p1rand24": 103, "p1rand25": 103, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 6429, "p1rand30": 2, "p1rand4": 6329, "p1rand5": 6220, "p1rand6": 428, "p1rand7": 427, "p1rand8": 427, "p1rand9": 427, "p1real": 69321, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-19T20:07Z rows=327 mods=146 todo=14 running=0. 
-Cells scored per session: {"Asia": 10054328, "London": 11127692, "NYAM": 12181842, "NYPM": 12198411}
+## Progress (2026-11-19 20:37Z)
+COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "d8real": 16, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 54388, "p1rand10": 427, "p1rand11": 427, "p1rand12": 421, "p1rand13": 316, "p1rand14": 285, "p1rand15": 285, "p1rand16": 285, "p1rand17": 285, "p1rand18": 285, "p1rand19": 368, "p1rand2": 53982, "p1rand20": 495, "p1rand21": 103, "p1rand22": 103, "p1rand23": 103, "p1rand24": 103, "p1rand25": 103, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 6445, "p1rand30": 2, "p1rand4": 6329, "p1rand5": 6220, "p1rand6": 428, "p1rand7": 427, "p1rand8": 427, "p1rand9": 427, "p1real": 69321, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-19T20:37Z rows=327 mods=146 todo=14 running=0. 
+Cells scored per session: {"Asia": 10239881, "London": 11127692, "NYAM": 12181842, "NYPM": 12198411}
 
 ## London
 ### Headline: best pick over the whole grid (OOS mean pts/week at 1 lot, 4.84 incl)
@@ -311,47 +311,47 @@ Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 ### Headline: best pick over the whole grid (OOS mean pts/week at 1 lot, 4.84 incl)
 | pick | OOS pts/wk | R/trade | ulcer (wk pts) | persistence | L6M pts/wk | L3M pts/wk | null mean | null max | excess | pctile | shifted-label mean | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| free | -18.3 | -0.017 | 1075.7 | 0.43 | -10.4 | -118.2 |  |  |  |  | -3.1 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
-| agreed | -18.3 | -0.017 | 1075.7 | 0.43 | -10.4 | -118.2 |  |  |  |  | -2.6 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
+| free | -18.3 | -0.017 | 1075.7 | 0.43 | -10.4 | -118.2 |  |  |  |  | -4.3 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
+| agreed | -18.3 | -0.017 | 1075.7 | 0.43 | -10.4 | -118.2 |  |  |  |  | -3.8 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | INFORMATION | PRICE | TIME |
 |---|---|---|---|---|
-| bands | 18.1 [no null yet] | 6.9 [no null yet] | 25.7 [no null yet] | 14.4 [no null yet] |
-| bands (native) | -0.1 [no null yet] | 6.8 [no null yet] | 4.5 [no null yet] | 14.1 [no null yet] |
-| barnative | 7.1 [no null yet] | -43.3 [no null yet] | -30.4 [no null yet] | -23.0 [no null yet] |
+| bands | 8.0 [no null yet] | 16.5 [no null yet] | 25.7 [no null yet] | 13.5 [no null yet] |
+| bands (native) | -0.5 [no null yet] | 6.5 [no null yet] | 4.5 [no null yet] | 15.0 [no null yet] |
+| barnative | -8.5 [no null yet] | -43.3 [no null yet] | -22.9 [no null yet] | -23.0 [no null yet] |
 | book | -18.6 [no null yet] | -14.3 [no null yet] | -3.6 [no null yet] | -8.2 [no null yet] |
 | book (native) | 4.0 [no null yet] | -39.1 [no null yet] | 1.7 [no null yet] | -28.8 [no null yet] |
-| confluence | 15.1 [no null yet] | 12.3 [no null yet] | -8.3 [no null yet] | -20.9 [no null yet] |
-| levels | 17.0 [no null yet] | 17.0 [no null yet] | -8.7 [no null yet] | -9.4 [no null yet] |
-| levels (native) | 29.1 [no null yet] | -16.7 [no null yet] | 15.9 [no null yet] | -18.7 [no null yet] |
+| confluence | 15.1 [no null yet] | 12.3 [no null yet] | -23.3 [no null yet] | -19.5 [no null yet] |
+| levels | 11.1 [no null yet] | 17.0 [no null yet] | -8.7 [no null yet] | -9.4 [no null yet] |
+| levels (native) | 27.4 [no null yet] | -16.7 [no null yet] | 15.9 [no null yet] | -18.7 [no null yet] |
 | live | 15.4 [no null yet] | -2.5 [no null yet] | -4.9 [no null yet] | -4.1 [no null yet] |
-| manual | 7.8 [no null yet] | 11.9 [no null yet] | -1.7 [no null yet] | -19.3 [no null yet] |
-| manual (native) | -10.0 [no null yet] | -27.7 [no null yet] | -15.1 [no null yet] | 6.7 [no null yet] |
-| momentum | 26.4 [no null yet] | -18.4 [no null yet] | 20.9 [no null yet] | 1.3 [no null yet] |
-| momentum (native) | -8.7 [no null yet] | 0.5 [no null yet] | 0.3 [no null yet] | 5.5 [no null yet] |
-| pullback | 19.2 [no null yet] | -13.0 [no null yet] | -16.1 [no null yet] | -22.2 [no null yet] |
-| pullback (native) | 16.5 [no null yet] | -0.2 [no null yet] | 19.6 [no null yet] | 6.1 [no null yet] |
-| structure | -8.6 [no null yet] | -2.9 [no null yet] | 3.5 [no null yet] | -7.1 [no null yet] |
-| structure (native) | 3.7 [no null yet] | 8.4 [no null yet] | 13.1 [no null yet] | -20.1 [no null yet] |
-| tape | 4.0 [no null yet] | -12.7 [no null yet] | 2.7 [no null yet] | 10.2 [no null yet] |
-| tape (native) | 3.2 [no null yet] | 21.6 [no null yet] | -13.2 [no null yet] | -1.7 [no null yet] |
-| trend | 3.2 [no null yet] | 4.6 [no null yet] | -7.6 [no null yet] | -1.2 [no null yet] |
+| manual | 12.8 [no null yet] | 11.9 [no null yet] | -0.3 [no null yet] | -19.3 [no null yet] |
+| manual (native) | -9.8 [no null yet] | -27.7 [no null yet] | -15.1 [no null yet] | 7.4 [no null yet] |
+| momentum | 20.0 [no null yet] | -18.4 [no null yet] | 18.8 [no null yet] | -0.5 [no null yet] |
+| momentum (native) | -8.7 [no null yet] | 0.5 [no null yet] | 5.2 [no null yet] | 3.7 [no null yet] |
+| pullback | 19.2 [no null yet] | -13.0 [no null yet] | 16.6 [no null yet] | -22.2 [no null yet] |
+| pullback (native) | 16.5 [no null yet] | -0.2 [no null yet] | 20.0 [no null yet] | 6.1 [no null yet] |
+| structure | -12.3 [no null yet] | -2.9 [no null yet] | 0.2 [no null yet] | -7.1 [no null yet] |
+| structure (native) | 17.8 [no null yet] | 7.0 [no null yet] | 13.1 [no null yet] | -20.1 [no null yet] |
+| tape | 4.0 [no null yet] | -12.7 [no null yet] | 2.7 [no null yet] | 8.6 [no null yet] |
+| tape (native) | 8.6 [no null yet] | 21.6 [no null yet] | -13.2 [no null yet] | -1.7 [no null yet] |
+| trend | 3.8 [no null yet] | 4.6 [no null yet] | -7.6 [no null yet] | -1.2 [no null yet] |
 | trend (native) | -16.5 [no null yet] | 14.7 [no null yet] | -12.3 [no null yet] | -20.1 [no null yet] |
-| xmarket | 6.1 [no null yet] | -31.4 [no null yet] | 10.1 [no null yet] | -26.4 [no null yet] |
+| xmarket | 6.1 [no null yet] | -31.4 [no null yet] | 10.1 [no null yet] | -26.0 [no null yet] |
 ### PASS 1: 10 best family cells in Asia (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| levels (native)|ACTIVITY | 29.1 | 0.037 | 148.1 | 0.56 | 58.2 | 26.1 | {"2023": -9.8, "2024": 15.5, "2025": 42.9, "2026": 41.1} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| momentum|ACTIVITY | 26.4 | 0.033 | 325.3 | 0.56 | 35.8 | 6.9 | {"2023": -4.5, "2024": 26.5, "2025": 7.2, "2026": 58.7} |  |  |  | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| levels (native)|ACTIVITY | 27.4 | 0.032 | 160.8 | 0.56 | 51.8 | 12.3 | {"2023": -7.9, "2024": 15.5, "2025": 40.5, "2026": 37.3} |  |  |  | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | bands|PRICE | 25.7 | 0.024 | 215.6 | 0.57 | 36.8 | -14.0 | {"2023": 9.4, "2024": 14.4, "2025": 42.0, "2026": 24.8} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | tape (native)|INFORMATION | 21.6 | 0.022 | 524.3 | 0.52 | 64.2 | 8.1 | {"2023": -36.7, "2024": 25.2, "2025": -23.9, "2026": 89.6} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
-| momentum|PRICE | 20.9 | 0.016 | 477.3 | 0.58 | -36.5 | -2.8 | {"2023": 8.9, "2024": 38.1, "2025": 45.9, "2026": -25.2} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "RED"} |
-| pullback (native)|PRICE | 19.6 | 0.013 | 284.9 | 0.54 | 0.9 | 16.9 | {"2023": 51.4, "2024": 27.3, "2025": -12.6, "2026": 38.5} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"} |
+| pullback (native)|PRICE | 20.0 | 0.013 | 284.7 | 0.54 | 3.4 | 16.9 | {"2023": 51.4, "2024": 27.3, "2025": -12.6, "2026": 40.0} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"} |
+| momentum|ACTIVITY | 20.0 | 0.024 | 463.6 | 0.54 | 35.8 | 6.9 | {"2023": -4.5, "2024": 26.5, "2025": -12.8, "2026": 58.7} |  |  |  | {"2023": "AMBER", "2024": "ok", "2025": "RED", "2026": "ok"} |
 | pullback|ACTIVITY | 19.2 | 0.020 | 384.6 | 0.58 | 62.2 | -53.7 | {"2023": 11.7, "2024": 28.5, "2025": 7.5, "2026": 24.3} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| bands|ACTIVITY | 18.1 | 0.011 | 387.6 | 0.56 | 15.6 | -70.9 | {"2023": 33.1, "2024": 15.5, "2025": 19.8, "2026": 14.6} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| levels|ACTIVITY | 17.0 | 0.020 | 301.2 | 0.52 | 30.8 | -29.8 | {"2023": -9.2, "2024": 14.4, "2025": -1.3, "2026": 50.2} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| momentum|PRICE | 18.8 | 0.015 | 480.1 | 0.57 | -36.5 | -2.8 | {"2023": 8.9, "2024": 31.5, "2025": 45.9, "2026": -25.2} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "RED"} |
+| structure (native)|ACTIVITY | 17.8 | 0.020 | 231.8 | 0.58 | 45.4 | 78.9 | {"2023": -10.7, "2024": 10.7, "2025": 14.7, "2026": 38.7} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | levels|INFORMATION | 17.0 | 0.016 | 179.5 | 0.51 | -13.8 | -27.4 | {"2023": 23.8, "2024": 11.9, "2025": 9.6, "2026": 29.5} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 72.1 pts/wk, rank 98% (top 2.0%); M7 tm60 L6M 80.8 pts/wk, rank 99% (top 1.4%); U7 tm600 L6M 35.4 pts/wk, rank 90% (top 10.2%); P7 tm60 L6M 66.1 pts/wk, rank 97% (top 2.6%); H7 tm60 L6M 25.1 pts/wk, rank 84% (top 15.8%); A7 tm60 L6M 6.5 pts/wk, rank 65% (top 34.5%). Rank = share of ALL Asia cells with a lower trailing-26w result.
+| pullback|PRICE | 16.6 | 0.020 | 405.4 | 0.62 | 4.5 | -115.5 | {"2023": 29.8, "2024": 19.6, "2025": -17.9, "2026": 49.7} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"} |
+Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 72.1 pts/wk, rank 98% (top 2.0%); M7 tm60 L6M 80.8 pts/wk, rank 99% (top 1.4%); U7 tm600 L6M 35.4 pts/wk, rank 90% (top 10.2%); P7 tm60 L6M 66.1 pts/wk, rank 97% (top 2.6%); H7 tm60 L6M 25.1 pts/wk, rank 84% (top 15.9%); A7 tm60 L6M 6.5 pts/wk, rank 65% (top 34.6%). Rank = share of ALL Asia cells with a lower trailing-26w result.
 
 ### PASS 2 (full grid, 7 brackets, selected pairs, own nulls): 10 best family cells in Asia (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
@@ -371,25 +371,25 @@ Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 7
 | # | bar row | trigger.variant | params | bracket | side | L6M pts | L3M pts | trades | nb agree | cell null draws / mean / max L6M pts / pctile | pts by year |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | dib_400 | trend.trend_ma_hma.cross | {"len": 13, "width": 3, "hyst": 0.0} | sym30u | both | 7428 | 3631 | 401 | 0.83 | 5 / -601 / 763 / 1.00 | {"2023": 254.0, "2024": -1383.0, "2025": 13.0, "2026": 5811.0} |
-| 2 | urenko_14 | book.book_pslope.follow_native | {"L": 1800, "z": 1.0} | plain60/60 | both | 6879 | 4405 | 1062 | 0.75 | 5 / 607 / 2495 / 1.00 | {"2023": 406.0, "2024": 466.0, "2025": -3165.0, "2026": 6685.0} |
-| 3 | vol_350 | levels.levels_profile_nodes.break_native | {"n": 2, "k": 0.25} | sym8u | both | 6822 | 2719 | 315 | 1.00 | 25 / -1048 / 2016 / 1.00 | {"2023": -337.0, "2024": 673.0, "2025": 881.0, "2026": 6105.0} |
-| 4 | mrenko_14 | book.book_imb.delta_follow | {"lv": 1, "thr": 0.2} | asym20u/10u | both | 6755 | 1461 | 463 | 0.67 | 5 / 276 / 1625 / 1.00 | {"2023": -8.0, "2024": 145.0, "2025": -790.0, "2026": 6225.0} |
-| 5 | drb_240 | trend.trend_macd.hist_turn | {"len": 12, "width": 0.01} | sym15u | both | 6751 | 922 | 421 | 1.00 | 5 / 1088 / 3330 / 1.00 | {"2023": -77.0, "2024": -853.0, "2025": 1402.0, "2026": 4274.0} |
-| 6 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | asym15u/30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1768 / 48 / 1.00 | {"2023": 35.0, "2024": -1811.0, "2025": -37.0, "2026": 5560.0} |
-| 7 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1769 / 48 / 1.00 | {"2023": 200.0, "2024": -1629.0, "2025": 358.0, "2026": 5560.0} |
-| 8 | tib_1200 | trend.trend_adx_di.adx_cross | {"len": 28, "width": 15} | asym20u/10u | both | 6722 | 3365 | 335 | 1.00 | 5 / -1269 / 852 / 1.00 | {"2023": -605.0, "2024": -765.0, "2025": -1284.0, "2026": 6260.0} |
-| 9 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym15u | both | 6709 | 1912 | 361 | 1.00 | 5 / -1774 / 48 / 1.00 | {"2023": 18.0, "2024": -1198.0, "2025": 523.0, "2026": 5386.0} |
-| 10 | mrenko_14 | book.book_thin.spr_fade | {"w": 2, "i": 0.2} | asym10u/20u | both | 6643 | 3503 | 344 | 1.00 | 4 / -1454 / 510 / 1.00 | {"2023": 289.0, "2024": 1057.0, "2025": 623.0, "2026": 6124.0} |
-| 11 | tib_240 | barnative.barnative_run.fade | {"n": 6} | sym30u | both | 6625 | 1797 | 384 | 1.00 | 5 / -28 / 1297 / 1.00 | {"2023": 28.0, "2024": -2037.0, "2025": 970.0, "2026": 4953.0} |
-| 12 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym20u/10u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 154.0, "2024": 1956.0, "2025": 393.0, "2026": 4461.0} |
-| 13 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym10u/20u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 235.0, "2024": 1394.0, "2025": 355.0, "2026": 4461.0} |
-| 14 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | sym30u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 229.0, "2024": 1726.0, "2025": 223.0, "2026": 4461.0} |
-| 15 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym15u/30u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 223.0, "2024": 1748.0, "2025": 223.0, "2026": 4461.0} |
-| 16 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | sym15u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 263.0, "2024": 1748.0, "2025": 223.0, "2026": 4461.0} |
-| 17 | vsess_80 | tape.tape_stack.r3_fade | {"k": 3} | sym15u | both | 6583 | 2943 | 415 | 1.00 | 5 / -966 / 216 / 1.00 | {"2023": -264.0, "2024": 444.0, "2025": -14.0, "2026": 7725.0} |
-| 18 | trb_400 | bands.bands_atrchan.fade_ext | {"n": 40, "atr": 14, "k": 4.0} | sym15u | both | 6579 | 1893 | 293 | 1.00 | 5 / 194 / 2203 / 1.00 | {"2023": -573.0, "2024": 764.0, "2025": 713.0, "2026": 6673.0} |
-| 19 | mrenko_14 | book.book_micro.fade_sm | {"L": 200, "z": 1.0, "sm": 3} | sym15u | both | 6571 | 3280 | 358 | 1.00 | 4 / 480 / 4271 / 1.00 | {"2023": 168.0, "2024": -1060.0, "2025": -3294.0, "2026": 6657.0} |
-| 20 | rng_28 | tape.tape_stack.r5_fade | {"k": 4} | asym10u/20u | both | 6537 | 3532 | 335 | 1.00 | 5 / -780 / 1040 / 1.00 | {"2023": 534.0, "2024": 1140.0, "2025": 939.0, "2026": 4610.0} |
+| 2 | vsess_450 | levels.levels_channel.break_native | {"n": 3, "k": 0.25} | sym15u | both | 7008 | 3095 | 376 | 1.00 | 2 / 0 / 0 / 1.00 | {"2023": -848.0, "2024": -46.0, "2025": -14.0, "2026": 8343.0} |
+| 3 | urenko_14 | book.book_pslope.follow_native | {"L": 1800, "z": 1.0} | plain60/60 | both | 6879 | 4405 | 1062 | 0.75 | 5 / 607 / 2495 / 1.00 | {"2023": 406.0, "2024": 466.0, "2025": -3165.0, "2026": 6685.0} |
+| 4 | vol_350 | levels.levels_profile_nodes.break_native | {"n": 2, "k": 0.25} | sym8u | both | 6822 | 2719 | 315 | 1.00 | 25 / -1048 / 2016 / 1.00 | {"2023": -337.0, "2024": 673.0, "2025": 881.0, "2026": 6105.0} |
+| 5 | mrenko_14 | book.book_imb.delta_follow | {"lv": 1, "thr": 0.2} | asym20u/10u | both | 6755 | 1461 | 463 | 0.67 | 5 / 276 / 1625 / 1.00 | {"2023": -8.0, "2024": 145.0, "2025": -790.0, "2026": 6225.0} |
+| 6 | drb_240 | trend.trend_macd.hist_turn | {"len": 12, "width": 0.01} | sym15u | both | 6751 | 922 | 421 | 1.00 | 5 / 1088 / 3330 / 1.00 | {"2023": -77.0, "2024": -853.0, "2025": 1402.0, "2026": 4274.0} |
+| 7 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | asym15u/30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1768 / 48 / 1.00 | {"2023": 35.0, "2024": -1811.0, "2025": -37.0, "2026": 5560.0} |
+| 8 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1769 / 48 / 1.00 | {"2023": 200.0, "2024": -1629.0, "2025": 358.0, "2026": 5560.0} |
+| 9 | tib_1200 | trend.trend_adx_di.adx_cross | {"len": 28, "width": 15} | asym20u/10u | both | 6722 | 3365 | 335 | 1.00 | 5 / -1269 / 852 / 1.00 | {"2023": -605.0, "2024": -765.0, "2025": -1284.0, "2026": 6260.0} |
+| 10 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym15u | both | 6709 | 1912 | 361 | 1.00 | 5 / -1774 / 48 / 1.00 | {"2023": 18.0, "2024": -1198.0, "2025": 523.0, "2026": 5386.0} |
+| 11 | mrenko_14 | book.book_thin.spr_fade | {"w": 2, "i": 0.2} | asym10u/20u | both | 6643 | 3503 | 344 | 1.00 | 4 / -1454 / 510 / 1.00 | {"2023": 289.0, "2024": 1057.0, "2025": 623.0, "2026": 6124.0} |
+| 12 | tib_240 | barnative.barnative_run.fade | {"n": 6} | sym30u | both | 6625 | 1797 | 384 | 1.00 | 5 / -28 / 1297 / 1.00 | {"2023": 28.0, "2024": -2037.0, "2025": 970.0, "2026": 4953.0} |
+| 13 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym20u/10u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 154.0, "2024": 1956.0, "2025": 393.0, "2026": 4461.0} |
+| 14 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | sym15u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 263.0, "2024": 1748.0, "2025": 223.0, "2026": 4461.0} |
+| 15 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym10u/20u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 235.0, "2024": 1394.0, "2025": 355.0, "2026": 4461.0} |
+| 16 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | sym30u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 229.0, "2024": 1726.0, "2025": 223.0, "2026": 4461.0} |
+| 17 | cusum_28 | tape.tape_stack.r5_fade | {"k": 4} | asym15u/30u | both | 6597 | 3447 | 333 | 1.00 | 5 / -608 / 2211 / 1.00 | {"2023": 223.0, "2024": 1748.0, "2025": 223.0, "2026": 4461.0} |
+| 18 | vsess_80 | tape.tape_stack.r3_fade | {"k": 3} | sym15u | both | 6583 | 2943 | 415 | 1.00 | 5 / -966 / 216 / 1.00 | {"2023": -264.0, "2024": 444.0, "2025": -14.0, "2026": 7725.0} |
+| 19 | trb_400 | bands.bands_atrchan.fade_ext | {"n": 40, "atr": 14, "k": 4.0} | sym15u | both | 6579 | 1893 | 293 | 1.00 | 5 / 194 / 2203 / 1.00 | {"2023": -573.0, "2024": 764.0, "2025": 713.0, "2026": 6673.0} |
+| 20 | mrenko_14 | book.book_micro.fade_sm | {"L": 200, "z": 1.0, "sm": 3} | sym15u | both | 6571 | 3280 | 358 | 1.00 | 4 / 480 / 4271 / 1.00 | {"2023": 168.0, "2024": -1060.0, "2025": -3294.0, "2026": 6657.0} |
 
 ## Exit families (second result column; stage a2, screen-level): flip study and best exit family
 Flip study (random 2% sample of pass-1 cells, capped): cells negative on EVERY fixed bracket that become positive with their best of 68 exit specs. A best-of-68 pick is biased upward: read it against the null3 sample / random-entry nulls (null_pctile in the candidates table), not as a gain.
@@ -640,7 +640,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | sdx_renko28 | lim_mid | kagi_112 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 157 | 2991 | -88 | -812 | -829 | 2811 | 1 | 360 |
 | sdx_renko28 | lim_prox | kagi_112 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 156 | 3623 | -359 | -657 | -693 | 3375 | 1 | 360 |
 | sdx_renko28 | rej | vrb_400 | {"d": "B", "F": 0, "tol": 0.5} | plain60/60 / both | 104 | 1060 | -479 | 152 | 1216 | 187 | 1 | 360 |
-| sdx_renko28 | rej_flow | vfp_t5m | {"d": "E", "F": 0} | sym15u / both | 100 | 689 | -79 | -709 | 1424 | 1917 | 1 | 360 |
+| sdx_renko28 | rej_flow | vfp_rng40 | {"d": "E", "F": 0} | sym15u / short | 66 | 932 | 336 | 342 | -61 | 1096 | 1 | 360 |
 | sdx_renko28 | rej_native | volor_B030 | {"d": "E", "F": 0, "tol": 0.5} | sym15u / both | 242 | 1771 | -220 | -632 | -654 | 1032 | 1 | 360 |
 | sdx_renko28 | rej_zone | vnorm_40 | {"d": "E", "F": 9, "tgt": "r2"} | OWN zone/level bracket / both | 169 | 2921 | -147 | -117 | 1565 | 3866 | 1 | 360 |
 | sdx_renko28 | retest | kagi_56 | {"d": "E", "M": 6, "tol": 0.5} | sym15u / both | 183 | 1714 | 157 | -621 | -488 | 47 | 1 | 360 |
@@ -743,7 +743,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | piv_floor | false_break | pasl_14 | {"M": 2, "k": 0.5} | sym15u / both | 203 | 3561 | -443 | -1227 | -389 | 4694 | 2 | 360 |
 | piv_floor | false_break_native | pasl_10 | {"M": 2, "k": 0.5} | sym15u / both | 195 | 3732 | -551 | -1934 | -1135 | 5263 | 1 | 360 |
 | piv_floor | reject | vrb_2000 | {"tol": 0.0, "conf": "close"} | sym15u / both | 163 | 2394 | 666 | 286 | -937 | 3218 | 1 | 360 |
-| piv_floor | reject_native | tm780 | {"tol": 1.0, "conf": "body"} | sym15u / both | 219 | 3389 | 177 | 449 | -550 | 3714 | 1 | 360 |
+| piv_floor | reject_native | swing_atr_0.6 | {"tol": 1.0, "conf": "close"} | sym8u / both | 215 | 3469 | 1061 | 180 | -922 | 2612 | 2 | 360 |
 | piv_floor | retest | kagi_14 | {"M": 3, "tol": 0.0} | asym10u/20u / both | 169 | 3970 | 252 | -952 | -637 | 3561 | 2 | 360 |
 | piv_floor | retest_native | kagi_14 | {"M": 3, "tol": 0.0} | asym10u/20u / both | 169 | 3970 | 252 | -952 | -637 | 3561 | 2 | 360 |
 | piv_wf | break | time_m_13 | {"n": 3, "k": 0.5} | sym15u / both | 181 | 4213 | -1022 | -1316 | -385 | 3980 | 1 | 360 |
@@ -785,8 +785,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | swsr60 | reject | vib_15000 | {"tol": 0.0, "conf": "close"} | sym15u / both | 138 | 2627 | -204 | -1067 | 651 | 1457 | 1 | 360 |
 | swsr60 | reject_native | vol_500 | {"tol": 0.5, "conf": "body"} | asym10u/20u / both | 191 | 3184 | -1017 | -2263 | 1121 | 2705 | 2 | 360 |
 | swsr60 | retest | vsess_450 | {"M": 3, "tol": 0.0} | asym15u/30u / both | 151 | 2388 | 405 | -814 | 39 | 4111 | 2 | 360 |
-| swsr60 | retest_native | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym15u / both | 196 | 2660 | -428 | 211 | -803 | 3281 | 1 | 360 |
-| stack | break | swing_pct_5 | {"k": 3, "cw": 1.0} | sym15u / both | 146 | 3658 | 150 | 1374 | -1383 | 2692 | 1 | 360 |
+| swsr60 | retest_native | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym8u / both | 196 | 2660 | -428 | 211 | -803 | 3281 | 2 | 360 |
+| stack | break | swing_pct_5 | {"k": 3, "cw": 1.0} | sym8u / both | 146 | 3658 | 266 | 1321 | -1614 | 2692 | 2 | 360 |
 | stack | break_native | trb_3500 | {"k": 2, "cw": 0.5} | sym15u / both | 177 | 3483 | 500 | -928 | -2461 | 5932 | 1 | 360 |
 | stack | reject | urenko_28 | {"k": 2, "cw": 2.0} | sym8u / both | 173 | 3206 | 785 | 399 | 25 | 3385 | 2 | 360 |
 | stack | reject_native | rngor_B050 | {"k": 3, "cw": 1.0} | sym15u / both | 243 | 4621 | 305 | 261 | 353 | 4855 | 1 | 360 |
@@ -815,13 +815,13 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | channel | retest | drb_400 | {"M": 3, "tol": 0.5} | asym20u/10u / both | 245 | 4178 | 410 | 1020 | -639 | 2593 | 2 | 360 |
 | channel | retest_native | tsf_5_50 | {"M": 10, "tol": 0.5} | sym15u / both | 244 | 3901 | 166 | 463 | -554 | 4061 | 1 | 360 |
 | fvg15 | break | pasl_10 | {"n": 2, "k": 0.25} | sym15u / both | 134 | 2460 | -440 | 199 | -694 | 2286 | 1 | 360 |
-| fvg15 | break_native | pnf_7 | {"n": 1, "k": 0.5} | sym8u / both | 178 | 3061 | -260 | -22 | -252 | 4021 | 2 | 360 |
+| fvg15 | break_native | swing_pct_5 | {"n": 1, "k": 0.5} | sym8u / both | 179 | 3613 | -383 | 1115 | 988 | 3341 | 2 | 360 |
 | fvg15 | false_break | tsf_2_2000 | {"M": 3, "k": 0.5} | plain60/60 / both | 119 | 1305 | 260 | 241 | 232 | 1413 | 1 | 360 |
 | fvg15 | false_break_native | pnf_10 | {"M": 2, "k": 0.0} | plain60/60 / short | 131 | 1153 | 235 | -698 | -647 | 1605 | 2 | 360 |
 | fvg15 | reject | tm45 | {"tol": 1.0, "conf": "close"} | sym15u / both | 186 | 4558 | -705 | -648 | -2527 | 6105 | 2 | 360 |
 | fvg15 | reject_native | dib_6000 | {"tol": 1.0, "conf": "body"} | sym15u / both | 163 | 5901 | -61 | -106 | 331 | 6224 | 2 | 360 |
 | fvg15 | retest | tm3600 | {"M": 10, "tol": 0.5} | sym15u / both | 90 | 3210 | 507 | -733 | -913 | 3727 | 1 | 360 |
-| fvg15 | retest_native | swing_atr_0.4 | {"M": 10, "tol": 0.5} | sym15u / both | 160 | 3378 | 303 | 614 | -905 | 3895 | 1 | 360 |
+| fvg15 | retest_native | swing_atr_0.4 | {"M": 10, "tol": 0.5} | sym8u / both | 160 | 3378 | 233 | 878 | -908 | 3895 | 2 | 360 |
 | fvg5 | break | pnf_10 | {"n": 1, "k": 0.25} | sym15u / both | 231 | 3643 | 664 | 630 | 132 | 3824 | 2 | 360 |
 | fvg5 | break_native | pnf_10 | {"n": 1, "k": 0.0} | sym15u / both | 228 | 3565 | 411 | 793 | 1067 | 3507 | 2 | 360 |
 | fvg5 | false_break | pasl_20 | {"M": 3, "k": 0.5} | sym15u / both | 185 | 3425 | -434 | -439 | 310 | 4342 | 1 | 360 |
@@ -877,7 +877,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | opens | reject | time_s_45 | {"tol": 0.0, "conf": "close"} | sym15u / both | 214 | 4551 | -246 | 238 | 430 | 3334 | 2 | 360 |
 | opens | reject_native | time_s_45 | {"tol": 0.0, "conf": "close"} | sym15u / both | 214 | 4551 | -246 | 238 | 430 | 3334 | 2 | 360 |
 | opens | retest | pasl_28 | {"M": 10, "tol": 0.5} | plain60/60 / both | 365 | 3307 | 120 | -78 | -1413 | 3961 | 1 | 360 |
-| opens | retest_native | vsess_80 | {"M": 6, "tol": 0.5} | sym15u / both | 172 | 3335 | 1124 | -912 | -114 | 1454 | 1 | 360 |
+| opens | retest_native | vsess_80 | {"M": 3, "tol": 0.5} | sym8u / both | 169 | 3360 | 887 | -2108 | -1120 | 1558 | 2 | 360 |
 | prior_day | break | tm600 | {"n": 3, "k": 0.5} | sym15u / both | 112 | 2773 | 102 | -1087 | -1733 | 4007 | 2 | 360 |
 | prior_day | break_native | time_s_45 | {"n": 3, "k": 0.0} | asym20u/10u / both | 138 | 2725 | 52 | -398 | -1585 | 1165 | 2 | 360 |
 | prior_day | false_break | volor_B500 | {"M": 1, "k": 0.0} | sym15u / both | 187 | 2871 | 220 | 1502 | -275 | 2410 | 1 | 360 |
@@ -892,14 +892,14 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | profile_nodes | false_break_native | dltor_B500 | {"M": 2, "k": 0.5} | sym15u / both | 231 | 3337 | -127 | 59 | 585 | 2388 | 1 | 360 |
 | profile_nodes | reject | wrenko_14 | {"tol": 0.0, "conf": "close"} | sym8u / both | 156 | 3014 | -896 | -766 | -1696 | 3023 | 2 | 360 |
 | profile_nodes | reject_native | wrenko_14 | {"tol": 0.0, "conf": "close"} | sym8u / both | 156 | 3014 | -896 | -766 | -1696 | 3023 | 2 | 360 |
-| profile_nodes | retest | dlt_45 | {"M": 3, "tol": 0.0} | sym15u / both | 150 | 3144 | -763 | -1162 | -2086 | 2103 | 1 | 360 |
-| profile_nodes | retest_native | dol_750 | {"M": 10, "tol": 0.5} | sym15u / both | 156 | 3248 | -111 | -1036 | -1589 | 5058 | 1 | 360 |
+| profile_nodes | retest | vsess_80 | {"M": 10, "tol": 0.0} | sym8u / both | 143 | 3414 | -678 | -771 | -1539 | 1542 | 2 | 360 |
+| profile_nodes | retest_native | vsess_80 | {"M": 10, "tol": 0.0} | sym8u / both | 143 | 3414 | -678 | -771 | -1539 | 1542 | 2 | 360 |
 | profile_va | break | tm300 | {"n": 3, "k": 0.5} | sym15u / both | 137 | 2970 | -121 | -1950 | -524 | 1758 | 2 | 360 |
 | profile_va | break_native | tm300 | {"n": 3, "k": 0.0} | sym8u / both | 140 | 2699 | -69 | -2143 | -949 | 1447 | 2 | 360 |
 | profile_va | false_break | rngor_B500 | {"M": 3, "k": 0.5} | sym15u / both | 194 | 3979 | -184 | 386 | -294 | 4155 | 1 | 360 |
 | profile_va | false_break_native | sessrng_B500 | {"M": 2, "k": 0.5} | sym15u / both | 190 | 4021 | 65 | 271 | 78 | 4692 | 1 | 360 |
 | profile_va | reject | tib_2000 | {"tol": 0.0, "conf": "close"} | sym15u / both | 128 | 2405 | -523 | 863 | 668 | 2266 | 1 | 360 |
-| profile_va | reject_native | dib_10000 | {"tol": 0.5, "conf": "body"} | sym15u / both | 131 | 2493 | 295 | -1054 | 183 | 1120 | 1 | 360 |
+| profile_va | reject_native | dib_10000 | {"tol": 0.5, "conf": "body"} | sym8u / both | 132 | 2545 | 134 | -897 | 308 | 1340 | 2 | 360 |
 | profile_va | retest | mom_28 | {"M": 10, "tol": 0.5} | sym8u / both | 133 | 3198 | 379 | -1464 | -342 | 2602 | 2 | 360 |
 | profile_va | retest_native | tm3600 | {"M": 10, "tol": 0.5} | sym15u / both | 144 | 3224 | -311 | -329 | -209 | 2404 | 1 | 360 |
 | round | break | volor_B320 | {"n": 1, "k": 0.0} | sym15u / both | 279 | 4289 | -337 | 598 | 2614 | 5233 | 1 | 478 |
@@ -961,7 +961,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | vwap_bands | break | drb_700 | {"n": 3, "k": 0.5} | sym15u / both | 245 | 4128 | 539 | -1135 | -304 | 5386 | 1 | 360 |
 | vwap_bands | break_native | cusum_14 | {"n": 3, "k": 0.5} | sym15u / both | 292 | 3642 | 1104 | 410 | -1140 | 1707 | 1 | 360 |
 | vwap_bands | false_break | tm15 | {"M": 1, "k": 0.5} | plain60/60 / both | 705 | 3509 | -455 | -467 | -528 | 2159 | 2 | 360 |
-| vwap_bands | false_break_native | time_s_15 | {"M": 1, "k": 0.5} | plain60/60 / both | 699 | 3575 | 865 | -1939 | 1029 | 795 | 2 | 360 |
+| vwap_bands | false_break_native | vsess_450 | {"M": 1, "k": 0.5} | sym15u / both | 278 | 3666 | 603 | 1354 | -2537 | 3909 | 2 | 360 |
 | vwap_bands | reject | tm420 | {"tol": 0.5, "conf": "body"} | sym15u / both | 249 | 3847 | -1624 | 1607 | 609 | 3094 | 1 | 360 |
 | vwap_bands | reject_native | tm20 | {"tol": 1.0, "conf": "close"} | sym15u / both | 547 | 4046 | -1550 | -51 | -2596 | 3340 | 2 | 360 |
 | vwap_bands | retest | vib_25000 | {"M": 10, "tol": 0.5} | sym15u / both | 210 | 3848 | 316 | 279 | -1912 | 3192 | 1 | 360 |
@@ -1043,7 +1043,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | sdx_renko28 | lim_mid | kagi_20 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 475 | 4203 | 121 | -178 | 3832 | 2308 | 1 | 368 |
 | sdx_renko28 | lim_prox | volor_B030 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 406 | 3848 | -1252 | -2353 | -1675 | 3405 | 1 | 368 |
 | sdx_renko28 | rej | volor_B200 | {"d": "E", "F": 0, "tol": 0.5} | plain60/60 / both | 760 | 3146 | -803 | -1693 | -2904 | 520 | 1 | 368 |
-| sdx_renko28 | rej_flow | vfp_vol2500 | {"d": "E", "F": 9} | sym15u / both | 232 | 1713 | -1274 | 18 | 1696 | -905 | 1 | 368 |
+| sdx_renko28 | rej_flow | vfp_rng40 | {"d": "E", "F": 0} | plain60/60 / both | 375 | 2117 | -1729 | -428 | 608 | 779 | 1 | 368 |
 | sdx_renko28 | rej_native | vfp_vol1000 | {"d": "E", "F": 0, "tol": 0.5} | sym15u / both | 413 | 2044 | -356 | -2092 | -5284 | 4077 | 1 | 368 |
 | sdx_renko28 | rej_zone | swing_atr_0.6 | {"d": "E", "F": 9, "tgt": "r2"} | OWN zone/level bracket / both | 564 | 2517 | -165 | 672 | -4923 | 685 | 1 | 368 |
 | sdx_renko28 | retest | vrb_400 | {"d": "E", "M": 6, "tol": 0.5} | sym15u / short | 140 | 1429 | 9 | 1946 | 2070 | 360 | 1 | 368 |
@@ -1059,7 +1059,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | sdx_vol1100 | lim_mid | volor_B030 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 428 | 4293 | -1122 | 788 | -72 | 2782 | 1 | 368 |
 | sdx_vol1100 | lim_prox | frenko_28 | {"d": "E", "F": 0, "tgt": "opp"} | plain60/60 / both | 1415 | 3960 | 2147 | -2379 | -9396 | 5755 | 1 | 368 |
 | sdx_vol1100 | rej | kagi_14 | {"d": "E", "F": 9, "tol": 0.5} | sym15u / both | 429 | 5058 | -1453 | -1789 | -1589 | 7224 | 1 | 368 |
-| sdx_vol1100 | rej_flow | vrb_700 | {"d": "E", "F": 0} | sym15u / both | 321 | 2969 | -6 | 1488 | -104 | 2957 | 1 | 368 |
+| sdx_vol1100 | rej_flow | vfp_rng40 | {"d": "E", "F": 0} | plain60/60 / both | 609 | 3997 | -1428 | -1523 | -691 | 6516 | 1 | 368 |
 | sdx_vol1100 | rej_native | vnorm_150 | {"d": "E", "F": 0, "tol": 0.5} | plain60/60 / both | 1109 | 4606 | -1663 | -1693 | -4883 | 5521 | 1 | 368 |
 | sdx_vol1100 | rej_zone | frenko_28 | {"d": "E", "F": 0, "tgt": "opp"} | sym15u / both | 284 | 4710 | -906 | -898 | -3639 | 4361 | 1 | 368 |
 | sdx_vol1100 | retest | dol_350 | {"d": "E", "M": 6, "tol": 0.5} | sym15u / both | 375 | 4034 | 902 | 713 | 2371 | 3527 | 1 | 368 |
@@ -1110,7 +1110,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | fibr_ib | retest | anch_R0830_B25 | {"M": 6, "tol": 0.5} | sym15u / both | 202 | 3484 | 934 | -1580 | 1874 | 3228 | 1 | 366 |
 | fibr_ib | retest_native | tib_240 | {"M": 6, "tol": 0.5} | plain60/60 / both | 827 | 4348 | 1609 | -2863 | -433 | 2603 | 1 | 366 |
 | fibr_on | break | dol_1100 | {"n": 2, "k": 0.25} | sym15u / both | 378 | 4421 | 587 | 341 | 5542 | 5217 | 1 | 366 |
-| fibr_on | break_native | dchg_20 | {"n": 3, "k": 0.5} | sym15u / both | 414 | 4798 | 1613 | 377 | 7176 | 7335 | 1 | 366 |
+| fibr_on | break_native | dchg_40 | {"n": 2, "k": 0.5} | sym8u / both | 380 | 5102 | 2132 | -559 | 2922 | 6379 | 2 | 366 |
 | fibr_on | false_break | pnf_5 | {"M": 1, "k": 0.0} | asym20u/10u / both | 422 | 5477 | 1103 | 5617 | 1085 | 7440 | 2 | 366 |
 | fibr_on | false_break_native | pnf_10 | {"M": 1, "k": 0.5} | sym15u / both | 381 | 5512 | 761 | 1389 | 392 | 8972 | 2 | 366 |
 | fibr_on | reject | dol_2600 | {"tol": 0.5, "conf": "body"} | sym15u / both | 359 | 5962 | -130 | 1420 | -849 | 7214 | 1 | 366 |
@@ -1122,11 +1122,11 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | fibr_or | false_break | dltor_B050 | {"M": 2, "k": 0.5} | sym15u / both | 325 | 5278 | 538 | 1649 | 424 | 5582 | 1 | 366 |
 | fibr_or | false_break_native | tib_6000 | {"M": 2, "k": 0.5} | sym15u / both | 354 | 5941 | -286 | 3902 | -1175 | 4149 | 1 | 366 |
 | fibr_or | reject | vib_15000 | {"tol": 0.0, "conf": "close"} | sym15u / both | 343 | 4621 | -917 | 906 | -1102 | 4797 | 1 | 366 |
-| fibr_or | reject_native | swing_atr_0.6 | {"tol": 1.0, "conf": "body"} | sym15u / both | 380 | 5085 | 440 | -1183 | -3296 | 8286 | 1 | 366 |
+| fibr_or | reject_native | swing_atr_0.6 | {"tol": 1.0, "conf": "body"} | sym8u / both | 380 | 5085 | 440 | -1183 | -3296 | 8286 | 2 | 366 |
 | fibr_or | retest | vsess_600 | {"M": 10, "tol": 0.5} | asym10u/20u / both | 375 | 6822 | 26 | -2127 | 3125 | 7665 | 2 | 366 |
 | fibr_or | retest_native | vsess_600 | {"M": 6, "tol": 0.5} | asym10u/20u / both | 374 | 6648 | 711 | -1838 | 3287 | 6878 | 2 | 366 |
 | fibr_pd | break | dchg_20 | {"n": 3, "k": 0.5} | sym15u / both | 363 | 6038 | -978 | 1126 | 3400 | 6256 | 1 | 368 |
-| fibr_pd | break_native | swing_pct_5 | {"n": 2, "k": 0.25} | sym15u / both | 354 | 6098 | -429 | -415 | -229 | 6578 | 1 | 368 |
+| fibr_pd | break_native | swing_pct_5 | {"n": 2, "k": 0.25} | sym8u / both | 354 | 6098 | -241 | -463 | -466 | 6578 | 2 | 368 |
 | fibr_pd | false_break | pnf_56 | {"M": 1, "k": 0.0} | sym8u / both | 193 | 3574 | -320 | 484 | 1967 | 1800 | 2 | 368 |
 | fibr_pd | false_break_native | pnf_56 | {"M": 1, "k": 0.0} | sym8u / both | 193 | 3574 | -278 | 484 | 1967 | 1800 | 2 | 368 |
 | fibr_pd | reject | rng_28 | {"tol": 1.0, "conf": "close"} | sym8u / both | 374 | 5880 | -950 | -383 | -3329 | 8480 | 2 | 368 |
@@ -1156,7 +1156,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | piv_wf | reject | frenko_20 | {"tol": 1.0, "conf": "body"} | sym15u / both | 439 | 4464 | -582 | -2715 | -307 | 5216 | 1 | 368 |
 | piv_wf | reject_native | tick_1300 | {"tol": 1.0, "conf": "close"} | plain60/60 / both | 1156 | 5264 | 351 | 937 | -3558 | 4568 | 2 | 368 |
 | piv_wf | retest | cusum_40 | {"M": 6, "tol": 0.5} | sym15u / both | 322 | 6154 | -169 | 1020 | 879 | 6130 | 1 | 368 |
-| piv_wf | retest_native | swing_atr_0.6 | {"M": 6, "tol": 0.5} | sym15u / both | 393 | 5146 | 2815 | 1011 | 430 | 4962 | 1 | 368 |
+| piv_wf | retest_native | swing_atr_0.6 | {"M": 6, "tol": 0.5} | sym8u / both | 393 | 5146 | 2815 | 1011 | 430 | 4962 | 2 | 368 |
 | swcluster | break | vol_350 | {"n": 1, "k": 0.5} | sym8u / both | 105 | 1917 | -751 | 551 | 191 | 1152 | 2 | 368 |
 | swcluster | break_native | cusum_10 | {"n": 2, "k": 0.25} | sym15u / both | 103 | 1934 | -1417 | 119 | -467 | 1021 | 1 | 368 |
 | swcluster | false_break | swing_atr_0.25 | {"M": 2, "k": 0.5} | plain60/60 / both | 198 | 1636 | -603 | 353 | -377 | 1347 | 1 | 368 |
@@ -1165,8 +1165,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | swcluster | reject_native | vol_750 | {"tol": 0.0, "conf": "body"} | asym20u/10u / both | 73 | 1906 | 429 | -867 | -1391 | 1531 | 2 | 368 |
 | swcluster | retest | tsf_2_400 | {"M": 3, "tol": 0.0} | sym15u / both | 67 | 1887 | -6 | -284 | -232 | 1393 | 1 | 368 |
 | swcluster | retest_native | swing_atr_0.15 | {"M": 10, "tol": 0.5} | sym15u / both | 86 | 1888 | -1192 | 24 | -629 | 1495 | 1 | 368 |
-| swsr15 | break | tick_300 | {"n": 1, "k": 0.25} | sym8u / both | 384 | 4660 | 642 | -3437 | -929 | 3812 | 2 | 368 |
-| swsr15 | break_native | vol_500 | {"n": 1, "k": 0.25} | asym10u/20u / both | 335 | 4674 | -1132 | -548 | 4235 | 5477 | 2 | 368 |
+| swsr15 | break | swing_pct_5 | {"n": 3, "k": 0.0} | sym8u / both | 341 | 4677 | 19 | 2912 | -1293 | 7417 | 2 | 368 |
+| swsr15 | break_native | swing_pct_5 | {"n": 3, "k": 0.0} | sym8u / both | 341 | 4677 | 19 | 2912 | -1293 | 7417 | 2 | 368 |
 | swsr15 | false_break | swing_pct_8 | {"M": 2, "k": 0.5} | sym8u / both | 368 | 5210 | 130 | -399 | 962 | 4650 | 2 | 368 |
 | swsr15 | false_break_native | urenko_14 | {"M": 1, "k": 0.5} | asym10u/20u / both | 390 | 5308 | 599 | 1950 | 3177 | 6110 | 2 | 368 |
 | swsr15 | reject | dchg_10 | {"tol": 0.5, "conf": "body"} | sym15u / both | 328 | 3877 | -2040 | -171 | -1124 | 4463 | 1 | 368 |
@@ -1202,7 +1202,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | book_walls_loose | retest | vib_700 | {"M": 6, "tol": 0.5} | sym15u / both | 107 | 1294 | -426 | 1051 | 1393 | 1941 | 1 | 368 |
 | book_walls_loose | retest_native | dchg_14 | {"M": 10, "tol": 0.5} | sym15u / both | 46 | 1406 | -798 | -684 | 1371 | 1763 | 1 | 368 |
 | channel | break | dol_1100 | {"n": 1, "k": 0.0} | sym15u / both | 408 | 5392 | 377 | 2559 | 4340 | 2433 | 1 | 368 |
-| channel | break_native | dol_1100 | {"n": 1, "k": 0.0} | sym15u / both | 408 | 5392 | 377 | 2559 | 4340 | 2433 | 1 | 368 |
+| channel | break_native | vsess_80 | {"n": 1, "k": 0.5} | asym10u/20u / both | 416 | 5529 | 45 | -564 | 1427 | 3007 | 2 | 368 |
 | channel | false_break | dol_1100 | {"M": 1, "k": 0.0} | sym15u / both | 408 | 5126 | 775 | 2752 | 3733 | 3007 | 1 | 368 |
 | channel | false_break_native | dol_1100 | {"M": 1, "k": 0.0} | sym15u / both | 408 | 5126 | 775 | 2752 | 3733 | 3007 | 1 | 368 |
 | channel | reject | vrb_400 | {"tol": 0.5, "conf": "body"} | plain60/60 / both | 1127 | 4027 | 2194 | -2323 | -1894 | 1091 | 1 | 368 |
@@ -1222,9 +1222,9 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | fvg5 | false_break | pasl_28 | {"M": 1, "k": 0.0} | sym8u / long | 104 | 2322 | 434 | 200 | -232 | 2472 | 2 | 368 |
 | fvg5 | false_break_native | wrenko_10 | {"M": 1, "k": 0.5} | asym10u/20u / both | 191 | 2772 | 705 | 209 | -285 | 2061 | 2 | 368 |
 | fvg5 | reject | tm1200 | {"tol": 0.0, "conf": "close"} | sym15u / both | 127 | 2695 | 1075 | -645 | 767 | 2352 | 1 | 368 |
-| fvg5 | reject_native | swing_atr_0.4 | {"tol": 1.0, "conf": "body"} | sym15u / both | 300 | 2857 | 1827 | 1574 | 1148 | 2893 | 1 | 368 |
-| fvg5 | retest | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym15u / both | 219 | 3970 | -587 | 167 | 1432 | 2456 | 1 | 368 |
-| fvg5 | retest_native | swing_atr_0.6 | {"M": 10, "tol": 0.5} | plain60/60 / both | 465 | 2861 | 535 | 83 | 335 | 1538 | 1 | 368 |
+| fvg5 | reject_native | swing_atr_0.4 | {"tol": 1.0, "conf": "body"} | sym8u / both | 300 | 2857 | 1609 | 1723 | 1153 | 2893 | 2 | 368 |
+| fvg5 | retest | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym8u / both | 219 | 3970 | -587 | 167 | 1432 | 2456 | 2 | 368 |
+| fvg5 | retest_native | swing_atr_0.6 | {"M": 10, "tol": 0.0} | sym8u / both | 214 | 3452 | -666 | -1225 | 2669 | 1702 | 2 | 368 |
 | gaps | break | urenko_40 | {"n": 3, "k": 0.0} | sym8u / both | 202 | 3166 | 871 | 1141 | 833 | 5047 | 2 | 368 |
 | gaps | break_native | vsess_600 | {"n": 2, "k": 0.25} | plain60/60 / both | 472 | 3782 | 294 | 168 | 135 | 4630 | 2 | 368 |
 | gaps | false_break | rng_10 | {"M": 1, "k": 0.5} | sym15u / both | 271 | 3346 | 166 | 1506 | 60 | 2315 | 2 | 368 |
@@ -1247,7 +1247,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | ob15 | false_break_native | vib_2000 | {"M": 2, "k": 0.5} | sym15u / both | 127 | 2853 | 631 | -828 | 317 | 2297 | 1 | 368 |
 | ob15 | reject | sessrng_B320 | {"tol": 0.5, "conf": "body"} | sym15u / both | 128 | 3010 | 333 | -942 | -296 | 2287 | 1 | 368 |
 | ob15 | reject_native | vsess_600 | {"tol": 0.5, "conf": "body"} | asym10u/20u / both | 140 | 2541 | 249 | -1340 | -201 | 2194 | 2 | 368 |
-| ob15 | retest | vol_350 | {"M": 10, "tol": 0.5} | asym15u/30u / both | 125 | 3183 | -635 | 319 | -1377 | 2426 | 2 | 368 |
+| ob15 | retest | swing_atr_0.6 | {"M": 6, "tol": 0.0} | sym8u / both | 106 | 3192 | 1404 | 84 | 588 | 3144 | 2 | 368 |
 | ob15 | retest_native | time_s_5 | {"M": 6, "tol": 0.5} | sym15u / both | 123 | 3275 | 213 | -367 | -83 | 2869 | 1 | 368 |
 | ob5 | break | wrenko_10 | {"n": 1, "k": 0.25} | asym10u/20u / both | 151 | 3647 | 525 | -46 | 1335 | 2450 | 2 | 368 |
 | ob5 | break_native | renko_10 | {"n": 1, "k": 0.25} | asym20u/10u / both | 192 | 3659 | -258 | -81 | 297 | 2636 | 2 | 368 |
@@ -1262,8 +1262,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | open_range | false_break | urenko_14 | {"M": 1, "k": 0.5} | asym10u/20u / both | 433 | 2504 | 701 | -141 | -115 | 1566 | 2 | 366 |
 | open_range | false_break_native | mom_10 | {"M": 1, "k": 0.5} | asym10u/20u / both | 431 | 3224 | 712 | -370 | 3996 | 5609 | 2 | 366 |
 | open_range | reject | tick_800 | {"tol": 1.0, "conf": "close"} | sym15u / both | 403 | 6353 | 476 | -605 | -960 | 4974 | 2 | 366 |
-| open_range | reject_native | renko_40 | {"tol": 1.0, "conf": "close"} | sym8u / both | 391 | 6274 | -1585 | 1562 | -2188 | 5176 | 2 | 366 |
-| open_range | retest | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym15u / both | 360 | 4800 | 1260 | 1255 | -2074 | 5665 | 1 | 366 |
+| open_range | reject_native | vsess_80 | {"tol": 1.0, "conf": "close"} | sym8u / both | 486 | 6685 | -2083 | -217 | -2884 | 5321 | 2 | 366 |
+| open_range | retest | swing_atr_0.6 | {"M": 10, "tol": 0.5} | sym8u / both | 360 | 4800 | 1260 | 1255 | -2074 | 5665 | 2 | 366 |
 | open_range | retest_native | dol_1700 | {"M": 10, "tol": 0.5} | sym15u / both | 396 | 4464 | 1014 | 1428 | -3237 | 2332 | 1 | 366 |
 | opens | break | pnf_5 | {"n": 1, "k": 0.25} | sym8u / both | 417 | 5574 | 26 | -309 | 880 | 7975 | 2 | 368 |
 | opens | break_native | vsess_600 | {"n": 1, "k": 0.25} | sym30u / both | 353 | 6071 | 649 | 200 | 2660 | 6158 | 2 | 368 |
@@ -1339,7 +1339,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | uw_ndx | retest_native | dchg_20 | {"M": 3, "tol": 0.0} | sym15u / both | 157 | 3552 | 0 | 364 | 3186 | 2732 | 1 | 368 |
 | uw_qqq | break | tick_300 | {"n": 3, "k": 0.0} | asym20u/10u / both | 197 | 4488 | 0 | -934 | 2894 | 3826 | 2 | 368 |
 | uw_qqq | break_native | tick_300 | {"n": 3, "k": 0.0} | asym20u/10u / both | 197 | 4488 | 0 | -934 | 2894 | 3826 | 2 | 368 |
-| uw_qqq | false_break | swing_atr_0.6 | {"M": 2, "k": 0.5} | sym15u / both | 224 | 3700 | 0 | 196 | 4339 | 4603 | 1 | 368 |
+| uw_qqq | false_break | swing_atr_0.6 | {"M": 1, "k": 0.5} | sym8u / both | 224 | 3940 | 0 | 196 | 4820 | 5133 | 2 | 368 |
 | uw_qqq | false_break_native | mrenko_14 | {"M": 1, "k": 0.5} | asym15u/30u / both | 196 | 3405 | 0 | -623 | 536 | 4401 | 2 | 368 |
 | uw_qqq | reject | rngor_B200 | {"tol": 0.5, "conf": "body"} | sym15u / both | 218 | 4150 | 0 | -273 | 2534 | 3126 | 1 | 368 |
 | uw_qqq | reject_native | mrenko_14 | {"tol": 0.5, "conf": "close"} | asym15u/30u / both | 199 | 4884 | 0 | -874 | 557 | 6493 | 2 | 368 |
@@ -1359,16 +1359,16 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | vwap_bands | false_break_native | tick_3200 | {"M": 3, "k": 0.5} | sym8u / both | 419 | 5308 | -523 | -797 | 1777 | 7540 | 2 | 368 |
 | vwap_bands | reject | tm60 | {"tol": 1.0, "conf": "close"} | sym15u / both | 498 | 7209 | 138 | -1461 | -774 | 7274 | 2 | 368 |
 | vwap_bands | reject_native | tm60 | {"tol": 0.5, "conf": "close"} | sym15u / both | 505 | 7078 | 213 | -421 | 4075 | 5878 | 2 | 368 |
-| vwap_bands | retest | mrenko_14 | {"M": 10, "tol": 0.0} | sym30u / both | 435 | 5966 | 237 | 3875 | 1701 | 7092 | 2 | 368 |
-| vwap_bands | retest_native | mrenko_14 | {"M": 10, "tol": 0.0} | sym30u / both | 435 | 5966 | 237 | 3875 | 1701 | 7092 | 2 | 368 |
+| vwap_bands | retest | vsess_450 | {"M": 3, "tol": 0.5} | sym30u / both | 471 | 6136 | -230 | 1469 | 2576 | 4825 | 2 | 368 |
+| vwap_bands | retest_native | vsess_450 | {"M": 3, "tol": 0.5} | sym30u / both | 481 | 6797 | -241 | -86 | 2150 | 5483 | 2 | 368 |
 | week_month | break | renko_14 | {"n": 1, "k": 0.5} | asym20u/10u / both | 81 | 2684 | 577 | 625 | -670 | 1745 | 2 | 368 |
 | week_month | break_native | renko_14 | {"n": 1, "k": 0.5} | asym20u/10u / both | 81 | 3092 | 228 | -190 | -164 | 2293 | 2 | 368 |
 | week_month | false_break | tib_1200 | {"M": 1, "k": 0.0} | sym15u / both | 77 | 2427 | -395 | -156 | 1122 | 1884 | 1 | 368 |
 | week_month | false_break_native | tib_1200 | {"M": 1, "k": 0.0} | sym15u / both | 77 | 2427 | -395 | -156 | 1122 | 1884 | 1 | 368 |
 | week_month | reject | wrenko_10 | {"tol": 0.5, "conf": "body"} | asym20u/10u / both | 71 | 1911 | 719 | -775 | 1482 | 1496 | 2 | 368 |
 | week_month | reject_native | mrenko_10 | {"tol": 1.0, "conf": "body"} | asym20u/10u / both | 85 | 2215 | 295 | -226 | -1069 | 2264 | 2 | 368 |
-| week_month | retest | rng_10 | {"M": 6, "tol": 0.5} | sym15u / both | 80 | 2596 | 90 | -1765 | -1604 | 1598 | 2 | 368 |
-| week_month | retest_native | tick_300 | {"M": 3, "tol": 0.5} | sym8u / both | 68 | 2858 | 1034 | 105 | -852 | 1578 | 2 | 368 |
+| week_month | retest | mom_10 | {"M": 3, "tol": 0.5} | asym20u/10u / both | 75 | 2731 | -205 | 79 | -1540 | 2771 | 2 | 368 |
+| week_month | retest_native | mom_10 | {"M": 3, "tol": 0.5} | asym15u/30u / both | 67 | 3018 | 346 | 207 | -267 | 2773 | 2 | 368 |
 | zones | break | rng_14 | {"n": 1, "k": 0.25} | sym8u / both | 258 | 3168 | -553 | -1075 | -778 | 2957 | 2 | 368 |
 | zones | break_native | swing_pct_8 | {"n": 3, "k": 0.5} | sym8u / both | 157 | 3433 | -813 | -1533 | -456 | 4515 | 2 | 368 |
 | zones | false_break | urenko_28 | {"M": 1, "k": 0.0} | sym8u / both | 172 | 3090 | 872 | 1937 | -2566 | 3074 | 2 | 368 |
@@ -1401,7 +1401,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | sdx30 | lim_mid | volor_B030 | {"d": "E", "F": 9, "tgt": "r2"} | sym15u / short | 102 | 2139 | 961 | -107 | -547 | 1084 | 1 | 368 |
 | sdx30 | lim_prox | dol_6000 | {"d": "E", "F": 9, "tgt": "r2"} | sym15u / both | 199 | 3042 | -219 | -1016 | 531 | 2612 | 1 | 368 |
 | sdx30 | rej | volor_B200 | {"d": "E", "F": 9, "tol": 0.5} | plain60/60 / short | 128 | 1226 | 102 | -516 | 103 | 1042 | 1 | 368 |
-| sdx30 | rej_flow | volor_B500 | {"d": "E", "F": 9} | plain60/60 / short | 71 | 821 | 253 | -198 | -321 | 723 | 1 | 368 |
+| sdx30 | rej_flow | vfp_rng40 | {"d": "E", "F": 9} | sym15u / short | 56 | 1034 | -129 | -487 | -120 | 185 | 1 | 368 |
 | sdx30 | rej_native | volor_B030 | {"d": "E", "F": 9, "tol": 0.5} | plain60/60 / both | 269 | 2452 | -355 | -979 | -138 | 1620 | 1 | 368 |
 | sdx30 | rej_zone | mrenko_80 | {"d": "E", "F": 9, "tgt": "r2"} | OWN zone/level bracket / both | 57 | 3495 | -353 | -627 | 874 | 2610 | 1 | 368 |
 | sdx5 | break | kagi_56 | {"d": "E", "F": 9, "n": 1} | sym15u / short | 90 | 1699 | -702 | 485 | -4 | 835 | 1 | 368 |
@@ -1490,7 +1490,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | fibr_ib | retest | dltor_B080 | {"M": 3, "tol": 0.0} | sym15u / both | 233 | 4110 | -2991 | -1502 | -1483 | 4638 | 1 | 368 |
 | fibr_ib | retest_native | tsf_2_700 | {"M": 6, "tol": 0.5} | sym15u / both | 255 | 4366 | -70 | 1138 | 79 | 4343 | 1 | 368 |
 | fibr_on | break | entropy_B130 | {"n": 3, "k": 0.5} | sym15u / both | 214 | 3455 | -1251 | 1686 | 1793 | 2370 | 1 | 368 |
-| fibr_on | break_native | tick_800 | {"n": 3, "k": 0.5} | asym10u/20u / both | 235 | 3698 | -1237 | 670 | 191 | 1831 | 2 | 368 |
+| fibr_on | break_native | swing_atr_0.6 | {"n": 2, "k": 0.5} | sym8u / both | 217 | 3728 | 471 | 37 | -1160 | 2648 | 2 | 368 |
 | fibr_on | false_break | lbrk_4_40 | {"M": 1, "k": 0.0} | sym15u / both | 201 | 2690 | -940 | -532 | -1545 | 4022 | 1 | 368 |
 | fibr_on | false_break_native | lbrk_4_40 | {"M": 1, "k": 0.0} | sym15u / both | 201 | 2690 | -940 | -532 | -1545 | 4022 | 1 | 368 |
 | fibr_on | reject | vsess_600 | {"tol": 0.0, "conf": "body"} | sym8u / both | 327 | 4816 | -680 | 2527 | -1725 | 4023 | 2 | 368 |
@@ -1542,11 +1542,11 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | swcluster | false_break | vsess_600 | {"M": 1, "k": 0.5} | asym10u/20u / both | 53 | 1301 | -228 | -337 | -1082 | 1001 | 2 | 368 |
 | swcluster | false_break_native | mrenko_112 | {"M": 1, "k": 0.0} | sym15u / both | 37 | 1207 | -1095 | 1189 | -264 | 1110 | 1 | 368 |
 | swcluster | reject | tick_500 | {"tol": 1.0, "conf": "body"} | sym8u / both | 54 | 2015 | 28 | 546 | 1068 | 2032 | 2 | 368 |
-| swcluster | reject_native | mom_56 | {"tol": 1.0, "conf": "body"} | sym8u / both | 70 | 2031 | -335 | 901 | -2463 | 2811 | 2 | 368 |
+| swcluster | reject_native | vsess_80 | {"tol": 1.0, "conf": "close"} | sym8u / both | 64 | 2164 | 828 | -183 | -29 | 3170 | 2 | 368 |
 | swcluster | retest | vol_750 | {"M": 10, "tol": 0.5} | sym15u / both | 40 | 1838 | -81 | 920 | 499 | 752 | 2 | 368 |
 | swcluster | retest_native | drb_700 | {"M": 10, "tol": 0.5} | sym15u / both | 43 | 1920 | 15 | 166 | 1327 | 1299 | 1 | 368 |
 | swsr15 | break | time_m_20 | {"n": 1, "k": 0.0} | sym15u / both | 166 | 3668 | -2883 | -1482 | -14 | 3369 | 1 | 368 |
-| swsr15 | break_native | kagi_20 | {"n": 1, "k": 0.25} | sym15u / both | 249 | 4161 | 651 | -2225 | 1363 | 3140 | 2 | 368 |
+| swsr15 | break_native | swing_pct_5 | {"n": 1, "k": 0.25} | sym8u / both | 249 | 5077 | -961 | 65 | -567 | 4766 | 2 | 368 |
 | swsr15 | false_break | pasl_56 | {"M": 2, "k": 0.5} | sym15u / both | 237 | 4412 | -1184 | 135 | 2943 | 2738 | 1 | 368 |
 | swsr15 | false_break_native | pasl_56 | {"M": 1, "k": 0.0} | sym15u / both | 237 | 3930 | -1061 | 239 | 2990 | 2256 | 1 | 368 |
 | swsr15 | reject | rngor_B320 | {"tol": 1.0, "conf": "body"} | sym15u / short | 138 | 4307 | 106 | 117 | 923 | 4339 | 1 | 368 |
@@ -1603,8 +1603,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | fvg15 | reject_native | vib_2000 | {"tol": 0.0, "conf": "close"} | sym15u / both | 113 | 2116 | 821 | -1469 | -150 | 2206 | 1 | 368 |
 | fvg15 | retest | mom_10 | {"M": 3, "tol": 0.5} | asym20u/10u / both | 120 | 2607 | -523 | -217 | 713 | 2360 | 2 | 368 |
 | fvg15 | retest_native | mom_10 | {"M": 3, "tol": 0.5} | asym20u/10u / both | 120 | 2235 | -513 | -613 | 405 | 2362 | 2 | 368 |
-| fvg5 | break | swing_pct_8 | {"n": 1, "k": 0.5} | sym8u / both | 205 | 3548 | -1606 | -169 | 872 | 2311 | 2 | 368 |
-| fvg5 | break_native | swing_atr_0.4 | {"n": 3, "k": 0.5} | sym15u / both | 185 | 3348 | -1626 | -159 | -751 | 2006 | 1 | 368 |
+| fvg5 | break | swing_atr_0.6 | {"n": 1, "k": 0.25} | sym8u / both | 209 | 4289 | -725 | -500 | 1802 | 3363 | 2 | 368 |
+| fvg5 | break_native | swing_atr_0.6 | {"n": 1, "k": 0.25} | sym8u / both | 214 | 3631 | -1375 | -261 | 2117 | 3027 | 2 | 368 |
 | fvg5 | false_break | rng_14 | {"M": 1, "k": 0.5} | asym15u/30u / both | 197 | 2768 | 969 | -261 | -38 | 3569 | 2 | 368 |
 | fvg5 | false_break_native | rng_14 | {"M": 1, "k": 0.5} | sym15u / both | 187 | 3262 | -48 | 1313 | -583 | 2949 | 2 | 368 |
 | fvg5 | reject | cusum_10 | {"tol": 0.0, "conf": "close"} | sym15u / both | 231 | 3711 | -316 | 1060 | -1467 | 5283 | 1 | 368 |
@@ -1619,8 +1619,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | gaps | reject_native | dchg_28 | {"tol": 1.0, "conf": "body"} | sym15u / both | 132 | 2843 | -341 | 133 | -834 | 2496 | 1 | 368 |
 | gaps | retest | trb_700 | {"M": 6, "tol": 0.5} | sym15u / both | 87 | 1928 | -507 | 132 | -112 | 1509 | 1 | 368 |
 | gaps | retest_native | dchg_56 | {"M": 10, "tol": 0.5} | sym15u / both | 122 | 2650 | -494 | -94 | 420 | 1218 | 1 | 368 |
-| mmove | break | swing_atr_0.6 | {"n": 1, "k": 0.0} | sym15u / both | 242 | 4100 | 306 | -544 | -435 | 3656 | 1 | 368 |
-| mmove | break_native | swing_atr_0.6 | {"n": 1, "k": 0.0} | sym15u / both | 242 | 4100 | 306 | -544 | -435 | 3656 | 1 | 368 |
+| mmove | break | swing_atr_0.6 | {"n": 1, "k": 0.0} | sym8u / both | 242 | 4100 | 306 | -544 | -435 | 3656 | 2 | 368 |
+| mmove | break_native | swing_atr_0.6 | {"n": 1, "k": 0.0} | sym8u / both | 242 | 4100 | 306 | -544 | -435 | 3656 | 2 | 368 |
 | mmove | false_break | mrenko_14 | {"M": 1, "k": 0.0} | asym20u/10u / both | 326 | 5059 | -1240 | 376 | 248 | 5902 | 2 | 368 |
 | mmove | false_break_native | pnf_7 | {"M": 2, "k": 0.5} | sym8u / both | 290 | 5119 | -1034 | 882 | -460 | 3889 | 2 | 368 |
 | mmove | reject | vib_40000 | {"tol": 0.5, "conf": "body"} | sym15u / both | 195 | 2793 | -623 | 432 | 19 | 2577 | 1 | 368 |
@@ -1646,7 +1646,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | open_range | break | swing_pct_8 | {"n": 1, "k": 0.0} | sym8u / both | 234 | 3999 | -973 | 293 | 1639 | 4350 | 2 | 368 |
 | open_range | break_native | swing_pct_8 | {"n": 1, "k": 0.0} | sym8u / both | 234 | 3999 | -973 | 293 | 1639 | 4350 | 2 | 368 |
 | open_range | false_break | swing_pct_8 | {"M": 3, "k": 0.5} | sym8u / both | 234 | 3833 | -796 | 831 | 1402 | 4184 | 2 | 368 |
-| open_range | false_break_native | swing_atr_0.6 | {"M": 2, "k": 0.5} | sym15u / both | 233 | 3862 | -340 | 1191 | 2887 | 4260 | 1 | 368 |
+| open_range | false_break_native | swing_atr_0.6 | {"M": 2, "k": 0.5} | sym8u / both | 233 | 3862 | -340 | 1191 | 2887 | 4260 | 2 | 368 |
 | open_range | reject | dlt_100 | {"tol": 0.0, "conf": "body"} | sym30u / both | 212 | 4049 | -262 | 1287 | 558 | 2187 | 2 | 368 |
 | open_range | reject_native | dlt_100 | {"tol": 0.0, "conf": "body"} | sym30u / both | 212 | 4049 | -262 | 1287 | 558 | 2187 | 2 | 368 |
 | open_range | retest | vib_6000 | {"M": 10, "tol": 0.5} | sym15u / both | 227 | 3820 | -1654 | 280 | 218 | 3319 | 1 | 368 |
@@ -1740,7 +1740,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | vwap | retest | cusum_14 | {"M": 10, "tol": 0.5} | sym30u / both | 167 | 4103 | 315 | 215 | 2521 | 4281 | 2 | 368 |
 | vwap | retest_native | trb_240 | {"M": 10, "tol": 0.5} | asym20u/10u / both | 288 | 4238 | -932 | -1205 | -855 | 4630 | 2 | 368 |
 | vwap_bands | break | tib_1200 | {"n": 2, "k": 0.0} | sym30u / both | 255 | 4129 | -1610 | 2277 | 1185 | 5000 | 2 | 368 |
-| vwap_bands | break_native | tib_1200 | {"n": 2, "k": 0.0} | sym30u / both | 255 | 4129 | -1610 | 2277 | 1185 | 5000 | 2 | 368 |
+| vwap_bands | break_native | swing_atr_0.6 | {"n": 1, "k": 0.5} | sym8u / both | 290 | 4750 | 116 | -1280 | 1427 | 2842 | 2 | 368 |
 | vwap_bands | false_break | tick_800 | {"M": 1, "k": 0.0} | asym20u/10u / both | 246 | 3540 | -2203 | -1122 | 548 | 5855 | 2 | 368 |
 | vwap_bands | false_break_native | tick_800 | {"M": 1, "k": 0.0} | asym20u/10u / both | 246 | 3540 | -2203 | -1122 | 548 | 5855 | 2 | 368 |
 | vwap_bands | reject | sessrng_B200 | {"tol": 1.0, "conf": "body"} | sym15u / both | 279 | 4596 | 1018 | -618 | 946 | 3912 | 1 | 368 |
@@ -1987,10 +1987,10 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | channel | reject_native | vsess_600 | {"tol": 0.0, "conf": "close"} | asym15u/30u / both | 357 | 5310 | -323 | -934 | -2058 | 4288 | 2 | 315 |
 | channel | retest | vol_350 | {"M": 10, "tol": 0.5} | sym8u / both | 343 | 4297 | -202 | -15 | 1756 | 3940 | 2 | 315 |
 | channel | retest_native | vsess_600 | {"M": 10, "tol": 0.5} | asym15u/30u / both | 357 | 4849 | -332 | -141 | 70 | 5483 | 2 | 315 |
-| fvg15 | break | vsess_80 | {"n": 1, "k": 0.0} | sym15u / both | 186 | 5006 | -38 | 54 | 1696 | 5214 | 1 | 315 |
-| fvg15 | break_native | vsess_80 | {"n": 1, "k": 0.0} | sym15u / both | 186 | 5006 | -38 | 54 | 1696 | 5214 | 1 | 315 |
-| fvg15 | false_break | vol_750 | {"M": 2, "k": 0.5} | sym8u / both | 183 | 5066 | -476 | 933 | 676 | 4875 | 2 | 315 |
-| fvg15 | false_break_native | vsess_80 | {"M": 2, "k": 0.5} | sym15u / both | 174 | 5186 | 122 | -301 | 2084 | 4374 | 1 | 315 |
+| fvg15 | break | vsess_80 | {"n": 1, "k": 0.0} | asym10u/20u / both | 188 | 5209 | -228 | -231 | 1957 | 5375 | 2 | 315 |
+| fvg15 | break_native | vsess_80 | {"n": 1, "k": 0.0} | asym10u/20u / both | 188 | 5209 | -228 | -231 | 1957 | 5375 | 2 | 315 |
+| fvg15 | false_break | vsess_80 | {"M": 1, "k": 0.5} | sym15u / both | 175 | 5271 | 346 | -857 | 2386 | 5314 | 2 | 315 |
+| fvg15 | false_break_native | vsess_80 | {"M": 2, "k": 0.5} | sym15u / both | 174 | 5186 | 122 | -301 | 2084 | 4374 | 2 | 315 |
 | fvg15 | reject | vsess_600 | {"tol": 0.0, "conf": "body"} | sym15u / both | 208 | 3047 | -638 | -728 | 667 | 3182 | 2 | 315 |
 | fvg15 | reject_native | mrenko_14 | {"tol": 1.0, "conf": "body"} | asym20u/10u / both | 213 | 3723 | -565 | -32 | 392 | 4326 | 2 | 315 |
 | fvg15 | retest | vrb_400 | {"M": 6, "tol": 0.5} | sym15u / both | 176 | 4311 | -153 | 822 | -98 | 4262 | 1 | 315 |
@@ -2020,7 +2020,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | mmove | retest | pnf_7 | {"M": 10, "tol": 0.5} | sym8u / both | 280 | 4929 | 16 | 565 | 1548 | 5613 | 2 | 315 |
 | mmove | retest_native | vsess_300 | {"M": 10, "tol": 0.0} | asym15u/30u / both | 275 | 4539 | -916 | -332 | 1649 | 4856 | 2 | 315 |
 | ob15 | break | tick_500 | {"n": 1, "k": 0.25} | sym8u / both | 67 | 1479 | 248 | 613 | 1271 | 1510 | 2 | 315 |
-| ob15 | break_native | mrenko_14 | {"n": 2, "k": 0.25} | plain60/60 / both | 91 | 1395 | 9 | -204 | 659 | 1133 | 2 | 315 |
+| ob15 | break_native | swing_atr_0.6 | {"n": 1, "k": 0.5} | sym8u / both | 85 | 1435 | 221 | 456 | 32 | 335 | 2 | 315 |
 | ob15 | false_break | cdr_250 | {"M": 1, "k": 0.0} | plain60/60 / both | 72 | 1334 | 214 | 103 | 325 | 1341 | 1 | 315 |
 | ob15 | false_break_native | renko_10 | {"M": 1, "k": 0.5} | asym20u/10u / both | 76 | 1926 | 8 | 145 | -703 | 2058 | 2 | 315 |
 | ob15 | reject | vsess_450 | {"tol": 0.5, "conf": "close"} | sym30u / both | 77 | 2019 | -196 | -820 | -161 | 1471 | 2 | 315 |
@@ -2111,8 +2111,8 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | uw_ndx | break_native | mrenko_28 | {"n": 1, "k": 0.0} | sym15u / both | 186 | 3379 | 0 | 665 | -253 | 4991 | 1 | 315 |
 | uw_ndx | false_break | mom_10 | {"M": 1, "k": 0.5} | sym8u / both | 322 | 3868 | 0 | 1 | -207 | 3704 | 2 | 315 |
 | uw_ndx | false_break_native | mrenko_28 | {"M": 3, "k": 0.5} | sym15u / both | 188 | 3056 | 0 | 475 | -173 | 5074 | 1 | 315 |
-| uw_ndx | reject | cusum_28 | {"tol": 0.5, "conf": "body"} | sym15u / both | 179 | 3907 | 0 | -115 | 231 | 3626 | 1 | 315 |
-| uw_ndx | reject_native | dib_700 | {"tol": 0.5, "conf": "body"} | sym15u / both | 263 | 3310 | 0 | -439 | -2153 | 2322 | 1 | 315 |
+| uw_ndx | reject | cusum_28 | {"tol": 0.5, "conf": "body"} | sym8u / both | 181 | 4163 | 0 | -66 | -136 | 3957 | 2 | 315 |
+| uw_ndx | reject_native | cusum_28 | {"tol": 0.0, "conf": "close"} | sym8u / both | 171 | 3370 | 0 | 192 | -935 | 3106 | 2 | 315 |
 | uw_ndx | retest | vol_350 | {"M": 10, "tol": 0.5} | asym20u/10u / both | 186 | 3189 | 0 | 458 | -820 | 3576 | 2 | 315 |
 | uw_ndx | retest_native | vol_350 | {"M": 10, "tol": 0.5} | asym20u/10u / both | 197 | 3129 | 0 | 455 | -1052 | 2716 | 2 | 315 |
 | uw_qqq | break | rng_14 | {"n": 2, "k": 0.5} | asym20u/10u / both | 275 | 3874 | 0 | 230 | -203 | 2990 | 2 | 315 |
@@ -2141,10 +2141,10 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | vwap_bands | retest_native | vol_350 | {"M": 6, "tol": 0.5} | sym8u / both | 359 | 4296 | -30 | 774 | 891 | 2066 | 2 | 315 |
 | week_month | break | frenko_28 | {"n": 2, "k": 0.25} | sym15u / both | 41 | 1357 | -472 | -345 | 67 | 873 | 1 | 315 |
 | week_month | break_native | frenko_28 | {"n": 2, "k": 0.25} | sym15u / both | 41 | 1508 | -384 | -405 | 191 | 1025 | 1 | 315 |
-| week_month | false_break | swing_atr_0.6 | {"M": 1, "k": 0.0} | sym15u / both | 59 | 1710 | 48 | 6 | 86 | 1948 | 1 | 315 |
-| week_month | false_break_native | vsess_600 | {"M": 1, "k": 0.5} | sym30u / both | 51 | 1835 | 66 | -14 | -367 | 2252 | 2 | 315 |
-| week_month | reject | mom_20 | {"tol": 0.5, "conf": "body"} | sym15u / both | 34 | 1258 | 146 | -282 | -335 | 871 | 1 | 315 |
-| week_month | reject_native | urenko_28 | {"tol": 0.5, "conf": "close"} | sym8u / both | 35 | 1265 | -124 | 397 | -103 | 425 | 2 | 315 |
+| week_month | false_break | vsess_80 | {"M": 1, "k": 0.5} | sym15u / both | 52 | 2005 | -124 | 15 | 599 | 2905 | 2 | 315 |
+| week_month | false_break_native | vsess_80 | {"M": 1, "k": 0.5} | sym15u / both | 47 | 2096 | -90 | 482 | 571 | 3252 | 2 | 315 |
+| week_month | reject | vsess_50 | {"tol": 0.5, "conf": "close"} | sym30u / both | 36 | 1514 | 117 | 1001 | -347 | 1554 | 2 | 315 |
+| week_month | reject_native | vsess_50 | {"tol": 0.0, "conf": "close"} | sym30u / both | 32 | 1301 | 103 | 817 | -659 | 1518 | 2 | 315 |
 | week_month | retest | cusum_20 | {"M": 3, "tol": 0.0} | asym10u/20u / both | 32 | 1214 | -48 | -24 | 18 | 1531 | 2 | 315 |
 | week_month | retest_native | cusum_20 | {"M": 3, "tol": 0.0} | asym10u/20u / both | 32 | 1214 | -48 | -24 | 18 | 1531 | 2 | 315 |
 | zones | break | tib_3500 | {"n": 1, "k": 0.25} | sym15u / both | 203 | 3737 | 108 | 650 | 718 | 3536 | 2 | 315 |
@@ -2157,6 +2157,6 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | zones | retest_native | urenko_14 | {"M": 3, "tol": 0.5} | sym30u / both | 138 | 3160 | -470 | -589 | -815 | 2282 | 2 | 315 |
 
 ## DATA-QUALITY NOTICE: the load-dependent "SLOW" acceptance check silently dropped 30 modules from the job lists (found 05:00Z, fixed 05:40Z)
-Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 1043 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
+Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 0 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
 Their pass-1 tables above are therefore PARTIAL for those modules (bands: Keltner/Donchian/envelope; momentum: CCI/mvote/Williams %R; trend: Supertrend/HMA turn/Heikin-Ashi; xmarket: ES/RTY/NKD/rates/commodities/tick/leaders; levels: supply-demand sd5/15/60, sdx3/5/15/30/60 + rng/vol/renko variants, Fibonacci 5/15/60).
 
