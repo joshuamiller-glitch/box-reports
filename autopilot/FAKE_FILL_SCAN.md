@@ -205,3 +205,75 @@ Exposed = the last print at or before the ET session end (Asia 02:00, London 08:
 | NY PM | 2026-07-03 | 2026-07-03 20:00 | 2026-07-03 16:59:59 | 10801 |
 | NY PM | 2026-09-07 | 2026-09-07 20:00 | 2026-09-07 16:59:59 | 10801 |
 Re-run needs (set-months that can contain an exit at an exposed end; only sets with trades in that session): Asia: 2025-11-28 (202511): the 176 TL3_ASI sets (W-ASIA's F sets, 157 queued/landing) + TL3_UW_FA3P11/P23, TL3_UW_INJ_MFC_LDN_P23, TL3_MB_FADELV4edbfdf0_L2_P23 (202511) and the merged_lpb nf_ copies; NY PM: every NY PM set (TL3_NYE/NYW NY PM cells and the WP10/WP1/NP lead sets, TL3_MB, TL3_UW INJ) in the 33 months containing those dates: the flagged set-months in table 5 are the ones with an actual trade at such an end (F4 flag); cells that never held to the NY PM end on those days are unaffected. Months to re-run after the cap_exit patch: 2025-11, 2026-05/06/07/09 first (L6M window), then 2023-05..2025-12 holidays.
+
+## (e) order 1233Z item 3: do the baselines / verdicts told to Josh contain F4 trades? (both 120 s and 600 s counts)
+**Counts:** F4 > 120 s: 1,756 trades; F4 > 600 s: 1,750; only 6 trades lie between 120 s and 600 s (3 `ExhCut` null-run trades in _th_exh/stage2, TL3_UW_INJ_MFB4 202411 and its merged copy, TL3_AL_CUTR1P42 202605: exit-price differences vs the last print 0 to 8 points). Per tree/family at both thresholds: autopilot/fakefill/counts_family_v4.csv and counts_tree_v4.csv.
+| baseline / verdict source | trees / sets | F2 | F4 > 120 s | F4 > 600 s | statement |
+|---|---|---|---|---|---|
+| TODAY'S STACK baseline TL3_EV_JL3 (44 months) and the other TL3_EV_* baselines, _engvslive (exact + store), JL3-based CT/H sets | runs_rf TL3_EV (784 files), _engvslive/exact/runs_rf (157), exact_store (16), TL3_CT_JL3_* | 0 | 0 | 0 | **0 found: baseline clean at 120 s and 600 s** |
+| Asia ladder L6M / L3M rows (202605-202610), NY AM ladder L6M / L3M rows | TL3_ASI_L/M*, TL3_NYE_L* cell sets | 0 | 0 | 0 | **0 found in these windows** (the only Asia hits are 202511 = rule-B 2025 colours, already re-run as F sets) |
+| XA3 and its layer sets | 124 XA3 sets (TL3_NYE/NYW_XA3*), TL3_NYL_* (1,143 files) | 0 | 0 | 0 | **0 found** |
+| near-target K7/M7 tables | TL3_NT_* (3,243 files, 2.04M trades) | 0 | 0 | 0 | **0 found** |
+| ORB | TL3_MF_* (1,115 files) | 0 | 0 | 0 | **0 found** |
+| exit-engine sets | TL3_EXE_* (381 + 22 pair files) | 0 | 0 | 0 | **0 found** |
+| WP10 / WP1 / NP* NY PM lead sets (WP10 page, NEW_BOOK_SHORTLIST WP10 rows) | TL3_NYE/NYW WP10, WP1, NP1-6, CT* and C2/C3 combos (90 sets with flags) | 0 | 409 | 409 | flagged (early-close / holiday exits time-stamped 16:00:01 ET; price within slippage of the last print: median |d| 3 pts, max 24 pts) |
+| TL3_MB FADELV / O7V1000, TL3_UW INJ / CNT (research books, not D8 candidates) | 19 + 29 sets | 3+1 | 569 + 530 | 569 + 530 | flagged |
+| TL3_TKB, TL3_FR, TL3_FL, TL3_AL, _th_exh/stage2 null/shift runs | small | 0 | 13 + 11 + 3 + 1 + 18 | 13 + 11 + 3 + 0 + 15 | flagged (a handful) |
+Dollar effect if the flagged trades exited at the last print instead (sum of the flagged trades' gross change within the verdict window; the same trade repeats in every set of its month, so per-SET effect is the meaningful number):
+| group | F4>120 s trades | sets | net USD if exited at the last print (all months) | L6M trades | L6M net | L3M trades | L3M net |
+|---|---|---|---|---|---|---|---|
+| NY PM leads (WP10/WP1/NP*) | 409 | 90 | +33560 | 261 | +35180 | 73 | -1290 |
+| N_bc | 1 | 1 | +168 | 1 | +168 | 0 | +0 |
+| N_exla | 1 | 1 | +158 | 1 | +158 | 0 | +0 |
+| N_phi | 5 | 5 | +77 | 5 | +77 | 3 | -35 |
+| TL3_AL | 1 | 1 | +50 | 1 | +50 | 0 | +0 |
+| TL3_MB (FADELV/O7V) | 569 | 19 | +317680 | 281 | +180930 | 127 | +70060 |
+| TL3_NYE/NYW other | 35 | 15 | +6255 | 35 | +6255 | 8 | -100 |
+| TL3_TKB | 13 | 4 | +8185 | 0 | +0 | 0 | +0 |
+| TL3_UW (UW event books) | 530 | 29 | +149340 | 301 | +98000 | 160 | +31095 |
+| ldef_perbook | 1 | 1 | +811 | 1 | +811 | 1 | +811 |
+| ldef_uniform | 1 | 1 | +811 | 1 | +811 | 1 | +811 |
+| nt_r2 | 1 | 1 | -39 | 0 | +0 | 0 | +0 |
+| phi_pb | 6 | 1 | +756 | 1 | +646 | 0 | +0 |
+| phi_r2 | 1 | 1 | -1014 | 0 | +0 | 0 | +0 |
+| phi_thick | 1 | 1 | -517 | 0 | +0 | 0 | +0 |
+Per verdict set: WP10 L6M sets TL3_NYE_WP10_ALL / TL3_NYE_WP10_RK7 / TL3_NYW_WP10_ADD: 4 flagged trades each in L6M, net +$295 each (about +$11 per week over the 26-week window); the WP10 control sets (CT21m etc.) +$570 to +$840 each. Effect on stack ulcer / worst week: NOT computed (needs the engine stack re-run; the dollar bound above is under $1,000 per set against weekly stack results of thousands). Details by set: autopilot/fakefill/ny_pm_leads_L6M_by_set.csv.
+
+## (c) the 33 NY PM early-close dates (order 1233Z item 3c)
+ny_build.events() takes the scheduled exit from th_swap/common.sess_end_ns: the next ET session boundary after the signal, **16:00 ET for every NY PM signal**; the actual early close on these days is **12:59:5x ET (13:00 close) or 13:14:5x ET (13:15 close on 07-03, day after Thanksgiving, 12-24)**:
+| date | scheduled end (ny_build.events) ET | last print ET (= the early close) | seconds between |
+|---|---|---|---|
+| 2023-05-29 | 16:00:00 | 12:59:57 | 10802 |
+| 2023-06-19 | 16:00:00 | 12:59:59 | 10800 |
+| 2023-07-03 | 16:00:00 | 13:14:58 | 9901 |
+| 2023-07-04 | 16:00:00 | 12:59:59 | 10800 |
+| 2023-09-04 | 16:00:00 | 12:59:59 | 10800 |
+| 2023-11-23 | 16:00:00 | 12:59:56 | 10804 |
+| 2023-11-24 | 16:00:00 | 13:14:59 | 9900 |
+| 2024-01-15 | 16:00:00 | 12:59:59 | 10800 |
+| 2024-02-19 | 16:00:00 | 12:59:59 | 10801 |
+| 2024-05-27 | 16:00:00 | 12:59:59 | 10801 |
+| 2024-06-19 | 16:00:00 | 12:59:59 | 10801 |
+| 2024-07-03 | 16:00:00 | 13:14:59 | 9900 |
+| 2024-07-04 | 16:00:00 | 12:59:59 | 10800 |
+| 2024-09-02 | 16:00:00 | 12:59:59 | 10801 |
+| 2024-11-28 | 16:00:00 | 12:59:59 | 10800 |
+| 2024-11-29 | 16:00:00 | 13:14:59 | 9900 |
+| 2024-12-24 | 16:00:00 | 13:14:59 | 9900 |
+| 2025-01-20 | 16:00:00 | 12:59:59 | 10800 |
+| 2025-02-17 | 16:00:00 | 12:59:59 | 10800 |
+| 2025-05-26 | 16:00:00 | 12:59:59 | 10801 |
+| 2025-06-19 | 16:00:00 | 12:59:59 | 10801 |
+| 2025-07-03 | 16:00:00 | 13:14:59 | 9900 |
+| 2025-07-04 | 16:00:00 | 12:59:59 | 10800 |
+| 2025-09-01 | 16:00:00 | 12:59:59 | 10800 |
+| 2025-11-27 | 16:00:00 | 12:59:59 | 10801 |
+| 2025-11-28 | 16:00:00 | 13:14:59 | 9900 |
+| 2025-12-24 | 16:00:00 | 13:14:58 | 9901 |
+| 2026-01-19 | 16:00:00 | 12:59:59 | 10800 |
+| 2026-02-16 | 16:00:00 | 12:59:59 | 10800 |
+| 2026-05-25 | 16:00:00 | 12:59:58 | 10801 |
+| 2026-06-19 | 16:00:00 | 12:59:59 | 10800 |
+| 2026-07-03 | 16:00:00 | 12:59:59 | 10801 |
+| 2026-09-07 | 16:00:00 | 12:59:59 | 10801 |
+What the NY PM events do: they exit with exit_name UWTime time-stamped **16:00:01 ET (3 h after the early close, 2 h 45 min on the 13:15 days)**, at a price within slippage of the LAST PRINT (checked on 433 flagged NYE/NYW trades: median |exit_px - last print| 3.0 pts, max 24 pts; the exit is NOT the reopen price: e.g. 2026-06-19 exits 30638-30667.5 vs last print 30647.0 and reopen 30577.0). So the NY PM sets do NOT end at the early close in TIME-STAMP, but in PRICE they flatten at the early close: cap_exit.py would only move the exit time-stamp to the last print (12:59:5x ET); the one-position blocking and prices do not change because no print exists in between. **Effect: hygiene only, no P&L change expected; the patch to ny_build.events() in section 5 applies (cap_exit.cap_events) and is sufficient; no extra NY PM-specific patch is needed.** Caveat: this also means the 'exposed' NY PM exits are a timestamp artefact, not a fake price; the garbage price (-0.25) only occurs when NO print exists on either side for hours (the 11-28 outage).
