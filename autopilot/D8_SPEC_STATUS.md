@@ -1,4 +1,4 @@
-Updated 2026-11-19 04:03Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
+Updated 2026-11-19 04:30Z by W-NYENG. PRIORITY (order 0220Z): 1 Asia, 2 NY AM, 3 London, 4 NY PM (nothing dropped). Rule: a new book enters D8 when it beats the live book(s) it replaces in the exact engine vs TODAY's stack (drawdown first, then $/wk; L6M + L3M; no RED prior year; persistence > 0.60; 30 date-shift controls) AND has had the exit run on its own entries; "BETTER, calibration pending" until the calibration exists.
 
 | order | session | D8 candidates | REPLACE rows finished | beats live book: yes / no / pending | exit run | date decided |
 |---|---|---|---|---|---|---|
