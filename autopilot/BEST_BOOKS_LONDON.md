@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 22:14:34Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-19 22:20:20Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 0 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 314 s.
+**Counts:** 20 distinct cells scored (0 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 0 live-book rows; L6M $/wk > 0: 13; L6M and L3M > 0: 10; labels {'WEAK-BUT-POSITIVE': 10, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 3}. Job errors: 0. Run 307 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -21,7 +21,7 @@
 | 9 | new | LB6 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 708 | 17740 | ok |
 | 10 | new | LB8 | ? | unresolved (cell not in ladder_cells.json) | ? | ? | 437 | 12645 | ok |
 
-Stale-pending cells in this table: 0 of 20; in the top 50: 0.
+Stale-pending cells (their old results are NOT ranked until re-run; listed in the _full.csv with stale=1 and no rank): 0; of them in the OLD top 50: 0 (none in the old top 10).
 
 ## Legend: bar codes (plain name, what the size number means, bars per hour)
 
