@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-19 21:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-19 22:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-19 21:45Z | WARNING serverC below 85% busy for 10 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-19 22:00Z | WARNING serverD below 85% busy for 2 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-19 21:45Z
+2026-11-19 22:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-19 21:45Z | WARNING serverC below 85% busy for 10 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 49.2 GB; live reservations 13 (13 GB); workers 30, of which TP-adopted 29 (RSS 42.2 GB) vs others 1 (RSS 1.7 GB)
-  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 69.76, 74.72, 77.83
-  by tag: NYR quota 12 running 11 hungry True RSS 15.5 GB PSS 13.6 GB; ASI quota 14 running 3 hungry True RSS 4.5 GB PSS 3.9 GB; EXE quota 2 running 3 hungry False RSS 5.5 GB PSS 4.2 GB; NYL quota 5 running 8 hungry False RSS 10.7 GB PSS 7.4 GB; LON quota 12 running 4 hungry True RSS 5.9 GB PSS 4.6 GB; REST quota 0 running 1 hungry False RSS 1.7 GB PSS 1.6 GB
-  cell-months finished last hour (DONE markers): 8351
-  top running jobs: TL3_NYE_L96205086_RK7CT7p (x12);TL3_NYE_L96205086_RK7 (x8);TL3_LON_LB7_RK7 (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 135.36, 138.83, 140.66|/dev/md2         28T  2.4T   26T   9% /mnt/l2|51|
+Server 1 (this box): MemAvail 51.6 GB; live reservations 13 (13 GB); workers 31, of which TP-adopted 30 (RSS 41.9 GB) vs others 1 (RSS 2.8 GB)
+  caps: WORKER_CAP=36 LOAD_CAP=40 | load1/5/15: 87.36, 86.14, 82.90
+  by tag: NYR quota 12 running 9 hungry True RSS 12.1 GB PSS 10.4 GB; ASI quota 14 running 5 hungry True RSS 7.2 GB PSS 6.6 GB; EXE quota 2 running 3 hungry False RSS 5.4 GB PSS 4.0 GB; NYL quota 5 running 7 hungry False RSS 10.0 GB PSS 6.6 GB; LON quota 12 running 6 hungry True RSS 7.2 GB PSS 6.5 GB; REST quota 0 running 1 hungry False RSS 2.8 GB PSS 2.7 GB
+  cell-months finished last hour (DONE markers): 8525
+  top running jobs: TL3_NYE_L96205086_RK7CT70p (x12);TL3_LON_LB7_RK7 (x12);TL3_ASI_Ldfbf31b5_RA7 (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 126.66, 130.18, 133.70|/dev/md2         28T  2.4T   26T   9% /mnt/l2|55|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 135.36, 138.83, 140.66|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261119_1850Z_PASS-2-plan-prepare-now-start-when-first-looks-finish.md 20261119_1917Z_cold-archive-move-yes.md 20261119_1933Z_fast-share-stack-kinds.md 20261119_2025Z_stale-exit-results-and-three-checks.md 20261119_2117Z_keep-six-machines-fed-and-scorecard-labels.md
+20261119_1917Z_cold-archive-move-yes.md 20261119_1933Z_fast-share-stack-kinds.md 20261119_2025Z_stale-exit-results-and-three-checks.md 20261119_2117Z_keep-six-machines-fed-and-scorecard-labels.md 20261119_2152Z_stale-first-looks-content-test-and-stack-tables.md
