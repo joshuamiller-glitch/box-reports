@@ -1,6 +1,6 @@
-# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 03:24Z.
+# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 03:29Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: select. Candidates tried: 111 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: select. Candidates tried: 126 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
@@ -8,6 +8,7 @@ Phase: select. Candidates tried: 111 (step 1 all; later steps the scorer-ordered
 | 2 | L7cc56d99 | `TL3_ALN_NY_STK0f902785` | 4369 / -12320 / -10915 / 4232 | 4035 / -11656 / -4197 / 3628 | 0.97 | Lddba3fab / Lb447a16d | 15 |
 | 3 | L488784d8 | `TL3_ALN_NY_STKbb21126c` | 4093 / -11817 / -7445 / 5193 | 3846 / -11587 / -3825 / 4167 | 1.27 | L12e67af0 / L488784d8 | 15 |
 | 4 | Lddba3fab | `TL3_ALN_NY_STK0112c118` | 4043 / -13046 / -6503 / 6465 | 3748 / -12166 / -2968 / 5339 | 1.60 | Lddba3fab / Lddba3fab | 15 |
+| 5 | Lc161c6cc | `TL3_ALN_NY_STKf3d2d0e0` | 4840 / -15321 / -8006 / 7987 | 4703 / -15321 / -8006 / 7164 | 1.65 | L12e67af0 / L063c1550 | 15 |
 
 Selected books in order (what each is, plain words):
 
@@ -15,6 +16,7 @@ Selected books in order (what each is, plain words):
 - L7cc56d99 (W-BEST score 0.944, L6M wk 2527.4): line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events). Alone on the all-new base: 4790 / -13326 / -7749 / 2405. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years: pending.
 - L488784d8 (W-BEST score 0.614, L6M wk 1198.4): swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 2839 / -7243 / -3569 / 961. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years: pending.
 - Lddba3fab (W-BEST score 0.467, L6M wk 1479.3): dollar-run bar 2000 [drb_2000]; ~40 bars/hour; trigger trig_book_ice / fade_sm {"thr": 2, "sm": 3}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4901 / -11294 / -8806 / 1272. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / AMBER, persistence 0.51.
+- Lc161c6cc (W-BEST score 0.510, L6M wk 1253.5): session-volume-clock bar 50 bars/session [vsess_50]; ~20 bars/hour; trigger trig_levels_vwap / break {"n": 3, "k": 0.5}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 4470 / -12779 / -7295 / 1454. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years: pending.
 
 RE-RUN WITH NEW BOOKS at 03:03Z: new pool members ['L99a57259', 'La5b0bcfe', 'L47d56981', 'Lf28226cd']
 
@@ -40,8 +42,8 @@ Reference line, today, as run: JL3 NY AM-session trades only (the five live NY A
 In plain words: today's live NY AM session earns $838 per week on an ulcer of 8444 over the last 6 months (max DD -17976, worst week -7184); last 3 months $1563 per week on ulcer 5586.
 
 SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
-- Today's NY AM session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.48, i.e. same ulcer as the stack): L6M 4043 / -8608 / -3440 / 401 ; L3M 2675 / -5887 / -3440 / 748. Compare with the stack: L6M 4043 / -13046 / -6503 / 6465 ; L3M 3748 / -12166 / -2968 / 5339.
-- The all-new stack scaled to today's drawdown (stack lots scaled by k = 2.09, same ulcer as today): L6M 8444 / -27244 / -13580 / 13501 ; L3M 7826 / -25407 / -6199 / 11150. Compare with today: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563.
+- Today's NY AM session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.57, i.e. same ulcer as the stack): L6M 4840 / -10303 / -4118 / 480 ; L3M 3202 / -7046 / -4118 / 896. Compare with the stack: L6M 4840 / -15321 / -8006 / 7987 ; L3M 4703 / -15321 / -8006 / 7164.
+- The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.74, same ulcer as today): L6M 8444 / -26730 / -13967 / 13935 ; L3M 8205 / -26730 / -13967 / 12499. Compare with today: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563.
 (Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
 
 (budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
