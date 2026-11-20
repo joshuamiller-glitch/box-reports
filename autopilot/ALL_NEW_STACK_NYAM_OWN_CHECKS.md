@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 09:20Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 09:28Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -36,11 +36,13 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L7cc56d99 | `TL3_ALN_NY_L7cc56d99_BASE` | 4790 / -13326 / -7749 / 2405 | 4719 / -11089 / -7749 / 2166 | 3889 / -11074 / -4734 / 1066 GREEN | 9284 / -17987 / -6954 / 320 RED | 10265 / -31363 / -15443 / 872 RED | 0.59 | 6 |
+| 2 | L488784d8 | `TL3_ALN_NY_STK30810e22` | 4313 / -12245 / -7742 / 3366 | 3616 / -10088 / -7377 / 2704 | 5576 / -14827 / -6948 / 1463 AMBER | 9984 / -20581 / -8704 / 672 RED | 9176 / -26571 / -14752 / 1580 RED | 0.61 | 5 |
 
 Selected books in order (plain words): 
 - L7cc56d99: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
+- L488784d8: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events)
 
-EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.57 to the stack's drawdown: L6M 4790 / -10197 / -4075 / 475 ; L3M 3169 / -6973 / -4075 / 887. The stack: L6M 4790 / -13326 / -7749 / 2405 ; L3M 4719 / -11089 / -7749 / 2166. Persistence of the stack vs that reference: 0.59; rule B per prior year: GREEN / RED / RED.
+EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.51 to the stack's drawdown: L6M 4313 / -9181 / -3669 / 428 ; L3M 2853 / -6279 / -3669 / 798. The stack: L6M 4313 / -12245 / -7742 / 3366 ; L3M 3616 / -10088 / -7377 / 2704. Persistence of the stack vs that reference: 0.61; rule B per prior year: AMBER / RED / RED.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 09:05Z UTC; pool 5 books): L7cc56d99 + L488784d8
 
