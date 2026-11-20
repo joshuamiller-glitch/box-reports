@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-20 08:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-20 08:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-20 08:15Z | WARNING serverD below 85% busy for 31 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-20 08:30Z | WARNING serverC below 85% busy for 139 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-20 08:15Z
+2026-11-20 08:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-20 08:15Z | WARNING serverD below 85% busy for 31 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 89.2 GB; live reservations 1 (1 GB); workers 20, of which TP-adopted 20 (RSS 29.7 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 72.83, 67.16, 61.26
-  by tag: NYE quota 16 running 14 hungry False RSS 19.7 GB PSS 18.1 GB; LON quota 12 running 6 hungry True RSS 10.0 GB PSS 9.2 GB
-  cell-months finished last hour (DONE markers): 14358
-  top running jobs: TL3_NYE_Lbd1fa46f_ALN (x26);TL3_LON_M1d0a65d3_RM7 (x10);TL3_LON_M5eff29c7_RM7 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 99.82, 98.20, 98.97|/dev/md2         28T  2.6T   26T  10% /mnt/l2|56|
+Server 1 (this box): MemAvail 100.3 GB; live reservations 3 (3 GB); workers 16, of which TP-adopted 16 (RSS 26.5 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 46.02, 49.86, 55.56
+  by tag: ASI quota 14 running 1 hungry True RSS 2.0 GB PSS 1.6 GB; NYE quota 16 running 9 hungry False RSS 13.4 GB PSS 12.3 GB; LON quota 12 running 6 hungry True RSS 11.1 GB PSS 10.2 GB
+  cell-months finished last hour (DONE markers): 13191
+  top running jobs: TL3_NYE_L59b66d32_ALN (x26);TL3_LON_L3e5ef673_RM7 (x10);TL3_LON_M6d7e3e79_RM7 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 111.65, 107.29, 102.81|/dev/md2         28T  2.6T   26T  10% /mnt/l2|52|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 99.82, 98.20, 98.97|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261120_0345Z_Asia-stack-followups-where.md 20261120_0403Z_Asia-stack-failed-its-checks-reselect-from-passers.md 20261120_0421Z_zero-passers-show-the-gate-by-gate-count.md 20261120_0542Z_silent-agents-check.md 20261120_0742Z_URGENT-DallasD-under-80-twice-and-ALN-stale-alert.md
+20261120_0403Z_Asia-stack-failed-its-checks-reselect-from-passers.md 20261120_0421Z_zero-passers-show-the-gate-by-gate-count.md 20261120_0542Z_silent-agents-check.md 20261120_0742Z_URGENT-DallasD-under-80-twice-and-ALN-stale-alert.md 20261120_0818Z_NYAM-first-looks-stuck-do-not-block-London.md
