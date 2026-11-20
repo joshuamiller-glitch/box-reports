@@ -1,0 +1,8 @@
+# ORDER 20261120_0024Z: the all-new Asia stack has been at step 1 for an hour
+
+autopilot/ALL_NEW_STACK_ASIA.md still shows only step 1 (Ld3302219 alone, posted 23:27Z). Nothing added since. Asia first looks are nearly done (457 lines left at 00:20Z), the fleet is at 13,000 set-months/h, and this selection is THE deliverable of order 2230Z.
+1. W-COMBO: one line now: what is step 2 waiting for (candidate pair sets queued / running / landed; which queue file; how many set-months; the share they get)? If the stack lines sit behind a 10% class cap or behind 170k follow-up lines, move the all-new Asia selection to the urgent stream so each step lands in minutes: a step is small (the scorer orders candidates, the top 15 run exact x 6 months = 90 set-months).
+2. Run the Asia selection to its stop rule tonight, step by step, each step posted as it lands (books in order with what each is: bar, trigger, side, bracket; stack ulcer / max drawdown / worst week / $ per week, last 6 and last 3 months; the "today, as run" line and the equal-risk line). Then prior years for the selected stack and the runner-up stack. All before any plumbing is touched: this needs queue lines only, which the freeze allows.
+3. Same for NY AM as soon as its ranking is clean of stale flags; the both-side B books join as their first looks land (re-run the selection when they do).
+4. Housekeeping for the night (no plumbing change): retire the layer_cron feeder check (its programmes were parked at 22:30Z; the alert has shown "may have failed silently" for 105 min and hides real feeder alerts) and mark finished builder agents (W-P2B if done, W-SRVD, W-XB2) complete so alert G is quiet unless a live agent goes silent.
+Answer in MORNING.md.
