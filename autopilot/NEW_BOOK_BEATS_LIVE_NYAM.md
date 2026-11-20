@@ -1,8 +1,8 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-20 02:45Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-20 03:00Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
-**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 2126; cells with a finished REPLACE verdict (L6M+L3M landed) 2089; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 21; twin cells listed 1857.
+**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 2248; cells with a finished REPLACE verdict (L6M+L3M landed) 2202; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 21; twin cells listed 1917.
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | REPLACE P7 | REPLACE M7 | REPLACE H7 | ADD | prior years run | controls |
@@ -30,16 +30,18 @@
 | 2333 | tm20 / momentum_squeeze.fire_slope {"len": 20, "wd": 1.5} / sym15u / long | yes (L6M du -260 dm +655 | L3M du -435 dm +491) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2324 | [twin of L8320d626] tm20 / momentum_squeeze.fire_slope_native {"len": 20, "wd": 1.5} / sym15u / long | yes (L6M du -260 dm +655 | L3M du -435 dm +491) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 213 | mom_28 / levels_profile_va.false_break_native {"M": 3, "k": 0.5} / sym15u / long | no (L6M du +808 dm +2255 | L3M du +848 dm +2149) | yes (L6M du -254 dm +1397 | L3M du -813 dm +975) | yes (L6M du -64 dm +1527 | L3M du -202 dm +642) | no (L6M du +265 dm +1435 | L3M du -3 dm +970) | yes (L6M du -13 dm +1775 | L3M du -353 dm +1632) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 3566 | [twin of Lbfcdcb96] wrenko_10 / levels_round.reject {"tol": 1.0, "conf": "body"} / sym15u / long | yes (L6M du -207 dm +1787 | L3M du -687 dm +4022) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 2564 | [twin of Lbfcdcb96] wrenko_10 / levels_round.reject {"tol": 1.0, "conf": "body"} / sym15u / long | yes (L6M du -207 dm +1787 | L3M du -687 dm +4022) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2377 | tm45 / momentum_stoch.zone_break {"len": 14, "lvl": 90} / asym20u/10u / long | yes (L6M du -190 dm +775 | L3M du -295 dm +1232) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2382 | tm45 / momentum_stoch.zone_break_native {"len": 14, "lvl": 90} / asym20u/10u / long | yes (L6M du -190 dm +775 | L3M du -295 dm +1232) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2273 | [twin of L1a9381e0] time_s_15 / momentum_cci.brk {"len": 30, "lvl": 200} / sym15u / long | yes (L6M du -171 dm +1325 | L3M du -212 dm +1570) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 1727 | tm15 / barnative_delta.run {"n": 4, "thr": 0.1} / sym15u / long | yes (L6M du -155 dm +1091 | L3M du -197 dm +1845) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 3335 | vol_1700 / pullback_ema.count_native {"len": 5, "n": 2} / plain60/60 / long | yes (L6M du -122 dm +847 | L3M du -149 dm +482) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 3335 | vol_1700 / pullback_ema.count_native {"len": 5, "n": 2} / plain60/60 / long | yes (L6M du -122 dm +847 | L3M du -149 dm +482) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 3361 | mom_56 / book_ofi.follow_native {"L": 1800, "z": 1.5} / sym15u / both | yes (L6M du -108 dm +1348 | L3M du -32 dm +1068) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2678 | anch_L0200_B25 / levels_open_range.break {"n": 3, "k": 0.5} / plain60/60 / both | yes (L6M du -107 dm +1127 | L3M du -355 dm +1387 RED Y2023) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 3457 | dol_6000 / levels_fibr_ib.reject_native {"tol": 1.0, "conf": "body"} / sym15u / long | yes (L6M du -76 dm +1907 | L3M du -117 dm +2880) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 2812 | [twin of L1523dbb2] entropy_B080 / momentum_er.trend_z {"len": 30, "thr": 0.3} / plain60/60 / both | yes (L6M du -75 dm +1074 | L3M du -152 dm +1163) | not run | not run | not run | not run | K7:2,P7:0,M7:0,H7:0 | 0 of 30 |
-| 1319 | [twin of L01811caa] tick_8000 / levels_open_range.break_native {"n": 3, "k": 0.25} / plain60/60 / both | yes (L6M du -75 dm +1755 | L3M du -448 dm +2609) | not run | not run | not run | yes (L6M du -453 dm +1117 | L3M du -870 dm +1542) | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 2812 | [twin of L1523dbb2] entropy_B080 / momentum_er.trend_z {"len": 30, "thr": 0.3} / plain60/60 / both | yes (L6M du -75 dm +1074 | L3M du -152 dm +1163) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
+| 1319 | [twin of L01811caa] tick_8000 / levels_open_range.break_native {"n": 3, "k": 0.25} / plain60/60 / both | yes (L6M du -75 dm +1755 | L3M du -448 dm +2609) | not run | not run | not run | yes (L6M du -453 dm +1117 | L3M du -870 dm +1542) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 572 | [twin of Lc161c6cc] vsess_50 / levels_vwap.break {"n": 3, "k": 0.5} / plain60/60 / both | yes (L6M du -74 dm +1686 | L3M du -398 dm +2248) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 328 | [twin of Lc161c6cc] vsess_50 / levels_vwap.break {"n": 3, "k": 0.5} / plain60/60 / both | yes (L6M du -74 dm +1686 | L3M du -398 dm +2248) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 1123 | tm15 / bands_atrchan.break_ext_native {"clk": 20, "k": 2.0} / plain60/60 / both | yes (L6M du -61 dm +1033 | L3M du -316 dm +1518 RED Y2023) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
@@ -191,6 +193,18 @@
 | L4fd10b76 (long) | long-only | ADD | not run yet | | |
 | L4fd10b76 (long) | short-only | RK7 | not run yet | | |
 | L4fd10b76 (long) | short-only | ADD | not run yet | | |
+| L9ef9a245 | both sides | RK7 | -207 / -327 / +2202 / +1787 | -687 / -327 / +2737 / +4022 | yes |
+| L9ef9a245 (both sides, engine-tested) | both sides | ADD | not run yet | | |
+| L9ef9a245 (long) | long-only | RK7 | not run yet | | |
+| L9ef9a245 (long) | long-only | ADD | not run yet | | |
+| L9ef9a245 (long) | short-only | RK7 | not run yet | | |
+| L9ef9a245 (long) | short-only | ADD | not run yet | | |
+| Lbfcdcb96 | both sides | RK7 | -207 / -327 / +2202 / +1787 | -687 / -327 / +2737 / +4022 | yes |
+| Lbfcdcb96 (both sides, engine-tested) | both sides | ADD | not run yet | | |
+| Lbfcdcb96 (long) | long-only | RK7 | not run yet | | |
+| Lbfcdcb96 (long) | long-only | ADD | not run yet | | |
+| Lbfcdcb96 (long) | short-only | RK7 | not run yet | | |
+| Lbfcdcb96 (long) | short-only | ADD | not run yet | | |
 | L1fdcb7e2 | both sides | RK7 | -190 / +842 / -633 / +775 | -295 / +842 / -633 / +1232 | yes |
 | L1fdcb7e2 (both sides, engine-tested) | both sides | ADD | not run yet | | |
 | L1fdcb7e2 (long) | long-only | RK7 | not run yet | | |
@@ -554,7 +568,7 @@ Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD r
 - L6a25b155 short-only ADD: pending (no prior-year rows yet)
 
 ## D8 gate under the exit-run rule (order 0213Z)
-Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 3983 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 42 candidates that beat a live book now = 18396 set-months = 19.8 h at 928 set-months/h (6.4 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
+Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 4165 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 44 candidates that beat a live book now = 19272 set-months = 20.8 h at 928 set-months/h (6.7 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
 
 ## All other cells: see the csv (verdict per live book: no / pending)
 
