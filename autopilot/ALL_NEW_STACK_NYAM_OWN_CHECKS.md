@@ -1,8 +1,8 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 10:53Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 11:01Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 197 books with a BASE set; 197 have all 42 months landed = counted below; 0 still waiting for prior years)
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 199 books with a BASE set; 197 have all 42 months landed = counted below; 2 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
@@ -24,7 +24,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **7** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 197 of 197 in the universe; failed the prior-year positivity / persistence / controls: 190; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
+Books with all months landed: 197 of 199 in the universe; failed the prior-year positivity / persistence / controls: 190; waiting for prior years: 2; passed (a)+(b), controls still running: 0.
 Pool books: B2010fec9, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99
 
 Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 NY AM-session trades only: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563 (that is $838 per week on ulcer 8444).
@@ -42,9 +42,11 @@ Selected books in order (plain words):
 
 EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.55 to the stack's drawdown: L6M 4635 / -9867 / -3943 / 460 ; L3M 3066 / -6748 / -3943 / 858. The stack: L6M 4635 / -10656 / -7214 / 3290 ; L3M 5119 / -10656 / -4247 / 2429. Persistence of the stack vs that reference: 0.57; rule B per prior year: GREEN / RED / RED.
 
+STOPPED at 2 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 10:14Z UTC; pool 6 books): L7cc56d99 + L488784d8
 
-Phase: run. Pool used by this run: 7 books (B2010fec9, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
+Phase: moves. Pool used by this run: 7 books (B2010fec9, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
