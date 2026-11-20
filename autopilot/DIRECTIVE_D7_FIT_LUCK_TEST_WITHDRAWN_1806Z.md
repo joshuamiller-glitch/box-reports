@@ -1,0 +1,10 @@
+# ORDER 20261120_1806Z: Josh: does D7's own fitting pass the luck test?
+Josh's own words, 18:02-18:03Z: **"yes now D8 with better bare books when you fully fit them should do much better - or you are doing a shit job of fitting"** and **"well does D7 fitting also fail the luck test?"**
+
+Relay's plan to answer it (research only; a MEASUREMENT: nothing is removed from live D7 on this result; Josh's standing rule: a live protection rule leaves only when a tested replacement is accepted):
+1. For each session (Asia first, then NY AM, London), the live D7 books in three versions on the same vehicle and months (42): (a) BARE (order 1803Z); (b) FITTED as run today (all book-level and account-level layers at today's settings); (c) today's fitted layers applied to the 30 date-shifted control copies of the same books (the same control construction the D8 books face).
+2. Verdict by the SAME rule D8 picks must meet: the gain of (b) over (a), drawdown first (ulcer, max drawdown, worst week) and $/wk at equal risk, must beat the gain the same layers produce on at least 27 of 30 control copies in the last 6 months (show last 3 months too), and hold in each prior year (2023, 2024, 2025). Also the search-aware null where it applies.
+3. Break it down: all layers together, then each layer on its own on top of bare (take, lock, loss cut, context cut, own cap, blackout / no-trade windows, entry method; day-done, daily caps, book lock, stack rules, sizer, zones, ATR-skip, session lot table) with its own 27-of-30 line, so Josh sees which D7 layers earn their place and which are recent-data flattery. Per book and per session stack.
+4. One page: autopilot/D7_FIT_LUCK_TEST.md, plain words first: "D7's fitting passes / fails the luck test in <session>: ...", then the tables. State what part of D7's last-6-months result comes from the bare books and what part from the layers.
+5. Priority: a small urgent batch for Asia (cost and finish time in one line first); it must not delay stage 1 on the tradable pool by more than a few minutes.
+This is the fair bar for D8: fitted D8 vs fitted D7, both judged by the same tests.

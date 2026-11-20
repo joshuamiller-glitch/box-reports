@@ -1,4 +1,5 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:01Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:09Z.
+**YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -20,7 +21,7 @@
 | (b) positive $/wk in each of 2023, 2024, 2025 | 118 of 147 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 86 of 147 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 57 books) | 5 of 57 |
-| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 28 of 147 |
+| (e) not RED on rule B vs FITTED D7 AS RUN (reference only, not the yardstick), scaled to equal risk, in every prior year | 28 of 147 |
 | a + b | 93 |
 | a + b + c | 68 |
 | a + b + c + d | 5 : B6f77f23d, L05350e98, L488784d8, L6547965c, L7cc56d99 |
@@ -34,12 +35,12 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **5** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 227 of 240 in the universe; failed the prior-year positivity / persistence / controls: 130; waiting for prior years: 13; passed (a)+(b), controls still running: 12.
+Books with all months landed: 228 of 240 in the universe; failed the prior-year positivity / persistence / controls: 130; waiting for prior years: 13; passed (a)+(b), controls still running: 12.
 Pool books: B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar], L05350e98 [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar], L6547965c [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]
 
 **Plainly: only 5 book(s) pass everything alone in NY AM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
 
-Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 NY AM-session trades only: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563 (that is $838 per week on ulcer 8444).
+Pool books vs FITTED D7 AS RUN (reference only, not the yardstick) (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "FITTED D7 AS RUN (reference only, not the yardstick)" = JL3 NY AM-session trades only: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563 (that is $838 per week on ulcer 8444).
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
@@ -50,7 +51,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 Selected books in order (plain words): 
 - L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
 
-EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.57 to the stack's drawdown: L6M 4790 / -10197 / -4075 / 475 ; L3M 3169 / -6973 / -4075 / 887. The stack: L6M 4790 / -13326 / -7749 / 2405 ; L3M 4719 / -11089 / -7749 / 2166. Persistence of the stack vs that reference: 0.59; rule B per prior year: GREEN / RED / RED.
+EQUAL-RISK LINE (this stack vs FITTED D7 AS RUN (reference only, not the yardstick)): today's NY AM session scaled DOWN by k = 0.57 to the stack's drawdown: L6M 4790 / -10197 / -4075 / 475 ; L3M 3169 / -6973 / -4075 / 887. The stack: L6M 4790 / -13326 / -7749 / 2405 ; L3M 4719 / -11089 / -7749 / 2166. Persistence of the stack vs that reference: 0.59; rule B per prior year: GREEN / RED / RED.
 
 Phase: run. Pool used by this run: 5 books (B6f77f23d, L05350e98, L488784d8, L6547965c, L7cc56d99).
 
