@@ -1,17 +1,17 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 19:44Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 19:49Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-**NY AM STACK A AS IT WOULD TRADE ON THE D8 _CANC STREAMS (L7cc56d99 + L488784d8; L7cc56d99 changes in 2024 on _CANC):** stack controls on the _CANC streams (30 shifted copies): beats 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only); persistence vs today at equal risk 0.62 (positive-block share 0.72).
+**NY AM STACK A AS IT WOULD TRADE ON THE D8 _CANC STREAMS (L7cc56d99 + L488784d8; L7cc56d99 changes in 2024 on _CANC):** stack controls on the _CANC streams (30 shifted copies): beats 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only); persistence vs today at equal risk 0.68 (positive-block share 0.72).
 
-| window | Stack A on _CANC: ulcer / maxDD / worst wk / mean (rule B colour vs today) | today's NY AM session at the SAME drawdown (x 0.51) |
+| window | Stack A on _CANC: ulcer / maxDD / worst wk / mean (rule B colour vs today) | today's NY AM session at the SAME drawdown (x 0.13) |
 |---|---|---|
-| L6M | 4323 / -12245 / -7742 / 3326 | 4323 / -9204 / -3678 / 429 |
-| L3M | 3611 / -10068 / -7357 / 3004 | 2860 / -6294 / -3678 / 800 |
-| Y2023 | 5425 / -15589 / -6278 / 1527 GREEN | 8451 / -18246 / -5869 / 119 |
-| Y2024 | 8706 / -18758 / -8704 / 645 RED | 5762 / -14552 / -5729 / 571 |
-| Y2025 | 9531 / -26301 / -14742 / 1496 RED | 5748 / -16033 / -9445 / 359 |
+| L6M | 4323 / -12245 / -7742 / 3326 | 4323 / -7715 / -3301 / -77 |
+| L3M | 3611 / -10068 / -7357 / 3004 | 3172 / -5699 / -2233 / -133 |
+| Y2023 | 5425 / -15589 / -6278 / 1527 RED | 2390 / -5615 / -2092 / 267 |
+| Y2024 | 8706 / -18758 / -8704 / 645 RED | 2172 / -4739 / -2228 / 287 |
+| Y2025 | 9531 / -26301 / -14742 / 1496 RED | 3117 / -9166 / -2942 / 128 |
 
 D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d973: BREAKS on _CANR: old-split number, not D8; Lc4584864: BREAKS on _CANR: old-split number, not D8; Lbe5ac95b: BREAKS on _CANR: old-split number, not D8; La6f6f7ad: BREAKS on _CANR: old-split number, not D8; L40bde9ea: BREAKS on _CANR: old-split number, not D8; Lc849eb8c: BREAKS on _CANR: old-split number, not D8; M3f6f752c: BREAKS on _CANR: old-split number, not D8; L86781ac0: BREAKS on _CANR: old-split number, not D8; Le9bd7276: BREAKS on _CANR: old-split number, not D8; L11152f7a: BREAKS on _CANR: old-split number, not D8; L2176f633: BREAKS on _CANR: old-split number, not D8; Lcae177ba: CHANGES on _CANC; L29b1bc3f: CHANGES on _CANC; L7cc56d99: CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC); L7ea48296: HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land; B2010fec9: HOLDS on _CANR; L488784d8: HOLDS on _CANC; Ldcdb0b6e: BREAKS marginally on _CANC (L6M -20%, ulcer +32%, still positive): old-split number, not D8; Lfb608c7b: OUT (breaks on every candidate).
 
@@ -77,7 +77,9 @@ Selected books in order (plain words):
 - L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar]: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events)
    fitted: none proposed yet (stage 1 not done for this book)
 
-Phase: run. Pool used by this run: 5 books (B6f77f23d, L05350e98, L488784d8, L6547965c, L7cc56d99).
+STOPPED at 2 books: no candidate passes the add rule.
+
+Phase: moves. Pool used by this run: 5 books (B6f77f23d, L05350e98, L488784d8, L6547965c, L7cc56d99).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 

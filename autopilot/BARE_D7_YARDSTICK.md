@@ -9,6 +9,12 @@ Written 2026-11-20 19:44Z UTC. Data end: month 202610 (all-new base, 42 months 2
 - **Stripped:** L2-gated entry, P7 three-bar confirm hold, signal-state rules (K7/P7/H7), slot halving, B02 gate, NTZ half size, ATR-skip, post-exit blackout, own caps of the live books, trade-health cuts, locks, takes, the 09:00-10:00 NY and 18:00-18:05 time blocks, governor/WL_E1, stack cut. **Stays in (it is the trigger):** H7 = HMA 20/55 cross on close-VWAP with EMA200 filter and slow-slope confirm; O7 = opening drive, only 09:40-09:44, once a day; P7 and A7 = pullback engines that carry their own regime state (Supertrend 5-min regime / depth-ATR); K7 = Keltner break EMA14 / ATR10 x 1.0 on 3-min; U7 = Supertrend ATR7 x 3.0 on 10-min; M7 = momentum vote 4 of 5.
 - **Not like live:** lots are 1 per book (live lots differ per book/session; the equal-risk line removes that), and the book can re-enter whenever flat; live NY open block 09:30-10:00 is NOT applied (it is a no-trade-window layer).
 
+## Reading guide and headline (all 42 months landed 19:4xZ; 3,774 bare set-months + 42 capture + identity runs)
+- Equal-risk = the bare D7 session stack scaled (one k) to the D8 row's L6M ulcer. Where the bare D7 mean is negative or near zero the "mean worse %" figure is not meaningful (huge negative = D8 far better); read the dollar columns. Persistence of a book = share of positive 14-day blocks over 42 months; luck controls = 30 date-shifted copies (L6M), real beats a control if ulcer lower AND max DD and worst week not worse.
+- Asia: bare D7 stack earns about $5.7k/wk at ulcer 13.1k in L6M (persistence 0.63, beats 22/30 controls, 29/30 on ulcer only); at that same ulcer the D8 pool books give $3.3k-7.9k/wk, and the L3M of the stack ($3.2k) is lower than its L6M. Against the bare D7 stack scaled to the same ulcer the D8 pick L7c368a4f is GREEN in L6M/L3M/2023 but RED in 2024/2025 (worst week / max DD); the dead three-book stack is RED in L6M (max DD +35%) and 2024/2025.
+- NY AM: the bare D7 stack loses (-$599/wk L6M, -$1,039 L3M; positive only in 2023-2025 at $1-2k/wk with ulcer 17-24k; persistence 0.58; beats 7/30 controls). K7 and P7 bare beat 0 of 30 controls. Stack A is RED on every window vs it only because the bare stack's mean is ~0 at tiny scaling; in dollars Stack A earns about $26k/wk at the bare D7 stack's ulcer vs -$600.
+- London (not in Josh's order, built because the live book list has it): bare stack persistence 0.46, 2024 ulcer 75.8k.
+
 
 ## Asia: bare D7 vs bare D8, last 6 months (1 lot, base dollars)
 
