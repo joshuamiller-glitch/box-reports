@@ -1,8 +1,8 @@
-# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-20 07:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-20 07:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 3315 distinct cells scored (2117 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2340; L6M and L3M > 0: 1732; labels {'WEAK-BUT-POSITIVE': 1889, 'BEST-AVAILABLE-NOT-PROVEN': 975, 'LEAD': 451}. Job errors: 0. Run 519 s.
+**Counts:** 3315 distinct cells scored (2117 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2340; L6M and L3M > 0: 1732; labels {'WEAK-BUT-POSITIVE': 1889, 'BEST-AVAILABLE-NOT-PROVEN': 975, 'LEAD': 451}. Job errors: 0. Run 538 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -151,7 +151,7 @@ Bars per hour = mean over every NY AM session (09:30-12:00, 2.5 h ET) in 2026-05
 | 20 | 15 | 29 | YES | Renko bar 20 ticks [renko_20]; ~58 bars/hour; trigger trig_levels_stack / break_native {"k": 3, "cw": 1.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym30u | 58 | L03be4d27 | NEW | RK7 | 0.527 | 0.935 | 2430 | 2307 | 4610 | 2468 | -13312 | -3624 | 7.3 | 0.59 | 1951 | -1961 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.355 | 0.032 | 1 |
 | 21 |  | 154 |  | anchored equal-volume bar L0200_B50 [anch_L0200_B50]; ~9 bars/hour; trigger trig_pullback_brick / brick {"k": 4, "m": 1}; SIDE: BOTH SIDES; bracket plain60/60 | 9 | Lc72b610a | NEW | RK7 | 0.519 | 0.543 | 970 | 1038 | 1871 | 1914 | -4739 | -2369 | 3.6 | 0.61 | 1106 | -1047 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 1.000 | 1.000 | 0 |
 | 22 |  | 120 |  | session-volume-clock bar 50 bars/session [vsess_50]; ~20 bars/hour; trigger trig_levels_vwap / break {"n": 3, "k": 0.5}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events) | 20 | Lc161c6cc | NEW | RK7 | 0.510 | 0.587 | 1254 | 1322 | 2458 | 2253 | -6509 | -4036 | 14.0 | 0.52 | 1146 | -1077 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE | 0.238 | 0.001 | 0 |
-| 23 | 16 | 535 |  | time bar 13 min (tm780 = 780 seconds) [tm780]; ~5 bars/hour; trigger trig_bands_keltner / walk {"ema": 10, "atr": 10, "mult": 1.0, "N": 2}; SIDE: BOTH SIDES; bracket plain60/60 | 5 | L2b8ccd55 | NEW | RK7 | 0.504 | 0.246 | 1088 | 692 | 2159 | 2817 | -5834 | -2395 | 3.5 | 0.63 | 1067 | -981 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.290 | 0.032 | 1 |
+| 23 | 16 | 535 |  | time bar 13 min (tm780 = 780 seconds) [tm780]; ~5 bars/hour; trigger trig_bands_keltner / walk {"ema": 10, "atr": 10, "mult": 1.0, "N": 2}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events) | 5 | L2b8ccd55 | NEW | RK7 | 0.504 | 0.246 | 1088 | 692 | 2159 | 2817 | -5834 | -2395 | 3.5 | 0.63 | 1067 | -981 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.290 | 0.032 | 1 |
 | 24 | 17 | 83 |  | volume bar 350 contracts [vol_350]; ~281 bars/hour; trigger trig_levels_profile_va / retest_native {"M": 3, "tol": 0.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym15u/30u | 281 | Lc338b47b | NEW | RK7 | 0.500 | 0.672 | 2045 | 2303 | 4087 | 3430 | -11338 | -8714 | 5.3 | 0.59 | 2061 | -2061 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.106 | 0.002 | 0 |
 | 25 | 18 | 53 |  | UniRenko bar 20 ticks [urenko_20]; ~115 bars/hour; trigger trig_levels_profile_va / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60 | 115 | L4ed22711 | NEW | RK7 | 0.499 | 0.776 | 1484 | 2049 | 2974 | 2642 | -7817 | -6738 | 9.4 | 0.56 | 1141 | -1098 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 1 |
 | 26 | 19 | 189 |  | momentum bar 28 ticks [mom_28]; ~60 bars/hour; trigger trig_levels_profile_va / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym15u | 60 | L4fd10b76 | NEW | RK7 | 0.493 | 0.481 | 2173 | 1705 | 4407 | 3545 | -14123 | -7544 | 5.2 | 0.59 | 2118 | -1971 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 1 |
@@ -187,10 +187,10 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
 | K7 | -11868 | 207 | 329 | -11898 | -17666 / -5271 | 1737 | 14.6% | 202 |
-| P7 | 6016 | 45 | 6691 | 5353 | 1159 / 10452 | 576 | 9.6% | 45 |
-| H7 | 8886 | 39 | 6693 | 8926 | 4686 / 11311 | 688 | 7.7% | 39 |
-| M7 | 8851 | 240 | 6690 | 9540 | 1365 / 16534 | 1876 | 21.2% | 239 |
-| O7 | 10744 | 49 | 6710 | 10744 | 8949 / 12269 | 253 | 2.4% | 49 |
+| P7 | 6016 | 45 | 6698 | 5353 | 1159 / 10452 | 576 | 9.6% | 45 |
+| H7 | 8886 | 39 | 6700 | 8926 | 4686 / 11311 | 687 | 7.7% | 39 |
+| M7 | 8851 | 240 | 6697 | 9529 | 1365 / 16534 | 1874 | 21.2% | 239 |
+| O7 | 10744 | 49 | 6717 | 10744 | 8949 / 12269 | 252 | 2.3% | 49 |
 
 The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 309 pairs over 259 cells): mean abs difference of its own L6M total $1828 = 26.6% of |total| (median 5.4%, 90th pct 36.7%); trade-count differences: mean abs 1.6 trades (primary mean 218).
 
