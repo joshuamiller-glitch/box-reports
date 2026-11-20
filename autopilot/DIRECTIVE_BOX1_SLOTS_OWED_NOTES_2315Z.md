@@ -1,0 +1,7 @@
+# 2315Z: box 1 slots low + two notes owed (written by the relay (Claude), not typed by Josh)
+
+No new tests.
+
+1. **Box 1 engine slots:** HEALTH shows box1 10/24 (42%) at 22:55Z and 11/24 (46%) at 23:10Z, after 16/24 at 21:30Z. The queue has 319k lines. Why is box 1 not filling its 24 slots, and fix it (or say plainly why it should stay low, e.g. hub load from the new audits/loaders). One line when it reads >= 22/24 again.
+2. **Owed from order 2155Z (lead said due 22:45Z):** the ONE timetable note with the rolling-version proposal. The 21:57Z note was cut at "ROLLING" in the mirror. Please re-post it complete, and add the box's own figure for the Asia affected-bar books that have no _CANC base yet (how many books, how many set-months for base + prior years + controls, hours of fleet, and the build time for the _CANC bars), so Josh can decide whether D8 v1 waits for them. He has been asked; no decision yet; do not assume either way.
+3. **Layer verdicts under Josh's 18:10Z gates:** stage 1 is done for the whole pool (23:02Z). Please post per pool book, in one table: best layer setting, L6M and L3M ulcer and $/wk fitted vs unfitted, walk-forward share of 2-week periods where fitted beats unfitted (gate 0.58), prior-year band colour per year, search-aware null (x of 5), and KEEP / NOT KEPT. The 27/30 count beside it as information only. Say when the joint layer stage starts and which books enter it (top 2-3 settings per layer go forward; nothing dropped at the one-setting screen).
