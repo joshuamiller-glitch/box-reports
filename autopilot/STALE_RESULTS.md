@@ -1,4 +1,4 @@
-# STALE_RESULTS 2026-11-20T09:04:55Z: 15066 of 186345 done leases (48 h) have inputs newer than their launch / signature changed
+# STALE_RESULTS 2026-11-20T09:15:15Z: 15066 of 187475 done leases (48 h) have inputs newer than their launch / signature changed
 by basis (sig = content hash differs, reliable; mtime = lease without signature, only a file newer than the launch): {'mtime': 14463, 'sig': 603}
 by family: {'ASI': 11221, 'NYE': 1530, 'STK': 1292, 'NYL': 766, 'EXE': 215, 'ALN': 42}
 full list: autopilot/stale_results.csv
