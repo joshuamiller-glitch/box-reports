@@ -1,40 +1,18 @@
-# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:09Z.
+# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:14Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: select. Candidates tried: 92 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: wait1. Candidates tried: 46 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
-| 1 | L39470318 | `TL3_ALN_NY_L39470318_BASE` | 3209 / -8642 / -8588 / 1827 | 3731 / -8642 / -8588 / 1462 | 0.57 | L39470318 / L2b8ccd55 | 47 |
-| 2 | L247629c9 | `TL3_ALN_NY_STK4847018f` | 3654 / -10015 / -7716 / 2926 | 3903 / -7670 / -6432 / 2554 | 0.80 | Lddba3fab / Lb447a16d | 15 |
-| 3 | Lb447a16d | `TL3_ALN_NY_STKafda7e13` | 3523 / -10418 / -8160 / 3724 | 3483 / -8510 / -5175 / 3469 | 1.06 | Lddba3fab / Lddba3fab | 15 |
 
 Selected books in order (what each is, plain words):
 
-- L39470318 (W-BEST score 0.646, L6M wk 1531.0): volume bar 750 contracts [vol_750]; ~131 bars/hour; trigger trig_levels_profile_va / retest {"M": 10, "tol": 0.5}; SIDE: BOTH SIDES; bracket plain60/60. Alone on the all-new base: 3209 / -8642 / -8588 / 1827.
-- L247629c9 (W-BEST score 0.462, L6M wk 1023.7): tick-count bar 1300 prints [tick_1300]; ~48 bars/hour; trigger trig_bands_atrchan / break_ema_native {"clk": 10, "k": 1.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3270 / -8926 / -5773 / 1099.
-- Lb447a16d (W-BEST score 0.486, L6M wk 896.44): quote-message bar B200 [bmsgq_B200]; ~83 bars/hour; trigger trig_trend_linreg / thresh_native {"len": 80, "width": 2.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3284 / -8336 / -2834 / 798.
 
-Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulcer:
-
-| cell | L6M | L3M |
-|---|---|---|
-| L2b8ccd55 | 2930 / -6963 / -3494 / 787 | 3339 / -6963 / -2249 / 445 |
-| L39470318 | 3209 / -8642 / -8588 / 1827 | 3731 / -8642 / -8588 / 1462 |
-| L247629c9 | 3270 / -8926 / -5773 / 1099 | 2652 / -6422 / -2739 / 1092 |
-| Lb447a16d | 3284 / -8336 / -2834 / 798 | 2954 / -8115 / -2834 / 915 |
-| L12e67af0 | 3660 / -10250 / -6918 / 1619 | 3452 / -9377 / -6918 / 1201 |
-| L11e120ff | 3711 / -11751 / -4794 / 444 | 1963 / -5484 / -3574 / 1163 |
-| L3bbe44f5 | 4027 / -9369 / -5459 / 432 | 3183 / -6759 / -5459 / 313 |
-| L582ae3cb | 4842 / -14058 / -11617 / 1506 | 3660 / -10804 / -1859 / 1788 |
-| Lddba3fab | 4901 / -11294 / -8806 / 1272 | 3291 / -10858 / -8806 / 1172 |
-| L5c0ceb35 | 4935 / -13358 / -10883 / 2396 | 4131 / -13358 / -10883 / 2822 |
+RE-RUN WITH NEW BOOKS at 02:13Z: new pool members ['L7cc56d99', 'Lcff4386d', 'L1f54e46c']
 
 Reference line, today, as run: JL3 ASIA-session trades only (all five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
 
-SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
-- Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.42, i.e. same ulcer as the stack): L6M 3523 / -7501 / -2998 / 350 ; L3M 2331 / -5129 / -2998 / 652. Compare with the stack: L6M 3523 / -10418 / -8160 / 3724 ; L3M 3483 / -8510 / -5175 / 3469.
-- The all-new stack scaled to today's drawdown (stack lots scaled by k = 2.40, same ulcer as today): L6M 8444 / -24969 / -19556 / 8924 ; L3M 8349 / -20394 / -12403 / 8314. Compare with today: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563.
-(Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
+SECOND REFERENCE LINES (equal risk): appear when the first stack step has landed.
 
 (budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
 
