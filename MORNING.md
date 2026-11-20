@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 09:26Z 11-20 (t+644.7 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 11:26Z 11-20 (t+646.7 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 96% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 97% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -10990,3 +10990,6 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 11:24Z LEAD NOTE: W-COMBO 11:23Z: the Asia own-checks FINAL line was missing because of a BUG IN ITS 08:59Z FIX (reassert() re-queued the old swap/drop sets instead of the 30 stack controls: 0 of 180 landed/leased); fixed with ONE change (final-phase controls first), freeze exception logged in its line; controls now due ~11:50-12:20Z (180 sm at fast-path-less ALN rate), FINAL line follows.
 - 11:24Z LEAD NOTE (correction to the line above): W-COMBO's ETA for the Asia own-checks FINAL line is ~11:35-11:45Z (not 11:50-12:20Z); controls are at the front of allnew_pending.txt and stack_urgent picks them up outside the cap; all four loops alive; NY AM own-checks now pool 7 (B2010fec9 + L05350e98); next W-COMBO status 11:50Z.
 - 11:24Z W-COMBO RESELECT-NYAM move swap:L05350e98>L063a587d accepted (gate passed); swap:L05350e98>L063a587d: max DD +47%, worst week +61% at equal risk -> the 15% guard (not applied) would have BLOCKED it
+- 11:25Z W-COMBO RESELECT-ASIA step 1 BLOCKED: best add-rule candidate Ldcdb0b6e fails the gate (RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.28); STOP at 0 books
+2026-11-20T11:29:31Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 11:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 263951
