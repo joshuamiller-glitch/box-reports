@@ -1,5 +1,6 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:33Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:42Z.
 **YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
+**ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
@@ -27,7 +28,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **15** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 434 of 439 in the universe; failed the prior-year positivity / persistence / controls: 233; waiting for prior years: 5; passed (a)+(b), controls still running: 89.
+Books with all months landed: 436 of 439 in the universe; failed the prior-year positivity / persistence / controls: 233; waiting for prior years: 5; passed (a)+(b), controls still running: 89.
 Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar], L1756b913 [BASE kept: time / line-break / median-Renko / swing bar], L1edb9fab [BASE kept: time / line-break / median-Renko / swing bar], L3faac8df [BASE kept: time / line-break / median-Renko / swing bar], L578701ed [BASE kept: time / line-break / median-Renko / swing bar], L5dee2059 [BASE kept: time / line-break / median-Renko / swing bar], L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar], L7f41b347 [BASE kept: time / line-break / median-Renko / swing bar], L973b5c8a [BASE kept: time / line-break / median-Renko / swing bar], L9aa7805c [BASE kept: time / line-break / median-Renko / swing bar], Lb68a132d [BASE kept: time / line-break / median-Renko / swing bar], Lcbc8a7ec [BASE kept: time / line-break / median-Renko / swing bar], Lec335094 [BASE kept: time / line-break / median-Renko / swing bar], Lff52ec0c [BASE kept: time / line-break / median-Renko / swing bar], M7423c0d9 [BASE kept: time / line-break / median-Renko / swing bar]
 
 Pool books vs FITTED D7 AS RUN (reference only, not the yardstick) (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "FITTED D7 AS RUN (reference only, not the yardstick)" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
@@ -36,17 +37,8 @@ Pool books vs FITTED D7 AS RUN (reference only, not the yardstick) (equal risk, 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 RED | 4626 / -11465 / -2843 / 654 RED | 5940 / -14312 / -10102 / 528 RED | 0.32 | 15 |
 
-Selected books in order (plain words): 
-- L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
-   fitted: none proposed yet (stage 1 not done for this book)
-
-EQUAL-RISK LINE (this stack vs FITTED D7 AS RUN (reference only, not the yardstick)): today's Asia session scaled DOWN by k = 0.47 to the stack's drawdown: L6M 4075 / -11994 / -7564 / 7347 ; L3M 4580 / -11994 / -6886 / 5555. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.32; rule B per prior year: RED / RED / RED.
-
-STOPPED at 1 books: no candidate passes the add rule.
-
-Phase: final. Pool used by this run: 15 books (L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
+Phase: run. Pool used by this run: 15 books (L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
