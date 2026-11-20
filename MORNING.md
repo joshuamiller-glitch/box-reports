@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-20T04:51Z
+## TREND (TL) update 2026-11-20T05:21Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T04:49:03Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T05:19:03Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -10250,3 +10250,8 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 05:17Z W-COMBO ALN-AUTO TL3_ALN_AS_L0daacd2d_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 25; L3M 10): LEAD-not-confirmed
 - 05:17Z W-COMBO ALN-AUTO TL3_ALN_AS_L11152f7a_BASE controls: real beats 27 of 30 (L6M drawdown-first; ulcer only 29; L3M 24): PASS: eligible for EX / P2 sets
 - 05:19Z W-COMBO RESELECT-ASIA RE-RUN WITH 20 pool books (was 19)
+- 05:20Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 13/15 (87%); Dallas 18/26 (69%); Frankfurt 72/101 (71%); Singapore 95/95 (100%) | EXACT-path slots by kind: TL3_ALN_AS_STK6eeaa645 4, TL3_ALN_AS_STKaa900f58 3, TL3_ALN_AS_STK92bcdb8a 3, TL3_ALN_AS_STKe7f8ab00 2, TL3_ALN_AS_STK1a6d8151 2, TL3_ALN_AS_STKcd58d83c 2, TL3_ALN_AS_STK217ad192 2, TL3_ALN_AS_STKba3efab2 2; fast path ON for the kinds in FAST_KINDS.txt (104 kinds); details autopilot/FAST_LADDER.md section 7.
+- 05:20Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 3286 / 3 h 20311 (NY AM is behind Asia in the queue by order); fleet 13007.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 2219, 'looked': 3002, 'C': 7, 'B': 4}; ladder queue 262205 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L014ea865 ; L01811caa ; L09ae66e3 ; L0bd23639 ; L0c6c0074 ; L0f097450 ; L11631333 ; L13e165bc ; L1523dbb2 ; L1532bfaf ; L1fdcb7e2 ; L21f079b6 ; L301ff410 ; L34d66961 ; L3701b464 ; L4339355a ; L440aa51b ; L4560e541 ; L4899a551 ; L4ed22711 ; L4fd10b76 ; L571196bc ; L59b66d32 ; L5a49e86d ; L5c734a00 ; . EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 05:20Z LEAD NOTE: 05:20Z quiet; inbox empty, freeze holding.
+- 05:22Z W-COMBO ALN-AUTO TL3_ALN_AS_L3f6f752c_BASE controls: real beats 18 of 30 (L6M drawdown-first; ulcer only 30; L3M 13): LEAD-not-confirmed
+- 05:22Z W-COMBO ALN-AUTO TL3_ALN_AS_L3be74364_BASE controls: real beats 20 of 30 (L6M drawdown-first; ulcer only 29; L3M 10): LEAD-not-confirmed
