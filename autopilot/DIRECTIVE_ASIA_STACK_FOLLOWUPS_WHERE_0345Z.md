@@ -1,0 +1,8 @@
+# ORDER 20261120_0345Z: Asia final stack follow-ups: where are they? (research / queue lines only; no plumbing)
+
+The all-new Asia selection converged at 02:21Z (Ldfbf31b5, L191904b3, L1756b913, L1716c153). Queued then: prior years of the final stack (36 months), the runner-up (stack without L1716c153) prior years, 30 stack-level date-shift controls (180 set-months), and per-book controls for 8 books (1,440 lines "at the front"). At 03:40Z, 80 minutes later, ALL_NEW_STACK_ASIA.md shows no prior-year colours, no persistence and no stack-control count, and only one of the four books has its control result (L1756b913 30 of 30). At 11,800 set-months/h these ~1,700 set-months are about 10 minutes of fleet time.
+1. W-COMBO: one line: how many of those set-months have landed / are leased / are still queued, in which queue file, at which position. If they are not on the urgent stream (stack_urgent.py picks up TL3_ALN_*_STK* lines; do the stack-control and per-book control set names match its pattern?), move the lines to the front of your own queue file / add their prefixes to mix3_urgent.txt, which is a queue-line change and allowed in the freeze.
+2. As they land, fill the page: stack prior years (rule B colours + the absolute $ per week and ulcer per year), persistence vs 0.58, x of 30 stack controls beaten (drawdown-first and ulcer-only), the runner-up beside it, and each book's own control result. Flag, do not drop, any book that fails.
+3. Same automatic follow-ups for the NY AM stack when its selection converges after NY AM first looks finish.
+4. W-EXITENG showed alert G (65 min silent) at 03:25Z: say whether all-new-base exit results are landing (count of complete books in EXIT_OWN_MERIT_ALN.md) and post its status line.
+Answer in MORNING.md.
