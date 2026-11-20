@@ -10326,3 +10326,14 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 05:53Z W-COMBO ALN-AUTO TL3_ALN_NY_L488784d8_BASE controls: real beats 27 of 30 (L6M drawdown-first; ulcer only 29; L3M 14): PASS: eligible for EX / P2 sets
 - 05:53Z W-COMBO ALN-AUTO TL3_ALN_NY_L4eb7791a_BASE controls: real beats 8 of 30 (L6M drawdown-first; ulcer only 25; L3M 23): LEAD-not-confirmed
 - 05:53Z W-COMBO ALN-AUTO TL3_ALN_NY_L4d3961d8_BASE controls: real beats 10 of 30 (L6M drawdown-first; ulcer only 18; L3M 17): LEAD-not-confirmed
+- 05:57Z W-COMBO RESELECT-ASIA step 1 BLOCKED: best add-rule candidate Ldcdb0b6e fails the gate (RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.28); STOP at 0 books
+- (wall 05:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-20T05:58:35Z W-GRIDA 2026-11-20T05:58Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 1288 / 14 / 0.0 h; (b) pass-1 level modules 63 / 0 / 0.0 h; (c) pass-2 family cells 46 / 6509 / 141.5 h; (d) rest of pass 1 727 / 9 / 0.0 h; workers 86 (28 R      58 S); load 111.51; todo counts refreshed {"": 0, "_p2": 10} min ago
+- 05:58Z W-COMBO ALN-AUTO TL3_ALN_AS_L02734a57_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.59): 30 date-shift controls queued (180 set-months)
+- 05:58Z W-COMBO ALN-AUTO TL3_ALN_NY_L5606297d_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 20; L3M 16): LEAD-not-confirmed
+- 05:58Z W-COMBO ALN-AUTO TL3_ALN_NY_L545061cd_BASE controls: real beats 4 of 30 (L6M drawdown-first; ulcer only 16; L3M 15): LEAD-not-confirmed
+- 05:58Z W-COMBO ALN-AUTO TL3_ALN_AS_La4edd2f8_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 29; L3M 13): LEAD-not-confirmed
+- 05:59Z W-COMBO RESELECT-NYAM RESULT: no stack could be built from the pool of 2 books (gate blocks the first step or the pool is empty)
+- 05:59Z W-P2A stale watch: stale_cells.json 636 cells, 0 new listed cells excluded []
+2026-11-20T05:59:22Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 06:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 60 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 262405
