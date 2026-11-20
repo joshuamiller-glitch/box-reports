@@ -10722,3 +10722,7 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 08:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 - 08:30Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_NYE_L[0-9a-f]{8}_RK7H$ (e.g. TL3_NYE_L00ca72f0_RK7H,TL3_NYE_L01af6692_RK7H): identity pairs started (8 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
 - 08:32Z WATCHDOG fired: F/G
+- (wall 08:35Z) W-PM status: load1 52.40, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795163711; P5 page done, P8 grid np_m15_x10_y15 2898
+- 08:35Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 08:35Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 0; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 11784 sm/h, engine queue 214641 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 0/h = nan h => n/a; Asia+NY AM at the fleet rate = 18 h => Nov 21 02:48Z. D8_CANDIDATES Asia rows listed 9887.
+- (wall 08:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 58.59 52.20 53.09, epoch 1795163989
+- (wall 08:39Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
