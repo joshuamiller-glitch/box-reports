@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:32Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:39Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -35,6 +35,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | L063a587d | `TL3_ALN_NY_L063a587d_BASE` | 3359 / -7685 / -4139 / 1380 | 2772 / -6969 / -4139 / 2065 | 5689 / -14742 / -6769 / 503 RED | 11580 / -25598 / -10743 / 49 RED | 5525 / -15325 / -6938 / 878 AMBER | 0.51 | 2 |
 
 Phase: run. Pool used by this run: 2 books (L063a587d, L2176f633).
 

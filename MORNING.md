@@ -10276,3 +10276,11 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 05:33Z W-COMBO ALN-AUTO TL3_ALN_AS_L6dbb6cd3_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 26; L3M 0): LEAD-not-confirmed
 - 05:33Z W-COMBO ALN-AUTO TL3_ALN_NY_L0c9f7504_BASE controls: real beats 25 of 30 (L6M drawdown-first; ulcer only 29; L3M 9): LEAD-not-confirmed
 - 05:34Z W-COMBO RESELECT-ASIA RE-RUN WITH 21 pool books (was 20)
+- 2026-11-20T05:35Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- 05:35Z W-COMBO RESELECT-NYAM step 1: add L063a587d -> L6M ulcer 3359 / maxDD -7685 / worst wk -4139 / $1380 per wk; prior years RED/RED/AMBER; persistence 0.51
+- (wall 05:35Z) W-PM status: load1 42.73, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795152919; P5 page done, P8 grid np_m15_x10_y15 2898
+- 05:35Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 05:35Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 0; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 11712 sm/h, engine queue 232197 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 0/h = nan h => n/a; Asia+NY AM at the fleet rate = 20 h => Nov 21 01:25Z. D8_CANDIDATES Asia rows listed 9887.
+- 05:38Z WATCHDOG fired: G
+- 05:38Z W-COMBO ALN-AUTO TL3_ALN_AS_L7ea48296_BASE controls: real beats 29 of 30 (L6M drawdown-first; ulcer only 30; L3M 21): PASS: eligible for EX / P2 sets
+- 05:39Z W-COMBO RESELECT-ASIA step 1 BLOCKED: best add-rule candidate Ldcdb0b6e fails the gate (RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.28); STOP at 0 books
+- (wall 05:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 61.90 52.77 52.27, epoch 1795153174

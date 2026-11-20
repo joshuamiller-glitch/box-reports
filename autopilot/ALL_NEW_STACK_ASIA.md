@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:34Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:39Z.
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
@@ -34,7 +34,11 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 
-Phase: run. Pool used by this run: 21 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9).
+**Rejected best candidate (blocked by the gate):** Ldcdb0b6e (`TL3_ALN_AS_Ldcdb0b6e_BASE`): RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.28. Its numbers: 3706 / -11884 / -6537 / 2256 | 4466 / -11441 / -6537 / 1470 | 2764 / -6300 / -3724 / 380 RED | 4487 / -12697 / -3638 / 628 RED | 10407 / -21690 / -7067 / 391 RED | persistence 0.28.
+
+STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
+
+Phase: moves. Pool used by this run: 21 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
