@@ -10458,3 +10458,15 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 2026-11-20T06:52Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
 - 06:52Z W-COMBO RESELECT-NYAM RESULT: no stack could be built from the pool of 5 books (gate blocks the first step or the pool is empty)
 - 06:53Z LEAD NOTE: 06:53Z quiet; inbox empty, freeze holding.
+- 06:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Lf1083387_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 24; L3M 12): LEAD-not-confirmed
+- 06:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Lf28226cd_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 25; L3M 4): LEAD-not-confirmed
+- 06:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L02a2767a_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 9; L3M 3): LEAD-not-confirmed
+- 06:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L1c771af9_BASE controls: real beats 20 of 30 (L6M drawdown-first; ulcer only 23; L3M 7): LEAD-not-confirmed
+- 06:56Z W-COMBO RESELECT-NYAM RE-RUN WITH 5 pool books (was 3)
+- 06:56Z W-COMBO RESELECT-ASIA step 1 BLOCKED: best add-rule candidate Ldcdb0b6e fails the gate (RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.28); STOP at 0 books
+- (wall 06:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-20T06:58:38Z W-GRIDA 2026-11-20T06:58Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 561 / 14 / 0.0 h; (b) pass-1 level modules 67 / 0 / 0.0 h; (c) pass-2 family cells 18 / 6504 / 361.3 h; (d) rest of pass 1 1750 / 9 / 0.0 h; workers 86 (30 R      56 S); load 106.65; todo counts refreshed {"": 0, "_p2": 10} min ago
+- 06:59Z W-P2A stale watch: stale_cells.json 636 cells, 0 new listed cells excluded []
+2026-11-20T06:59:23Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 06:59Z W-COMBO RESELECT-NYAM step 1: add L7cc56d99 -> L6M ulcer 4790 / maxDD -13326 / worst wk -7749 / $2405 per wk; prior years GREEN/RED/RED; persistence 0.59
+- 07:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 262268
