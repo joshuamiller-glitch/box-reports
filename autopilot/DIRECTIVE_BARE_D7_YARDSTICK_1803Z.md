@@ -1,0 +1,9 @@
+# ORDER 20261120_1803Z: Josh: the yardstick is BARE D7 books vs BARE D8 books
+Josh's own words, 18:01Z: **"i don't want these weird comparisons trying to compare D7 Asia to D8 asia and D7 is fitted to the max - if you judge anything it should be D7 bare books current to D8 bare books - correct?"**
+
+Relay's plan to carry that out (research only):
+1. BUILD THE BARE D7 YARDSTICK. Today's live books per session (Asia: the live Asia books incl. P7; NY AM: H7 / K7 / M7 / O7 / P7 as they trade that session; London likewise) stripped exactly as the new books are: their own bar and trigger, plain bracket (the book's own bracket shape; say which), NO book-level layers (no trade-health cuts, locks, takes, no-trade windows, own caps, entry-method extras), account layers at the same stand-in settings the all-new base uses. Each live book ALONE on the all-new base, and the bare-D7 session STACK. All 42 months. New set names (for example TL3_ALN_<S>_LIVE<book>_BARE and TL3_ALN_<S>_STKLIVE_BARE). If a live book cannot be stripped cleanly (its trigger includes a filter by construction), say exactly what stays in and why.
+2. Give the bare D7 books and the bare D7 stack the SAME checks as the new books: last 6 / 3 months, each prior year, persistence, 30 luck controls.
+3. EVERY comparison on the pages from now on is like with like: bare D8 book or stack vs bare D7 book or stack at the same drawdown (equal-risk line), last 6 and 3 months and each prior year. Replace the "today, as run" equal-risk line and the rule-B colours with the bare-D7 version; keep the fitted-D7 "as run" numbers only as a separately labelled reference line for the LATER comparison of fitted D8 vs fitted D7 (after stage 3).
+4. Re-state on that basis: the dead three-book Asia stack (for the record), the current Asia stack from the tradable pool, and NY AM Stack A.
+5. Small urgent batch (a few hundred set-months): ahead of the widening. Cost and finish time in one line first.
