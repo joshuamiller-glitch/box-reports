@@ -282,3 +282,110 @@ Variants: (a) timestamps truncated to ms, tape order kept; (b) a + side from las
 | 188 | 198 | 0 | 51 | 116 | 116.06 | 21 | 31 | (d) canonical with quote side | Lfb608c7b | vsess_600 | trig_pullback_ema/depth_native |
 
 **Reading.** (a) Millisecond truncation changes nothing but the sub-millisecond timestamp (all closes within 1 ms, all 42 and 188 signals the same). (b) Quote-rule side: cdr_100 (side-dependent) closes within 1 ms except one extra bar on 11-09; Ldcdb0b6e signals: 38 same, 1 moved 2.4 s, 3 missing, 3 extra of 42 (a handful of delta-driven shifts); Lfb608c7b unaffected (volume bar). (c)/(d) Canonical merge: cdr_100 closes unchanged (2 bars on 11-11 move up to 0.28 s), Ldcdb0b6e: 1 extra signal; **vsess_600 closes change for most bars (e.g. 211 of 840 closes identical on 11-09, differences up to 106 s) and Lfb608c7b signals: 51 same, 116 moved, 21 missing, 31 extra of 188** (the overshoot cascade: the closing record is the merged print, bigger than the old per-order record). The time bar time_m_1 (L578701ed): 479 of 480 closes bit-identical in all variants (the 480th is the truncated last bar): it needs no rebuild; its trigger needs only the depth inputs (section 4).
+
+## 7. PRINT-BY-PRINT ALIGNMENT WITH THE NT8/CQG EXPORT: THE EXACT RULE (relay order 1510Z item 2)
+
+Data: `/mnt/l2/l2vast/_d8spec/in/NT8_CQG_NQ1226_20261109T2300Z_20261110T1700Z.txt` (read as text only; 436,082 lines; format `yyyyMMdd HHmmss fffffff;last;bid;ask;volume`, UTC, 100 ns units but values are whole milliseconds). Window Asia = 2026-11-09 23:00 to 2026-11-10 07:00 UTC; NY AM = 14:30 to 17:00 UTC. Method: expand every record to one unit per contract (a record of size k = k units with the record's price, side and timestamp) on both sides and compare unit by unit.
+
+**RESULT (plain).**
+1. **The two feeds are the same stream of trades, contract for contract, in the same order.** All 64,484 Asia units and all 292,676 NY AM units have the identical price in the identical sequence position. With the side taken from last-versus-bid/ask (NT8's own bid and ask columns on the NT8 side; the quote stored with each trade record in our book table on ours) the unit side is also identical: **0 mismatches in 64,484 (Asia) and 0 in 292,676 (NY AM)**. (Our tape's aggressor flag differs from the quote rule on 4 contracts in Asia.)
+2. **The difference is only the record split and the timestamps.** NT8 splits finer (Asia 59,887 records vs our 51,093; NY AM 276,767 vs 234,912) and its timestamps are CQG's own clock, not the exchange event time: NT8 minus tape per unit has median about 0 (Asia) / +4 ms (NY AM), 1st percentile about -2.6 ms, 99th percentile +43 ms (Asia) / +592 ms (NY AM), maximum +256 ms / +1,583 ms. It is jitter plus queueing delay, not a fixed offset or a bin: **no rule based on millisecond stamps can reproduce the tape's prints exactly**. The earlier "ms + side + price" rule gives 48,024 (tape) vs 47,600 (NT8) for that reason; a time bin does not cure it (best: 3 ms bin, still unequal).
+3. **Rules that are exact.** (i) **Contract level (recommended):** treat every contract as its own print, in file order, with price and side from last-vs-bid/ask. Identical on both feeds by 1 and 2; no time rule at all; the only feed-dependent thing left is the timestamp of a close (a few ms). (ii) Merge consecutive prints with the same price and same side: identical print boundaries in 100.000% of cases on both sessions when the time gap condition is 1 second or none (Asia 45,486 prints with a 1 s cap, 45,022 with no cap; NY AM 208,040 both); with caps below 250 ms the match falls to 94.5% to 99.99% because of the timestamp jitter (table below). Rule (ii) delays a bar close until the end of a same-price same-side run, so (i) is preferred for threshold bars.
+
+The side rule used in all of the above (and required for D8 on NT8): buy if last >= ask, sell if last <= bid, else unclassified (never happened in either file).
+
+### Tables: match of the print boundaries between the two feeds, by rule
+
+### Asia, td 20261110
+
+| session | tape_records | nt8_records | tape_units | nt8_units | unit_price_identical | unit_side_mismatch | ts_diff_ms_p1 | p50 | p99 | max |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | 51093 | 59887 | 64484 | 64484 | True | 0 | -2.66 | -0.02 | 42.7 | 255.7 |
+
+| rule | tape_prints | nt8_prints | identical_boundaries | match_pct |
+|---|---|---|---|---|
+| consecutive same price + same side, same stamp (ns for tape, 100 ns for NT8) | 50353 | 47600 | 47593 | 94.519 |
+| consecutive same price + same side, gap <= 2 ms | 47377 | 47600 | 47323 | 99.418 |
+| consecutive same price + same side, gap <= 10 ms | 47178 | 47184 | 47167 | 99.964 |
+| consecutive same price + same side, gap <= 100 ms | 46615 | 46614 | 46605 | 99.979 |
+| consecutive same price + same side, gap <= 250 ms | 46192 | 46192 | 46189 | 99.994 |
+| consecutive same price + same side, gap <= 1000 ms | 45486 | 45486 | 45486 | 100.0 |
+| consecutive same price + same side, no time condition | 45022 | 45022 | 45022 | 100.0 |
+
+Per 15-minute bucket for the rule 'consecutive same price + same side, gap <= 1000 ms' (Asia): total 45486 vs 45486, identical 45486.
+
+| 15-min UTC | tape prints (rule: price+side, gap<=1 s) | NT8 prints | identical boundaries |
+|---|---|---|---|
+| 09 23:00 | 1003 | 1003 | 1003 |
+| 09 23:15 | 954 | 954 | 954 |
+| 09 23:30 | 1276 | 1276 | 1276 |
+| 09 23:45 | 851 | 851 | 851 |
+| 10 00:00 | 1785 | 1785 | 1785 |
+| 10 00:15 | 1293 | 1293 | 1293 |
+| 10 00:30 | 1547 | 1547 | 1547 |
+| 10 00:45 | 2108 | 2108 | 2108 |
+| 10 01:00 | 4180 | 4180 | 4180 |
+| 10 01:15 | 2343 | 2343 | 2343 |
+| 10 01:30 | 2005 | 2005 | 2005 |
+| 10 01:45 | 974 | 974 | 974 |
+| 10 02:00 | 1299 | 1299 | 1299 |
+| 10 02:15 | 1102 | 1102 | 1102 |
+| 10 02:30 | 1236 | 1236 | 1236 |
+| 10 02:45 | 1107 | 1107 | 1107 |
+| 10 03:00 | 1085 | 1085 | 1085 |
+| 10 03:15 | 1014 | 1014 | 1014 |
+| 10 03:30 | 2296 | 2296 | 2296 |
+| 10 03:45 | 2006 | 2006 | 2006 |
+| 10 04:00 | 1393 | 1393 | 1393 |
+| 10 04:15 | 1817 | 1817 | 1817 |
+| 10 04:30 | 848 | 848 | 848 |
+| 10 04:45 | 746 | 746 | 746 |
+| 10 05:00 | 1207 | 1207 | 1207 |
+| 10 05:15 | 905 | 905 | 905 |
+| 10 05:30 | 1585 | 1585 | 1585 |
+| 10 05:45 | 1020 | 1020 | 1020 |
+| 10 06:00 | 1122 | 1122 | 1122 |
+| 10 06:15 | 1323 | 1323 | 1323 |
+| 10 06:30 | 1112 | 1112 | 1112 |
+| 10 06:45 | 944 | 944 | 944 |
+
+### NY AM, td 20261110
+
+| session | tape_records | nt8_records | tape_units | nt8_units | unit_price_identical | unit_side_mismatch | ts_diff_ms_p1 | p50 | p99 | max |
+|---|---|---|---|---|---|---|---|---|---|---|
+| NY AM | 234912 | 276767 | 292676 | 292676 | True | 0 | -2.44 | 4.26 | 592.03 | 1582.8 |
+
+| rule | tape_prints | nt8_prints | identical_boundaries | match_pct |
+|---|---|---|---|---|
+| consecutive same price + same side, same stamp (ns for tape, 100 ns for NT8) | 232357 | 220862 | 220775 | 95.015 |
+| consecutive same price + same side, gap <= 2 ms | 219895 | 220862 | 219302 | 99.294 |
+| consecutive same price + same side, gap <= 10 ms | 216184 | 216229 | 215734 | 99.771 |
+| consecutive same price + same side, gap <= 100 ms | 209614 | 209517 | 209456 | 99.925 |
+| consecutive same price + same side, gap <= 250 ms | 208338 | 208331 | 208326 | 99.994 |
+| consecutive same price + same side, gap <= 1000 ms | 208040 | 208040 | 208040 | 100.0 |
+| consecutive same price + same side, no time condition | 208040 | 208040 | 208040 | 100.0 |
+
+Per 15-minute bucket for the rule 'consecutive same price + same side, gap <= 1000 ms' (NY AM): total 208040 vs 208040, identical 208040.
+
+| 15-min UTC | tape prints (rule: price+side, gap<=1 s) | NT8 prints | identical boundaries |
+|---|---|---|---|
+| 10 14:30 | 38651 | 38651 | 38651 |
+| 10 14:45 | 30685 | 30685 | 30685 |
+| 10 15:00 | 28704 | 28704 | 28704 |
+| 10 15:15 | 21082 | 21082 | 21082 |
+| 10 15:30 | 18109 | 18109 | 18109 |
+| 10 15:45 | 20026 | 20026 | 20026 |
+| 10 16:00 | 14813 | 14813 | 14813 |
+| 10 16:15 | 13668 | 13668 | 13668 |
+| 10 16:30 | 11529 | 11529 | 11529 |
+| 10 16:45 | 10773 | 10773 | 10773 |
+
+## 8. Why 7 of 42 Ldcdb0b6e signals move when the side comes from last-vs-bid/ask, and which side rule the CAN sets used (relay order 1510Z item 4)
+
+**Which rule the CAN sets used:** the tape aggressor FLAG (MBO side field), not last-vs-bid/ask. The CAN event files `/mnt/l2/l2vast/_d8spec/ev/<id>_CAN.parquet` come from bars built with `side = flag`. D8 on NT8 can only use last-vs-bid/ask, so the cdr (delta-range) book Ldcdb0b6e needs a re-run with that rule, and the same for the other three for consistency. These are the sets `..._CANQ` (contract-level prints + last-vs-bid/ask side); see the MORNING cost line (15:10Z) and the CANQ results page when landed.
+
+**Why signals moved (7 of 42):**
+- The quote at print time is the same as NT8's (zero side mismatches against the NT8 file on 64,484 + 292,676 contracts), so this is not a quote-timing difference.
+- The flag-versus-quote disagreement is concentrated in ONE print per session: the opening trade of the Globex evening open, which carries side 'N' (none) in the MBO flag but is classified by last-vs-bid/ask against a stale or crossed pre-open book. For td 20261109 (Sunday open) it was a single 195-contract record: flag none (delta 0), quote rule BUY 195 (book bid 27106.0 above ask 26812.5). For td 20261110 it was 3 + 1 contracts; td 20261111, 5 contracts.
+- A cumulative-delta-range bar restarts its running delta at every bar open, so one 195-contract jump at the first print closes the first bar after a single print instead of two seconds later, and every later boundary then sits at different delta until the running delta ranges happen to restart together again. All differing signals are in the td 20261109 Asia session, from 18:00 ET (first signal 18:00:02 versus 18:00:00; extra signals at 18:32, 19:23, 19:34 ET; missing at 20:11 and 20:27 ET; differences listed up to 20:42 ET). On td 20261110 and 20261111 the cdr_100 bar closes are identical under both side rules (80 of 80 and 114 of 114 within 1 ms).
+- Answer: the cdr bar is sensitive to one large mis-classified print at the start of a bar series, not to the few-contract disagreements elsewhere. How much this matters for the whole book is what the CANQ re-run measures (it applies the quote rule to every print including opening prints).
