@@ -1,4 +1,24 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:17Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:24Z.
+
+Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYAM_OWN_CHECKS.md.
+
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 84 books with a BASE set; 60 have all 42 months landed = counted below; 24 still waiting for prior years)
+
+| gate | books passing |
+|---|---|
+| (a) positive $/wk in L6M and L3M | 55 of 60 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 53 of 60 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 40 of 60 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 35 books) | 1 of 35 |
+| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 13 of 60 |
+| a + b | 50 |
+| a + b + c | 36 |
+| a + b + c + d | 1 : L2176f633 |
+| a + b + c + d + e | 0 : none |
+
+Nearest misses (fail exactly one of a-e, controls known): L03be4d27 (fails e), L077444ee (fails d), L192d0772 (fails e), L2176f633 (fails e), L2b8ccd55 (fails d), L33bc9e87 (fails d), L3c6da67f (fails d), L4fd10b76 (fails d), L5ccb2d77 (fails d), L79cd626b (fails c), L9a90f91c (fails c), Lc2ac6e2f (fails d), Lc9217645 (fails d), Ld37dea46 (fails d).
+Passed a+b+c, controls not landed yet (waiting, queued at the front): L03be4d27, L192d0772, L5e9c702b.
+
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.

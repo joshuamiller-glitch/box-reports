@@ -1,4 +1,24 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:18Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:22Z.
+
+Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
+
+## GATE BY GATE: Asia, books ALONE on the all-new base (universe 90 books with a BASE set; 61 have all 42 months landed = counted below; 29 still waiting for prior years)
+
+| gate | books passing |
+|---|---|
+| (a) positive $/wk in L6M and L3M | 59 of 61 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 44 of 61 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 49 of 61 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 44 books) | 20 of 44 |
+| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 0 of 61 |
+| a + b | 43 |
+| a + b + c | 40 |
+| a + b + c + d | 19 : L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9 |
+| a + b + c + d + e | 0 : none |
+
+Nearest misses (fail exactly one of a-e, controls known): L15f14deb (fails e), L1756b913 (fails e), L1edb9fab (fails e), L29b1bc3f (fails e), L3f6f752c (fails e), L40bde9ea (fails e), L578701ed (fails e), L7c368a4f (fails e), L973b5c8a (fails e), L9aa7805c (fails e), Lb68a132d (fails e), Lbe5ac95b (fails e), Lc4584864 (fails e), Lc849eb8c (fails e), Lcae177ba (fails e), Lda55d973 (fails e), Ldcdb0b6e (fails e), Le9bd7276 (fails e), Lfb608c7b (fails e), M7423c0d9 (fails e).
+Passed a+b+c, controls not landed yet (waiting, queued at the front): L3f6f752c.
+
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK_0346Z.md (the Asia stack Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153: RED in every window, persistence 0.44, three of four books fail their luck controls).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
