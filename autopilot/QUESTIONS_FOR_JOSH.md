@@ -1,3 +1,4 @@
+- D8 fidelity: engine's November MVWAP is anchored 2026-11-05 16:00 UTC (tape hole 11-02..11-04), so a complete NT8 month VWAP will differ for all of November; engine MVWAP events in Nov are not reproducible by NT8. Default: judge D8 on complete-month VWAP going forward; W-D8SPEC to count affected Nov events (added 2026-11-20 ~19:50Z by LEAD).
 # QUESTIONS FOR JOSH (newest at the top; the lead applies the safe default and carries on; written by the lead)
 
 ## 2026-11-20 18:10Z (exits under your new fitting gates: 2 of 78 kept; the prior-year red band is the binding gate; one for you on NY AM Stack A's exit)
