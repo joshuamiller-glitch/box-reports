@@ -10398,3 +10398,12 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 06:24Z W-COMBO ALN-AUTO TL3_ALN_AS_Lfa76d679_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 26; L3M 8): LEAD-not-confirmed
 - 06:24Z W-COMBO ALN-AUTO TL3_ALN_AS_L9f261fe4_BASE controls: real beats 14 of 30 (L6M drawdown-first; ulcer only 22; L3M 9): LEAD-not-confirmed
 - 06:24Z W-COMBO ALN-AUTO TL3_ALN_AS_Lec335094_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 21): PASS: eligible for EX / P2 sets
+- 06:25Z W-COMBO RESELECT-NYAM step 1 BLOCKED: best add-rule candidate L6547965c fails the gate (RED on rule B in ['Y2023', 'Y2024', 'Y2025'] / persistence 0.56); STOP at 0 books
+- 06:26Z W-COMBO RESELECT-ASIA RESULT: no stack could be built from the pool of 24 books (gate blocks the first step or the pool is empty)
+2026-11-20T06:29:23Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 06:29Z W-COMBO ALN-AUTO TL3_ALN_NY_L39ac1f11_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.65): 30 date-shift controls queued (180 set-months)
+- 06:29Z W-COMBO ALN-AUTO TL3_ALN_NY_L79f0d907_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.59): 30 date-shift controls queued (180 set-months)
+- 06:29Z W-COMBO ALN-AUTO TL3_ALN_NY_L84104e63_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 27; L3M 12): LEAD-not-confirmed
+- 06:29Z W-COMBO ALN-AUTO TL3_ALN_NY_L99a57259_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 27; L3M 12): LEAD-not-confirmed
+- 06:29Z W-COMBO ALN-AUTO TL3_ALN_NY_L85f676b2_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 24; L3M 12): LEAD-not-confirmed
+- 06:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 262243
