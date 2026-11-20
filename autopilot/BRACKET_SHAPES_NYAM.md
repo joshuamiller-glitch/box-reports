@@ -1,6 +1,6 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-20 16:57Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-20 17:29Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
@@ -249,7 +249,24 @@ Plain 60/60 is the pick for 2 of 6 complete books.
 },
 "AS_L7ea48296": {
 "shape": "P45",
-"years": {},
+"years": {
+"2023": {
+"mean_wk": 360,
+"ulcer": 2440
+},
+"2024": {
+"mean_wk": 554,
+"ulcer": 2213
+},
+"2025": {
+"mean_wk": 560,
+"ulcer": 8302
+},
+"2026": {
+"mean_wk": 621,
+"ulcer": 5769
+}
+},
 "controls": {
 "real_beats": 0,
 "of": 0,
