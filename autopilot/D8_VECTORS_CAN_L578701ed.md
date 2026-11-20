@@ -1,0 +1,1 @@
+# L578701ed: time_m_1 + book_dwm. No canonical rebuild: time bars do not depend on print splitting (verified: 479-480 of 480 closes bit-identical in every variant a to d, section B of D8_FEED_CHECK.md). Use D8_VECTORS_L578701ed.md.

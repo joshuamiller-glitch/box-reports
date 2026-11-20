@@ -167,3 +167,118 @@ Proposed re-run on merged bars, last 6 months (2026-05..2026-10) only, new set n
 4. Validity: crossed or empty-side records must be skipped as the engine does (use the last valid snapshot).
 5. Not measured here: the effect of replacing the 100 ms grid by event-time sampling, and of any CQG depth gaps. The per-order data the engine's Level-3 history has (add/cancel counts) are used by OTHER book triggers (book_cancel, book_queue, ofi), not by dwm.
 Bar side: time_m_1 needs only trades. So L578701ed needs L2 (OnMarketDepth, 10 levels) plus the trade stream for the bar clock.
+
+## 5. NT8/CQG export versus our tape, Asia td 20261110 (orders 1432Z A and 1438Z B; NT8 numbers are the relay's counts from Josh's file, which is not on this box)
+
+**Plainly: volume matches exactly in every one of the 32 fifteen-minute buckets (64,484 both). Aggressor side matches exactly in every bucket when our side is taken the NT8 way (last >= ask buy, last <= bid sell, using the book quote at the print): buy 32,187 / sell 32,297 = NT8's 32,187 / 32,297. Our tape's own aggressor flag differs from that by 2 contracts on the buy side and 1 on the sell side (32,185 / 32,296). Records differ: NT8 59,887 versus our 51,093 (NT8 splits finer; ratio 1.172).**
+
+Per-print side agreement on our tape (flag versus quote-rule side, using the book state stored with each trade record; the stored records align one to one with the tape trade rows): 2 of 51,093 records disagree (4 contracts of 64,484); one record has flag 0; no record falls strictly between bid and ask. Other sample days: 11-09 side agreement by volume 99.82% (a 1,000-contract-scale difference concentrated in a few records, delta 1,543 by quote versus 1,348 by flag), 11-11 99.99%.
+
+| td | records | side_agree_volume | quote_buy_vol | quote_sell_vol | flag_buy_vol | flag_sell_vol | quote_delta | flag_delta |
+|---|---|---|---|---|---|---|---|---|
+| 20261109 | 89439 | 0.9982 | 55597 | 54054 | 55402 | 54054 | 1543 | 1348 |
+| 20261110 | 51093 | 0.9999 | 32187 | 32297 | 32185 | 32296 | -110 | -111 |
+| 20261111 | 58727 | 0.9999 | 38996 | 36839 | 38991 | 36839 | 2157 | 2152 |
+
+### 5.1 Fifteen-minute table side by side (UTC, td 20261110 Asia)
+nt = NT8/CQG export, our = our tape. d_ = NT8 minus ours with our QUOTE-rule side. Records ratio = NT8/our.
+
+| lab | nt_rec | our_rec | rec_ratio_nt_over_our | nt_vol | our_vol | d_vol | nt_buy | our_buy_flag | our_buy_quote | d_buy_vs_quote | nt_sell | our_sell_flag | our_sell_quote | d_sell_vs_quote | our_canonical_prints |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 09 23:00 | 1260 | 1129 | 1.116 | 1457 | 1457 | 0 | 735 | 732 | 735 | 0 | 722 | 722 | 722 | 0 | 1072 |
+| 09 23:15 | 1207 | 1041 | 1.159 | 1296 | 1296 | 0 | 622 | 622 | 622 | 0 | 674 | 674 | 674 | 0 | 994 |
+| 09 23:30 | 1713 | 1427 | 1.2 | 1831 | 1831 | 0 | 944 | 944 | 944 | 0 | 887 | 887 | 887 | 0 | 1338 |
+| 09 23:45 | 1105 | 956 | 1.156 | 1149 | 1149 | 0 | 722 | 722 | 722 | 0 | 427 | 427 | 427 | 0 | 889 |
+| 10 00:00 | 2416 | 2011 | 1.201 | 2632 | 2632 | 0 | 1331 | 1331 | 1331 | 0 | 1301 | 1301 | 1301 | 0 | 1885 |
+| 10 00:15 | 1788 | 1509 | 1.185 | 1987 | 1987 | 0 | 1030 | 1030 | 1030 | 0 | 957 | 957 | 957 | 0 | 1371 |
+| 10 00:30 | 2059 | 1778 | 1.158 | 2216 | 2216 | 0 | 1073 | 1073 | 1073 | 0 | 1143 | 1143 | 1143 | 0 | 1642 |
+| 10 00:45 | 2778 | 2422 | 1.147 | 2951 | 2951 | 0 | 1347 | 1347 | 1347 | 0 | 1604 | 1604 | 1604 | 0 | 2237 |
+| 10 01:00 | 5559 | 4646 | 1.197 | 5951 | 5951 | 0 | 2926 | 2926 | 2926 | 0 | 3025 | 3025 | 3025 | 0 | 4405 |
+| 10 01:15 | 3105 | 2568 | 1.209 | 3262 | 3262 | 0 | 1623 | 1623 | 1623 | 0 | 1639 | 1639 | 1639 | 0 | 2446 |
+| 10 01:30 | 2717 | 2234 | 1.216 | 3349 | 3349 | 0 | 1965 | 1965 | 1965 | 0 | 1384 | 1384 | 1384 | 0 | 2094 |
+| 10 01:45 | 1202 | 1066 | 1.128 | 1263 | 1263 | 0 | 610 | 610 | 610 | 0 | 653 | 653 | 653 | 0 | 1015 |
+| 10 02:00 | 1789 | 1479 | 1.21 | 1962 | 1962 | 0 | 1003 | 1003 | 1003 | 0 | 959 | 959 | 959 | 0 | 1384 |
+| 10 02:15 | 1497 | 1234 | 1.213 | 1607 | 1607 | 0 | 766 | 766 | 766 | 0 | 841 | 841 | 841 | 0 | 1152 |
+| 10 02:30 | 1570 | 1368 | 1.148 | 1635 | 1635 | 0 | 782 | 782 | 782 | 0 | 853 | 853 | 853 | 0 | 1301 |
+| 10 02:45 | 1459 | 1208 | 1.208 | 1538 | 1538 | 0 | 754 | 754 | 754 | 0 | 784 | 784 | 784 | 0 | 1155 |
+| 10 03:00 | 1419 | 1201 | 1.182 | 1516 | 1516 | 0 | 684 | 684 | 684 | 0 | 832 | 832 | 832 | 0 | 1133 |
+| 10 03:15 | 1315 | 1166 | 1.128 | 1396 | 1396 | 0 | 685 | 685 | 685 | 0 | 711 | 711 | 711 | 0 | 1087 |
+| 10 03:30 | 3129 | 2641 | 1.185 | 3387 | 3387 | 0 | 1355 | 1355 | 1355 | 0 | 2032 | 2032 | 2032 | 0 | 2469 |
+| 10 03:45 | 2768 | 2383 | 1.162 | 2951 | 2951 | 0 | 1547 | 1548 | 1547 | 0 | 1404 | 1403 | 1404 | 0 | 2158 |
+| 10 04:00 | 1836 | 1608 | 1.142 | 1995 | 1995 | 0 | 979 | 979 | 979 | 0 | 1016 | 1016 | 1016 | 0 | 1488 |
+| 10 04:15 | 2416 | 2050 | 1.179 | 2561 | 2561 | 0 | 1381 | 1381 | 1381 | 0 | 1180 | 1180 | 1180 | 0 | 1921 |
+| 10 04:30 | 1096 | 930 | 1.178 | 1150 | 1150 | 0 | 564 | 564 | 564 | 0 | 586 | 586 | 586 | 0 | 886 |
+| 10 04:45 | 959 | 832 | 1.153 | 1043 | 1043 | 0 | 550 | 550 | 550 | 0 | 493 | 493 | 493 | 0 | 789 |
+| 10 05:00 | 1547 | 1329 | 1.164 | 1647 | 1647 | 0 | 814 | 814 | 814 | 0 | 833 | 833 | 833 | 0 | 1255 |
+| 10 05:15 | 1137 | 1003 | 1.134 | 1218 | 1218 | 0 | 637 | 637 | 637 | 0 | 581 | 581 | 581 | 0 | 951 |
+| 10 05:30 | 2136 | 1779 | 1.201 | 2267 | 2267 | 0 | 1242 | 1242 | 1242 | 0 | 1025 | 1025 | 1025 | 0 | 1678 |
+| 10 05:45 | 1292 | 1121 | 1.153 | 1351 | 1351 | 0 | 655 | 655 | 655 | 0 | 696 | 696 | 696 | 0 | 1074 |
+| 10 06:00 | 1484 | 1276 | 1.163 | 1559 | 1559 | 0 | 660 | 660 | 660 | 0 | 899 | 899 | 899 | 0 | 1211 |
+| 10 06:15 | 1623 | 1441 | 1.126 | 1711 | 1711 | 0 | 846 | 846 | 846 | 0 | 865 | 865 | 865 | 0 | 1405 |
+| 10 06:30 | 1336 | 1202 | 1.111 | 1382 | 1382 | 0 | 696 | 696 | 696 | 0 | 686 | 686 | 686 | 0 | 1151 |
+| 10 06:45 | 1170 | 1055 | 1.109 | 1264 | 1264 | 0 | 659 | 659 | 659 | 0 | 605 | 605 | 605 | 0 | 988 |
+
+Totals: NT8 records 59,887 vs ours 51,093; volume 64,484 both; NT8 buy/sell 32,187/32,297 vs ours by quote 32,187/32,297, by flag 32,185/32,296.
+
+### 5.2 s_vol exact definition (order 1432Z item 3)
+`s_vol` is NOT the average print size. It is the scale `s_vol = tr_vol / r0_vol`, where `tr_vol` = median of the daily total traded volume (all sessions of the Globex trading date, contracts) over the previous 20 trading-date rows of the stats table (rows strictly before the day) and `r0_vol = 610,702` (median daily volume of the first 60 rows, 2023-04-03 to 2023-06-23). For td 20261110: tr_vol = 678,505.5, s_vol = 1.11103, so cdr_100 threshold = 100 x 1.11103 = 111.10 contracts (Asia, same value for all sessions of that day; also 110.0 on 11-09 and 110.6 on 11-11). The similarity of NT8 volume/records = 1.077 to 1.11 is a coincidence. These scales depend on volume only, so they do not change with print splitting (the print-count scale s_n, used by tick, dib, vrb, drb, would).
+
+### 5.3 Canonical-print count (order 1438Z item 1)
+Rule tested: consecutive records, same millisecond (timestamp truncated), same aggressor side, same price merged. Our tape, Asia td 20261110: **48,024 canonical prints** (NT8: 47,600; difference +424, +0.9%). Other keys on our tape: consecutive ms+side groups 35,985 (NT8 34,458), distinct milliseconds 35,015 (NT8 33,019), distinct (ms, side, price) keys 47,915 (NT8 47,373), merge on ms+price only 47,799, ms only 35,015. So volume, side and the price/side structure agree but **the NT8 file has about 6% fewer distinct millisecond stamps than ours** (33,019 vs 35,015). Therefore CQG timestamps are coarser or jittered relative to the exchange event times in our tape (CQG stamps at its own clock). Scanning time-bin widths on our tape: a 1 ms floor gives (35,015 / 35,985 / 48,024); a 2.5 ms bin 33,174 / 34,523 / 47,646; a 3 ms bin 32,929 / 34,324 / 47,610 (targets 33,019 / 34,458 / 47,600). A 3 ms bin is close but not a rule (bin phase unknown, no per-print alignment possible without the file). **Conclusion: the canonical count is reproducible to about 1% but not exactly from our tape; an exact match needs the export file itself (print by print alignment of CQG stamps with the tape).** If Josh copies it to this box (any path under /mnt/l2/l2vast/, read only) I will align the prints and find the rule. Fallback until then: the volume and side are identical, so bars whose boundaries depend only on cumulative volume/delta at coarse thresholds (cdr, lbrk, swing) are stable (section 6), but the volume-clock bar (vsess_600) is not.
+
+## 6. Fidelity test on our tape (order 1432Z item 2), Asia sample days
+Variants: (a) timestamps truncated to ms, tape order kept; (b) a + side from last-vs-bid/ask (our quotes); (c) canonical merge (ms+side(flag)+price); (d) canonical with quote side. Baseline = engine bars/signals as before. Signals are the raw signals on the book's own session of the 3 sample days. "identical" would need equal ns time, which truncation precludes, so "within 2 ms" is the same signal.
+
+### Bar closes
+| variant | bar | td | bars_engine | bars_variant | closes_identical | closes_within_2ms | closes_moved_over_2ms | max_nearest_diff_s |
+|---|---|---|---|---|---|---|---|---|
+| (a) ms-truncated timestamps, tape order | cdr_100 | 20261109 | 135 | 135 | 0 | 135 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | cdr_100 | 20261110 | 80 | 80 | 0 | 80 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | cdr_100 | 20261111 | 114 | 114 | 0 | 114 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | vsess_600 | 20261109 | 840 | 840 | 1 | 840 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | vsess_600 | 20261110 | 448 | 448 | 0 | 448 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | vsess_600 | 20261111 | 527 | 527 | 0 | 527 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | time_m_1 | 20261109 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (a) ms-truncated timestamps, tape order | time_m_1 | 20261110 | 480 | 480 | 479 | 480 | 0 | 0.0 |
+| (a) ms-truncated timestamps, tape order | time_m_1 | 20261111 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | cdr_100 | 20261109 | 135 | 136 | 0 | 135 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | cdr_100 | 20261110 | 80 | 80 | 0 | 80 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | cdr_100 | 20261111 | 114 | 114 | 0 | 114 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | vsess_600 | 20261109 | 840 | 840 | 1 | 840 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | vsess_600 | 20261110 | 448 | 448 | 0 | 448 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | vsess_600 | 20261111 | 527 | 527 | 0 | 527 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | time_m_1 | 20261109 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (b) a + side from last-vs-bid/ask (our quotes) | time_m_1 | 20261110 | 480 | 480 | 479 | 480 | 0 | 0.0 |
+| (b) a + side from last-vs-bid/ask (our quotes) | time_m_1 | 20261111 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (c) canonical: ms+side(flag)+price consecutive merge | cdr_100 | 20261109 | 135 | 135 | 0 | 135 | 0 | 0.002 |
+| (c) canonical: ms+side(flag)+price consecutive merge | cdr_100 | 20261110 | 80 | 80 | 0 | 80 | 0 | 0.001 |
+| (c) canonical: ms+side(flag)+price consecutive merge | cdr_100 | 20261111 | 114 | 114 | 0 | 112 | 2 | 0.277 |
+| (c) canonical: ms+side(flag)+price consecutive merge | vsess_600 | 20261109 | 840 | 840 | 1 | 211 | 629 | 50.43 |
+| (c) canonical: ms+side(flag)+price consecutive merge | vsess_600 | 20261110 | 448 | 448 | 0 | 165 | 283 | 55.637 |
+| (c) canonical: ms+side(flag)+price consecutive merge | vsess_600 | 20261111 | 527 | 527 | 0 | 98 | 429 | 105.672 |
+| (c) canonical: ms+side(flag)+price consecutive merge | time_m_1 | 20261109 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (c) canonical: ms+side(flag)+price consecutive merge | time_m_1 | 20261110 | 480 | 480 | 479 | 480 | 0 | 0.0 |
+| (c) canonical: ms+side(flag)+price consecutive merge | time_m_1 | 20261111 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (d) canonical with quote side | cdr_100 | 20261109 | 135 | 136 | 0 | 135 | 0 | 0.002 |
+| (d) canonical with quote side | cdr_100 | 20261110 | 80 | 80 | 0 | 80 | 0 | 0.001 |
+| (d) canonical with quote side | cdr_100 | 20261111 | 114 | 114 | 0 | 112 | 2 | 0.277 |
+| (d) canonical with quote side | vsess_600 | 20261109 | 840 | 840 | 1 | 211 | 629 | 50.43 |
+| (d) canonical with quote side | vsess_600 | 20261110 | 448 | 448 | 0 | 165 | 283 | 55.637 |
+| (d) canonical with quote side | vsess_600 | 20261111 | 527 | 527 | 0 | 98 | 429 | 105.672 |
+| (d) canonical with quote side | time_m_1 | 20261109 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+| (d) canonical with quote side | time_m_1 | 20261110 | 480 | 480 | 479 | 480 | 0 | 0.0 |
+| (d) canonical with quote side | time_m_1 | 20261111 | 480 | 480 | 479 | 480 | 0 | 0.001 |
+
+### Triggers
+| n_engine | n_variant | identical | same_within_2ms | moved | max_moved_s | missing | extra | variant | book | bar | trigger |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 42 | 42 | 0 | 42 | 0 | 0.0 | 0 | 0 | (a) ms-truncated timestamps, tape order | Ldcdb0b6e | cdr_100 | trig_momentum_mvote/v3of5 |
+| 188 | 188 | 0 | 188 | 0 | 0.0 | 0 | 0 | (a) ms-truncated timestamps, tape order | Lfb608c7b | vsess_600 | trig_pullback_ema/depth_native |
+| 42 | 42 | 0 | 38 | 1 | 2.4 | 3 | 3 | (b) a + side from last-vs-bid/ask (our quotes) | Ldcdb0b6e | cdr_100 | trig_momentum_mvote/v3of5 |
+| 188 | 188 | 0 | 188 | 0 | 0.0 | 0 | 0 | (b) a + side from last-vs-bid/ask (our quotes) | Lfb608c7b | vsess_600 | trig_pullback_ema/depth_native |
+| 42 | 43 | 0 | 42 | 0 | 0.0 | 0 | 1 | (c) canonical: ms+side(flag)+price consecutive merge | Ldcdb0b6e | cdr_100 | trig_momentum_mvote/v3of5 |
+| 188 | 198 | 0 | 51 | 116 | 116.06 | 21 | 31 | (c) canonical: ms+side(flag)+price consecutive merge | Lfb608c7b | vsess_600 | trig_pullback_ema/depth_native |
+| 42 | 42 | 0 | 38 | 1 | 2.4 | 3 | 3 | (d) canonical with quote side | Ldcdb0b6e | cdr_100 | trig_momentum_mvote/v3of5 |
+| 188 | 198 | 0 | 51 | 116 | 116.06 | 21 | 31 | (d) canonical with quote side | Lfb608c7b | vsess_600 | trig_pullback_ema/depth_native |
+
+**Reading.** (a) Millisecond truncation changes nothing but the sub-millisecond timestamp (all closes within 1 ms, all 42 and 188 signals the same). (b) Quote-rule side: cdr_100 (side-dependent) closes within 1 ms except one extra bar on 11-09; Ldcdb0b6e signals: 38 same, 1 moved 2.4 s, 3 missing, 3 extra of 42 (a handful of delta-driven shifts); Lfb608c7b unaffected (volume bar). (c)/(d) Canonical merge: cdr_100 closes unchanged (2 bars on 11-11 move up to 0.28 s), Ldcdb0b6e: 1 extra signal; **vsess_600 closes change for most bars (e.g. 211 of 840 closes identical on 11-09, differences up to 106 s) and Lfb608c7b signals: 51 same, 116 moved, 21 missing, 31 extra of 188** (the overshoot cascade: the closing record is the merged print, bigger than the old per-order record). The time bar time_m_1 (L578701ed): 479 of 480 closes bit-identical in all variants (the 480th is the truncated last bar): it needs no rebuild; its trigger needs only the depth inputs (section 4).
