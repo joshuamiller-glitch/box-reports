@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 15:28Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 15:37Z.
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
@@ -26,7 +26,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **31** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 354 of 355 in the universe; failed the prior-year positivity / persistence / controls: 286; waiting for prior years: 1; passed (a)+(b), controls still running: 37.
+Books with all months landed: 359 of 355 in the universe; failed the prior-year positivity / persistence / controls: 286; waiting for prior years: 1; passed (a)+(b), controls still running: 37.
 Pool books: L08df8bb0, L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, La6f6f7ad, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9
 
 Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
@@ -46,7 +46,7 @@ STOPPED at 1 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 14:49Z UTC; pool 29 books): L7c368a4f
 
-Phase: moves. Pool used by this run: 31 books (L08df8bb0, L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, La6f6f7ad, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9).
+Phase: final. Pool used by this run: 31 books (L08df8bb0, L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, La6f6f7ad, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
