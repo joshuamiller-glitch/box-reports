@@ -27,50 +27,50 @@
 
 ## NEW GATES (walk-forward persistence >= 0.58 drawdown first; prior-year band red > 30% fails; null n/a; 27/30 shown in the table above is information only)
 
-| basis | session | book | exit | WF persistence (periods) | 2023 ulcer% / eq-risk $% (band) | 2024 | 2025 | null | 27/30 (L6M / L3M, old count) | verdict |
+| basis | session | book | exit | WF persistence shared gate (periods) / own approx | 2023 ulcer% / eq-risk $% (band) | 2024 | 2025 | null | 27/30 (L6M / L3M, old count) | verdict |
 |---|---|---|---|---|---|---|---|---|---|---|
-| old split | AS | L224050e7 | v25_t2 | 0.69 (85) | -49 / +14 (green) | -42 / -37 (green) | -50 / +23 (amber) | n/a | 4 / 25 | KEPT |
-| old split | NY | L6c84f416 | bricks3_v25 | 0.85 (85) | -31 / +31 (red) | -25 / +65 (red) | -57 / +15 (green) | n/a | 25 / 17 | not kept |
-| old split | NY | L2b25565a | v25_t2 | 0.84 (85) | +1 / +179 (red) | +20 / +112 (red) | -67 / +85 (red) | n/a | 15 / 13 | not kept |
-| old split | NY | L11a12538 | bricks3_v25 | 0.78 (85) | -16 / +392 (red) | -62 / +134 (red) | +23 / +109 (red) | n/a | 11 / 10 | not kept |
-| old split | AS | L40eaea66 | v25_t2 | 0.76 (85) | -12 / -4 (green) | -15 / +230 (red) | -36 / +148 (red) | n/a | 13 / 13 | not kept |
-| old split | NY | L488784d8 | bricks3_v25 | 0.71 (85) | +19 / +99 (red) | -48 / -180 (green) | -69 / -268 (green) | n/a | 30 / 21 | not kept |
-| old split | NY | L247629c9 | bricks3_v25 | 0.71 (85) | -29 / +59 (red) | +43 / +95 (red) | -33 / -55 (green) | n/a | 20 / 22 | not kept |
-| old split | NY | Le0d40091 | v25_t2 | 0.69 (85) | -56 / +447 (red) | -73 / +147 (red) | +94 / +115 (red) | n/a | 15 / 3 | not kept |
-| old split | AS | L6cff0af0 | v25_t2 | 0.64 (85) | +49 / +182 (red) | -45 / +116 (red) | +67 / +154 (red) | n/a | 7 / 16 | not kept |
-| old split | AS | Lc754cf58 | v25_t2 | 0.62 (85) | +89 / +87 (red) | -4 / +90 (red) | -61 / -163 (green) | n/a | 4 / 10 | not kept |
-| old split | AS | M7423c0d9 | v25_t2 | 0.61 (85) | +89 / +448 (red) | -28 / -12 (green) | +17 / +81 (red) | n/a | 20 / 14 | not kept |
-| old split | AS | La6d1b413 | v25_t2 | 0.61 (85) | -49 / +452 (red) | -31 / +137 (red) | -10 / +222 (red) | n/a | 24 / 11 | not kept |
-| old split | NY | Lc338b47b | v25_t2 | 0.59 (85) | +13 / +175 (red) | +63 / +120 (red) | +80 / +115 (red) | n/a | 17 / 8 | not kept |
-| old split | AS | L0f5e3cd0 | bricks3_v25 | 0.58 (85) | +82 / +103 (red) | -79 / -783 (green) | +88 / +92 (red) | n/a | 30 / 15 | not kept |
-| old split | AS | L29b1bc3f | v25_t2 | 0.56 (85) | +99 / +533 (red) | -4 / +93 (red) | -19 / +52 (red) | n/a | 27 / 12 | not kept |
-| old split | AS | Leee81e35 | v25_t2 | 0.52 (85) | +130 / +110 (red) | +13 / +848 (red) | +123 / +380 (red) | n/a | 18 / 14 | not kept |
-| old split | AS | L1b40b322 | bricks3_v25 | 0.51 (85) | +189 / +147 (red) | +56 / +185 (red) | +189 / +125 (red) | n/a | 24 / 23 | not kept |
-| old split | NY | L33bc9e87 | bricks3_v25 | 0.51 (85) | +85 / +84 (red) | -22 / +71 (red) | +76 / +82 (red) | n/a | 16 / 23 | not kept |
-| old split | AS | Lcae177ba | bricks3_v25 | 0.47 (85) | +22 / +111 (red) | +9 / +126 (red) | +87 / +112 (red) | n/a | 25 / 21 | not kept |
-| old split | AS | La1d1323c | v25_t2 | 0.45 (85) | -1 / -6 (green) | +1 / -100 (green) | +26 / +82 (red) | n/a | 27 / 21 | not kept |
-| old split | AS | L0daacd2d | v25_t2 | 0.42 (85) | +17 / +7 (amber) | +190 / +74 (red) | -18 / +69 (red) | n/a | 23 / 9 | not kept |
-| old split | AS | L3be74364 | bricks3_v25 | 0.41 (85) | +90 / +119 (red) | +90 / +82 (red) | +67 / +62 (red) | n/a | 15 / 6 | not kept |
+| old split | AS | L224050e7 | v25_t2 | 0.67 (85) / 0.69 | -49 / +14 (green) | -42 / -37 (green) | -50 / +23 (amber) | n/a | 12 / 13 | KEPT |
+| old split | NY | L6c84f416 | bricks3_v25 | 0.86 (85) / 0.85 | -31 / +32 (red) | -25 / +65 (red) | -57 / +15 (green) | n/a | 25 / 17 | not kept |
+| old split | NY | L2b25565a | v25_t2 | 0.85 (85) / 0.84 | +1 / +179 (red) | +20 / +112 (red) | -67 / +85 (red) | n/a | 15 / 13 | not kept |
+| old split | AS | L40eaea66 | v25_t2 | 0.83 (85) / 0.76 | -12 / -4 (green) | -16 / +230 (red) | -36 / +148 (red) | n/a | 13 / 13 | not kept |
+| old split | NY | L11a12538 | bricks3_v25 | 0.81 (85) / 0.78 | -16 / +392 (red) | -62 / +134 (red) | +23 / +109 (red) | n/a | 11 / 10 | not kept |
+| old split | NY | L247629c9 | bricks3_v25 | 0.72 (85) / 0.71 | -29 / +59 (red) | +43 / +95 (red) | -33 / -55 (green) | n/a | 20 / 22 | not kept |
+| old split | NY | L488784d8 | bricks3_v25 | 0.71 (85) / 0.71 | +19 / +99 (red) | -48 / -180 (green) | -70 / -268 (green) | n/a | 30 / 21 | not kept |
+| old split | NY | Le0d40091 | v25_t2 | 0.71 (85) / 0.69 | -56 / +447 (red) | -73 / +147 (red) | +94 / +115 (red) | n/a | 15 / 3 | not kept |
+| old split | AS | La6d1b413 | v25_t2 | 0.64 (85) / 0.61 | -49 / +452 (red) | -31 / +137 (red) | -10 / +222 (red) | n/a | 24 / 11 | not kept |
+| old split | AS | M7423c0d9 | v25_t2 | 0.61 (85) / 0.61 | +89 / +448 (red) | -28 / -12 (green) | +17 / +81 (red) | n/a | 20 / 14 | not kept |
+| old split | AS | L0daacd2d | v25_t2 | 0.61 (85) / 0.42 | +17 / +7 (green) | +190 / +74 (red) | -18 / +69 (red) | n/a | 23 / 9 | not kept |
+| old split | AS | L6cff0af0 | v25_t2 | 0.61 (85) / 0.64 | +49 / +182 (red) | -45 / +116 (red) | +67 / +154 (red) | n/a | 7 / 16 | not kept |
+| old split | AS | L29b1bc3f | v25_t2 | 0.60 (85) / 0.56 | +99 / +533 (red) | -4 / +93 (red) | -19 / +52 (red) | n/a | 27 / 12 | not kept |
+| old split | NY | Lc338b47b | v25_t2 | 0.60 (85) / 0.59 | +13 / +175 (red) | +63 / +120 (red) | +80 / +115 (red) | n/a | 17 / 8 | not kept |
+| old split | AS | Lc754cf58 | v25_t2 | 0.60 (85) / 0.62 | +89 / +87 (red) | -4 / +90 (red) | -61 / -163 (green) | n/a | 4 / 10 | not kept |
+| old split | AS | La1d1323c | v25_t2 | 0.59 (85) / 0.45 | -1 / -6 (green) | +1 / -100 (green) | +26 / +82 (red) | n/a | 27 / 21 | not kept |
+| old split | AS | L0f5e3cd0 | bricks3_v25 | 0.59 (85) / 0.58 | +82 / +103 (red) | -79 / -783 (green) | +88 / +92 (red) | n/a | 30 / 15 | not kept |
+| old split | AS | L1b40b322 | bricks3_v25 | 0.53 (85) / 0.51 | +189 / +147 (red) | +56 / +185 (red) | +189 / +125 (red) | n/a | 24 / 23 | not kept |
+| old split | NY | L33bc9e87 | bricks3_v25 | 0.48 (85) / 0.51 | +84 / +84 (red) | -22 / +71 (red) | +76 / +82 (red) | n/a | 16 / 23 | not kept |
+| old split | AS | Leee81e35 | v25_t2 | 0.48 (85) / 0.52 | +130 / +110 (red) | +13 / +848 (red) | +122 / +380 (red) | n/a | 18 / 14 | not kept |
+| old split | AS | Lcae177ba | bricks3_v25 | 0.47 (85) / 0.47 | +22 / +111 (red) | +9 / +126 (red) | +87 / +112 (red) | n/a | 25 / 21 | not kept |
+| old split | AS | L3be74364 | bricks3_v25 | 0.45 (85) / 0.41 | +90 / +119 (red) | +90 / +82 (red) | +67 / +62 (red) | n/a | 15 / 6 | not kept |
 
 - AS L224050e7 `v25_t2`: **exit kept** - ok
-- NY L6c84f416 `bricks3_v25`: **exit not kept** - prior-year red: 2023 (ulcer -31%, eq-risk $/wk +31% worse), 2024 (ulcer -25%, eq-risk $/wk +65% worse)
-- NY L2b25565a `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +1%, eq-risk $/wk +179% worse), 2024 (ulcer +20%, eq-risk $/wk +112% worse), 2025 (ulcer -67%, eq-risk $/wk +85% worse)
-- NY L11a12538 `bricks3_v25`: **exit not kept** - prior-year red: 2023 (ulcer -16%, eq-risk $/wk +392% worse), 2024 (ulcer -62%, eq-risk $/wk +134% worse), 2025 (ulcer +23%, eq-risk $/wk +109% worse)
-- AS L40eaea66 `v25_t2`: **exit not kept** - prior-year red: 2024 (ulcer -15%, eq-risk $/wk +230% worse), 2025 (ulcer -36%, eq-risk $/wk +148% worse)
-- NY L488784d8 `bricks3_v25`: **exit not kept** - prior-year red: 2023 (ulcer +19%, eq-risk $/wk +99% worse)
-- NY L247629c9 `bricks3_v25`: **exit not kept** - prior-year red: 2023 (ulcer -29%, eq-risk $/wk +59% worse), 2024 (ulcer +43%, eq-risk $/wk +95% worse)
-- NY Le0d40091 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer -56%, eq-risk $/wk +447% worse), 2024 (ulcer -73%, eq-risk $/wk +147% worse), 2025 (ulcer +94%, eq-risk $/wk +115% worse)
-- AS L6cff0af0 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +49%, eq-risk $/wk +182% worse), 2024 (ulcer -45%, eq-risk $/wk +116% worse), 2025 (ulcer +67%, eq-risk $/wk +154% worse)
-- AS Lc754cf58 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +89%, eq-risk $/wk +87% worse), 2024 (ulcer -4%, eq-risk $/wk +90% worse)
-- AS M7423c0d9 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +89%, eq-risk $/wk +448% worse), 2025 (ulcer +17%, eq-risk $/wk +81% worse)
-- AS La6d1b413 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer -49%, eq-risk $/wk +452% worse), 2024 (ulcer -31%, eq-risk $/wk +137% worse), 2025 (ulcer -10%, eq-risk $/wk +222% worse)
-- NY Lc338b47b `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +13%, eq-risk $/wk +175% worse), 2024 (ulcer +63%, eq-risk $/wk +120% worse), 2025 (ulcer +80%, eq-risk $/wk +115% worse)
-- AS L0f5e3cd0 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.58 < 0.58; prior-year red: 2023 (ulcer +82%, eq-risk $/wk +103% worse), 2025 (ulcer +88%, eq-risk $/wk +92% worse)
-- AS L29b1bc3f `v25_t2`: **exit not kept** - walk-forward persistence 0.56 < 0.58; prior-year red: 2023 (ulcer +99%, eq-risk $/wk +533% worse), 2024 (ulcer -4%, eq-risk $/wk +93% worse), 2025 (ulcer -19%, eq-risk $/wk +52% worse)
-- AS Leee81e35 `v25_t2`: **exit not kept** - walk-forward persistence 0.52 < 0.58; prior-year red: 2023 (ulcer +130%, eq-risk $/wk +110% worse), 2024 (ulcer +13%, eq-risk $/wk +848% worse), 2025 (ulcer +123%, eq-risk $/wk +380% worse)
-- AS L1b40b322 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.51 < 0.58; prior-year red: 2023 (ulcer +189%, eq-risk $/wk +147% worse), 2024 (ulcer +56%, eq-risk $/wk +185% worse), 2025 (ulcer +189%, eq-risk $/wk +125% worse)
-- NY L33bc9e87 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.51 < 0.58; prior-year red: 2023 (ulcer +85%, eq-risk $/wk +84% worse), 2024 (ulcer -22%, eq-risk $/wk +71% worse), 2025 (ulcer +76%, eq-risk $/wk +82% worse)
-- AS Lcae177ba `bricks3_v25`: **exit not kept** - walk-forward persistence 0.47 < 0.58; prior-year red: 2023 (ulcer +22%, eq-risk $/wk +111% worse), 2024 (ulcer +9%, eq-risk $/wk +126% worse), 2025 (ulcer +87%, eq-risk $/wk +112% worse)
-- AS La1d1323c `v25_t2`: **exit not kept** - walk-forward persistence 0.45 < 0.58; prior-year red: 2025 (ulcer +26%, eq-risk $/wk +82% worse)
-- AS L0daacd2d `v25_t2`: **exit not kept** - walk-forward persistence 0.42 < 0.58; prior-year red: 2024 (ulcer +190%, eq-risk $/wk +74% worse), 2025 (ulcer -18%, eq-risk $/wk +69% worse)
-- AS L3be74364 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.41 < 0.58; prior-year red: 2023 (ulcer +90%, eq-risk $/wk +119% worse), 2024 (ulcer +90%, eq-risk $/wk +82% worse), 2025 (ulcer +67%, eq-risk $/wk +62% worse)
+- NY L6c84f416 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2024]
+- NY L2b25565a `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS L40eaea66 `v25_t2`: **exit not kept** - RED prior year(s) [2024, 2025]
+- NY L11a12538 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- NY L247629c9 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2024]
+- NY L488784d8 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023]
+- NY Le0d40091 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS La6d1b413 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS M7423c0d9 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2025]
+- AS L0daacd2d `v25_t2`: **exit not kept** - RED prior year(s) [2024, 2025]
+- AS L6cff0af0 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS L29b1bc3f `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- NY Lc338b47b `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS Lc754cf58 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024]
+- AS La1d1323c `v25_t2`: **exit not kept** - RED prior year(s) [2025]
+- AS L0f5e3cd0 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2025]
+- AS L1b40b322 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.53 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- NY L33bc9e87 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.48 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- AS Leee81e35 `v25_t2`: **exit not kept** - walk-forward persistence 0.48 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- AS Lcae177ba `bricks3_v25`: **exit not kept** - walk-forward persistence 0.47 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- AS L3be74364 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.45 < 0.58; RED prior year(s) [2023, 2024, 2025]
