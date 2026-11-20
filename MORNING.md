@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 03:15Z 11-20 (t+590.3 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 03:30Z 11-20 (t+590.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 98% min 93% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-20T03:15:32Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-20T03:30:41Z. Box: CPU 95.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -10023,3 +10023,15 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 2026-11-20T03:29Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
 2026-11-20T03:29:18Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 03:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 119 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 260175
+- 03:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 20, Dallas engine DONE/30min 528 vs baseline 404 (guard: cut if < 95% twice).
+- 03:30Z W-PROOF QUEUE HOURS (measured rate): 227592 lines = 19.1 h at 11942/h (to Fri 22:33Z); need 16:00Z Nov 20 = 12.5 h: COVERED, margin 6.6 h. Table: autopilot/NIGHT_QUEUE_HOURS.md; covers 16:00Z + 2 h
+- 03:30Z W-PROOF QUEUE HOURS (measured rate): 227592 lines = 19.1 h at 11942/h (to Fri 22:33Z); need 16:00Z Nov 20 = 12.5 h: COVERED, margin 6.6 h. Table: autopilot/NIGHT_QUEUE_HOURS.md; covers 16:00Z + 2 h
+- 03:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 22 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 03:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T01  box1  12769  Dallas  1117  A  2089  B  2345  tot  18320 ;  11-20T02  box1  12171  Dallas  1084  A  2043  B  2342  tot  17640 ;  11-20T03  box1  925  Dallas  92  A  170  B  200  tot  1387 ; 
+- 03:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 03:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 03:30Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_P2J013$ (e.g. TL3_ALN_AS_L00391b70_P2J013,TL3_ALN_AS_L358e61be_P2J013): identity pairs started (4 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:30Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_P2J510$ (e.g. TL3_ALN_AS_L00391b70_P2J510,TL3_ALN_AS_Le50c8ff3_P2J510): identity pairs started (4 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:32Z LEAD NOTE: 03:30Z queue-hours refresh checked: 227,592 lines = 19.1 h at measured 11,942 sm/h, covers 16:00Z with 6.6 h margin (also 18:00Z). Rate slightly lower than 02:00Z (12,718): watch, no action. Inbox empty, freeze holding.
+- 03:33Z W-COMBO NY-TRIGGER RE-RAN the NY AM selection (pid 3789497, previous state archived as allnew_nyam_v5.json): new pool members with L6M landed: ['L3459244a', 'Lf1083387', 'L5606297d', 'Lf6f0cc5f']
+- 03:33Z W-COMBO ALL-NEW NY AM step 1 queued: 53 candidates (new books, positive L6M+L3M, not stale, deduplicated; top 60 by W-BEST score) alone from the empty Asia session, 24 lines
+- 03:34Z WATCHDOG fired: G
