@@ -1,14 +1,16 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 00:28Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 00:34Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: moves. Candidates tried: 75 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: select. Candidates tried: 105 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
 | 1 | Ld3302219 | `TL3_ALN_AS_Ld3302219_BASE` | 3234 / -9245 / -8932 / 2119 | 4107 / -9245 / -8932 / 1140 | 0.66 | Ld3302219 / L1716c153 | 60 |
+| 2 | Lb328c0d1 | `TL3_ALN_AS_STKf2399d05` | 4488 / -12075 / -9635 / 4077 | 4382 / -10569 / -8503 / 2873 | 0.91 | L191904b3 / L1716c153 | 15 |
 
 Selected books in order (what each is):
 
 - Ld3302219: W-BEST score 0.680, L6M wk 2196.2, persistence 0.92; ALONE (all-new base, no live book trading): 3234 / -9245 / -8932 / 2119; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for Ld3302219 (both sides as engine-run for L-ids).
+- Lb328c0d1: W-BEST score 0.549, L6M wk 1802.6, persistence 0.71; ALONE (all-new base, no live book trading): 3417 / -9887 / -6800 / 1633; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for Lb328c0d1 (both sides as engine-run for L-ids).
 
 Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulcer:
 
@@ -28,8 +30,8 @@ Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulc
 Reference line, today, as run: JL3 ASIA-session trades only (all five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
 
 SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
-- Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.37, i.e. same ulcer as the stack): L6M 3234 / -9517 / -6002 / 5830 ; L3M 3635 / -9517 / -5464 / 4408. Compare with the stack: L6M 3234 / -9245 / -8932 / 2119 ; L3M 4107 / -9245 / -8932 / 1140.
-- The all-new stack scaled to today's drawdown (stack lots scaled by k = 2.70, same ulcer as today): L6M 8732 / -24962 / -24117 / 5722 ; L3M 11090 / -24962 / -24117 / 3078. Compare with today: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903.
+- Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.51, i.e. same ulcer as the stack): L6M 4488 / -13208 / -8329 / 8091 ; L3M 5044 / -13208 / -7584 / 6118. Compare with the stack: L6M 4488 / -12075 / -9635 / 4077 ; L3M 4382 / -10569 / -8503 / 2873.
+- The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.95, same ulcer as today): L6M 8732 / -23492 / -18745 / 7931 ; L3M 8526 / -20563 / -16543 / 5590. Compare with today: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903.
 (Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
