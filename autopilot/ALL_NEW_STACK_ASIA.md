@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:44Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:49Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
 Phase: select. Candidates tried: 120 (step 1 all; later steps the scorer-ordered top 15 exact).
 
@@ -7,12 +7,14 @@ Phase: select. Candidates tried: 120 (step 1 all; later steps the scorer-ordered
 | 1 | Ld3302219 | `TL3_ALN_AS_Ld3302219_BASE` | 3234 / -9245 / -8932 / 2119 | 4107 / -9245 / -8932 / 1140 | 0.66 | Ld3302219 / L1716c153 | 60 |
 | 2 | Lb328c0d1 | `TL3_ALN_AS_STKf2399d05` | 4488 / -12075 / -9635 / 4077 | 4382 / -10569 / -8503 / 2873 | 0.91 | L191904b3 / L1716c153 | 15 |
 | 3 | L1756b913 | `TL3_ALN_AS_STK9ff573ec` | 4758 / -13888 / -7785 / 6484 | 3916 / -10610 / -7430 / 6555 | 1.36 | L1756b913 / M7423c0d9 | 15 |
+| 4 | L1716c153 | `TL3_ALN_AS_STKbb8fca90` | 5419 / -16433 / -9564 / 7828 | 4044 / -12246 / -6533 / 7776 | 1.44 | L3cecf195 / L3cecf195 | 14 |
 
-Selected books in order (what each is):
+Selected books in order (what each is, plain words):
 
-- Ld3302219: W-BEST score 0.680, L6M wk 2196.2, persistence 0.92; ALONE (all-new base, no live book trading): 3234 / -9245 / -8932 / 2119; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for Ld3302219 (both sides as engine-run for L-ids).
-- Lb328c0d1: W-BEST score 0.549, L6M wk 1802.6, persistence 0.71; ALONE (all-new base, no live book trading): 3417 / -9887 / -6800 / 1633; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for Lb328c0d1 (both sides as engine-run for L-ids).
-- L1756b913: W-BEST score 0.379, L6M wk 1967.7, persistence 0.78; ALONE (all-new base, no live book trading): 4678 / -12916 / -5830 / 2107; inside the stack: see the step row. Bar/trigger/side/bracket: see autopilot/ASIA_PASS_LIST.md and BEST_BOOKS_ASIA.md rows for L1756b913 (both sides as engine-run for L-ids).
+- Ld3302219 (W-BEST score 0.680, L6M wk 2196.2): CUSUM-event bar 40 ticks [cusum_40]; ~10 bars/hour; trigger trig_trend_libstack / wave_agree {"set": "fast"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3234 / -9245 / -8932 / 2119.
+- Lb328c0d1 (W-BEST score 0.549, L6M wk 1802.6): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3417 / -9887 / -6800 / 1633.
+- L1756b913 (W-BEST score 0.379, L6M wk 1967.7): time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4678 / -12916 / -5830 / 2107.
+- L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415.
 
 Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulcer:
 
@@ -32,15 +34,15 @@ Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulc
 Reference line, today, as run: JL3 ASIA-session trades only (all five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
 
 SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
-- Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.54, i.e. same ulcer as the stack): L6M 4758 / -14003 / -8831 / 8578 ; L3M 5348 / -14003 / -8040 / 6486. Compare with the stack: L6M 4758 / -13888 / -7785 / 6484 ; L3M 3916 / -10610 / -7430 / 6555.
-- The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.84, same ulcer as today): L6M 8732 / -25486 / -14287 / 11899 ; L3M 7186 / -19471 / -13634 / 12028. Compare with today: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903.
+- Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.62, i.e. same ulcer as the stack): L6M 5419 / -15947 / -10057 / 9769 ; L3M 6090 / -15947 / -9156 / 7386. Compare with the stack: L6M 5419 / -16433 / -9564 / 7828 ; L3M 4044 / -12246 / -6533 / 7776.
+- The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.61, same ulcer as today): L6M 8732 / -26480 / -15412 / 12614 ; L3M 6517 / -19734 / -10528 / 12531. Compare with today: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903.
 (Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
 
 ## SIDE BY SIDE AT EQUAL RISK (all rows scaled to the smallest L6M ulcer = 4084; scale k shown; DRAWDOWN FIRST decides: scaled max DD, then worst week, then $/wk; never $/wk alone). DRY RUN / LEAD.
 
 | view | books (stack set) | k | L6M ulcer / maxDD / worst wk / mean (scaled to U*) | L3M scaled | prior years rule B 2023 / 2024 / 2025 (vs equal-risk reference) | persistence (>= 0.58) |
 |---|---|---|---|---|---|---|
-| Equal-risk rule (return per ulcer, drawdown-shape guard) | Ld3302219 + Lb328c0d1 + L1756b913 (`TL3_ALN_AS_STK9ff573ec`) | 0.86 | 4084 / -11920 / -6682 / 5565 | 3361 / -9107 / -6377 / 5626 | pending | pending |
+| Equal-risk rule (return per ulcer, drawdown-shape guard) | Ld3302219 + Lb328c0d1 + L1756b913 + L1716c153 (`TL3_ALN_AS_STKbb8fca90`) | 0.75 | 4084 / -12385 / -7208 / 5900 | 3048 / -9230 / -4924 / 5861 | pending | pending |
 | Budget 100% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a + L023ff9ff + L578701ed (`TL3_ALN_AS_STKa8320599`) | 0.57 | 4084 / -10822 / -7495 / 5384 | 3112 / -8395 / -6476 / 4504 | GREEN / RED / RED | 0.39 |
 | Budget 75% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a (`TL3_ALN_AS_STKe8db1557`) | 0.64 | 4084 / -13306 / -7874 / 4878 | 2963 / -7701 / -2939 / 4705 | RED / RED / RED | 0.33 |
 | Budget 50% of today's ulcer | L7c368a4f + L1716c153 (`TL3_ALN_AS_STKc26bfa12`) | 1.00 | 4084 / -14152 / -14152 / 3806 | 2765 / -8975 / -1892 / 3549 | RED / RED / RED | 0.30 |
@@ -50,15 +52,15 @@ SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a facto
 Drawdown-first winner among the views with prior years landed, no RED year and persistence >= 0.58: none decided yet (prior years pending or a gate failed).
 
 What each book is:
-- L023ff9ff: see ASIA_PASS_LIST.md
-- L16118e0a: volume bar 500 contracts [vol_500]; ~17 bars/hour; trigger trig_tape_delta / cvd_follow {"N": 10, "L": 100, "z": 1.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym30u; median s
-- L1716c153: see ASIA_PASS_LIST.md
-- L1756b913: see ASIA_PASS_LIST.md
-- L191904b3: time bar 2 min
-- L578701ed: see ASIA_PASS_LIST.md
+- L023ff9ff: tick-count bar 300 prints [tick_300]; ~18 bars/hour; trigger trig_manual_macd / sigcross_native {"f": 10, "s": 26, "g": 9}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym15u; median stop 120 pts / target 120 pts (events)
+- L16118e0a: volume bar 500 contracts [vol_500]; ~17 bars/hour; trigger trig_tape_delta / cvd_follow {"N": 10, "L": 100, "z": 1.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym30u; median stop 120 pts / target 120 pts (events)
+- L1716c153: time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
+- L1756b913: time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
+- L191904b3: time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_levels_vwap / reject {"tol": 0.5, "conf": "body"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym20u/10u
+- L578701ed: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
 - L7c368a4f: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
-- Lb328c0d1: time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target
-- Ld3302219: CUSUM-event bar 40 ticks
+- Lb328c0d1: time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events)
+- Ld3302219: CUSUM-event bar 40 ticks [cusum_40]; ~10 bars/hour; trigger trig_trend_libstack / wave_agree {"set": "fast"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
 
 (budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
 
