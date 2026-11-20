@@ -1,4 +1,4 @@
-# RERUN TABLE 01:00Z: universe 5776 | landed 5773 | running 0 | pending 3 | LOST-suspect 0
+# RERUN TABLE 01:09Z: universe 5794 | landed 5773 | running 0 | pending 21 | LOST-suspect 0
 
 LOST = 0
 
