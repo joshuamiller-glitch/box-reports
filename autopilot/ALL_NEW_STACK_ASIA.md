@@ -1,6 +1,6 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:23Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:28Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: final. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: done. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
@@ -55,7 +55,7 @@ SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a facto
 
 | view | books (stack set) | k | L6M ulcer / maxDD / worst wk / mean (scaled to U*) | L3M scaled | prior years rule B 2023 / 2024 / 2025 (vs equal-risk reference) | persistence (>= 0.58) |
 |---|---|---|---|---|---|---|
-| Equal-risk rule (return per ulcer, drawdown-shape guard) | Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153 (`TL3_ALN_AS_STK8610ba47`) | 0.93 | 4084 / -10900 / -10900 / 8630 | 4150 / -10900 / -10900 / 7431 | pending | pending |
+| Equal-risk rule (return per ulcer, drawdown-shape guard) | Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153 (`TL3_ALN_AS_STK8610ba47`) | 0.93 | 4084 / -10900 / -10900 / 8630 | 4150 / -10900 / -10900 / 7431 | RED / RED / RED | 0.44 |
 | Budget 100% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a + L023ff9ff + L578701ed (`TL3_ALN_AS_STKa8320599`) | 0.57 | 4084 / -10822 / -7495 / 5384 | 3112 / -8395 / -6476 / 4504 | GREEN / RED / RED | 0.39 |
 | Budget 75% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a (`TL3_ALN_AS_STKe8db1557`) | 0.64 | 4084 / -13306 / -7874 / 4878 | 2963 / -7701 / -2939 / 4705 | RED / RED / RED | 0.33 |
 | Budget 50% of today's ulcer | L7c368a4f + L1716c153 (`TL3_ALN_AS_STKc26bfa12`) | 1.00 | 4084 / -14152 / -14152 / 3806 | 2765 / -8975 / -1892 / 3549 | RED / RED / RED | 0.30 |
@@ -75,10 +75,28 @@ What each book is:
 - Ldfbf31b5: median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events)
 
 ## FINAL STACK (selected): TL3_ALN_AS_STK8610ba47  [Ldfbf31b5, L191904b3, L1756b913, L1716c153]
-prior years not landed yet (36 months queued)
+| window | stack ulcer / maxDD / worst wk / mean | reference x k=0.51 (today's Asia session scaled to the stack ulcer on L6M) | % worse (ulcer, maxDD, wk, mean lower) | rule B |
+|---|---|---|---|---|
+| L6M | 4411 / -11774 / -11774 / 9322 | 4411 / -12983 / -8187 / 7953 | 0% / -9% / 44% / -17% | RED |
+| L3M | 4483 / -11774 / -11774 / 8028 | 4958 / -12983 / -7454 / 6013 | -10% / -9% / 58% / -33% | RED |
+| Y2023 | 12180 / -24567 / -5602 / 351 | 10276 / -27600 / -11023 / 763 | 19% / -11% / -49% / 54% | RED |
+| Y2024 | 13506 / -29700 / -14539 / 249 | 10996 / -26707 / -12834 / 1931 | 23% / 11% / 13% / 87% | RED |
+| Y2025 | 21211 / -52797 / -13172 / 617 | 8490 / -26102 / -13324 / 2900 | 150% / 102% / -1% / 79% | RED |
+
+Persistence (share of 14-day blocks where the stack P&L >= the equal-risk-scaled reference): 0.44 over 93 blocks (gate 0.58). Months 2023-04..2026-10 minus 2025-11.
+
+30 multi-book date-shift controls (all streams shifted together): the real stack beats 28 of 30 on the drawdown-first criterion at L6M (ulcer only 30 of 30; L3M 16 of 30); gate >= 27.
 
 ## RUNNER-UP (best exact drop / swap variant by return per ulcer): drop:L1716c153 -> TL3_ALN_AS_STK020f28df
-prior years not landed yet
+| window | stack ulcer / maxDD / worst wk / mean | reference x k=0.47 (today's Asia session scaled to the stack ulcer on L6M) | % worse (ulcer, maxDD, wk, mean lower) | rule B |
+|---|---|---|---|---|
+| L6M | 4125 / -13177 / -10465 / 8516 | 4125 / -12141 / -7656 / 7437 | -0% / 9% / 37% / -14% | RED |
+| L3M | 3809 / -10465 / -10465 / 6970 | 4637 / -12141 / -6971 / 5624 | -18% / -14% / 50% / -24% | RED |
+| Y2023 | 12533 / -25750 / -7051 / 270 | 9610 / -25810 / -10308 / 713 | 30% / -0% / -32% / 62% | RED |
+| Y2024 | 10240 / -22255 / -12474 / 200 | 10283 / -24975 / -12002 / 1806 | -0% / -11% / 4% / 89% | RED |
+| Y2025 | 19871 / -43599 / -11793 / 325 | 7940 / -24409 / -12460 / 2712 | 150% / 79% / -5% / 88% | RED |
+
+Persistence (share of 14-day blocks where the stack P&L >= the equal-risk-scaled reference): 0.43 over 93 blocks (gate 0.58). Months 2023-04..2026-10 minus 2025-11.
 
 (budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
 
