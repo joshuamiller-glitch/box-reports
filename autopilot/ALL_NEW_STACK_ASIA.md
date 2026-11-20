@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:12Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:18Z.
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK_0346Z.md (the Asia stack Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153: RED in every window, persistence 0.44, three of four books fail their luck controls).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
@@ -18,7 +18,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
 
-Phase: moves. Pool used by this run: 19 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9).
+RESULT: EMPTY: no stack passes
+
+Phase: done. Pool used by this run: 19 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.

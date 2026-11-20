@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:14Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z). DRY RUN / LEAD. Updated 2026-11-20 04:17Z.
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
@@ -20,7 +20,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
 
-Phase: final. Pool used by this run: 1 books (L2176f633).
+RESULT: EMPTY: no stack passes
+
+Phase: done. Pool used by this run: 1 books (L2176f633).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
