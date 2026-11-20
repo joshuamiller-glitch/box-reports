@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 10:35Z 11-20 (t+597.6 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 10:51Z 11-20 (t+597.9 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 97% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-20T10:35:54Z. Box: CPU 98.6%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-20T10:51:07Z. Box: CPU 99.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-20T10:21Z
+## TREND (TL) update 2026-11-20T10:51Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T10:19:04Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T10:49:04Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -10938,3 +10938,7 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 10:49Z W-COMBO ALN-AUTO TL3_ALN_AS_L1f0124fa_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 24; L3M 4): LEAD-not-confirmed
 - 10:49Z W-COMBO ALN-AUTO TL3_ALN_AS_M1525fc29_BASE controls: real beats 26 of 30 (L6M drawdown-first; ulcer only 30; L3M 11): LEAD-not-confirmed
 - LEAD NOTE: DELIVERABLES page 2026-11-20 10:49Z: rows per table T1 30 / T2 23 / T3 36 / T4 13 / T5 bar swap 16; labels {'CONFIRMED': 1, 'BEST-AVAILABLE-NOT-PROVEN': 101, 'WEAK-BUT-POSITIVE': 51, 'LEAD': 7}; stale owners ['W-MB', 'W-MC', 'W-SWB', 'W-S1R']; no file yet ['W-BAR'] (autopilot/DS3_MAJOR_DELIVERABLES.md)
+- 10:50Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 15/21 (71%); Dallas 8/28 (29%); Frankfurt 26/96 (27%); Singapore 28/98 (29%) | EXACT-path slots by kind: TL3_LON_L*_RM7 6, TL3_NYE_B3a86f6cb_RK7 6, TL3_NYE_B86f26d14_RK7 6, TL3_NYE_B91c467b3_RK7 6, TL3_NYE_B6462ee07_RK7 6, TL3_NYE_Bbc9fa243_RK7 6, TL3_NYE_Bc5578296_RK7 6, TL3_NYE_B1373a6ec_RK7 6; fast path ON for the kinds in FAST_KINDS.txt (107 kinds); details autopilot/FAST_LADDER.md section 7.
+- 10:50Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 2136 / 3 h 5276 (NY AM is behind Asia in the queue by order); fleet 10310.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 2603, 'looked': 3052, 'B': 5, 'C': 9}; ladder queue 263083 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L014ea865 ; L01811caa ; L09ae66e3 ; L0bd23639 ; L0c6c0074 ; L0f097450 ; L11631333 ; L13e165bc ; L1523dbb2 ; L1532bfaf ; L1fdcb7e2 ; L21f079b6 ; L301ff410 ; L34d66961 ; L3701b464 ; L4339355a ; L440aa51b ; L4560e541 ; L4899a551 ; L4ed22711 ; L4fd10b76 ; L571196bc ; L59b66d32 ; L5a49e86d ; L5c734a00 ; . EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 10:54Z W-COMBO ALN-AUTO TL3_ALN_AS_L352e2672_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 27; L3M 11): LEAD-not-confirmed
+- 10:54Z W-COMBO ALN-AUTO TL3_ALN_AS_L4c9a1a50_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 28; L3M 12): LEAD-not-confirmed
