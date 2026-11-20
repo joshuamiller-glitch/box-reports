@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:24Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:32Z.
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYAM_OWN_CHECKS.md.
 
@@ -40,7 +40,7 @@ STOPPED at 0 books: the best candidate that passes the add rule is blocked by th
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 13:15Z UTC; pool 7 books): EMPTY: no stack passes
 
-Phase: moves. Pool used by this run: 8 books (B2010fec9, B6f77f23d, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
+Phase: final. Pool used by this run: 8 books (B2010fec9, B6f77f23d, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.

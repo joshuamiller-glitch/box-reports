@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-20 13:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-20 13:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-20 13:15Z | WARNING serverC below 85% busy for 196 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-20 13:30Z | WARNING serverC below 85% busy for 199 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-20 13:15Z
+2026-11-20 13:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-20 13:15Z | WARNING serverC below 85% busy for 196
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 91.0 GB; live reservations 6 (6 GB); workers 19, of which TP-adopted 19 (RSS 27.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 58.15, 59.45, 60.24
-  by tag: NYR quota 12 running 13 hungry False RSS 16.8 GB PSS 14.0 GB; LON quota 12 running 6 hungry True RSS 10.4 GB PSS 8.9 GB
-  cell-months finished last hour (DONE markers): 10005
-  top running jobs: TL3_NYE_L8cc60d8e_RK7CT77p (x12);TL3_NYE_L8cc60d8e_RK7CT70p (x12);TL3_LON_M9fe27587_RM7 (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 93.09, 97.03, 99.53|/dev/md2         28T  2.7T   26T  10% /mnt/l2|46|
+Server 1 (this box): MemAvail 98.1 GB; live reservations 4 (4 GB); workers 17, of which TP-adopted 17 (RSS 25.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 51.43, 55.96, 58.08
+  by tag: NYR quota 12 running 11 hungry True RSS 14.5 GB PSS 11.8 GB; LON quota 12 running 6 hungry True RSS 11.4 GB PSS 9.6 GB
+  cell-months finished last hour (DONE markers): 9588
+  top running jobs: TL3_NYE_L8cc60d8e_RK7CT77m (x12);TL3_NYE_L8cc60d8e_RK7CT84m (x10);TL3_LON_Md27fa1b0_RM7 (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 99.16, 98.92, 98.72|/dev/md2         28T  2.7T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 93.09, 97.03, 99.53|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261120_0851Z_three-things-owed.md 20261120_0924Z_put-idle-value-slots-on-B-first-looks-and-fast-path.md 20261120_0957Z_fast-path-B-kind-data-only.md 20261120_1013Z_CORRECTION-order-0957Z-was-not-typed-by-Josh.md 20261120_1246Z_park-7-dead-lines-London-must-start.md
+20261120_0924Z_put-idle-value-slots-on-B-first-looks-and-fast-path.md 20261120_0957Z_fast-path-B-kind-data-only.md 20261120_1013Z_CORRECTION-order-0957Z-was-not-typed-by-Josh.md 20261120_1246Z_park-7-dead-lines-London-must-start.md 20261120_1331Z_Josh-decisions-own-checks-StackA-max-boxes-Asia-next.md
+- lead 13:30Z INBOX 20261120_1331Z_Josh-decisions-own-checks-StackA-max-boxes-Asia-next.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs

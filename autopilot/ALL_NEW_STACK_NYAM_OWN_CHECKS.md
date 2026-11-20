@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:23Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:31Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -33,6 +33,12 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | B2010fec9 | `TL3_ALN_NY_B2010fec9_BASE` | 3809 / -10082 / -5422 / 2338 | 4842 / -10082 / -5422 / 1387 | 6908 / -15139 / -6304 / 400 AMBER | 6541 / -16176 / -7049 / 345 RED | 10763 / -23200 / -8968 / 218 RED | 0.51 | 8 |
+
+Selected books in order (plain words): 
+- B2010fec9: volume bar 6000 contracts [vol_6000]; ~17 bars/hour; trigger trig_levels_opens / retest_native {"M": 10, "tol": 0.0}; SIDE: BOTH SIDES; bracket plain60/60
+
+EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.45 to the stack's drawdown: L6M 3809 / -8109 / -3241 / 378 ; L3M 2520 / -5546 / -3241 / 705. The stack: L6M 3809 / -10082 / -5422 / 2338 ; L3M 4842 / -10082 / -5422 / 1387. Persistence of the stack vs that reference: 0.51; rule B per prior year: AMBER / RED / RED.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 13:23Z UTC; pool 7 books): B2010fec9 + L063a587d
 
