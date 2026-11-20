@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 05:47Z 11-20 (t+592.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 06:02Z 11-20 (t+593.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 98% min 93% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-20T05:47:18Z. Box: CPU 99.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 93% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-20T06:02:27Z. Box: CPU 96.2%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -10337,3 +10337,19 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 05:59Z W-P2A stale watch: stale_cells.json 636 cells, 0 new listed cells excluded []
 2026-11-20T05:59:22Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 06:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 60 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 262405
+- 06:00Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 10, Dallas engine DONE/30min 383 vs baseline 404 (guard: cut if < 95% twice).
+- 06:00Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 22 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 06:00Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T03  box1  11947  Dallas  1062  A  2012  B  2263  tot  17284 ;  11-20T04  box1  13642  Dallas  1163  A  2156  B  2487  tot  19448 ;  11-20T05  box1  852  Dallas  71  A  142  B  177  tot  1242 ; 
+- 06:00Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 06:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 2026-11-20T06:02Z W-RU DS3_RANGEUSE.md rebuilt: 74 cells scored through L6M; 6 (cell,scope) pass the tolerant gate with a drawdown cut in recent AND older windows (leads, before placebo/null); placebo/null/gain-of-(b,(c) over (a) below. No PASS claim.; next rebuild in 3 h
+- 06:02Z W-COMBO RESELECT-NYAM RE-RUN WITH 3 pool books (was 2)
+- 06:02Z W-COMBO RESELECT-NYAM FINAL stack ['L063a587d']: stack controls beaten (28, 17, 30) (L6M drawdown-first / L3M / ulcer-only)
+- 06:02Z LEAD NOTE: 06:02Z quiet; inbox empty, freeze holding.
+- 06:03Z W-COMBO RESELECT-ASIA RESULT: no stack could be built from the pool of 23 books (gate blocks the first step or the pool is empty)
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_NY_L6547965c_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_NY_Lafe83250_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.63): 30 date-shift controls queued (180 set-months)
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_NY_L5e9c702b_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 28; L3M 4): LEAD-not-confirmed
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_AS_La6fc9235_BASE controls: real beats 14 of 30 (L6M drawdown-first; ulcer only 27; L3M 13): LEAD-not-confirmed
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_AS_Lc0cdd252_BASE controls: real beats 19 of 30 (L6M drawdown-first; ulcer only 27; L3M 21): LEAD-not-confirmed
+- 06:03Z W-COMBO ALN-AUTO TL3_ALN_NY_L368915c4_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 26; L3M 4): LEAD-not-confirmed
+- (wall 06:05Z) W-MF (part F) hourly: MF queue pending lines 585, set-months DONE 1115, identity {'202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', 'mf_inject 202610': 'PASS (691 vs 691 trades, net 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)', 'mf_inject 202504': 'PASS (637 vs 637 trades, net 41239.76 vs 41239.76)'}; page DS3_MAJOR_F_NEWBOOKS.md refreshed by loop (pid 2384092, stop: touch /mnt/l2/l2vast/_major_f/STOP)
