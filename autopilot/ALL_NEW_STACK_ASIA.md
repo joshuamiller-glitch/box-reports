@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:19Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:24Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
 Phase: select. Candidates tried: 120 (step 1 all; later steps the scorer-ordered top 15 exact).
 
@@ -41,8 +41,8 @@ SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a facto
 | view | books (stack set) | k | L6M ulcer / maxDD / worst wk / mean (scaled to U*) | L3M scaled | prior years rule B 2023 / 2024 / 2025 (vs equal-risk reference) | persistence (>= 0.58) |
 |---|---|---|---|---|---|---|
 | Equal-risk rule (return per ulcer, drawdown-shape guard) | Ld3302219 + Lb328c0d1 + L1756b913 (`TL3_ALN_AS_STK9ff573ec`) | 0.86 | 4084 / -11920 / -6682 / 5565 | 3361 / -9107 / -6377 / 5626 | pending | pending |
-| Budget 100% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a + L023ff9ff (`TL3_ALN_AS_STKd3540163`) | 0.50 | 4084 / -11612 / -7763 / 4302 | 1819 / -5538 / -4064 / 4511 | pending | pending |
-| Budget 75% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a (`TL3_ALN_AS_STKe8db1557`) | 0.64 | 4084 / -13306 / -7874 / 4878 | 2963 / -7701 / -2939 / 4705 | pending | pending |
+| Budget 100% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a + L023ff9ff + L578701ed (`TL3_ALN_AS_STKa8320599`) | 0.57 | 4084 / -10822 / -7495 / 5384 | 3112 / -8395 / -6476 / 4504 | pending | pending |
+| Budget 75% of today's ulcer | L7c368a4f + L191904b3 + L16118e0a (`TL3_ALN_AS_STKe8db1557`) | 0.64 | 4084 / -13306 / -7874 / 4878 | 2963 / -7701 / -2939 / 4705 | RED / RED / RED | 0.33 |
 | Budget 50% of today's ulcer | L7c368a4f + L1716c153 (`TL3_ALN_AS_STKc26bfa12`) | 1.00 | 4084 / -14152 / -14152 / 3806 | 2765 / -8975 / -1892 / 3549 | pending | pending |
 | TODAY, as run (JL3 Asia session, its own lots) | five live Asia books | 1.00 (ulcer 8732) | 8732 / -25697 / -16205 / 15741 | 9814 / -25697 / -14754 / 11903 | reference | reference |
 | TODAY scaled to the same risk (lots x 0.47) | five live Asia books | 0.47 | 4084 / -12019 / -7579 / 7362 | 4590 / -12019 / -6901 / 5567 | reference | reference |
@@ -55,6 +55,7 @@ What each book is:
 - L1716c153: see ASIA_PASS_LIST.md
 - L1756b913: see ASIA_PASS_LIST.md
 - L191904b3: time bar 2 min
+- L578701ed: see ASIA_PASS_LIST.md
 - L7c368a4f: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
 - Lb328c0d1: time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target
 - Ld3302219: CUSUM-event bar 40 ticks
