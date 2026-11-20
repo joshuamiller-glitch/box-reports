@@ -10419,3 +10419,15 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 06:34Z W-COMBO ALN-AUTO TL3_ALN_NY_La4a78dae_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 18; L3M 8): LEAD-not-confirmed
 - 06:34Z W-COMBO ALN-AUTO TL3_ALN_AS_L3faac8df_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 30; L3M 17): PASS: eligible for EX / P2 sets
 - 06:34Z W-COMBO ALN-AUTO TL3_ALN_AS_L6ab791e1_BASE controls: real beats 1 of 30 (L6M drawdown-first; ulcer only 22; L3M 18): LEAD-not-confirmed
+- 06:35Z W-COMBO RESELECT-NYAM RE-RUN WITH 5 pool books (was 4)
+- (wall 06:35Z) W-PM status: load1 54.23, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795156437; P5 page done, P8 grid np_m15_x10_y15 2898
+- 06:36Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 06:36Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 0; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 11838 sm/h, engine queue 225525 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 0/h = nan h => n/a; Asia+NY AM at the fleet rate = 19 h => Nov 21 01:39Z. D8_CANDIDATES Asia rows listed 9887.
+- 2026-11-20T06:39Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_AS_L1f488f00_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- (wall 06:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 66.86 60.34 56.74, epoch 1795156779
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_AS_L27ba46c6_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_NY_L02a2767a_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.59): 30 date-shift controls queued (180 set-months)
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_NY_L1c771af9_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.71): 30 date-shift controls queued (180 set-months)
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_NY_Lb44a3e99_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 27; L3M 6): LEAD-not-confirmed
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_NY_Lafe83250_BASE controls: real beats 10 of 30 (L6M drawdown-first; ulcer only 18; L3M 4): LEAD-not-confirmed
+- 06:39Z W-COMBO ALN-AUTO TL3_ALN_NY_L39ac1f11_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 21; L3M 21): LEAD-not-confirmed
