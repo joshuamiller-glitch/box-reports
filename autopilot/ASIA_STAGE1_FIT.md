@@ -1,4 +1,4 @@
-# ASIA_STAGE1_FIT - per-book fit of the Asia own-checks pool (W-LAYERS, refreshed 2026-11-20 17:39Z)
+# ASIA_STAGE1_FIT - per-book fit of the Asia own-checks pool (W-LAYERS, refreshed 2026-11-20 17:44Z)
 
 Method (Josh's three-stage fit, order 1351Z): each book ALONE on its all-new base (account layers ON); S1 screen of 56 settings one at a time (bracket size, take, near-target latch, shave, lock, loss cut, context cut, state-cut cell, picks) x last 6 months; ONE pick per group (bracket / loss / lock / take), drawdown first with the 15% guard; every pick checked on the prior years (2023 / 2024 / 2025 / 2026 colours vs the unlayered book) and on 30 LUCK CONTROLS (the same picks on the book's own date-shifted control sets: the real gain must beat >= 27 of 30); the search-aware null (same screen on random-entry books) is NOT built yet ('null pending'). A book whose picks fail the luck controls gets NO fitted settings: it keeps today's (stand-in) settings. Level 0 / reference row = the book's own settings.
 
