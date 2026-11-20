@@ -49,6 +49,11 @@ Box-1 crontab backup: autopilot/crontab.bak_proof_2304 (the file before my first
 | lead alive / restarted | `wake_watchdog` L1, `wd_levels` L2/L3 (armed) |
 Needs a human, NOT done overnight: pass-2 joint runs (hooks W-P2B), lifting the held exit lines on live-book bases, any new order, any change of standard, any spend.
 
+## Updates 01:30Z (W-GRIDOPS)
+- Refill target changed to hours to 16:00Z + 2.0 h (min 12, max 18): `refill_target.py` prints 16.8 at 01:30Z, so the queue is topped up to cover 16:00Z + 2 h at the measured rate. Backup refill_target.py.bak_0130; plumbing_syntax_check passed (218 files, 0 bad).
+- `_exiteng/pending.txt` (564 all-new-base exit lines) was in no queue list; it is now in QUEUES.txt and launching since 01:14Z (this is the exit-runs-on-the-all-new-base source in the overnight table).
+- Queue-hours one-shots at 02:00Z and 03:30Z run `queue_hours_table.py` (measured rate of the last hour).
+
 ## Gaps still open at this write (honest list)
 1. D5 ran on the test hook, not on a naturally occurring dip (see row b).
 2. A host lost for real (reboot, network) is untested: only the code paths were drilled one by one (supervisor restart, lease sweep dry run, mux repair).
