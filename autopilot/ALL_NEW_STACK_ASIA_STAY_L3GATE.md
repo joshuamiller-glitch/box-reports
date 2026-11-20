@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 22:44Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 22:49Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -10,6 +10,20 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 **D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books waiting for their _CANC base set (not in the pool until it lands, their old-split numbers cannot enter the D8 spec): 109; OUT of the D8 pool as tested: Lfb608c7b. Pool and gates below use the D8 base of each book.
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
+
+## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
+
+- L6M $2456 per wk (positive), L3M $2434 per wk (positive); prior years $/wk: 2023 203 (positive), 2024 654 (positive), 2025 528 (positive); OWN persistence (share of positive 14-day blocks) 0.62 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+
+## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.31 so that the L6M ulcer matches)
+
+| window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
+|---|---|---|---|
+| L6M | 4075 / -11123 / -7409 / 2456 | 4075 / -10016 / -6556 / 1754 | +702 |
+| L3M | 2028 / -5118 / -3617 / 2434 | 3790 / -8664 / -5531 / 990 | +1444 |
+| Y2023 | 4013 / -9990 / -2484 / 203 | 6344 / -10375 / -2535 / -50 | +253 |
+| Y2024 | 4626 / -11465 / -2843 / 654 | 2886 / -7965 / -2511 / 430 | +224 |
+| Y2025 | 5940 / -14312 / -10102 / 528 | 6050 / -11979 / -4555 / 395 | +133 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 482 books with a BASE set; 350 have all 42 months landed = counted below; 22 still waiting for prior years)
 
@@ -40,6 +54,11 @@ Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar],
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 23 |
+
+Selected books in order (plain words): 
+- L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
+   fitted: none proposed yet (stage 1 not done for this book)
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:44Z UTC; pool 22 books): L7c368a4f
 
@@ -47,6 +66,8 @@ Phase: run. Pool used by this run: 23 books (L15f14deb, L1756b913, L1edb9fab, L2
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
+
+EQUAL-RISK LINE (this stack vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off)): today's Asia session scaled DOWN by k = 0.31 to the stack's drawdown: L6M 4075 / -10016 / -6556 / 1754 ; L3M 3790 / -8664 / -5531 / 990. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.53; rule B per prior year: GREEN / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
