@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:18Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:34Z.
 **YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -36,6 +36,13 @@ Pool books vs FITTED D7 AS RUN (reference only, not the yardstick) (equal risk, 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 RED | 4626 / -11465 / -2843 / 654 RED | 5940 / -14312 / -10102 / 528 RED | 0.32 | 15 |
+
+Selected books in order (plain words): 
+- L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
+   fitted: none proposed yet (stage 1 not done for this book)
+
+EQUAL-RISK LINE (this stack vs FITTED D7 AS RUN (reference only, not the yardstick)): today's Asia session scaled DOWN by k = 0.47 to the stack's drawdown: L6M 4075 / -11994 / -7564 / 7347 ; L3M 4580 / -11994 / -6886 / 5555. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.32; rule B per prior year: RED / RED / RED.
 
 Phase: run. Pool used by this run: 15 books (L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
 

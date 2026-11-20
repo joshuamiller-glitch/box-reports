@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:17Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:34Z.
 **YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
