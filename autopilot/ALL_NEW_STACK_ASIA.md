@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 20:09Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 20:13Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -25,7 +25,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | Y2024 | 6402 / -19780 / -3718 / 549 | 3168 / -8742 / -2756 / 472 | +77 |
 | Y2025 | 5890 / -17523 / -8771 / 1307 | 6641 / -13148 / -5000 / 433 | +874 |
 
-## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was Ldcdb0b6e + L7f41b347 + L11152f7a + L1756b913 + M7423c0d9 (swap / drop steps: none); WITH the guard this page's stack is Lb68a132d + L578701ed.  Moves blocked by the guard: swap:L7c368a4f>L1756b913 (max DD +32%, worst wk +4% at equal risk); swap:L7c368a4f>Lcbc8a7ec (max DD +26%, worst wk -26% at equal risk)
+## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was Ldcdb0b6e + L7f41b347 + L11152f7a + L1756b913 + M7423c0d9 (swap / drop steps: none); WITH the guard this page's stack is Lb68a132d + L578701ed.  Moves blocked by the guard: swap:Lb68a132d>L1756b913 (max DD +25%, worst wk +34% at equal risk); swap:Lb68a132d>Lcbc8a7ec (max DD +20%, worst wk -4% at equal risk); swap:L578701ed>L7f41b347 (max DD +22%, worst wk +42% at equal risk); swap:L578701ed>Lcbc8a7ec (max DD +30%, worst wk -14% at equal risk)
 
 ## TWO ASIA STACKS SIDE BY SIDE (research comparison; Josh picks): OWN-CHECKS stack vs STAYING-POWER stack (add rule also requires the stack's persistence not to fall and the worst prior-year ulcer <= 2x the L6M ulcer)
 
@@ -74,7 +74,7 @@ Selected books in order (plain words):
 
 STOPPED at 2 books: no candidate passes the add rule.
 
-Phase: moves. Pool used by this run: 15 books (L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
+Phase: final. Pool used by this run: 15 books (L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
