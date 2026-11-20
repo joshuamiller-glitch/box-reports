@@ -1,4 +1,4 @@
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-20T01:47:38Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-20T02:15:02Z)
 
 Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 3197; WITHOUT a first look: 0** (0 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 2511, 'B': 231, 'out': 394, 'out (RED B)': 2}.
 
@@ -15,4 +15,4 @@ Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side
 
 **Cells already OUT at an early rung with later-rung lines still queued: 0 cells, 0 lines** (these are wasted work for W-DEDUP; the 8 passers and the 59-cell stage-C reset are NOT among them if the next line says 0).
 
-Rate now: Asia landed last hour 11 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
+Rate now: Asia landed last hour 0 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
