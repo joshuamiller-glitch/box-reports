@@ -1,17 +1,17 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:43Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 05:47Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 101 books with a BASE set; 99 have all 42 months landed = counted below; 2 still waiting for prior years)
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 104 books with a BASE set; 100 have all 42 months landed = counted below; 4 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 93 of 99 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 87 of 99 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 71 of 99 |
+| (a) positive $/wk in L6M and L3M | 94 of 100 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 88 of 100 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 71 of 100 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 40 books) | 2 of 40 |
-| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 23 of 99 |
-| a + b | 83 |
+| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 23 of 100 |
+| a + b | 84 |
 | a + b + c | 65 |
 | a + b + c + d | 2 : L063a587d, L2176f633 |
 | a + b + c + d + e | 0 : none |
@@ -24,7 +24,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **2** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 102 of 101 in the universe; failed the prior-year positivity / persistence / controls: 70; waiting for prior years: 2; passed (a)+(b), controls still running: 27.
+Books with all months landed: 100 of 104 in the universe; failed the prior-year positivity / persistence / controls: 71; waiting for prior years: 4; passed (a)+(b), controls still running: 27.
 Pool books: L063a587d, L2176f633
 
 **Plainly: only 2 book(s) pass everything alone in NY AM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
@@ -37,7 +37,11 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L063a587d | `TL3_ALN_NY_L063a587d_BASE` | 3359 / -7685 / -4139 / 1380 | 2772 / -6969 / -4139 / 2065 | 5689 / -14742 / -6769 / 503 RED | 11580 / -25598 / -10743 / 49 RED | 5525 / -15325 / -6938 / 878 AMBER | 0.51 | 2 |
 
-Phase: run. Pool used by this run: 2 books (L063a587d, L2176f633).
+STOPPED at 1 books: no candidate passes the add rule.
+
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 05:32Z UTC; pool 1 books): L2176f633
+
+Phase: moves. Pool used by this run: 2 books (L063a587d, L2176f633).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
