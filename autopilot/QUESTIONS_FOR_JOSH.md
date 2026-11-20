@@ -1,5 +1,10 @@
 # QUESTIONS FOR JOSH (newest at the top; the lead applies the safe default and carries on; written by the lead)
 
+## 2026-11-20 08:10Z (NY AM first looks are STUCK on four months, not slow: fake-fill guard on holiday sessions)
+Plain words: 606 set-months in 237 NY AM first-look cells failed six times and gave up (months 2026-05, 06, 07, 09). The fake-fill guard rejects a trade whose time-based exit lands more than 3 hours after the last price tick (example: entry 2026-06-19 16:28Z, exit 20:00:01Z). Suspected cause: US holiday / early-close sessions (Memorial Day, Juneteenth, 3 July, Labor Day), where the tape stops early but a time exit still fires. Not confirmed yet (W-NYENG is checking the tape). Effect: those cells cannot complete their last-6-months first look, so they cannot enter the NY AM pool (42-month gate), and London does not switch on by right.
+Options: (A) time exit clamps to the last tick / session close on early-close days (an engine standard change: needs prereg, identity re-run, your OK); (B) exclude those holiday sessions from the NY AM first-look universe for all books; (C) leave stuck.
+SAFE DEFAULT APPLIED: C (nothing changed; the guard is a standard). The numbers for these cells stay incomplete until you choose.
+
 ## 2026-11-20 05:47Z (first-look share on C and D: NY AM first looks finish ~08:35Z, could be ~07:15Z)
 Plain words: Amsterdam (C) and new Dallas (D) run "follow-ups first" since 00:00Z (rule: more than 300 all-new set-months leased in 30 minutes). First looks there get only leftover slots, so overall first looks get 37% of running slots, not 70%. NY AM first looks (10.1k lines, each ~190 s) therefore finish about 08:35Z and the final NY AM selection about 09:30-10:30Z.
 Options: (A, recommended) switch C/D follow-ups-first off while NY AM first looks are unfinished: first looks reach ~70% of slots, finish ~07:15Z; all-new prior years drop from ~7.7k to ~4k set-months/h (still above the 2,000 floor). Needs share_ctl.py to stop re-creating the flags. (B) leave as is.
