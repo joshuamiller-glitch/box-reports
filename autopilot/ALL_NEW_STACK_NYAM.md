@@ -1,16 +1,20 @@
-# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 03:44Z.
+# ALL-NEW STACK, NY AM (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 03:49Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: select. Candidates tried: 83 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: select. Candidates tried: 113 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
 | 1 | L39470318 | `TL3_ALN_NY_L39470318_BASE` | 3209 / -8642 / -8588 / 1827 | 3731 / -8642 / -8588 / 1462 | 0.57 | L39470318 / L488784d8 | 53 |
 | 2 | L7cc56d99 | `TL3_ALN_NY_STK0f902785` | 4369 / -12320 / -10915 / 4232 | 4035 / -11656 / -4197 / 3628 | 0.97 | Lddba3fab / Lb447a16d | 15 |
+| 3 | L488784d8 | `TL3_ALN_NY_STKbb21126c` | 4093 / -11817 / -7445 / 5193 | 3846 / -11587 / -3825 / 4167 | 1.27 | L12e67af0 / L488784d8 | 15 |
+| 4 | Lddba3fab | `TL3_ALN_NY_STK0112c118` | 4043 / -13046 / -6503 / 6465 | 3748 / -12166 / -2968 / 5339 | 1.60 | Lddba3fab / Lddba3fab | 15 |
 
 Selected books in order (what each is, plain words):
 
 - L39470318 (W-BEST score 0.646, L6M wk 1531.0): volume bar 750 contracts [vol_750]; ~131 bars/hour; trigger trig_levels_profile_va / retest {"M": 10, "tol": 0.5}; SIDE: BOTH SIDES; bracket plain60/60. Alone on the all-new base: 3209 / -8642 / -8588 / 1827. LUCK CONTROL: beats 18 of 30 shifted controls (drawdown-first), 30 of 30 on ulcer alone, L3M 5 of 30 - FLAG: FAILS (< 27 of 30), kept for Josh to decide. prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.52.
 - L7cc56d99 (W-BEST score 0.944, L6M wk 2527.4): line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events). Alone on the all-new base: 4790 / -13326 / -7749 / 2405. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years: pending.
+- L488784d8 (W-BEST score 0.614, L6M wk 1198.4): swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 2839 / -7243 / -3569 / 961. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years: pending.
+- Lddba3fab (W-BEST score 0.467, L6M wk 1479.3): dollar-run bar 2000 [drb_2000]; ~40 bars/hour; trigger trig_book_ice / fade_sm {"thr": 2, "sm": 3}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4901 / -11294 / -8806 / 1272. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / AMBER, persistence 0.51.
 
 RE-RUN WITH NEW BOOKS at 03:33Z: new pool members ['L3459244a', 'Lf1083387', 'L5606297d', 'Lf6f0cc5f']
 
@@ -36,11 +40,37 @@ Reference line, today, as run: JL3 NY AM-session trades only (the five live NY A
 In plain words: today's live NY AM session earns $838 per week on an ulcer of 8444 over the last 6 months (max DD -17976, worst week -7184); last 3 months $1563 per week on ulcer 5586.
 
 SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
-- Today's NY AM session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.52, i.e. same ulcer as the stack): L6M 4369 / -9302 / -3717 / 434 ; L3M 2891 / -6361 / -3717 / 809. Compare with the stack: L6M 4369 / -12320 / -10915 / 4232 ; L3M 4035 / -11656 / -4197 / 3628.
-- The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.93, same ulcer as today): L6M 8444 / -23808 / -21094 / 8178 ; L3M 7798 / -22526 / -8110 / 7012. Compare with today: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563.
+- Today's NY AM session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.48, i.e. same ulcer as the stack): L6M 4043 / -8608 / -3440 / 401 ; L3M 2675 / -5887 / -3440 / 748. Compare with the stack: L6M 4043 / -13046 / -6503 / 6465 ; L3M 3748 / -12166 / -2968 / 5339.
+- The all-new stack scaled to today's drawdown (stack lots scaled by k = 2.09, same ulcer as today): L6M 8444 / -27244 / -13580 / 13501 ; L3M 7826 / -25407 / -6199 / 11150. Compare with today: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563.
 (Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
 
-(budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
+## EQUAL-RISK (BUDGET) SELECTION: maximise $/wk inside an ulcer budget = 100% / 75% / 50% of today's Asia-session ulcer (8732, L6M); same pool, exact runs, stop when no candidate adds >= 1% $/wk. DRY RUN / LEAD.
+
+**Budget 100% (ulcer <= 8732)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L191904b3 | `TL3_ALN_AS_STKb1480774` | 4893 / -16315 / -5870 / 5444 | 3786 / -12900 / -5870 / 5322 |
+| 3 | L16118e0a | `TL3_ALN_AS_STKe8db1557` | 6431 / -20953 / -12400 / 7681 | 4666 / -12127 / -4628 / 7409 |
+| 4 | L023ff9ff | `TL3_ALN_AS_STKd3540163` | 8236 / -23419 / -15656 / 8676 | 3668 / -11169 / -8196 / 9097 |
+| 5 | L578701ed | `TL3_ALN_AS_STKa8320599` | 7173 / -19009 / -13165 / 9457 | 5466 / -14746 / -11376 / 7912 |
+
+**Budget 75% (ulcer <= 6549)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L191904b3 | `TL3_ALN_AS_STKb1480774` | 4893 / -16315 / -5870 / 5444 | 3786 / -12900 / -5870 / 5322 |
+| 3 | L16118e0a | `TL3_ALN_AS_STKe8db1557` | 6431 / -20953 / -12400 / 7681 | 4666 / -12127 / -4628 / 7409 |
+
+**Budget 50% (ulcer <= 4366)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L1716c153 | `TL3_ALN_AS_STKc26bfa12` | 4084 / -14152 / -14152 / 3806 | 2765 / -8975 / -1892 / 3549 |
+
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.

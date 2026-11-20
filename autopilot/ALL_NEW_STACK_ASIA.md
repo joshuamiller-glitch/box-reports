@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:28Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 03:45Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
 Phase: done. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
 
@@ -13,12 +13,12 @@ Phase: done. Candidates tried: 135 (step 1 all; later steps the scorer-ordered t
 
 Selected books in order (what each is, plain words):
 
-- Ldfbf31b5 (W-BEST score 0.662, L6M wk 2777.5): median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 4121 / -14498 / -7888 / 2330. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.29.
-- L191904b3 (W-BEST score 0.609, L6M wk 2694.2): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_levels_vwap / reject {"tol": 0.5, "conf": "body"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym20u/10u. Alone on the all-new base: 5208 / -18722 / -13963 / 2266. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.31.
+- Ldfbf31b5 (W-BEST score 0.662, L6M wk 2777.5): median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 4121 / -14498 / -7888 / 2330. LUCK CONTROL: beats 25 of 30 shifted controls (drawdown-first), 29 of 30 on ulcer alone, L3M 12 of 30 - FLAG: FAILS (< 27 of 30), kept for Josh to decide. prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.29.
+- L191904b3 (W-BEST score 0.609, L6M wk 2694.2): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_levels_vwap / reject {"tol": 0.5, "conf": "body"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym20u/10u. Alone on the all-new base: 5208 / -18722 / -13963 / 2266. LUCK CONTROL: beats 11 of 30 shifted controls (drawdown-first), 30 of 30 on ulcer alone, L3M 22 of 30 - FLAG: FAILS (< 27 of 30), kept for Josh to decide. prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.31.
 - L1756b913 (W-BEST score 0.379, L6M wk 1967.7): time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4678 / -12916 / -5830 / 2107. LUCK CONTROL: beats 30 of 30 shifted controls (drawdown-first), 30 of 30 on ulcer alone, L3M 23 of 30 - passes (>= 27). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.30.
-- L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.28.
-- Lb328c0d1 [SWAPPED OUT] (W-BEST score 0.549, L6M wk 1802.6): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3417 / -9887 / -6800 / 1633. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.33.
-- Ld3302219 [SWAPPED OUT] (W-BEST score 0.680, L6M wk 2196.2): CUSUM-event bar 40 ticks [cusum_40]; ~10 bars/hour; trigger trig_trend_libstack / wave_agree {"set": "fast"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3234 / -9245 / -8932 / 2119. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.35.
+- L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415. LUCK CONTROL: beats 1 of 30 shifted controls (drawdown-first), 26 of 30 on ulcer alone, L3M 0 of 30 - FLAG: FAILS (< 27 of 30), kept for Josh to decide. prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.28.
+- Lb328c0d1 [SWAPPED OUT] (W-BEST score 0.549, L6M wk 1802.6): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3417 / -9887 / -6800 / 1633. LUCK CONTROL: beats 29 of 30 shifted controls (drawdown-first), 30 of 30 on ulcer alone, L3M 26 of 30 - passes (>= 27). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.33.
+- Ld3302219 [SWAPPED OUT] (W-BEST score 0.680, L6M wk 2196.2): CUSUM-event bar 40 ticks [cusum_40]; ~10 bars/hour; trigger trig_trend_libstack / wave_agree {"set": "fast"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3234 / -9245 / -8932 / 2119. LUCK CONTROL: beats 19 of 30 shifted controls (drawdown-first), 29 of 30 on ulcer alone, L3M 9 of 30 - FLAG: FAILS (< 27 of 30), kept for Josh to decide. prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.35.
 
 STOPPED at 4 books (the add-stop rule fired: no candidate qualified); drop / swap moves, then prior years, persistence, runner-up and the 30 stack controls.
 
@@ -98,7 +98,33 @@ Persistence (share of 14-day blocks where the stack P&L >= the equal-risk-scaled
 
 Persistence (share of 14-day blocks where the stack P&L >= the equal-risk-scaled reference): 0.43 over 93 blocks (gate 0.58). Months 2023-04..2026-10 minus 2025-11.
 
-(budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
+## EQUAL-RISK (BUDGET) SELECTION: maximise $/wk inside an ulcer budget = 100% / 75% / 50% of today's Asia-session ulcer (8732, L6M); same pool, exact runs, stop when no candidate adds >= 1% $/wk. DRY RUN / LEAD.
+
+**Budget 100% (ulcer <= 8732)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L191904b3 | `TL3_ALN_AS_STKb1480774` | 4893 / -16315 / -5870 / 5444 | 3786 / -12900 / -5870 / 5322 |
+| 3 | L16118e0a | `TL3_ALN_AS_STKe8db1557` | 6431 / -20953 / -12400 / 7681 | 4666 / -12127 / -4628 / 7409 |
+| 4 | L023ff9ff | `TL3_ALN_AS_STKd3540163` | 8236 / -23419 / -15656 / 8676 | 3668 / -11169 / -8196 / 9097 |
+| 5 | L578701ed | `TL3_ALN_AS_STKa8320599` | 7173 / -19009 / -13165 / 9457 | 5466 / -14746 / -11376 / 7912 |
+
+**Budget 75% (ulcer <= 6549)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L191904b3 | `TL3_ALN_AS_STKb1480774` | 4893 / -16315 / -5870 / 5444 | 3786 / -12900 / -5870 / 5322 |
+| 3 | L16118e0a | `TL3_ALN_AS_STKe8db1557` | 6431 / -20953 / -12400 / 7681 | 4666 / -12127 / -4628 / 7409 |
+
+**Budget 50% (ulcer <= 4366)**: phase done
+
+| step | added | stack set | L6M ulcer / maxDD / worst wk / mean | L3M |
+|---|---|---|---|---|
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 |
+| 2 | L1716c153 | `TL3_ALN_AS_STKc26bfa12` | 4084 / -14152 / -14152 / 3806 | 2765 / -8975 / -1892 / 3549 |
+
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
