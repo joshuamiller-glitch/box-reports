@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:22Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:28Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
 
@@ -33,6 +33,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | Ldcdb0b6e | `TL3_ALN_AS_Ldcdb0b6e_BASE` | 3706 / -11884 / -6537 / 2256 | 4466 / -11441 / -6537 / 1470 | 2764 / -6300 / -3724 / 380 RED | 4487 / -12697 / -3638 / 628 RED | 10407 / -21690 / -7067 / 391 RED | 0.28 | 19 |
 
 Phase: run. Pool used by this run: 19 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9).
 

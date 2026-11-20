@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:22Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:29Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -35,8 +35,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
+| 1 | L2176f633 | `TL3_ALN_NY_L2176f633_BASE` | 5318 / -13073 / -7664 / 1896 | 5311 / -11338 / -7664 / 536 | 5293 / -11767 / -7284 / 611 GREEN | 6931 / -20162 / -11878 / 773 RED | 9031 / -19835 / -8248 / 335 AMBER | 0.51 | 1 |
 
-Phase: run. Pool used by this run: 1 books (L2176f633).
+Phase: final. Pool used by this run: 1 books (L2176f633).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
