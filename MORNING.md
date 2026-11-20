@@ -12308,3 +12308,17 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 2026-11-20T20:29:42Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
 2026-11-20T20:29:49Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 20:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 179 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 278202
+- 20:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 634 vs baseline 404 (guard: cut if < 95% twice).
+- 20:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 20:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T18  box1  14057  Dallas  1315  A  2594  B  2848  tot  20814 ;  11-20T19  box1  12947  Dallas  1154  A  2284  B  2556  tot  18941 ;  11-20T20  box1  1163  Dallas  126  A  219  B  275  tot  1783 ; 
+- 20:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 20:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 20:30Z W-COMBO RESELECT-ASIA COUNTDOWN Asia: pool 18 books (passing a+b+c+d); passed a+b+c waiting for controls 70; books fitted (stage 1) 0 of pool 18; widening (all-new prior years) 424 of 1374 books complete, 39815 set-months missing
+- 20:30Z W-COMBO RESELECT-ASIA COUNTDOWN Asia: pool 18 books (passing a+b+c+d); passed a+b+c waiting for controls 70; books fitted (stage 1) 0 of pool 18; widening (all-new prior years) 424 of 1374 books complete, 39815 set-months missing
+- 20:31Z W-COMBO RESELECT-ASIA step 2: add L578701ed -> L6M ulcer 5675 / maxDD -14801 / worst wk -10059 / $4229 per wk; L3M $3064; prior years $/wk 2023 965 / 2024 696 / 2025 1049; own persistence 0.70
+- 20:31Z HB pass2 | step screened 15/15 pool books, joint stages stage3:6 | waiting_on 0 sets | queued_or_running 0 | last_progress 18:32Z | pid 655948
+- 20:32Z WATCHDOG fired: F
+- 20:32Z W-COMBO RESELECT-ASIA step 2: add L578701ed -> L6M ulcer 5675 / maxDD -14801 / worst wk -10059 / $4229 per wk; L3M $3064; prior years $/wk 2023 965 / 2024 696 / 2025 1049; own persistence 0.70
+- 20:32Z HB layer-fit | step books fitted 10/15, stages {'DONE': 10, 'S3': 1, 'S1': 4} | waiting_on 292 sets | queued_or_running 142 | last_progress 20:32Z | pid 823797
+- 20:32Z HB brackets | step screen 2496/2496 sm landed, stage-2 winners queued/complete/passed 7/7/1 | waiting_on 250 sets | queued_or_running 250 | last_progress 19:16Z | driver pid 773684 cycle pid 1163810 | 20:32Z | walk-forward winner books: shape set-months landed 4032 / 4032
+- 2026-11-20T20:34Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+20:35Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
