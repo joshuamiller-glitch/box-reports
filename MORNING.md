@@ -12456,3 +12456,18 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 2026-11-20 21:26Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
 2026-11-20T21:29:51Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 21:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 277877
+- 21:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 648 vs baseline 404 (guard: cut if < 95% twice).
+- 21:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 21:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T19  box1  12947  Dallas  1154  A  2284  B  2556  tot  18941 ;  11-20T20  box1  13843  Dallas  1282  A  2414  B  2757  tot  20296 ;  11-20T21  box1  1121  Dallas  119  A  225  B  249  tot  1714 ; 
+- 21:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 21:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 21:30Z W-COMBO RESELECT-ASIA [loop asia-stay-l3g] RE-RUN WITH 22 pool books (was 21)
+- 2026-11-20T21:31:06Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- 21:31Z LEAD NOTE: inbox empty; stall check: only canc-bulk flat (explained: bulk is behind Asia py/ct inside D8 canonical by design, ETA ~03:40Z); all other heartbeats moving. Next countdown ~22:00Z.
+- 21:31Z HB pass2 | step screened 15/15 pool books, joint stages stage3:6 | waiting_on 0 sets | queued_or_running 0 | last_progress 18:32Z | pid 655948
+- 21:32Z W-COMBO RESELECT-ASIA [loop asia-stay-l3g] step 1: add L7c368a4f -> L6M ulcer 4075 / maxDD -11123 / worst wk -7409 / $2456 per wk; L3M $2434; prior years $/wk 2023 203 / 2024 654 / 2025 528; own persistence 0.62
+- 21:33Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_51.txt (588 lines)
+- 21:33Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_52.txt (132 lines)
+- 21:33Z HB layer-fit | step books fitted 13/15, stages {'DONE': 13, 'S3': 1, 'S1': 1} | waiting_on 150 sets | queued_or_running 0 | last_progress 21:20Z | pid 823797
+21:34Z W-GRIDOPS AUDIT UNWIRED (5-min audit of _d8spec/pending*.txt vs QUEUES.txt): pending_canc_ct_51.txt sat 0 min (file age 1 min, 588 lines); pending_canc_ct_50.txt sat 0 min (file age 11 min, 360 lines); pending_canc_ct_52.txt sat 0 min (file age 1 min, 132 lines); wiring by hand now.
+21:34Z W-GRIDOPS WIRED ct_50..52 after ct_49 (watch event 21:34Z, <=12 min unwired; backup <tmp>); 0 unwired. D8 canonical 175 running, 2,790 done/h, 16,381 queued (est 5.9 h); brackets 152 (13 queued) still draining.
+21:35Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
