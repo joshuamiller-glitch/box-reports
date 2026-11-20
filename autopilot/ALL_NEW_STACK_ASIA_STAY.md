@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 20:52Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 21:02Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -11,68 +11,42 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
 
-## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
-
-- L6M $4229 per wk (positive), L3M $3064 per wk (positive); prior years $/wk: 2023 965 (positive), 2024 696 (positive), 2025 1049 (positive); OWN persistence (share of positive 14-day blocks) 0.70 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
-
-## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.43 so that the L6M ulcer matches)
-
-| window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
-|---|---|---|---|
-| L6M | 5675 / -14801 / -10059 / 4229 | 5675 / -13948 / -9129 / 2443 | +1786 |
-| L3M | 4927 / -10072 / -8937 / 3064 | 5277 / -12065 / -7702 / 1379 | +1685 |
-| Y2023 | 2095 / -5134 / -3277 / 965 | 8835 / -14448 / -3531 / -69 | +1034 |
-| Y2024 | 8225 / -23263 / -4698 / 696 | 4020 / -11092 / -3496 / 599 | +97 |
-| Y2025 | 6804 / -20199 / -14470 / 1049 | 8425 / -16681 / -6343 / 550 | +499 |
-
-## GATE BY GATE: Asia, books ALONE on the all-new base (universe 447 books with a BASE set; 339 have all 42 months landed = counted below; 8 still waiting for prior years)
+## GATE BY GATE: Asia, books ALONE on the all-new base (universe 453 books with a BASE set; 342 have all 42 months landed = counted below; 11 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 300 of 339 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 230 of 339 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 228 of 339 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 117 books) | 22 of 117 |
-| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 8 of 339 |
-| a + b | 203 |
-| a + b + c | 163 |
+| (a) positive $/wk in L6M and L3M | 303 of 342 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 233 of 342 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 230 of 342 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 119 books) | 22 of 119 |
+| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 8 of 342 |
+| a + b | 206 |
+| a + b + c | 165 |
 | a + b + c + d | 21 : L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9 |
 | a + b + c + d + e | 0 : none |
 
 Nearest misses (all five gates known, fail exactly one): L15f14deb (fails e), L1756b913 (fails e), L1ea1afb9 (fails d), L1edb9fab (fails e), L29b1bc3f (fails e), L358e61be (fails d), L3faac8df (fails e), L40bde9ea (fails e), L578701ed (fails e), L5dee2059 (fails e), L65a26c02 (fails e), L7c368a4f (fails e), L7ea48296 (fails e), L7f41b347 (fails e), L973b5c8a (fails e), L9aa7805c (fails e), La010c3eb (fails e), Lb68a132d (fails e), Lc754cf58 (fails e), Lcbc8a7ec (fails e), Lde4f100b (fails d), Lec335094 (fails e), Lff52ec0c (fails e), M7423c0d9 (fails e), M8cc7cb99 (fails d).
-NOT dead, controls (d) still pending: L05222ff9 (passes a,b,c; fails e; controls (d) pending), L0569b2b6 (passes a,b,c; fails e; controls (d) pending), L0c4e0b5b (passes a,b,c; fails e; controls (d) pending), L0d3e549a (passes a,b,c; fails e; controls (d) pending), L17ce266f (passes a,b,c; fails e; controls (d) pending), L1ab09df8 (passes a,b,c; fails e; controls (d) pending), L22fed823 (passes a,b,c; fails e; controls (d) pending), L2aa4f77d (passes a,b,c; fails e; controls (d) pending), L3374cedf (passes a,b,c; fails e; controls (d) pending), L37a16eb5 (passes a,b,c; fails e; controls (d) pending), L3b0b8135 (passes a,b,c; fails e; controls (d) pending), L3e087b15 (passes a,b,c; fails e; controls (d) pending), L43ca3f2c (passes a,b,c; fails e; controls (d) pending), L4ae99972 (passes a,b,c; fails e; controls (d) pending), L5467c2ca (passes a,b,c; fails e; controls (d) pending), L5f3579eb (passes a,b,c; fails e; controls (d) pending), L61522208 (passes a,b,c; fails e; controls (d) pending), L6d2b8ae4 (passes a,b,c; fails e; controls (d) pending), L766edc63 (passes a,b,c; fails e; controls (d) pending), L78386306 (passes a,b,c; fails e; controls (d) pending), L79fb26c4 (passes a,b,c; fails e; controls (d) pending), L88230ce1 (passes a,b,c; fails e; controls (d) pending), L96149bcd (passes a,b,c; fails e; controls (d) pending), L9ba03645 (passes a,b,c; fails e; controls (d) pending), La01c27e2 (passes a,b,c; fails e; controls (d) pending), La339b56b (passes a,b,c; fails e; controls (d) pending), Lb3f85ddc (passes a,b,c; fails e; controls (d) pending), Lb7f6bee6 (passes a,b,c; fails e; controls (d) pending), Lbb77ab04 (passes a,b,c; fails e; controls (d) pending), Lc820c5e4 (passes a,b,c; fails e; controls (d) pending), Ld3b56a53 (passes a,b,c; fails e; controls (d) pending), Ld570de1f (passes a,b,c; fails e; controls (d) pending), Ldaa777a4 (passes a,b,c; fails e; controls (d) pending), Ldb1dd0ba (passes a,b,c; fails e; controls (d) pending), Lded6fcdb (passes a,b,c; fails e; controls (d) pending), Ldf4dab65 (passes a,b,c; fails e; controls (d) pending), Le6363004 (passes a,b,c; fails e; controls (d) pending), Lea50c374 (passes a,b,c; fails e; controls (d) pending), Lf02ac895 (passes a,b,c; fails e; controls (d) pending), Lf43211b5 (passes a,b,c; fails e; controls (d) pending), Lfd7e8b9f (pass a,b,c,e; controls (d) pending), M1ee97c7a (passes a,b,c; fails e; controls (d) pending), M35596060 (passes a,b,c; fails e; controls (d) pending), M58190669 (passes a,b,c; fails e; controls (d) pending), M6f0b4896 (passes a,b,c; fails e; controls (d) pending), M718570f8 (passes a,b,c; fails e; controls (d) pending), Macf48596 (passes a,b,c; fails e; controls (d) pending), Md7f44642 (passes a,b,c; fails e; controls (d) pending), Mf5f0441a (passes a,b,c; fails e; controls (d) pending), Mfefa8e33 (passes a,b,c; fails e; controls (d) pending).
+NOT dead, controls (d) still pending: L05222ff9 (passes a,b,c; fails e; controls (d) pending), L0569b2b6 (passes a,b,c; fails e; controls (d) pending), L0c4e0b5b (passes a,b,c; fails e; controls (d) pending), L0d3e549a (passes a,b,c; fails e; controls (d) pending), L17ce266f (passes a,b,c; fails e; controls (d) pending), L1ab09df8 (passes a,b,c; fails e; controls (d) pending), L22fed823 (passes a,b,c; fails e; controls (d) pending), L2aa4f77d (passes a,b,c; fails e; controls (d) pending), L3374cedf (passes a,b,c; fails e; controls (d) pending), L37a16eb5 (passes a,b,c; fails e; controls (d) pending), L3b0b8135 (passes a,b,c; fails e; controls (d) pending), L3e087b15 (passes a,b,c; fails e; controls (d) pending), L43ca3f2c (passes a,b,c; fails e; controls (d) pending), L4ae99972 (passes a,b,c; fails e; controls (d) pending), L5467c2ca (passes a,b,c; fails e; controls (d) pending), L5f3579eb (passes a,b,c; fails e; controls (d) pending), L61522208 (passes a,b,c; fails e; controls (d) pending), L6d2b8ae4 (passes a,b,c; fails e; controls (d) pending), L766edc63 (passes a,b,c; fails e; controls (d) pending), L78386306 (passes a,b,c; fails e; controls (d) pending), L79fb26c4 (passes a,b,c; fails e; controls (d) pending), L88230ce1 (passes a,b,c; fails e; controls (d) pending), L96149bcd (passes a,b,c; fails e; controls (d) pending), La01c27e2 (passes a,b,c; fails e; controls (d) pending), La339b56b (passes a,b,c; fails e; controls (d) pending), Lb3f85ddc (passes a,b,c; fails e; controls (d) pending), Lb7f6bee6 (passes a,b,c; fails e; controls (d) pending), Lbb77ab04 (passes a,b,c; fails e; controls (d) pending), Lc820c5e4 (passes a,b,c; fails e; controls (d) pending), Ld3b56a53 (passes a,b,c; fails e; controls (d) pending), Ld570de1f (passes a,b,c; fails e; controls (d) pending), Ldaa777a4 (passes a,b,c; fails e; controls (d) pending), Ldb1dd0ba (passes a,b,c; fails e; controls (d) pending), Lded6fcdb (passes a,b,c; fails e; controls (d) pending), Ldf4dab65 (passes a,b,c; fails e; controls (d) pending), Le6363004 (passes a,b,c; fails e; controls (d) pending), Lea50c374 (passes a,b,c; fails e; controls (d) pending), Led82f443 (passes a,b,c; fails e; controls (d) pending), Lf43211b5 (passes a,b,c; fails e; controls (d) pending), Lfd7e8b9f (pass a,b,c,e; controls (d) pending), M1ee97c7a (passes a,b,c; fails e; controls (d) pending), M35596060 (passes a,b,c; fails e; controls (d) pending), M58190669 (passes a,b,c; fails e; controls (d) pending), M642434fd (passes a,b,c; fails e; controls (d) pending), M6f0b4896 (passes a,b,c; fails e; controls (d) pending), M718570f8 (passes a,b,c; fails e; controls (d) pending), Macf48596 (passes a,b,c; fails e; controls (d) pending), Md7f44642 (passes a,b,c; fails e; controls (d) pending), Mf5f0441a (passes a,b,c; fails e; controls (d) pending), Mfefa8e33 (passes a,b,c; fails e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK_0346Z.md (the Asia stack Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153: RED in every window, persistence 0.44, three of four books fail their luck controls).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **21** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 445 of 447 in the universe; failed the prior-year positivity / persistence / controls: 268; waiting for prior years: 8; passed (a)+(b), controls still running: 50.
+Books with all months landed: 446 of 453 in the universe; failed the prior-year positivity / persistence / controls: 271; waiting for prior years: 11; passed (a)+(b), controls still running: 50.
 Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar], L1756b913 [BASE kept: time / line-break / median-Renko / swing bar], L1edb9fab [BASE kept: time / line-break / median-Renko / swing bar], L29b1bc3f [CHANGES on _CANC] [accumulating bar: D8 number = _CANC base], L3faac8df [BASE kept: time / line-break / median-Renko / swing bar], L40bde9ea [BREAKS on _CANR: old-split number, not D8] [accumulating bar: D8 number = _CANC base], L578701ed [BASE kept: time / line-break / median-Renko / swing bar], L5dee2059 [BASE kept: time / line-break / median-Renko / swing bar], L65a26c02 [accumulating bar: D8 number = _CANC base], L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar], L7ea48296 [HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land] [accumulating bar: D8 number = _CANC base], L7f41b347 [BASE kept: time / line-break / median-Renko / swing bar], L973b5c8a [BASE kept: time / line-break / median-Renko / swing bar], L9aa7805c [BASE kept: time / line-break / median-Renko / swing bar], La010c3eb [accumulating bar: D8 number = _CANC base], Lb68a132d [BASE kept: time / line-break / median-Renko / swing bar], Lc754cf58 [accumulating bar: D8 number = _CANC base], Lcbc8a7ec [BASE kept: time / line-break / median-Renko / swing bar], Lec335094 [BASE kept: time / line-break / median-Renko / swing bar], Lff52ec0c [BASE kept: time / line-break / median-Renko / swing bar], M7423c0d9 [BASE kept: time / line-break / median-Renko / swing bar]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 18 |
-| 2 | L578701ed | `TL3_ALN_AS_STKd8ac766a69` | 5675 / -14801 / -10059 / 4229 | 4927 / -10072 / -8937 / 3064 | 2095 / -5134 / -3277 / 965 | 8225 / -23263 / -4698 / 696 | 6804 / -20199 / -14470 / 1049 | 0.70 | 15 | **L3M DISAGREES** (L3M return per ulcer worse by 48% than the stack before this step; shown, not a gate)
 
-Selected books in order (plain words): 
-- L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
-   fitted: none proposed yet (stage 1 not done for this book)
-- L578701ed [BASE kept: time / line-break / median-Renko / swing bar]: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
-   fitted: none proposed yet (stage 1 not done for this book)
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 21:02Z UTC; pool 18 books): L7c368a4f + L578701ed
 
-STOPPED at 2 books: no candidate passes the add rule.
-
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 20:24Z UTC; pool 15 books): Lb68a132d + L578701ed
-
-Phase: final. Pool used by this run: 18 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
+Phase: run. Pool used by this run: 21 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
-
-EQUAL-RISK LINE (this stack vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off)): today's Asia session scaled DOWN by k = 0.43 to the stack's drawdown: L6M 5675 / -13948 / -9129 / 2443 ; L3M 5277 / -12065 / -7702 / 1379. The stack: L6M 5675 / -14801 / -10059 / 4229 ; L3M 4927 / -10072 / -8937 / 3064. Persistence of the stack vs that reference: 0.63; rule B per prior year: GREEN / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
