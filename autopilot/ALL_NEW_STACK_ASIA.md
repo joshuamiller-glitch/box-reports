@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 00:49Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 00:54Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
 Phase: select. Candidates tried: 120 (step 1 all; later steps the scorer-ordered top 15 exact).
 
@@ -35,6 +35,8 @@ SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a facto
 - Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.54, i.e. same ulcer as the stack): L6M 4758 / -14003 / -8831 / 8578 ; L3M 5348 / -14003 / -8040 / 6486. Compare with the stack: L6M 4758 / -13888 / -7785 / 6484 ; L3M 3916 / -10610 / -7430 / 6555.
 - The all-new stack scaled to today's drawdown (stack lots scaled by k = 1.84, same ulcer as today): L6M 8732 / -25486 / -14287 / 11899 ; L3M 7186 / -19471 / -13634 / 12028. Compare with today: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903.
 (Scaling is linear on the daily P&L: a reading aid, not a realisable lot setting; lots are whole, caps and DAY-DONE are dollar thresholds.)
+
+(budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
