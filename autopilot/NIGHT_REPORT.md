@@ -1,15 +1,15 @@
-# NIGHT REPORT (generated 01:14Z by code/th_proof/night_report.py; window 2026-11-19T23:00Z .. 2026-11-20T12:00Z)
+# NIGHT REPORT (generated 12:00Z by code/th_proof/night_report.py; window 2026-11-19T23:00Z .. 2026-11-20T12:00Z)
 
 ## Hours at >= 90% of cap per host (5-min samples of the HEALTH Engine slots line)
 
 | host | samples | hours >= 90% | hours >= 50% | mean % of cap | min % |
 |---|---|---|---|---|---|
-| box1 | 26 | 0.1 | 1.5 | 61 | 33 |
-| server2 | 26 | 1.5 | 2.2 | 95 | 79 |
-| serverA | 26 | 2.2 | 2.2 | 99 | 97 |
-| serverB | 26 | 1.8 | 2.2 | 95 | 80 |
-| serverC | 26 | 2.0 | 2.0 | 90 | 0 |
-| serverD | 26 | 1.8 | 2.2 | 94 | 78 |
+| box1 | 156 | 2.3 | 12.3 | 77 | 33 |
+| server2 | 156 | 9.6 | 13.0 | 95 | 71 |
+| serverA | 156 | 13.0 | 13.0 | 99 | 94 |
+| serverB | 156 | 12.3 | 13.0 | 97 | 80 |
+| serverC | 156 | 12.8 | 12.8 | 96 | 0 |
+| serverD | 156 | 9.9 | 13.0 | 92 | 50 |
 
 ## Drops (host below 90% of cap for >= 10 min)
 
@@ -62,6 +62,245 @@
     - 00:48Z LEAD NOTE: HEALTH.md 00:45Z: all four machines 100% busy (Rule A OK; guard alerts none): box 1 load 74, 28-30 engine, engine 490 set-months/30 min, MemAvail 53 G
     - 00:44Z LEAD NOTE (W-GRIDOPS: STALE-PULLBACK G1+G3 OLD-VS-NEW, autopilot/STALE_PULLBACK_G13_COMPARISON.txt): compared trade for trade (book, entry and exit time and pric
     - 00:44Z W-BEST stale list update (G1+G3 comparison): cleared 38 of the 40 G1/G3 cells (every compared set-month IDENTICAL; applies at the next refresh :07/:37); still st
+- server2 01:05Z-01:15Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 01:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7298 (real 3232), pass 2 359 (total results 7657); todo pass 1 13553 (ETA 1.9 h at this rate), pass 2 22407 (ETA 62.4 h); s
+    - 01:19Z W-GRIDOPS (A/B oversubscription test): PHASE 2 (00:49-01:19 UTC, A 60 grid workers, B control unchanged): A engine 72 months, real 1188, null 762 => weighted 304
+    - 01:19Z W-GRIDOPS (A/B oversubscription test): PHASE 2 (00:49-01:19 UTC, A 60 grid workers, B control unchanged): A engine 72 months, real 1194, null 763 => weighted 305
+    - 01:24Z INBOX 20261119_0125Z_calibration-by-family-and-live-books-as-reference.md received (accepted, research only; additions beside the calibration work). Routed: (1) 
+    - 01:25Z W-GRIDOPS (lead 0125Z item 4): FRANKFURT RESULT (00:49-01:19Z, both script instances agree): 60 grid workers WON on Frankfurt: weighted output 3,045-3,058 vs 2,1
+    - 01:26Z LEAD NOTE (W-GRIDOPS): STALE LEVEL RESULTS: the all-modules test (51 trig_levels_* modules, one pre-06:00Z result each re-run fresh) shows the level modules fixe
+- serverD 01:15Z-01:25Z (10 min, low 80% of cap). Log lines around it (cause / healed by):
+    - 01:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7298 (real 3232), pass 2 359 (total results 7657); todo pass 1 13553 (ETA 1.9 h at this rate), pass 2 22407 (ETA 62.4 h); s
+    - 01:19Z W-GRIDOPS (A/B oversubscription test): PHASE 2 (00:49-01:19 UTC, A 60 grid workers, B control unchanged): A engine 72 months, real 1188, null 762 => weighted 304
+    - 01:19Z W-GRIDOPS (A/B oversubscription test): PHASE 2 (00:49-01:19 UTC, A 60 grid workers, B control unchanged): A engine 72 months, real 1194, null 763 => weighted 305
+    - 01:24Z INBOX 20261119_0125Z_calibration-by-family-and-live-books-as-reference.md received (accepted, research only; additions beside the calibration work). Routed: (1) 
+    - 01:25Z W-GRIDOPS (lead 0125Z item 4): FRANKFURT RESULT (00:49-01:19Z, both script instances agree): 60 grid workers WON on Frankfurt: weighted output 3,045-3,058 vs 2,1
+    - 01:26Z LEAD NOTE (W-GRIDOPS): STALE LEVEL RESULTS: the all-modules test (51 trig_levels_* modules, one pre-06:00Z result each re-run fresh) shows the level modules fixe
+- box1 01:35Z-02:05Z (30 min, low 79% of cap). Log lines around it (cause / healed by):
+    - 01:25Z W-GRIDOPS (lead 0125Z item 4): FRANKFURT RESULT (00:49-01:19Z, both script instances agree): 60 grid workers WON on Frankfurt: weighted output 3,045-3,058 vs 2,1
+    - 01:26Z LEAD NOTE (W-GRIDOPS): STALE LEVEL RESULTS: the all-modules test (51 trig_levels_* modules, one pre-06:00Z result each re-run fresh) shows the level modules fixe
+    - 01:27Z LEAD NOTE: W-GRIDOPS findings: (1) Frankfurt 60 vs 96 grid workers (00:49-01:19Z): 60 beat 96 on weighted output (3,045-3,058 vs 2,122-2,128, x1.43) but not clea
+    - 01:28Z W-SHORT (orders 0125Z + W-GRIDOPS stale-level warning): (1) CALIBRATION BY FAMILY is on SURVIVOR_COUNTS.md (trigger families x bar families x (trigger x bar) blo
+    - 01:42Z INBOX 20261119_0143Z_staleness-check-ALL-modules-and-stamp-results.md received (accepted, research only). Routed: (1) staleness check for ALL 145 trigger modules
+    - 01:45Z LEAD NOTE (W-SHORT, order 0143Z item 3: what already-published numbers used STALE level results and will be redone). Stale = trig_levels_* grid result files writ
+- server2 01:35Z-02:05Z (30 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 01:25Z W-GRIDOPS (lead 0125Z item 4): FRANKFURT RESULT (00:49-01:19Z, both script instances agree): 60 grid workers WON on Frankfurt: weighted output 3,045-3,058 vs 2,1
+    - 01:26Z LEAD NOTE (W-GRIDOPS): STALE LEVEL RESULTS: the all-modules test (51 trig_levels_* modules, one pre-06:00Z result each re-run fresh) shows the level modules fixe
+    - 01:27Z LEAD NOTE: W-GRIDOPS findings: (1) Frankfurt 60 vs 96 grid workers (00:49-01:19Z): 60 beat 96 on weighted output (3,045-3,058 vs 2,122-2,128, x1.43) but not clea
+    - 01:28Z W-SHORT (orders 0125Z + W-GRIDOPS stale-level warning): (1) CALIBRATION BY FAMILY is on SURVIVOR_COUNTS.md (trigger families x bar families x (trigger x bar) blo
+    - 01:42Z INBOX 20261119_0143Z_staleness-check-ALL-modules-and-stamp-results.md received (accepted, research only). Routed: (1) staleness check for ALL 145 trigger modules
+    - 01:45Z LEAD NOTE (W-SHORT, order 0143Z item 3: what already-published numbers used STALE level results and will be redone). Stale = trig_levels_* grid result files writ
+- serverD 02:05Z-02:25Z (20 min, low 50% of cap). Log lines around it (cause / healed by):
+    - 01:55Z W-GRIDOPS (Singapore 98 vs 60 test): PHASE 1 (01:25-01:55 UTC, Singapore 98 grid workers, Frankfurt control at 60): Sing engine 132 months, real-cell results 146
+    - 01:55Z LEAD NOTE: W-NYENG ladder state closed: 4,868 cells built (2,535 in the new 4,952-cell list, 2,333 outside; none dropped): 98 at stage B (prior years queued), 6 
+    - 02:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 3652 (real 1899), pass 2 982 (total results 4634); todo pass 1 10998 (ETA 3.0 h at this rate), pass 2 22992 (ETA 23.4 h); s
+    - 02:17Z INBOX 20261119_0224Z_NO-SHORTCUTS-full-exit-run-and-100pct-machines.md received: BROAD EXIT RUN ON (68 recipes, whole grid, real + null, own-stop exits; order As
+    - 02:22Z W-GRIDOPS (order 0224Z items 2-3 priority ladder / 100% busy): DONE. (1) ENGINE FIRST: engine caps raised on Frankfurt and Singapore 28 -> 38 workers (box-1 /mnt
+    - 02:26Z INBOX 20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md received: stage 1 = Asia + NY AM whole pipeline (engine REPLACE/ADD, exit run on can
+- box1 02:15Z-02:55Z (40 min, low 50% of cap). Log lines around it (cause / healed by):
+    - 02:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 3652 (real 1899), pass 2 982 (total results 4634); todo pass 1 10998 (ETA 3.0 h at this rate), pass 2 22992 (ETA 23.4 h); s
+    - 02:17Z INBOX 20261119_0224Z_NO-SHORTCUTS-full-exit-run-and-100pct-machines.md received: BROAD EXIT RUN ON (68 recipes, whole grid, real + null, own-stop exits; order As
+    - 02:22Z W-GRIDOPS (order 0224Z items 2-3 priority ladder / 100% busy): DONE. (1) ENGINE FIRST: engine caps raised on Frankfurt and Singapore 28 -> 38 workers (box-1 /mnt
+    - 02:26Z INBOX 20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md received: stage 1 = Asia + NY AM whole pipeline (engine REPLACE/ADD, exit run on can
+    - 02:27Z W-GRIDOPS (Singapore 98 vs 60 test): PHASE 2 (01:57-02:27 UTC, Singapore 60 grid workers, Frankfurt control unchanged): Sing engine 159 months, real 1, null 247 
+    - 02:28Z LEAD NOTE (stage-1 engine hours, NY AM; Asia pending W-LONENG): measured fleet 989 set-months/h (projected 2,894/h with A+B ready). NY AM ladder 9,081 cells (5,7
+- server2 02:35Z-02:45Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 02:26Z INBOX 20261119_0228Z_SEQUENCE-Asia-NYAM-fully-first-then-London-then-NYPM.md received: stage 1 = Asia + NY AM whole pipeline (engine REPLACE/ADD, exit run on can
+    - 02:27Z W-GRIDOPS (Singapore 98 vs 60 test): PHASE 2 (01:57-02:27 UTC, Singapore 60 grid workers, Frankfurt control unchanged): Sing engine 159 months, real 1, null 247 
+    - 02:28Z LEAD NOTE (stage-1 engine hours, NY AM; Asia pending W-LONENG): measured fleet 989 set-months/h (projected 2,894/h with A+B ready). NY AM ladder 9,081 cells (5,7
+    - 02:31Z LEAD NOTE: W-NYENG: pending_r5.txt (89,401 lines, none deleted) now leads with prior-year+control lines of the 52 sets beating the live book on L6M and L3M (2,77
+    - 02:31Z W-GRIDOPS: stale level results re-run ENABLED on Frankfurt and Singapore (GL_FORCE_BEFORE = 2026-11-18 06:00Z; Frankfurt 36/12/12 workers, Singapore 36/12/12 (60
+    - 02:31Z LEAD NOTE: W-GRIDOPS per-tag nice (order 0228Z): Asia/NY AM engine sets nice 0, London 15, NY PM 17 (map of 7,650 ladder cell ids: 6,446 stage 1, 808 London, 396
+- box1 03:05Z-05:35Z (150 min, low 54% of cap). Log lines around it (cause / healed by):
+    - 03:03Z W-GRIDOPS (Frankfurt grid-pause test): AFTER (grid resumed) (02:53-03:03 UTC): engine set-months 57 in 10 min with ~37 busy engine procs => 9.2 per proc-hour (34
+    - 03:03Z W-GRIDOPS (Frankfurt grid-pause test): SUMMARY: engine per proc: before 1.49, paused 1.70, after 1.54 set-months per proc per 10 min. Pausing the grid changed th
+    - 03:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 3924 (real 1212), pass 2 554 (total results 4478); todo pass 1 10747 (ETA 2.7 h at this rate), pass 2 24055 (ETA 43.4 h); s
+    - 03:13Z LEAD NOTE: WATCHDOG E at 03:02Z/03:12Z = Frankfurt grid-pause test (A grid results 166/30 min vs usual 903 while paused); verified A has no stopped (T-state) pro
+    - 03:19Z LEAD NOTE: W-GRIDOPS follow-up on Frankfurt slow engine: no disk/cache problem (engine procs read ~0 MB from disk on A, B and Dallas; iowait 0%; page cache 450-4
+    - 03:19Z W-GRIDOPS (read-only I/O follow-up on Frankfurt and Singapore, lead request 0243Z): RESULT: DISK AND PAGE CACHE ARE NOT THE CAUSE. Measured read-only with explic
+- server2 03:25Z-03:35Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 03:19Z LEAD NOTE: W-GRIDOPS follow-up on Frankfurt slow engine: no disk/cache problem (engine procs read ~0 MB from disk on A, B and Dallas; iowait 0%; page cache 450-4
+    - 03:19Z W-GRIDOPS (read-only I/O follow-up on Frankfurt and Singapore, lead request 0243Z): RESULT: DISK AND PAGE CACHE ARE NOT THE CAUSE. Measured read-only with explic
+    - 03:23Z INBOX 20261119_0325Z_Frankfurt-grid-still-low-after-pause-49-workers-not-computing.md received: Frankfurt grid output 166 then 115 per 30 min vs usual 811-903; a
+    - 03:42Z W-GRIDOPS LEAD NOTE (order 0325Z Frankfurt grid low + ROOT CAUSE of the whole priority ladder): (1) PER LOOP at 03:25Z (workers alive / of which computing at tha
+    - 03:42Z W-GRIDOPS LEAD NOTE (order 0228Z item 6 STAGE-1 WORK LIST, hours on the current fleet, measured 02:40-03:40Z): a) ENGINE Asia + NY AM: 98,774 set-months queued (
+    - 03:44Z LEAD NOTE: inbox empty since 0325Z (Frankfurt grid-low order, with W-GRIDOPS; diagnosis not yet posted, I will check at 04:10Z). W-GRIDOPS stage-1 list posted 03
+- serverD 03:35Z-03:45Z (10 min, low 88% of cap). Log lines around it (cause / healed by):
+    - 03:42Z W-GRIDOPS LEAD NOTE (order 0325Z Frankfurt grid low + ROOT CAUSE of the whole priority ladder): (1) PER LOOP at 03:25Z (workers alive / of which computing at tha
+    - 03:42Z W-GRIDOPS LEAD NOTE (order 0228Z item 6 STAGE-1 WORK LIST, hours on the current fleet, measured 02:40-03:40Z): a) ENGINE Asia + NY AM: 98,774 set-months queued (
+    - 03:44Z LEAD NOTE: inbox empty since 0325Z (Frankfurt grid-low order, with W-GRIDOPS; diagnosis not yet posted, I will check at 04:10Z). W-GRIDOPS stage-1 list posted 03
+    - 03:44Z W-GRIDOPS: forced re-run extended 03:52Z (supervisor off, loops restarted by explicit pid, registry re-recorded): GL_FORCE_BEFORE=2026-11-18 06:00Z now covers tr
+    - 03:45Z LEAD NOTE: W-GRIDOPS answer to order 0325Z: Frankfurt grid dip = CPU starvation, not idle workers (all grid workers runnable; stamp scan of last 6 h: 0 needless 
+    - 03:30Z W-PROOF QUEUE HOURS (measured rate): 227592 lines = 19.1 h at 11942/h (to Fri 22:33Z); need 16:00Z Nov 20 = 12.5 h: COVERED, margin 6.6 h. Table: autopilot/NIGHT
+- server2 04:35Z-04:45Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 04:33Z INBOX 20261119_0432Z_Dallas-guard-E-and-live-agent-list.md received: (1) Dallas was reachable and producing (probe replay: 12 fields OK, 60 grid / 24 engine work
+    - 04:35Z W-NIGHT2 (order 0432Z item 2) DONE: new code/th_night/agents_live.py (reads autopilot/AGENTS_LIVE.md + last MORNING.md line per W-name, ignoring lead/watchdog/in
+    - 04:39Z W-SHORT PROGRESS (orders 0125Z/0143Z/0228Z, Asia + NY AM first): (1) CALIBRATION BY FAMILY regenerated on the FULL stage A (real-on-null-coverage 900 of 904 Asia
+    - 04:31Z LEAD NOTE: final TL3_ALN_ row split (W-GRIDOPS, last 20 min): total 12,948 sm/h (was 10,954); ALN base/prior years+controls 7,695; ALN exit 1,542; first looks 3,
+    - 04:51Z LEAD NOTE: disk check: /mnt/l2 box 1 275 GB free (93%) vs 284 GB at 23:30Z = ~1.7 GB/h fill; ~125 GB above the 150 GB alarm = ~70 h, no risk overnight. E_SLOT_HE
+- serverD 04:35Z-04:55Z (20 min, low 78% of cap). Log lines around it (cause / healed by):
+    - 04:33Z INBOX 20261119_0432Z_Dallas-guard-E-and-live-agent-list.md received: (1) Dallas was reachable and producing (probe replay: 12 fields OK, 60 grid / 24 engine work
+    - 04:35Z W-NIGHT2 (order 0432Z item 2) DONE: new code/th_night/agents_live.py (reads autopilot/AGENTS_LIVE.md + last MORNING.md line per W-name, ignoring lead/watchdog/in
+    - 04:39Z W-SHORT PROGRESS (orders 0125Z/0143Z/0228Z, Asia + NY AM first): (1) CALIBRATION BY FAMILY regenerated on the FULL stage A (real-on-null-coverage 900 of 904 Asia
+    - 05:04Z W-ASIA LEAD NOTE (answer to coordinator: why Asia ~4.6 set-months/worker/h): NOT heavier, NO waste - the 4.6 was a wrong denominator. (a) Per-set engine time fro
+    - 05:04Z LEAD NOTE: CORRECTION to the 05:02Z Asia note: Asia engine sets are NOT slower per worker. HEALTH/CORES counted each engine set twice (tp_launch wrapper + child)
+    - 05:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7825 (real 4495), pass 2 556 (total results 8381); todo pass 1 5607 (ETA 0.7 h at this rate), pass 2 23566 (ETA 42.4 h); se
+- server2 04:55Z-05:05Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 05:04Z W-ASIA LEAD NOTE (answer to coordinator: why Asia ~4.6 set-months/worker/h): NOT heavier, NO waste - the 4.6 was a wrong denominator. (a) Per-set engine time fro
+    - 05:04Z LEAD NOTE: CORRECTION to the 05:02Z Asia note: Asia engine sets are NOT slower per worker. HEALTH/CORES counted each engine set twice (tp_launch wrapper + child)
+    - 05:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7825 (real 4495), pass 2 556 (total results 8381); todo pass 1 5607 (ETA 0.7 h at this rate), pass 2 23566 (ETA 42.4 h); se
+    - 05:06Z W-GRIDOPS (engine cap steps): BASELINE cap 38 (last 15 min): A: 304 set-months/h with 37 engine workers (8.2 per worker-h), load 176.80, grid results/30 min 765,
+    - 05:06Z W-GRIDOPS (engine cap steps): cap raised to 54 on Frankfurt and Singapore (backups CAP.txt.bak_gridops_0506); ramp 5 min then 15 min measurement
+    - 05:07Z W-GRIDOPS (lead 0504Z): (a) DOUBLE COUNT FIXED: guard.py (feeds HEALTH.md engine workers) and cores_meter.py (CORES.md ssh line) counted the tp_launch wrapper an
+- serverD 05:05Z-05:15Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 05:04Z W-ASIA LEAD NOTE (answer to coordinator: why Asia ~4.6 set-months/worker/h): NOT heavier, NO waste - the 4.6 was a wrong denominator. (a) Per-set engine time fro
+    - 05:04Z LEAD NOTE: CORRECTION to the 05:02Z Asia note: Asia engine sets are NOT slower per worker. HEALTH/CORES counted each engine set twice (tp_launch wrapper + child)
+    - 05:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 7825 (real 4495), pass 2 556 (total results 8381); todo pass 1 5607 (ETA 0.7 h at this rate), pass 2 23566 (ETA 42.4 h); se
+    - 05:06Z W-GRIDOPS (engine cap steps): BASELINE cap 38 (last 15 min): A: 304 set-months/h with 37 engine workers (8.2 per worker-h), load 176.80, grid results/30 min 765,
+    - 05:06Z W-GRIDOPS (engine cap steps): cap raised to 54 on Frankfurt and Singapore (backups CAP.txt.bak_gridops_0506); ramp 5 min then 15 min measurement
+    - 05:07Z W-GRIDOPS (lead 0504Z): (a) DOUBLE COUNT FIXED: guard.py (feeds HEALTH.md engine workers) and cores_meter.py (CORES.md ssh line) counted the tp_launch wrapper an
+- server2 05:35Z-05:45Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 05:26Z W-GRIDOPS (engine cap steps): STEP cap 54 (05:11-05:26 UTC): A: 428 set-months/h with 54 engine workers (7.9 per worker-h), load 185.22, grid results/30 min 531,
+    - 05:26Z W-GRIDOPS (engine cap steps): cap raised to 70 on Frankfurt and Singapore (backups CAP.txt.bak_gridops_0506); ramp 5 min then 15 min measurement
+    - 05:28Z LEAD NOTE: engine cap step 54 measured (W-GRIDOPS 05:26Z): A 428 sm/h (54 workers, 7.9/worker-h), B 496 sm/h (49 workers, 10.1), A+B 924 sm/h = +43% vs the 38-wo
+    - 05:46Z W-GRIDOPS (engine cap steps): STEP cap 70 (05:31-05:46 UTC): A: 504 set-months/h with 70 engine workers (7.2 per worker-h), load 199.52, grid results/30 min 722,
+    - 05:46Z W-GRIDOPS (engine cap steps): STOP at step 70: memory tight; cap set back to the best so far = 54
+    - 05:48Z LEAD NOTE: cap step 70 (W-GRIDOPS 05:46Z): A 504 sm/h (70 workers), B 604 sm/h (63 workers), A+B 1,108 sm/h = +20% vs cap 54 (924); but the script read B MemAvai
+- box1 05:45Z-06:05Z (20 min, low 83% of cap). Log lines around it (cause / healed by):
+    - 05:46Z W-GRIDOPS (engine cap steps): STEP cap 70 (05:31-05:46 UTC): A: 504 set-months/h with 70 engine workers (7.2 per worker-h), load 199.52, grid results/30 min 722,
+    - 05:46Z W-GRIDOPS (engine cap steps): STOP at step 70: memory tight; cap set back to the best so far = 54
+    - 05:48Z LEAD NOTE: cap step 70 (W-GRIDOPS 05:46Z): A 504 sm/h (70 workers), B 604 sm/h (63 workers), A+B 1,108 sm/h = +20% vs cap 54 (924); but the script read B MemAvai
+    - 05:49Z W-GRIDOPS (lead 0549Z, engine cap 70 restore): (1) CAUSE of 'MemAvail 0 GB' on Singapore at the end of step 70 (05:46Z): a FAILED READING, not memory: cap_steps.
+    - 05:50Z LEAD NOTE: W-GRIDOPS: MemAvail 0 was a failed ssh read (cap_steps used int(ssh() or 0)), fixed; caps A/B restored to 70 at 05:50Z (backups CAP.txt.bak_gridops_05
+    - 06:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 4694 (real 700), pass 2 815 (total results 5509); todo pass 1 2075 (ETA 0.4 h at this rate), pass 2 22260 (ETA 27.3 h); ser
+- box1 06:15Z-06:25Z (10 min, low 75% of cap). Log lines around it (cause / healed by):
+    - 06:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 4694 (real 700), pass 2 815 (total results 5509); todo pass 1 2075 (ETA 0.4 h at this rate), pass 2 22260 (ETA 27.3 h); ser
+    - 06:13Z INBOX 20261119_0613Z_cap-step-beyond-70-restate-dates-answer-alert-G.md received: (1) cap steps 70 -> 86 -> 102 on A/B, then Dallas 12 -> 20 -> 28 and box 1 with
+    - 06:14Z W-GRIDOPS (engine cap steps 2): STARTED (3 groups in parallel; s2_cap_follow cron paused; CAPS.txt backup CAPS.txt.bak_gridops_0615)
+    - 06:14Z W-GRIDOPS (engine cap steps 2): BOX1 cap 32 (05:59-06:14 UTC): engine 1380 set-months/h with 23 workers (60.0 per worker-h), load 74.39, grid results/30 min 261,
+    - 06:14Z W-GRIDOPS (engine cap steps 2): DAL cap 12 (05:59-06:14 UTC): engine 180 set-months/h with 6 workers (30.0 per worker-h), load 105.30, grid results/30 min 719, M
+    - 06:14Z W-GRIDOPS (engine cap steps 2): A cap 70 (05:59-06:14 UTC): engine 532 set-months/h with 57 workers (9.3 per worker-h), load 194.32, grid results/30 min 195, Mem
+- server2 06:15Z-06:25Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 06:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 4694 (real 700), pass 2 815 (total results 5509); todo pass 1 2075 (ETA 0.4 h at this rate), pass 2 22260 (ETA 27.3 h); ser
+    - 06:13Z INBOX 20261119_0613Z_cap-step-beyond-70-restate-dates-answer-alert-G.md received: (1) cap steps 70 -> 86 -> 102 on A/B, then Dallas 12 -> 20 -> 28 and box 1 with
+    - 06:14Z W-GRIDOPS (engine cap steps 2): STARTED (3 groups in parallel; s2_cap_follow cron paused; CAPS.txt backup CAPS.txt.bak_gridops_0615)
+    - 06:14Z W-GRIDOPS (engine cap steps 2): BOX1 cap 32 (05:59-06:14 UTC): engine 1380 set-months/h with 23 workers (60.0 per worker-h), load 74.39, grid results/30 min 261,
+    - 06:14Z W-GRIDOPS (engine cap steps 2): DAL cap 12 (05:59-06:14 UTC): engine 180 set-months/h with 6 workers (30.0 per worker-h), load 105.30, grid results/30 min 719, M
+    - 06:14Z W-GRIDOPS (engine cap steps 2): A cap 70 (05:59-06:14 UTC): engine 532 set-months/h with 57 workers (9.3 per worker-h), load 194.32, grid results/30 min 195, Mem
+- serverD 06:25Z-06:35Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 06:15Z W-NYENG STATUS (alert G): alive (resumed 06:13Z). Crons: 8 ny_ crontab entries present (15-min beats refresh + ladder re-order, 30-min D8_SPEC_STATUS + D8_CANDID
+    - 06:34Z W-GRIDOPS (engine cap steps 2): BOX1 cap 36 (06:19-06:34 UTC): engine 1796 set-months/h with 26 workers (69.1 per worker-h), load 76.79, grid results/30 min 212,
+    - 06:34Z W-GRIDOPS (engine cap steps 2): Box 1: FINAL cap 36 (1796 set-months/h)
+    - 06:34Z W-GRIDOPS (engine cap steps 2): DAL cap 20 (06:19-06:34 UTC): engine 284 set-months/h with 18 workers (15.8 per worker-h), load 110.71, grid results/30 min 566, 
+    - 06:34Z W-GRIDOPS (engine cap steps 2): A cap 86 (06:19-06:34 UTC): engine 692 set-months/h with 78 workers (8.9 per worker-h), load 208.37, grid results/30 min 205, Mem
+    - 06:34Z W-GRIDOPS (engine cap steps 2): B cap 86 (06:19-06:34 UTC): engine 712 set-months/h with 85 workers (8.4 per worker-h), load 209.87, grid results/30 min 230, Mem
+- box1 06:35Z-07:15Z (40 min, low 54% of cap). Log lines around it (cause / healed by):
+    - 06:34Z W-GRIDOPS (engine cap steps 2): BOX1 cap 36 (06:19-06:34 UTC): engine 1796 set-months/h with 26 workers (69.1 per worker-h), load 76.79, grid results/30 min 212,
+    - 06:34Z W-GRIDOPS (engine cap steps 2): Box 1: FINAL cap 36 (1796 set-months/h)
+    - 06:34Z W-GRIDOPS (engine cap steps 2): DAL cap 20 (06:19-06:34 UTC): engine 284 set-months/h with 18 workers (15.8 per worker-h), load 110.71, grid results/30 min 566, 
+    - 06:34Z W-GRIDOPS (engine cap steps 2): A cap 86 (06:19-06:34 UTC): engine 692 set-months/h with 78 workers (8.9 per worker-h), load 208.37, grid results/30 min 205, Mem
+    - 06:34Z W-GRIDOPS (engine cap steps 2): B cap 86 (06:19-06:34 UTC): engine 712 set-months/h with 85 workers (8.4 per worker-h), load 209.87, grid results/30 min 230, Mem
+    - 06:50Z LEAD NOTE: cap step 86 (W-GRIDOPS 06:34Z): A 692 + B 712 = 1,404 sm/h (+25% vs 1,124 best; ~8.4-8.9 per worker-h; MemAvail 1.17-1.21 TB); grid results/30 min fel
+- server2 06:35Z-06:45Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 06:34Z W-GRIDOPS (engine cap steps 2): BOX1 cap 36 (06:19-06:34 UTC): engine 1796 set-months/h with 26 workers (69.1 per worker-h), load 76.79, grid results/30 min 212,
+    - 06:34Z W-GRIDOPS (engine cap steps 2): Box 1: FINAL cap 36 (1796 set-months/h)
+    - 06:34Z W-GRIDOPS (engine cap steps 2): DAL cap 20 (06:19-06:34 UTC): engine 284 set-months/h with 18 workers (15.8 per worker-h), load 110.71, grid results/30 min 566, 
+    - 06:34Z W-GRIDOPS (engine cap steps 2): A cap 86 (06:19-06:34 UTC): engine 692 set-months/h with 78 workers (8.9 per worker-h), load 208.37, grid results/30 min 205, Mem
+    - 06:34Z W-GRIDOPS (engine cap steps 2): B cap 86 (06:19-06:34 UTC): engine 712 set-months/h with 85 workers (8.4 per worker-h), load 209.87, grid results/30 min 230, Mem
+    - 06:50Z LEAD NOTE: cap step 86 (W-GRIDOPS 06:34Z): A 692 + B 712 = 1,404 sm/h (+25% vs 1,124 best; ~8.4-8.9 per worker-h; MemAvail 1.17-1.21 TB); grid results/30 min fel
+- server2 07:15Z-07:35Z (20 min, low 79% of cap). Log lines around it (cause / healed by):
+    - 07:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2228 (real 302), pass 2 720 (total results 2948); todo pass 1 2074 (ETA 0.9 h at this rate), pass 2 21759 (ETA 30.2 h); ser
+    - 07:10Z LEAD NOTE: engine cap steps FINAL (W-GRIDOPS 06:55Z): caps now Frankfurt 102, Singapore 102, Dallas 28, box 1 36 (s2_cap_follow cron restored). Measured engine s
+    - 07:40Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received: (1) DONE by lead: Dallas engine cap set back to 28 (CAPS.txt backup .bak_lead_074
+    - 07:42Z LEAD NOTE: W-GRIDOPS (interim, 0740Z order): restarting the real pass-1 loop only on each grid host with a fixed budget (12 workers Frankfurt/Singapore, 10 Dalla
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Dallas: real pass-1 loop restarted with 10 workers at nice 0 (was pid 3166696); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeout=
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Frankfurt: no real pass-1 loop found ()
+- serverB 07:15Z-07:35Z (20 min, low 87% of cap). Log lines around it (cause / healed by):
+    - 07:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2228 (real 302), pass 2 720 (total results 2948); todo pass 1 2074 (ETA 0.9 h at this rate), pass 2 21759 (ETA 30.2 h); ser
+    - 07:10Z LEAD NOTE: engine cap steps FINAL (W-GRIDOPS 06:55Z): caps now Frankfurt 102, Singapore 102, Dallas 28, box 1 36 (s2_cap_follow cron restored). Measured engine s
+    - 07:40Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received: (1) DONE by lead: Dallas engine cap set back to 28 (CAPS.txt backup .bak_lead_074
+    - 07:42Z LEAD NOTE: W-GRIDOPS (interim, 0740Z order): restarting the real pass-1 loop only on each grid host with a fixed budget (12 workers Frankfurt/Singapore, 10 Dalla
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Dallas: real pass-1 loop restarted with 10 workers at nice 0 (was pid 3166696); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeout=
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Frankfurt: no real pass-1 loop found ()
+- serverD 07:15Z-07:25Z (10 min, low 62% of cap). Log lines around it (cause / healed by):
+    - 07:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2228 (real 302), pass 2 720 (total results 2948); todo pass 1 2074 (ETA 0.9 h at this rate), pass 2 21759 (ETA 30.2 h); ser
+    - 07:10Z LEAD NOTE: engine cap steps FINAL (W-GRIDOPS 06:55Z): caps now Frankfurt 102, Singapore 102, Dallas 28, box 1 36 (s2_cap_follow cron restored). Measured engine s
+    - 07:40Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received: (1) DONE by lead: Dallas engine cap set back to 28 (CAPS.txt backup .bak_lead_074
+    - 07:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1848 (real 9), pass 2 682 (total results 2530); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6518 (ETA 9.6 h); server 2 l
+    - 07:26Z W-PROOF mux_watch: pull socket /tmp/mux_pull_67_213_127_157_0 (67.213.127.157) bad: no live master behind socket file (-O check rc 255) (master pid 947031 killed
+- box1 07:35Z-10:05Z (150 min, low 67% of cap). Log lines around it (cause / healed by):
+    - 07:40Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received: (1) DONE by lead: Dallas engine cap set back to 28 (CAPS.txt backup .bak_lead_074
+    - 07:42Z LEAD NOTE: W-GRIDOPS (interim, 0740Z order): restarting the real pass-1 loop only on each grid host with a fixed budget (12 workers Frankfurt/Singapore, 10 Dalla
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Dallas: real pass-1 loop restarted with 10 workers at nice 0 (was pid 3166696); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeout=
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Frankfurt: no real pass-1 loop found ()
+    - 07:47Z W-GRIDOPS (real pass-1 budget): Singapore: real pass-1 loop restarted with 12 workers at nice 0 (was pid 327751); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeou
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2129 (real 396), pass 2 367 (total results 2496); todo pass 1 2315 (ETA 1.1 h at this rate), pass 2 21314 (ETA 58.1 h); ser
+- serverD 07:35Z-08:15Z (40 min, low 64% of cap). Log lines around it (cause / healed by):
+    - 07:40Z INBOX 20261119_0740Z_Dallas-cap-follower-is-undoing-the-engine-cap.md received: (1) DONE by lead: Dallas engine cap set back to 28 (CAPS.txt backup .bak_lead_074
+    - 07:42Z LEAD NOTE: W-GRIDOPS (interim, 0740Z order): restarting the real pass-1 loop only on each grid host with a fixed budget (12 workers Frankfurt/Singapore, 10 Dalla
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Dallas: real pass-1 loop restarted with 10 workers at nice 0 (was pid 3166696); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeout=
+    - 07:44Z W-GRIDOPS (real pass-1 budget): Frankfurt: no real pass-1 loop found ()
+    - 07:47Z W-GRIDOPS (real pass-1 budget): Singapore: real pass-1 loop restarted with 12 workers at nice 0 (was pid 327751); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeou
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2129 (real 396), pass 2 367 (total results 2496); todo pass 1 2315 (ETA 1.1 h at this rate), pass 2 21314 (ETA 58.1 h); ser
+- server2 07:55Z-08:05Z (10 min, low 71% of cap). Log lines around it (cause / healed by):
+    - 07:47Z W-GRIDOPS (real pass-1 budget): Singapore: real pass-1 loop restarted with 12 workers at nice 0 (was pid 327751); ERR TimeoutExpired(['ssh', '-o', 'ConnectTimeou
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2129 (real 396), pass 2 367 (total results 2496); todo pass 1 2315 (ETA 1.1 h at this rate), pass 2 21314 (ETA 58.1 h); ser
+    - 07:46Z LEAD NOTE: 0742Z URGENT answers (W-GRIDOPS): ITEM 1: D is NOT partly down: slot_heal did not fire because the dispatcher's own count stayed 59-63/64; HEALTH coun
+    - 07:52Z LEAD NOTE: 07:52Z inbox empty, freeze holding; pending: D +10/+20 min slot readings (W-GRIDOPS), Lbd4b5635 hash re-check ~08:01Z, W-GRIDOPS 08:00Z post, W-COMBO 
+    - 08:02Z LEAD NOTE: 08:02Z inbox empty, freeze holding; D back at 83% after the 07:42Z restart; Lbd4b5635 hash re-check and W-GRIDOPS 08:00Z post pending.
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1000 (real 9), pass 2 838 (total results 1838); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6497 (ETA 7.8 h); server 2 l
+- server2 08:15Z-08:25Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 2129 (real 396), pass 2 367 (total results 2496); todo pass 1 2315 (ETA 1.1 h at this rate), pass 2 21314 (ETA 58.1 h); ser
+    - 08:21Z LEAD NOTE: HEALTH 08:20Z: engine queue 129,652 lines, fleet rate 2,202 sm/h (corrected method), guard alerts none; inbox empty since 0740Z. W-FASTLADDER identity
+    - 08:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1000 (real 9), pass 2 838 (total results 1838); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6497 (ETA 7.8 h); server 2 l
+    - 08:09Z LEAD NOTE: URGENT FINDING (W-GRIDOPS 08:00Z): NY AM first looks are STUCK, not slow: 606 set-months in 237 cells failed 6x and gave up (202605/06/07/09); only 24
+    - 08:18Z INBOX ACK 0818Z (NY AM stuck: do not block London / final run): research/queue lines only. Consistent with what is already running: guard unchanged; lead GO 08:2
+    - 08:20Z LEAD NOTE: W-GRIDOPS 08:25Z found WHY NY AM first looks barely move: dispatchers classify first looks by an id pattern matching only L/M ids; the rebuilt both-si
+- server2 10:15Z-10:25Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 10:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 4588 (real 1818), pass 2 562 (total results 5150); todo pass 1 4444 (ETA 1.0 h at this rate), pass 2 20244 (ETA 36.0 h); se
+    - 10:11Z W-LAYERS (order: mode-correct candidates only): 16 of my 18 'yes' candidates are VOID and marked VOID in state (/mnt/l2/l2vast/_layers/state.json) and on autopil
+    - 10:14Z LEAD NOTE (order 1014Z item 5, real pass 1; W-GRIDOPS): 'REAL PASS 1 FINISHED' lines at 09:44Z were WRONG (finisher wrote todo 0 after rows were moved; killed). 
+    - 10:14Z W-LAYERS (order 1014Z overrides the void instruction): all 18 'yes' candidates are VALID again (Asia 14 both-side L-id variants vs A7, NY AM 4 vs K7; engine is t
+    - 10:26Z LEAD NOTE (order 1014Z item 5 + 0956Z item 3; W-GRIDOPS): the 26 orphan rows (event-bar families of DS3_EVENT_BARS_PROPS_B2.md: 23 rows x 145 pairs bmsgq/dltor/e
+    - 10:39Z LEAD NOTE: W-GRIDOPS: real pass-1 tail = five vfpL rows (615 jobs, volume-per-price ladder ~0.9M rows/month, >45 min per job: 16 Dallas workers for 45 min = no f
+- box1 10:25Z-10:45Z (20 min, low 83% of cap). Log lines around it (cause / healed by):
+    - 10:26Z LEAD NOTE (order 1014Z item 5 + 0956Z item 3; W-GRIDOPS): the 26 orphan rows (event-bar families of DS3_EVENT_BARS_PROPS_B2.md: 23 rows x 145 pairs bmsgq/dltor/e
+    - 10:39Z LEAD NOTE: W-GRIDOPS: real pass-1 tail = five vfpL rows (615 jobs, volume-per-price ladder ~0.9M rows/month, >45 min per job: 16 Dallas workers for 45 min = no f
+    - 10:50Z LEAD NOTE: W-GRIDOPS: stale pass-2 re-run DONE on Frankfurt (3 files left) and Singapore (2 + 12 tape files with a .p1 sidecar); Dallas 1,475 stale left (18 work
+    - 10:20Z LEAD NOTE: REMOVAL DONE by W-FASTLADDER: B-id RK7 and ALN P2J fast kinds removed (dyn_kinds.json 125 -> 123, FAST_KINDS.txt 108 -> 106), content hash a72bcb3968 
+    - 10:24Z LEAD NOTE: W-GRIDOPS confirms 0 NYE_B lines in FAST_KINDS on box 1 and all five hosts. While the B kind was on (09:57-10:19Z) the B first-look queue fell 4,665 -
+    - 10:43Z LEAD NOTE: 10:43Z quiet; inbox empty, freeze holding. B first looks 3,429 queued at 10:30Z on exact engine (~1.9k/h); NY AM first looks est. ~12:20-12:40Z. Await
+- server2 10:45Z-10:55Z (10 min, low 89% of cap). Log lines around it (cause / healed by):
+    - 10:39Z LEAD NOTE: W-GRIDOPS: real pass-1 tail = five vfpL rows (615 jobs, volume-per-price ladder ~0.9M rows/month, >45 min per job: 16 Dallas workers for 45 min = no f
+    - 10:50Z LEAD NOTE: W-GRIDOPS: stale pass-2 re-run DONE on Frankfurt (3 files left) and Singapore (2 + 12 tape files with a .p1 sidecar); Dallas 1,475 stale left (18 work
+    - 11:05Z INBOX 20261119_1105Z_Engine-rate-flat-fast-kinds-NT-stalled.md received: (1a) fast kinds: finish identity pairs of what runs most, add each kind to the filter as
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 5110 (real 3084), pass 2 59 (total results 5169); todo pass 1 1881 (ETA 0.4 h at this rate), pass 2 20044 (ETA 339.7 h); se
+    - 10:43Z LEAD NOTE: 10:43Z quiet; inbox empty, freeze holding. B first looks 3,429 queued at 10:30Z on exact engine (~1.9k/h); NY AM first looks est. ~12:20-12:40Z. Await
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1060 (real 9), pass 2 459 (total results 1519); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6436 (ETA 14.0 h); server 2 
+- serverD 10:45Z-10:55Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 10:39Z LEAD NOTE: W-GRIDOPS: real pass-1 tail = five vfpL rows (615 jobs, volume-per-price ladder ~0.9M rows/month, >45 min per job: 16 Dallas workers for 45 min = no f
+    - 10:50Z LEAD NOTE: W-GRIDOPS: stale pass-2 re-run DONE on Frankfurt (3 files left) and Singapore (2 + 12 tape files with a .p1 sidecar); Dallas 1,475 stale left (18 work
+    - 11:05Z INBOX 20261119_1105Z_Engine-rate-flat-fast-kinds-NT-stalled.md received: (1a) fast kinds: finish identity pairs of what runs most, add each kind to the filter as
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 5110 (real 3084), pass 2 59 (total results 5169); todo pass 1 1881 (ETA 0.4 h at this rate), pass 2 20044 (ETA 339.7 h); se
+    - 10:43Z LEAD NOTE: 10:43Z quiet; inbox empty, freeze holding. B first looks 3,429 queued at 10:30Z on exact engine (~1.9k/h); NY AM first looks est. ~12:20-12:40Z. Await
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1060 (real 9), pass 2 459 (total results 1519); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6436 (ETA 14.0 h); server 2 
+- box1 11:05Z-11:55Z (50 min, low 75% of cap). Log lines around it (cause / healed by):
+    - 11:05Z INBOX 20261119_1105Z_Engine-rate-flat-fast-kinds-NT-stalled.md received: (1a) fast kinds: finish identity pairs of what runs most, add each kind to the filter as
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 5110 (real 3084), pass 2 59 (total results 5169); todo pass 1 1881 (ETA 0.4 h at this rate), pass 2 20044 (ETA 339.7 h); se
+    - 11:49Z LEAD NOTE (W-GRIDOPS; orders 0956Z item 3 and 1105Z item 1b): STALE pass-2 MOVE worked: 1,471 stale files on 50 Dallas rows split by row hash in thirds: Frankfur
+    - 11:51Z LEAD NOTE: MORNING_SUMMARY.md 11-19 edition (due 12:30Z, with FDR-by-family and live-books tables) assigned to new agent W-SUMMARY (draft by 12:25Z). Inbox empty
+    - 11:55Z INBOX 20261119_1156Z_Fake-fill-scan-layers-rate-G-SHORT.md received: (1) fake-fill scan of ALL result trees + verdict check + ONE convention + launcher guard + e
+    - 11:56Z W-SHORT (agent line): DEEPER RUNGS done/issued: Dallas 594/594 (done), Frankfurt 403/1,570, Singapore 470/1,176 (10:00Z: 395 and 377): the two hosts are very slo
+- serverD 11:05Z-11:15Z (10 min, low 81% of cap). Log lines around it (cause / healed by):
+    - 11:05Z INBOX 20261119_1105Z_Engine-rate-flat-fast-kinds-NT-stalled.md received: (1a) fast kinds: finish identity pairs of what runs most, add each kind to the filter as
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 5110 (real 3084), pass 2 59 (total results 5169); todo pass 1 1881 (ETA 0.4 h at this rate), pass 2 20044 (ETA 339.7 h); se
+    - 11:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 1060 (real 9), pass 2 459 (total results 1519); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 6436 (ETA 14.0 h); server 2 
+    - 11:23Z W-COMBO STATUS 11:2xZ (Asia own-checks FINAL line): the Asia own-checks run was in phase 'final' (3 books: Ldcdb0b6e + L578701ed + Lfb608c7b, pool 19) waiting fo
+- serverD 11:35Z-11:45Z (10 min, low 86% of cap). Log lines around it (cause / healed by):
+    - 11:49Z LEAD NOTE (W-GRIDOPS; orders 0956Z item 3 and 1105Z item 1b): STALE pass-2 MOVE worked: 1,471 stale files on 50 Dallas rows split by row hash in thirds: Frankfur
+    - 11:51Z LEAD NOTE: MORNING_SUMMARY.md 11-19 edition (due 12:30Z, with FDR-by-family and live-books tables) assigned to new agent W-SUMMARY (draft by 12:25Z). Inbox empty
+    - 11:55Z INBOX 20261119_1156Z_Fake-fill-scan-layers-rate-G-SHORT.md received: (1) fake-fill scan of ALL result trees + verdict check + ONE convention + launcher guard + e
+    - 11:56Z W-SHORT (agent line): DEEPER RUNGS done/issued: Dallas 594/594 (done), Frankfurt 403/1,570, Singapore 470/1,176 (10:00Z: 395 and 377): the two hosts are very slo
 
 ## Real firings overnight (automatic actions, from MORNING.md in the window; lines marked DRILL were forced tests)
 
@@ -114,17 +353,109 @@
 - 01:00Z | lease_sweep | host: any (holder gone) | moved 1 stale leases to leases_stale_* ({'ALN': 1})
 - 01:10Z | lease_sweep | host: any (holder gone) | moved 2 stale leases to leases_stale_* ({'ALN': 1, 'NYE': 1})
 - 01:10Z | ny_refill | host: queue | queue 12.0 h -> 14.0 h: ranked_follow beyond rank 50: asked 28982 set-months, queued 29126
+- 01:14Z | watchdog | host: - | - 01:14Z W-PROOF ORDER 0118Z DONE: (1) NIGHT_PROOF row j + gap 3: chat assistant's write to box-directives refused 403 (read-only) at 01:15Z, TONIGHT THE MAC OUTBOX IS THE ONLY ORDER PATH; new table 'what must happen overnight WIT
+- 01:20Z | lease_sweep | host: any (holder gone) | moved 2 stale leases to leases_stale_* ({'ALN': 2})
+- 01:20Z | ny_refill | host: queue | queue 17.1 h -> 16.7 h: FORCED TARGET 16.7 h   [DRILL/forced]
+- 01:30Z | ny_refill | host: queue | queue 17.4 h -> 16.6 h: FORCED TARGET 16.5 h   [DRILL/forced]
+- 01:40Z | lease_sweep | host: any (holder gone) | moved 1 stale leases to leases_stale_* ({'ALN': 1})
+- 01:40Z | ny_refill | host: queue | queue 17.4 h -> 16.4 h: FORCED TARGET 16.3 h   [DRILL/forced]
+- 01:50Z | lease_sweep | host: any (holder gone) | moved 2 stale leases to leases_stale_* ({'ALN': 2})
+- 01:50Z | ny_refill | host: queue | queue 17.7 h -> 16.3 h: FORCED TARGET 16.2 h   [DRILL/forced]
+- 02:00Z | lease_sweep | host: any (holder gone) | moved 1 stale leases to leases_stale_* ({'ALN': 1})
+- 02:00Z | ny_refill | host: queue | queue 18.6 h -> 16.3 h: FORCED TARGET 16.0 h   [DRILL/forced]
+- 02:10Z | ny_refill | host: queue | queue 19.6 h -> 16.3 h: FORCED TARGET 15.8 h   [DRILL/forced]
+- 02:20Z | lease_sweep | host: any (holder gone) | moved 1 stale leases to leases_stale_* ({'ALN': 1})
+- 02:20Z | ny_refill | host: queue | queue 20.3 h -> 16.2 h: FORCED TARGET 15.7 h   [DRILL/forced]
+- 02:30Z | ny_refill | host: queue | queue 20.6 h -> 16.3 h: FORCED TARGET 15.5 h   [DRILL/forced]
+- 02:32Z | mux_watch | host: /tmp/mux_pull_67_213_127_157_1 | - 02:32Z W-PROOF mux_watch: pull socket /tmp/mux_pull_67_213_127_157_1 (67.213.127.157) bad: no live master behind socket file (-O check rc 255) (master pid 3408637 killed) -> master torn down by explicit socket, next pull rebuild
+- 02:32Z | mux_watch | host: /tmp/mux_pull_67_213_127_157_2 | - 02:32Z W-PROOF mux_watch: pull socket /tmp/mux_pull_67_213_127_157_2 (67.213.127.157) bad: no live master behind socket file (-O check rc 255) (master pid 3408633 killed) -> master torn down by explicit socket, next pull rebuild
+- 02:40Z | ny_refill | host: queue | queue 19.2 h -> 16.2 h: FORCED TARGET 15.3 h   [DRILL/forced]
+- 02:50Z | ny_refill | host: queue | queue 18.3 h -> 16.0 h: FORCED TARGET 15.2 h   [DRILL/forced]
+- 03:00Z | ny_refill | host: queue | queue 18.0 h -> 16.0 h: FORCED TARGET 15.0 h   [DRILL/forced]
+- 03:10Z | ny_refill | host: queue | queue 18.7 h -> 15.9 h: FORCED TARGET 14.8 h   [DRILL/forced]
+- 03:20Z | ny_refill | host: queue | queue 19.6 h -> 15.8 h: FORCED TARGET 14.7 h   [DRILL/forced]
+- 03:30Z | ny_refill | host: queue | queue 19.7 h -> 15.7 h: FORCED TARGET 14.5 h   [DRILL/forced]
+- 03:40Z | ny_refill | host: queue | queue 19.1 h -> 15.6 h: FORCED TARGET 14.3 h   [DRILL/forced]
+- 03:50Z | ny_refill | host: queue | queue 18.9 h -> 15.5 h: FORCED TARGET 14.2 h   [DRILL/forced]
+- 04:00Z | ny_refill | host: queue | queue 18.7 h -> 15.4 h: FORCED TARGET 14.0 h   [DRILL/forced]
+- 04:10Z | ny_refill | host: queue | queue 19.1 h -> 15.7 h: FORCED TARGET 13.8 h   [DRILL/forced]
+- 04:20Z | ny_refill | host: queue | queue 18.8 h -> 15.6 h: FORCED TARGET 13.7 h   [DRILL/forced]
+- 04:30Z | ny_refill | host: queue | queue 18.0 h -> 16.0 h: FORCED TARGET 13.5 h   [DRILL/forced]
+- 04:40Z | ny_refill | host: queue | queue 16.8 h -> 15.9 h: FORCED TARGET 13.3 h   [DRILL/forced]
+- 04:50Z | ny_refill | host: queue | queue 16.4 h -> 15.8 h: FORCED TARGET 13.2 h   [DRILL/forced]
+- 05:00Z | ny_refill | host: queue | queue 16.9 h -> 15.9 h: FORCED TARGET 13.0 h   [DRILL/forced]
+- 05:10Z | ny_refill | host: queue | queue 17.3 h -> 16.0 h: FORCED TARGET 12.8 h   [DRILL/forced]
+- 05:20Z | lease_sweep | host: any (holder gone) | moved 4 stale leases to leases_stale_* ({'NYE': 4})
+- 05:20Z | ny_refill | host: queue | queue 18.0 h -> 16.1 h: FORCED TARGET 12.7 h   [DRILL/forced]
+- 05:30Z | lease_sweep | host: any (holder gone) | moved 36 stale leases to leases_stale_* ({'NYE': 36})
+- 05:30Z | ny_refill | host: queue | queue 18.8 h -> 16.0 h: FORCED TARGET 12.5 h   [DRILL/forced]
+- 05:40Z | lease_sweep | host: any (holder gone) | moved 42 stale leases to leases_stale_* ({'NYE': 42})
+- 05:40Z | ny_refill | host: queue | queue 19.8 h -> 16.0 h: FORCED TARGET 12.3 h   [DRILL/forced]
+- 05:50Z | lease_sweep | host: any (holder gone) | moved 69 stale leases to leases_stale_* ({'NYE': 69})
+- 05:50Z | ny_refill | host: queue | queue 20.3 h -> 15.9 h: FORCED TARGET 12.2 h   [DRILL/forced]
+- 06:00Z | lease_sweep | host: any (holder gone) | moved 52 stale leases to leases_stale_* ({'NYE': 52})
+- 06:00Z | ny_refill | host: queue | queue 19.5 h -> 15.8 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 06:10Z | lease_sweep | host: any (holder gone) | moved 55 stale leases to leases_stale_* ({'NYE': 55})
+- 06:10Z | ny_refill | host: queue | queue 19.7 h -> 15.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 06:20Z | lease_sweep | host: any (holder gone) | moved 69 stale leases to leases_stale_* ({'NYE': 69})
+- 06:20Z | ny_refill | host: queue | queue 18.9 h -> 15.6 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 06:30Z | lease_sweep | host: any (holder gone) | moved 67 stale leases to leases_stale_* ({'NYE': 67})
+- 06:30Z | ny_refill | host: queue | queue 18.9 h -> 15.5 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 06:40Z | lease_sweep | host: any (holder gone) | moved 95 stale leases to leases_stale_* ({'NYE': 95})
+- 06:40Z | ny_refill | host: queue | queue 19.0 h -> 15.5 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 06:50Z | lease_sweep | host: any (holder gone) | moved 90 stale leases to leases_stale_* ({'NYE': 90})
+- 06:50Z | ny_refill | host: queue | queue 19.0 h -> 15.4 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:00Z | lease_sweep | host: any (holder gone) | moved 102 stale leases to leases_stale_* ({'NYE': 102})
+- 07:00Z | ny_refill | host: queue | queue 19.7 h -> 15.3 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:10Z | lease_sweep | host: any (holder gone) | moved 124 stale leases to leases_stale_* ({'NYE': 124})
+- 07:10Z | ny_refill | host: queue | queue 20.0 h -> 15.5 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:20Z | lease_sweep | host: any (holder gone) | moved 120 stale leases to leases_stale_* ({'NYE': 120})
+- 07:20Z | ny_refill | host: queue | queue 20.3 h -> 15.5 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:26Z | mux_watch | host: /tmp/mux_pull_67_213_127_157_0 | - 07:26Z W-PROOF mux_watch: pull socket /tmp/mux_pull_67_213_127_157_0 (67.213.127.157) bad: no live master behind socket file (-O check rc 255) (master pid 947031 killed) -> master torn down by explicit socket, next pull rebuilds
+- 07:30Z | lease_sweep | host: any (holder gone) | moved 112 stale leases to leases_stale_* ({'NYE': 112})
+- 07:30Z | ny_refill | host: queue | queue 19.6 h -> 15.4 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:40Z | lease_sweep | host: any (holder gone) | moved 96 stale leases to leases_stale_* ({'NYE': 96})
+- 07:40Z | ny_refill | host: queue | queue 17.7 h -> 15.3 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 07:42Z | supervisor | host: box1 | - 07:42Z SUPERVISOR restarted 1 dead loop(s): box1: START_DISPATCH 72.46.85.15 D
+- 07:50Z | lease_sweep | host: any (holder gone) | moved 44 stale leases to leases_stale_* ({'NYE': 44})
+- 07:50Z | ny_refill | host: queue | queue 16.2 h -> 15.1 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:00Z | lease_sweep | host: any (holder gone) | moved 25 stale leases to leases_stale_* ({'NYE': 25})
+- 08:00Z | ny_refill | host: queue | queue 15.1 h -> 15.0 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:10Z | lease_sweep | host: any (holder gone) | moved 8 stale leases to leases_stale_* ({'NYE': 8})
+- 08:10Z | ny_refill | host: queue | queue 14.7 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:20Z | ny_refill | host: queue | queue 14.6 h -> 14.6 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:30Z | ny_refill | host: queue | queue 15.3 h -> 14.8 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:40Z | ny_refill | host: queue | queue 18.1 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 08:50Z | ny_refill | host: queue | queue 22.4 h -> 14.8 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:00Z | ny_refill | host: queue | queue 26.6 h -> 14.8 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:10Z | ny_refill | host: queue | queue 27.6 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:20Z | ny_refill | host: queue | queue 27.7 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:30Z | ny_refill | host: queue | queue 27.8 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:40Z | ny_refill | host: queue | queue 25.6 h -> 14.7 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 09:50Z | ny_refill | host: queue | queue 24.1 h -> 14.6 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:00Z | ny_refill | host: queue | queue 22.6 h -> 14.5 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:10Z | ny_refill | host: queue | queue 22.6 h -> 14.4 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:20Z | ny_refill | host: queue | queue 21.0 h -> 14.4 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:30Z | ny_refill | host: queue | queue 19.1 h -> 14.3 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:40Z | ny_refill | host: queue | queue 19.6 h -> 14.2 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 10:50Z | ny_refill | host: queue | queue 20.3 h -> 14.2 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:00Z | ny_refill | host: queue | queue 20.7 h -> 14.1 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:10Z | ny_refill | host: queue | queue 20.5 h -> 14.1 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:20Z | ny_refill | host: queue | queue 19.9 h -> 14.0 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:30Z | ny_refill | host: queue | queue 20.3 h -> 14.0 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:40Z | ny_refill | host: queue | queue 19.8 h -> 14.0 h: FORCED TARGET 12.0 h   [DRILL/forced]
+- 11:50Z | ny_refill | host: queue | queue 20.3 h -> 14.0 h: FORCED TARGET 12.0 h   [DRILL/forced]
 
 ## Set-months landed in the window (DONE files in the box-1 result tree), per programme prefix
 
 | programme | set-months |
 |---|---|
-| TL3_ALN | 16922 |
-| TL3_NYE | 7446 |
+| TL3_ALN | 86560 |
+| TL3_NYE | 59402 |
 | TL3_ASI | 3855 |
+| TL3_LON | 768 |
 | TL3_EXE | 136 |
-| TL3_LON | 123 |
 | TL3_STK | 60 |
 | TL3_NYL | 12 |
 | TL3_LYR | 9 |
-| TOTAL | 28563 |
+| TOTAL | 150802 |
