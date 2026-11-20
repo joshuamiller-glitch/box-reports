@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 14:06Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 14:14Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
 
@@ -26,7 +26,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **31** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 303 of 304 in the universe; failed the prior-year positivity / persistence / controls: 254; waiting for prior years: 1; passed (a)+(b), controls still running: 18.
+Books with all months landed: 306 of 304 in the universe; failed the prior-year positivity / persistence / controls: 254; waiting for prior years: 1; passed (a)+(b), controls still running: 18.
 Pool books: L08df8bb0, L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, La6f6f7ad, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9
 
 Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
@@ -36,11 +36,13 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Ldcdb0b6e | `TL3_ALN_AS_Ldcdb0b6e_BASE` | 3706 / -11884 / -6537 / 2256 | 4466 / -11441 / -6537 / 1470 | 2764 / -6300 / -3724 / 380 RED | 4487 / -12697 / -3638 / 628 RED | 10407 / -21690 / -7067 / 391 RED | 0.28 | 29 |
+| 2 | L7f41b347 | `TL3_ALN_AS_STK86517b03` | 4186 / -10397 / -7628 / 4523 | 2579 / -7201 / -6782 / 4531 | 4563 / -10922 / -4778 / 857 GREEN | 4055 / -13302 / -4891 / 1270 RED | 17568 / -37879 / -17194 / 822 RED | 0.32 | 15 |
 
 Selected books in order (plain words): 
 - Ldcdb0b6e: cumulative-delta-range bar 100 contracts [cdr_100]; ~14 bars/hour; trigger trig_momentum_mvote / v3of5 {"scale": 0.25, "thr": 0.25}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
+- L7f41b347: time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour; trigger trig_levels_fib15 / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events)
 
-EQUAL-RISK LINE (this stack vs today, as run): today's Asia session scaled DOWN by k = 0.42 to the stack's drawdown: L6M 3706 / -10908 / -6879 / 6682 ; L3M 4166 / -10908 / -6263 / 5052. The stack: L6M 3706 / -11884 / -6537 / 2256 ; L3M 4466 / -11441 / -6537 / 1470. Persistence of the stack vs that reference: 0.28; rule B per prior year: RED / RED / RED.
+EQUAL-RISK LINE (this stack vs today, as run): today's Asia session scaled DOWN by k = 0.48 to the stack's drawdown: L6M 4186 / -12320 / -7769 / 7547 ; L3M 4705 / -12320 / -7073 / 5706. The stack: L6M 4186 / -10397 / -7628 / 4523 ; L3M 2579 / -7201 / -6782 / 4531. Persistence of the stack vs that reference: 0.32; rule B per prior year: GREEN / RED / RED.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 11:38Z UTC; pool 19 books): Ldcdb0b6e + L578701ed + Lfb608c7b
 
