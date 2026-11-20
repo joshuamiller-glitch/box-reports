@@ -1,4 +1,5 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:05Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 18:18Z.
+**YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
@@ -12,7 +13,7 @@ Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+
 | (b) positive $/wk in each of 2023, 2024, 2025 | 228 of 337 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 226 of 337 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 76 books) | 16 of 76 |
-| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 0 of 337 |
+| (e) not RED on rule B vs FITTED D7 AS RUN (reference only, not the yardstick), scaled to equal risk, in every prior year | 0 of 337 |
 | a + b | 201 |
 | a + b + c | 161 |
 | a + b + c + d | 15 : L15f14deb, L1756b913, L1edb9fab, L3faac8df, L578701ed, L5dee2059, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9 |
@@ -29,7 +30,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 Books with all months landed: 434 of 439 in the universe; failed the prior-year positivity / persistence / controls: 233; waiting for prior years: 5; passed (a)+(b), controls still running: 89.
 Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar], L1756b913 [BASE kept: time / line-break / median-Renko / swing bar], L1edb9fab [BASE kept: time / line-break / median-Renko / swing bar], L3faac8df [BASE kept: time / line-break / median-Renko / swing bar], L578701ed [BASE kept: time / line-break / median-Renko / swing bar], L5dee2059 [BASE kept: time / line-break / median-Renko / swing bar], L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar], L7f41b347 [BASE kept: time / line-break / median-Renko / swing bar], L973b5c8a [BASE kept: time / line-break / median-Renko / swing bar], L9aa7805c [BASE kept: time / line-break / median-Renko / swing bar], Lb68a132d [BASE kept: time / line-break / median-Renko / swing bar], Lcbc8a7ec [BASE kept: time / line-break / median-Renko / swing bar], Lec335094 [BASE kept: time / line-break / median-Renko / swing bar], Lff52ec0c [BASE kept: time / line-break / median-Renko / swing bar], M7423c0d9 [BASE kept: time / line-break / median-Renko / swing bar]
 
-Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
+Pool books vs FITTED D7 AS RUN (reference only, not the yardstick) (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "FITTED D7 AS RUN (reference only, not the yardstick)" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
@@ -39,8 +40,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 Selected books in order (plain words): 
 - L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
+   fitted: none proposed yet (stage 1 not done for this book)
 
-EQUAL-RISK LINE (this stack vs today, as run): today's Asia session scaled DOWN by k = 0.47 to the stack's drawdown: L6M 4075 / -11994 / -7564 / 7347 ; L3M 4580 / -11994 / -6886 / 5555. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.32; rule B per prior year: RED / RED / RED.
+EQUAL-RISK LINE (this stack vs FITTED D7 AS RUN (reference only, not the yardstick)): today's Asia session scaled DOWN by k = 0.47 to the stack's drawdown: L6M 4075 / -11994 / -7564 / 7347 ; L3M 4580 / -11994 / -6886 / 5555. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.32; rule B per prior year: RED / RED / RED.
 
 STOPPED at 1 books: no candidate passes the add rule.
 
