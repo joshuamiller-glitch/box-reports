@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-20 23:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-20 23:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-20 23:15Z | WARNING serverC below 85% busy for 316 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-20 23:30Z | WARNING serverD below 85% busy for 2 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-20 23:15Z
+2026-11-20 23:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-20 23:15Z | WARNING serverC below 85% busy for 316
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 102.3 GB; live reservations 2 (2 GB); workers 16, of which TP-adopted 16 (RSS 19.3 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 34.63, 52.51, 55.57
-  by tag: NYE quota 16 running 16 hungry False RSS 19.3 GB PSS 17.4 GB
+Server 1 (this box): MemAvail 86.5 GB; live reservations 5 (5 GB); workers 23, of which TP-adopted 23 (RSS 30.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 69.39, 71.33, 64.72
+  by tag: NYR quota 12 running 16 hungry False RSS 22.2 GB PSS 17.8 GB; TOOLS quota 0 running 7 hungry False RSS 8.8 GB PSS 8.0 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L39ad2f8d_ALN (x30);TL3_LYR_JNT_L578701ed_c1 (x12);TL3_NYE_Le64f10da_RK7CT7p (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 99.95, 98.73, 98.62|/dev/md2         28T  2.7T   26T  10% /mnt/l2|52|
+  top running jobs: TL3_NYE_Le64f10da_RK7CT91p (x12);TL3_NYE_Le64f10da_RK7CT84p (x8);TL3_LYR_JNT_L578701ed_c5 (x7);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 97.21, 96.95, 97.22|/dev/md2         28T  2.7T   26T  10% /mnt/l2|42|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,4 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 99.95, 98.73, 98.62|/dev/md
 
 ## INBOX (last 5 received)
 20261120_1930Z_trigger-debug-tables-for-the-NT8-port.md 20261120_2103Z_asia_stack_which_loop.md 20261120_2155Z_Josh-no-artificial-cutoff.md 20261120_2243Z_reappend_98_layer_rows_now.md 20261120_2315Z_box1_slots_and_owed_notes.md
-- 23:14Z INBOX 20261120_2315Z box1_slots_and_owed_notes received (relay, not Josh; no new tests, accepted). (1) W-GRIDOPS: why box 1 is 10-11/24, fix or explain
