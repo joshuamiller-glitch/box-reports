@@ -1,6 +1,6 @@
 # BARE D7 YARDSTICK (W-BARE; order 1803Z; Josh: "if you judge anything it should be D7 bare books current to D8 bare books")
 
-Written 2026-11-20 18:43Z UTC. Data end: month 202610 (all-new base, 42 months 2023-04..2026-10 minus 202511). Dollars are BASE lots (1 lot per trade, as every all-new book), net of $4.84 per lot round trip. Live lots = max(1, floor(1.75 x base + 0.5)). Windows: L6M = 202605-202610, L3M = 202608-202610, each prior year (2023 is Apr-Dec). Cells read: ulcer / max DD / worst week / mean $ per week.
+Written 2026-11-20 19:44Z UTC. Data end: month 202610 (all-new base, 42 months 2023-04..2026-10 minus 202511). Dollars are BASE lots (1 lot per trade, as every all-new book), net of $4.84 per lot round trip. Live lots = max(1, floor(1.75 x base + 0.5)). Windows: L6M = 202605-202610, L3M = 202608-202610, each prior year (2023 is Apr-Dec). Cells read: ulcer / max DD / worst week / mean $ per week.
 
 ## How the bare D7 books were built (plain words)
 - **Trigger stream:** a passive hook (code/th_bare/bare_cap.py) sits on top of the JL3 engine (the live D7 as run) and writes down EVERY raw trigger call of every live book, before any layer sees it. The JL3 run with this hook is trade for trade the JL3 run (202610: 691 trades, 37,159.82 net, identical). Putting the captured triggers back into the live books with ALL layers ON reproduces 689 of 691 JL3 trades of 202610 and every book total to the cent except K7 and M7 (2 trades each differ by injection timing): so the captured events are the live books' own raw triggers.
@@ -43,20 +43,35 @@ Written 2026-11-20 18:43Z UTC. Data end: month 202610 (all-new base, 42 months 2
 
 | bare D7 set | L6M | L3M | 2023 | 2024 | 2025 | persistence (pos. 14-day blocks) | luck controls beaten L6M (L3M) of 30, ulcer-only |
 |---|---|---|---|---|---|---|---|
-| STACK (A7 + H7 + K7 + P7 + U7) `TL3_ALN_AS_STKLIVE_BARE` | 13133 / -32277 / -21126 / 5654 | 12212 / -27920 / -17823 / 3191 | pending | pending | pending | pending | controls not queued |
-| A7 `TL3_ALN_AS_LIVEA7_BARE` | 7244 / -17518 / -5318 / 39 | 4155 / -11860 / -5318 / -761 | pending | pending | pending | pending | controls not queued |
-| H7 `TL3_ALN_AS_LIVEH7_BARE` | 3123 / -8333 / -5984 / 594 | 2774 / -6317 / -2524 / 272 | pending | pending | pending | pending | controls not queued |
-| K7 `TL3_ALN_AS_LIVEK7_BARE` | 13683 / -33669 / -11741 / 1390 | 14575 / -27693 / -11741 / 297 | pending | pending | pending | pending | controls not queued |
-| P7 `TL3_ALN_AS_LIVEP7_BARE` | 5238 / -12844 / -11775 / 1538 | 3296 / -11750 / -7906 / 2203 | pending | pending | pending | pending | controls not queued |
-| U7 `TL3_ALN_AS_LIVEU7_BARE` | 2325 / -6392 / -2599 / 620 | 2088 / -6392 / -2599 / 468 | pending | pending | pending | pending | controls not queued |
+| STACK (A7 + H7 + K7 + P7 + U7) `TL3_ALN_AS_STKLIVE_BARE` | 13133 / -32277 / -21126 / 5654 | 12212 / -27920 / -17823 / 3191 | 20445 / -33434 / -8171 / -160 | 9302 / -25668 / -8091 / 1386 | 19498 / -38603 / -14679 / 1273 | 0.63 | 22 (10), ulcer-only 29 |
+| A7 `TL3_ALN_AS_LIVEA7_BARE` | 7244 / -17518 / -5318 / 39 | 4155 / -11860 / -5318 / -761 | 2915 / -6413 / -3059 / 65 | 2359 / -7218 / -4729 / 558 | 4966 / -12254 / -4174 / 421 | 0.62 | 17 (9), ulcer-only 21 |
+| H7 `TL3_ALN_AS_LIVEH7_BARE` | 3123 / -8333 / -5984 / 594 | 2774 / -6317 / -2524 / 272 | 2008 / -4436 / -1549 / 127 | 1789 / -5778 / -1954 / 330 | 5628 / -13047 / -2824 / -100 | 0.54 | 3 (10), ulcer-only 27 |
+| K7 `TL3_ALN_AS_LIVEK7_BARE` | 13683 / -33669 / -11741 / 1390 | 14575 / -27693 / -11741 / 297 | 2921 / -6163 / -2569 / 170 | 6334 / -16534 / -4674 / -37 | 10071 / -23472 / -8967 / 14 | 0.54 | 8 (1), ulcer-only 21 |
+| P7 `TL3_ALN_AS_LIVEP7_BARE` | 5238 / -12844 / -11775 / 1538 | 3296 / -11750 / -7906 / 2203 | 9659 / -15320 / -4424 / -302 | 4886 / -12557 / -4003 / 446 | 3492 / -8260 / -5318 / 939 | 0.58 | 11 (5), ulcer-only 27 |
+| U7 `TL3_ALN_AS_LIVEU7_BARE` | 2325 / -6392 / -2599 / 620 | 2088 / -6392 / -2599 / 468 | 4290 / -7462 / -1615 / -22 | 1619 / -4307 / -1904 / 135 | 3842 / -8347 / -4689 / 250 | 0.58 | 27 (13), ulcer-only 30 |
 
 Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M ulcer equals the D8 row; the same k in every window; "worse %" = how much WORSE the D8 row is than the scaled bare D7 stack on ulcer / max DD / worst week and how much LOWER on mean; GREEN <= 15%, AMBER 15-30%, RED > 30%; negative = D8 better):
 
 | D8 comparator | k | window | D8: ulcer / maxDD / worst wk / mean | bare D7 stack scaled: ulcer / maxDD / worst wk / mean | D8 worse % (ulcer, maxDD, worst wk, mean) | colour |
 |---|---|---|---|---|---|---|
-| dead three-book Asia stack (Ldcdb0b6e + L578701ed + Lfb608c7b), for the record `TL3_ALN_AS_STKe7f8ab00` | pending (a month of the D8 or the bare D7 stack not landed) | | | | | |
-| current Asia pool pick L7c368a4f alone (own-checks step 1) `TL3_ALN_AS_L7c368a4f_BASE` | pending (a month of the D8 or the bare D7 stack not landed) | | | | | |
-| Asia pool book Ldcdb0b6e alone (staying-power / earlier pick) `TL3_ALN_AS_Ldcdb0b6e_BASE` | pending (a month of the D8 or the bare D7 stack not landed) | | | | | |
+| dead three-book Asia stack (Ldcdb0b6e + L578701ed + Lfb608c7b), for the record `TL3_ALN_AS_STKe7f8ab00` | 0.34 | L6M | 4497 / -14918 / -8652 / 7256 | 4497 / -11051 / -7233 / 1936 | 0% / 35% / 20% / -275% | RED |
+|  `` | 0.34 | L3M | 5966 / -14918 / -8652 / 6397 | 4181 / -9559 / -6102 / 1092 | 43% / 56% / 42% / -486% | RED |
+|  `` | 0.34 | Y2023 | 2776 / -6042 / -2733 / 1277 | 7000 / -11447 / -2797 / -55 | -60% / -47% / -2% / -2436% | GREEN |
+|  `` | 0.34 | Y2024 | 9040 / -27272 / -10101 / 944 | 3185 / -8788 / -2770 / 475 | 184% / 210% / 265% / -99% | RED |
+|  `` | 0.34 | Y2025 | 11554 / -25320 / -17451 / 1072 | 6676 / -13217 / -5026 / 436 | 73% / 92% / 247% / -146% | RED |
+| | | persistence of D8 vs scaled bare D7 stack (share of 14-day blocks where D8 >= it) | 0.66 | | | |
+| current Asia pool pick L7c368a4f alone (own-checks step 1) `TL3_ALN_AS_L7c368a4f_BASE` | 0.31 | L6M | 4075 / -11123 / -7409 / 2456 | 4075 / -10016 / -6556 / 1754 | 0% / 11% / 13% / -40% | GREEN |
+|  `` | 0.31 | L3M | 2028 / -5118 / -3617 / 2434 | 3790 / -8664 / -5531 / 990 | -46% / -41% / -35% / -146% | GREEN |
+|  `` | 0.31 | Y2023 | 4013 / -9990 / -2484 / 203 | 6344 / -10375 / -2535 / -50 | -37% / -4% / -2% / -510% | GREEN |
+|  `` | 0.31 | Y2024 | 4626 / -11465 / -2843 / 654 | 2886 / -7965 / -2511 / 430 | 60% / 44% / 13% / -52% | RED |
+|  `` | 0.31 | Y2025 | 5940 / -14312 / -10102 / 528 | 6050 / -11979 / -4555 / 395 | -2% / 19% / 122% / -34% | RED |
+| | | persistence of D8 vs scaled bare D7 stack (share of 14-day blocks where D8 >= it) | 0.53 | | | |
+| Asia pool book Ldcdb0b6e alone (staying-power / earlier pick) `TL3_ALN_AS_Ldcdb0b6e_BASE` | 0.28 | L6M | 3706 / -11884 / -6537 / 2256 | 3706 / -9109 / -5962 / 1596 | 0% / 30% / 10% / -41% | RED |
+|  `` | 0.28 | L3M | 4466 / -11441 / -6537 / 1470 | 3446 / -7879 / -5030 / 900 | 30% / 45% / 30% / -63% | RED |
+|  `` | 0.28 | Y2023 | 2764 / -6300 / -3724 / 380 | 5770 / -9435 / -2306 / -45 | -52% / -33% / 61% / -944% | RED |
+|  `` | 0.28 | Y2024 | 4487 / -12697 / -3638 / 628 | 2625 / -7244 / -2283 / 391 | 71% / 75% / 59% / -61% | RED |
+|  `` | 0.28 | Y2025 | 10407 / -21690 / -7067 / 391 | 5502 / -10894 / -4143 / 359 | 89% / 99% / 71% / -9% | RED |
+| | | persistence of D8 vs scaled bare D7 stack (share of 14-day blocks where D8 >= it) | 0.52 | | | |
 
 ## NY AM: bare D7 vs bare D8, last 6 months (1 lot, base dollars)
 
@@ -81,20 +96,30 @@ Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M u
 
 | bare D7 set | L6M | L3M | 2023 | 2024 | 2025 | persistence (pos. 14-day blocks) | luck controls beaten L6M (L3M) of 30, ulcer-only |
 |---|---|---|---|---|---|---|---|
-| STACK (H7 + K7 + M7 + O7 + P7) `TL3_ALN_NY_STKLIVE_BARE` | 33655 / -60055 / -25697 / -599 | 24692 / -44363 / -17385 / -1039 | pending | pending | pending | pending | controls not queued |
-| H7 `TL3_ALN_NY_LIVEH7_BARE` | 1933 / -4589 / -2375 / 861 | 1158 / -2400 / -2375 / 947 | pending | pending | pending | pending | controls not queued |
-| K7 `TL3_ALN_NY_LIVEK7_BARE` | 22882 / -37464 / -12981 / -1226 | 9655 / -18748 / -10487 / -1093 | pending | pending | pending | pending | controls not queued |
-| M7 `TL3_ALN_NY_LIVEM7_BARE` | 9547 / -23316 / -8197 / -12 | 11924 / -23316 / -7957 / -298 | pending | pending | pending | pending | controls not queued |
-| O7 `TL3_ALN_NY_LIVEO7_BARE` | 4077 / -9098 / -3044 / 343 | 2519 / -6889 / -2350 / 241 | pending | pending | pending | pending | controls not queued |
-| P7 `TL3_ALN_NY_LIVEP7_BARE` | 16967 / -32680 / -14571 / -564 | 16127 / -28350 / -5871 / -836 | pending | pending | pending | pending | controls not queued |
-| O7 with its own 16:00 time exit (variant) `TL3_ALN_NY_LIVEO7_BARE16` | 4077 / -9098 / -3044 / 330 | 2519 / -6889 / -2350 / 241 | pending | pending | pending | pending | controls not queued |
+| STACK (H7 + K7 + M7 + O7 + P7) `TL3_ALN_NY_STKLIVE_BARE` | 33655 / -60055 / -25697 / -599 | 24692 / -44363 / -17385 / -1039 | 18603 / -43707 / -16286 / 2077 | 16905 / -36886 / -17347 / 2238 | 24263 / -71352 / -22902 / 995 | 0.58 | 7 (5), ulcer-only 12 |
+| H7 `TL3_ALN_NY_LIVEH7_BARE` | 1933 / -4589 / -2375 / 861 | 1158 / -2400 / -2375 / 947 | 3872 / -11171 / -3164 / 114 | 15564 / -24817 / -4729 / -437 | 6055 / -16355 / -5524 / 309 | 0.58 | 26 (16), ulcer-only 29 |
+| K7 `TL3_ALN_NY_LIVEK7_BARE` | 22882 / -37464 / -12981 / -1226 | 9655 / -18748 / -10487 / -1093 | 7328 / -16513 / -7084 / 325 | 4101 / -10525 / -5842 / 1164 | 10208 / -24209 / -7003 / 122 | 0.57 | 0 (2), ulcer-only 4 |
+| M7 `TL3_ALN_NY_LIVEM7_BARE` | 9547 / -23316 / -8197 / -12 | 11924 / -23316 / -7957 / -298 | 8320 / -19023 / -6943 / 153 | 9662 / -18077 / -11361 / 370 | 12837 / -29322 / -7204 / 324 | 0.51 | 14 (3), ulcer-only 17 |
+| O7 `TL3_ALN_NY_LIVEO7_BARE` | 4077 / -9098 / -3044 / 343 | 2519 / -6889 / -2350 / 241 | 8906 / -15144 / -3974 / -190 | 1591 / -4749 / -2444 / 826 | 3352 / -7793 / -3134 / 498 | 0.70 | 5 (7), ulcer-only 15 |
+| P7 `TL3_ALN_NY_LIVEP7_BARE` | 16967 / -32680 / -14571 / -564 | 16127 / -28350 / -5871 / -836 | 2462 / -8212 / -4874 / 1675 | 8725 / -15893 / -7672 / 314 | 20202 / -40919 / -14466 / -259 | 0.57 | 0 (1), ulcer-only 11 |
+| O7 with its own 16:00 time exit (variant) `TL3_ALN_NY_LIVEO7_BARE16` | 4077 / -9098 / -3044 / 330 | 2519 / -6889 / -2350 / 241 | 8860 / -16004 / -3974 / -143 | 1695 / -5494 / -3189 / 827 | 3442 / -7793 / -3134 / 486 | 0.70 | controls not queued |
 
 Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M ulcer equals the D8 row; the same k in every window; "worse %" = how much WORSE the D8 row is than the scaled bare D7 stack on ulcer / max DD / worst week and how much LOWER on mean; GREEN <= 15%, AMBER 15-30%, RED > 30%; negative = D8 better):
 
 | D8 comparator | k | window | D8: ulcer / maxDD / worst wk / mean | bare D7 stack scaled: ulcer / maxDD / worst wk / mean | D8 worse % (ulcer, maxDD, worst wk, mean) | colour |
 |---|---|---|---|---|---|---|
-| NY AM Stack A (L7cc56d99 + L488784d8) on BASE `TL3_ALN_NY_STK30810e22` | pending (a month of the D8 or the bare D7 stack not landed) | | | | | |
-| NY AM Stack A on the D8 _CANC streams `TL3_ALN_NY_STKCANC_A` | pending (a month of the D8 or the bare D7 stack not landed) | | | | | |
+| NY AM Stack A (L7cc56d99 + L488784d8) on BASE `TL3_ALN_NY_STK30810e22` | 0.13 | L6M | 4313 / -12245 / -7742 / 3366 | 4313 / -7696 / -3293 / -77 | -0% / 59% / 135% / -4487% | RED |
+|  `` | 0.13 | L3M | 3616 / -10088 / -7377 / 2704 | 3164 / -5685 / -2228 / -133 | 14% / 77% / 231% / -2132% | RED |
+|  `` | 0.13 | Y2023 | 5576 / -14827 / -6948 / 1463 | 2384 / -5601 / -2087 / 266 | 134% / 165% / 233% / -449% | RED |
+|  `` | 0.13 | Y2024 | 9984 / -20581 / -8704 / 672 | 2166 / -4727 / -2223 / 287 | 361% / 335% / 292% / -134% | RED |
+|  `` | 0.13 | Y2025 | 9176 / -26571 / -14752 / 1580 | 3109 / -9144 / -2935 / 127 | 195% / 191% / 403% / -1139% | RED |
+| | | persistence of D8 vs scaled bare D7 stack (share of 14-day blocks where D8 >= it) | 0.65 | | | |
+| NY AM Stack A on the D8 _CANC streams `TL3_ALN_NY_STKCANC_A` | 0.13 | L6M | 4323 / -12245 / -7742 / 3326 | 4323 / -7715 / -3301 / -77 | 0% / 59% / 135% / -4424% | RED |
+|  `` | 0.13 | L3M | 3611 / -10068 / -7357 / 3004 | 3172 / -5699 / -2233 / -133 | 14% / 77% / 229% / -2351% | RED |
+|  `` | 0.13 | Y2023 | 5425 / -15589 / -6278 / 1527 | 2390 / -5615 / -2092 / 267 | 127% / 178% / 200% / -472% | RED |
+|  `` | 0.13 | Y2024 | 8706 / -18758 / -8704 / 645 | 2172 / -4739 / -2228 / 287 | 301% / 296% / 291% / -124% | RED |
+|  `` | 0.13 | Y2025 | 9531 / -26301 / -14742 / 1496 | 3117 / -9166 / -2942 / 128 | 206% / 187% / 401% / -1071% | RED |
+| | | persistence of D8 vs scaled bare D7 stack (share of 14-day blocks where D8 >= it) | 0.68 | | | |
 
 ## London: bare D7 vs bare D8, last 6 months (1 lot, base dollars)
 
@@ -110,11 +135,11 @@ Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M u
 
 | bare D7 set | L6M | L3M | 2023 | 2024 | 2025 | persistence (pos. 14-day blocks) | luck controls beaten L6M (L3M) of 30, ulcer-only |
 |---|---|---|---|---|---|---|---|
-| STACK (K7 + M7 + P7 + U7) `TL3_ALN_LO_STKLIVE_BARE` | 26504 / -54522 / -24897 / 198 | 18796 / -38763 / -24897 / 1307 | pending | pending | pending | pending | controls not queued |
-| K7 `TL3_ALN_LO_LIVEK7_BARE` | 20713 / -35038 / -8066 / -755 | 6727 / -14050 / -5057 / 295 | pending | pending | pending | pending | controls not queued |
-| M7 `TL3_ALN_LO_LIVEM7_BARE` | 11092 / -21670 / -14487 / -22 | 9166 / -19088 / -14487 / 196 | pending | pending | pending | pending | controls not queued |
-| P7 `TL3_ALN_LO_LIVEP7_BARE` | 5562 / -12725 / -5633 / 1236 | 3661 / -9609 / -5633 / 1216 | pending | pending | pending | pending | controls not queued |
-| U7 `TL3_ALN_LO_LIVEU7_BARE` | 4471 / -14821 / -6254 / -258 | 5324 / -14821 / -4754 / -400 | pending | pending | pending | pending | controls not queued |
+| STACK (K7 + M7 + P7 + U7) `TL3_ALN_LO_STKLIVE_BARE` | 26504 / -54522 / -24897 / 198 | 18796 / -38763 / -24897 / 1307 | 17142 / -40399 / -10934 / 363 | 75837 / -134401 / -30762 / -1972 | 28391 / -59694 / -18100 / -369 | 0.46 | 9 (4), ulcer-only 18 |
+| K7 `TL3_ALN_LO_LIVEK7_BARE` | 20713 / -35038 / -8066 / -755 | 6727 / -14050 / -5057 / 295 | 4717 / -11389 / -3069 / 169 | 15743 / -31072 / -7393 / -159 | 8133 / -16461 / -5979 / 109 | 0.46 | 10 (12), ulcer-only 10 |
+| M7 `TL3_ALN_LO_LIVEM7_BARE` | 11092 / -21670 / -14487 / -22 | 9166 / -19088 / -14487 / 196 | 5629 / -13346 / -4328 / 388 | 35430 / -57948 / -9893 / -956 | 12346 / -29878 / -6541 / -173 | 0.44 | 0 (0), ulcer-only 18 |
+| P7 `TL3_ALN_LO_LIVEP7_BARE` | 5562 / -12725 / -5633 / 1236 | 3661 / -9609 / -5633 / 1216 | 5833 / -12805 / -4723 / 231 | 28569 / -48872 / -11458 / -743 | 16570 / -26209 / -8412 / -216 | 0.44 | 21 (18), ulcer-only 23 |
+| U7 `TL3_ALN_LO_LIVEU7_BARE` | 4471 / -14821 / -6254 / -258 | 5324 / -14821 / -4754 / -400 | 11999 / -17584 / -4654 / -424 | 9441 / -18880 / -3919 / -113 | 7346 / -14047 / -5389 / -135 | 0.44 | 6 (2), ulcer-only 17 |
 
 Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M ulcer equals the D8 row; the same k in every window; "worse %" = how much WORSE the D8 row is than the scaled bare D7 stack on ulcer / max DD / worst week and how much LOWER on mean; GREEN <= 15%, AMBER 15-30%, RED > 30%; negative = D8 better):
 
