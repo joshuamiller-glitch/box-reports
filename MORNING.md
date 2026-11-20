@@ -10629,3 +10629,21 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 07:52Z W-COMBO ALN-AUTO TL3_ALN_NY_Le336ffa1_BASE controls: real beats 23 of 30 (L6M drawdown-first; ulcer only 28; L3M 7): LEAD-not-confirmed
 - 07:52Z W-COMBO ALN-AUTO TL3_ALN_AS_L8c18be1c_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 27; L3M 5): LEAD-not-confirmed
 - 2026-11-20T07:53Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+07:56Z W-GRIDOPS FREEZE EXCEPTION follow-up D +10 min (07:56Z, restart 07:42Z): D dispatcher count 58/64, HEALTH serverD 53/64 = 83% (above 80%), A 100/102, B 96/102, C 98/100: no dip on the others. +20 min reading at ~08:02Z.
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_AS_L85abf719_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.71): 30 date-shift controls queued (180 set-months)
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_L21054a4f_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.60): 30 date-shift controls queued (180 set-months)
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_L952ae1e6_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.62): 30 date-shift controls queued (180 set-months)
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_Lea670f79_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.70): 30 date-shift controls queued (180 set-months)
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_Lf94039bd_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_Le4fede95_BASE controls: real beats 3 of 30 (L6M drawdown-first; ulcer only 23; L3M 21): LEAD-not-confirmed
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_NY_Lee50755d_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 16; L3M 1): LEAD-not-confirmed
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_AS_La1526ec7_BASE controls: real beats 12 of 30 (L6M drawdown-first; ulcer only 26; L3M 13): LEAD-not-confirmed
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_AS_Lb2f695b9_BASE controls: real beats 20 of 30 (L6M drawdown-first; ulcer only 22; L3M 8): LEAD-not-confirmed
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_AS_Lb0bab78f_BASE controls: real beats 14 of 30 (L6M drawdown-first; ulcer only 26; L3M 16): LEAD-not-confirmed
+- 07:57Z W-COMBO ALN-AUTO TL3_ALN_AS_Lce256a20_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 27; L3M 13): LEAD-not-confirmed
+- 07:58Z WATCHDOG fired: F
+- (wall 07:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-20T07:58:42Z W-GRIDA 2026-11-20T07:58Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 700 / 14 / 0.0 h; (b) pass-1 level modules 55 / 0 / 0.0 h; (c) pass-2 family cells 245 / 6483 / 26.5 h; (d) rest of pass 1 521 / 9 / 0.0 h; workers 86 (28 R      58 S); load 92.45; todo counts refreshed {"": 0, "_p2": 9} min ago
+- 07:59Z W-P2A stale watch: stale_cells.json 637 cells, 0 new listed cells excluded []
+2026-11-20T07:59:25Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 08:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 59 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 261936
