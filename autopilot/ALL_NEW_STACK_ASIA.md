@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 06:59Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 07:03Z.
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
@@ -38,7 +38,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
 
-Phase: final. Pool used by this run: 27 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M7423c0d9).
+RESULT: EMPTY: no stack passes
+
+Phase: done. Pool used by this run: 27 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
