@@ -1,8 +1,8 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-20 03:45Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-20 04:00Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
-**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 2547; cells with a finished REPLACE verdict (L6M+L3M landed) 2508; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 23; twin cells listed 2209.
+**Counts (distinct event streams: parked twins are listed with the label [twin of ...] but NOT counted again):** cells with any engine row 2652; cells with a finished REPLACE verdict (L6M+L3M landed) 2641; cells that beat at least one live book on L6M+L3M (BETTER, calibration pending) 24; twin cells listed 2253.
 
 ## Cells that beat a live book (yes), drawdown first
 | rank | cell | REPLACE K7 | REPLACE P7 | REPLACE M7 | REPLACE H7 | ADD | prior years run | controls |
@@ -25,6 +25,7 @@
 | 132 | vol_1100 / levels_profile_va.break_native {"n": 2, "k": 0.0} / sym8u / long | no (L6M du +859 dm +2515 | L3M du +1034 dm +1658) | pending | yes (L6M du -423 dm +1647 | L3M du -818 dm +145) | no (L6M du -214 dm +1409 | L3M du -744 dm -167) | yes (L6M du -503 dm +1686 | L3M du -1124 dm +403) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2144 | dchg_40 / tape_libvol.obv {"len": 10} / sym15u / both | yes (L6M du -359 dm +2118 | L3M du -752 dm +2933) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 4396 | [twin of L13e165bc] kagi_40 / tape_libvol.obv {"len": 10} / sym15u / both | yes (L6M du -359 dm +2118 | L3M du -752 dm +2933) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 4515 | anch_L0200_B25 / levels_fibr_or.retest_native {"M": 10, "tol": 0.5} / sym15u / both | yes (L6M du -278 dm +1444 | L3M du -838 dm +3878) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 8 | [twin of Lf82cdf44] urenko_20 / levels_profile_va.false_break_native {"M": 3, "k": 0.5} / plain60/60 / long | no (L6M du +336 dm +1980 | L3M du +63 dm +2912) | pending | pending | yes (L6M du -276 dm +1216 | L3M du -925 dm +1793) | yes (L6M du -483 dm +1457 | L3M du -1172 dm +2247) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 1368 | tick_800 / momentum_er.trend_native {"len": 30, "thr": 0.3} / plain60/60 / both | yes (L6M du -269 dm +2068 | L3M du -349 dm +1697 RED Y2023) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2333 | tm20 / momentum_squeeze.fire_slope {"len": 20, "wd": 1.5} / sym15u / long | yes (L6M du -260 dm +655 | L3M du -435 dm +491) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
@@ -165,6 +166,12 @@
 | L440aa51b (both) | long-only | ADD | not run yet | | |
 | L440aa51b (both) | short-only | RK7 | not run yet | | |
 | L440aa51b (both) | short-only | ADD | not run yet | | |
+| L7cce718c | both sides | RK7 | -278 / -185 / +2519 / +1444 | -838 / +1293 / +2519 / +3878 | yes |
+| L7cce718c (both) | both sides | ADD | not run yet | | |
+| L7cce718c (both) | long-only | RK7 | not run yet | | |
+| L7cce718c (both) | long-only | ADD | not run yet | | |
+| L7cce718c (both) | short-only | RK7 | not run yet | | |
+| L7cce718c (both) | short-only | ADD | not run yet | | |
 | L4ed22711 | both sides | RK7 | +336 / -3010 / +1537 / +1980 | +63 / +690 / +1537 / +2912 | no |
 | L4ed22711 | both sides | ADD | -483 / -2420 / +5375 / +1457 | -1172 / +3906 / +5826 / +2247 | yes |
 | L4ed22711 (long) | long-only | RK7 | not run yet | | |
@@ -582,7 +589,7 @@ Rules (order 1407Z): REPLACE ONLY. The pick is always the REPLACE row; the ADD r
 - L6a25b155 short-only ADD: pending (no prior-year rows yet)
 
 ## D8 gate under the exit-run rule (order 0213Z)
-Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 4756 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 46 candidates that beat a live book now = 20148 set-months = 21.7 h at 928 set-months/h (7.0 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
+Nothing enters D8 without the EXIT RUN (all 68 recipes, 7 families) on its own entries beside the fixed brackets. Candidate hand-over: autopilot/D8_CANDIDATES.txt (append-only; 4905 cells with engine rows listed, one line per live book). Exit run progress: screen stage (68 recipes x params on real entries + null draws) NOT started by W-NYENG on these candidates yet (owner: the exit-screen stage; start order = D8_CANDIDATES.txt engine rank); engine families that cannot run a recipe yet and their build dates: autopilot/D8_EXIT_ENGINE_SUPPORT.md (per-entry stops/targets/time exits run now; opposite-signal exit 11-19 14:00Z; trailing / staged / SAR 11-19 18:00Z; order-flow exits 11-20 12:00Z). Engine cost after the exit screen per candidate: top 3 recipes x (ADD + REPLACE) x (6 last-6-month + 37 prior-year months) + 30 date-shift controls x 6 = 438 set-months; for the 47 candidates that beat a live book now = 20586 set-months = 22.2 h at 928 set-months/h (7.1 h at 2,894/h). D8 SPEC DATE: not before the exit-screen stage and the unbuilt engine families are done; earliest realistic 2026-11-20 12:00Z for the cells that beat a live book today if the exit screen starts by 11-19 06:00Z (cannot be firmer: the screen duration is not measured, the candidate list is still growing).
 
 ## All other cells: see the csv (verdict per live book: no / pending)
 

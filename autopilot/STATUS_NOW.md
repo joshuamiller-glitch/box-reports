@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-20 03:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-20 04:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-20 03:40Z | WARNING serverC below 85% busy for 81 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-20 03:55Z | WARNING serverC below 85% busy for 84 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-20 03:45Z
+2026-11-20 04:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-20 03:40Z | WARNING serverC below 85% busy for 81 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 94.4 GB; live reservations 0 (0 GB); workers 13, of which TP-adopted 13 (RSS 23.7 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.18, 55.98, 51.98
-  by tag: NYR quota 12 running 6 hungry True RSS 9.4 GB PSS 7.3 GB; ASI quota 14 running 1 hungry True RSS 2.3 GB PSS 1.8 GB; LON quota 12 running 6 hungry True RSS 12.0 GB PSS 9.7 GB
-  cell-months finished last hour (DONE markers): 11844
-  top running jobs: TL3_NYE_Lfb381e30_RK7CT35m (x12);TL3_LON_M5c2d1aaf_RM7 (x12);TL3_NYE_Lfb381e30_RK7CT42m (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 102.16, 107.14, 110.62|/dev/md2         28T  2.6T   26T  10% /mnt/l2|56|
+Server 1 (this box): MemAvail 95.5 GB; live reservations 2 (2 GB); workers 18, of which TP-adopted 18 (RSS 25.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 39.88, 44.77, 49.12
+  by tag: NYR quota 12 running 12 hungry False RSS 15.5 GB PSS 13.1 GB; LON quota 12 running 6 hungry True RSS 9.6 GB PSS 8.2 GB
+  cell-months finished last hour (DONE markers): 11933
+  top running jobs: TL3_NYE_L11631333_RK7CT42m (x12);TL3_LON_M3431b271_RM7 (x12);TL3_NYE_L11631333_RK7CT49m (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 108.42, 107.23, 108.50|/dev/md2         28T  2.6T   26T  10% /mnt/l2|49|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,5 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 102.16, 107.14, 110.62|/dev
 
 ## INBOX (last 5 received)
 20261120_0024Z_Asia-all-new-stack-stuck-at-step-1.md 20261120_0118Z_night-queue-at-real-rate-and-relay-status.md 20261120_0148Z_stack-selection-status-and-NYAM-reference.md 20261120_0224Z_stack-pages-label-and-control-flags.md 20261120_0345Z_Asia-stack-followups-where.md
-- lead 03:44Z INBOX 20261120_0345Z_Asia-stack-followups-where.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-- 03:44Z INBOX ACK 0345Z (Asia stack follow-ups: where): research/queue lines only, allowed in freeze. Delegated: W-COMBO items 1-3 (count landed/leased/queued
