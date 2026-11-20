@@ -1,30 +1,30 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 07:15Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 07:20Z.
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
 
-## GATE BY GATE: Asia, books ALONE on the all-new base (universe 122 books with a BASE set; 121 have all 42 months landed = counted below; 1 still waiting for prior years)
+## GATE BY GATE: Asia, books ALONE on the all-new base (universe 127 books with a BASE set; 122 have all 42 months landed = counted below; 5 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 116 of 121 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 86 of 121 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 87 of 121 |
+| (a) positive $/wk in L6M and L3M | 117 of 122 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 87 of 122 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 88 of 122 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 71 books) | 29 of 71 |
-| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 0 of 121 |
-| a + b | 84 |
-| a + b + c | 68 |
+| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 0 of 122 |
+| a + b | 85 |
+| a + b + c | 69 |
 | a + b + c + d | 28 : L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9 |
 | a + b + c + d + e | 0 : none |
 
 Nearest misses (all five gates known, fail exactly one): L11152f7a (fails e), L15f14deb (fails e), L1756b913 (fails e), L1edb9fab (fails e), L29b1bc3f (fails e), L3faac8df (fails e), L40bde9ea (fails e), L578701ed (fails e), L7c368a4f (fails e), L7ea48296 (fails e), L7f41b347 (fails e), L86781ac0 (fails e), L973b5c8a (fails e), L9aa7805c (fails e), Lb68a132d (fails e), Lbe5ac95b (fails e), Lc4584864 (fails e), Lc849eb8c (fails e), Lcae177ba (fails e), Lcbc8a7ec (fails e), Lda55d973 (fails e), Ldcdb0b6e (fails e), Le9bd7276 (fails e), Lec335094 (fails e), Lfb608c7b (fails e), Lff52ec0c (fails e), M3f6f752c (fails e), M7423c0d9 (fails e).
-NOT dead, controls (d) still pending: L00391b70 (passes a,b,c; fails e; controls (d) pending), L2d89766e (passes a,b,c; fails e; controls (d) pending).
+NOT dead, controls (d) still pending: L00391b70 (passes a,b,c; fails e; controls (d) pending), L2d89766e (passes a,b,c; fails e; controls (d) pending), L3a708864 (passes a,b,c; fails e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK_0346Z.md (the Asia stack Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153: RED in every window, persistence 0.44, three of four books fail their luck controls).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **28** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 126 of 122 in the universe; failed the prior-year positivity / persistence / controls: 91; waiting for prior years: 1; passed (a)+(b), controls still running: 2.
+Books with all months landed: 122 of 127 in the universe; failed the prior-year positivity / persistence / controls: 91; waiting for prior years: 5; passed (a)+(b), controls still running: 3.
 Pool books: L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9
 
 Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 Asia-session trades only: L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903 (that is $15741 per week on ulcer 8732).
@@ -38,7 +38,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 
 STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
 
-Phase: moves. Pool used by this run: 28 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9).
+Phase: final. Pool used by this run: 28 books (L11152f7a, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L7c368a4f, L7ea48296, L7f41b347, L86781ac0, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lcbc8a7ec, Lda55d973, Ldcdb0b6e, Le9bd7276, Lec335094, Lfb608c7b, Lff52ec0c, M3f6f752c, M7423c0d9).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.

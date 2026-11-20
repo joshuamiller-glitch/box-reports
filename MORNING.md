@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-20T06:51Z
+## TREND (TL) update 2026-11-20T07:21Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T06:49:03Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T07:19:03Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -10540,3 +10540,16 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - (wall 07:16Z) W-FL1 hourly: FL cell-months done 984, pending 0; page autopilot/DS3_FLOW.md rebuilt (data end 2026-10-31, FIRST PASS, provisional JN05W2 base); see page section 1/1b for engine rows vs controls; closest to live: see page section 8 (none registered yet)
 - 07:17Z W-P2P (auto) fleet 11086 sm/h (HEALTH), queue 224307 lines, fast share 98%; PASS2_COMBINER.md present (mtime 21:29Z; last status line: The GRID's fixed-bracket tape walk (gcore2.walk1, identical rules to gcore2.sim_slice / build_chunk / run_tabl) | PASS2_HOOKS.md present (mtime 23:06Z; last status line: | 4d entry: order-book confirmed | bookconf wait_s, min_imb, levels | BUILT, RUNNING (BC1, BC2; BC inert insid); FAST_KINDS pass-2 related lines 4; Asia first look end ~23:20Z (order 1850Z; recheck W-ASIA), NY AM first looks end ?; dates (Asia/NY AM done, top N per session, base 1,214 sm/book): 50: 11-20 22
 - (wall 07:17Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 56.49 61.97 58.65 load; auto-expansions 0 (battery stopped by user order)
+- 07:20Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 15/21 (71%); Dallas 25/25 (100%); Frankfurt 73/100 (73%); Singapore 50/94 (53%) | EXACT-path slots by kind: TL3_ALN_NY_STKfc1b0ed6 25, TL3_ALN_NY_STKb10faee0 25, TL3_ALN_NY_STK8499ae3e 21, TL3_LON_<h>_RM7 5, TL3_LON_L*_RM7 1; fast path ON for the kinds in FAST_KINDS.txt (104 kinds); details autopilot/FAST_LADDER.md section 7.
+- 07:20Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 39 / 3 h 3695 (NY AM is behind Asia in the queue by order); fleet 11309.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 2589, 'looked': 3042, 'B': 5, 'C': 9}; ladder queue 262165 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L014ea865 ; L01811caa ; L09ae66e3 ; L0bd23639 ; L0c6c0074 ; L0f097450 ; L11631333 ; L13e165bc ; L1523dbb2 ; L1532bfaf ; L1fdcb7e2 ; L21f079b6 ; L301ff410 ; L34d66961 ; L3701b464 ; L4339355a ; L440aa51b ; L4560e541 ; L4899a551 ; L4ed22711 ; L4fd10b76 ; L571196bc ; L59b66d32 ; L5a49e86d ; L5c734a00 ; . EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 07:20Z W-COMBO ALN-AUTO TL3_ALN_AS_L3a708864_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- 07:20Z W-COMBO ALN-AUTO TL3_ALN_AS_La1526ec7_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.65): 30 date-shift controls queued (180 set-months)
+- 07:20Z W-COMBO ALN-AUTO TL3_ALN_AS_Lb2f695b9_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.63): 30 date-shift controls queued (180 set-months)
+- 07:21Z W-COMBO ALN-AUTO TL3_ALN_NY_L37f887e2_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 26; L3M 16): LEAD-not-confirmed
+- 07:21Z W-COMBO ALN-AUTO TL3_ALN_AS_L00391b70_BASE controls: real beats 10 of 30 (L6M drawdown-first; ulcer only 23; L3M 7): LEAD-not-confirmed
+- 07:21Z W-COMBO ALN-AUTO TL3_ALN_NY_L35543636_BASE controls: real beats 4 of 30 (L6M drawdown-first; ulcer only 6; L3M 7): LEAD-not-confirmed
+- 07:21Z W-COMBO ALN-AUTO TL3_ALN_NY_L46925ceb_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 27; L3M 7): LEAD-not-confirmed
+- 07:21Z W-COMBO ALN-AUTO TL3_ALN_AS_L2d89766e_BASE controls: real beats 2 of 30 (L6M drawdown-first; ulcer only 28; L3M 1): LEAD-not-confirmed
+- 07:23Z W-COMBO RESELECT-NYAM RE-RUN WITH 6 pool books (was 5)
+- 07:23Z LEAD NOTE: 07:23Z quiet; inbox empty, freeze holding.
+- 07:24Z WATCHDOG fired: G
