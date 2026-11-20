@@ -1,6 +1,6 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:19Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 02:23Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: moves. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: final. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
@@ -13,12 +13,20 @@ Phase: moves. Candidates tried: 135 (step 1 all; later steps the scorer-ordered 
 
 Selected books in order (what each is, plain words):
 
-- Ldfbf31b5 (W-BEST score 0.662, L6M wk 2777.5): median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 4121 / -14498 / -7888 / 2330.
-- L191904b3 (W-BEST score 0.609, L6M wk 2694.2): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_levels_vwap / reject {"tol": 0.5, "conf": "body"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym20u/10u. Alone on the all-new base: 5208 / -18722 / -13963 / 2266.
-- L1756b913 (W-BEST score 0.379, L6M wk 1967.7): time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4678 / -12916 / -5830 / 2107.
-- L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415.
+- Ldfbf31b5 (W-BEST score 0.662, L6M wk 2777.5): median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 4121 / -14498 / -7888 / 2330. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.29.
+- L191904b3 (W-BEST score 0.609, L6M wk 2694.2): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_levels_vwap / reject {"tol": 0.5, "conf": "body"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket asym20u/10u. Alone on the all-new base: 5208 / -18722 / -13963 / 2266. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.31.
+- L1756b913 (W-BEST score 0.379, L6M wk 1967.7): time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4678 / -12916 / -5830 / 2107. LUCK CONTROL: beats 30 of 30 shifted controls (drawdown-first), 30 of 30 on ulcer alone, L3M 23 of 30 - passes (>= 27). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.30.
+- L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.28.
+- Lb328c0d1 [SWAPPED OUT] (W-BEST score 0.549, L6M wk 1802.6): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3417 / -9887 / -6800 / 1633. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.33.
+- Ld3302219 [SWAPPED OUT] (W-BEST score 0.680, L6M wk 2196.2): CUSUM-event bar 40 ticks [cusum_40]; ~10 bars/hour; trigger trig_trend_libstack / wave_agree {"set": "fast"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3234 / -9245 / -8932 / 2119. LUCK CONTROL: pending (30 controls queued at the front by W-COMBO 02:30Z). prior years (book alone, vs equal-risk reference) 2023/2024/2025 = RED / RED / RED, persistence 0.35.
 
-STOPPED at 4 books (stop rule: no candidate qualified); drop / swap moves, prior years, runner-up and controls follow automatically.
+STOPPED at 4 books (the add-stop rule fired: no candidate qualified); drop / swap moves, then prior years, persistence, runner-up and the 30 stack controls.
+
+SWAP / DROP RULE as coded (no silent changes): a move is accepted when (1) the new stack keeps mean $/wk >= the best single book's and (2) return per unit of ulcer improves by >= 1%. It has NO max DD / worst-week guard (the guard of 15% after scaling to the current ulcer exists only for ADD steps). Proposed fix (a rule change, therefore a QUESTIONS_FOR_JOSH item, not applied): the same guard for swaps and drops: after scaling to the current ulcer, max DD and worst week must each be no more than 15% deeper than the stack before the move.
+
+Moves at equal risk (what each swap did to the drawdown):
+- step 5 swap:Lb328c0d1>L191904b3: max DD -16433 -> -23078 (+36% at equal risk), worst week -9564 -> -3639 (-63% at equal risk), ulcer 5419 -> 5595, $/wk 7828 -> 9586. FLAG: deeper max DD than 15% (accepted because the rule had no such guard).
+- step 6 swap:Ld3302219>Ldfbf31b5: max DD -23078 -> -11774 (-35% at equal risk), worst week -3639 -> -11774 (+310% at equal risk), ulcer 5595 -> 4411, $/wk 9586 -> 9322.
 
 Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulcer:
 
@@ -35,7 +43,8 @@ Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulc
 | L9aa7805c | 3604 / -8595 / -6065 / 1691 | 3141 / -6337 / -2953 / 1635 |
 | L40bde9ea | 3638 / -9517 / -4372 / 1417 | 2813 / -9517 / -2418 / 2010 |
 
-Reference line, today, as run: JL3 ASIA-session trades only (all five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
+Reference line, today, as run: JL3 ASIA-session trades only (the five live Asia books; the live stack's other sessions removed from the sum, interactions as run): L6M 8732 / -25697 / -16205 / 15741 ; L3M 9814 / -25697 / -14754 / 11903. (Whole-day JL3 for orientation: L6M 9416 / -31109 / -15728 / 18755.)
+In plain words: today's live Asia session earns $15741 per week on an ulcer of 8732 over the last 6 months (max DD -25697, worst week -16205); last 3 months $11903 per week on ulcer 9814.
 
 SECOND REFERENCE LINES, EQUAL RISK (reading aid only: lots per book stay a factor of the joint refit; equal-risk rule agreed with W-LAYERS):
 - Today's Asia session scaled to the all-new stack's drawdown (today's lots scaled by k = 0.51, i.e. same ulcer as the stack): L6M 4411 / -12983 / -8187 / 7953 ; L3M 4958 / -12983 / -7454 / 6013. Compare with the stack: L6M 4411 / -11774 / -11774 / 9322 ; L3M 4483 / -11774 / -11774 / 8028.
@@ -64,6 +73,12 @@ What each book is:
 - L578701ed: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
 - L7c368a4f: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
 - Ldfbf31b5: median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 9, "lvl": 90}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events)
+
+## FINAL STACK (selected): TL3_ALN_AS_STK8610ba47  [Ldfbf31b5, L191904b3, L1756b913, L1716c153]
+prior years not landed yet (36 months queued)
+
+## RUNNER-UP (best exact drop / swap variant by return per ulcer): drop:L1716c153 -> TL3_ALN_AS_STK020f28df
+prior years not landed yet
 
 (budget selection not started: ValueError("unsupported format character '/' (0x2f) at index 78"))
 
