@@ -10035,3 +10035,8 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 03:33Z W-COMBO NY-TRIGGER RE-RAN the NY AM selection (pid 3789497, previous state archived as allnew_nyam_v5.json): new pool members with L6M landed: ['L3459244a', 'Lf1083387', 'L5606297d', 'Lf6f0cc5f']
 - 03:33Z W-COMBO ALL-NEW NY AM step 1 queued: 53 candidates (new books, positive L6M+L3M, not stale, deduplicated; top 60 by W-BEST score) alone from the empty Asia session, 24 lines
 - 03:34Z WATCHDOG fired: G
+- (wall 03:35Z) W-PM status: load1 45.22, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795145624; P5 page done, P8 grid np_m15_x10_y15 2898
+- 03:36Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 03:36Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 11; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 11842 sm/h, engine queue 227588 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 4/h = 1 h => Nov 20 04:25Z; Asia+NY AM at the fleet rate = 19 h => Nov 20 22:49Z. D8_CANDIDATES Asia rows listed 9887.
+- 03:36Z W-COMBO ALL-NEW NY AM step 1: add L39470318 -> stack ulcer 3209 / maxDD -8642 / worst wk -8588 / mean 1827 (L6M), L3M ulcer 3731 (tried 53 at this step)
+- 2026-11-20T03:37:51Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- (wall 03:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 56.07 48.90 48.36, epoch 1795145966
