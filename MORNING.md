@@ -12243,3 +12243,11 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 2026-11-20T19:59:48Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 19:59Z HB brackets | step screen 2496/2496 sm landed, stage-2 winners queued/complete/passed 7/7/1 | waiting_on 250 sets | queued_or_running 250 | last_progress 19:16Z | driver pid 773684 cycle pid 1163810 | 19:59Z | walk-forward winner books: shape set-months landed 4032 / 4032
 - 20:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 149 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 278365
+- 20:00Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 571 vs baseline 404 (guard: cut if < 95% twice).
+- 20:00Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 3 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 20:00Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T17  box1  13952  Dallas  1246  A  2541  B  2756  tot  20495 ;  11-20T18  box1  14057  Dallas  1315  A  2594  B  2848  tot  20814 ;  11-20T19  box1  1106  Dallas  113  A  228  B  248  tot  1695 ; 
+- 20:00Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 20:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 20:01Z HB pass2 | step screened 15/15 pool books, joint stages stage3:6 | waiting_on 0 sets | queued_or_running 0 | last_progress 18:32Z | pid 655948
+- 20:02Z HB layer-fit | step books fitted 10/15, stages {'DONE': 10, 'S3': 1, 'S1': 4} | waiting_on 271 sets | queued_or_running 121 | last_progress 20:01Z | pid 823797
+- 20:02Z W-COMBO RESELECT-NYAM FINAL stack ['L7cc56d99', 'L488784d8']: stack controls beaten (29, 22, 30) (L6M drawdown-first / L3M / ulcer-only)
+- 20:02Z W-COMBO RESELECT-NYAM FINAL stack ['L7cc56d99', 'L488784d8']: stack controls beaten (29, 22, 30) (L6M drawdown-first / L3M / ulcer-only)
