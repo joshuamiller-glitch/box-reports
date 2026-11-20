@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 05:25Z 11-20 (t+640.7 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 07:26Z 11-20 (t+642.7 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 98% min 93% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 95% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -10553,3 +10553,13 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 07:23Z W-COMBO RESELECT-NYAM RE-RUN WITH 6 pool books (was 5)
 - 07:23Z LEAD NOTE: 07:23Z quiet; inbox empty, freeze holding.
 - 07:24Z WATCHDOG fired: G
+- 07:25Z W-COMBO RESELECT-ASIA RESULT: no stack could be built from the pool of 28 books (gate blocks the first step or the pool is empty)
+- 07:26Z W-PROOF mux_watch: pull socket /tmp/mux_pull_67_213_127_157_0 (67.213.127.157) bad: no live master behind socket file (-O check rc 255) (master pid 947031 killed) -> master torn down by explicit socket, next pull rebuilds it
+- 07:26Z W-COMBO ALN-AUTO TL3_ALN_NY_L13e165bc_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.66): 30 date-shift controls queued (180 set-months)
+- 07:26Z W-COMBO ALN-AUTO TL3_ALN_NY_L726fa6ff_BASE controls: real beats 15 of 30 (L6M drawdown-first; ulcer only 24; L3M 5): LEAD-not-confirmed
+- 07:26Z W-COMBO ALN-AUTO TL3_ALN_NY_L5691e5cd_BASE controls: real beats 26 of 30 (L6M drawdown-first; ulcer only 27; L3M 25): LEAD-not-confirmed
+- 07:26Z W-COMBO ALN-AUTO TL3_ALN_NY_L5f677061_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 18; L3M 16): LEAD-not-confirmed
+- 07:26Z W-COMBO ALN-AUTO TL3_ALN_NY_L765d4fd1_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 26; L3M 4): LEAD-not-confirmed
+- 07:28Z W-COMBO RESELECT-NYAM step 1 BLOCKED: best add-rule candidate L7cc56d99 fails the gate (RED on rule B in ['Y2024', 'Y2025'] / persistence 0.59); STOP at 0 books
+2026-11-20T07:29:24Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 07:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 262105
