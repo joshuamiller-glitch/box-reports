@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 06:34Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 06:40Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
@@ -9,22 +9,22 @@
 | (a) positive $/wk in L6M and L3M | 102 of 108 |
 | (b) positive $/wk in each of 2023, 2024, 2025 | 96 of 108 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 77 of 108 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 62 books) | 5 of 62 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 64 books) | 5 of 64 |
 | (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 25 of 108 |
 | a + b | 92 |
 | a + b + c | 71 |
 | a + b + c + d | 5 : L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99 |
 | a + b + c + d + e | 0 : none |
 
-Nearest misses (all five gates known, fail exactly one): L063a587d (fails e), L077444ee (fails d), L2176f633 (fails e), L2b8ccd55 (fails d), L33bc9e87 (fails d), L368915c4 (fails d), L3c6da67f (fails d), L488784d8 (fails e), L4fd10b76 (fails d), L5ccb2d77 (fails d), L5e9c702b (fails d), L6547965c (fails e), L6c84f416 (fails d), L7cc56d99 (fails e), L85f676b2 (fails d), La4a78dae (fails d), Lc2ac6e2f (fails d), Lc9217645 (fails d), Ld37dea46 (fails d).
-NOT dead, controls (d) still pending: L39ac1f11 (passes a,b,c; fails e; controls (d) pending), L79f0d907 (passes a,b,c; fails e; controls (d) pending), Lafe83250 (pass a,b,c,e; controls (d) pending), Lb44a3e99 (passes a,b,c; fails e; controls (d) pending), Lc161c6cc (passes a,b,c; fails e; controls (d) pending), Lc72b610a (pass a,b,c,e; controls (d) pending), Lcd8be965 (passes a,b,c; fails e; controls (d) pending), Le76cbe51 (pass a,b,c,e; controls (d) pending), Lf1083387 (pass a,b,c,e; controls (d) pending), Lf28226cd (passes a,b,c; fails e; controls (d) pending), Lf9ac1929 (passes a,b,c; fails e; controls (d) pending).
+Nearest misses (all five gates known, fail exactly one): L063a587d (fails e), L077444ee (fails d), L2176f633 (fails e), L2b8ccd55 (fails d), L33bc9e87 (fails d), L368915c4 (fails d), L3c6da67f (fails d), L488784d8 (fails e), L4fd10b76 (fails d), L5ccb2d77 (fails d), L5e9c702b (fails d), L6547965c (fails e), L6c84f416 (fails d), L7cc56d99 (fails e), L85f676b2 (fails d), La4a78dae (fails d), Lafe83250 (fails d), Lc2ac6e2f (fails d), Lc9217645 (fails d), Ld37dea46 (fails d).
+NOT dead, controls (d) still pending: L39ac1f11 (passes a,b,c; fails e; controls (d) pending), L79f0d907 (passes a,b,c; fails e; controls (d) pending), Lc161c6cc (passes a,b,c; fails e; controls (d) pending), Lc72b610a (pass a,b,c,e; controls (d) pending), Lcd8be965 (passes a,b,c; fails e; controls (d) pending), Le76cbe51 (pass a,b,c,e; controls (d) pending), Lf1083387 (pass a,b,c,e; controls (d) pending), Lf28226cd (passes a,b,c; fails e; controls (d) pending), Lf9ac1929 (passes a,b,c; fails e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **5** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 108 of 111 in the universe; failed the prior-year positivity / persistence / controls: 92; waiting for prior years: 3; passed (a)+(b), controls still running: 11.
+Books with all months landed: 109 of 111 in the universe; failed the prior-year positivity / persistence / controls: 94; waiting for prior years: 3; passed (a)+(b), controls still running: 9.
 Pool books: L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99
 
 **Plainly: only 5 book(s) pass everything alone in NY AM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
@@ -42,7 +42,7 @@ STOPPED at 2 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 06:05Z UTC; pool 2 books): L063a587d
 
-Phase: moves. Pool used by this run: 3 books (L063a587d, L2176f633, L488784d8).
+Phase: final. Pool used by this run: 3 books (L063a587d, L2176f633, L488784d8).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
