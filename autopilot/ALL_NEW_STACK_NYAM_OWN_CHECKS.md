@@ -1,8 +1,8 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 09:55Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 10:02Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 192 books with a BASE set; 192 have all 42 months landed = counted below; 0 still waiting for prior years)
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 193 books with a BASE set; 192 have all 42 months landed = counted below; 1 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
@@ -24,7 +24,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **7** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 193 of 192 in the universe; failed the prior-year positivity / persistence / controls: 185; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
+Books with all months landed: 193 of 193 in the universe; failed the prior-year positivity / persistence / controls: 185; waiting for prior years: 1; passed (a)+(b), controls still running: 0.
 Pool books: B2010fec9, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99
 
 Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer as the scaled reference): see the step table; "today, as run" = JL3 NY AM-session trades only: L6M 8444 / -17976 / -7184 / 838 ; L3M 5586 / -12293 / -7184 / 1563 (that is $838 per week on ulcer 8444).

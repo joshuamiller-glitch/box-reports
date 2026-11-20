@@ -10864,3 +10864,10 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 09:59Z W-COMBO ALN-AUTO TL3_ALN_AS_L1ea1afb9_BASE controls: real beats 4 of 30 (L6M drawdown-first; ulcer only 23; L3M 1): LEAD-not-confirmed
 2026-11-20T09:59:28Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 10:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 263167
+- 10:00Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 340 vs baseline 404 (guard: cut if < 95% twice).
+- 10:00Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 10:00Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T07  box1  13527  Dallas  1233  A  2281  B  2581  tot  19622 ;  11-20T08  box1  9765  Dallas  858  A  1721  B  1925  tot  14269 ;  11-20T09  box1  481  Dallas  42  A  73  B  96  tot  692 ; 
+- 10:00Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 10:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 10:00Z W-FASTLADDER FAST KIND ADDED: ALN P2J variants (order 0957Z; 10/10 identical) (9 identical, 0 failures) (identity test passed; FAST_KINDS.txt now 107 kinds; hosts updated: box1,207.188.7.103,109.94.96.39,206.223.224.21,67.213.127.157,72.46.85.15 MISSING: )
+- 10:01Z W-COMBO RESELECT-NYAM step 1 BLOCKED: best add-rule candidate B2010fec9 fails the gate (RED on rule B in ['Y2024', 'Y2025'] / persistence 0.51); STOP at 0 books
+- 10:04Z W-COMBO ALN-AUTO TL3_ALN_AS_Lbb476f9f_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 25; L3M 8): LEAD-not-confirmed
