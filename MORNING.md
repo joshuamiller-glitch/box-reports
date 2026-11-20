@@ -9608,3 +9608,10 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 00:31Z W-XB1: the 24 ALN EX/XID lines were not picked up from _combo/pending.txt, so they are also in the _exiteng/pending.txt follow-up stream (+ prefixes in mix3_front); dedup by lease.
 00:33Z W-GRIDOPS verified: _nye/ev/empty.parquet mtime unchanged since 00:21:23Z (12 min, W-NYENG fix live); plumbing_syntax_check last runs 214 files 0 bad.
 - 2026-11-20T00:34:16Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+- 00:35Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_NY_L[0-9a-f]{8}_EXv25_t2$ (e.g. TL3_ALN_NY_L03be4d27_EXv25_t2,TL3_ALN_NY_L077444ee_EXv25_t2): identity pairs started (8 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- (wall 00:35Z) W-PM status: load1 61.18, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795134832; P5 page done, P8 grid np_m15_x10_y15 2898
+- 00:36Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 00:36Z): ladder stages {'C': 59, 'out': 2907, 'B': 228, 'A': 3} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 2258 / 3 h 6251; Asia lines pending 18 (+~98 still to be appended as cells pass stage A); fleet 14322 sm/h, engine queue 178394 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 2258/h = 0 h => Nov 20 00:39Z; Asia+NY AM at the fleet rate = 12 h => Nov 20 13:04Z. D8_CANDIDATES Asia rows listed 9887.
+- 00:36Z W-COMBO ALL-NEW ASIA step 3: add L1756b913 -> stack ulcer 4758 / maxDD -13888 / worst wk -7785 / mean 6484 (L6M), L3M ulcer 3916 (tried 15 at this step)
+- (wall 00:37Z) W-TL2b T2 page refreshed: autopilot/DS3_TOOLS_T2_P3.md
+- (wall 00:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 63.07 62.77 63.17, epoch 1795135155
+- 00:40Z WATCHDOG fired: E

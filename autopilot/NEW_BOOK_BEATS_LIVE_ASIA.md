@@ -1,18 +1,18 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-20 00:30Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-20 00:35Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
-**Counts:** Asia cells with any engine row 3014; cells with a finished REPLACE verdict (L6M+L3M landed) 3000; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 43 (under the looser NY rule 139); ADD rows finished 715.
+**Counts:** Asia cells with any engine row 3019; cells with a finished REPLACE verdict (L6M+L3M landed) 3015; cells that beat at least one live Asia book on L6M+L3M under the Asia rule (BETTER, calibration pending) 43 (under the looser NY rule 140); ADD rows finished 715.
 
 | live Asia book replaced | cells finished | beat it | pending |
 |---|---|---|---|
 | K7 | 122 | 0 | 9 |
 | P7 | 81 | 0 | 6 |
-| A7 | 3000 | 43 | 10 |
+| A7 | 3015 | 43 | 0 |
 | H7 | 118 | 0 | 8 |
 | U7 | 119 | 0 | 5 |
 
-**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 39 (of 1777 tested; 1791 cells with rows), long-only 4 (of 1220 tested; 1220 cells so far), short-only 0 (of 3 tested; 3 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
+**Corrected counts (order 1014Z; a both-side engine result is valid for the both-side book that was run; the engine is the judge): beat a live Asia book on L6M+L3M - both-side 39 (of 1792 tested; 1796 cells with rows), long-only 4 (of 1220 tested; 1220 cells so far), short-only 0 (of 3 tested; 3 cells so far).** Old ids of screen-long/short cells are labelled "(both sides, engine-tested)"; M-ids = the mode-correct long-only / short-only twin.
 
 ## Beating cells: both-side vs long-only (M) vs short-only side by side (best by the D8 rule is the candidate; a long-only book that beats the both-side book replaces it)
 | cell | variant | live book | L6M d ulcer | L6M d $/wk | L6M d worst wk | L6M d maxDD | L3M d ulcer | L3M d $/wk | L3M d worst wk | L3M d maxDD | Asia rule |
@@ -452,7 +452,7 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | L5c9e11b3 vol_750 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 AMBER | 0.58 (93) PASS | PASS (3 prior years landed) | 30 controls of the REPLACE set; layers (W-LAYERS); exit run (D8_EXIT_SCREEN.md) |
 | Ledfbf4d2 vol_350 | both-side | A7 | yes / yes | 2023 GREEN / 2024 GREEN / 2025 GREEN | 0.53 (93) fail | fail | - |
 | L43a106ec urenko_20 | both-side | A7 | yes / yes | pending | 0.54 (13) fail | fail | - |
-| M15f14deb tm120 | long-only | A7 | yes / yes | pending | 0.51 (67) fail | fail | - |
+| M15f14deb tm120 | long-only | A7 | yes / yes | pending | 0.50 (70) fail | fail | - |
 | M32bddb74 tm120 | long-only | A7 | yes / yes | pending | 0.54 (13) fail | fail | - |
 | Lf77e374b tm240 | both-side | A7 | yes / yes | 2023 AMBER / 2024 AMBER / 2025 AMBER | 0.48 (93) fail | fail | - |
 | L0b1d7882 tm30 | both-side | A7 | yes / yes | 2023 GREEN / 2024 AMBER / 2025 GREEN | 0.46 (93) fail | fail | - |
@@ -462,7 +462,7 @@ Rule B so far: as run 13 beater/book rows with >= 1 engine prior year landed hav
 | L8b40670f swing_atr_0.4 | both-side | A7 | yes / yes | pending | 0.62 (13) PASS | pass so far (0 of 3 years landed) | 30 controls of the REPLACE set; layers (W-LAYERS); exit run (D8_EXIT_SCREEN.md); 3 prior years pending |
 ## STRICT TABLE (Asia REPLACE rows; strict criterion = on BOTH L6M and L3M: stack ulcer lower AND $/wk not lower AND worst week not worse AND max DD not worse; no name exemptions)
 
-**Counts (REPLACE first looks with L6M+L3M landed, distinct streams): 3440 rows; STRICT pass 43; LOOSER (NY rule: ulcer lower and $/wk not lower only) pass 140; failing exactly ONE strict criterion 55.** (43 REPLACE-yes rows below = the strict recent-months passers; every one still has to clear no-RED-prior-year and engine persistence >= 0.58 to be a candidate).
+**Counts (REPLACE first looks with L6M+L3M landed, distinct streams): 3455 rows; STRICT pass 43; LOOSER (NY rule: ulcer lower and $/wk not lower only) pass 141; failing exactly ONE strict criterion 55.** (43 REPLACE-yes rows below = the strict recent-months passers; every one still has to clear no-RED-prior-year and engine persistence >= 0.58 to be a candidate).
 
 Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is better; for $/wk, worst week, max DD higher (positive d) is better (worst week / max DD are negative levels, so d > 0 = shallower).
 
@@ -619,6 +619,7 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | L32bddb74 tm120 | [twin of L15f14deb] | no (L6M du +1265 dm +783 | L3M du +857 dm -852) | no (L6M du +261 dm +707 | L3M du +672 dm +610) | copied |
 | L38398757 kagi_40 | [twin of L00ac70a3] | not run | no (L6M du -552 dm +825 | L3M du -918 dm +901) | copied |
 | L3e27a9ba time_m_5 | [twin of L348825a3] | no (L6M du +978 dm +260 | L3M du +1335 dm +461) | no (L6M du +736 dm -940 | L3M du +1180 dm +865) | copied |
+| L44084608 time_s_30 | [twin of L40eaea66] | not run | no (L6M du -540 dm +601 | L3M du -394 dm +1948) | copied |
 | L45c6baf5 dchg_20 | [twin of L1acc170a] | not run | no (L6M du +1261 dm -1057 | L3M du +2218 dm -1268) | copied |
 | L490ae2af kagi_20 | [twin of L2ef3762d] | not run | no (L6M du +1381 dm -2677 | L3M du +1191 dm -1713) | copied |
 | L49b3f8c9 time_m_10 | [twin of L0d3e549a] | no (L6M du +575 dm +157 | L3M du +293 dm +28) | no (L6M du +674 dm +1 | L3M du +1222 dm +1457) | copied |
@@ -686,7 +687,6 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | Lb97631cd dchg_28 | [twin of L442e4a0a] | not run | no (L6M du +376 dm -1143 | L3M du -168 dm +112) | copied |
 | Lba6d553c time_m_2 | [twin of L5dee2059] | no (L6M du +1989 dm +170 | L3M du +759 dm +1591) | no (L6M du +1173 dm -364 | L3M du +1425 dm +1168) | copied |
 | Lbcfd73ea kagi_20 | [twin of L887fd783] | no (L6M du +2011 dm -427 | L3M du +803 dm -94) | no (L6M du +2127 dm -22 | L3M du +2647 dm +1157) | copied |
-| Lbd06e412 kagi_14 | [twin of L54e13ba5] | not run | no (L6M du +1140 dm -2433 | L3M du +1718 dm -388) | copied |
 
 # ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-20T00:21:02Z)
 
@@ -710,15 +710,15 @@ Rate now: Asia landed last hour 2564 set-months/h (box-1 tree view; see MORNING.
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 2412, last 3 h 6417; Asia queue lines pending (not DONE): 63.
+Asia set-months landed: last 1 h 2258, last 3 h 6251; Asia queue lines pending (not DONE): 18.
 
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 12, _nye/pending_w , _lon 13 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > ALN > STK > EXE > NYL > NYF > FR > NYE
-- box1 running engine sets by tag: 30 TL3_NYE_      12 TL3_LON_      10 TL3_ASI_       3 TL3_NYL_
-- server2 running engine sets by tag: 40 TL3_NYE_      16 TL3_ALN_
-- A running engine sets by tag: 130 TL3_NYE_      58 TL3_ALN_      11 TL3_ASI_
-- B running engine sets by tag: 125 TL3_NYE_      52 TL3_ALN_       2 TL3_ASI_
+- box1 running engine sets by tag: 24 TL3_NYE_      12 TL3_NYL_       8 TL3_LON_
+- server2 running engine sets by tag: 38 TL3_NYE_      12 TL3_ALN_
+- A running engine sets by tag: 157 TL3_NYE_      46 TL3_ALN_
+- B running engine sets by tag: 139 TL3_NYE_      56 TL3_ALN_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
