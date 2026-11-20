@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-20 14:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-20 14:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-20 14:10Z | WARNING serverD below 85% busy for 7 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-20 14:30Z | WARNING serverC below 85% busy for 211 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-20 14:15Z
+2026-11-20 14:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-20 14:10Z | WARNING serverD below 85% busy for 7 r
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 86.9 GB; live reservations 0 (0 GB); workers 29, of which TP-adopted 29 (RSS 38.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 72.78, 71.62, 71.09
-  by tag: NYR quota 12 running 6 hungry True RSS 8.8 GB PSS 7.4 GB; NYE quota 16 running 10 hungry False RSS 11.3 GB PSS 10.1 GB; LON quota 12 running 5 hungry True RSS 9.0 GB PSS 7.8 GB; TOOLS quota 0 running 8 hungry False RSS 9.3 GB PSS 8.0 GB
-  cell-months finished last hour (DONE markers): 11373
-  top running jobs: TL3_NYE_Lb32dea9b_ALN (x20);TL3_NYE_Lb32dea9b_RK7CT105m (x10);TL3_LON_M2f654123_RM7 (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 95.79, 96.58, 98.61|/dev/md2         28T  2.7T   26T  10% /mnt/l2|56|
+Server 1 (this box): MemAvail 79.2 GB; live reservations 6 (6 GB); workers 25, of which TP-adopted 25 (RSS 31.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 70.35, 68.42, 68.86
+  by tag: NYR quota 12 running 1 hungry True RSS 1.5 GB PSS 1.3 GB; NYE quota 16 running 10 hungry False RSS 11.6 GB PSS 10.4 GB; LON quota 12 running 3 hungry True RSS 4.7 GB PSS 4.3 GB; SURVIVORS quota 0 running 11 hungry False RSS 13.6 GB PSS 10
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_L81a1349f_ALN (x18);TL3_LON_M5bd5a1fc_RM7 (x6);TL3_LYR_ALN_AS_STKe7f8ab00_MF3_LK9 (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 101.04, 100.67, 99.46|/dev/md2         28T  2.7T   26T  10% /mnt/l2|52|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 95.79, 96.58, 98.61|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261120_1246Z_park-7-dead-lines-London-must-start.md 20261120_1331Z_Josh-decisions-own-checks-StackA-max-boxes-Asia-next.md 20261120_1343Z_Josh-fast-path-YES.md 20261120_1351Z_Josh-three-stage-fit-and-Sunday-deadline-Asia.md 20261120_1357Z_stale-alert-ALN-294.md
+20261120_1343Z_Josh-fast-path-YES.md 20261120_1351Z_Josh-three-stage-fit-and-Sunday-deadline-Asia.md 20261120_1357Z_stale-alert-ALN-294.md 20261120_1424Z_Josh-feed-CQG-L2-yes-sim-one-day.md 20261120_1432Z_NT8-CQG-tick-fingerprint-for-feed-check.md
+- lead 14:28Z INBOX 20261120_1432Z_NT8-CQG-tick-fingerprint-for-feed-check.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)

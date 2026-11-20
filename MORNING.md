@@ -11373,3 +11373,11 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 14:28Z W-GRIDOPS ack order 1432Z (NT8/CQG tick fingerprint): research/pages, not grid ops; no slot request from me. Step 3: A +5 min 101/102, cycle 0.5 s, 0 tracebacks; B 95/102, C 91/100, D 70/76 (cycle 24 s on D).
 2026-11-20T14:29:37Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 14:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 89 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 264083
+- 14:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 497 vs baseline 404 (guard: cut if < 95% twice).
+- 14:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 14:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T12  box1  9988  Dallas  839  A  1574  B  1610  tot  14011 ;  11-20T13  box1  10473  Dallas  1078  A  1934  B  2302  tot  15787 ;  11-20T14  box1  1072  Dallas  126  A  218  B  239  tot  1655 ; 
+- 14:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 14:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 14:30Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_BASEv1405$ (e.g. TL3_ALN_AS_L85abf719_BASEv1405,TL3_ALN_AS_L8a2453c8_BASEv1405): identity pairs started (3 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 14:34Z W-COMBO RESELECT-ASIA step 3: add L11152f7a -> L6M ulcer 5200 / maxDD -13072 / worst wk -9460 / $6247 per wk; prior years GREEN/AMBER/RED; persistence 0.34
+- lead 14:34Z INBOX 20261120_1438Z_feed-check-result-and-canonical-prints.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
+14:35Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
