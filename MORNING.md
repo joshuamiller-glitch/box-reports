@@ -10576,3 +10576,13 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 07:31Z W-COMBO ALN-AUTO TL3_ALN_NY_L41724a15_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 15; L3M 19): LEAD-not-confirmed
 - 07:31Z W-COMBO ALN-AUTO TL3_ALN_NY_L85b8675d_BASE controls: real beats 3 of 30 (L6M drawdown-first; ulcer only 25; L3M 1): LEAD-not-confirmed
 - 07:34Z LEAD NOTE: 07:33Z quiet; inbox empty, freeze holding.
+- (wall 07:35Z) W-PM status: load1 39.51, PM exact jobs pending 24, cells with output 59; 743 jobs wanted, 12 chains running, 1795160073; P5 page done, P8 grid np_m15_x10_y15 2898
+- 07:35Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 07:35Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 0; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 12490 sm/h, engine queue 223487 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 0/h = nan h => n/a; Asia+NY AM at the fleet rate = 18 h => Nov 21 01:29Z. D8_CANDIDATES Asia rows listed 9887.
+- 07:36Z WATCHDOG fired: F
+- 07:36Z W-COMBO ALN-AUTO TL3_ALN_AS_L8c18be1c_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.68): 30 date-shift controls queued (180 set-months)
+- 07:36Z W-COMBO ALN-AUTO TL3_ALN_AS_Lb0bab78f_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.61): 30 date-shift controls queued (180 set-months)
+- 07:36Z W-COMBO ALN-AUTO TL3_ALN_AS_Lce256a20_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.63): 30 date-shift controls queued (180 set-months)
+- 07:36Z W-COMBO ALN-AUTO TL3_ALN_NY_L8e5a7466_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 25; L3M 5): LEAD-not-confirmed
+- 07:36Z W-COMBO ALN-AUTO TL3_ALN_NY_L91c07c47_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 26; L3M 23): LEAD-not-confirmed
+- 07:38Z W-COMBO RESELECT-NYAM RESULT: no stack could be built from the pool of 6 books (gate blocks the first step or the pool is empty)
+- (wall 07:39Z) W-LR status: LR workers (cores busy) 0, jobs outstanding 48 (pending file), cell-months done 1979, load 59.27 53.92 54.15, epoch 1795160383
