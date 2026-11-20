@@ -1,6 +1,6 @@
-# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:54Z.
+# ALL-NEW STACK, ASIA (W-COMBO, order 2230Z). DRY RUN / LEAD: re-run as first looks, prior years, controls, exits and pass 2 complete. Updated 2026-11-20 01:59Z.
 Method: forward selection from an EMPTY stack on the ALL-NEW base (NO live book trades in any session, account layers ON at the D7 stand-in settings) with NEW books only; SELECTION RULE (Josh: drawdown first): step 1 = best single book by mean $/wk per unit of ulcer (return per drawdown; a one-book stack is never chosen by ulcer alone); steps >= 2 = among candidates whose stack mean $/wk is NOT LOWER than that of the best single book, lowest stack ulcer (then max DD, then worst week); stop when no candidate lowers the ulcer by >= 1%. Equal-capital framing: a stack of k books = k books at base lots (1 lot each), no rescaling. Both views are shown per step (the ulcer view and the return-per-drawdown view), exact production-driver runs at every step; the scorer only orders candidates. Columns: ulcer / max DD / worst week / mean $ per week, L6M (L3M beside), base lots.
-Phase: select. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
+Phase: moves. Candidates tried: 135 (step 1 all; later steps the scorer-ordered top 15 exact).
 
 | step | added / move | stack set | L6M ulcer / maxDD / worst wk / mean | L3M | mean per unit ulcer (L6M) | what the other view would pick (return-per-drawdown / lowest-ulcer) | tried at this step |
 |---|---|---|---|---|---|---|---|
@@ -15,6 +15,8 @@ Selected books in order (what each is, plain words):
 - Lb328c0d1 (W-BEST score 0.549, L6M wk 1802.6): time bar 2 min [time_m_2]; ~30 bars/hour; trigger trig_manual_cci / go {"len": 50, "lvl": 100}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events). Alone on the all-new base: 3417 / -9887 / -6800 / 1633.
 - L1756b913 (W-BEST score 0.379, L6M wk 1967.7): time bar 4 min (tm240 = 240 seconds) [tm240]; ~15 bars/hour; trigger trig_structure_libpattern / threebar {"filt": 20}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 4678 / -12916 / -5830 / 2107.
 - L1716c153 (W-BEST score 0.374, L6M wk 1341.9): time bar 13 min [time_m_13]; ~5 bars/hour; trigger trig_book_micro / fade {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60. Alone on the all-new base: 3140 / -8738 / -8738 / 1415.
+
+STOPPED at 4 books (stop rule: no candidate qualified); drop / swap moves, prior years, runner-up and controls follow automatically.
 
 Top 10 candidates alone (all-new base: no live book trades anywhere), by L6M ulcer:
 

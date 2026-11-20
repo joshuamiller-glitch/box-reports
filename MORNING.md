@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 01:44Z 11-20 (t+588.7 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 01:59Z 11-20 (t+589.0 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 94% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-20T01:44:21Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-20T01:59:30Z. Box: CPU 99.2%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -9790,3 +9790,67 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 01:54Z W-COMBO ALN-AUTO TL3_ALN_AS_L7c368a4f_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 29; L3M 25): PASS: eligible for EX / P2 sets
 - 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lc4584864_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 18): PASS: eligible for EX / P2 sets
 - 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lda55d973_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 30; L3M 22): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ACK CHANGE FREEZE 02:00-14:00Z: I touch only queue FILES (_combo/allnew_pending.txt, mix3_urgent.txt) and my pages from now. Before 02:00Z: (a) WRITE RULE implemented (code/th_combo/combo_io.py: set JSONs and shifted-events parquets are written atomically via tmp+rename and only when content differs / not at all if the events file exists; builders patched, backups in code/th_combo/bak_freeze_0152/) and my drivers restarted on it (explicit pids: Asia selection, NY trigger -> NY driver, controls watcher); (b) FREEZE EXCEPTION (own code, a crash that STOPPED work): the single-book controls watcher combo_auto_aln.py had crashed on a control set with ZERO trades (its trades.parquet has no 'book' column: pyarrow ArrowInvalid in combo_score.load_trades): ONE change: load_trades returns an empty frame for such a set (backup combo_score.py.bak), watcher restarted (pid in _combo/aln_auto.pid), state intact (120 books gated so far). Budget selection FINISHED: 100% budget = 5 books (L7c368a4f L191904b3 L16118e0a L023ff9ff L578701ed), 75% = 3, 50% = 2, prior years of all three queued. All overnight work (Asia selection stop rule -> moves -> prior years/runner-up/controls; NY AM selection + B-id re-run; single-book controls) runs by itself.
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Ledfbf4d2_BASE controls: real beats 26 of 30 (L6M drawdown-first; ulcer only 29; L3M 8): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lfb608c7b_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 28; L3M 16): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L247629c9_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 28; L3M 16): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L2b8ccd55_BASE controls: real beats 20 of 30 (L6M drawdown-first; ulcer only 25; L3M 13): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L33bc9e87_BASE controls: real beats 12 of 30 (L6M drawdown-first; ulcer only 19; L3M 15): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L4fd10b76_BASE controls: real beats 23 of 30 (L6M drawdown-first; ulcer only 28; L3M 13): LEAD-not-confirmed
+- 01:55Z W-COMBO controls watcher status (single books, ALL-NEW base): 120 books have all 42 months; 75 pass the PROVISIONAL prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025 and >= 58% positive 14-day blocks: it is permissive; W-NYENG's programme-table gate should replace it); 17 books have their 30 controls decided, 8 beat >= 27 of 30 (drawdown-first): e.g. Asia L9aa7805c 30/30, L15f14deb 30/30, Lc4584864 30/30, L7c368a4f 28/30, Lda55d973 28/30, L1edb9fab 27/30, NY L2176f633 28/30; fails e.g. Asia L224050e7 1/30, L1760608b 6/30, NY L39470318 18/30 (ulcer-only 30/30: its ulcer is lower than every shifted control but its max DD / worst week is not). Remaining controls queue as their books pass (about 180 set-months per book).
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Lc769f6ac_BASE controls: real beats 7 of 30 (L6M drawdown-first; ulcer only 12; L3M 17): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Ldae2fbc4_BASE controls: real beats 16 of 30 (L6M drawdown-first; ulcer only 26; L3M 7): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L35e883dc_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 28; L3M 28): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L40bde9ea_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 20): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L59536e17_BASE controls: real beats 8 of 30 (L6M drawdown-first; ulcer only 14; L3M 14): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lbd4b5635_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 30; L3M 3): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lc754cf58_BASE controls: real beats 25 of 30 (L6M drawdown-first; ulcer only 25; L3M 14): LEAD-not-confirmed
+- 01:55Z LEAD NOTE: W-COMBO freeze ack received; all 10 active agents acknowledged (W-PROOF cross-check at 02:05Z). W-COMBO FREEZE EXCEPTION (combo_score.load_trades zero-trade crash, backup, one change, own code) accepted: within the exception rule. Budget selections done (100%: 5 books, 75%: 3, 50%: 2); Asia step 5+ and NY AM run on their own.
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lcae177ba_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 29; L3M 12): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Lc338b47b_BASE controls: real beats 23 of 30 (L6M drawdown-first; ulcer only 24; L3M 13): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L1343f8bd_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 28; L3M 24): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L1756b913_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 23): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lbf4492a6_BASE controls: real beats 10 of 30 (L6M drawdown-first; ulcer only 29; L3M 23): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Lcb276f27_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 23; L3M 17): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L11a12538_BASE controls: real beats 10 of 30 (L6M drawdown-first; ulcer only 22; L3M 2): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L1b44d5f3_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 13; L3M 8): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L27d3f3b9_BASE controls: real beats 5 of 30 (L6M drawdown-first; ulcer only 20; L3M 1): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Ld37dea46_BASE controls: real beats 24 of 30 (L6M drawdown-first; ulcer only 28; L3M 21): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_Le3193838_BASE controls: real beats 19 of 30 (L6M drawdown-first; ulcer only 25; L3M 14): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L578701ed_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 16): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L973b5c8a_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 30; L3M 18): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_Le9bd7276_BASE controls: real beats 27 of 30 (L6M drawdown-first; ulcer only 28; L3M 18): PASS: eligible for EX / P2 sets
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L11e120ff_BASE controls: real beats 4 of 30 (L6M drawdown-first; ulcer only 26; L3M 10): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_NY_L4e8752c7_BASE controls: real beats 2 of 30 (L6M drawdown-first; ulcer only 30; L3M 0): LEAD-not-confirmed
+- 01:55Z W-COMBO ALN-AUTO TL3_ALN_AS_L1f14947b_BASE controls: real beats 23 of 30 (L6M drawdown-first; ulcer only 28; L3M 12): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L29b1bc3f_BASE controls: real beats 30 of 30 (L6M drawdown-first; ulcer only 30; L3M 14): PASS: eligible for EX / P2 sets
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L2ccc12bf_BASE controls: real beats 15 of 30 (L6M drawdown-first; ulcer only 27; L3M 18): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L6cff0af0_BASE controls: real beats 9 of 30 (L6M drawdown-first; ulcer only 29; L3M 2): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_La5b5d03a_BASE controls: real beats 14 of 30 (L6M drawdown-first; ulcer only 22; L3M 13): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_Lb68a132d_BASE controls: real beats 27 of 30 (L6M drawdown-first; ulcer only 29; L3M 21): PASS: eligible for EX / P2 sets
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_Lc849eb8c_BASE controls: real beats 27 of 30 (L6M drawdown-first; ulcer only 28; L3M 18): PASS: eligible for EX / P2 sets
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_M7423c0d9_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 30; L3M 20): PASS: eligible for EX / P2 sets
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L0dc67ba7_BASE controls: real beats 2 of 30 (L6M drawdown-first; ulcer only 19; L3M 13): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L3bbe44f5_BASE controls: real beats 21 of 30 (L6M drawdown-first; ulcer only 25; L3M 13): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L435012bb_BASE controls: real beats 3 of 30 (L6M drawdown-first; ulcer only 24; L3M 4): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L5ccb2d77_BASE controls: real beats 23 of 30 (L6M drawdown-first; ulcer only 28; L3M 13): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L7678a6c4_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 20; L3M 23): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L76bf3435_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 12; L3M 22): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_Lc9217645_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 25; L3M 12): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L10ca5b3b_BASE controls: real beats 22 of 30 (L6M drawdown-first; ulcer only 29; L3M 18): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L358e61be_BASE controls: real beats 13 of 30 (L6M drawdown-first; ulcer only 25; L3M 12): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L4d206c8c_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 26; L3M 9): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L774720c8_BASE controls: real beats 25 of 30 (L6M drawdown-first; ulcer only 29; L3M 12): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_L81e89115_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 26; L3M 14): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_AS_Lbe5ac95b_BASE controls: real beats 28 of 30 (L6M drawdown-first; ulcer only 29; L3M 17): PASS: eligible for EX / P2 sets
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L19abb182_BASE controls: real beats 7 of 30 (L6M drawdown-first; ulcer only 26; L3M 9): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L30aea520_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 24; L3M 12): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L9c7289bd_BASE controls: real beats 0 of 30 (L6M drawdown-first; ulcer only 24; L3M 18): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_Lc2ac6e2f_BASE controls: real beats 22 of 30 (L6M drawdown-first; ulcer only 28; L3M 20): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L0f98a9af_BASE controls: real beats 4 of 30 (L6M drawdown-first; ulcer only 11; L3M 10): LEAD-not-confirmed
+- 01:56Z W-COMBO ALN-AUTO TL3_ALN_NY_L3c6da67f_BASE controls: real beats 1 of 30 (L6M drawdown-first; ulcer only 17; L3M 19): LEAD-not-confirmed
+- (wall 01:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+2026-11-20T01:58:18Z W-GRIDA 2026-11-20T01:58Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 2875 / 14 / 0.0 h; (b) pass-1 level modules 0 / 0 / done; (c) pass-2 family cells 660 / 6901 / 10.5 h; (d) rest of pass 1 2157 / 9 / 0.0 h; workers 86 (29 R      57 S); load 110.66; todo counts refreshed {"": 0, "_p2": 10} min ago
+- 01:59Z W-P2A stale watch: stale_cells.json 573 cells, 0 new listed cells excluded []
+2026-11-20T01:59:16Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 02:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 258394
