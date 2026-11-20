@@ -1,8 +1,8 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:43Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:46Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 84 books with a BASE set; 60 have all 42 months landed = counted below; 24 still waiting for prior years)
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 90 books with a BASE set; 60 have all 42 months landed = counted below; 30 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
@@ -16,15 +16,15 @@
 | a + b + c + d | 1 : L2176f633 |
 | a + b + c + d + e | 0 : none |
 
-Nearest misses (fail exactly one of a-e, controls known): L03be4d27 (fails e), L077444ee (fails d), L192d0772 (fails e), L2176f633 (fails e), L2b8ccd55 (fails d), L33bc9e87 (fails d), L3c6da67f (fails d), L4fd10b76 (fails d), L5ccb2d77 (fails d), L79cd626b (fails c), L9a90f91c (fails c), Lc2ac6e2f (fails d), Lc9217645 (fails d), Ld37dea46 (fails d).
-Passed a+b+c, controls not landed yet (waiting, queued at the front): L03be4d27, L192d0772, L5e9c702b.
+Nearest misses (all five gates known, fail exactly one): L077444ee (fails d), L2176f633 (fails e), L2b8ccd55 (fails d), L33bc9e87 (fails d), L3c6da67f (fails d), L4fd10b76 (fails d), L5ccb2d77 (fails d), Lc2ac6e2f (fails d), Lc9217645 (fails d), Ld37dea46 (fails d).
+NOT dead, controls (d) still pending: L03be4d27 (passes a,b,c; fails e; controls (d) pending), L192d0772 (passes a,b,c; fails e; controls (d) pending), L5e9c702b (pass a,b,c,e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **1** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 66 of 84 in the universe; failed the prior-year positivity / persistence / controls: 56; waiting for prior years: 24; passed (a)+(b), controls still running: 3.
+Books with all months landed: 63 of 90 in the universe; failed the prior-year positivity / persistence / controls: 56; waiting for prior years: 30; passed (a)+(b), controls still running: 3.
 Pool books: L2176f633
 
 **Plainly: only 1 book(s) pass everything alone in NY AM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
@@ -37,7 +37,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L2176f633 | `TL3_ALN_NY_L2176f633_BASE` | 5318 / -13073 / -7664 / 1896 | 5311 / -11338 / -7664 / 536 | 5293 / -11767 / -7284 / 611 GREEN | 6931 / -20162 / -11878 / 773 RED | 9031 / -19835 / -8248 / 335 AMBER | 0.51 | 1 |
 
-Stack-level luck control: beats (28, 18, 28) of 30 (drawdown-first L6M, L3M, ulcer-only).
+Stack-level luck control: beats [28, 18, 28] of 30 (drawdown-first L6M, L3M, ulcer-only).
 
 Phase: done. Pool used by this run: 1 books (L2176f633).
 

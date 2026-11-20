@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:40Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 04:47Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
 
@@ -16,8 +16,8 @@
 | a + b + c + d | 19 : L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L40bde9ea, L578701ed, L7c368a4f, L973b5c8a, L9aa7805c, Lb68a132d, Lbe5ac95b, Lc4584864, Lc849eb8c, Lcae177ba, Lda55d973, Ldcdb0b6e, Le9bd7276, Lfb608c7b, M7423c0d9 |
 | a + b + c + d + e | 0 : none |
 
-Nearest misses (fail exactly one of a-e, controls known): L15f14deb (fails e), L1756b913 (fails e), L1edb9fab (fails e), L29b1bc3f (fails e), L3f6f752c (fails e), L40bde9ea (fails e), L578701ed (fails e), L7c368a4f (fails e), L973b5c8a (fails e), L9aa7805c (fails e), Lb68a132d (fails e), Lbe5ac95b (fails e), Lc4584864 (fails e), Lc849eb8c (fails e), Lcae177ba (fails e), Lda55d973 (fails e), Ldcdb0b6e (fails e), Le9bd7276 (fails e), Lfb608c7b (fails e), M7423c0d9 (fails e).
-Passed a+b+c, controls not landed yet (waiting, queued at the front): L3f6f752c.
+Nearest misses (all five gates known, fail exactly one): L15f14deb (fails e), L1756b913 (fails e), L1edb9fab (fails e), L29b1bc3f (fails e), L40bde9ea (fails e), L578701ed (fails e), L7c368a4f (fails e), L973b5c8a (fails e), L9aa7805c (fails e), Lb68a132d (fails e), Lbe5ac95b (fails e), Lc4584864 (fails e), Lc849eb8c (fails e), Lcae177ba (fails e), Lda55d973 (fails e), Ldcdb0b6e (fails e), Le9bd7276 (fails e), Lfb608c7b (fails e), M7423c0d9 (fails e).
+NOT dead, controls (d) still pending: L3f6f752c (passes a,b,c; fails e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK_0346Z.md (the Asia stack Ldfbf31b5 + L191904b3 + L1756b913 + L1716c153: RED in every window, persistence 0.44, three of four books fail their luck controls).
 
