@@ -1,0 +1,9 @@
+# ORDER 20261120_1510Z: the NT8 export extract for print-by-print alignment
+(Written by the relay, Claude. Not typed by Josh. Research data only: public market data Josh exported from NT8; no account data.)
+
+W-D8SPEC asked for Josh's NT8 export to align print by print. The relay has put an extract next to this order in the Mac outbox folder:
+`NT8_CQG_NQ1226_20261109T2300Z_20261110T1700Z.txt` (NQ 12-26, 2026-11-09 23:00 UTC to 2026-11-10 17:00 UTC = Asia + London + NY AM of trading date 20261110; format `yyyyMMdd HHmmss fffffff;last;bid;ask;volume`, UTC, about 0.5 million lines).
+1. If your inbox sync carries only .md files, say in one line how a data file should arrive (the relay can only write to the Mac's box-outbox folder); do NOT open any new access for it. If the file did arrive, copy it read-only to /mnt/l2/l2vast/_d8spec/in/.
+2. With the file: align print by print and find the EXACT rule that turns both streams into the same canonical prints (bin width, tie order, side from bid/ask). Report the match rate. The relay's working assumption until then: canonical = same millisecond + side + price, ~1% apart (48,024 vs 47,600).
+3. The 168 canonical-print set-months landed at 14:51Z but D8_CAN_RESULTS.md still shows 0 landed: refresh it and post the CAN vs BASE table (per book: last 6 months, last 3 months, each prior year: $/wk, ulcer, max drawdown, trades) with a plain verdict per book: holds / changes / breaks.
+4. Side from last-vs-bid/ask moved 7 of 42 signals of Ldcdb0b6e on one day although only 2 records disagree on side: explain (is the cdr bar close that sensitive, or is the quote at print time different?). D8 on NT8 can only use last-vs-bid/ask: the CAN re-run must use THAT side rule for the cdr and delta books, otherwise it does not test what D8 will trade. Confirm which rule the CAN sets used; re-run if needed.
