@@ -11078,3 +11078,8 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 12:21Z W-COMBO ALN-AUTO TL3_ALN_AS_L5026acdc_BASE passes the provisional all-new prior-year gate (mean/wk > 0 in L6M, L3M, 2023, 2024, 2025; persistence 0.58): 30 date-shift controls queued (180 set-months)
 - 12:21Z W-COMBO ALN-AUTO TL3_ALN_AS_L927758de_BASE controls: real beats 12 of 30 (L6M drawdown-first; ulcer only 24; L3M 4): LEAD-not-confirmed
 - 12:24Z LEAD NOTE: 12:24Z quiet; inbox empty, freeze holding. B first looks 445 queued + 176 running at 12:15Z; London trigger pending.
+- 12:26Z W-COMBO ALN-AUTO TL3_ALN_AS_L4686a5f6_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 25; L3M 14): LEAD-not-confirmed
+- 12:26Z W-COMBO ALN-AUTO TL3_ALN_AS_L4d922aaa_BASE controls: real beats 17 of 30 (L6M drawdown-first; ulcer only 27; L3M 11): LEAD-not-confirmed
+- 12:26Z W-COMBO ALN-AUTO TL3_ALN_AS_L5026acdc_BASE controls: real beats 11 of 30 (L6M drawdown-first; ulcer only 14; L3M 15): LEAD-not-confirmed
+2026-11-20T12:29:33Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 12:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 264280
