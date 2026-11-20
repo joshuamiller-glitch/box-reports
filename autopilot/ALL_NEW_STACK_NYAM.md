@@ -1,6 +1,6 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:32Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 13:38Z.
 
-Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYAM_OWN_CHECKS.md.
+**READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
 ## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 215 books with a BASE set; 215 have all 42 months landed = counted below; 0 still waiting for prior years)
 
@@ -34,13 +34,9 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 
-**Rejected best candidate (blocked by the gate):** B2010fec9 (`TL3_ALN_NY_B2010fec9_BASE`): RED on rule B in ['Y2024', 'Y2025'] / persistence 0.51. Its numbers: 3809 / -10082 / -5422 / 2338 | 4842 / -10082 / -5422 / 1387 | 6908 / -15139 / -6304 / 400 AMBER | 6541 / -16176 / -7049 / 345 RED | 10763 / -23200 / -8968 / 218 RED | persistence 0.51.
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 13:23Z UTC; pool 7 books): B2010fec9 + L063a587d
 
-STOPPED at 0 books: the best candidate that passes the add rule is blocked by the prior-year / persistence gate.
-
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 13:15Z UTC; pool 7 books): EMPTY: no stack passes
-
-Phase: final. Pool used by this run: 8 books (B2010fec9, B6f77f23d, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
+Phase: run. Pool used by this run: 8 books (B2010fec9, B6f77f23d, L05350e98, L063a587d, L2176f633, L488784d8, L6547965c, L7cc56d99).
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
