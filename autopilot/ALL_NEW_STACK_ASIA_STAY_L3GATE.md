@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 20:44Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 20:49Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -54,17 +54,15 @@ Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar],
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 18 |
+| 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 21 |
 
 Selected books in order (plain words): 
 - L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
-STOPPED at 1 books: no candidate passes the add rule.
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 20:46Z UTC; pool 18 books): L7c368a4f
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 20:23Z UTC; pool 15 books): L7c368a4f
-
-Phase: final. Pool used by this run: 18 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7f41b347, L973b5c8a, L9aa7805c, Lb68a132d, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
+Phase: run. Pool used by this run: 21 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
