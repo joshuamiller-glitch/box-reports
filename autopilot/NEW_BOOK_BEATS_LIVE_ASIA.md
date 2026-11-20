@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-20 01:05Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-20 01:30Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -693,16 +693,16 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | Lba6d553c time_m_2 | [twin of L5dee2059] | no (L6M du +1989 dm +170 | L3M du +759 dm +1591) | no (L6M du +1173 dm -364 | L3M du +1425 dm +1168) | copied |
 | Lbcfd73ea kagi_20 | [twin of L887fd783] | no (L6M du +2011 dm -427 | L3M du +803 dm -94) | no (L6M du +2127 dm -22 | L3M du +2647 dm +1157) | copied |
 
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-20T00:45:02Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-20T01:15:01Z)
 
-Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 3195; WITHOUT a first look: 2** (4 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 2510, 'B': 228, 'out': 395, 'out (RED B)': 2, 'A': 3}.
+Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 3197; WITHOUT a first look: 0** (0 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 2511, 'B': 231, 'out': 394, 'out (RED B)': 2}.
 
 | part | queued now (not DONE) | still to be appended (estimate) | basis |
 |---|---|---|---|
-| stage A first look (ADD + REPLACE-vs-A7, L6M) | 4 | 0 | queue lines |
+| stage A first look (ADD + REPLACE-vs-A7, L6M) | 0 | 0 | queue lines |
 | a2 REPLACE vs K7/P7/H7/U7 (L6M) | 0 | ~0 | 24 lines x alive share 0.10 x cells without first look |
-| prior years (2023-04..2026-04, ADD/REPLACE sets) | 3 | ~1 | 37 months x ~1.5 sets x beater share 0.014 (follow-ups gated to cells that beat a live book) |
-| controls (30 date-shift x 6 months per set) | 0 (+ 0 passer-control lines in first.txt, same lines) | ~4 | 180 x ~1.5 sets x beater share 0.014 x C share 0.95 |
+| prior years (2023-04..2026-04, ADD/REPLACE sets) | 3 | ~0 | 37 months x ~1.5 sets x beater share 0.014 (follow-ups gated to cells that beat a live book) |
+| controls (30 date-shift x 6 months per set) | 0 (+ 0 passer-control lines in first.txt, same lines) | ~0 | 180 x ~1.5 sets x beater share 0.014 x C share 0.95 |
 | F-set re-runs (202511 capped exits) | 0 | cron :20/:50 adds new ones | contaminated 202511 set-months |
 | older AB/AX lines (W-LONENG) | 0 | 0 | queue lines |
 | layers (W-LAYERS, tag NYL) | not in _asi | ~4.5 h per passer (W-LAYERS 11:07Z) | 8 passers |
@@ -710,20 +710,20 @@ Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side
 
 **Cells already OUT at an early rung with later-rung lines still queued: 0 cells, 0 lines** (these are wasted work for W-DEDUP; the 8 passers and the 59-cell stage-C reset are NOT among them if the next line says 0).
 
-Rate now: Asia landed last hour 2258 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
+Rate now: Asia landed last hour 1122 set-months/h (box-1 tree view; see MORNING.md for the post-change measurement).
 
 
 
 ## Engine throughput and queue (Asia sets TL3_ASI_*)
-Asia set-months landed: last 1 h 1122, last 3 h 5209; Asia queue lines pending (not DONE): 3.
+Asia set-months landed: last 1 h 69, last 3 h 4434; Asia queue lines pending (not DONE): 3.
 
 ## Proof that Asia sets are launched ahead of NY AM
-- QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 12, _nye/pending_w , _lon 13 (lower = earlier).
+- QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 13, _nye/pending_w , _lon 14 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > ALN > STK > EXE > NYL > NYF > FR > NYE
-- box1 running engine sets by tag: 24 TL3_NYE_       8 TL3_LON_       1 TL3_NYL_
-- server2 running engine sets by tag: 38 TL3_NYE_      14 TL3_ALN_
-- A running engine sets by tag: 140 TL3_NYE_      55 TL3_ALN_
-- B running engine sets by tag: 136 TL3_NYE_      58 TL3_ALN_
+- box1 running engine sets by tag: 30 TL3_NYE_      12 TL3_LON_       1 TL3_ASI_
+- server2 running engine sets by tag: 37 TL3_NYE_      15 TL3_ALN_
+- A running engine sets by tag: 140 TL3_NYE_      59 TL3_ALN_
+- B running engine sets by tag: 165 TL3_NYE_      28 TL3_ALN_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
