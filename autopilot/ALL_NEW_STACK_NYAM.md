@@ -1,31 +1,31 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 16:17Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 16:23Z.
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
 
-## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 219 books with a BASE set; 35 have all 42 months landed = counted below; 0 still waiting for prior years)
+## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 219 books with a BASE set; 37 have all 42 months landed = counted below; 0 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 32 of 35 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 33 of 35 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 31 of 35 |
+| (a) positive $/wk in L6M and L3M | 34 of 37 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 35 of 37 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 32 of 37 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 27 books) | 5 of 27 |
-| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 8 of 35 |
-| a + b | 30 |
-| a + b + c | 27 |
+| (e) not RED on rule B vs today, as run, scaled to equal risk, in every prior year | 8 of 37 |
+| a + b | 32 |
+| a + b + c | 28 |
 | a + b + c + d | 5 : B6f77f23d, L05350e98, L488784d8, L6547965c, L7cc56d99 |
 | a + b + c + d + e | 0 : none |
 
 Nearest misses (all five gates known, fail exactly one): B6f77f23d (fails e), B8f9323d6 (fails d), L05350e98 (fails e), L2b49fb91 (fails d), L2b8ccd55 (fails d), L33bc9e87 (fails d), L3c6da67f (fails d), L488784d8 (fails e), L5ac628eb (fails d), L6547965c (fails e), L7cc56d99 (fails e).
-NOT dead, controls (d) still pending: none.
+NOT dead, controls (d) still pending: L2176f633 (passes a,b,c; fails e; controls (d) pending).
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **5** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 219 of 219 in the universe; failed the prior-year positivity / persistence / controls: 30; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
-Pool books: B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar], L05350e98 [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [BASE kept: time / line-break / median-Renko / swing bar], L6547965c [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [BASE kept: time / line-break / median-Renko / swing bar]
+Books with all months landed: 219 of 219 in the universe; failed the prior-year positivity / persistence / controls: 31; waiting for prior years: 0; passed (a)+(b), controls still running: 1.
+Pool books: B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar], L05350e98 [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar], L6547965c [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]
 
 **Plainly: only 5 book(s) pass everything alone in NY AM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
 
@@ -38,7 +38,7 @@ Pool books vs today, as run (equal risk, each book scaled to the same L6M ulcer 
 | 1 | L7cc56d99 | `TL3_ALN_NY_L7cc56d99_BASE` | 4790 / -13326 / -7749 / 2405 | 4719 / -11089 / -7749 / 2166 | 3889 / -11074 / -4734 / 1066 GREEN | 9284 / -17987 / -6954 / 320 RED | 10265 / -31363 / -15443 / 872 RED | 0.59 | 5 |
 
 Selected books in order (plain words): 
-- L7cc56d99 [BASE kept: time / line-break / median-Renko / swing bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
+- L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
 
 EQUAL-RISK LINE (this stack vs today, as run): today's NY AM session scaled DOWN by k = 0.57 to the stack's drawdown: L6M 4790 / -10197 / -4075 / 475 ; L3M 3169 / -6973 / -4075 / 887. The stack: L6M 4790 / -13326 / -7749 / 2405 ; L3M 4719 / -11089 / -7749 / 2166. Persistence of the stack vs that reference: 0.59; rule B per prior year: GREEN / RED / RED.
 
