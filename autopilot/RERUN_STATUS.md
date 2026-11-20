@@ -1,8 +1,8 @@
-# RERUN TABLE 00:05Z: universe 4563 | landed 4488 | running 72 | pending 3 | LOST-suspect 0
+# RERUN TABLE 00:11Z: universe 4814 | landed 4685 | running 126 | pending 3 | LOST-suspect 0
 
 LOST = 0
 
-SIG CHECK all landed: sig-not-current/no-lease 74, run<60s 1; sample30: sig current 29/30, run time min/median/max 96/172/262 s
+SIG CHECK all landed: sig-not-current/no-lease 74, run<60s 2; sample30: sig current 29/30, run time min/median/max 80/167/262 s
 TL3_ASI_Mac97d189_RA7 202608 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202609 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202610 lease-sig-not-current
@@ -54,3 +54,4 @@ TL3_ASI_M094d4549_RA7 202606 lease-sig-not-current
 TL3_ASI_M094d4549_RA7 202607 lease-sig-not-current
 TL3_ASI_M094d4549_RA7 202608 lease-sig-not-current
 TL3_NYE_L772485df_RK7 202610 26s
+TL3_NYE_L1a2c2c00_RK7 202606 17s
