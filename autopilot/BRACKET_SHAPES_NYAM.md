@@ -1,6 +1,6 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-20 18:04Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-20 18:12Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
@@ -157,177 +157,15 @@ Plain 60/60 is the pick for 2 of 6 complete books.
 - F80_40: -1853 | 34396 | -52343 | -12721 | 20.6 | -1420
 - F120_60: -367 | 15275 | -32250 | -13168 | 15.2 | -2067
 
-## Prior years and luck controls (winners only)
+## Fitted-bracket verdicts under the NEW gates (order 1810Z, Josh approved)
 
-{
-"AS_L15f14deb": {
-"shape": "F40_80",
-"years": {
-"2023": {
-"mean_wk": -34,
-"ulcer": 5667
-},
-"2024": {
-"mean_wk": 247,
-"ulcer": 7631
-},
-"2025": {
-"mean_wk": 653,
-"ulcer": 7156
-},
-"2026": {
-"mean_wk": 1677,
-"ulcer": 3658
-}
-},
-"controls": {
-"real_beats": 11,
-"of": 30,
-"real_gain": 728
-},
-"complete": true,
-"pass": false,
-"own": "P60"
-},
-"AS_L1edb9fab": {
-"shape": "P30",
-"years": {
-"2023": {
-"mean_wk": 234,
-"ulcer": 3524
-},
-"2024": {
-"mean_wk": 64,
-"ulcer": 5550
-},
-"2025": {
-"mean_wk": -125,
-"ulcer": 8045
-},
-"2026": {
-"mean_wk": 905,
-"ulcer": 4945
-}
-},
-"controls": {
-"real_beats": 30,
-"of": 30,
-"real_gain": 2485
-},
-"complete": true,
-"pass": false,
-"own": "P60"
-},
-"AS_L7c368a4f": {
-"shape": "P30",
-"years": {
-"2023": {
-"mean_wk": 238,
-"ulcer": 3634
-},
-"2024": {
-"mean_wk": 41,
-"ulcer": 5568
-},
-"2025": {
-"mean_wk": -136,
-"ulcer": 4959
-},
-"2026": {
-"mean_wk": 942,
-"ulcer": 4900
-}
-},
-"controls": {
-"real_beats": 30,
-"of": 30,
-"real_gain": 2484
-},
-"complete": true,
-"pass": false,
-"own": "P60"
-},
-"AS_L7ea48296": {
-"shape": "P45",
-"years": {
-"2023": {
-"mean_wk": 360,
-"ulcer": 2440
-},
-"2024": {
-"mean_wk": 554,
-"ulcer": 2213
-},
-"2025": {
-"mean_wk": 560,
-"ulcer": 8302
-},
-"2026": {
-"mean_wk": 621,
-"ulcer": 5769
-}
-},
-"controls": {
-"real_beats": 27,
-"of": 30,
-"real_gain": 1170
-},
-"complete": true,
-"pass": true,
-"own": "P60"
-},
-"NY_L488784d8": {
-"shape": "P30",
-"years": {
-"2023": {
-"mean_wk": 186,
-"ulcer": 3134
-},
-"2024": {
-"mean_wk": 217,
-"ulcer": 2851
-},
-"2025": {
-"mean_wk": 18,
-"ulcer": 7201
-},
-"2026": {
-"mean_wk": -14,
-"ulcer": 3303
-}
-},
-"controls": {
-"real_beats": 0,
-"of": 0,
-"real_gain": 229
-},
-"complete": false,
-"pass": false,
-"own": "P60"
-},
-"NY_L7cc56d99": {
-"shape": "S8U",
-"years": {},
-"controls": {
-"real_beats": 0,
-"of": 0,
-"real_gain": 0
-},
-"complete": false,
-"pass": false,
-"own": "S15U"
-},
-"NY_L05350e98": {
-"shape": "S8U",
-"years": {},
-"controls": {
-"real_beats": 0,
-"of": 0,
-"real_gain": 0
-},
-"complete": false,
-"pass": false,
-"own": "S15U"
-}
-}
+Gates: (1) walk-forward persistence >= 0.58 (every 14 days from 2023-10: pick the shape on the trailing 6 months at equal ulcer, score the next 14 days; fitted beats the own bracket in >= 58% of the periods where the pick differs from the own bracket; at least 8 such periods); (2) prior years 2023/24/25 "not a disaster": fitted equal-risk $/wk no more than 15% worse than the own bracket GREEN, 15-30% AMBER (shown), > 30% RED (fails); (3) search-aware null >= 4 of 5: NOT BUILT YET (needs random-entry books for the same 16-shape screen), shown as pending. The old rule (27 of 30 date-shift copies and positive every prior year) is shown beside it as information only.
+
+| book | own | fitted shape | walk-forward | prior-year band 2023 / 2024 / 2025 ($/wk worse %) | null | old 27/30 (info) | old positive-every-year (info) | verdict |
+|---|---|---|---|---|---|---|---|---|
+| L05350e98 | S15U | S8U | series not complete | prior-year months not landed | pending | 0/0 | no | pending (series not complete) |
+| L488784d8 | P60 | P30 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: RED 36.9% / GREEN 0.0% / RED 95.3% | pending | 10/13 | no | pending (series not complete) |
+| L7cc56d99 | S15U | S8U | series not complete | prior-year months not landed | pending | 0/0 | no | pending (series not complete) |
+
+One line per book: fitted bracket kept = verdict starts with PASSES (null still pending, so the label is LEAD at best); otherwise the book keeps its own bracket.
 

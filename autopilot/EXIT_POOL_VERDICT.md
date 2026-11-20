@@ -33,3 +33,71 @@
 | M3f6f752c | v25_t2 | 32/32 | 180/180 | 2734/3828 | 2454/2561 | 1853/2293 | 1157/4305 | 2786/2787 | -3/78 | 232/271 | 110/317 | 26 | 9 | False | False |
 | La6f6f7ad | v25_t2 | 32/32 | 180/180 | 3530/4683 | 2595/5419 | 3730/1913 | 6415/3600 | 6849/5358 | -168/163 | -96/224 | 522/463 | 28 | 23 | False | False |
 | L08df8bb0 | bricks3_v25 | 32/32 | 180/180 | 6376/6419 | 3971/5298 | 3257/3285 | 5284/10700 | 9289/4473 | 41/219 | 146/151 | 149/648 | 3 | 10 | True | False |
+
+## NEW GATES (walk-forward persistence >= 0.58 drawdown first; prior-year band red > 30% fails; null n/a; 27/30 shown in the table above is information only)
+
+| basis | session | book | exit | WF persistence (periods) | 2023 ulcer% / eq-risk $% (band) | 2024 | 2025 | null | 27/30 (L6M / L3M, old count) | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|
+| old split | AS | L578701ed | st_sw4_r3_ch3 | 0.94 (85) | +111 / +107 (red) | -43 / +1101 (red) | -21 / +95 (red) | n/a | 25 / 9 | not kept |
+| old split | AS | Lff52ec0c | st_sw4_r3_ch3 | 0.87 (85) | +68 / +132 (red) | -25 / +106 (red) | -7 / +159 (red) | n/a | - | not kept |
+| old split | AS | L11152f7a | st_sw4_r3_ch3 | 0.86 (85) | +499 / +114 (red) | -64 / +80 (red) | -56 / +12 (green) | n/a | 19 / 6 | not kept |
+| old split | AS | L7f41b347 | st_sw4_r3_ch3 | 0.85 (85) | +89 / +128 (red) | -25 / +107 (red) | +6 / +180 (red) | n/a | 28 / 17 | not kept |
+| old split | AS | Lfb608c7b | sw4_r2 | 0.84 (85) | +110 / +257 (red) | +2 / +203 (red) | -57 / +26 (amber) | n/a | 13 / 10 | not kept |
+| old split | AS | M7423c0d9 | st_sw4_r3_ch3 | 0.81 (85) | +23 / +365 (red) | -70 / -80 (green) | +167 / +114 (red) | n/a | 23 / 6 | not kept |
+| old split | AS | M7423c0d9 | mm127_v25 | 0.79 (85) | -36 / -82 (green) | -57 / +137 (red) | +114 / +114 (red) | n/a | 16 / 16 | not kept |
+| old split | AS | L578701ed | pk56622e | 0.78 (85) | +218 / +107 (red) | -62 / +790 (red) | +55 / +127 (red) | n/a | 18 / 8 | not kept |
+| old split | AS | M3f6f752c | pk56622e | 0.74 (85) | +17 / +169 (red) | -62 / -87 (green) | +135 / +117 (red) | n/a | 25 / 17 | not kept |
+| old split | AS | L40bde9ea | st_sw4_r3_ch3 | 0.73 (85) | +21 / +173 (red) | -65 / -4 (green) | -53 / +90 (red) | n/a | 9 / 16 | not kept |
+| old split | AS | M7423c0d9 | pk56622e | 0.72 (85) | +91 / +470 (red) | -62 / -89 (green) | +30 / +84 (red) | n/a | 23 / 14 | not kept |
+| old split | AS | L11152f7a | mm127_v25 | 0.72 (85) | +457 / +114 (red) | -30 / +70 (red) | -26 / +31 (red) | n/a | 3 / 19 | not kept |
+| old split | AS | M3f6f752c | line_psar_v25 | 0.72 (85) | -30 / +144 (red) | -36 / +61 (red) | +79 / +121 (red) | n/a | 24 / 18 | not kept |
+| old split | AS | M3f6f752c | mm127_v25 | 0.72 (85) | -64 / -245 (green) | -54 / +86 (red) | +9 / +113 (red) | n/a | 22 / 13 | not kept |
+| old split | AS | L29b1bc3f | st_sw4_r3_ch3 | 0.69 (85) | +7 / +605 (red) | -64 / +12 (green) | -40 / +75 (red) | n/a | 17 / 9 | not kept |
+| old split | AS | Lc849eb8c | st_sw4_r3_ch3 | 0.67 (85) | -35 / +118 (red) | +11 / +61 (red) | +104 / +89 (red) | n/a | 0 / 18 | not kept |
+| old split | AS | Lcae177ba | stg1r_chand_v25 | 0.66 (85) | -23 / +103 (red) | -2 / +56 (red) | -53 / -108 (green) | n/a | 7 / 21 | not kept |
+| old split | AS | Lcae177ba | pk17eaeb | 0.65 (85) | +57 / +152 (red) | -6 / +95 (red) | -25 / +63 (red) | n/a | 22 / 24 | not kept |
+| old split | AS | Lbe5ac95b | pk56622e | 0.65 (85) | -5 / +146 (red) | -10 / +81 (red) | -29 / -112 (green) | n/a | 13 / 5 | not kept |
+| old split | AS | Lc849eb8c | bricks3_v25 | 0.61 (85) | +51 / +145 (red) | -6 / +35 (red) | -8 / +53 (red) | n/a | 29 / 20 | not kept |
+| old split | AS | M7423c0d9 | v25_t2 | 0.61 (85) | +89 / +448 (red) | -28 / -12 (green) | +17 / +81 (red) | n/a | 20 / 14 | not kept |
+| old split | AS | Lbe5ac95b | st_sw4_r3_ch3 | 0.59 (85) | +65 / +166 (red) | -22 / +54 (red) | -61 / -567 (green) | n/a | 16 / 9 | not kept |
+| old split | AS | La6f6f7ad | v25_t2 | 0.59 (85) | +95 / +153 (red) | +78 / +124 (red) | +28 / +12 (amber) | n/a | 28 / 23 | not kept |
+| old split | AS | Lbe5ac95b | mm127_v25 | 0.58 (85) | -15 / +95 (red) | -13 / +56 (red) | -22 / -161 (green) | n/a | 1 / 8 | not kept |
+| old split | AS | L29b1bc3f | v25_t2 | 0.56 (85) | +99 / +533 (red) | -4 / +93 (red) | -19 / +52 (red) | n/a | 27 / 12 | not kept |
+| old split | AS | M3f6f752c | v25_t2 | 0.56 (85) | -19 / +106 (red) | -73 / -219 (green) | -0 / +65 (red) | n/a | 26 / 9 | not kept |
+| old split | AS | L08df8bb0 | bricks3_v25 | 0.56 (85) | -1 / +81 (red) | -51 / -96 (green) | +108 / +89 (red) | n/a | 3 / 10 | not kept |
+| old split | AS | Lcae177ba | sw4_chand3 | 0.49 (85) | +43 / +123 (red) | -12 / -73 (green) | -18 / +10 (green) | n/a | 13 / 19 | not kept |
+| old split | AS | Lcae177ba | bricks3_v25 | 0.47 (85) | +22 / +111 (red) | +9 / +126 (red) | +87 / +112 (red) | n/a | 25 / 21 | not kept |
+| old split | AS | Lcae177ba | pk7ac450 | 0.45 (85) | +43 / +111 (red) | +30 / +39 (red) | +20 / +57 (red) | n/a | 21 / 18 | not kept |
+| old split | AS | Lcae177ba | v25_t2 | 0.45 (85) | +43 / +111 (red) | +30 / +39 (red) | +20 / +57 (red) | n/a | 21 / 18 | not kept |
+
+- AS L578701ed `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +111%, eq-risk $/wk +107% worse), 2024 (ulcer -43%, eq-risk $/wk +1101% worse), 2025 (ulcer -21%, eq-risk $/wk +95% worse)
+- AS Lff52ec0c `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +68%, eq-risk $/wk +132% worse), 2024 (ulcer -25%, eq-risk $/wk +106% worse), 2025 (ulcer -7%, eq-risk $/wk +159% worse)
+- AS L11152f7a `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +499%, eq-risk $/wk +114% worse), 2024 (ulcer -64%, eq-risk $/wk +80% worse)
+- AS L7f41b347 `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +89%, eq-risk $/wk +128% worse), 2024 (ulcer -25%, eq-risk $/wk +107% worse), 2025 (ulcer +6%, eq-risk $/wk +180% worse)
+- AS Lfb608c7b `sw4_r2`: **exit not kept** - prior-year red: 2023 (ulcer +110%, eq-risk $/wk +257% worse), 2024 (ulcer +2%, eq-risk $/wk +203% worse)
+- AS M7423c0d9 `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +23%, eq-risk $/wk +365% worse), 2025 (ulcer +167%, eq-risk $/wk +114% worse)
+- AS M7423c0d9 `mm127_v25`: **exit not kept** - prior-year red: 2024 (ulcer -57%, eq-risk $/wk +137% worse), 2025 (ulcer +114%, eq-risk $/wk +114% worse)
+- AS L578701ed `pk56622e`: **exit not kept** - prior-year red: 2023 (ulcer +218%, eq-risk $/wk +107% worse), 2024 (ulcer -62%, eq-risk $/wk +790% worse), 2025 (ulcer +55%, eq-risk $/wk +127% worse)
+- AS M3f6f752c `pk56622e`: **exit not kept** - prior-year red: 2023 (ulcer +17%, eq-risk $/wk +169% worse), 2025 (ulcer +135%, eq-risk $/wk +117% worse)
+- AS L40bde9ea `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +21%, eq-risk $/wk +173% worse), 2025 (ulcer -53%, eq-risk $/wk +90% worse)
+- AS M7423c0d9 `pk56622e`: **exit not kept** - prior-year red: 2023 (ulcer +91%, eq-risk $/wk +470% worse), 2025 (ulcer +30%, eq-risk $/wk +84% worse)
+- AS L11152f7a `mm127_v25`: **exit not kept** - prior-year red: 2023 (ulcer +457%, eq-risk $/wk +114% worse), 2024 (ulcer -30%, eq-risk $/wk +70% worse), 2025 (ulcer -26%, eq-risk $/wk +31% worse)
+- AS M3f6f752c `line_psar_v25`: **exit not kept** - prior-year red: 2023 (ulcer -30%, eq-risk $/wk +144% worse), 2024 (ulcer -36%, eq-risk $/wk +61% worse), 2025 (ulcer +79%, eq-risk $/wk +121% worse)
+- AS M3f6f752c `mm127_v25`: **exit not kept** - prior-year red: 2024 (ulcer -54%, eq-risk $/wk +86% worse), 2025 (ulcer +9%, eq-risk $/wk +113% worse)
+- AS L29b1bc3f `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +7%, eq-risk $/wk +605% worse), 2025 (ulcer -40%, eq-risk $/wk +75% worse)
+- AS Lc849eb8c `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer -35%, eq-risk $/wk +118% worse), 2024 (ulcer +11%, eq-risk $/wk +61% worse), 2025 (ulcer +104%, eq-risk $/wk +89% worse)
+- AS Lcae177ba `stg1r_chand_v25`: **exit not kept** - prior-year red: 2023 (ulcer -23%, eq-risk $/wk +103% worse), 2024 (ulcer -2%, eq-risk $/wk +56% worse)
+- AS Lcae177ba `pk17eaeb`: **exit not kept** - prior-year red: 2023 (ulcer +57%, eq-risk $/wk +152% worse), 2024 (ulcer -6%, eq-risk $/wk +95% worse), 2025 (ulcer -25%, eq-risk $/wk +63% worse)
+- AS Lbe5ac95b `pk56622e`: **exit not kept** - prior-year red: 2023 (ulcer -5%, eq-risk $/wk +146% worse), 2024 (ulcer -10%, eq-risk $/wk +81% worse)
+- AS Lc849eb8c `bricks3_v25`: **exit not kept** - prior-year red: 2023 (ulcer +51%, eq-risk $/wk +145% worse), 2024 (ulcer -6%, eq-risk $/wk +35% worse), 2025 (ulcer -8%, eq-risk $/wk +53% worse)
+- AS M7423c0d9 `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +89%, eq-risk $/wk +448% worse), 2025 (ulcer +17%, eq-risk $/wk +81% worse)
+- AS Lbe5ac95b `st_sw4_r3_ch3`: **exit not kept** - prior-year red: 2023 (ulcer +65%, eq-risk $/wk +166% worse), 2024 (ulcer -22%, eq-risk $/wk +54% worse)
+- AS La6f6f7ad `v25_t2`: **exit not kept** - prior-year red: 2023 (ulcer +95%, eq-risk $/wk +153% worse), 2024 (ulcer +78%, eq-risk $/wk +124% worse)
+- AS Lbe5ac95b `mm127_v25`: **exit not kept** - walk-forward persistence 0.58 < 0.58; prior-year red: 2023 (ulcer -15%, eq-risk $/wk +95% worse), 2024 (ulcer -13%, eq-risk $/wk +56% worse)
+- AS L29b1bc3f `v25_t2`: **exit not kept** - walk-forward persistence 0.56 < 0.58; prior-year red: 2023 (ulcer +99%, eq-risk $/wk +533% worse), 2024 (ulcer -4%, eq-risk $/wk +93% worse), 2025 (ulcer -19%, eq-risk $/wk +52% worse)
+- AS M3f6f752c `v25_t2`: **exit not kept** - walk-forward persistence 0.56 < 0.58; prior-year red: 2023 (ulcer -19%, eq-risk $/wk +106% worse), 2025 (ulcer -0%, eq-risk $/wk +65% worse)
+- AS L08df8bb0 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.56 < 0.58; prior-year red: 2023 (ulcer -1%, eq-risk $/wk +81% worse), 2025 (ulcer +108%, eq-risk $/wk +89% worse)
+- AS Lcae177ba `sw4_chand3`: **exit not kept** - walk-forward persistence 0.49 < 0.58; prior-year red: 2023 (ulcer +43%, eq-risk $/wk +123% worse)
+- AS Lcae177ba `bricks3_v25`: **exit not kept** - walk-forward persistence 0.47 < 0.58; prior-year red: 2023 (ulcer +22%, eq-risk $/wk +111% worse), 2024 (ulcer +9%, eq-risk $/wk +126% worse), 2025 (ulcer +87%, eq-risk $/wk +112% worse)
+- AS Lcae177ba `pk7ac450`: **exit not kept** - walk-forward persistence 0.45 < 0.58; prior-year red: 2023 (ulcer +43%, eq-risk $/wk +111% worse), 2024 (ulcer +30%, eq-risk $/wk +39% worse), 2025 (ulcer +20%, eq-risk $/wk +57% worse)
+- AS Lcae177ba `v25_t2`: **exit not kept** - walk-forward persistence 0.45 < 0.58; prior-year red: 2023 (ulcer +43%, eq-risk $/wk +111% worse), 2024 (ulcer +30%, eq-risk $/wk +39% worse), 2025 (ulcer +20%, eq-risk $/wk +57% worse)
