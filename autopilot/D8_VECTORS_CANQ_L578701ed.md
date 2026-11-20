@@ -1,4 +1,7 @@
-# L578701ed D8-rule vectors
+# POINTER: D8_VECTORS_CANQ_L578701ed.md
 
-D8 print rule (relay name CANQ; engine set suffix _CANR): prints = consecutive records with the same price and same side (side = last>=ask buy, last<=bid sell, else 0 = unclassified) merged, no time condition; merged print carries the first record's timestamp and the summed size; session/contract boundaries always end a run. Rule text: D8_PRINT_RULE.md. 
-L578701ed is on time_m_1 bars: time bars are built from every tick's own timestamp, are not affected by print merging (proved: 479-480 of 480 closes bit-identical in every print variant, D8_FEED_CHECK.md section 6), so its bar table and signal list are the ones in `D8_VECTORS_L578701ed.md` (unchanged). Its depth inputs (10-level book at each bar close) are described in D8_FEED_CHECK.md section 4; the engine's depth is a 100 ms grid of the exchange book, CQG depth has not been compared (needs a recorded sim day), so its 42-month number stays the BASE result and is labelled 'depth inputs not verified on CQG'.
+The relay's name 'CANQ' (run merge + last-vs-bid/ask) is the engine set family `_CANR` (first-record stamp, reference) / `_CANC` (causal close) / `_CANG` (1 s cap, causal). Use:
+- `D8_VECTORS_CANR_L578701ed.md` (what the relay's builder matched, no causality delay)
+- `D8_VECTORS_CANC_L578701ed.md` (causal; spec rule candidate)
+- `D8_VECTORS_CANG_L578701ed.md` (1 s cap)
+The engine's own `_CANQ` sets are CONTRACT-LEVEL prints. Set families and what each used: `_CAN` = records merged on the same millisecond + side (tape flag) + price, ms-truncated stamps (superseded); `_CANQ` = contract-level prints (each contract one print), side last-vs-bid/ask (superseded, reference); `_CANR` = run merge + last-vs-bid/ask, first-record stamp (look-ahead, reference); `_CANC` = run merge + last-vs-bid/ask, causal close (next different print); `_CANG` = 1 s-cap run merge, causal close.

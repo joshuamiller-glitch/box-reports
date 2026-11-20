@@ -1,1 +1,3 @@
-# L578701ed: time_m_1 + book_dwm. No canonical rebuild: time bars do not depend on print splitting (verified: 479-480 of 480 closes bit-identical in every variant a to d, section B of D8_FEED_CHECK.md). Use D8_VECTORS_L578701ed.md.
+# POINTER: superseded
+
+This file held the `_CAN` (millisecond-merge, tape-flag side) bar tables and was mis-joined (time and values on separate rows). `_CAN` is superseded for D8. Use D8_VECTORS_CANC_L578701ed.md (causal), D8_VECTORS_CANG_L578701ed.md (1 s cap) or D8_VECTORS_CANR_L578701ed.md (reference, first-record stamp).

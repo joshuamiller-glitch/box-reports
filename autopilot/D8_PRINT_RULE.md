@@ -46,3 +46,29 @@ Written 2026-11-20 ~15:45Z. Data end of bars/tape 2026-11-13 (NT8 file: td 20261
 
 ## 3. What was built
 Bars (18 rows, 44 months): `/mnt/l2/l2vast/_d8spec/bars_r/<row>/<YYYYMM>.parquet`. Events `/mnt/l2/l2vast/_d8spec/ev/<id>_CANR.parquet` via the unchanged `ny_build.events()` code path (bars redirected). Sets `TL3_ALN_<AS|NY>_<id>_CANR`.
+
+
+## 4. CAUSAL variants (lead decision 15:4xZ): _CANC and _CANG
+
+**Note for the relay: a number built with a first-record stamp (_CANR) is optimistic by up to the run-completion delay.** `_CANR` is kept only as a reference.
+
+- **_CANC** = run merge (consecutive same price + same side, no gap condition), side = last-vs-bid/ask; the merged print, and so the bar close and the signal time, is stamped with the time the run is KNOWN complete = the timestamp of the next print with a different price or side (for the last run of a session or contract: its own last record). Sets `TL3_ALN_<AS|NY>_<id>_CANC`, bars `/mnt/l2/l2vast/_d8spec/bars_c`, events `_CANC.parquet`, queue `pending_canc1.txt`.
+- **_CANG** = run merge with a 1-second gap cap (a record more than 1 s after the previous record starts a new print), close time = min(next print's time, last record of the run + 1 s) (needs a 1 s timer in NT8). Sets `_CANG`, bars `bars_g`, queue `pending_cang1.txt`.
+
+Share of print boundaries identical between our tape and the NT8 export (unit by unit; side from last-vs-bid/ask on both), and the causal delay (seconds from the run's first / last record to the time it is known), td 20261110:
+
+### Asia, td 20261110
+
+| rule | tape_prints | nt8_prints | identical_boundaries | match_pct | known_minus_first_record_s_p50 | p90 | p99 | max | known_minus_last_record_s_p50 | p99_last | nt8_minus_tape_known_ms_p50 | p99_ms | max_ms |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| C (no cap, known at next different print) | 45022 | 45022 | 45022 | 100.0 | 0.117 | 1.845 | 6.194 | 25.52 | 0.102 | 5.911 | -0.12 | 42.0 | 255.7 |
+| G (1 s cap) | 45486 | 45486 | 45486 | 100.0 | 0.119 | 1.0 | 1.002 | 2.35 | 0.107 | 1.0 | -0.11 | 41.9 | 255.7 |
+
+### NY AM, td 20261110
+
+| rule | tape_prints | nt8_prints | identical_boundaries | match_pct | known_minus_first_record_s_p50 | p90 | p99 | max | known_minus_last_record_s_p50 | p99_last | nt8_minus_tape_known_ms_p50 | p99_ms | max_ms |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| C (no cap, known at next different print) | 208040 | 208040 | 208040 | 100.0 | 0.012 | 0.123 | 0.366 | 1.72 | 0.011 | 0.35 | 3.9 | 561.8 | 1582.8 |
+| G (1 s cap) | 208040 | 208040 | 208040 | 100.0 | 0.012 | 0.123 | 0.366 | 1.42 | 0.011 | 0.35 | 3.9 | 561.8 | 1582.8 |
+
+Reading: both causal rules give 100.000% identical boundaries on both sessions (45,022 / 45,486 Asia, 208,040 NY AM). The known-completion time of the same print differs between feeds by the CQG timestamp jitter only (median about 0 ms, p99 42 ms Asia / 562 ms NY AM, max 256 ms / 1.58 s). Causal delay with no cap (C): Asia median 0.12 s, p90 1.8 s, p99 6.2 s, max 25.5 s after the run's first record; NY AM median 0.012 s, p99 0.37 s, max 1.7 s. With the 1 s cap (G) the delay is bounded at about 1 s after the last record (Asia max 2.35 s after the first record).
