@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-20T02:50Z
+## TREND (TL) update 2026-11-20T03:21Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T02:49:02Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-20T03:19:02Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -10009,3 +10009,11 @@ rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
 - 03:17Z W-P2P (auto) fleet 11702 sm/h (HEALTH), queue 230541 lines, fast share 88%; PASS2_COMBINER.md present (mtime 21:29Z; last status line: The GRID's fixed-bracket tape walk (gcore2.walk1, identical rules to gcore2.sim_slice / build_chunk / run_tabl) | PASS2_HOOKS.md present (mtime 23:06Z; last status line: | 4d entry: order-book confirmed | bookconf wait_s, min_imb, levels | BUILT, RUNNING (BC1, BC2; BC inert insid); FAST_KINDS pass-2 related lines 4; Asia first look end ~23:20Z (order 1850Z; recheck W-ASIA), NY AM first looks end ?; dates (Asia/NY AM done, top N per session, base 1,214 sm/book): 50: 11-20 16
 - (wall 03:17Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 53.26 54.78 52.98 load; auto-expansions 0 (battery stopped by user order)
 - 03:19Z W-COMBO ALL-NEW NY AM step 4: add Lddba3fab -> stack ulcer 4043 / maxDD -13046 / worst wk -6503 / mean 6465 (L6M), L3M ulcer 3748 (tried 15 at this step)
+- 03:20Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 10/14 (71%); Dallas 25/25 (100%); Frankfurt 99/100 (99%); Singapore 76/100 (76%) | EXACT-path slots by kind: TL3_LON_L*_RM7 3, TL3_ALN_NY_L*_P2J020 2, TL3_ALN_NY_L*_P2J110 2, TL3_LON_<h>_RM7 1, TL3_ALN_NY_L*_P2J030 1, TL3_ALN_NY_L*_P2J311 1, TL3_ALN_NY_L*_P2J011 1, TL3_ALN_NY_L*_P2J300 1; fast path ON for the kinds in FAST_KINDS.txt (104 kinds); details autopilot/FAST_LADDER.md section 7.
+- 03:20Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 8153 / 3 h 20710 (NY AM is behind Asia in the queue by order); fleet 12205.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 1579, 'looked': 2202, 'C': 7, 'B': 2}; ladder queue 260105 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L01811caa ; L09ae66e3 ; L0bd23639 ; L0f097450 ; L11631333 ; L13e165bc ; L1532bfaf ; L1fdcb7e2 ; L21f079b6 ; L301ff410 ; L34d66961 ; L3701b464 ; L4339355a ; L440aa51b ; L4560e541 ; L4ed22711 ; L4fd10b76 ; L571196bc ; L59b66d32 ; L5a49e86d ; L6040c7ce ; L6a25b155 ; L6ff237d4 ; L7295a253 ; L74ef340c ; . EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 03:20Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_P2J120$ (e.g. TL3_ALN_AS_L29b1bc3f_P2J120,TL3_ALN_AS_Le50c8ff3_P2J120): identity pairs started (4 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:20Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_P2J321$ (e.g. TL3_ALN_AS_L29b1bc3f_P2J321,TL3_ALN_AS_Le50c8ff3_P2J321): identity pairs started (4 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:20Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_P2J420$ (e.g. TL3_ALN_AS_L29b1bc3f_P2J420,TL3_ALN_AS_Le50c8ff3_P2J420): identity pairs started (4 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:22Z LEAD NOTE: 03:22Z quiet; inbox empty, freeze holding, no action needed. Next: 03:30Z queue-hours refresh check.
+- 03:24Z WATCHDOG fired: G
+- 03:24Z W-COMBO ALL-NEW NY AM step 5: add Lc161c6cc -> stack ulcer 4840 / maxDD -15321 / worst wk -8006 / mean 7987 (L6M), L3M ulcer 4703 (tried 15 at this step)

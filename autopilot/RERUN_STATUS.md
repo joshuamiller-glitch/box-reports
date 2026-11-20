@@ -1,8 +1,8 @@
-# RERUN TABLE 03:15Z: universe 5794 | landed 5791 | running 0 | pending 3 | LOST-suspect 0
+# RERUN TABLE 03:20Z: universe 5796 | landed 5793 | running 0 | pending 3 | LOST-suspect 0
 
 LOST = 0
 
-SIG CHECK all landed: sig-not-current/no-lease 90, run<60s 2; sample30: sig current 29/30, run time min/median/max 103/183/211 s
+SIG CHECK all landed: sig-not-current/no-lease 90, run<60s 2; sample30: sig current 28/30, run time min/median/max 93/184/211 s
 TL3_ASI_Mac97d189_RA7 202608 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202609 lease-sig-not-current
 TL3_ASI_Mac97d189_RA7 202610 lease-sig-not-current
