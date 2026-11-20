@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 22:54Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-20 23:09Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -7,7 +7,7 @@ Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+
 
 D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d973: BREAKS on _CANR: old-split number, not D8; Lc4584864: BREAKS on _CANR: old-split number, not D8; Lbe5ac95b: BREAKS on _CANR: old-split number, not D8; La6f6f7ad: BREAKS on _CANR: old-split number, not D8; L40bde9ea: BREAKS on _CANR: old-split number, not D8; Lc849eb8c: BREAKS on _CANR: old-split number, not D8; M3f6f752c: BREAKS on _CANR: old-split number, not D8; L86781ac0: BREAKS on _CANR: old-split number, not D8; Le9bd7276: BREAKS on _CANR: old-split number, not D8; L11152f7a: BREAKS on _CANR: old-split number, not D8; L2176f633: BREAKS on _CANR: old-split number, not D8; Lcae177ba: CHANGES on _CANC; L29b1bc3f: CHANGES on _CANC; L7cc56d99: CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC); L7ea48296: HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land; B2010fec9: HOLDS on _CANR; L488784d8: HOLDS on _CANC; Ldcdb0b6e: BREAKS marginally on _CANC (L6M -20%, ulcer +32%, still positive): old-split number, not D8; Lfb608c7b: OUT (breaks on every candidate).
 
-**D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books waiting for their _CANC base set (not in the pool until it lands, their old-split numbers cannot enter the D8 spec): 109; OUT of the D8 pool as tested: Lfb608c7b. Pool and gates below use the D8 base of each book.
+**D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books waiting for their _CANC base set (not in the pool until it lands, their old-split numbers cannot enter the D8 spec): 111; OUT of the D8 pool as tested: Lfb608c7b. Pool and gates below use the D8 base of each book.
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
 
@@ -25,17 +25,17 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | Y2024 | 8225 / -23263 / -4698 / 696 | 4020 / -11092 / -3496 / 599 | +97 |
 | Y2025 | 6804 / -20199 / -14470 / 1049 | 8425 / -16681 / -6343 / 550 | +499 |
 
-## GATE BY GATE: Asia, books ALONE on the all-new base (universe 482 books with a BASE set; 350 have all 42 months landed = counted below; 22 still waiting for prior years)
+## GATE BY GATE: Asia, books ALONE on the all-new base (universe 488 books with a BASE set; 353 have all 42 months landed = counted below; 23 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 311 of 350 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 240 of 350 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 237 of 350 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 128 books) | 24 of 128 |
-| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 8 of 350 |
-| a + b | 213 |
-| a + b + c | 172 |
+| (a) positive $/wk in L6M and L3M | 314 of 353 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 243 of 353 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 240 of 353 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 131 books) | 24 of 131 |
+| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 8 of 353 |
+| a + b | 216 |
+| a + b + c | 175 |
 | a + b + c + d | 23 : L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, Ma010c3eb, Mcae177ba |
 | a + b + c + d + e | 0 : none |
 
@@ -47,7 +47,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **23** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 465 of 482 in the universe; failed the prior-year positivity / persistence / controls: 279; waiting for prior years: 22; passed (a)+(b), controls still running: 48.
+Books with all months landed: 473 of 488 in the universe; failed the prior-year positivity / persistence / controls: 282; waiting for prior years: 23; passed (a)+(b), controls still running: 48.
 Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar], L1756b913 [BASE kept: time / line-break / median-Renko / swing bar], L1edb9fab [BASE kept: time / line-break / median-Renko / swing bar], L29b1bc3f [CHANGES on _CANC] [accumulating bar: D8 number = _CANC base], L3faac8df [BASE kept: time / line-break / median-Renko / swing bar], L40bde9ea [BREAKS on _CANR: old-split number, not D8] [accumulating bar: D8 number = _CANC base], L578701ed [BASE kept: time / line-break / median-Renko / swing bar], L5dee2059 [BASE kept: time / line-break / median-Renko / swing bar], L65a26c02 [accumulating bar: D8 number = _CANC base], L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar], L7ea48296 [HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land] [accumulating bar: D8 number = _CANC base], L7f41b347 [BASE kept: time / line-break / median-Renko / swing bar], L973b5c8a [BASE kept: time / line-break / median-Renko / swing bar], L9aa7805c [BASE kept: time / line-break / median-Renko / swing bar], La010c3eb [accumulating bar: D8 number = _CANC base], Lb68a132d [BASE kept: time / line-break / median-Renko / swing bar], Lc754cf58 [accumulating bar: D8 number = _CANC base], Lcbc8a7ec [BASE kept: time / line-break / median-Renko / swing bar], Lec335094 [BASE kept: time / line-break / median-Renko / swing bar], Lff52ec0c [BASE kept: time / line-break / median-Renko / swing bar], M7423c0d9 [BASE kept: time / line-break / median-Renko / swing bar], Ma010c3eb [accumulating bar: D8 number = _CANC base], Mcae177ba [accumulating bar: D8 number = _CANC base]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
@@ -63,9 +63,11 @@ Selected books in order (plain words):
 - L578701ed [BASE kept: time / line-break / median-Renko / swing bar]: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 2 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:44Z UTC; pool 22 books): L7c368a4f + L578701ed
 
-Phase: run. Pool used by this run: 23 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, Ma010c3eb, Mcae177ba).
+Phase: final. Pool used by this run: 23 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
