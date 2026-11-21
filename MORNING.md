@@ -14558,3 +14558,6 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 12:22Z W-D8SPEC AUTO HB canc-bulk/first-look | step bulk sets landed 776/776 set-months, first-look cells landed Asia 1239/1239, NY AM 520/1159 | waiting_on 552 (bulk+pool+anch) + 3637 (first look) | queued_or_running 552 + 3637 | last_progress 11:52Z | pid 2567286
 - (12:23Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
 12:25Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 2026-11-21T12:25Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
+- 12:29Z HB layer-joint | step joint sets built for 30 books | waiting_on 52 sets | queued_or_running 52 | last_progress 12:28Z | pid 1823368
+- 12:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 89 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 272590
