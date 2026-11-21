@@ -1,4 +1,4 @@
-# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 12:22Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
+# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 12:39Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
 
 Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 screen per group, OA(9,4,3,2) = 8 combos + BASE). PICK = best combo on L6M (ulcer, drawdown first, 15% guard); cells = `ulcer fitted/unfitted; $/wk fitted/unfitted; eq = $/wk at equal risk`, 1 lot. Gates: ROLLING walk-forward among the combos + reference (>= 0.58), year colours 2023/24/25 on equal-risk $/wk (RED > 30% fails), search-aware null >= 4/5; 27/30 info only (stage-1 table). KEPT = all gates; otherwise the book keeps today's settings.
 
@@ -32,8 +32,8 @@ Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 s
 | L9e4754b9 | BRK:BRK1, LOSS:ref, LOCK:LK7, TAKE:TK1 | 2039/3777; 1452/1218; eq 2691/1218 | 2197/3434; 1933/1118; eq 3021/1118 | 0.59 (fixed 0.57) | RED/GREEN/RED | 5/5 | NOT KEPT: RED year |
 | M86781ac0 | BRK:BRK1, LOSS:FR_LOSS9, LOCK:LK7, TAKE:ref | 2033/3477; 1148/734; eq 1964/734 | 1367/3461; 1483/439; eq 3755/439 | 0.60 (fixed 0.645) | RED/GREEN/RED | 4/5 | NOT KEPT: RED year |
 | L385f4f2e.J502 | none | - | - | - | - | - | NOT KEPT: no combo beats the reference on L6M within the guard; keeps today's |
-| L018fb0c0 | pending: 0/8 combos complete (33/336 set-months) | | | | | | |
-| L130cb48e | pending: 0/8 combos complete (58/336 set-months) | | | | | | |
+| L018fb0c0 | BRK:ref, LOSS:STC2, LOCK:LK1, TAKE:TK8 | 2963/6637; 1443/617; eq 3233/617 | 2428/5968; 1726/1606; eq 4243/1606 | 0.54 (fixed 0.634) | RED/RED/GREEN | 5/5 | NOT KEPT: rolling WF 0.54 < 0.58; RED year |
+| L130cb48e | BRK:ref, LOSS:CU4, LOCK:LK2, TAKE:FR_TAKE5 | 3665/4675; 1260/1465; eq 1607/1465 | 3998/5784; 1116/946; eq 1615/946 | 0.67 (fixed 0.667) | GREEN/AMBER/RED | 4/5 | NOT KEPT: RED year |
 
 ## INFORMATION FOR JOSH (not a gate)
 
@@ -93,6 +93,10 @@ Per complete book: (A) ROLLING pick (re-picked each period) and (B) FIXED pick (
 | L9e4754b9 | fixed c3 | 79 (ref 0; dd ties 3; GATE number 0.59) | 29/0/50 (0.37; 0.37) | 35/0/44 (0.44; 0.44) | 47/3/29 (0.59; 0.62) | 54/6/19 (0.68; 0.74) |
 | M86781ac0 | rolling | 75 (ref 4; dd ties 10; GATE number 0.60) | 32/2/41 (0.43; 0.44) | 40/0/35 (0.53; 0.53) | 40/10/25 (0.53; 0.62) | 43/15/17 (0.57; 0.72) |
 | M86781ac0 | fixed c8 | 79 (ref 0; dd ties 9; GATE number 0.65) | 32/2/45 (0.41; 0.42) | 39/0/40 (0.49; 0.49) | 47/9/23 (0.59; 0.67) | 53/11/15 (0.67; 0.78) |
+| L018fb0c0 | rolling | 54 (ref 25; dd ties 19; GATE number 0.54) | 25/4/25 (0.46; 0.5) | 28/0/26 (0.52; 0.52) | 17/19/18 (0.31; 0.49) | 14/26/14 (0.26; 0.5) |
+| L018fb0c0 | fixed c1 | 79 (ref 0; dd ties 25; GATE number 0.63) | 31/15/33 (0.39; 0.48) | 36/0/43 (0.46; 0.46) | 31/25/23 (0.39; 0.57) | 24/31/24 (0.3; 0.5) |
+| L130cb48e | rolling | 63 (ref 16; dd ties 19; GATE number 0.67) | 29/13/21 (0.46; 0.58) | 37/0/26 (0.59; 0.59) | 26/19/18 (0.41; 0.59) | 22/28/13 (0.35; 0.63) |
+| L130cb48e | fixed c2 | 79 (ref 0; dd ties 55; GATE number 0.63) | 18/30/31 (0.23; 0.37) | 32/0/47 (0.41; 0.41) | 12/55/12 (0.15; 0.5) | 2/72/5 (0.03; 0.29) |
 
 Drawdown-first summary over ALL 42 months (2023-04..2026-10), unfitted -> joint L6M pick, 1 lot:
 
@@ -123,6 +127,8 @@ Drawdown-first summary over ALL 42 months (2023-04..2026-10), unfitted -> joint 
 | M7ea48296 | c2 | 4414 -> 4653 | -15019 -> -15089 | -6609 -> -5844 | 427 -> 388 |
 | L9e4754b9 | c3 | 12374 -> 15510 | -31253 -> -30222 | -15676 -> -11081 | 442 -> 322 |
 | M86781ac0 | c8 | 4458 -> 5432 | -13220 -> -17691 | -7783 -> -5358 | 355 -> 319 |
+| L018fb0c0 | c1 | 5343 -> 6907 | -15162 -> -24650 | -8829 -> -10290 | 384 -> 276 |
+| L130cb48e | c2 | 7888 -> 10901 | -20725 -> -23589 | -7867 -> -7267 | 319 -> 240 |
 
 ### Year table behind the colours (information only)
 
@@ -245,6 +251,16 @@ Per period, unfitted -> joint pick at 1 lot. k = equal-risk factor = unfitted ul
 | M86781ac0 | 2025 | 3205 -> 7919 | -8724 -> -15951 | -2919 -> -4676 | 323 -> -32 | 0.40 | -13 vs 323 | +104% | RED (a; unfitted \$/wk that year 323) |
 | M86781ac0 | L6M | 3477 -> 2033 | -8810 -> -7354 | -5132 -> -5041 | 734 -> 1148 | 1.71 | 1964 vs 734 | -168% | shown only |
 | M86781ac0 | L3M | 3461 -> 1367 | -7592 -> -3569 | -2694 -> -1769 | 439 -> 1483 | 2.53 | 3755 vs 439 | -755% | shown only |
+| L018fb0c0 | 2023 | 3334 -> 3747 | -8238 -> -9073 | -3169 -> -3169 | 88 -> -16 | 0.89 | -14 vs 88 | +116% | RED (a; unfitted \$/wk that year 88) |
+| L018fb0c0 | 2024 | 2537 -> 3230 | -7547 -> -9453 | -3019 -> -4319 | 510 -> 206 | 0.79 | 162 vs 510 | +68% | RED (a; unfitted \$/wk that year 510) |
+| L018fb0c0 | 2025 | 7362 -> 6778 | -14606 -> -19767 | -5019 -> -8421 | 184 -> 200 | 1.09 | 217 vs 184 | -18% | GREEN |
+| L018fb0c0 | L6M | 6637 -> 2963 | -15162 -> -8586 | -4854 -> -2601 | 617 -> 1443 | 2.24 | 3233 vs 617 | -424% | shown only |
+| L018fb0c0 | L3M | 5968 -> 2428 | -11691 -> -6565 | -4854 -> -2601 | 1606 -> 1726 | 2.46 | 4243 vs 1606 | -164% | shown only |
+| L130cb48e | 2023 | 1496 -> 1477 | -3538 -> -3538 | -1694 -> -1694 | 155 -> 163 | 1.01 | 166 vs 155 | -7% | GREEN |
+| L130cb48e | 2024 | 5991 -> 6429 | -14665 -> -15429 | -5113 -> -4569 | 115 -> 91 | 0.93 | 85 vs 115 | +26% | AMBER |
+| L130cb48e | 2025 | 6809 -> 7194 | -13230 -> -12470 | -4974 -> -4974 | 104 -> -39 | 0.95 | -37 vs 104 | +136% | RED (b; unfitted \$/wk that year 104) |
+| L130cb48e | L6M | 4675 -> 3665 | -10940 -> -10220 | -5145 -> -5011 | 1465 -> 1260 | 1.28 | 1607 vs 1465 | -10% | shown only |
+| L130cb48e | L3M | 5784 -> 3998 | -10940 -> -10220 | -4592 -> -4157 | 946 -> 1116 | 1.45 | 1615 vs 946 | -71% | shown only |
 
 42-month totals (2023-04..2026-10, 1 lot), unfitted -> pick:
 
@@ -273,5 +289,7 @@ Per period, unfitted -> joint pick at 1 lot. k = equal-risk factor = unfitted ul
 | M7ea48296 | 4414 -> 4653 | -15019 -> -15089 | -6609 -> -5844 | 427 -> 388 |
 | L9e4754b9 | 12374 -> 15510 | -31253 -> -30222 | -15676 -> -11081 | 442 -> 322 |
 | M86781ac0 | 4458 -> 5432 | -13220 -> -17691 | -7783 -> -5358 | 355 -> 319 |
+| L018fb0c0 | 5343 -> 6907 | -15162 -> -24650 | -8829 -> -10290 | 384 -> 276 |
+| L130cb48e | 7888 -> 10901 | -20725 -> -23589 | -7867 -> -7267 | 319 -> 240 |
 
-**SUMMARY (28 of 30 books complete, 0 KEPT):** NOT KEPT on rolling walk-forward (any reason incl. others): 15; on the RED-year band ONLY (walk-forward and null pass): 9; on the null ONLY: 1; RED years of the band-only group by type: (a) 9, (b) 7, (c) 0, other 0.
+**SUMMARY (30 of 30 books complete, 0 KEPT):** NOT KEPT on rolling walk-forward (any reason incl. others): 16; on the RED-year band ONLY (walk-forward and null pass): 10; on the null ONLY: 1; RED years of the band-only group by type: (a) 9, (b) 8, (c) 0, other 0.
