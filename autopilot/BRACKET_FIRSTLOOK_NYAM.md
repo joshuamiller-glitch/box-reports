@@ -1,6 +1,6 @@
 # BRACKET FIRST LOOK, NYAM (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-21 19:14 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 5903 of 5946.
+Written 2026-11-21 19:42 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 5903 of 5946.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
@@ -32,13 +32,13 @@ If the 17 shapes were interchangeable, calling any one of them the "own bracket"
 
 ## Cells that FAILED the first look (not positive in L6M at plain 60/60 AND at sym15u) but are positive in L6M and L3M (>= 20 trades L6M) at another shape: the books the search never saw
 
-Grid cells (param x mode) in these jobs: 419908; failed at both pass-1 brackets: 200765; positive in both windows at another shape: 79671. By shape: {'fixed30/30': 5915, 'fixed90/90': 6637, 'fixed30/90': 6626, 'fixed60/120': 5947, 'fixed40/80': 5313, 'fixed90/30': 14475, 'fixed80/40': 8887, 'fixed45/45': 4938, 'fixed120/60': 13789, 'sym8u': 2553, 'asym10u/20u': 1034, 'asym20u/10u': 1870, 'sym30u': 817, 'asym15u/30u': 320, 'fixed120/120': 550}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
+Grid cells (param x mode) in these jobs: 420016; failed at both pass-1 brackets: 200859; positive in both windows at another shape: 79671. By shape: {'fixed30/30': 5915, 'fixed90/90': 6637, 'fixed30/90': 6626, 'fixed60/120': 5947, 'fixed40/80': 5313, 'fixed90/30': 14475, 'fixed80/40': 8887, 'fixed45/45': 4938, 'fixed120/60': 13789, 'sym8u': 2553, 'asym10u/20u': 1034, 'asym20u/10u': 1870, 'sym30u': 817, 'asym15u/30u': 320, 'fixed120/120': 550}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
 
 ## Clip: distinct shapes per ladder cell (of 17 weekly series)
 
 17 distinct: 1986 cells, 16 distinct: 1935 cells, 15 distinct: 212 cells, 14 distinct: 600 cells, 13 distinct: 111 cells, 12 distinct: 381 cells, 11 distinct: 667 cells, 2 distinct: 11 cells
 
-Cells where sym15u and sym30u are identical (clipped to the same points): 54941 of 144772 grid cells in these jobs.
+Cells where sym15u and sym30u are identical (clipped to the same points): 55001 of 144832 grid cells in these jobs.
 
 ## Top 30 ladder cells by L6M equal-risk net points/week (best shape), L3M beside, plain 60/60 number beside
 
@@ -75,7 +75,7 @@ Cells where sym15u and sym30u are identical (clipped to the same points): 54941 
 | L7346d4d2 | wrenko_14 | tape_run | sym15u | fixed120/60 | 652.29 | 96.76 | 28.31 | 34.97 |
 | L1a2c2c00 | vol_750 | structure_breakout | sym15u | fixed30/30 | 644.16 | 157.09 | -18.12 | 34.51 |
 
-## Not yet read (grid files not landed): 2 ladder cells
+## Not yet read (grid files not landed): 0 ladder cells
 
-They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: L05a95eff, L153afb99
+They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: 
 
