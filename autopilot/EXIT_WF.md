@@ -105,10 +105,12 @@
 | old split | AS | L0f5e3cd0 | bricks3_v25 | 0.59 (85) / 0.58 | +82 / +103 (red) | -79 / -783 (green) | +88 / +92 (red) | n/a | 30 / 15 | not kept |
 | _CANC | AS | Lcae177ba | sar_v15 | 0.59 (85) / 0.64 | +12 / +111 (red) | -26 / +17 (amber) | -20 / +54 (red) | n/a | 29 / 17 | not kept |
 | old split | AS | L08df8bb0 | sar_v15 | 0.56 (85) / 0.59 | -25 / +50 (red) | -66 / +26 (amber) | +54 / +98 (red) | n/a | - | not kept |
+| _CANC | AS | L018fb0c0 | v25_t2 | 0.56 (85) / 0.59 | -48 / -373 (green) | +241 / +118 (red) | -29 / -135 (green) | n/a | - | not kept |
 | old split | AS | Lcae177ba | sar_v15 | 0.55 (85) / 0.60 | +30 / +150 (red) | -2 / +67 (red) | -29 / +11 (green) | n/a | 29 / 17 | not kept |
 | _CANC | AS | Ma010c3eb | oppx_v25b | 0.55 (85) / 0.58 | -20 / +87 (red) | -69 / -424 (green) | +14 / +62 (red) | n/a | - | not kept |
 | _CANC | AS | L08df8bb0 | v25_t2 | 0.55 (85) / 0.51 | +24 / +1124 (red) | -44 / +308 (red) | +46 / +156 (red) | n/a | - | not kept |
 | old split | AS | L1b40b322 | bricks3_v25 | 0.53 (85) / 0.51 | +189 / +147 (red) | +56 / +185 (red) | +189 / +125 (red) | n/a | 24 / 23 | not kept |
+| _CANC | AS | L018fb0c0 | bricks3_v25 | 0.53 (85) / 0.55 | -37 / +120 (red) | +448 / +108 (red) | -29 / +23 (amber) | n/a | - | not kept |
 | _CANC | AS | Lcae177ba | sar_v40 | 0.51 (85) / 0.52 | +44 / +130 (red) | +34 / -14 (green) | -35 / -32 (green) | n/a | 29 / 22 | not kept |
 | old split | AS | Lcae177ba | sw4_chand3 | 0.49 (85) / 0.49 | +44 / +123 (red) | -12 / -73 (green) | -18 / +10 (green) | n/a | 13 / 19 | not kept |
 | _CANC | AS | Mcae177ba | sar_v15b | 0.49 (85) / 0.46 | +80 / +106 (red) | +101 / +82 (red) | +37 / +28 (amber) | n/a | - | not kept |
@@ -227,10 +229,12 @@
 - AS L0f5e3cd0 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS Lcae177ba `sar_v15`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS L08df8bb0 `sar_v15`: **exit not kept** - walk-forward persistence 0.56 < 0.58; RED prior year(s) [2023, 2025]
+- AS L018fb0c0 `v25_t2`: **exit not kept** - walk-forward persistence 0.56 < 0.58; RED prior year(s) [2024]
 - AS Lcae177ba `sar_v15`: **exit not kept** - walk-forward persistence 0.55 < 0.58; RED prior year(s) [2023, 2024]
 - AS Ma010c3eb `oppx_v25b`: **exit not kept** - walk-forward persistence 0.55 < 0.58; RED prior year(s) [2023, 2025]
 - AS L08df8bb0 `v25_t2`: **exit not kept** - walk-forward persistence 0.55 < 0.58; RED prior year(s) [2023, 2024, 2025]
 - AS L1b40b322 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.53 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- AS L018fb0c0 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.53 < 0.58; RED prior year(s) [2023, 2024]
 - AS Lcae177ba `sar_v40`: **exit not kept** - walk-forward persistence 0.51 < 0.58; RED prior year(s) [2023]
 - AS Lcae177ba `sw4_chand3`: **exit not kept** - walk-forward persistence 0.49 < 0.58; RED prior year(s) [2023]
 - AS Mcae177ba `sar_v15b`: **exit not kept** - walk-forward persistence 0.49 < 0.58; RED prior year(s) [2023, 2024]

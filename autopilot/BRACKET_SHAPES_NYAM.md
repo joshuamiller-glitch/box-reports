@@ -1,12 +1,12 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-21 11:41Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-21 12:16Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
 ## Summary
 
-Books in the table: 7; screen complete for 7; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 3.
+Books in the table: 8; screen complete for 7; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 3.
 Pick counts (complete books): P60 3, S8U 2, P30 1, A15U30U 1
 
 Plain 60/60 is the pick for 3 of 7 complete books.
@@ -16,6 +16,7 @@ Plain 60/60 is the pick for 3 of 7 complete books.
 | book | now | now $/wk | now ulcer | P30 | P45 | P60 | P90 | P120 | S8U | S15U | S30U | S45U | S60U | A10U20U | A20U10U | A15U30U | F40_80 | F60_120 | F80_40 | F120_60 | pick |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | B2010fec9 | P60 | 2401 | 3709 | 539 | 800 | [own] | 722 | 780 | 780 | 780 | 780 | 780 | 780 | 780 | 780 | 780 | 374 | 131 | 550 | 1520 | P60 |
+| B57507767 | S15U | 1556 | 9853 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
 | B6f77f23d | A15U30U | 1393 | 5356 | -13 | 1320 | 655 | 543 | 1318 | 454 | 730 | 1318 | 1318 | 1318 | 651 | 1292 | [own] | 991 | 33 | 1411 | 970 | A15U30U |
 | B7bfd33b7 | P60 | 1386 | 2962 | 197 | 577 | [own] | 69 | 502 | 275 | 472 | 502 | 502 | 502 | 372 | 399 | 477 | -60 | -26 | 1496 | 347 | P60 |
 | L05350e98 | S15U | 952 | 3540 | -16 | 230 | 524 | 476 | 952* | 952* | [own] | 952* | 952* | 952* | 952* | 952* | 952* | 351 | 480 | 1112 | 1114 | S8U |
@@ -28,6 +29,7 @@ Plain 60/60 is the pick for 3 of 7 complete books.
 | book | now $/wk L3M | P30 | P45 | P60 | P90 | P120 | S8U | S15U | S30U | S45U | S60U | A10U20U | A20U10U | A15U30U | F40_80 | F60_120 | F80_40 | F120_60 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | B2010fec9 | 2268 | 136 | -91 | [own] | 193 | 426 | 426 | 426 | 426 | 426 | 426 | 426 | 426 | 426 | -213 | -219 | 518 | 1312 |
+| B57507767 | 1587 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
 | B6f77f23d | 1214 | -528 | -166 | 166 | -18 | 1004 | -44 | 570 | 1004 | 1004 | 1004 | 443 | 1046 | [own] | -73 | -331 | 734 | 719 |
 | B7bfd33b7 | 1270 | -167 | 226 | [own] | -250 | -56 | 121 | -44 | -56 | -56 | -56 | 82 | 10 | -50 | -301 | -327 | 1375 | 271 |
 | L05350e98 | 1043 | 89 | 15 | -374 | 11 | 1043 | 1043 | [own] | 1043 | 1043 | 1043 | 1043 | 1043 | 1043 | 112 | 26 | 529 | 388 |
@@ -63,6 +65,9 @@ Plain 60/60 is the pick for 3 of 7 complete books.
 - F60_120: 458 | 12944 | -26775 | -12727 | 13.6 | -1086
 - F80_40: 954 | 6426 | -15596 | -12198 | 19.8 | -1438
 - F120_60: 2202 | 5373 | -15801 | -7933 | 13.6 | -1954
+
+**B57507767** (current S15U): now 1556 | 9853 | -22720 | -9327 | 12.7 | -1891
+
 
 **B6f77f23d** (current A15U30U): now 1393 | 5356 | -12737 | -6864 | 10.8 | -1963
 
