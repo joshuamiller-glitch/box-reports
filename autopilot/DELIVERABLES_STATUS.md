@@ -1,15 +1,15 @@
-# DELIVERABLES_STATUS (W-DL, 2026-11-21 02:50Z)
+# DELIVERABLES_STATUS (W-DL, 2026-11-21 03:20Z)
 owner | table | rows | labels | age | ETA
 W-S3 | 1 | 14 | {'BEST-AVAILABLE-NOT-PROVEN': 14} | 1 min | owner has not stated an ETA
-W-MD | 1 | 31 | {'WEAK-BUT-POSITIVE': 13, 'BEST-AVAILABLE-NOT-PROVEN': 18} | 0 min | owner has not stated an ETA
-W-MB | 2 | 7 | {'BEST-AVAILABLE-NOT-PROVEN': 2} | 4757 min | owner has not stated an ETA
-W-MF | 2 | 16 | {'BEST-AVAILABLE-NOT-PROVEN': 13, 'WEAK-BUT-POSITIVE': 3} | 16 min | owner has not stated an ETA
-W-MA | 3 | 20 | {'BEST-AVAILABLE-NOT-PROVEN': 20} | 25 min | owner has not stated an ETA
-W-MC | 4 | 2 | {'BEST-AVAILABLE-NOT-PROVEN': 1} | 4892 min | owner has not stated an ETA
-W-ME | 4 | 3 | {'WEAK-BUT-POSITIVE': 1, 'BEST-AVAILABLE-NOT-PROVEN': 2} | 18 min | owner has not stated an ETA
-W-DD | 4 | 2 | {'WEAK-BUT-POSITIVE': 2} | 24 min | owner has not stated an ETA
-W-SWA | 5 | 9 | {'BEST-AVAILABLE-NOT-PROVEN': 9} | 12 min | owner has not stated an ETA
-W-SWB | 5 | 7 | {'BEST-AVAILABLE-NOT-PROVEN': 7} | 3398 min | owner has not stated an ETA
+W-MD | 1 | 31 | {'WEAK-BUT-POSITIVE': 13, 'BEST-AVAILABLE-NOT-PROVEN': 18} | 30 min | owner has not stated an ETA
+W-MB | 2 | 7 | {'BEST-AVAILABLE-NOT-PROVEN': 2} | 4787 min | owner has not stated an ETA
+W-MF | 2 | 16 | {'BEST-AVAILABLE-NOT-PROVEN': 13, 'WEAK-BUT-POSITIVE': 3} | 15 min | owner has not stated an ETA
+W-MA | 3 | 20 | {'BEST-AVAILABLE-NOT-PROVEN': 20} | 23 min | owner has not stated an ETA
+W-MC | 4 | 2 | {'BEST-AVAILABLE-NOT-PROVEN': 1} | 4922 min | owner has not stated an ETA
+W-ME | 4 | 3 | {'WEAK-BUT-POSITIVE': 1, 'BEST-AVAILABLE-NOT-PROVEN': 2} | 17 min | owner has not stated an ETA
+W-DD | 4 | 2 | {'WEAK-BUT-POSITIVE': 2} | 23 min | owner has not stated an ETA
+W-SWA | 5 | 9 | {'BEST-AVAILABLE-NOT-PROVEN': 9} | 5 min | owner has not stated an ETA
+W-SWB | 5 | 7 | {'BEST-AVAILABLE-NOT-PROVEN': 7} | 3428 min | owner has not stated an ETA
 W-BAR | 5 | 0 | - | no file | owner has not stated an ETA
-W-S1R | 6 | 42 | {'WEAK-BUT-POSITIVE': 28, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 7} | 4612 min | owner has not stated an ETA
-W-DL bootstrap | 2,3,4 | 13 | {'CONFIRMED': 1, 'WEAK-BUT-POSITIVE': 4, 'BEST-AVAILABLE-NOT-PROVEN': 8} | rebuilt 2026-11-21 02:50Z | loop every 30 min
+W-S1R | 6 | 42 | {'WEAK-BUT-POSITIVE': 28, 'BEST-AVAILABLE-NOT-PROVEN': 7, 'LEAD': 7} | 4642 min | owner has not stated an ETA
+W-DL bootstrap | 2,3,4 | 13 | {'CONFIRMED': 1, 'WEAK-BUT-POSITIVE': 4, 'BEST-AVAILABLE-NOT-PROVEN': 8} | rebuilt 2026-11-21 03:20Z | loop every 30 min
