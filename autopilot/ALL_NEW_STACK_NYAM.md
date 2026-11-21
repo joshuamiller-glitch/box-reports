@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 15:24Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 15:29Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -59,7 +59,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY AM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **8** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 689 of 812 in the universe; failed the prior-year positivity / persistence / controls: 346; waiting for prior years: 125; passed (a)+(b), controls still running: 0.
+Books with all months landed: 690 of 812 in the universe; failed the prior-year positivity / persistence / controls: 346; waiting for prior years: 125; passed (a)+(b), controls still running: 0.
 Pool books: B57507767 [accumulating bar: D8 number = _CANC base], B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar], B7bfd33b7 [accumulating bar: D8 number = _CANC base], L05350e98 [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar], L6547965c [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar], Le0da99e2 [accumulating bar: D8 number = _CANC base]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
@@ -84,9 +84,11 @@ Selected books in order (plain words):
 - L6547965c [BASE kept: time / line-break / median-Renko / swing bar]: swing bar 8 bps [swing_pct_8]; ~34 bars/hour; trigger trig_tape_unfinished / unf_fade {"m": 6, "cp": 0.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 5 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 14:22Z UTC; pool 7 books): L7cc56d99 + L488784d8 + B7bfd33b7 + B6f77f23d + L6547965c
 
-Phase: run. Pool used by this run: 8 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2).
+Phase: moves. Pool used by this run: 8 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
