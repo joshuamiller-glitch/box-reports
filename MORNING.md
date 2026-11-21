@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 00:14Z 11-21 (t+611.2 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 00:29Z 11-21 (t+611.5 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 86% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-21T00:14:36Z. Box: CPU 99.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-21T00:29:45Z. Box: CPU 99.5%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -12902,3 +12902,13 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 00:20Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] step 4: add B6f77f23d -> L6M ulcer 6287 / maxDD -18255 / worst wk -10238 / $6155 per wk; L3M $5188; prior years $/wk 2023 2390 / 2024 1634 / 2025 3378; own persistence 0.69
 - 00:20Z W-COMBO RESELECT-NYAM [loop ny-own] step 4: add B6f77f23d -> L6M ulcer 6287 / maxDD -18255 / worst wk -10238 / $6155 per wk; L3M $5188; prior years $/wk 2023 2390 / 2024 1634 / 2025 3378; own persistence 0.69
 - (00:20Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+00:25Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 00:25Z W-COMBO RESELECT-ASIA [loop asia-stay] HB asia-stay | step done/2 | waiting_on 0 sets | queued_or_running 0 | last_progress 00:25Z | pid 2850664
+- 00:25Z W-COMBO RESELECT-ASIA [loop asia-stay-l3g] HB asia-stay-l3g | step done/1 | waiting_on 0 sets | queued_or_running 0 | last_progress 00:25Z | pid 2850670
+- 00:27Z W-COMBO RESELECT-ASIA [loop asia-own-l3g] COUNTDOWN Asia: pool 24 books (passing a+b+c+d); passed a+b+c waiting for controls 50; books fitted (stage 1) 0 of pool 24; widening (all-new prior years) 424 of 1374 books complete, 39461 set-months missing
+- 00:27Z W-COMBO RESELECT-ASIA [loop asia-own-l3g] HB asia-own-l3g | step done/1 | waiting_on 0 sets | queued_or_running 0 | last_progress 00:27Z | pid 3220234
+- 00:28Z W-COMBO RESELECT-ASIA [loop asia-own] COUNTDOWN Asia: pool 24 books (passing a+b+c+d); passed a+b+c waiting for controls 50; books fitted (stage 1) 0 of pool 24; widening (all-new prior years) 424 of 1374 books complete, 39461 set-months missing
+- 00:29Z W-COMBO RESELECT-NYAM [loop ny-own] step 5: add L6547965c -> L6M ulcer 6031 / maxDD -19970 / worst wk -7702 / $7425 per wk; L3M $5776; prior years $/wk 2023 3530 / 2024 2592 / 2025 4337; own persistence 0.78
+2026-11-21T00:29:57Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 2026-11-21 00:29Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- 00:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 59 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 276853
