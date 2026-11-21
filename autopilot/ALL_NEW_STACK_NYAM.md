@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 15:14Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 15:19Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -73,9 +73,9 @@ Pool books: B57507767 [accumulating bar: D8 number = _CANC base], B6f77f23d [BAS
 | 5 | L6547965c | `TL3_ALN_NY_STKd8e739bd5e` | 6031 / -19970 / -7702 / 7425 | 6084 / -18152 / -7702 / 5776 | 7931 / -26688 / -13244 / 3530 | 10293 / -33710 / -12523 / 2592 | 12242 / -30060 / -19092 / 4337 | 0.78 | 4 |
 
 Selected books in order (plain words): 
-- L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
+- L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u
    fitted: none proposed yet (stage 1 not done for this book)
-- L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar]: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events)
+- L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar]: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 - B7bfd33b7 [accumulating bar: D8 number = _CANC base]: dollar-imbalance bar 6000 [dib_6000]; ~159 bars/hour; trigger trig_levels_profile_va / break_native {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
