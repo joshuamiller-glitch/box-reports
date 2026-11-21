@@ -1,8 +1,8 @@
-# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-21 04:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-21 05:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 4248 distinct cells scored (2658 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2948; L6M and L3M > 0: 2107; labels {'WEAK-BUT-POSITIVE': 2383, 'BEST-AVAILABLE-NOT-PROVEN': 1300, 'LEAD': 565}. Job errors: 0. Run 688 s.
+**Counts:** 4248 distinct cells scored (2659 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2948; L6M and L3M > 0: 2107; labels {'WEAK-BUT-POSITIVE': 2383, 'BEST-AVAILABLE-NOT-PROVEN': 1300, 'LEAD': 565}. Job errors: 0. Run 861 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -167,7 +167,7 @@ Bars per hour = mean over every NY AM session (09:30-12:00, 2.5 h ET) in 2026-05
 | 36 | 19 | 225 |  | momentum bar 28 ticks [mom_28]; ~60 bars/hour; trigger trig_levels_profile_va / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket sym15u | 60 | L4fd10b76 | NEW | RK7 | 0.493 | 0.481 | 2173 | 1705 | 4407 | 3545 | -14123 | -7544 | 5.2 | 0.59 | 2118 | -1971 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 1 |
 | 37 |  | 835 |  | tick-count bar 8000 prints [tick_8000]; ~8 bars/hour; trigger trig_book_cancel / ratio_follow {"L": 50, "z": 1.0}; SIDE: BOTH SIDES; bracket sym15u | 8 | B70e4ced2 | NEW | RK7 | 0.492 | 0.196 | 2462 | 1318 | 5003 | 6736 | -15266 | -4814 | 6.0 | 0.58 | 1964 | -1760 | 0.64 | 0.64 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 2 |
 | 38 |  | 52 |  | quote-message bar B200 [bmsgq_B200]; ~83 bars/hour; trigger trig_trend_linreg / thresh_native {"len": 80, "width": 2.5}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60 | 83 | L063a587d | NEW | RK7 | 0.442 | 0.823 | 1379 | 1902 | 3120 | 2310 | -7952 | -4809 | 7.8 | 0.59 | 1085 | -1106 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 1 |
-| 39 | 20 | 604 |  | dollar bar 6000 [dol_6000]; ~16 bars/hour; trigger trig_levels_vwap / reject_native {"tol": 1.0, "conf": "body"}; SIDE: BOTH SIDES; bracket plain60/60 | 16 | Ldae2fbc4 | NEW | RK7 | 0.481 | 0.256 | 2240 | 1131 | 4654 | 4418 | -13690 | -10246 | 18.5 | 0.54 | 1132 | -1077 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.129 | 0.032 | 1 |
+| 39 | 20 | 604 |  | dollar bar 6000 [dol_6000]; ~16 bars/hour; trigger trig_levels_vwap / reject_native {"tol": 1.0, "conf": "body"}; SIDE: BOTH SIDES; bracket plain60/60 | 16 | Ldae2fbc4 | NEW | RK7 | 0.481 | 0.256 | 2240 | 1131 | 4654 | 4418 | -13690 | -10246 | 18.5 | 0.54 | 1132 | -1077 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.139 | 0.015 | 1 |
 | 40 |  | 472 |  | swing bar 0.15 ATR [swing_atr_0.15]; ~316 bars/hour; trigger trig_momentum_stoch / zone_break {"len": 5, "lvl": 70}; SIDE: BOTH SIDES; bracket sym15u | 316 | B8f9323d6 | NEW | RK7 | 0.473 | 0.309 | 3589 | 2109 | 7582 | 6835 | -17889 | -12862 | 12.4 | 0.57 | 1982 | -1934 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
 | 41 |  | 187 |  | Renko bar 40 ticks [renko_40]; ~15 bars/hour; trigger trig_levels_profile_va / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES; bracket sym15u | 15 | L85f676b2 | NEW | RK7 | 0.470 | 0.532 | 2007 | 1798 | 4271 | 3381 | -12273 | -7559 | 4.9 | 0.59 | 2072 | -1939 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 1 |
 | 42 |  | 1606 |  | delta bar 250 contracts [dlt_250]; ~26 bars/hour; trigger trig_levels_profile_va / retest_native {"M": 10, "tol": 0.5}; SIDE: BOTH SIDES; bracket plain60/60 | 26 | B486bae82 | NEW | RK7 | 0.468 | 0.074 | 1413 | 312 | 3020 | 4194 | -8076 | -3396 | 9.8 | 0.55 | 1154 | -1084 | 0.86 | 0.86 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
@@ -187,10 +187,10 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
 | K7 | -11868 | 207 | 329 | -11898 | -17666 / -5271 | 1737 | 14.6% | 202 |
-| P7 | 6016 | 45 | 8173 | 5353 | 1159 / 10452 | 586 | 9.7% | 45 |
-| H7 | 8886 | 39 | 8175 | 9181 | 4686 / 11311 | 707 | 8.0% | 39 |
-| M7 | 8851 | 240 | 8172 | 9503 | 909 / 17719 | 1889 | 21.3% | 239 |
-| O7 | 10744 | 49 | 8192 | 10744 | 8949 / 12269 | 266 | 2.5% | 49 |
+| P7 | 6016 | 45 | 8174 | 5353 | 1159 / 10452 | 586 | 9.7% | 45 |
+| H7 | 8886 | 39 | 8176 | 9181 | 4686 / 11311 | 707 | 8.0% | 39 |
+| M7 | 8851 | 240 | 8173 | 9503 | 909 / 17719 | 1889 | 21.3% | 239 |
+| O7 | 10744 | 49 | 8193 | 10744 | 8949 / 12269 | 266 | 2.5% | 49 |
 
 The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 309 pairs over 259 cells): mean abs difference of its own L6M total $1828 = 26.6% of |total| (median 5.4%, 90th pct 36.7%); trade-count differences: mean abs 1.6 trades (primary mean 218).
 

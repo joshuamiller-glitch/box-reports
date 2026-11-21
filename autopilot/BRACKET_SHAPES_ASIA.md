@@ -1,6 +1,6 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-21 04:47Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-21 05:23Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
@@ -680,7 +680,7 @@ Gates: (1) walk-forward persistence >= 0.58 (every 14 days from 2023-10: pick th
 | L7c368a4f | P60 | P30 | 0.543 (70 periods, 38 won; shared wf_gate.rolling) | GREEN / RED / RED (shared); mine, equal-risk $/wk only: GREEN 0.0% / RED 94.8% / RED 130.7% | pending | 30/30 | no | not kept: walk-forward persistence 0.543 over 70 periods prior-year RED (shared band) |
 | L7ea48296 | P60 | P45 | 0.515 (68 periods, 35 won; shared wf_gate.rolling) | AMBER / GREEN / GREEN (shared); mine, equal-risk $/wk only: AMBER 27.5% / GREEN 0.0% / GREEN 0.0% | pending | 27/30 | yes | not kept: walk-forward persistence 0.515 over 68 periods |
 | Lc754cf58 | A20U10U | F60_120 | 0.713 (80 periods, 57 won; shared wf_gate.rolling) | GREEN / GREEN / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / GREEN 0.0% / GREEN 0.0% | pending | 7/30 | no | walk-forward pass, UNCONFIRMED (real_gain 0.00 on L6M: the bracket does not bind in the recent window, S8U = own bracket there, null FAILED, 2023 GREEN) |
-| M7ea48296 | P60 | P45 | 0.595 (74 periods, 44 won; shared wf_gate.rolling) | GREEN / AMBER / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / AMBER 17.0% / GREEN 0.0% | pending | 25/30 | no | walk-forward pass, UNCONFIRMED (real_gain 0.52 on L6M: the bracket does not bind in the recent window, S8U = own bracket there, null pending, 2023 GREEN) |
+| M7ea48296 | P60 | P45 | 0.595 (74 periods, 44 won; shared wf_gate.rolling) | GREEN / AMBER / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / AMBER 17.0% / GREEN 0.0% | pending | 25/30 | no | PASSES walk-forward + prior-year band + null |
 | Ma010c3eb | P60 | P45 | 0.551 (69 periods, 38 won; shared wf_gate.rolling) | GREEN / GREEN / RED (shared); mine, equal-risk $/wk only: GREEN 2.4% / GREEN 0.0% / RED 43.3% | pending | 23/30 | no | not kept: walk-forward persistence 0.551 over 69 periods prior-year RED (shared band) |
 
 One line per book: fitted bracket kept = verdict starts with PASSES (null still pending, so the label is LEAD at best); otherwise the book keeps its own bracket.
