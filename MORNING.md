@@ -399,12 +399,12 @@ Brackets: 0 PASS, 0 CANDIDATE (+9 mapped-only PENDING_DIRECT, all sections). Bes
 Cells scored per owner: {'A': 398, 'G': 5928, 'D': 635} (A=D3BA, B=D3NT, C=T2 agent, D=D3PY, E=D3BL, G=TH agents). Slots: see l2vast/ds3/out/DS3_SLOTS.md. Best cell: T4A_PB3F_D_R3_P2_60_2R_bracket_t45_s75. Full table: autopilot/BRACKET_LEADERBOARD.md; registry: l2vast/ds3/out/BRACKET_ENTRIES.md.
 <!--BRACKET-END-->
 <!--RESEARCH-BEGIN-->
-## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 01:27Z 11-21 (t+660.7 h of 48)
+## RESEARCH V2 (STRUCT48 Tracks 1,2,4 + sleeves T3 re-scored under three verdicts) - update 03:27Z 11-21 (t+662.7 h of 48)
 PASSes (18): T3.2:ORB_ASIA_15_v1__s60@0.25, T3.2:ORB_ASIA_15_v1__s60@0.5, T3.2:ORB_ASIA_15_v1__s60@1.0, T3.2:ORB_ASIA_15_v1__s75@0.25, T3.2:ORB_ASIA_15_v1__s75@0.5, T3.2:ORB_ASIA_15_v1__s75@1.0, T3.6b1:RSI2_t10, T3.7rsi2c:RSI2C_s20, T3.7rsi2c:RSI2CC_s20, T3.8A:ES_RSI2_t10, T3.8B:GSHORT_t90, NM_E:E:NQ_RSI2_t10, NM_E:E:NQ_RSI2C_s20, NM_E:E:NQ_RSI2CC_s20, NM_E:E:ES_RSI2_t10, NM_E:E:GSHORT_t90, NM_E:E:ORB_ASIA_15_v1_s60, NM_E:E:ORB_ASIA_15_v1_s75. New PASS since last edition: none.
 CANDIDATEs registered since last edition (0): none ; total CANDIDATE now 29 (each is to be registered in PAPER-ALL the day it is scored). Verdict counts: {'DEAD': 659, 'PASS': 18, 'CANDIDATE': 29, 'PENDING': 10}.
 Forward register: {'ON TRACK': 34, 'BEHIND': 15, 'PROMOTE': 3, 'RETIRE': 3} (no change since last edition).
 Combined-system line: not run yet (see REPORT_STRUCT48.md when available).
-Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 94% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
+Cores: busy 13/32 slots (STRUCT48 13, PRED 0), CPU 5-min avg over last 2 h 99% min 97% (floor 90%), queue 0, by track {'T2': 0.0, 'LEAD': 0.0, 'T3': 0.0, 'PRED': 0.0, 'T1': 0.0}.
 One leaderboard: autopilot/LEADERBOARD.md ; harness l2vast/struct48/HARNESS.md (V2 section) ; weekly WF test cannot see less than $24,574/wk for an independent candidate; modifiers of D2 are judged by the paired per-trade test.
 <!--RESEARCH-END-->
 <!--PRED-BEGIN-->
@@ -13349,3 +13349,10 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - (03:21Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
 - 2026-11-21T03:21Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
 - 03:22Z WATCHDOG fired: G
+03:25Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 03:25Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_ALN_AS_L[0-9a-f]{8}_CANCBRS15U_CT\d+[pm]$ (e.g. TL3_ALN_AS_L08df8bb0_CANCBRS15U_CT105m,TL3_ALN_AS_L08df8bb0_CANCBRS15U_CT105p): identity pairs started (8 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 03:25Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_LYR_N1_B[0-9a-f]{8}_CU\d+$ (e.g. TL3_LYR_N1_B6f77f23d_CU1,TL3_LYR_N1_B6f77f23d_CU2): identity pairs started (8 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+03:26Z HB queue (LIGHT) | step D8 wired files 202 of 202 present, unwired 0 | waiting_on SAMPLED/cached from the full host count 10 min ago (sets not on hosts per host: A:0 B:0 C:0 D:898) | head group (py+bulk_11..19+fl_17..23+canf) unstarted / ct unstarted: 454 46861 | stack_urgent_file_lines 0 | DONE dirs written in the last 10 min 2288 | SLOTS BY FAMILY (class: running slots, done/h, queued, est h): 0 D8 canonical prints (_CAN/_CANQ/_CANR/_CANC/_CANG) 237 8548 53933 6.;1 urgent (stack steps/pass-2 joint) 0 0 312 -;2 stage1: bracket shapes (_BR*) 199 2724 45 0.0;2 stage1: exits (EX + XC exit controls) 0 392 0 -;2 stage1: layers (TL3_LYR_) 0 0 4404 -;3 Asia base/prior (widening) 0 72 47609 661.2;3 Asia controls (widening) 0 0 12088 -;4 NY AM all-new (base/prior/controls) 0 2012 131776 65.5;4 NY AM first looks/live-base controls 0 0 80699 -;x other 0 0 52 -;TOTAL running 436 done/h 13748;
+- 03:28Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_py_37.txt (180 lines)
+03:28Z W-GRIDOPS AUDIT UNWIRED (5-min audit of _d8spec/pending*.txt vs QUEUES.txt): pending_canc_py_37.txt sat 0 min (file age 0 min, 180 lines); wiring by hand now.
+- 03:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 28 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 275911
