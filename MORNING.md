@@ -14405,3 +14405,18 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 11:28Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] HB ny-own-l3g | step done/5 | waiting_on 0 sets | queued_or_running 0 | last_progress 01:12Z | pid 3023558
 - 2026-11-21T11:29Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
 - 11:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 272956
+- 11:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 597 vs baseline 404 (guard: cut if < 95% twice).
+- 11:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 11:22Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-21T09  box1  13790  Dallas  1302  A  2434  B  2782  tot  20308 ;  11-21T10  box1  13024  Dallas  1193  A  2307  B  2580  tot  19104 ;  11-21T11  box1  1033  Dallas  108  A  189  B  237  tot  1567 ; 
+- 11:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 11:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+2026-11-21T11:30:21Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 11:30Z HB pass2 | step screened 27/27 pool books, joint stages stagefinal:8,no passing component:16 | waiting_on 0 sets | queued_or_running 0 | last_progress 05:59Z | pid 19876
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_py_52.txt (36 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_145.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_146.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_147.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_148.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_149.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_150.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_151.txt (588 lines)
+- 11:32Z W-D8SPEC AUTO new queue file /mnt/l2/l2vast/_d8spec/pending_canc_ct_152.txt (564 lines)
