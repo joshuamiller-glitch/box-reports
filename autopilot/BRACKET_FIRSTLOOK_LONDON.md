@@ -1,44 +1,44 @@
 # BRACKET FIRST LOOK, LONDON (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-21 18:21 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 785 of 808.
+Written 2026-11-21 19:29 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 803 of 808.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
 | shape | best in L6M | best in L3M | best in BOTH windows (beats own bracket in both) |
 |---|---|---|---|
 | fixed120/60 | 121 | 56 | 95 |
-| fixed60/120 | 86 | 79 | 74 |
-| fixed90/90 | 69 | 48 | 53 |
-| fixed30/90 | 63 | 66 | 41 |
-| sym8u | 62 | 73 | 52 |
-| fixed80/40 | 55 | 71 | 43 |
+| fixed60/120 | 89 | 81 | 77 |
+| fixed90/90 | 70 | 48 | 54 |
+| sym8u | 65 | 75 | 54 |
+| fixed30/90 | 63 | 67 | 41 |
+| fixed40/80 | 56 | 57 | 56 |
+| fixed80/40 | 55 | 72 | 43 |
 | fixed90/30 | 53 | 33 | 39 |
-| fixed45/45 | 50 | 70 | 47 |
-| fixed40/80 | 49 | 55 | 49 |
+| fixed45/45 | 51 | 73 | 48 |
 | asym10u/20u | 33 | 34 | 31 |
-| plain60/60 | 30 | 75 | 19 |
-| fixed30/30 | 30 | 40 | 27 |
+| plain60/60 | 32 | 76 | 20 |
+| fixed30/30 | 30 | 44 | 27 |
 | asym20u/10u | 26 | 28 | 20 |
 | asym15u/30u | 23 | 14 | 20 |
-| sym15u | 21 | 36 | 17 |
+| sym15u | 22 | 38 | 17 |
 | sym30u | 7 | 6 | 8 |
 | fixed120/120 | 7 | 1 | 6 |
 
-Cells whose ladder bracket is already the best in L6M: 25 of 785. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 641.
+Cells whose ladder bracket is already the best in L6M: 27 of 803. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 656.
 
 ## NULL for the best-of-17 pick (exchangeable shape labels)
 
-If the 17 shapes were interchangeable, calling any one of them the "own bracket" would give per cell the same two numbers. Averaged over all 17 possible own brackets of every cell: own bracket is the best in L6M in 5.9% of cells (the real ladder bracket: 3.2%); SOME other shape beats it at equal risk in BOTH windows in 84.0% of cells (the real ladder bracket: 81.7%). READING: the real ladder bracket is NOT better than a random one and the share of cells with a "better" shape is what chance gives, so the headline count is not evidence of a better bracket; only cells that also pass the engine, walk-forward and the null count.
+If the 17 shapes were interchangeable, calling any one of them the "own bracket" would give per cell the same two numbers. Averaged over all 17 possible own brackets of every cell: own bracket is the best in L6M in 6.0% of cells (the real ladder bracket: 3.4%); SOME other shape beats it at equal risk in BOTH windows in 83.9% of cells (the real ladder bracket: 81.7%). READING: the real ladder bracket is NOT better than a random one and the share of cells with a "better" shape is what chance gives, so the headline count is not evidence of a better bracket; only cells that also pass the engine, walk-forward and the null count.
 
 ## Cells that FAILED the first look (not positive in L6M at plain 60/60 AND at sym15u) but are positive in L6M and L3M (>= 20 trades L6M) at another shape: the books the search never saw
 
-Grid cells (param x mode) in these jobs: 92419; failed at both pass-1 brackets: 41589; positive in both windows at another shape: 20982. By shape: {'fixed80/40': 2042, 'fixed90/90': 1795, 'fixed30/90': 2972, 'fixed40/80': 2010, 'fixed30/30': 1750, 'fixed120/60': 1635, 'fixed90/30': 2124, 'fixed60/120': 1786, 'fixed45/45': 1701, 'sym8u': 898, 'asym15u/30u': 269, 'sym30u': 356, 'asym20u/10u': 553, 'asym10u/20u': 619, 'fixed120/120': 472}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
+Grid cells (param x mode) in these jobs: 94797; failed at both pass-1 brackets: 42754; positive in both windows at another shape: 21396. By shape: {'fixed80/40': 2105, 'fixed90/90': 1835, 'fixed30/90': 3049, 'fixed40/80': 2049, 'fixed30/30': 1801, 'fixed120/60': 1651, 'fixed90/30': 2163, 'fixed60/120': 1846, 'fixed45/45': 1724, 'sym8u': 902, 'asym15u/30u': 269, 'sym30u': 356, 'asym20u/10u': 555, 'asym10u/20u': 619, 'fixed120/120': 472}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
 
 ## Clip: distinct shapes per ladder cell (of 17 weekly series)
 
-17 distinct: 393 cells, 16 distinct: 237 cells, 15 distinct: 28 cells, 14 distinct: 57 cells, 13 distinct: 10 cells, 12 distinct: 21 cells, 11 distinct: 39 cells
+17 distinct: 403 cells, 16 distinct: 239 cells, 15 distinct: 29 cells, 14 distinct: 59 cells, 13 distinct: 11 cells, 12 distinct: 21 cells, 11 distinct: 40 cells, 2 distinct: 1 cells
 
-Cells where sym15u and sym30u are identical (clipped to the same points): 5807 of 31348 grid cells in these jobs.
+Cells where sym15u and sym30u are identical (clipped to the same points): 6460 of 32370 grid cells in these jobs.
 
 ## Top 30 ladder cells by L6M equal-risk net points/week (best shape), L3M beside, plain 60/60 number beside
 
@@ -75,7 +75,7 @@ Cells where sym15u and sym30u are identical (clipped to the same points): 5807 o
 | L53b0a025 | vsess_30 | tape_stoprun | sym15u | fixed120/60 | 210.92 | 114.04 | -27.12 | 16.08 |
 | Lc2651d0a | vol_500 | xmarket_rates | plain60/60 | fixed90/90 | 207.8 | 32.11 | 5.31 | 5.31 |
 
-## Not yet read (grid files not landed): 23 ladder cells
+## Not yet read (grid files not landed): 0 ladder cells
 
-They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: L02acbc37, L0a954e74, L282e124c, L312b6d68, L3394eb72, L431323b6, L5bd5a1fc, L609bfd69, L6516b348, L71edb053, L7799eb04, L8255ee7d, L87a93f67, L87fd14ab, L8e66883d, L931eea91, L9c69bace, La3ee9849, Lbcd7bced, Ld7022a11, Lddc55d81, Le2832de2, Le6a97378
+They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: 
 
