@@ -24,3 +24,10 @@ The 'prior years not a disaster vs own L6M' rule (15-30% amber, > 30% red) is RE
 - Whole table above: books with a joint final: 13 (8 Asia, 4 NY AM and L7f41b347). Under the own-checks only L358e61be (Asia, KEEP class, not in the pool-15) and Le50c8ff3 (Asia; its BASE fails the own-checks, the joint final passes with 30/30 controls) pass, plus M3f6f752c (HELD: D8 BROKEN bar). Every other final loses a prior year while cutting L6M ulcer by 70-95% (the L6M selection does not hold in the prior years).
 - Why the heartbeat read stage3:6 / waiting_on 0 for four hours: everything the pool loop owes is DONE (no stuck rows); the pool had no new screen-passing book to extend.
 - Not stuck. Pool size: my pool list gives 15 (aln_state AS: passes 217, controls decided and passed 31, of which 15 on D8-unaffected bars). The 22 of the lead's order is not reproduced by aln_state.json (decided passed 31 before the D8 filter; 71 passers have no control decision yet): tell me the source of the 22 and I screen the 7 others the next cycle (they are picked up automatically the moment they are in the pool list; a screen takes about 2-8 minutes per book).
+
+## D8-base (CANC) joint chain, 06:30Z (screen only; the two Asia books whose old-split screens did not transfer)
+| book | bar | final | BASE (CANC) own-checks | FINAL own-checks: L6M / L3M / 2023 / 2024 / 2025 $/wk, persistence | controls beaten L6M / L3M | L6M ulcer BASE -> FINAL | verdict |
+|---|---|---|---|---|---|---|---|
+| L385f4f2e | vol_2600 | J502 (C1 setting 5 + C3 setting 2) | pass (persistence 0.58) | 2,157 / 2,514 / 40 / 217 / 179, 0.65 | 30 / 27 of 30 | 3,982 -> 469 (max DD -9,710 -> -1,914) | PASSES the own-checks (screen only; 2023 only +40 $/wk; L6M 2,157 vs the CANC base's own 476) |
+| M7ea48296 | cdr_100 | J500 | pass (0.66) | 2,350 / 2,186 / -31 / 529 / 97, 0.68 | 30 / 25 | 4,788 -> 888 | FAILS the own-checks (2023 -31 $/wk) |
+All stage rows are DONE (stage 1 L6M: 168 and 156 rows, stage 2: 144 + 144 prior-year rows, stage 3: 30 controls x 6 months each). The 24 CANC rows of Lfb608c7b / M3f6f752c queued earlier by mistake are NOT results.
