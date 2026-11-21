@@ -1,15 +1,15 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-21 06:52Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-21 07:04Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
 ## Summary
 
-Books in the table: 31; screen complete for 30; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 9.
-Pick counts (complete books): P60 19, P45 4, P30 2, A10U20U 2, F40_80 1, S8U 1, F60_120 1
+Books in the table: 31; screen complete for 31; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 9.
+Pick counts (complete books): P60 20, P45 4, P30 2, A10U20U 2, F40_80 1, S8U 1, F60_120 1
 
-Plain 60/60 is the pick for 19 of 30 complete books.
+Plain 60/60 is the pick for 20 of 31 complete books.
 
 ## Table 1: equal-risk $/wk in L6M (scaled to the current bracket's L6M ulcer; the current bracket's own $/wk is in the "now" column; * = WIN in both windows, [own] = the book's current bracket)
 
@@ -21,7 +21,7 @@ Plain 60/60 is the pick for 19 of 30 complete books.
 | L1edb9fab | P60 | 2167 | 4509 | 4652* | 2701 | [own] | -97 | -198 | -196 | -198 | -198 | -198 | -198 | -198 | -198 | -198 | 2478 | 1338 | 911 | -236 | P30 |
 | L29b1bc3f | P60 | 2028 | 3897 | 3326 | 2476 | [own] | 13 | 325 | 694 | 252 | 325 | 325 | 325 | 195 | 237 | 327 | 430 | 685 | 701 | 297 | P60 |
 | L385f4f2e | P60 | 476 | 3982 | 229 | 480 | [own] | 94 | -215 | -217 | -215 | -215 | -215 | -215 | -215 | -215 | -215 | 891 | 134 | 327 | -72 | P60 |
-| L385f4f2eJ502 | P60 | 2157 | 469 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
+| L385f4f2eJ502 | P60 | 2157 | 469 | 292 | 927 | [own] | 1504 | 464 | 461 | 464 | 464 | 464 | 464 | 464 | 464 | 464 | 488 | 556 | 1287 | 1118 | P60 |
 | L3faac8df | P60 | 1314 | 4512 | 47 | 4930 | [own] | 970 | 43 | 369 | 43 | 43 | 43 | 43 | 141 | 13 | 43 | 1368 | 605 | 709 | -7 | P60 |
 | L40bde9ea | P60 | 937 | 4679 | 278 | 3097* | [own] | -68 | -113 | 888 | -135 | -103 | -113 | -113 | -35 | 100 | -138 | 1932 | 969 | 136 | -188 | P45 |
 | L578701ed | P60 | 2207 | 5315 | 792 | 553 | [own] | 1144 | 741 | 425 | 161 | 562 | 741 | 741 | 2484 | 34 | 249 | 2065 | 1803 | -256 | -115 | P60 |
@@ -57,7 +57,7 @@ Plain 60/60 is the pick for 19 of 30 complete books.
 | L1edb9fab | 2289 | 2342 | 517 | [own] | -228 | -171 | -173 | -171 | -171 | -171 | -171 | -171 | -171 | -171 | 1272 | 862 | 613 | -216 |
 | L29b1bc3f | 2095 | 2498 | 2140 | [own] | -209 | -239 | -148 | -180 | -239 | -239 | -239 | -244 | -239 | -216 | -60 | 71 | 856 | -151 |
 | L385f4f2e | 457 | 359 | -222 | [own] | -216 | -234 | -235 | -234 | -234 | -234 | -234 | -234 | -234 | -234 | -148 | -24 | 292 | 6 |
-| L385f4f2eJ502 | 2514 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| L385f4f2eJ502 | 2514 | 188 | 488 | [own] | 1864 | 700 | 691 | 700 | 700 | 700 | 700 | 700 | 700 | 700 | 712 | 669 | 985 | 1403 |
 | L3faac8df | 1186 | -370 | 4916 | [own] | 582 | -203 | 1206 | -203 | -203 | -203 | -203 | -141 | -351 | -203 | 573 | 32 | -26 | -398 |
 | L40bde9ea | 1664 | 267 | 2357 | [own] | -73 | -254 | 1190 | -220 | -242 | -254 | -254 | -177 | 509 | -247 | 693 | -90 | 1322 | 64 |
 | L578701ed | 614 | 65 | -272 | [own] | 1993 | 3004 | -630 | 736 | 2440 | 3004 | 3004 | 5549 | 995 | 2049 | 6551 | 2185 | -913 | -396 |
@@ -215,6 +215,22 @@ Plain 60/60 is the pick for 19 of 30 complete books.
 
 **L385f4f2eJ502** (current P60): now 2157 | 469 | -1915 | -1600 | 6.1 | -980
 
+- P30: 982 | 1580 | -4168 | -3594 | 7.1 | -563
+- P45: 1706 | 863 | -3369 | -1280 | 6.8 | -813
+- P90: 2983 | 931 | -3615 | -1809 | 5.6 | -1409
+- P120: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- S8U: 2331 | 2373 | -8933 | -2604 | 4.7 | -1831
+- S15U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- S30U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- S45U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- S60U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- A10U20U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- A20U10U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- A15U30U: 2346 | 2373 | -8933 | -2604 | 4.7 | -1831
+- F40_80: 1598 | 1536 | -4848 | -4104 | 6.3 | -726
+- F60_120: 1868 | 1575 | -4638 | -2564 | 5.4 | -1043
+- F80_40: 2266 | 826 | -2969 | -594 | 6.3 | -1203
+- F120_60: 2604 | 1093 | -4208 | -1239 | 5.8 | -1539
 
 **L3faac8df** (current P60): now 1314 | 4512 | -10962 | -6156 | 17.7 | -1025
 

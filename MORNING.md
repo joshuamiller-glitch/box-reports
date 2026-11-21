@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 06:49Z 11-21 (t+617.8 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 07:04Z 11-21 (t+618.1 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
 Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 99% min 88% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-21T06:49:13Z. Box: CPU 99.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Updated 2026-11-21T07:04:21Z. Box: CPU 98.9%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -13872,3 +13872,14 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 06:58Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 4139567 | pid 4021813
 - 06:59Z W-P2A stale watch: stale_cells.json 646 cells, 0 new listed cells excluded []
 - 07:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 274752
+- 07:00Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 653 vs baseline 404 (guard: cut if < 95% twice).
+- 07:00Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 07:00Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-21T04  box1  14130  Dallas  1301  A  2449  B  2764  tot  20644 ;  11-21T05  box1  13429  Dallas  1182  A  2306  B  2581  tot  19498 ;  11-21T06  box1  1030  Dallas  96  A  195  B  238  tot  1559 ; 
+- 07:00Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 07:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+2026-11-21T07:00:14Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+2026-11-21T07:00:20Z W-GRIDA 2026-11-21T07:00Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 1681 / 14 / 0.0 h; (b) pass-1 level modules 66 / 0 / 0.0 h; (c) pass-2 family cells 25 / 5763 / 230.5 h; (d) rest of pass 1 122 / 9 / 0.1 h; workers 86 (5 D      24 R      57 S); load 91.31; todo counts refreshed {"": 0, "_p2": 5} min ago
+- 07:00Z HB layer-watch | pool key 28 books, fit_now 28, not DONE ['L385f4f2e.J502'] | joint_pool.py restarted pid 4185889 | pid 4021813
+- 07:00Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 4185892 | pid 4021813
+- 07:02Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 31032 | pid 4021813
+- 07:04Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 67149 | pid 4021813
+- 07:04Z HB brackets | step screen 3552/3552 sm landed, stage-2 winners queued/complete/passed 12/12/1 | waiting_on 0 sets | queued_or_running 0 | last_progress 06:56Z | driver pid 3902940 cycle pid 1163810 | 07:04Z | walk-forward winner books: shape set-months landed 6912 / 6912
