@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:04Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:09Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_LONDON.md.**
@@ -8,6 +8,13 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 **D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books REJECTED at first look on their _CANC base (6 first-look months; L6M or L3M <= 0): 0; OUT of the D8 pool as tested: . Pool and gates below use the D8 base of each book.
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
+
+## TWO ASIA STACKS SIDE BY SIDE (research comparison; Josh picks): OWN-CHECKS stack vs STAYING-POWER stack (add rule also requires the stack's persistence not to fall and the worst prior-year ulcer <= 2x the L6M ulcer)
+
+| stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
+|---|---|---|---|---|---|---|---|
+| own-checks (done) |  | running | | | | | |
+| staying-power (done) |  | running | | | | | |
 
 ## GATE BY GATE: London, books ALONE on the all-new base (universe 0 books with a BASE set; 0 have all 42 months landed = counted below; 0 still waiting for prior years)
 
