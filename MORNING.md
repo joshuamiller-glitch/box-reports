@@ -14252,3 +14252,8 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 2026-11-21T10:23Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
 - 10:24Z WATCHDOG fired: G
 10:25Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 10:25Z W-COMBO RESELECT-NYAM [loop ny-own] HB ny-own | step done/5 | waiting_on 0 sets | queued_or_running 0 | last_progress 01:13Z | pid 3023552
+- 2026-11-21T10:27Z W-MA PART A: page autopilot/DS3_MAJOR_A_LOTS.md refreshed; proposed R2A (BEST-AVAILABLE-NOT-PROVEN); finals JL3 exact landed 13/13; set-months MA landed 2424
+- 10:27Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] HB ny-own-l3g | step done/5 | waiting_on 0 sets | queued_or_running 0 | last_progress 01:12Z | pid 3023558
+- 2026-11-21T10:27Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- 10:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 178 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 273400
