@@ -1,7 +1,7 @@
-# WEIGHTS_NYAM - weight search on book-alone sums (W-LAYERS, 2026-11-21 14:23Z)
+# WEIGHTS_NYAM - weight search on book-alone sums (W-LAYERS, 2026-11-21 14:45Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md. SUM of book-alone series, no stack interaction; engine check pending.
-Run 2026-11-21 14:23Z; pool hash (asia pool file) d6e2c4089adc; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3, FINAL_asia_stay_d8, FINAL_asia_stay_d8_nol3.
+Run 2026-11-21 14:45Z; pool hash (asia pool file) d6e2c4089adc; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3, FINAL_asia_stay_d8, FINAL_asia_stay_d8_nol3.
 
 ### Scope NYAM - members L7cc56d99, L488784d8, B7bfd33b7, B6f77f23d, L6547965c (32767 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
@@ -25,5 +25,11 @@ Same ranking at equal L6M ulcer (every mix scaled to the reference's L6M ulcer):
 | top 3 | 1/4/1/1/1.5 | 0.88 | 6021 / -21038 / -6839 / 9373 | 6241 / -21038 / -6839 / 7810 | 12163 / -40363 / -20431 / 4873 | 15423 / -45147 / -32350 / 3684 | 21818 / -50420 / -36055 / 5745 | 0.226 |
 | top 4 | 1/4/2/1.5/2 | 0.70 | 6021 / -21341 / -6766 / 9346 | 6349 / -21341 / -6766 / 7720 | 11649 / -40090 / -20168 / 4700 | 12612 / -41075 / -27097 / 3604 | 18545 / -51301 / -31367 / 5695 | 0.226 |
 | top 5 | 1/4/2/1.5/1.5 | 0.73 | 6021 / -20695 / -6432 / 9320 | 6340 / -20695 / -6155 / 7868 | 11837 / -39231 / -21529 / 4505 | 12205 / -40543 / -27226 / 3423 | 19892 / -53653 / -32404 / 5628 | 0.215 |
+
+BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58 (20358 mixes pass the guard and 0.58): 
+
+| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
+|---|---|---|---|---|---|---|---|---|
+| best passing | 3/4/4/3/4 | 0.28 | 5540 / -18132 / -8159 / 7304 | 5592 / -18132 / -8159 / 5950 | 8026 / -28054 / -13570 / 3609 | 10026 / -32400 / -13263 / 2575 | 11785 / -32700 / -19630 / 4178 | 0.591 |
 
 GATES for the top mix (equal-risk ranking): walk-forward persistence 0.237 over 80 periods (equal weights was the pick in 0; gate >= 0.58); prior-year band 2023 GREEN (-5%), 2024 GREEN (-1%), 2025 GREEN (-9%); null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
