@@ -1,4 +1,4 @@
-# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 05:18Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
+# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 05:34Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
 
 Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 screen per group, OA(9,4,3,2) = 8 combos + BASE). PICK = best combo on L6M (ulcer, drawdown first, 15% guard); cells = `ulcer fitted/unfitted; $/wk fitted/unfitted; eq = $/wk at equal risk`, 1 lot. Gates: ROLLING walk-forward among the combos + reference (>= 0.58), year colours 2023/24/25 on equal-risk $/wk (RED > 30% fails), search-aware null >= 4/5; 27/30 info only (stage-1 table). KEPT = all gates; otherwise the book keeps today's settings.
 
@@ -27,5 +27,7 @@ Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 s
 | Lc754cf58 | BRK:BRK3, LOSS:STC2, LOCK:ref, TAKE:TK5 | 3249/5349; 921/1368; eq 1516/1368 | 2622/6362; 785/431; eq 1904/431 | 0.46 (fixed 0.462) | GREEN/RED/RED | 4/5 | NOT KEPT: rolling WF 0.46 < 0.58; RED year |
 | Ma010c3eb | BRK:BRK2, LOSS:ref, LOCK:LK2, TAKE:TK1 | 2389/3630; 267/705; eq 405/705 | 1501/3441; 643/706; eq 1474/706 | 0.54 (fixed 0.613) | RED/RED/RED | 4/5 | NOT KEPT: rolling WF 0.54 < 0.58; RED year |
 | Mcae177ba | BRK:ref, LOSS:CX2, LOCK:LK5, TAKE:FR_TAKE2 | 2997/3657; 270/341; eq 329/341 | 3196/4151; 118/22; eq 153/22 | 0.69 (fixed 0.634) | RED/RED/RED | 4/5 | NOT KEPT: RED year |
-| L385f4f2e | pending: 5/8 combos complete (273/336 set-months) | | | | | | |
-| M7ea48296 | pending: 3/8 combos complete (186/336 set-months) | | | | | | |
+| L385f4f2e | BRK:BRK3, LOSS:ref, LOCK:LK2, TAKE:TK1 | 1868/3905; 449/476; eq 938/476 | 1265/2438; 970/457; eq 1870/457 | 0.58 (fixed 0.634) | GREEN/RED/AMBER | 5/5 | NOT KEPT: rolling WF 0.58 < 0.58; RED year |
+| M7ea48296 | BRK:ref, LOSS:STC2, LOCK:LK5, TAKE:TK5 | 2515/4797; 915/429; eq 1745/429 | 2259/3328; 1611/862; eq 2374/862 | 0.60 (fixed 0.548) | RED/RED/GREEN | 5/5 | NOT KEPT: RED year |
+| L9e4754b9 | pending: 0/8 combos complete (55/336 set-months) | | | | | | |
+| M86781ac0 | pending: 0/8 combos complete (1/336 set-months) | | | | | | |
