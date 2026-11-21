@@ -14684,3 +14684,13 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 2026-11-21T13:26Z W-D9 Dial 9: cores busy by D9 0 (quota 4), jobs outstanding 149 (+driver: 170 jobs wanted), cell-months finished in the last hour 0; first page due 23:00Z
 - 13:29Z HB layer-joint | step joint sets built for 34 books | waiting_on 178 sets | queued_or_running 178 | last_progress 13:29Z | pid 1823368
 - 13:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 149 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 272225
+- 13:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 635 vs baseline 404 (guard: cut if < 95% twice).
+- 13:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 13:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-21T11  box1  0  Dallas  1151  A  2217  B  2480  tot  5848 ;  11-21T12  box1  0  Dallas  1324  A  2497  B  2813  tot  6634 ;  11-21T13  box1  0  Dallas  117  A  237  B  286  tot  640 ; 
+- 13:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 13:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+2026-11-21T13:30:25Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 13:30Z HB layer-fit | step books fitted 33/35, stages {'DONE': 33, 'S3': 2} | waiting_on 239 sets | queued_or_running 239 | last_progress 13:30Z | pid 1823365
+- 2026-11-21T13:31Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- 13:32Z W-COMBO RESELECT-NYAM [loop ny-own] step 4: add B6f77f23d -> L6M ulcer 6287 / maxDD -18255 / worst wk -10238 / $6155 per wk; L3M $5188; prior years $/wk 2023 2390 / 2024 1634 / 2025 3378; own persistence 0.69
+- 13:32Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] step 4: add B6f77f23d -> L6M ulcer 6287 / maxDD -18255 / worst wk -10238 / $6155 per wk; L3M $5188; prior years $/wk 2023 2390 / 2024 1634 / 2025 3378; own persistence 0.69
+13:35Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
