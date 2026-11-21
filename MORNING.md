@@ -15242,3 +15242,12 @@ LAYERS-OFF VERDICT against the prereg rule ('layers are the cause only if in >= 
 - (wall 16:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
 - 16:59Z W-P2A stale watch: stale_cells.json 646 cells, 0 new listed cells excluded []
 - 17:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 359 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 591128
+- 17:00Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 113 vs baseline 404 (guard: cut if < 95% twice).
+- lead 17:00Z S2-CAP-FOLLOW: server-2 engine cap 4 -> 8 (memory ok (MemAvail 654 GB), cap below measured best 28)
+- 17:00Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 17:00Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-21T14  box1  11474  Dallas  1102  A  2135  B  2373  tot  17084 ;  11-21T15  box1  11476  Dallas  1195  A  2319  B  2605  tot  17595 ;  11-21T16  box1  1117  Dallas  117  A  217  B  248  tot  1699 ; 
+- 17:00Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 17:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+2026-11-21T17:00:29Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+2026-11-21T17:01:00Z W-GRIDA 2026-11-21T17:01Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 48 / 14 / 0.3 h; (b) pass-1 level modules 39 / 0 / 0.0 h; (c) pass-2 family cells 37 / 5614 / 151.7 h; (d) rest of pass 1 165 / 9 / 0.1 h; workers 86 (23 R      63 S); load 103.04; todo counts refreshed {"": 0, "_p2": 4} min ago
+- 17:02Z WATCHDOG fired: E
+17:05Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
