@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-21 12:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-21 12:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-21 12:30Z | WARNING serverC below 85% busy for 475 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-21 12:45Z | WARNING serverC below 85% busy for 478 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-21 12:30Z
+2026-11-21 12:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-21 12:30Z | WARNING serverC below 85% busy for 475
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 95.4 GB; live reservations 5 (5 GB); workers 18, of which TP-adopted 17 (RSS 22.6 GB) vs others 1 (RSS 1.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 42.36, 53.76, 61.24
-  by tag: NYR quota 12 running 1 hungry True RSS 2.2 GB PSS 2.1 GB; NYE quota 16 running 15 hungry False RSS 19.0 GB PSS 17.2 GB; TOOLS quota 0 running 1 hungry False RSS 1.4 GB PSS 1.3 GB; REST quota 0 running 1 hungry False RSS 1.0 GB PSS 0.9 GB
-  cell-months finished last hour (DONE markers): 13132
-  top running jobs: TL3_NYE_Lc0e4d836_ALN (x28);TL3_LYR_JNT9_L130cb48e_c8 (x11);TL3_NYE_L255c1c79_RK7CT7p (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 98.35, 91.08, 90.22|/dev/md2         28T  2.7T   26T  10% /mnt/l2|43|
+Server 1 (this box): MemAvail 85.6 GB; live reservations 0 (0 GB); workers 23, of which TP-adopted 22 (RSS 31.8 GB) vs others 1 (RSS 0.8 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 72.34, 73.18, 66.95
+  by tag: NYR quota 12 running 15 hungry False RSS 23.4 GB PSS 17.9 GB; TOOLS quota 0 running 7 hungry False RSS 8.4 GB PSS 7.5 GB; REST quota 0 running 1 hungry False RSS 0.8 GB PSS 0.7 GB
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_L255c1c79_RK7CT98p (x12);TL3_LYR_JNT9_L3a2258bd_c2 (x6);TL3_LYR_JNT9_L3a2258bd_c1 (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 93.20, 92.93, 92.20|/dev/md2         28T  2.7T   26T  10% /mnt/l2|47|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
