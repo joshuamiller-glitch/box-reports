@@ -13863,3 +13863,12 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 06:54Z HB layer-watch | pool key 28 books, fit_now 28, not DONE ['L385f4f2e.J502'] | joint_pool.py restarted pid 4060802 | pid 4021813
 - 06:54Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 4060804 | pid 4021813
 06:55Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 06:55Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_LYR_P1_L[0-9a-f]{8}_J502_CX\d+$ (e.g. TL3_LYR_P1_L385f4f2e_J502_CX1,TL3_LYR_P1_L385f4f2e_J502_CX2): identity pairs started (3 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 06:56Z HB layer-watch | pool key 28 books, fit_now 28, not DONE ['L385f4f2e.J502'] | joint_pool.py restarted pid 4095716 | pid 4021813
+- 06:56Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 4095820 | pid 4021813
+- 06:57Z HB pass2 | step screened 27/27 pool books, joint stages stagefinal:8,no passing component:16 | waiting_on 0 sets | queued_or_running 0 | last_progress 05:59Z | pid 19876
+- (wall 06:58Z) W-CH2 status: CH workers busy 0, pending exact cell-months 1211, done CH cell-months 3478; 9209 jobs wanted, 40 chains running; auto-expansions 18; closest: closest to live: K790f33_T67 / K790f33_A2 (K7 London call at 90 min; nearer target x0.67 or half size) - small (+195 / +359 per wk over 187 wk, base lots), passes the programme gate (T67 in all windows, A2 not HOLD), no placebo sc; identity -> IDENTICA
+- 06:58Z HB layer-watch | pool key 28 books, fit_now 28, not DONE ['L385f4f2e.J502'] | joint_pool.py restarted pid 4139559 | pid 4021813
+- 06:58Z HB layer-watch-ny | NY AM pool key 6 books, fit_now 6, not DONE ['B7bfd33b7', 'L05350e98', 'L488784d8', 'L6547965c', 'L7cc56d99'] | joint_pool_ny.py restarted pid 4139567 | pid 4021813
+- 06:59Z W-P2A stale watch: stale_cells.json 646 cells, 0 new listed cells excluded []
+- 07:00Z W-NYENG (cron status line, every 30 min) NY AM D8 page 29 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 274752
