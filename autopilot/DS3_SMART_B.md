@@ -160,7 +160,7 @@ Whole round trip per contract (fee + excess): target 9.4; cut 17.4; stop 18.2; 0
 | P7 | nyam | 11:30 | 32 | 62.0 | -6682.5 | 938.9 | -7621.4 |
 
 
-## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-21 03:24Z UTC)
+## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-21 03:55Z UTC)
 
 Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN05W2J = SBJ_*); prereg SMART_B_PREREG.md. Each cell is scored vs its base on the same months. **Caveat: the engine state cut fires in the engine but did not fire live on 11-11 (DS3_P7_CUT_FIDELITY.md).** Passive limits fill on a print through the level by 1 tick (touch variants are the optimistic bound). cut % = stack maxDD vs base (positive = shallower); d mean = all-weeks mean difference ($/wk); "d mean live-excess adj" adds the change in live-excess slip cost (B1 parameters) to the L6M all-weeks d mean (limit fills avoid market-exit excess; engine slip is inside gross). A window appears only when all its months are present.
 
@@ -209,7 +209,7 @@ Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN0
 | SB_LE_pb2_T10M | JN05W2 | 6 | 90% ($286k of $316k) | 0 of 20 | -7.2 | -923 | -904 | 13/6 | - | - | - | - | - | - |
 | SB_LE_pb4_T20M | JN05W2 | 12 | 100% ($315k of $316k) | 1 of 20 | 18.9 | -1245 | -1263 | 13/6 | -6.9 | -488 | - | - | - | - |
 | SB_LE_pb4_T20S | JN05W2 | 6 | 60% ($189k of $316k) | 2 of 20 | -66.7 | -12711 | -12284 | 13/6 | - | - | - | - | - | - |
-| SB_LE_pb8_T20S | JN05W2 | 6 | 39% ($122k of $316k) | 2 of 20 | -31.8 | -15855 | -15167 | 12/5 | - | - | - | - | - | - |
+| SB_LE_pb8_T20S | JN05W2 | 6 | err [Errno 17] File exists: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202304' | | | | | | | | | | | |
 | SB_LE_wide | JN05W2 | 6 | 94% ($297k of $316k) | 0 of 20 | -5.1 | -251 | -257 | 13/6 | - | - | - | - | - | - |
 
 Not run in this pass: stop-limit cut, target one tick inside, depth-conditional passive entry, per-slot refit (see prereg). Behavioural scorecard a-e and acceptance_p7 are run on cells that complete L6M+HOLD (code/th_works_q/behavior_scorecard.py, code/th_works_c/acceptance_p7.py).
