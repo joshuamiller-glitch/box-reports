@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-21 18:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-21 18:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-21 18:25Z | WARNING serverC below 85% busy for 546 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-21 18:45Z | WARNING serverD below 85% busy for 5 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-21 18:30Z
+2026-11-21 18:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-21 18:25Z | WARNING serverC below 85% busy for 546
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 82.0 GB; live reservations 7 (7 GB); workers 18, of which TP-adopted 17 (RSS 24.9 GB) vs others 1 (RSS 0.9 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 63.10, 63.28, 62.17
-  by tag: NYR quota 12 running 11 hungry True RSS 15.8 GB PSS 13.6 GB; LON quota 12 running 6 hungry True RSS 9.1 GB PSS 8.0 GB; REST quota 0 running 1 hungry False RSS 0.9 GB PSS 0.7 GB
-  cell-months finished last hour (DONE markers): 7827
-  top running jobs: TL3_NYE_Lc83cc205_ALNCT105m (x12);TL3_NYE_Lc83cc205_ALNCT98m (x10);TL3_NYE_L902b3613_ALN (x5);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 85.82, 87.26, 86.27|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
+Server 1 (this box): MemAvail 48.4 GB; live reservations 13 (13 GB); workers 21, of which TP-adopted 20 (RSS 29.6 GB) vs others 1 (RSS 0.9 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 85.23, 81.70, 73.58
+  by tag: NYR quota 12 running 13 hungry False RSS 16.9 GB PSS 13.4 GB; ALN quota 10 running 1 hungry True RSS 1.3 GB PSS 1.1 GB; LON quota 12 running 6 hungry True RSS 11.4 GB PSS 9.7 GB; REST quota 0 running 1 hungry False RSS 0.9 GB PSS 0.7 GB
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_L902b3613_ALNCT56p (x12);TL3_NYE_L902b3613_ALNCT63p (x10);TL3_NYE_L902b3613_ALNCT49p (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 90.83, 91.84, 90.02|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 85.82, 87.26, 86.27|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261121_1632Z_Josh-whole-fleet-bracket-first-look.md 20261121_1635Z_Josh-yes-release-held-rows-truly-bare.md 20261121_1716Z_Josh-same-for-NY-and-London.md 20261121_1732Z_Josh-fits-wait-for-brackets.md 20261121_1802Z_step1-end-and-restore-caps.md
+20261121_1635Z_Josh-yes-release-held-rows-truly-bare.md 20261121_1716Z_Josh-same-for-NY-and-London.md 20261121_1732Z_Josh-fits-wait-for-brackets.md 20261121_1802Z_step1-end-and-restore-caps.md 20261121_1833Z_step2-london-errors-and-184-cells.md
