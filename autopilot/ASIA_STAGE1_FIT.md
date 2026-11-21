@@ -1,4 +1,4 @@
-# ASIA_STAGE1_FIT - per-book fit of the Asia own-checks pool (W-LAYERS, refreshed 2026-11-21 07:08Z)
+# ASIA_STAGE1_FIT - per-book fit of the Asia own-checks pool (W-LAYERS, refreshed 2026-11-21 11:59Z)
 
 GATES (order 1810Z, Josh approved): fitted settings are judged by (2) WALK-FORWARD persistence >= 0.58 (fixed pick over 93 two-week periods now; TRUE rolling pick among top-3 per group arrives from wf_run), (3) prior-year band (RULE, lead 1900Z: decided on the EQUAL-RISK $/wk change only = fitted scaled to the unfitted version's ulcer in that year, then $/wk compared; the 1-lot ulcer change is shown, not decisive; GREEN <= 15%, AMBER 15-30%, RED > 30% fails), (4) search-aware null >= 4 of 5 draws; the 27/30 date-shift count is SHOWN only. Shared function code/th_layers/wf_gate.py. Reference = the book's own BASE (today's settings). Method: S1 screen of 56 settings x last 6 months ranks; one pick per group (BRK, LOSS, LOCK, TAKE); verdict from the joint fit.
 
@@ -31,8 +31,8 @@ GATES (order 1810Z, Josh approved): fitted settings are judged by (2) WALK-FORWA
 | M7ea48296 | BRK: BRK2; LOSS: CX2; LOCK: LK4; TAKE: TK5 | -1027 | - | 0.649 (77 periods) | -/-/- | 4/5 | 0/0 | - |
 | L9e4754b9 | BRK: BRK1; LOSS: CX1; LOCK: LK7; TAKE: TK1 | -1767 | - | 0.734 (79 periods) | -/-/- | 5/5 | 0/0 | - |
 | M86781ac0 | BRK: BRK2; LOSS: CU2; LOCK: LK7; TAKE: SHV2 | -1590 | - | 0.667 (75 periods) | -/-/- | 5/5 | 0/0 | - |
-| L385f4f2e.J502 | TAKE: SHV2 | -4 | - | pending | -/-/- | pending | 23/30 | - |
+| L385f4f2e.J502 | TAKE: SHV2 | -4 | - | 0.615 (78 periods) | -/-/- | 0/5 | 23/30 | - |
 
-In progress: L11152f7a (S3), Lcae177ba (S1)
+In progress: L11152f7a (S3), Lcae177ba (S1), L018fb0c0 (S1), L130cb48e (S1), L3a2258bd (S1), L47a9c81c (S1), L92a90948 (S1), La776664b (S1)
 
 Fit list (own-checks pool, unaffected bars): see /mnt/l2/l2vast/_layers/pool_fit_list.json
