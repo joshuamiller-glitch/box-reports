@@ -1,6 +1,6 @@
 # BRACKET FIRST LOOK, LONDON (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-21 19:29 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 803 of 808.
+Written 2026-11-21 20:24 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 803 of 808.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
@@ -21,8 +21,8 @@ Written 2026-11-21 19:29 UTC by W-BRKT from the bfl17 grid results (17 shapes, t
 | asym20u/10u | 26 | 28 | 20 |
 | asym15u/30u | 23 | 14 | 20 |
 | sym15u | 22 | 38 | 17 |
-| sym30u | 7 | 6 | 8 |
 | fixed120/120 | 7 | 1 | 6 |
+| sym30u | 7 | 6 | 8 |
 
 Cells whose ladder bracket is already the best in L6M: 27 of 803. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 656.
 

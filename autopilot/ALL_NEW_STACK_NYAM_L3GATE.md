@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:19Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:24Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -23,19 +23,19 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 - L6M $7425 per wk (positive), L3M $5776 per wk (positive); prior years $/wk: 2023 3530 (positive), 2024 2592 (positive), 2025 4337 (positive); OWN persistence (share of positive 14-day blocks) 0.78 (>= 0.58 passes); stack controls: beats [30, 23, 30] of 30 (L6M drawdown-first, L3M, ulcer-only).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.18 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.17 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 6031 / -19970 / -7702 / 7425 | 6031 / -10762 / -4605 / -107 | +7532 |
-| L3M | 6084 / -18152 / -7702 / 5776 | 4425 / -7950 / -3115 / -186 | +5962 |
-| Y2023 | 7931 / -26688 / -13244 / 3530 | 3334 / -7832 / -2918 / 372 | +3158 |
-| Y2024 | 10293 / -33710 / -12523 / 2592 | 3029 / -6610 / -3109 / 401 | +2191 |
-| Y2025 | 12242 / -30060 / -19092 / 4337 | 4348 / -12786 / -4104 / 178 | +4158 |
+| L6M | 6031 / -19970 / -7702 / 7425 | 6031 / -10653 / -4672 / -121 | +7545 |
+| L3M | 6084 / -18152 / -7702 / 5776 | 5113 / -9119 / -3167 / -366 | +6142 |
+| Y2023 | 7931 / -26688 / -13244 / 3530 | 3325 / -7863 / -2778 / 354 | +3176 |
+| Y2024 | 10293 / -33710 / -12523 / 2592 | 3017 / -6591 / -3430 / 377 | +2216 |
+| Y2025 | 12242 / -30060 / -19092 / 4337 | 4336 / -12848 / -3908 / 149 | +4188 |
 
 ## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was B2010fec9 (swap / drop steps: none); WITH the guard this page's stack is L7cc56d99 + L488784d8 + B7bfd33b7 + B6f77f23d + L6547965c.
 
-## NY AM STACK A: CHOSEN BY JOSH (13:28Z): L7cc56d99 (line-break bar 3_40 + VWAP-level break) + L488784d8: L6M 4313 / -12245 / -7742 / 3366 ; L3M 3616 / -10088 / -7377 / 2704 ; 2023 5576 / -14827 / -6948 / 1463 RED ; 2024 9984 / -20581 / -8704 / 672 RED ; 2025 9176 / -26571 / -14752 / 1580 RED ; persistence vs today 0.65 ; stack controls beaten 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only). It is the chosen NY AM stack; the runs below are alternatives for comparison.
+## NY AM STACK A: CHOSEN BY JOSH (13:28Z): L7cc56d99 (line-break bar 3_40 + VWAP-level break) + L488784d8: L6M 4313 / -12245 / -7742 / 3366 ; L3M 3616 / -10088 / -7377 / 2704 ; 2023 5576 / -14827 / -6948 / 1463 RED ; 2024 9984 / -20581 / -8704 / 672 RED ; 2025 9176 / -26571 / -14752 / 1580 RED ; persistence vs today 0.66 ; stack controls beaten 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only). It is the chosen NY AM stack; the runs below are alternatives for comparison.
 
 ## GATE BY GATE: NY AM, books ALONE on the all-new base (universe 837 books with a BASE set; 354 have all 42 months landed = counted below; 145 still waiting for prior years)
 
@@ -45,7 +45,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (b) positive $/wk in each of 2023, 2024, 2025 | 255 of 354 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 188 of 354 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 206 books) | 8 of 206 |
-| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 11 of 354 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 11 of 354 |
 | a + b | 227 |
 | a + b + c | 149 |
 | a + b + c + d | 8 : B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2 |
@@ -90,10 +90,10 @@ Stack-level luck control: beats [30, 23, 30] of 30 (drawdown-first L6M, L3M, ulc
 
 Phase: done. Pool used by this run: 8 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2).
 
-## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
+## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
-EQUAL-RISK LINE (this stack vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off)): today's NY AM session scaled DOWN by k = 0.18 to the stack's drawdown: L6M 6031 / -10762 / -4605 / -107 ; L3M 4425 / -7950 / -3115 / -186. The stack: L6M 6031 / -19970 / -7702 / 7425 ; L3M 6084 / -18152 / -7702 / 5776. Persistence of the stack vs that reference: 0.74; rule B per prior year: RED / RED / RED.
+EQUAL-RISK LINE (this stack vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off)): today's NY AM session scaled DOWN by k = 0.17 to the stack's drawdown: L6M 6031 / -10653 / -4672 / -121 ; L3M 5113 / -9119 / -3167 / -366. The stack: L6M 6031 / -19970 / -7702 / 7425 ; L3M 6084 / -18152 / -7702 / 5776. Persistence of the stack vs that reference: 0.75; rule B per prior year: RED / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
