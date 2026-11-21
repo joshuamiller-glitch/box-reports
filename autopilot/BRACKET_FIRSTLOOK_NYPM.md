@@ -1,6 +1,6 @@
 # BRACKET FIRST LOOK, NYPM (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-21 19:59 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 394 of 396.
+Written 2026-11-21 20:01 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 394 of 396.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
@@ -11,8 +11,8 @@ Written 2026-11-21 19:59 UTC by W-BRKT from the bfl17 grid results (17 shapes, t
 | sym8u | 39 | 33 | 26 |
 | fixed60/120 | 37 | 29 | 28 |
 | plain60/60 | 35 | 47 | 21 |
-| fixed30/90 | 31 | 33 | 22 |
 | fixed40/80 | 31 | 14 | 19 |
+| fixed30/90 | 31 | 33 | 22 |
 | fixed90/30 | 28 | 33 | 21 |
 | fixed45/45 | 26 | 19 | 23 |
 | fixed30/30 | 26 | 33 | 26 |
