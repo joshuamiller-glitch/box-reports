@@ -96,6 +96,7 @@
 | old split | NY | L6547965c | oppx_v15_t2 | 0.60 (85) / 0.59 | +11 / +93 (red) | -36 / +79 (red) | -22 / +58 (red) | n/a | - | not kept |
 | old split | NY | Lc338b47b | v25_t2 | 0.60 (85) / 0.59 | +13 / +175 (red) | +63 / +120 (red) | +80 / +115 (red) | n/a | 17 / 8 | not kept |
 | old split | AS | Lc754cf58 | v25_t2 | 0.60 (85) / 0.62 | +89 / +87 (red) | -4 / +90 (red) | -61 / -163 (green) | n/a | 4 / 10 | not kept |
+| _CANC | AS | L9e4754b9 | oppx_v15_t2 | 0.60 (85) / 0.56 | +53 / +118 (red) | -74 / -42 (green) | +13 / +202 (red) | n/a | - | not kept |
 | old split | AS | Lc849eb8c | bricks3_v25 | 0.59 (85) / 0.61 | +51 / +144 (red) | -6 / +35 (red) | -8 / +53 (red) | n/a | 29 / 20 | not kept |
 | old split | AS | M3f6f752c | v25_t2 | 0.59 (85) / 0.56 | -19 / +106 (red) | -73 / -219 (green) | -0 / +65 (red) | n/a | 26 / 9 | not kept |
 | old split | AS | La6f6f7ad | v25_t2 | 0.59 (85) / 0.59 | +95 / +153 (red) | +78 / +124 (red) | +28 / +12 (green) | n/a | 28 / 23 | not kept |
@@ -217,6 +218,7 @@
 - NY L6547965c `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - NY Lc338b47b `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS Lc754cf58 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024]
+- AS L9e4754b9 `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS Lc849eb8c `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS M3f6f752c `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS La6f6f7ad `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024]
