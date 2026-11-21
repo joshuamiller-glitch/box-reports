@@ -150,3 +150,13 @@ Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M u
 Equal-risk comparison (bare D7 session STACK scaled by one factor k so its L6M ulcer equals the D8 row; the same k in every window; "worse %" = how much WORSE the D8 row is than the scaled bare D7 stack on ulcer / max DD / worst week and how much LOWER on mean; GREEN <= 15%, AMBER 15-30%, RED > 30%; negative = D8 better):
 
 
+
+## R0 TRULY BARE rows, AS (night order 2005Z item 5; written 2026-11-21 20:15Z by W-COMBO; today's W-BARE rows above are UNTOUCHED): session stack STKLIVE, 1 lot; ulcer / max DD / worst wk / $ per wk; R0 = every D7 rule off, today's bare = account layers on
+
+| window | R0 truly bare | today's bare (layers on) |
+|---|---|---|
+| L6M | 16442 / -35925 / -24304 / 4815 | 13133 / -32277 / -21126 / 5654 |
+| L3M | 13835 / -31912 / -24304 / 2618 | 12212 / -27920 / -17823 / 3191 |
+| Y2023 | 16531 / -28370 / -7921 / 21 | 20445 / -33434 / -8171 / -160 |
+| Y2024 | 9325 / -24029 / -8682 / 1687 | 9302 / -25668 / -8091 / 1386 |
+| Y2025 | 20031 / -41099 / -16255 / 1190 | 19498 / -38603 / -14679 / 1273 |
