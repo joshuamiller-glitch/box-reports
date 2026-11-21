@@ -13529,3 +13529,11 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 04:22Z W-COMBO RESELECT-ASIA [loop asia-own-l3g] FINAL stack ['L7c368a4f']: stack controls beaten (28, 25, 29) (L6M drawdown-first / L3M / ulcer-only)
 - 04:23Z W-COMBO RESELECT-ASIA [loop asia-stay-l3g] FINAL stack ['L7c368a4f']: stack controls beaten (28, 25, 29) (L6M drawdown-first / L3M / ulcer-only)
 - 04:24Z HB pass2 | step screened 25/27 pool books, joint stages stage3:6 | waiting_on 0 sets | queued_or_running 0 | last_progress 00:57Z | pid 19876
+04:25Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 04:25Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_LYR_NNULL_L[0-9a-f]{8}_d5_NRT4$ (e.g. TL3_LYR_NNULL_L05350e98_d5_NRT4,TL3_LYR_NNULL_L488784d8_d5_NRT4): identity pairs started (5 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 04:25Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_LYR_NNULL_L[0-9a-f]{8}_d5_SHV1$ (e.g. TL3_LYR_NNULL_L05350e98_d5_SHV1,TL3_LYR_NNULL_L488784d8_d5_SHV1): identity pairs started (5 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 04:25Z W-FAST2 (auto): NEW KIND seen in a queue and not in FAST_KINDS: ^TL3_LYR_NNULL_L[0-9a-f]{8}_d5_SHV2$ (e.g. TL3_LYR_NNULL_L05350e98_d5_SHV2,TL3_LYR_NNULL_L488784d8_d5_SHV2): identity pairs started (5 items); fl_autoadd adds it when >= 3 pairs are identical and 0 fail.
+- 04:26Z W-COMBO RESELECT-ASIA [loop asia-own] FINAL stack ['L7c368a4f', 'La010c3eb']: stack controls beaten (27, 16, 29) (L6M drawdown-first / L3M / ulcer-only)
+- 04:27Z W-COMBO RESELECT-ASIA [loop asia-own] RE-RUN WITH 27 pool books (was 25)
+- 04:28Z W-COMBO RESELECT-ASIA [loop asia-own] step 1: add L7c368a4f -> L6M ulcer 4075 / maxDD -11123 / worst wk -7409 / $2456 per wk; L3M $2434; prior years $/wk 2023 203 / 2024 654 / 2025 528; own persistence 0.62
+- 04:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 59 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 275562
