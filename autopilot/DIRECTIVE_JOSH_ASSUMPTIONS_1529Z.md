@@ -1,0 +1,11 @@
+# Order 1529Z Sat Nov 21 — Josh's words quoted; the rest written by the relay (Claude)
+
+Josh's words (15:21Z, 15:23Z): "i'm super confused and none of this makes sense" and "i'm spending over $1000 a day on the servers and we keep having to rerun things so confused"
+
+Information only, from the engine source and the set JSONs; no engine runs. Owner: the lead, with W-COMBO and W-D8SPEC. Second priority after order 1526Z. Deliver autopilot/D8_ASSUMPTIONS.md within 45 minutes and one "LEAD TO JOSH" line when it is up.
+
+PURPOSE: three hidden defaults surfaced today only by accident (D7 stack rules inside "bare" runs; no daily stops fitted; a single first-look bracket). Josh must not find a fourth the same way. List EVERY default that shapes a D8 number, so he approves or changes each ONCE, before more fleet time is spent on results that would have to be re-run.
+
+ONE TABLE, plain words, one row per assumption, read from code (sim.py, mf_multi, hooklists, set builders, loop code), not from memory: what it is | value today | where it applies (first look / pool gates / fits / stacks) | did Josh ask for it (quote + file) or is it a default nobody chose | what would have to be re-run if it changes (set-months).
+Must cover at least: first-look bracket per trigger family; every exit that can close a trade (Target, Stop, UWTime, RollFlat, session flat, StackCut, BookLock, DayHalt) with definition and values; every rule that can block or resize an entry (one position per book, no-trade windows and no-trade-set halving, c_gov, screens gate, sizer, same-side cap, swap-offs); lots per book and rounding; fill model (entry/exit type, latency, book walk, target fill rule, fees); sessions and flat times; data end and what "L6M / L3M" mean today (dates); the own-checks gates and the add rule clauses; equal-weight stacking; which windows pick and which only check; the prior-year band definition; the null definition; what "bare D7" contains in the yardstick (is IT truly bare?).
+Then THREE LISTS: (A) results that stand whatever Josh decides; (B) results that are valid only under an assumption he has not approved (name it); (C) work now queued that would be wasted or need re-running under each open decision, in set-months, so the queue can be ordered to waste nothing.

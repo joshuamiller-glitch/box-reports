@@ -1,0 +1,10 @@
+# Order 1526Z Sat Nov 21 — Josh's words quoted; the rest written by the relay (Claude)
+
+Josh's words (15:22Z, 15:23Z): "how did I ever ask you to run and find books only with one fixed bracket?" and "I want this reported on as soon as possible"
+
+TOP PRIORITY for the lead and W-BRKT / W-D8SPEC / W-ASIA / W-NYENG: answer THIS before the rest of the audit in order 1524Z. Information only, from files; no engine runs. One plain block on MORNING.md headed "LEAD TO JOSH", within 10 minutes. Partial answers at once are better than a complete answer later.
+
+1. THE FACT: for the Asia and NY AM new-book search (ladder first looks, D8 first looks, widening), at which stop/target bracket was each candidate cell first judged? Give counts: cells first-looked at plain 60/60; cells first-looked at another fixed bracket (which); cells whose trigger family carries its own bracket (S15U, asym 15u/30u, native etc.: list families and counts); cells ever judged at MORE than one bracket before the pool gates. Asia and NY AM separately.
+2. WHO DECIDED IT and when: quote the directive or order line (file name, time, author: Josh / relay / lead / agent) that set the first-look bracket, and any line where Josh asked for other stops/targets (e.g. DIRECTIVE_JOSH_BRACKETS_EXITS_1454Z.md, DIRECTIVE_WIDE_BRACKETS_EQUAL_RISK_20261118_1447Z.md) and how it was applied (search-wide, or only to books already in the pool).
+3. WHAT IT WOULD TAKE TO FIX: cost in set-months and clock time of a FIRST LOOK at other shapes on every candidate cell of Asia and NY AM (not only pool books): propose the shape list (relay suggestion: 40/80, 80/40, 30/90, 90/30, 120/60, 60/120, 120/120, plus one ATR-unit and one R-multiple bracket; say which already exist as event/bracket code), cells x shapes x 6 months for the first look, then prior years + controls only for passers at the observed pass rates; expected and worst case; and what it displaces in the queue. Do not run it: Josh decides.
+4. Then continue with order 1524Z items 1, 3, 4 (UWTime definition), 5, 6, 7.
