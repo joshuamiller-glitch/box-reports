@@ -18,11 +18,11 @@ NOTE: the lead's earlier 01:30Z top block and some lead lines were written to au
 - (wall 01:31Z) LEAD: moved the 20 EC_FLAT45K lines to the top of sv_jobs.txt (backup sv_jobs.txt.bak_lead0145) so K7 -45 PRE/X' finish first (W-ROOM est 04:00-05:30Z). W-ROOM did ROOM CHECK scoring: DS3_ROOMCHECK.md exists (prereg already filed 11-12 13:17Z; correction to my 01:30Z top note). UW wide + MenthorQ orders re-routed to W-UW2 (a48c5f93) after a mis-address to W-ROOM.
 
 <!--DS3-BEGIN-->
-## DS3 (second container of new books; scored as a portfolio with DS2) - update 08:51Z 11-21 (t+619.9 h of 48; final 10-28 13:00Z)
+## DS3 (second container of new books; scored as a portfolio with DS2) - update 09:06Z 11-21 (t+620.1 h of 48; final 10-28 13:00Z)
 Cells scored/total per track: T-A 142/30, T-B 2780/30, T-C 287/28, T-D 53/7, T-E 296/30, T-F 370/4, T-G 8/16, T-H 4980/30, T-I 225/24, T-J 3/12, T-K 19/19, T-O 11953/?, T-P 1378/?, T-R 266/?, T-S 1305/?, T-W 1488/?. Verdicts {'DEAD': 24523, 'CANDIDATE': 163, 'PENDING': 265, 'PASS': 52, 'ERROR': 550}.
 Best book so far: T-F: TF1_FOMC_NY(C); T-B: TB7_ORBNY_k3_P60_N(C), TB9_RENKO_c2_k1_P60_N(C), TB9_RENKO_c5_k1_A3_N(C); T-E: TE2_GC_KEL_k15(C), TE2_GC_VWAP_k15(C); T-D: D2_TE7_emax5m_f30_s50_a3_k67_f16(C); T-A: TE7_kelt3m_n14_m1.0|wide(P), TE7_kelt3m_n20_m1.0|wide(C), TE1_kelt_3m|wide(C); T-R: TR2_KB_plain(P), TR2_KB_NR4(P), TR2_DON15_LV2(P); T-P: PRO_Z20_t1.0(C), PRO_Z60_t1.0(C), PRO_KAL_k0.0(P); T-S: S1_b_stop_tf60_tf3m_L3(C), S1_b_stop_SO_tf3m_L3(C), S2_strict_run_tf3m_L3(C); T-W: WO_PRO2_RIB1m_q30_cci_b1_n20_k10(C), WO_HM_cci_b1_n20_k10(C), WO_TE6_st10m_n10_m3.5_cci_b10_n27_k18(C); T-I: FV_15m_ea(C), FV_15m_ec(C), FV_15m_ed(C); T-O: TOPEN_B2_DR5m_pb1_rm0.5_F45(C), TOPEN_B2_DR5m_pb1_rm0.5_F60(C), TOPEN_B2_DR5m_pb1_rm0.5_T1030(C). Census: autopilot/DS3_CENSUS.md (written).
-Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 97% min 85% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
-Updated 2026-11-21T08:51:05Z. Box: CPU 99.8%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
+Cores: busy 13/32 slots now; CPU 5-min avg over last 24 samples 96% min 80% (floor 90% on sanctioned work); by owner (cores) {'ds3?': 0.0, 'TL': 0.0, 'TS': 0.0, 'TE': 0.0}.
+Updated 2026-11-21T09:06:13Z. Box: CPU 80.0%, slots busy 13/32, queue 0. Cores per owner from /proc (cwd/cmdline contains ds3 + script prefix); 'ds3?' = unattributed DS3 processes. Total = sum of distinct prereg files (max of md/json copies).
 
 | track | owner | cores held now | cells scored / prereg total | best cell (verdict) | status |
 |---|---|---|---|---|---|
@@ -14105,3 +14105,11 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 09:00Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
 2026-11-21T09:00:17Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 2026-11-21T09:00:28Z W-GRIDA 2026-11-21T09:00Z STAGES jobs done last 60 min / todo / ETA at current rate: (a) pass-2 top cells + nulls 2952 / 14 / 0.0 h; (b) pass-1 level modules 60 / 0 / 0.0 h; (c) pass-2 family cells 29 / 5766 / 198.8 h; (d) rest of pass 1 145 / 9 / 0.1 h; workers 86 (27 R      59 S); load 98.20; todo counts refreshed {"": 0, "_p2": 5} min ago
+09:05Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
+- 09:05Z W-GRIDOPS: jobs/h last 60 min: pass 1 3421 (real 9), pass 2 234 (total results 3655); todo pass 1 9 (ETA 0.0 h at this rate), pass 2 5780 (ETA 24.7 h); server 2 load 207.18:90.34 109.94:185.01 206.22:174.32, grid workers 294 (68 computing), engine workers 440; error stubs 5555. Page autopilot/SEARCH_STATUS.md.
+- 09:05Z W-ASIA LEAD NOTE (auto, every 30 min; page NEW_BOOK_BEATS_LIVE_ASIA.md refreshed 09:05Z): ladder stages {'C': 59, 'out': 2907, 'B': 231} of 3197 cells; Asia cells with engine rows 3019, REPLACE verdicts finished 3015, beat a live Asia book on L6M+L3M 43 (looser NY rule 140); Asia set-months landed 1 h 0 / 3 h 0; Asia lines pending 3 (+~0 still to be appended as cells pass stage A); fleet 13914 sm/h, engine queue 292915 lines. DATES (engine only, before exit run): Asia at the measured Asia rate 0/h = nan h => n/a; Asia+NY AM at the fleet rate = 21 h => Nov 22 06:09Z. D8_CANDIDATES Asia rows listed 9887.
+09:07Z W-LA: LA cell-months done 867, jobs outstanding 52, chains 10; auto-expansions launched: 207 (cumulative new sets)
+- 09:08Z W-EXITENG HB exits | step stage1 sets landed 437/437, stage2 sets queued 36 / complete 36 / kept_new_gates 1 | waiting_on 0 sets | queued_or_running 0 | last_progress 04:47Z | cron 08:46Z
+- 09:09Z HB layer-wf-ny | step rolling walk-forward done 2 books, collecting [] | waiting_on 0 sets | queued_or_running 0 | last_progress 06:05Z | pid 4061716
+- 2026-11-21 09:09Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
+- 09:10Z WATCHDOG fired: G
