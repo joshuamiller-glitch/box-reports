@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 18:20Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 18:29Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -15,13 +15,13 @@
 
 D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d973: BREAKS on _CANR: old-split number, not D8; Lc4584864: BREAKS on _CANR: old-split number, not D8; Lbe5ac95b: BREAKS on _CANR: old-split number, not D8; La6f6f7ad: BREAKS on _CANR: old-split number, not D8; L40bde9ea: BREAKS on _CANR: old-split number, not D8; Lc849eb8c: BREAKS on _CANR: old-split number, not D8; M3f6f752c: BREAKS on _CANR: old-split number, not D8; L86781ac0: BREAKS on _CANR: old-split number, not D8; Le9bd7276: BREAKS on _CANR: old-split number, not D8; L11152f7a: BREAKS on _CANR: old-split number, not D8; L2176f633: BREAKS on _CANR: old-split number, not D8; Lcae177ba: CHANGES on _CANC; L29b1bc3f: CHANGES on _CANC; L7cc56d99: CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC); L7ea48296: HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land; B2010fec9: HOLDS on _CANR; L488784d8: HOLDS on _CANC; Ldcdb0b6e: BREAKS marginally on _CANC (L6M -20%, ulcer +32%, still positive): old-split number, not D8; Lfb608c7b: OUT (breaks on every candidate).
 
-**D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books waiting for their _CANC base set (not in the pool until it lands, their old-split numbers cannot enter the D8 spec): 327; OUT of the D8 pool as tested: L063a587d, L15865e21, L2760ba92, L2998b653, L5fb756ed, L775c45b7, L8713c8b2, L96483aae, Ld30932f7, Le0ce9660, Lf36e66f8. Pool and gates below use the D8 base of each book.
+**D8 PRINT RULE (_CANC) IN FORCE:** bars of type time, line-break, median Renko, swing keep BASE; every other bar family is judged on its _CANC base only. Books REJECTED at first look on their _CANC base (6 first-look months; L6M or L3M <= 0): 327; OUT of the D8 pool as tested: L063a587d, L15865e21, L2760ba92, L2998b653, L5fb756ed, L775c45b7, L8713c8b2, L96483aae, Ld30932f7, Le0ce9660, Lf36e66f8. Pool and gates below use the D8 base of each book.
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $7425 per wk (positive), L3M $5776 per wk (positive); prior years $/wk: 2023 3530 (positive), 2024 2592 (positive), 2025 4337 (positive); OWN persistence (share of positive 14-day blocks) 0.78 (>= 0.58 passes); stack controls: beats (30, 23, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
+- L6M $7425 per wk (positive), L3M $5776 per wk (positive); prior years $/wk: 2023 3530 (positive), 2024 2592 (positive), 2025 4337 (positive); OWN persistence (share of positive 14-day blocks) 0.78 (>= 0.58 passes); stack controls: beats [30, 23, 30] of 30 (L6M drawdown-first, L3M, ulcer-only).
 
 ## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.18 so that the L6M ulcer matches)
 
@@ -44,7 +44,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (a) positive $/wk in L6M and L3M | 305 of 354 |
 | (b) positive $/wk in each of 2023, 2024, 2025 | 255 of 354 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 188 of 354 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 167 books) | 8 of 167 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 206 books) | 8 of 206 |
 | (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 11 of 354 |
 | a + b | 227 |
 | a + b + c | 149 |
@@ -60,7 +60,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_
 
 ## POOL: books ALONE that pass everything: **8** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
 Books with all months landed: 692 of 837 in the universe; failed the prior-year positivity / persistence / controls: 346; waiting for prior years: 145; passed (a)+(b), controls still running: 0.
-Pool books: B57507767 [accumulating bar: D8 number = _CANC base], B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar], B7bfd33b7 [accumulating bar: D8 number = _CANC base], L05350e98 [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar], L6547965c [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar], Le0da99e2 [accumulating bar: D8 number = _CANC base]
+Pool books: B57507767 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base], B6f77f23d [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar], B7bfd33b7 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base], L05350e98 [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar], L488784d8 [R1 wrapper, landed before 16:31Z 11-21] [HOLDS on _CANC] [BASE kept: unaffected bar], L6547965c [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar], L7cc56d99 [R1 wrapper, landed before 16:31Z 11-21] [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar], Le0da99e2 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
@@ -73,20 +73,20 @@ Pool books: B57507767 [accumulating bar: D8 number = _CANC base], B6f77f23d [BAS
 | 5 | L6547965c | `TL3_ALN_NY_STKd8e739bd5e` | 6031 / -19970 / -7702 / 7425 | 6084 / -18152 / -7702 / 5776 | 7931 / -26688 / -13244 / 3530 | 10293 / -33710 / -12523 / 2592 | 12242 / -30060 / -19092 / 4337 | 0.78 | 4 |
 
 Selected books in order (plain words): 
-- L7cc56d99 [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
+- L7cc56d99 [R1 wrapper, landed before 16:31Z 11-21] [CHANGES in 2024 on _CANC (line-break: BASE kept for gates, Stack A re-tested on _CANC)] [BASE kept: unaffected bar]: line-break bar 3_40 [lbrk_3_40]; ~10 bars/hour; trigger trig_levels_vwap / break {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket sym15u; median stop 120 pts / target 120 pts (events)
    fitted: none proposed yet (stage 1 not done for this book)
-- L488784d8 [HOLDS on _CANC] [BASE kept: unaffected bar]: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events)
+- L488784d8 [R1 wrapper, landed before 16:31Z 11-21] [HOLDS on _CANC] [BASE kept: unaffected bar]: swing bar 0.25 ATR [swing_atr_0.25]; ~121 bars/hour; trigger trig_momentum_roc / break_native {"len": 20, "wd": 1.0}; SIDE: BOTH SIDES; bracket plain60/60; median stop 60 pts / target 60 pts (events)
    fitted: none proposed yet (stage 1 not done for this book)
-- B7bfd33b7 [accumulating bar: D8 number = _CANC base]: dollar-imbalance bar 6000 [dib_6000]; ~159 bars/hour; trigger trig_levels_profile_va / break_native {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket plain60/60
+- B7bfd33b7 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base]: dollar-imbalance bar 6000 [dib_6000]; ~159 bars/hour; trigger trig_levels_profile_va / break_native {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
-- B6f77f23d [BASE kept: time / line-break / median-Renko / swing bar]: time bar 45 s (tm45 = 45 seconds) [tm45]; ~80 bars/hour; trigger trig_levels_opens / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES; bracket asym15u/30u
+- B6f77f23d [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar]: time bar 45 s (tm45 = 45 seconds) [tm45]; ~80 bars/hour; trigger trig_levels_opens / false_break_native {"M": 3, "k": 0.5}; SIDE: BOTH SIDES; bracket asym15u/30u
    fitted: none proposed yet (stage 1 not done for this book)
-- L6547965c [BASE kept: time / line-break / median-Renko / swing bar]: swing bar 8 bps [swing_pct_8]; ~34 bars/hour; trigger trig_tape_unfinished / unf_fade {"m": 6, "cp": 0.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
+- L6547965c [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar]: swing bar 8 bps [swing_pct_8]; ~34 bars/hour; trigger trig_tape_unfinished / unf_fade {"m": 6, "cp": 0.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
 STOPPED at 5 books: no candidate passes the add rule.
 
-Stack-level luck control: beats (30, 23, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
+Stack-level luck control: beats [30, 23, 30] of 30 (drawdown-first L6M, L3M, ulcer-only).
 
 Phase: done. Pool used by this run: 8 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2).
 
