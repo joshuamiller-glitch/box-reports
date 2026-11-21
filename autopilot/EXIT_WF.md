@@ -74,6 +74,7 @@
 | old split | AS | L08df8bb0 | pk56622e | 0.62 (85) / 0.64 | -7 / +96 (red) | -67 / +75 (red) | -27 / -2 (green) | n/a | - | not kept |
 | _CANC | AS | L224050e7 | v25_t2 | 0.62 (85) / 0.66 | -58 / -37 (green) | +52 / +81 (red) | -52 / -38 (green) | n/a | 12 / 13 | not kept |
 | _CANC | AS | L29b1bc3f | v25_t2 | 0.62 (85) / 0.55 | +64 / +626 (red) | -16 / +64 (red) | -14 / +48 (red) | n/a | 27 / 12 | not kept |
+| _CANC | AS | M7ea48296 | oppx_v25 | 0.62 (85) / 0.60 | -11 / +34 (red) | -40 / -58 (green) | +82 / +111 (red) | n/a | - | not kept |
 | old split | AS | M7423c0d9 | v25_t2 | 0.61 (85) / 0.61 | +89 / +448 (red) | -28 / -12 (green) | +17 / +81 (red) | n/a | 20 / 14 | not kept |
 | old split | AS | Lbe5ac95b | mm127_v25 | 0.61 (85) / 0.58 | -15 / +95 (red) | -13 / +56 (red) | -22 / -161 (green) | n/a | 1 / 8 | not kept |
 | old split | AS | L5dee2059 | mm127_v25 | 0.61 (85) / 0.59 | +52 / +242 (red) | -36 / +100 (red) | -16 / +55 (red) | n/a | - | not kept |
@@ -183,6 +184,7 @@
 - AS L08df8bb0 `pk56622e`: **exit not kept** - RED prior year(s) [2023, 2024]
 - AS L224050e7 `v25_t2`: **exit not kept** - RED prior year(s) [2024]
 - AS L29b1bc3f `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS M7ea48296 `oppx_v25`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS M7423c0d9 `v25_t2`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS Lbe5ac95b `mm127_v25`: **exit not kept** - RED prior year(s) [2023, 2024]
 - AS L5dee2059 `mm127_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
