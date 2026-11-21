@@ -1,6 +1,6 @@
 # BRACKET REFIT SERIES (order 1558Z; Josh: "if a bracket size works better recently, we should use that" / "is it a disaster?" / "that is why we re-fit")
 
-Written 2026-11-21 15:58 UTC by W-BRKT from the landed per-month series (no engine run, no gate changed). 43 pool books, 17 shapes each (the own bracket + 16). ROLLING REFIT = every 14 days (periods from 2023-10-02) pick, on the trailing window (6 months; 3 months beside), the shape with the highest $/wk at EQUAL ULCER to the own bracket (must be > 0 and > the own bracket's; else keep the own bracket), trade it for the next 14 days at that equal-risk scale (shape daily P&L x ulcer_own / ulcer_shape of the trailing window). No drawdown / worst-week guard, no walk-forward gate in this series. Columns: EQ = refit $/wk scaled to the own bracket's ulcer in the SAME window (refit mean x own ulcer / refit ulcer), OWN = fixed own bracket $/wk; windows L6M, L3M, 2023, 2024, 2025, whole span (2023-10-02..2026-10-31).
+Written 2026-11-21 16:01 UTC by W-BRKT from the landed per-month series (no engine run, no gate changed). 43 pool books, 17 shapes each (the own bracket + 16). ROLLING REFIT = every 14 days (periods from 2023-10-02) pick, on the trailing window (6 months; 3 months beside), the shape with the highest $/wk at EQUAL ULCER to the own bracket (must be > 0 and > the own bracket's; else keep the own bracket), trade it for the next 14 days at that equal-risk scale (shape daily P&L x ulcer_own / ulcer_shape of the trailing window). No drawdown / worst-week guard, no walk-forward gate in this series. Columns: EQ = refit $/wk scaled to the own bracket's ulcer in the SAME window (refit mean x own ulcer / refit ulcer), OWN = fixed own bracket $/wk; windows L6M, L3M, 2023, 2024, 2025, whole span (2023-10-02..2026-10-31).
 
 ## Table 1 (6-month trailing pick): refit vs own, equal risk
 
@@ -142,5 +142,9 @@ Who and where: it is MY rule (W-BRKT), in code/th_brkt/brkt_score.py function ju
 | AS_Mcae177ba | P60 | F40_80 500 vs 340 | 0.697 | 37 / 78 | GREEN/GREEN/RED | 133 vs 353 |
 | NY_B7bfd33b7 | P60 | F80_40 1495 vs 1386 | 0.466 | 31 / 70 | GREEN/RED/RED | 254 vs 328 |
 
-PLAIN READING (fill after the numbers below are checked): see the MORNING.md block.
+## PLAIN READING
+
+1. Re-picking the bracket every two weeks on the last 6 months does NOT beat staying with the own bracket: over the whole span it wins in 3 of 43 books (3-month pick: see Table 2), it beats the fixed bracket in about half of the periods (a coin flip) and changes shape about every third period. The recent winners are real in L6M (7 books) but do not carry into the next two weeks.
+2. The prior-year band used by the bracket verdicts was FROZEN (one pick over each year); on the refit series 4 of the 13 recent winners change RED/not RED, one of them the only pass (AS M7ea48296 becomes RED in 2024 and 2025).
+3. The 15% max-drawdown / worst-week guard that removed 13 of the 23 both-window books before walk-forward was ADDED BY THE AGENT W-BRKT (copied from W-LAYERS and the stack rules); it is NOT one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5). It is kept only as a displayed column. The process was too strict in this respect: seven of the removed books reach walk-forward >= 0.58; they are judged under the four gates only in autopilot/BRACKET_FOUR_GATES.md.
 

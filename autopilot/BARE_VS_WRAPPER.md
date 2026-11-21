@@ -1,4 +1,4 @@
-# BARE (R0) vs TODAY'S WRAPPER (R1), book alone, pool books (order 1536Z). R0 = triggers + own bracket + scheduled exit, every D7 rule and entry gate OFF; R1 = today's wrapper (existing published sets). Numbers per window: trades / $ per wk / ulcer / maxDD. Own-checks here = a+b+c only (controls (d) not run for R0). Built 2026-11-21 15:56Z.
+# BARE (R0) vs TODAY'S WRAPPER (R1), book alone, pool books (order 1536Z). R0 = triggers + own bracket + scheduled exit, every D7 rule and entry gate OFF; R1 = today's wrapper (existing published sets). Numbers per window: trades / $ per wk / ulcer / maxDD. Own-checks here = a+b+c only (controls (d) not run for R0). Built 2026-11-21 16:01Z.
 
 ## AS pool books
 
@@ -191,78 +191,78 @@ AS failed first-look cells re-run under R0: landed 150 of 150, PASS gate (a) und
 | B57507767 | Y2023 | 244 / 701 / 6641 / -18437 | 244 / 701 / 6641 / -18437 |
 | B57507767 | Y2024 | 412 / 862 / 11010 / -30741 | 413 / 839 / 11501 / -31966 |
 | B57507767 | Y2025 | 460 / 1254 / 12616 / -27298 | 470 / 1320 / 13594 / -27658 |
-| B6f77f23d | L6M | 291 / 1393 / 5356 / -12737 | pending |
-| B6f77f23d | L3M | 120 / 1214 / 5106 / -12737 | pending |
-| B6f77f23d | Y2023 | 243 / 619 / 4386 / -13355 | pending |
-| B6f77f23d | Y2024 | 382 / 941 / 6406 / -18598 | pending |
-| B6f77f23d | Y2025 | 421 / 1271 / 9265 / -28409 | pending |
-| B7bfd33b7 | L6M | 407 / 1386 / 2962 / -8187 | pending |
-| B7bfd33b7 | L3M | 167 / 1270 / 3390 / -8187 | pending |
-| B7bfd33b7 | Y2023 | 292 / 308 / 5131 / -12642 | pending |
-| B7bfd33b7 | Y2024 | 491 / 20 / 8874 / -25215 | pending |
-| B7bfd33b7 | Y2025 | 525 / 527 / 10931 / -26053 | pending |
+| B6f77f23d | L6M | 291 / 1393 / 5356 / -12737 | 302 / 1336 / 5388 / -12737 |
+| B6f77f23d | L3M | 120 / 1214 / 5106 / -12737 | 121 / 1263 / 5105 / -12737 |
+| B6f77f23d | Y2023 | 243 / 619 / 4386 / -13355 | 243 / 619 / 4386 / -13355 |
+| B6f77f23d | Y2024 | 382 / 941 / 6406 / -18598 | 383 / 956 / 6406 / -18598 |
+| B6f77f23d | Y2025 | 421 / 1271 / 9265 / -28409 | 431 / 998 / 9825 / -28404 |
+| B7bfd33b7 | L6M | 407 / 1386 / 2962 / -8187 | 453 / 1347 / 3709 / -10103 |
+| B7bfd33b7 | L3M | 167 / 1270 / 3390 / -8187 | 178 / 1257 / 3784 / -8727 |
+| B7bfd33b7 | Y2023 | 292 / 308 / 5131 / -12642 | 294 / 281 / 5141 / -12642 |
+| B7bfd33b7 | Y2024 | 491 / 20 / 8874 / -25215 | 500 / 55 / 8576 / -23399 |
+| B7bfd33b7 | Y2025 | 525 / 527 / 10931 / -26053 | 564 / 467 / 11866 / -30722 |
 | L05350e98 | L6M | 143 / 952 / 3540 / -9608 | 144 / 1023 / 3536 / -9608 |
 | L05350e98 | L3M | 64 / 1043 / 3676 / -9608 | 64 / 1043 / 3676 / -9608 |
 | L05350e98 | Y2023 | 149 / 489 / 4205 / -10685 | 149 / 489 / 4205 / -10685 |
 | L05350e98 | Y2024 | 201 / 715 / 4648 / -12566 | 201 / 715 / 4648 / -12566 |
 | L05350e98 | Y2025 | 200 / 155 / 7391 / -16013 | 200 / 155 / 7391 / -16013 |
-| L488784d8 | L6M | 176 / 961 / 2839 / -7243 | pending |
-| L488784d8 | L3M | 74 / 538 / 3024 / -6311 | pending |
-| L488784d8 | Y2023 | 202 / 396 / 4911 / -13517 | pending |
-| L488784d8 | Y2024 | 339 / 352 / 6084 / -13494 | pending |
-| L488784d8 | Y2025 | 348 / 708 / 11039 / -22356 | pending |
-| L6547965c | L6M | 435 / 1275 / 3045 / -8124 | pending |
-| L6547965c | L3M | 166 / 588 / 3209 / -8124 | pending |
-| L6547965c | Y2023 | 481 / 1140 / 4385 / -11284 | pending |
-| L6547965c | Y2024 | 752 / 959 / 11180 / -28664 | pending |
-| L6547965c | Y2025 | 751 / 915 / 9475 / -20324 | pending |
+| L488784d8 | L6M | 176 / 961 / 2839 / -7243 | 184 / 756 / 2866 / -7243 |
+| L488784d8 | L3M | 74 / 538 / 3024 / -6311 | 74 / 533 / 3028 / -6311 |
+| L488784d8 | Y2023 | 202 / 396 / 4911 / -13517 | 202 / 396 / 4911 / -13517 |
+| L488784d8 | Y2024 | 339 / 352 / 6084 / -13494 | 345 / 418 / 4595 / -12024 |
+| L488784d8 | Y2025 | 348 / 708 / 11039 / -22356 | 369 / 745 / 9829 / -20370 |
+| L6547965c | L6M | 435 / 1275 / 3045 / -8124 | 454 / 1134 / 4499 / -12276 |
+| L6547965c | L3M | 166 / 588 / 3209 / -8124 | 166 / 739 / 2730 / -8124 |
+| L6547965c | Y2023 | 481 / 1140 / 4385 / -11284 | 487 / 1178 / 4343 / -11284 |
+| L6547965c | Y2024 | 752 / 959 / 11180 / -28664 | 791 / 733 / 15310 / -35771 |
+| L6547965c | Y2025 | 751 / 915 / 9475 / -20324 | 813 / 773 / 8612 / -18408 |
 | L7cc56d99 | L6M | 271 / 2405 / 4790 / -13326 | 287 / 1650 / 9097 / -26524 |
 | L7cc56d99 | L3M | 110 / 2166 / 4719 / -11089 | 110 / 2166 / 4719 / -11089 |
 | L7cc56d99 | Y2023 | 208 / 1066 / 3889 / -11074 | 208 / 1066 / 3889 / -11074 |
 | L7cc56d99 | Y2024 | 341 / 320 / 9284 / -17987 | 341 / 320 / 9284 / -17987 |
 | L7cc56d99 | Y2025 | 379 / 872 / 10265 / -31363 | 406 / 1081 / 10958 / -34538 |
-| Le0da99e2 | L6M | 420 / 1580 / 10109 / -24418 | pending |
-| Le0da99e2 | L3M | 171 / 1680 / 6895 / -15436 | pending |
-| Le0da99e2 | Y2023 | 332 / 1150 / 5881 / -17158 | pending |
-| Le0da99e2 | Y2024 | 503 / 753 / 16348 / -28852 | pending |
-| Le0da99e2 | Y2025 | 573 / 340 / 15103 / -32817 | pending |
+| Le0da99e2 | L6M | 420 / 1580 / 10109 / -24418 | 464 / 1224 / 11116 / -24665 |
+| Le0da99e2 | L3M | 171 / 1680 / 6895 / -15436 | 173 / 1591 / 7752 / -17636 |
+| Le0da99e2 | Y2023 | 332 / 1150 / 5881 / -17158 | 333 / 1122 / 5843 / -17158 |
+| Le0da99e2 | Y2024 | 503 / 753 / 16348 / -28852 | 518 / 779 / 17454 / -32583 |
+| Le0da99e2 | Y2025 | 573 / 340 / 15103 / -32817 | 612 / 323 / 14551 / -33763 |
 
-NY failed first-look cells re-run under R0: landed 51 of 150, PASS gate (a) under R0: 1 ['B564445b7']
+NY failed first-look cells re-run under R0: landed 150 of 150, PASS gate (a) under R0: 7 ['B564445b7', 'B899a9f36', 'L2df46161', 'L2f955c5f', 'L39ff9fc2', 'L42fec511', 'Lcced15b8']
 
 ## Signals blocked / resized by each one-book rule (R1 traced sets, summed over the pool books and landed months; normalised log lines of the new-book streams)
 
-- 351383  SKIP signal #: inTrade
--  62657  ENTRY side # qty # market
--  62657  BRACKET stop # (native #) target # qty #
--  62657  FILL entry # @ # -> pos # avg #
--  25924  EXIT requested (UWTime)
--  25915  FILL exit UWTime # @ #
--  19186  FILL exit Target # @ #
--  16435  FILL exit Stop # @ #
--   9961  SKIP signal #: dayHalt
--   6738  NO-TRADE SET: OTE#_#m at # (# ahead) lots # -> #
--   2575  NO-TRADE SET: CRT_mid_#h at # (# ahead) lots # -> #
--   2182  stopped (entered #): stack rule not active in this session, no cut
--   1273  NO-TRADE SET: PD_mid at # (# ahead) lots # -> #
--   1184  NO-TRADE SET: RTH_camH# at # (# ahead) lots # -> #
--   1007  BOOK GIVE-BACK LOCK day # peak #
--    915  EXIT requested (BookLock)
--    887  FILL exit BookLock # @ #
--    617  NO-TRADE SET: KC_up_#h at # (# ahead) lots # -> #
--    533  NO-TRADE SET: Kijun_#h at # (# ahead) lots # -> #
+- 396995  SKIP signal #: inTrade
+-  68567  ENTRY side # qty # market
+-  68567  BRACKET stop # (native #) target # qty #
+-  68567  FILL entry # @ # -> pos # avg #
+-  27687  EXIT requested (UWTime)
+-  27677  FILL exit UWTime # @ #
+-  21324  FILL exit Target # @ #
+-  18349  FILL exit Stop # @ #
+-  10941  SKIP signal #: dayHalt
+-   7033  NO-TRADE SET: OTE#_#m at # (# ahead) lots # -> #
+-   4096  stopped (entered #): stack rule not active in this session, no cut
+-   2624  NO-TRADE SET: CRT_mid_#h at # (# ahead) lots # -> #
+-   1289  NO-TRADE SET: PD_mid at # (# ahead) lots # -> #
+-   1203  NO-TRADE SET: RTH_camH# at # (# ahead) lots # -> #
+-   1112  BOOK GIVE-BACK LOCK day # peak #
+-   1013  EXIT requested (BookLock)
+-    980  FILL exit BookLock # @ #
+-    647  NO-TRADE SET: KC_up_#h at # (# ahead) lots # -> #
+-    581  NO-TRADE SET: Kijun_#h at # (# ahead) lots # -> #
 -    223  FILL exit RollFlat # @ #
--    179  DAY LOSS cap #
+-    221  DAY LOSS cap #
 -    174  SKIP signal #: contract roll blackout
--    118  SKIP signal #: entryPending
--     11  EXIT requested (DayHalt)
--     11  FILL exit DayHalt # @ #
--      9  SKIP signal #: inTrade exitPending dayHalt
+-    132  SKIP signal #: entryPending
+-     22  SKIP signal #: inTrade dayHalt
+-     14  EXIT requested (DayHalt)
+-     14  FILL exit DayHalt # @ #
+-     10  SKIP signal #: inTrade exitPending dayHalt
 -      8  SKIP signal #: dayHalt weekHalt
--      6  SKIP signal #: inTrade dayHalt
--      3  DAY PROFIT cap #
+-      4  DAY PROFIT cap #
 -      3  SKIP signal #: entryPending dayHalt
 
-## Pool books failing own-checks (a+b+c) under R0: 0 of 38 landed: []
+## Pool books failing own-checks (a+b+c) under R0: 0 of 43 landed: []
 Under R1 (published): fails []
 
-Total trades over 42 months, books fully landed under R0: R1 59035 vs R0 61293 (+3.8%)
+Total trades over 42 months, books fully landed under R0: R1 68567 vs R0 71240 (+3.9%)
