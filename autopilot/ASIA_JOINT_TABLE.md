@@ -1,4 +1,4 @@
-# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 06:51Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
+# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 07:08Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
 
 Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 screen per group, OA(9,4,3,2) = 8 combos + BASE). PICK = best combo on L6M (ulcer, drawdown first, 15% guard); cells = `ulcer fitted/unfitted; $/wk fitted/unfitted; eq = $/wk at equal risk`, 1 lot. Gates: ROLLING walk-forward among the combos + reference (>= 0.58), year colours 2023/24/25 on equal-risk $/wk (RED > 30% fails), search-aware null >= 4/5; 27/30 info only (stage-1 table). KEPT = all gates; otherwise the book keeps today's settings.
 
@@ -31,6 +31,7 @@ Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 s
 | M7ea48296 | BRK:ref, LOSS:STC2, LOCK:LK5, TAKE:TK5 | 2515/4797; 915/429; eq 1745/429 | 2259/3328; 1611/862; eq 2374/862 | 0.60 (fixed 0.548) | RED/RED/GREEN | 5/5 | NOT KEPT: RED year |
 | L9e4754b9 | BRK:BRK1, LOSS:ref, LOCK:LK7, TAKE:TK1 | 2039/3777; 1452/1218; eq 2691/1218 | 2197/3434; 1933/1118; eq 3021/1118 | 0.59 (fixed 0.57) | RED/GREEN/RED | 5/5 | NOT KEPT: RED year |
 | M86781ac0 | BRK:BRK1, LOSS:FR_LOSS9, LOCK:LK7, TAKE:ref | 2033/3477; 1148/734; eq 1964/734 | 1367/3461; 1483/439; eq 3755/439 | 0.60 (fixed 0.645) | RED/GREEN/RED | 4/5 | NOT KEPT: RED year |
+| L385f4f2e.J502 | pending: 4/8 combos complete (213/336 set-months) | | | | | | |
 
 ## INFORMATION FOR JOSH (not a gate)
 
@@ -271,4 +272,4 @@ Per period, unfitted -> joint pick at 1 lot. k = equal-risk factor = unfitted ul
 | L9e4754b9 | 12374 -> 15510 | -31253 -> -30222 | -15676 -> -11081 | 442 -> 322 |
 | M86781ac0 | 4458 -> 5432 | -13220 -> -17691 | -7783 -> -5358 | 355 -> 319 |
 
-**SUMMARY (27 of 27 books complete, 0 KEPT):** NOT KEPT on rolling walk-forward (any reason incl. others): 15; on the RED-year band ONLY (walk-forward and null pass): 9; on the null ONLY: 1; RED years of the band-only group by type: (a) 9, (b) 7, (c) 0, other 0.
+**SUMMARY (27 of 28 books complete, 0 KEPT):** NOT KEPT on rolling walk-forward (any reason incl. others): 15; on the RED-year band ONLY (walk-forward and null pass): 9; on the null ONLY: 1; RED years of the band-only group by type: (a) 9, (b) 7, (c) 0, other 0.
