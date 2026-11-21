@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 22:59Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 23:04Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -17,17 +17,17 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $2456 per wk (positive), L3M $2434 per wk (positive); prior years $/wk: 2023 203 (positive), 2024 654 (positive), 2025 528 (positive); OWN persistence (share of positive 14-day blocks) 0.62 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $4229 per wk (positive), L3M $3064 per wk (positive); prior years $/wk: 2023 965 (positive), 2024 696 (positive), 2025 1049 (positive); OWN persistence (share of positive 14-day blocks) 0.70 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.25 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.35 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 4075 / -11123 / -7409 / 2456 | 4075 / -8904 / -6024 / 1193 | +1263 |
-| L3M | 2028 / -5118 / -3617 / 2434 | 3429 / -7910 / -6024 / 649 | +1785 |
-| Y2023 | 4013 / -9990 / -2484 / 203 | 4097 / -7032 / -1963 / 5 | +198 |
-| Y2024 | 4626 / -11465 / -2843 / 654 | 2311 / -5956 / -2152 / 418 | +236 |
-| Y2025 | 5940 / -14312 / -10102 / 528 | 4965 / -10187 / -4029 / 295 | +233 |
+| L6M | 5675 / -14801 / -10059 / 4229 | 5675 / -12400 / -8389 / 1662 | +2567 |
+| L3M | 4927 / -10072 / -8937 / 3064 | 4775 / -11015 / -8389 / 904 | +2160 |
+| Y2023 | 2095 / -5134 / -3277 / 965 | 5706 / -9792 / -2734 / 7 | +958 |
+| Y2024 | 8225 / -23263 / -4698 / 696 | 3219 / -8294 / -2997 / 582 | +114 |
+| Y2025 | 6804 / -20199 / -14470 / 1049 | 6914 / -14186 / -5610 / 411 | +638 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 1765 books with a BASE set; 854 have all 42 months landed = counted below; 198 still waiting for prior years)
 
@@ -59,9 +59,12 @@ Pool books: L018fb0c0 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 38 |
+| 2 | L578701ed | `TL3_ALN_AS_STKd8ac766a69` | 5675 / -14801 / -10059 / 4229 | 4927 / -10072 / -8937 / 3064 | 2095 / -5134 / -3277 / 965 | 8225 / -23263 / -4698 / 696 | 6804 / -20199 / -14470 / 1049 | 0.70 | 12 | **L3M DISAGREES** (L3M return per ulcer worse by 48% than the stack before this step; shown, not a gate)
 
 Selected books in order (plain words): 
 - L7c368a4f [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
+   fitted: none proposed yet (stage 1 not done for this book)
+- L578701ed [R1 wrapper, landed before 16:31Z 11-21] [BASE kept: time / line-break / median-Renko / swing bar]: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:11Z UTC; pool 35 books): L7c368a4f + L578701ed + L385f4f2e.J502
@@ -71,7 +74,7 @@ Phase: run. Pool used by this run: 38 books (L018fb0c0, L130cb48e, L15f14deb, L1
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
-EQUAL-RISK LINE (this stack vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off)): today's Asia session scaled DOWN by k = 0.25 to the stack's drawdown: L6M 4075 / -8904 / -6024 / 1193 ; L3M 3429 / -7910 / -6024 / 649. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.58; rule B per prior year: RED / RED / RED.
+EQUAL-RISK LINE (this stack vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off)): today's Asia session scaled DOWN by k = 0.35 to the stack's drawdown: L6M 5675 / -12400 / -8389 / 1662 ; L3M 4775 / -11015 / -8389 / 904. The stack: L6M 5675 / -14801 / -10059 / 4229 ; L3M 4927 / -10072 / -8937 / 3064. Persistence of the stack vs that reference: 0.65; rule B per prior year: AMBER / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
