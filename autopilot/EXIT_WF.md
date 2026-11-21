@@ -61,6 +61,7 @@
 | _CANC | AS | Lc754cf58 | oppx_v25 | 0.74 (85) / 0.73 | -31 / +65 (red) | -85 / -695 (green) | -79 / -814 (green) | n/a | - | not kept |
 | _CANC | AS | Ma010c3eb | oppx_v15_t2b | 0.74 (85) / 0.71 | -63 / -50 (green) | -49 / +48 (red) | -29 / +42 (red) | n/a | - | not kept |
 | _CANC | AS | La776664b | oppx_v15_t2 | 0.74 (85) / 0.71 | -43 / +91 (red) | -15 / +66 (red) | +70 / +125 (red) | n/a | - | not kept |
+| _CANC | AS | La776664b | oppx_v15_t2_IDC | 0.74 (85) / 0.71 | -43 / +91 (red) | -15 / +66 (red) | +70 / +125 (red) | n/a | - | not kept |
 | _CANC | NY | L488784d8 | v25_t2 | 0.73 (85) / 0.72 | -25 / +22 (amber) | -45 / -109 (green) | -0 / +38 (red) | n/a | 30 / 21 | not kept |
 | old split | AS | L08df8bb0 | st_sw4_r3_ch3 | 0.72 (85) / 0.72 | -23 / +48 (red) | -75 / +40 (red) | -34 / -4 (green) | n/a | - | not kept |
 | old split | NY | L05350e98 | pk5226b5 | 0.72 (85) / 0.71 | -65 / -75 (green) | +18 / +90 (red) | -8 / +108 (red) | n/a | - | not kept |
@@ -199,6 +200,7 @@
 - AS Lc754cf58 `oppx_v25`: **exit not kept** - RED prior year(s) [2023]
 - AS Ma010c3eb `oppx_v15_t2b`: **exit not kept** - RED prior year(s) [2024, 2025]
 - AS La776664b `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS La776664b `oppx_v15_t2_IDC`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - NY L488784d8 `v25_t2`: **exit not kept** - RED prior year(s) [2025]
 - AS L08df8bb0 `st_sw4_r3_ch3`: **exit not kept** - RED prior year(s) [2023, 2024]
 - NY L05350e98 `pk5226b5`: **exit not kept** - RED prior year(s) [2024, 2025]
