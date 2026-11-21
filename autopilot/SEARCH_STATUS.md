@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-21 07:35Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-21 08:05Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,16 +6,16 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 270822 result files | 9 jobs | 1958 | 0.0 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 5794 (a top cells 14, a2 exit families 0, c family cells 5780) | 178 | 32.6 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 270940 result files | 9 jobs | 547 | 0.0 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 5780 (a top cells 14, a2 exit families 0, c family cells 5766) | 126 | 45.9 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 69327, null draw 1 65654, null draw 2 65654, extra draws (3-25) 64052 files. Pass-1 results still waiting for their pass-2 upgrade: real 54036.
+Pass-1 results on disk by tag: real 69327, null draw 1 65654, null draw 2 65654, extra draws (3-25) 64170 files. Pass-1 results still waiting for their pass-2 upgrade: real 54036.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 94.96 workers 86; 109.94.96.39 load 185.47 workers 104; 206.223.224.21 load 174.70 workers 104; grid workers 294 (63 computing), engine workers 427; forward-path tables built (summed over servers) 724.
+Machines (grid partitioned across servers): 207.188.7.103 load 96.40 workers 86; 109.94.96.39 load 184.31 workers 104; 206.223.224.21 load 175.36 workers 104; grid workers 294 (65 computing), engine workers 422; forward-path tables built (summed over servers) 724.
 
-Since 17:23Z: pass-1 todo 80818 -> 9 (-80809), pass-2 todo 25951 -> 5794 (-20157). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 17:23Z: pass-1 todo 80818 -> 9 (-80809), pass-2 todo 25951 -> 5780 (-20171). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search: FIVE draws, calibration check of the ladder (orders 1932Z + 2042Z; prereg sha 125fd12566e72aa6 + amendment)
 
@@ -24,9 +24,9 @@ What it is: 5 random-entry draws (tags p1rand1..p1rand5; draws 6-20 cancelled 20
 | item | now |
 |---|---|
 | results/hour, REAL search (p1real files, pass 1 and 2 together) | 21 |
-| results/hour, NULL draws (p1rand1..20 files) | 2115 |
+| results/hour, NULL draws (p1rand1..20 files) | 652 |
 | null result files on disk, draws 1 / 2 | 65654 / 65654 (real: 69327) |
-| null result files, draws 3-20 (all) | 63369 |
+| null result files, draws 3-20 (all) | 63487 |
 | share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 102%, draw 2 102%, draw 3 29%, draw 4 29%, draw 5 29% |
 | draws complete (files incl. error stubs >= 99.5 percent of ~65.8k) | 0 of 5 |
 | draws accepted by the null audit and counted | see null_summary below |
@@ -35,7 +35,7 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 07:27Z
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 07:57Z
 
 | tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
 |---|---|---|---|---|---|
@@ -73,30 +73,30 @@ Counts are the files on each host before the merge (A and B results are copied t
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 99.5 | 94.96 | 294 (63) | 213 | 0 | 2136 |
-| A Frankfurt | 128 | 100.0 | 185.47 | 104 (4) | 98 | 0 | 308 |
-| B Singapore | 128 | 99.5 | 174.70 | 104 (9) | 90 | 0 | 324 |
-| box 1 London (lead, engine fillers) | 32 | 91 | 48.96 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 99.2 | 96.40 | 294 (65) | 211 | 0 | 673 |
+| A Frankfurt | 128 | 100.0 | 184.31 | 104 (4) | 96 | 0 | 303 |
+| B Singapore | 128 | 99.8 | 175.36 | 104 (11) | 92 | 0 | 339 |
+| box 1 London (lead, engine fillers) | 32 | 100 | 54.95 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
 ## Blocked / cannot run (listed, not skipped silently)
 
-Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1823, 'p1rand1': 1673, 'p1rand2': 1640, 'p1rand3': 16, 'p1rand4': 16, 'p1rand5': 16}.
+Failed jobs leave an error stub that the loop retries after 4 hours (older stubs are retried automatically). Error files on disk: {'real': 355, 'p1real': 1823, 'p1rand1': 1680, 'p1rand2': 1640, 'p1rand3': 16, 'p1rand4': 16, 'p1rand5': 16}.
 
 | module | failures (files) | why |
 |---|---|---|
-| trig_book_ofi | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_ofi | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_ice | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_queue | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_pslope | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_thin | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_wall | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
+| trig_book_sweep | 331 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_book_cancel | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_ice | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_queue | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_pslope | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_book_dwm | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_book_imb | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_book_micro | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_thin | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_wall | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
-| trig_book_sweep | 330 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_tape_block | 324 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_tape_run | 324 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
 | trig_tape_unfinished | 323 | rows with no book/flow feature store (feat_c) or level feature (feat_d) on server 2; see GRIDOPS_BLOCKED.md for the row list |
@@ -129,7 +129,7 @@ Engine capacity decides the ORDER cells are tested in (best first), never WHETHE
 
 ### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-21 07:22Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-21 08:01Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -139,7 +139,7 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 07:20Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 08:00Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
@@ -1028,11 +1028,11 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
 
 <!-- ENGINE_PLAN_ETAS -->
-**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-21 07:05Z):**
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-21 08:05Z):**
 
-- phase 1 pass 1: 9 jobs left at 2498/h = 0.0 h (rate from the grid line above; sums over machines).
-- phase 1 pass 2: 5777 jobs left at 209/h = 27.6 h at today's allocation.
-- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 2 h at the current fleet (20178/h) or 1.7 h with A and B engine-ready (projected 18020/h). Full table: ENGINE_PLAN.md section 11.
+- phase 1 pass 1: 9 jobs left at 547/h = 0.0 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 5780 jobs left at 126/h = 45.9 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 5 h at the current fleet (6352/h) or 7.3 h with A and B engine-ready (projected 4154/h). Full table: ENGINE_PLAN.md section 11.
 - luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
 - N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
 
