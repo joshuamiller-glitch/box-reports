@@ -46,6 +46,9 @@ Josh 16:31Z: "yes" (to: "Release them as truly bare runs, yes?"; DIRECTIVE_JOSH_
 - Exit/entry rows 14-26 and 37-45 therefore apply to R1 results only; for R0 results the only exits are Target, Stop and the scheduled session-end flat (UWTime, row 15) and there is no entry gate.
 - D8_BUILD_SPEC.md stays labelled per option (POOL 28 / R1) until the stack-rule fit lands.
 
+## 0.4 What was NOT searched at step 2 and why (MEASURED, 21 Nov ~20:00Z)
+Of 3,251 step-2 candidate cells (Asia 1,546, London 641, NY AM 1,064): 112 skipped because their bar type is book-message based (bmsg/bmsgq: not buildable in NT8, never D8-valid): London 18, NY AM 94; 28 London cells skipped by the no-1-minute-bars rule (tm60, time_m_1; 1 min stays allowed in Asia); 63 built but labelled UNTESTED FAMILY (anch/entropy/dltor: print-rule sensitivity not tested): London 19, NY AM 44. Every other candidate has D8 events (Asia 184 built late, London 595, NY AM 506). Also not searched: 1,168 Asia cells with no all-new base (waiting for Josh).
+
 ## 1. The table
 
 ### 1.1 Data, windows, sessions
