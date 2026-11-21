@@ -14257,3 +14257,11 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 10:27Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] HB ny-own-l3g | step done/5 | waiting_on 0 sets | queued_or_running 0 | last_progress 01:12Z | pid 3023558
 - 2026-11-21T10:27Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
 - 10:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 178 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 273400
+- 10:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 609 vs baseline 404 (guard: cut if < 95% twice).
+- 10:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 10:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-21T08  box1  0  Dallas  1297  A  2508  B  2789  tot  6594 ;  11-21T09  box1  0  Dallas  1302  A  2434  B  2782  tot  6518 ;  11-21T10  box1  0  Dallas  121  A  250  B  257  tot  628 ; 
+- 10:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 10:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 10:30Z HB pass2 | step screened 27/27 pool books, joint stages stagefinal:8,no passing component:16 | waiting_on 0 sets | queued_or_running 0 | last_progress 05:59Z | pid 19876
+2026-11-21T10:30:19Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
+- 10:32Z W-COMBO RESELECT-ASIA [loop asia-stay-l3g] HB asia-stay-l3g | step done/1 | waiting_on 0 sets | queued_or_running 0 | last_progress 07:13Z | pid 3596429
+- 10:32Z HB brackets | step screen 3552/3552 sm landed, stage-2 winners queued/complete/passed 12/12/1 | waiting_on 0 sets | queued_or_running 0 | last_progress 06:56Z | driver pid 3902940 cycle pid 1163810 | 10:32Z | walk-forward winner books: shape set-months landed 6912 / 6912
