@@ -381,13 +381,13 @@ Cells scored per row file: {'DS3_PRO2.json': 104, 'DS3_PRO3.json': 45, 'DS3_TPUL
 Best cell: PRO_ER5_EMA5. Full table: autopilot/PULLBACK_LEADERBOARD.md. Final ETA: with DS3 (2026-10-28 ~13:00Z).
 <!--PULLBACK-END-->
 <!--TREND-BEGIN-->
-## TREND (TL) update 2026-11-21T00:52Z
+## TREND (TL) update 2026-11-21T01:22Z
 Trend: 14 PASS, 30 CANDIDATE. Best entry: TR3_KB20_S, paired vs ST +6.71 pts/trade [4.41,9.18], 28.7 trades/wk. Best exit on ST's own entries: none yet, paired n/a pts/trade . DS3 marginal Sharpe +0.56.
 | agent | id | parts | cells scored | latest progress |
 |---|---|---|---|---|
 | TR1 | a323e3e202224ce04 | R1,R6 | 134 | 2026-10-27T13:24:42Z TR1 direct L2 replay finished; DS3_TR1.md and rows regenerated |
 | TR2 | abd489a56ea9de378 | R2,R3 | 74 | Memory available: 35 GB |
-| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-21T00:49:08Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
+| D3XT | aaa48e376580363db | R4 exits (C1-C5) | 348 | 2026-11-21T01:19:08Z: preregs frozen (G1 30, G1b 18, G2 28, G2b 4, G3 24 = 104 cells, sha in DECISIONS.md). Direct L2 replay months done: 45 / 46. Cells scored: 0/104 (scoring starts after replay). Slots: 5 requested, corepool: slots busy 13/32: [8, 9, 12, 13, 15, 16, 20, 21, 22, 23, 24, 27, 28] |
 | TR4 | a0a28efac2a53186e | R5,R7 | 58 | TR4 complete: R5 30/30 cells, R7A 28/28 cells scored, 0 PASS 0 CANDIDATE. Report autopilot/DS3_TR4.md, rows l2vast/ds3/rows/DS3_TR4.json. |
 Total trend cells scored: 614. Best-of-N context: ledger total 68524 cells across all tracks; trend cells with CI lower bound >0: 19 vs 15.4 expected by chance. Best cell: TR1C_MAMA_10m_flip. Slots: see per-agent progress (pool want 2/min 1 per agent). Full table: autopilot/TREND_LEADERBOARD.md. Final ETA: DS3_TREND_FINAL.md when all trend agents report (DS3 close ~2026-10-28 13:00Z).
 <!--TREND-END-->
@@ -13055,3 +13055,10 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 - 01:19Z W-COMBO RESELECT-ASIA [loop asia-own] HB widening | step as 250 of 735 unaffected books complete; ny 81 of 982 unaffected books complete; fitted proposals seen 0 merged 0 rejected 0; pool 25, waiting controls 62 | waiting_on 57761 set-months | queued_or_running 22067 | last_progress 01:19Z | pid 3023546
 - 01:19Z W-COMBO RESELECT-ASIA [loop asia-stay] HB asia-stay | step run/2 | waiting_on 0 sets | queued_or_running 0 | last_progress 01:19Z | pid 3023549
 - (wall 01:19Z) W-RA status: RA quota 2, only TL3_RA_JL2_M7L_CAP3 + 6 controls, 295 of 294 cell-months done, 49.32 64.53 65.72 load; auto-expansions 0 (battery stopped by user order)
+- 01:20Z W-FASTLADDER (auto): identity rev B 217 of 217 sample set-months identical, 0 FAIL (rev A 52/52 identical); FAST SLOTS / ALL ENGINE SLOTS: box1 12/19 (63%); Dallas 0/21 (0%); Frankfurt 0/102 (0%); Singapore 0/92 (0%) | EXACT-path slots by kind: TL3_ALN_AS_L*_CANC 35, TL3_LYR_P1_L*_BRK2 24, TL3_LYR_P1_L*_TK1 17, TL3_LYR_P1_<h>_PICK_LOCK 16, TL3_LYR_JNT_L*_c67 12, TL3_LYR_P1_<h>_PICK_LOSS 10, TL3_LYR_P1_L*_LK6 8, TL3_LYR_JNT_L*_c66 8; fast path ON for the kinds in FAST_KINDS.txt (109 kinds); details autopilot/FAST_LADDER.md section 7.
+- 01:20Z W-NYENG AUTO NOTE: NY AM set-months landed 1 h 367 / 3 h 1175 (NY AM is behind Asia in the queue by order); fleet 13474.0 sm/h (tp_admit); ladder NY AM cells built 6493 of 9,081, advance stages {'A2': 734, 'out': 2628, 'looked': 3090, 'B': 5, 'C': 9}; ladder queue 276595 lines. Cells that beat K7 (yes rows, see NEW_BOOK_BEATS_LIVE_NYAM.md): L014ea865 ; L01811caa ; L09ae66e3 ; L0bd23639 ; L0c6c0074 ; L0f097450 ; L11631333 ; L13e165bc ; L1523dbb2 ; L1532bfaf ; L1fdcb7e2 ; L21f079b6 ; L301ff410 ; L34d66961 ; L3701b464 ; L4339355a ; L440aa51b ; L4560e541 ; L4899a551 ; L4ed22711 ; L4fd10b76 ; L571196bc ; L59b66d32 ; L5a49e86d ; L5c734a00 ; . EXIT ENGINE hooks built: 0 files (ex_*.py in code/th_nyeng); see D8_EXIT_ENGINE_SUPPORT.md.
+- 2026-11-21T01:20Z W-D10 Dial 10: cores busy by D10 0 (quota 3), jobs outstanding 0 (0 jobs wanted), cell-months finished last hour 0, total done 4857; FQ table in DS3_RANGEUSE.md section Dial 10 / DS3_DIAL10.md
+- 01:20Z W-COMBO RESELECT-ASIA [loop asia-own] FINAL stack ['L7c368a4f', 'La010c3eb']: stack controls beaten (27, 16, 29) (L6M drawdown-first / L3M / ulcer-only)
+- (01:20Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- 01:24Z W-COMBO RESELECT-ASIA [loop asia-stay] FINAL stack ['L7c368a4f', 'L578701ed']: stack controls beaten (28, 16, 29) (L6M drawdown-first / L3M / ulcer-only)
+- 01:24Z HB brackets | step screen 3049/3168 sm landed, stage-2 winners queued/complete/passed 11/7/0 | waiting_on 359 sets | queued_or_running 240 | last_progress 01:15Z | driver pid 1036534 cycle pid 1163810 | 01:24Z | walk-forward winner books: shape set-months landed 4737 / 6336
