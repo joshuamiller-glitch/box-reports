@@ -12912,3 +12912,14 @@ HB brackets | step screen 2976/3744 sm landed, stage-2 winners queued/complete/p
 2026-11-21T00:29:57Z W-S1R: progress, core cells done 15/15, wait cells 15/14, no new cell since last refresh
 - 2026-11-21 00:29Z W-ME PART E: queue _major_e 1 lines pending, 2004 exact run-months landed; page autopilot/DS3_MAJOR_E_AGAINST.md refreshed (screen table is out; exact tier after identity + controls land).
 - 00:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 59 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 276853
+- 00:30Z W-SHORT (cron, null level re-run on Dallas): gmove files done 3087 of 3,574 (errors 0), workers limit 6, Dallas engine DONE/30min 638 vs baseline 404 (guard: cut if < 95% twice).
+- 00:30Z W-SHORT status (cron): deeper rungs (3,340 cell-stages issued Asia+NY AM): 207.188.7.103: gr3 procs/XC records/B-C tasks done = 11 1304 18/18; 109.94.96.39: gr3 procs/XC records/B-C tasks done = 21 1494 1/1; 206.223.224.21: gr3 procs/XC records/B-C tasks done = 17 1413 1/1; SURVIVOR_COUNTS.md refreshed 00:21Z; stale-level re-run: Dallas stale real 12 null1 0; Frankfurt stale real 1660 null1 1396; Singapore stale real 1657 null1 776;  ENGINE_RATE:  11-20T22  box1  14013  Dallas  1298  A  2525  B  2775  tot  20611 ;  11-20T23  box1  13720  Dallas  1258  A  2441  B  2749  tot  20168 ;  11-21T00  box1  1153  Dallas  108  A  220  B  247  tot  1728 ; 
+- 00:30Z W-SHORT table landed/refreshed: calb_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 00:30Z W-SHORT table landed/refreshed: family_block.md (see SURVIVOR_COUNTS.md CALIBRATION sections)
+- 00:30Z W-COMBO RESELECT-NYAM [loop ny-own-l3g] step 5: add L6547965c -> L6M ulcer 6031 / maxDD -19970 / worst wk -7702 / $7425 per wk; L3M $5776; prior years $/wk 2023 3530 / 2024 2592 / 2025 4337; own persistence 0.78
+- 00:30Z W-D8SPEC AUTO HB canc-auto | step Asia first looks landed 577/1239 cells, prior-year files written 23, control files written 85 | waiting_on 34282 sets-months | queued_or_running 34282 | last_progress 00:00Z | pid 1024156
+- 00:30Z W-D8SPEC AUTO HB canc-bulk/first-look | step bulk sets landed 749/3668 set-months, first-look cells landed Asia 577/1239, NY AM 78/1159 | waiting_on 3471 (bulk+pool+anch) + 9870 (first look) | queued_or_running 3471 + 9870 | last_progress 00:00Z | pid 1024156
+- 00:31Z LEAD NOTE: stall check clean, inbox empty; waiting D8 canonical drain (~04:00-04:30Z), 8-book layer joint (~05:30Z), W-EXITENG M-id/pool exit scoring, brkt pool rows, W-GRIDOPS host B prepush finish. Next countdown ~02:00Z.
+- 00:33Z HB layer-fit | step books fitted 18/24, stages {'DONE': 18, 'S3': 1, 'S1': 5} | waiting_on 269 sets | queued_or_running 269 | last_progress 00:33Z | pid 1037903
+- 2026-11-21T00:34:46Z W-EV FLAT-vs-BOOK page refreshed (loop); closest to live: see page top
+00:35Z W-GRIDOPS london_switch: Asia AND NY AM L6M first looks finished: London first looks ON by right (_split/london_on written)
