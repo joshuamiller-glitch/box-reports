@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 05:36Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 05:54Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -25,16 +25,16 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | Y2024 | 8225 / -23263 / -4698 / 696 | 4020 / -11092 / -3496 / 599 | +97 |
 | Y2025 | 6804 / -20199 / -14470 / 1049 | 8425 / -16681 / -6343 / 550 | +499 |
 
-## GATE BY GATE: Asia, books ALONE on the all-new base (universe 587 books with a BASE set; 484 have all 42 months landed = counted below; 62 still waiting for prior years)
+## GATE BY GATE: Asia, books ALONE on the all-new base (universe 592 books with a BASE set; 485 have all 42 months landed = counted below; 66 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 412 of 484 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 320 of 484 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 312 of 484 |
+| (a) positive $/wk in L6M and L3M | 413 of 485 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 321 of 485 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 312 of 485 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 175 books) | 28 of 175 |
-| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 12 of 484 |
-| a + b | 277 |
+| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 12 of 485 |
+| a + b | 278 |
 | a + b + c | 219 |
 | a + b + c + d | 27 : L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M86781ac0, Ma010c3eb, Mcae177ba |
 | a + b + c + d + e | 0 : none |
@@ -47,7 +47,7 @@ Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_ASIA_FAILED_STACK
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's Asia session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
 ## POOL: books ALONE that pass everything: **27** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 530 of 587 in the universe; failed the prior-year positivity / persistence / controls: 409; waiting for prior years: 62; passed (a)+(b), controls still running: 48.
+Books with all months landed: 535 of 592 in the universe; failed the prior-year positivity / persistence / controls: 410; waiting for prior years: 66; passed (a)+(b), controls still running: 48.
 Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar], L1756b913 [BASE kept: time / line-break / median-Renko / swing bar], L1edb9fab [BASE kept: time / line-break / median-Renko / swing bar], L29b1bc3f [CHANGES on _CANC] [accumulating bar: D8 number = _CANC base], L385f4f2e [accumulating bar: D8 number = _CANC base], L3faac8df [BASE kept: time / line-break / median-Renko / swing bar], L40bde9ea [BREAKS on _CANR: old-split number, not D8] [accumulating bar: D8 number = _CANC base], L578701ed [BASE kept: time / line-break / median-Renko / swing bar], L5dee2059 [BASE kept: time / line-break / median-Renko / swing bar], L65a26c02 [accumulating bar: D8 number = _CANC base], L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar], L7ea48296 [HOLDS on _CANR (so far): D8 v1 pool candidate once its _CANC base + controls land] [accumulating bar: D8 number = _CANC base], L7f41b347 [BASE kept: time / line-break / median-Renko / swing bar], L973b5c8a [BASE kept: time / line-break / median-Renko / swing bar], L9aa7805c [BASE kept: time / line-break / median-Renko / swing bar], L9e4754b9 [accumulating bar: D8 number = _CANC base], La010c3eb [base = _CANF (real-roll ids); the _CANC version stays as a labelled reference], Lb68a132d [BASE kept: time / line-break / median-Renko / swing bar], Lc754cf58 [accumulating bar: D8 number = _CANC base], Lcbc8a7ec [BASE kept: time / line-break / median-Renko / swing bar], Lec335094 [BASE kept: time / line-break / median-Renko / swing bar], Lff52ec0c [BASE kept: time / line-break / median-Renko / swing bar], M7423c0d9 [BASE kept: time / line-break / median-Renko / swing bar], M7ea48296 [accumulating bar: D8 number = _CANC base], M86781ac0 [accumulating bar: D8 number = _CANC base], Ma010c3eb [accumulating bar: D8 number = _CANC base], Mcae177ba [accumulating bar: D8 number = _CANC base]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)

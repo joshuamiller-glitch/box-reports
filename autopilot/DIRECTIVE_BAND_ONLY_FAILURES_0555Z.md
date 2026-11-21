@@ -1,0 +1,9 @@
+# 0555Z Sat: year tables for the books that fail ONLY the prior-year band (written by the relay (Claude), not typed by Josh)
+
+Information for Josh's morning page. No gate change, no engine runs, verdict column unchanged.
+
+At the 05:34Z stamp the Asia joint table has 23 of 25 books complete and 0 KEPT. Seven books pass the rolling walk-forward (>= 0.58) and the null (>= 4/5) and are NOT KEPT only on a RED prior year: La010c3eb (0.66), L3faac8df (0.66), Lcbc8a7ec (0.70), L5dee2059 (0.70), L40bde9ea (0.60), Mcae177ba (0.69), M7ea48296 (0.60). (L65a26c02 passes walk-forward 0.64 with all years GREEN and fails only the null 3/5.) Josh's rule for prior years is "within roughly 15-30% of prior years, to make sure it's not a disaster", and he judges drawdown first. He will want to see whether these are disasters or small-base artefacts.
+
+1. **W-LAYERS:** under "INFORMATION FOR JOSH (not a gate)", for each of those seven books the same year table you made for La010c3eb (2023, 2024, 2025, L6M, L3M: unfitted -> pick at 1 lot: ulcer, max DD, worst week, $/wk; k; equal-risk $/wk; band %), plus one plain column per RED year saying which it is: (a) pick worse on BOTH drawdown and $ that year, (b) drawdown lower but $ lower, with the unfitted $/wk for that year shown so a tiny base is visible, (c) drawdown higher but $ higher. Add the 42-month totals (ulcer, max DD, worst week, $/wk) unfitted -> pick for all seven.
+2. **One summary line for the morning page:** of the 25 books: how many NOT KEPT on walk-forward, how many on the band only, how many on the null only; and for the band-only group how many RED years are type (a), (b), (c).
+3. **Lead:** when the layer joint rows finish (~06:00Z), confirm in the 06:00Z countdown that the Asia ct controls (own-checks judgment, a v1 freeze condition) get the slots next, and how NY AM layer rows share with them.
