@@ -1,5 +1,5 @@
 # DS3_NEXT_FEATURES_F3 - T-NEXT-FEATURES items 3 (hold-or-take by location) and 4 (flat cut by context). W-F3. Shadow only, no PASS claim.
-Updated 2026-11-21 05:30Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 43/43, NC_U7_T20_15F 43/43, NC_U7_T20_15A 12/43, NC_K7_T20_20RC 43/43, NC_K7_F55_45 12/43, NC_A7_T10_10F 43/43, NC_M7_T10_10A 12/43, NC_K7_T30_10RC 12/43, NH_P7_A9_N20 12/43, NH_P7_B9_X10N30 12/43, NH_U7_B7_X20N60 12/43, NH_M7_C9_F2 43/43, NH_M7_B9_X10N60 43/43, NH_P7_B7_X10N60 12/43, NH_U7_B7_X30N120 43/43
+Updated 2026-11-21 05:45Z. Directive autopilot/DIRECTIVE_T_NEXT_FEATURES_20261112.md; prereg autopilot/NEXTF3_PREREG.md (sha in DECISIONS.md). BASE = JN05W2 (LPB panel + F3 + E1 + C22 + BR3S + FLAT45K, exact 43 months, W-J). Item-4 sets keep FLAT45K on K7 unless the cell says replace. Exact sets run one per job (jn05_run2.py, TP engine, tag NEXTF); months done: NC_U7_T10_15F 43/43, NC_U7_T20_15F 43/43, NC_U7_T20_15A 12/43, NC_K7_T20_20RC 43/43, NC_K7_F55_45 12/43, NC_A7_T10_10F 43/43, NC_M7_T10_10A 12/43, NC_K7_T30_10RC 12/43, NH_P7_A9_N20 12/43, NH_P7_B9_X10N30 12/43, NH_U7_B7_X20N60 12/43, NH_M7_C9_F2 43/43, NH_M7_B9_X10N60 43/43, NH_P7_B7_X10N60 12/43, NH_U7_B7_X30N120 43/43
 
 Reading rule: exact is the verdict; first-order (FO sections) only chose the cells. Mean columns: mean_all (all weeks) vs ref; dmean carry-dropped is not used here. R-vs-dollar note: both items are location rules (points / fractions of target / minutes), independent of lot size, so they transfer unchanged to the user's x1.75 lots; only the dollar P&L scales.
 
@@ -13,13 +13,23 @@ IDENTITY NH_ID trades 598 598 net 25943.82 25943.82 IDENTICAL
 
 ## 1. Trend-week clause FIRST (L6M, exact; sum of the 5 best LPB_BASE weeks, winning weeks turned losing)
 
-home/ubuntu/mbo4x_v2_resume/.venv/lib/python3.12/site-packages/pandas/io/parquet.py", line 141, in _get_path_or_handle
-    handles = get_handle(
-              ^^^^^^^^^^^
-  File "<repo>/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 939, in get_handle
-    handle = open(handle, ioargs.mode)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202511/trades.parquet'
+| set | 5 best LPB_BASE weeks sum (LPB_BASE 331449; JN05W2 255545) | LPB winning weeks turned losing (of 20) | JN05W2 winning weeks turned losing (of 20) | weeks beats JN05W2 (of 27) |
+|--|--|--|--|--|
+| NC_U7_T10_15F | 261019 | 0 | 0 | 16 |
+| NC_U7_T20_15F | 261701 | 0 | 0 | 15 |
+| NC_U7_T20_15A | 257255 | 0 | 0 | 16 |
+| NC_K7_T20_20RC | 254442 | 2 | 0 | 11 |
+| NC_K7_F55_45 | 254328 | 1 | 0 | 7 |
+| NC_A7_T10_10F | 261686 | 1 | 0 | 7 |
+| NC_M7_T10_10A | 253346 | 1 | 0 | 10 |
+| NC_K7_T30_10RC | 248061 | 3 | 1 | 13 |
+| NH_P7_A9_N20 | 233975 | 0 | 0 | 11 |
+| NH_P7_B9_X10N30 | 220114 | 0 | 0 | 12 |
+| NH_U7_B7_X20N60 | 247664 | 1 | 0 | 14 |
+| NH_M7_C9_F2 | 257263 | 1 | 0 | 13 |
+| NH_M7_B9_X10N60 | 257215 | 1 | 0 | 14 |
+| NH_P7_B7_X10N60 | 208417 | 2 | 1 | 12 |
+| NH_U7_B7_X30N120 | 255545 | 2 | 0 | 10 |
 
 
 ## 2.NC_U7_T10_15F (43/43 months)
