@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 04:49Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 04:53Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -31,7 +31,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (run) | L7c368a4f + La010c3eb | 4789 / -14639 / -9096 / 3848 | 4700 / -14639 / -8658 / 3853 | 2746 / -7215 / -2853 / 660 | 7791 / -22530 / -6082 / 1078 | 12684 / -28865 / -16300 / 633 | 0.68 |
+| own-checks (moves) | L7c368a4f + La010c3eb | 4789 / -14639 / -9096 / 3848 | 4700 / -14639 / -8658 / 3853 | 2746 / -7215 / -2853 / 660 | 7791 / -22530 / -6082 / 1078 | 12684 / -28865 / -16300 / 633 | 0.68 |
 | staying-power (done) | L7c368a4f + L578701ed | 5675 / -14801 / -10059 / 4229 | 4927 / -10072 / -8937 / 3064 | 2095 / -5134 / -3277 / 965 | 8225 / -23263 / -4698 / 696 | 6804 / -20199 / -14470 / 1049 | 0.70 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 573 books with a BASE set; 482 have all 42 months landed = counted below; 52 still waiting for prior years)
@@ -72,9 +72,11 @@ Selected books in order (plain words):
 - La010c3eb [base = _CANF (real-roll ids); the _CANC version stays as a labelled reference]: volume bar 500 contracts [vol_500]; ~17 bars/hour; trigger trig_trend_libstack / ema_stack {"set": "10-20-50"}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60; median stop 60 pts / target 60 pts (events)
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 2 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 04:27Z UTC; pool 25 books): L7c368a4f + La010c3eb
 
-Phase: run. Pool used by this run: 27 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M86781ac0, Ma010c3eb, Mcae177ba).
+Phase: moves. Pool used by this run: 27 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M86781ac0, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
