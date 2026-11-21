@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-21 22:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-21 23:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 730 distinct cells scored (96 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 222; L6M and L3M > 0: 126; labels {'BEST-AVAILABLE-NOT-PROVEN': 508, 'WEAK-BUT-POSITIVE': 194, 'LEAD': 28}. Job errors: 0. Run 320 s.
+**Counts:** 732 distinct cells scored (96 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 222; L6M and L3M > 0: 126; labels {'BEST-AVAILABLE-NOT-PROVEN': 510, 'WEAK-BUT-POSITIVE': 194, 'LEAD': 28}. Job errors: 0. Run 252 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -106,7 +106,7 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 
 | NYAM | 2,713 / 7,764 (0.35) | 2,617 / 7,377 | 728 / 1814 | p_L6M (null / real families at threshold = FDR) | 313 / 903 = 35% | 140 / 268 = 52% | 50 / 81 = 62% | 18 / 33 = 55% |
 
-## Where the live books rank (same table, same scoring; 734 rows in this session)
+## Where the live books rank (same table, same scoring; 736 rows in this session)
 
 | rank | OLD rank (before re-runs) | rank L3M | top-50 on both L6M and L3M | what it is (bar, trigger, settings, side, bracket) | bars per hour (L6M mean, this session) | cell | kind | src | SCORE L6M ($/wk / ulcer) | score L3M | L6M $/wk | L3M $/wk | L6M ulcer | L3M ulcer | L6M maxDD | L6M worst wk | trades/wk | win% | avg win | avg loss | pers 2wk L6M | pers 2wk all landed | 2023 $/wk | 2023 ulcer | 2023 worse% | 2023 | 2024 $/wk | 2024 ulcer | 2024 worse% | 2024 | 2025 $/wk | 2025 ulcer | 2025 worse% | 2025 | prior yrs | label | screen p L6M | screen p ALL | twins merged |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -185,9 +185,9 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
-| K7 | -2142 | 461 | 807 | 3634 | -6155 / 12315 | 5919 | 276.2% | 474 |
-| P7 | 27768 | 400 | 808 | 21488 | 13697 / 29549 | 6235 | 22.5% | 422 |
-| U7 | 18214 | 110 | 808 | 19890 | 6985 / 30542 | 3145 | 17.3% | 119 |
+| K7 | -2142 | 461 | 809 | 3634 | -6155 / 12315 | 5914 | 276.0% | 474 |
+| P7 | 27768 | 400 | 810 | 21494 | 13697 / 29549 | 6231 | 22.4% | 422 |
+| U7 | 18214 | 110 | 810 | 19889 | 6985 / 30542 | 3142 | 17.2% | 119 |
 | M7 | -7247 | 518 | 1 | -4602 | -4602 / -4602 | 2645 | 36.5% | 524 |
 
 The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 34 pairs over 17 cells): mean abs difference of its own L6M total $4898 = 294.7% of |total| (median 37.1%, 90th pct 320.6%); trade-count differences: mean abs 5.5 trades (primary mean 245).
