@@ -1,15 +1,15 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-21 13:57Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-21 14:30Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
 ## Summary
 
-Books in the table: 8; screen complete for 8; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
-Pick counts (complete books): S8U 3, P60 3, P30 1, A15U30U 1
+Books in the table: 9; screen complete for 9; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
+Pick counts (complete books): S8U 3, P60 3, P30 1, A15U30U 1, S15U 1
 
-Plain 60/60 is the pick for 3 of 8 complete books.
+Plain 60/60 is the pick for 3 of 9 complete books.
 
 ## Table 1: equal-risk $/wk in L6M (scaled to the current bracket's L6M ulcer; the current bracket's own $/wk is in the "now" column; * = WIN in both windows, [own] = the book's current bracket)
 
@@ -23,6 +23,7 @@ Plain 60/60 is the pick for 3 of 8 complete books.
 | L488784d8 | P60 | 881 | 3025 | 1110* | 842 | [own] | 988 | 924 | 550 | 924 | 924 | 924 | 924 | 924 | 924 | 924 | 3101 | 1651 | 368 | 409 | P30 |
 | L6547965c | P60 | 1275 | 3045 | 48 | -90 | [own] | 351 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 433 | 215 | -95 | 1238 | P60 |
 | L7cc56d99 | S15U | 2445 | 4790 | -321 | -298 | -99 | -159 | 2445* | 2445* | [own] | 2445* | 2445* | 2445* | 2445* | 2445* | 2445* | -291 | 263 | -258 | -115 | S8U |
+| Le0da99e2 | S15U | 1580 | 10109 | -119 | -409 | -405 | 1106 | 1566 | 1238 | [own] | 1566 | 1566 | 1566 | 256 | 1227 | 1557 | -502 | -112 | -142 | 338 | S15U |
 
 ## Table 2: L3M equal-risk $/wk (scaled to the current bracket's L3M ulcer)
 
@@ -36,6 +37,7 @@ Plain 60/60 is the pick for 3 of 8 complete books.
 | L488784d8 | 838 | 1054 | 588 | [own] | 439 | 1014 | 1042 | 1014 | 1014 | 1014 | 1014 | 1014 | 1014 | 1014 | 2907 | 2638 | 162 | 146 |
 | L6547965c | 588 | -656 | -238 | [own] | -556 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1130 | 817 | -578 | 817 |
 | L7cc56d99 | 2166 | -546 | -548 | 104 | -61 | 2166 | 2166 | [own] | 2166 | 2166 | 2166 | 2166 | 2166 | 2166 | -586 | 1060 | -558 | -224 |
+| Le0da99e2 | 1680 | -698 | -622 | -942 | 403 | 1650 | 1067 | [own] | 1650 | 1650 | 1650 | 2141 | 1139 | 1632 | -753 | -691 | -447 | 3212 |
 
 ## Table 3: the picks in detail (only books where a shape wins in both windows)
 
@@ -199,6 +201,25 @@ Plain 60/60 is the pick for 3 of 8 complete books.
 - F60_120: 622 | 11323 | -24911 | -9298 | 13.3 | -1103
 - F80_40: -1853 | 34396 | -52343 | -12721 | 20.6 | -1420
 - F120_60: -367 | 15275 | -32250 | -13168 | 15.2 | -2067
+
+**Le0da99e2** (current S15U): now 1580 | 10109 | -24418 | -7382 | 15.6 | -1915
+
+- P30: -204 | 17392 | -33203 | -7424 | 59.4 | -549
+- P45: -1544 | 38141 | -65386 | -11184 | 47.1 | -832
+- P60: -601 | 15012 | -33775 | -13341 | 33.9 | -1086
+- P90: 1130 | 10328 | -23976 | -11712 | 21.8 | -1558
+- P120: 1565 | 10107 | -24418 | -7382 | 15.6 | -1909
+- S8U: 1340 | 10945 | -29449 | -16131 | 19.2 | -1573
+- S30U: 1565 | 10107 | -24418 | -7382 | 15.6 | -1909
+- S45U: 1565 | 10107 | -24418 | -7382 | 15.6 | -1909
+- S60U: 1565 | 10107 | -24418 | -7382 | 15.6 | -1909
+- A10U20U: 614 | 24265 | -46050 | -19882 | 15.3 | -1730
+- A20U10U: 1314 | 10818 | -26703 | -11302 | 17.0 | -1918
+- A15U30U: 1557 | 10108 | -24418 | -7382 | 15.6 | -1910
+- F40_80: -1429 | 28785 | -54318 | -14310 | 30.1 | -730
+- F60_120: -202 | 18212 | -30961 | -14461 | 20.3 | -1082
+- F80_40: -625 | 44668 | -68894 | -19393 | 40.9 | -1393
+- F120_60: 895 | 26757 | -52753 | -17569 | 26.0 | -1915
 
 ## Fitted-bracket verdicts under the NEW gates (order 1810Z, Josh approved)
 
