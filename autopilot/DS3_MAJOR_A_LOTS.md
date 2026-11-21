@@ -11,7 +11,7 @@
 
 Header: trials counted ~1,400 arithmetic lot-vector solves/evaluations + 38 exact single-cell moves x 12 months (456 set-months) + 4 engine-loop vectors (R2A-D) + 30 random + 5 uniform + 9 final exact vectors (F/G/H) = about 90 distinct exact vectors/moves, ~2,750 exact set-months; correction: none yet (first pass); PBO not computed; selection status: in-sample solve on landed months, WALK-FORWARD on the calibrated arithmetic, exact engine on 6 finals (3 on JL2); the final vectors are re-solved on the trailing window to 2026-10-31, so L6M/HOLD are NOT untouched for them (training window), only the walk-forward OOS days are. Data end 2026-10-31. FIRST PASS. Tiers CONFIRMED/LEAD: not issued (engine-exact same-size controls not run; the additivity test says the arithmetic controls cannot stand in).
 
-Updated 2026-11-21 19:59Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
+Updated 2026-11-21 20:32Z UTC. Cell P&L landed for 43 months. Live vector today (live lots): K7 4,4,0,2,4,0; M7 0,4,0,2,0,0; U7 7,7,0,0,0,0; P7 12,7,0,7,0,0; H7 7,0,0,2,0,0; A7 2 Asia. O7 is not a decision variable (no session table in the engine; constant background in the arithmetic, in the engine runs unchanged).
 
 ## 1. Cell: lots today -> lots proposed (base/live; * = changed)
 
