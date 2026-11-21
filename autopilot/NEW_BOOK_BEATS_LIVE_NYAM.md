@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-21 11:15Z
+# NEW_BOOK_BEATS_LIVE_NYAM - does a new book beat the live NY AM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-21 11:45Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY AM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7, P7, M7, H7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYAM.csv.
 
@@ -44,7 +44,7 @@
 | 3403 | mom_56 / book_ofi.follow_native {"L": 1800, "z": 1.5} / sym15u / both | yes (L6M du -108 dm +1348 | L3M du -32 dm +1068) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2698 | anch_L0200_B25 / levels_open_range.break {"n": 3, "k": 0.5} / plain60/60 / both | yes (L6M du -107 dm +1127 | L3M du -355 dm +1387 RED Y2023) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 738 | tick_8000 / levels_vwap.break {"n": 2, "k": 0.0} / plain60/60 / long | yes (L6M du -94 dm +1554 | L3M du -571 dm +974) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 3494 | dol_6000 / levels_fibr_ib.reject_native {"tol": 1.0, "conf": "body"} / sym15u / long | yes (L6M du -76 dm +1907 | L3M du -117 dm +2880) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 3493 | dol_6000 / levels_fibr_ib.reject_native {"tol": 1.0, "conf": "body"} / sym15u / long | yes (L6M du -76 dm +1907 | L3M du -117 dm +2880) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2712 | vsess_200 / structure_level.round_break {"grid": 100, "buf": 0.0} / sym8u / long | yes (L6M du -75 dm +1414 | L3M du -129 dm +3309) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 887 | entropy_B080 / momentum_er.trend_z {"len": 30, "thr": 0.3} / plain60/60 / both | yes (L6M du -75 dm +1074 | L3M du -152 dm +1163) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2708 | [twin of L1523dbb2] entropy_B080 / momentum_er.trend_z {"len": 30, "thr": 0.3} / plain60/60 / both | yes (L6M du -75 dm +1074 | L3M du -152 dm +1163) | not run | not run | not run | not run | K7:3,P7:0,M7:0,H7:0 | 0 of 30 |
@@ -55,9 +55,9 @@
 | 2399 | [twin of Ldae9487b] renko_20 / levels_profile_va.false_break {"M": 2, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 1054 | [twin of Ldae9487b] renko_20 / levels_profile_va.false_break {"M": 2, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 1199 | [twin of L21f079b6] trend_20 / levels_profile_va.break {"n": 1, "k": 0.0} / sym15u / long | yes (L6M du -58 dm +2291 | L3M du -504 dm +2902) | not run | not run | not run | yes (L6M du -795 dm +1691 | L3M du -1573 dm +2075) | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 1561 | [twin of Lf6f0cc5f] vsess_200 / structure_swing.bos {"k": 2, "buf": 0.0} / asym20u/10u / both | yes (L6M du -32 dm +2134 | L3M du -157 dm +1927) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 1562 | [twin of Lf6f0cc5f] vsess_200 / structure_swing.bos {"k": 2, "buf": 0.0} / asym20u/10u / both | yes (L6M du -32 dm +2134 | L3M du -157 dm +1927) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 2735 | [twin of Lf6f0cc5f] vsess_200 / structure_swing.bos {"k": 2, "buf": 0.0} / asym20u/10u / both | yes (L6M du -32 dm +2134 | L3M du -157 dm +1927) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
-| 2643 | drb_3500 / levels_vwap.break {"n": 2, "k": 0.25} / plain60/60 / long | yes (L6M du -13 dm +350 | L3M du -54 dm +304) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
+| 2645 | drb_3500 / levels_vwap.break {"n": 2, "k": 0.25} / plain60/60 / long | yes (L6M du -13 dm +350 | L3M du -54 dm +304) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 | 3157 | tm180 / levels_session_hl.retest {"M": 6, "tol": 0.5} / sym15u / long | yes (L6M du -2 dm +55 | L3M du -359 dm +368) | not run | not run | not run | not run | K7:0,P7:0,M7:0,H7:0 | 0 of 30 |
 
 ## Both-side / long-only / short-only rows side by side (order 1014Z; both-side sets are VALID engine results for the both-side book; LO / SO = mode-correct sets, engine-tested separately; replace K7 and ADD; vs the live stack, engine base lots; d = change vs JL3, ulcer first)
