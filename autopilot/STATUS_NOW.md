@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-21 17:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-21 17:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-21 17:00Z | WARNING serverC below 85% busy for 529 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-21 17:15Z | WARNING serverC below 85% busy for 532 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-21 17:00Z
+2026-11-21 17:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-21 17:00Z | WARNING serverC below 85% busy for 529
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 86.5 GB; live reservations 2 (2 GB); workers 18, of which TP-adopted 17 (RSS 24.0 GB) vs others 1 (RSS 0.9 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 42.72, 52.48, 57.95
-  by tag: NYE quota 16 running 14 hungry False RSS 18.3 GB PSS 16.6 GB; LON quota 12 running 3 hungry True RSS 5.7 GB PSS 4.8 GB; REST quota 0 running 1 hungry False RSS 0.9 GB PSS 0.7 GB
-  cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L9f2316cf_ALN (x32);TL3_LON_L4ce7e26d_RM7 (x6);TL3_LON_Mb421d071_RM7 (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 103.34, 107.34, 108.01|/dev/md2         28T  2.8T   26T  10% /mnt/l2|16|
+Server 1 (this box): MemAvail 84.8 GB; live reservations 8 (8 GB); workers 16, of which TP-adopted 15 (RSS 24.3 GB) vs others 1 (RSS 0.9 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.53, 58.11, 57.58
+  by tag: NYR quota 12 running 9 hungry True RSS 13.2 GB PSS 10.8 GB; NYE quota 16 running 1 hungry False RSS 1.9 GB PSS 1.7 GB; LON quota 12 running 5 hungry True RSS 9.2 GB PSS 7.6 GB; REST quota 0 running 1 hungry False RSS 0.9 GB PSS 0.7 GB
+  cell-months finished last hour (DONE markers): 8438
+  top running jobs: TL3_NYE_L9cbdb1ef_RK7CT7m (x12);TL3_NYE_L9cbdb1ef_RK7CT105p (x12);TL3_LON_Mc3734e93_RM7 (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 100.56, 101.65, 102.34|/dev/md2         28T  2.8T   26T  10% /mnt/l2|22|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 103.34, 107.34, 108.01|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261121_1550Z_fee-discrepancy-and-shape-benchmark.md 20261121_1558Z_Josh-refit-brackets-judge-the-refit.md 20261121_1625Z_ny-refill-feeder-and-costs.md 20261121_1632Z_Josh-whole-fleet-bracket-first-look.md 20261121_1635Z_Josh-yes-release-held-rows-truly-bare.md
+20261121_1558Z_Josh-refit-brackets-judge-the-refit.md 20261121_1625Z_ny-refill-feeder-and-costs.md 20261121_1632Z_Josh-whole-fleet-bracket-first-look.md 20261121_1635Z_Josh-yes-release-held-rows-truly-bare.md 20261121_1716Z_Josh-same-for-NY-and-London.md
+- 17:14Z INBOX 20261121_1716Z Josh-same-for-NY-and-London received. Josh (17:13Z): 'great same with NY and london'. LEAD ACCEPTS: the 17-shape grid first look +
