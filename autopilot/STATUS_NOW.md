@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-21 02:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-21 02:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-21 02:15Z | WARNING serverD below 85% busy for 2 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-21 02:30Z | WARNING serverC below 85% busy for 355 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-21 02:15Z
+2026-11-21 02:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-21 02:15Z | WARNING serverD below 85% busy for 2 r
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 86.0 GB; live reservations 4 (4 GB); workers 18, of which TP-adopted 13 (RSS 20.4 GB) vs others 5 (RSS 18.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 75.26, 69.74, 66.05
-  by tag: NYR quota 12 running 13 hungry False RSS 20.4 GB PSS 16.0 GB; REST quota 0 running 5 hungry False RSS 18.2 GB PSS 10.3 GB
-  cell-months finished last hour (DONE markers): 14033
-  top running jobs: TL3_NYE_L1bc30d0d_RK7CT56m (x12);TL3_NYE_L1bc30d0d_RK7CT63m (x10);TL3_LYR_JNT9_L578701ed_c5 (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 93.93, 94.84, 97.11|/dev/md2         28T  2.7T   26T  10% /mnt/l2|52|
+Server 1 (this box): MemAvail 99.2 GB; live reservations 12 (12 GB); workers 15, of which TP-adopted 15 (RSS 18.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 53.65, 57.06, 61.53
+  by tag: NYE quota 16 running 10 hungry False RSS 13.3 GB PSS 12.1 GB; TOOLS quota 0 running 5 hungry False RSS 5.0 GB PSS 4.7 GB
+  cell-months finished last hour (DONE markers): 13798
+  top running jobs: TL3_LYR_JNT9_Lff52ec0c_c5 (x28);TL3_NYE_L9f888218_ALN (x26);TL3_ALN_NY_L5ac628eb_EXbricks3_v25 (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 103.84, 98.36, 96.61|/dev/md2         28T  2.7T   26T  10% /mnt/l2|45|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
