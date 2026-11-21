@@ -37,15 +37,15 @@ PLAIN WORDS: the clause that rejects EVERY candidate is the return per unit of u
 | Y2024 | 7791 / -22530 / -6082 / 1078 | 3392 / -9360 / -2950 / 506 |
 | Y2025 | 12684 / -28865 / -16300 / 633 | 7110 / -14076 / -5353 / 464 |
 
-**(iii) L7c368a4f + La010c3eb + L385f4f2e.J502 (APPROXIMATE: sum of the three landed book-alone daily P&L series; the combined stack set was not built / not landed; no engine run made)**: own persistence 0.70; controls: none run for this stack
+**(iii) OPTION C = asia-stay main FINAL, pool 35: L7c368a4f + L578701ed + L385f4f2e.J502 (EXACT stack set TL3_ALN_AS_STKd88bbb46dc landed)**: own persistence 0.70; controls beaten (30, 19, 30)
 
-| window | stack | BARE D7 at the same L6M drawdown (x0.32) |
+| window | stack | BARE D7 at the same L6M drawdown (x0.38) |
 |---|---|---|
-| L6M | 4196 / -11846 / -9409 / 5475 | 4196 / -10313 / -6750 / 1806 |
-| L3M | 3337 / -11707 / -2069 / 5854 | 3902 / -8921 / -5695 / 1019 |
-| Y2023 | 3412 / -9890 / -4497 / 701 | 6533 / -10683 / -2611 / -51 |
-| Y2024 | 11566 / -32884 / -8456 / 1267 | 2972 / -8201 / -2585 / 443 |
-| Y2025 | 16365 / -39840 / -15570 / 783 | 6230 / -12334 / -4690 / 407 |
+| L6M | 4930 / -13326 / -7847 / 6056 | 4930 / -12115 / -7930 / 2122 |
+| L3M | 6275 / -13326 / -6941 / 4446 | 4584 / -10480 / -6690 / 1198 |
+| Y2023 | 3347 / -10314 / -6247 / 963 | 7674 / -12549 / -3067 / -60 |
+| Y2024 | 7859 / -23992 / -5607 / 1011 | 3491 / -9635 / -3037 / 520 |
+| Y2025 | 7320 / -21203 / -16459 / 1221 | 7319 / -14490 / -5510 / 478 |
 
 ## (3) Trade count and concentration of L385f4f2e.J502 (events = J502 filtered stream; trades = engine trades of its base set)
 
@@ -63,17 +63,3 @@ Profit per week (window mean): L6M $2157; the gain per trade matters, not only f
 - L385f4f2e.J502 alone = **LEAD: one book, prior years thin (2023 +$40/wk), fits pending** (W-P2A caveat: its plain _CANC base is $476/wk in L6M).
 - L7c368a4f + La010c3eb = **previous final (pool 27)**, still a spec-draft candidate (controls 27/16/29, own persistence 0.68).
 - The v1 freeze text shows BOTH so Josh chooses; the two-book stack is not dropped from the spec draft.
-## (5) ASIA OPTION C = asia-stay FINAL (08:04Z, pool 28): L7c368a4f + L578701ed + L385f4f2e.J502 (stack set TL3_ALN_AS_STKd88bbb46dc, exact run landed)
-**What asia-stay (staying-power) is vs asia-own:** both use the same own-checks pool and the same add rule (stack mean >= best single book, return per unit ulcer +1%, max DD and worst week within the 15% guard after scaling; L3M shown, not a gate). asia-stay ADDS two conditions: (i) the candidate stack's own persistence (share of positive 14-day blocks) must not fall below the current stack's, and (ii) its worst prior-year ulcer must not exceed 2x its own L6M ulcer (applied from step 1). That is why J502 cannot be asia-stay's FIRST book (its prior-year ulcers are 2,327 / 4,263 / 4,368 against an L6M ulcer of 469 = x9.3), the run starts with L7c368a4f (x1.5), adds L578701ed (x1.4, persistence 0.62 -> 0.70) and then J502 on top (x1.6), whereas asia-own starts with J502 (best return per unit ulcer) and nothing can beat that.
-Steps (L6M ulcer / max DD / worst wk / $ per wk): 1 L7c368a4f 4,075 / -11,123 / -7,409 / 2,456; 2 + L578701ed 5,675 / -14,801 / -10,059 / 4,229; 3 + L385f4f2e.J502 4,930 / -13,326 / -7,847 / 6,056.
-**Option C by window** (ulcer / max DD / worst wk / $ per wk) beside BARE D7 at the same L6M drawdown (x0.38):
-| window | Option C | BARE D7 |
-|---|---|---|
-| L6M | 4,930 / -13,326 / -7,847 / 6,056 | 4,930 / -12,115 / -7,930 / 2,122 |
-| L3M | 6,275 / -13,326 / -6,941 / 4,446 | 4,584 / -10,480 / -6,690 / 1,198 |
-| 2023 | 3,347 / -10,314 / -6,247 / 963 | 7,674 / -12,549 / -3,067 / -60 |
-| 2024 | 7,859 / -23,992 / -5,607 / 1,011 | 3,491 / -9,635 / -3,037 / 520 |
-| 2025 | 7,320 / -21,203 / -16,459 / 1,221 | 7,319 / -14,490 / -5,510 / 478 |
-Own persistence 0.70; stack controls beaten 30 of 30 (L6M drawdown-first), 19 of 30 (L3M, shown, not a gate), 30 of 30 (ulcer-only).
-**Own checks a+b+c+d for Option C: MET** (L6M, L3M and each prior year positive; own persistence 0.70 >= 0.58; 30/30 controls on L6M). Label: 'own checks met; max DD / worst week deeper than bare D7 at equal risk in 2024 and 2025 and in 2023 max DD'.
-**The three options for D8_BUILD_SPEC.md:** A = J502 alone (469 / -1,915 / -1,600 / 2,157; LEAD, fits pending); B = L7c368a4f + La010c3eb (4,789 / -14,639 / -9,096 / 3,848; previous final pool 27; controls 27/16/29); C = L7c368a4f + L578701ed + J502 (4,930 / -13,326 / -7,847 / 6,056; controls 30/19/30). Option C earns more than B at about the same L6M ulcer, with a shallower max DD and worst week.

@@ -2,9 +2,9 @@
 Research only. Nothing changed on the execution server or any live chart; nothing spent, rented or deleted. Every number is 1 lot, base dollars (engine dollars), from files, not re-checked by hand.
 
 ## 1. The one-paragraph answer
-**Nothing is frozen yet.** The Asia chain is almost done for the 28 books we had at 08:00Z, but at 12:08Z a universe fix by the combination agent grew the Asia pool from 28 to 35 books, so the final Asia choice is waiting on the fits of 7 new books and a final re-run (estimate Sat 15:00-17:00Z). NY AM is behind Asia (estimate 16:00-22:00Z). Three Asia options are ready to compare; the choice between them is yours (section 2). Sunday 23:00Z Globex was a plan, not a gate (your 21:53Z order); nothing was cut to meet it.
+**Nothing is frozen yet, but the Asia answer has stopped moving.** At 12:08Z a universe fix by the combination agent grew the Asia pool from 28 to 35 books (the earlier loops had seen only 718 of 1,244 candidate ids). All four Asia loops were re-run on the 35-book pool (hash 9192576d) and **the 7 new books entered none of the four finals**: the finals are the same as before. What still has to finish before the freeze is the fit chain of those 7 new books (layers, brackets, exits, pass 2: automatic, estimate 14:00-15:00Z; their first two layer verdicts are in: both NOT KEPT). NY AM is behind Asia (its D8 tail ends ~15:40Z; freeze estimate 16:00-22:00Z). The three Asia options below are ready to compare; the choice is yours (section 7, question 1). Sunday 23:00Z Globex was a plan, not a gate (your 21:53Z order); nothing was cut to meet it.
 
-## 2. Asia: the three options (pool 28 numbers; the enlarged-universe numbers are NOT mixed in)
+## 2. Asia: the three options (pool-28 numbers; the enlarged pool-35 run gave the same three finals: asia-own and its L3M-gated twin = A, asia-stay main = C with controls 30/19/30, asia-stay-l3g = L7c368a4f alone; option B was the earlier two-book final)
 Ulcer / max drawdown / worst week / $ per week.
 | window | A: one book L385f4f2e.J502 | B: two books L7c368a4f + La010c3eb | C: three books L7c368a4f + L578701ed + L385f4f2e.J502 |
 |---|---|---|---|
@@ -55,6 +55,6 @@ Pool 6 books (B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99).
 8. Lease-file archive move (data move): yes/no?
 
 ## 8. Machines
-Overnight fill was held (hosts A, B, C, D at 86-101 of their caps; A and B at 0% CPU idle, so full). Box 1 is CPU-saturated by hub work; its load cuts (stale-results check every 30 min, pull loop 20 s) are in force. The stall check is clean except one explained heartbeat. D8 is at ~24k set-months left for Asia controls + NY first looks (queued), more NY lines to be written.
+Overnight fill was held (hosts A, B, C, D at 86-101 of their caps; A and B at 0% CPU idle, so full). Box 1 is CPU-saturated by hub work; its load cuts (stale-results check every 30 min, pull loop 20 s) are in force. The stall check is clean except one explained heartbeat. ASIA D8 IS FINISHED (0 lines left). The D8 tail is NY AM only: ~24k set-months queued (controls, first looks), est. done ~15:40Z, more lines to be written as NY cells pass.
 
 Pages: autopilot/D8_BUILD_SPEC.md (DRAFT Asia v1, options A, B, C + open items for the NT8 port), ASIA_ONE_BOOK_EXPLAIN.md, ASIA_JOINT_TABLE.md, NYAM_JOINT_TABLE.md, BRACKET_SHAPES_*.md, EXIT_WF.md, PASS2_JOINT_ASIA_RESULTS.md, BARE_D7_YARDSTICK.md, D8_TRIGDEBUG_*.md and D8_VECTORS_*.md (test vectors for the NT8 port).
