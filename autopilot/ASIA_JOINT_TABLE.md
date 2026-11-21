@@ -1,4 +1,4 @@
-# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 04:46Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
+# JOINT STAGE TABLE - Asia own-checks pool (W-LAYERS, STAMP 2026-11-21 05:01Z; refreshed every 15 min by joint_verdict.py --loop; only rows from the corrected JNT9 array count, the voided 80-combo run feeds nothing)
 
 Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 screen per group, OA(9,4,3,2) = 8 combos + BASE). PICK = best combo on L6M (ulcer, drawdown first, 15% guard); cells = `ulcer fitted/unfitted; $/wk fitted/unfitted; eq = $/wk at equal risk`, 1 lot. Gates: ROLLING walk-forward among the combos + reference (>= 0.58), year colours 2023/24/25 on equal-risk $/wk (RED > 30% fails), search-aware null >= 4/5; 27/30 info only (stage-1 table). KEPT = all gates; otherwise the book keeps today's settings.
 
@@ -17,15 +17,15 @@ Per book: BRK/LOSS/LOCK/TAKE varied TOGETHER (reference + top-2 of the stage-1 s
 | Lcbc8a7ec | BRK:BRK2, LOSS:CX3, LOCK:ref, TAKE:NRT1 | 1691/4828; 2681/1880; eq 7656/1880 | 1524/2664; 1932/2105; eq 3377/2105 | 0.70 (fixed 0.57) | AMBER/GREEN/RED | 5/5 | NOT KEPT: RED year |
 | L973b5c8a | BRK:ref, LOSS:CX1, LOCK:LK5, TAKE:FR_TAKE2 | 3153/3886; 1586/1211; eq 1955/1211 | 2806/3189; 1635/1310; eq 1858/1310 | 0.55 (fixed 0.548) | RED/GREEN/GREEN | 4/5 | NOT KEPT: rolling WF 0.55 < 0.58; RED year |
 | Lb68a132d | BRK:ref, LOSS:CX2, LOCK:LK2, TAKE:TK4 | 1581/3158; 1197/1090; eq 2392/1090 | 1557/2757; 909/1273; eq 1610/1273 | 0.38 (fixed 0.576) | GREEN/RED/RED | 5/5 | NOT KEPT: rolling WF 0.38 < 0.58; RED year |
-| Lec335094 | pending: 7/8 combos complete (335/336 set-months) | | | | | | |
-| L5dee2059 | pending: 6/8 combos complete (290/336 set-months) | | | | | | |
-| L29b1bc3f | pending: 1/8 combos complete (88/336 set-months) | | | | | | |
-| L40bde9ea | pending: 1/8 combos complete (93/336 set-months) | | | | | | |
-| L7ea48296 | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
-| L65a26c02 | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
+| Lec335094 | none | - | - | - | - | - | NOT KEPT: no combo beats the reference on L6M within the guard; keeps today's |
+| L5dee2059 | BRK:BRK4, LOSS:STC4, LOCK:LK6, TAKE:ref | 4360/7196; 1397/1142; eq 2305/1142 | 5163/5330; 991/1986; eq 1023/1986 | 0.70 (fixed 0.688) | RED/GREEN/GREEN | 4/5 | NOT KEPT: RED year |
+| L29b1bc3f | BRK:ref, LOSS:STC1, LOCK:LK3, TAKE:TK2 | 2619/4118; 945/1293; eq 1485/1293 | 2032/4744; 1327/954; eq 3099/954 | 0.42 (fixed 0.462) | RED/RED/RED | 4/5 | NOT KEPT: rolling WF 0.42 < 0.58; RED year |
+| L40bde9ea | BRK:BRK2, LOSS:ref, LOCK:LK5, TAKE:TK3 | 2894/4695; 893/937; eq 1449/937 | 2784/3391; 622/1664; eq 758/1664 | 0.60 (fixed 0.677) | GREEN/RED/GREEN | 4/5 | NOT KEPT: RED year |
+| L7ea48296 | pending: 4/8 combos complete (267/336 set-months) | | | | | | |
+| L65a26c02 | pending: 3/8 combos complete (134/336 set-months) | | | | | | |
 | La010c3eb | BRK:BRK3, LOSS:ref, LOCK:LK1, TAKE:TK1 | 2767/3973; 801/861; eq 1151/861 | 2916/3181; 678/906; eq 740/906 | 0.66 (fixed 0.581) | RED/GREEN/RED | 4/5 | NOT KEPT: RED year |
-| Lc754cf58 | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
-| Ma010c3eb | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
+| Lc754cf58 | pending: 1/8 combos complete (99/336 set-months) | | | | | | |
+| Ma010c3eb | pending: 0/8 combos complete (9/336 set-months) | | | | | | |
 | Mcae177ba | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
 | L385f4f2e | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
 | M7ea48296 | pending: 0/8 combos complete (0/336 set-months) | | | | | | |
