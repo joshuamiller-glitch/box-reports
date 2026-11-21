@@ -1,15 +1,15 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-21 03:03Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-21 03:38Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0.
 
 ## Summary
 
-Books in the table: 28; screen complete for 26; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 8.
-Pick counts (complete books): P60 16, P45 3, P30 2, A10U20U 2, F40_80 1, S8U 1, F60_120 1
+Books in the table: 28; screen complete for 28; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 9.
+Pick counts (complete books): P60 17, P45 4, P30 2, A10U20U 2, F40_80 1, S8U 1, F60_120 1
 
-Plain 60/60 is the pick for 16 of 26 complete books.
+Plain 60/60 is the pick for 17 of 28 complete books.
 
 ## Table 1: equal-risk $/wk in L6M (scaled to the current bracket's L6M ulcer; the current bracket's own $/wk is in the "now" column; * = WIN in both windows, [own] = the book's current bracket)
 
@@ -40,9 +40,9 @@ Plain 60/60 is the pick for 16 of 26 complete books.
 | Lec335094 | P60 | 934 | 3740 | 205 | 452 | [own] | -19 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | 1403 | -53 | 180 | 403 | P60 |
 | Lff52ec0c | P60 | 1882 | 3866 | 319 | 523 | [own] | 205 | 191 | -34 | 757 | 276 | 191 | 191 | 350 | 1174 | 484 | 1107 | 704 | 387 | 245 | P60 |
 | M7423c0d9 | S8U | 1055 | 3251 | 479 | 1087 | 322 | 361 | 854 | [own] | 844 | 854 | 854 | 854 | 959 | 785 | 854 | 1020 | 685 | 546 | 142 | S8U |
-| M7ea48296 | P60 | 429 | 4788 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
+| M7ea48296 | P60 | 429 | 4788 | -52 | 652* | [own] | -173 | -162 | -123 | -175 | -162 | -162 | -162 | -123 | -160 | -171 | 150 | 176 | 104 | -124 | P45 |
 | Ma010c3eb | P60 | 705 | 3628 | 60 | 822* | [own] | -20 | 231 | -1 | 234 | 231 | 231 | 231 | 47 | 305 | 230 | 612 | 320 | 393 | 78 | P45 |
-| Mcae177ba | P60 | 341 | 3612 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
+| Mcae177ba | P60 | 341 | 3612 | 392 | 81 | [own] | 192 | -10 | 10 | -10 | -10 | -10 | -10 | -37 | 6 | -10 | 500 | 572 | -138 | -76 | P60 |
 
 ## Table 2: L3M equal-risk $/wk (scaled to the current bracket's L3M ulcer)
 
@@ -73,9 +73,9 @@ Plain 60/60 is the pick for 16 of 26 complete books.
 | Lec335094 | 1005 | 149 | 726 | [own] | 54 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 114 | -268 | 971 | 2278 |
 | Lff52ec0c | 1357 | 945 | 668 | [own] | -377 | -325 | 175 | -148 | -319 | -325 | -325 | -469 | 1037 | -304 | 4550 | -77 | 295 | 382 |
 | M7423c0d9 | 860 | 1116 | 1283 | 702 | 526 | 322 | [own] | 303 | 322 | 322 | 322 | 389 | 210 | 322 | 889 | 277 | 1329 | 383 |
-| M7ea48296 | 862 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| M7ea48296 | 862 | 139 | 2668 | [own] | -73 | 12 | -162 | -38 | 12 | 12 | 12 | 31 | -5 | -25 | 334 | 114 | 1171 | 617 |
 | Ma010c3eb | 706 | 96 | 2371 | [own] | -122 | 146 | -147 | 152 | 146 | 146 | 146 | -99 | 385 | 143 | 1225 | 396 | 427 | 359 |
-| Mcae177ba | 22 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Mcae177ba | 22 | 1071 | 169 | [own] | -106 | -298 | -288 | -298 | -298 | -298 | -298 | -285 | -256 | -298 | 189 | 21 | 318 | -234 |
 
 ## Table 3: the picks in detail (only books where a shape wins in both windows)
 
@@ -88,6 +88,7 @@ Plain 60/60 is the pick for 16 of 26 complete books.
 | L7c368a4f | P60 | P30 | 2456 -> 4941 | -11123 -> -12350 | -7409 -> -6096 | 2434 -> 2570 | 1780 vs 4075 | 25.5 -> 45.9 | -1066 -> -549 |
 | L7ea48296 | P60 | P45 | 1927 -> 3096 | -9953 -> -10511 | -5460 -> -6137 | 2122 -> 3156 | 2389 vs 3350 | 20.7 -> 25.6 | -1043 -> -816 |
 | Lc754cf58 | A20U10U | F60_120 | 1368 -> 1371 | -12403 -> -11858 | -7248 -> -5347 | 431 -> 927 | 4650 vs 5379 | 9.7 -> 12.3 | -1853 -> -1047 |
+| M7ea48296 | P60 | P45 | 429 -> 652 | -10752 -> -10053 | -6272 -> -4338 | 862 -> 2668 | 5957 vs 4788 | 11.9 -> 13.8 | -1045 -> -805 |
 | Ma010c3eb | P60 | P45 | 705 -> 822 | -9085 -> -9172 | -4849 -> -3479 | 706 -> 2371 | 2824 vs 3628 | 8.3 -> 9.5 | -1051 -> -807 |
 
 ## Table 4: 1-lot figures, L6M (mean $/wk | ulcer | max DD | worst week | trades/wk | avg loss per trade) per book and shape
@@ -569,6 +570,22 @@ Plain 60/60 is the pick for 16 of 26 complete books.
 
 **M7ea48296** (current P60): now 429 | 4788 | -10752 | -6272 | 11.9 | -1045
 
+- P30: -55 | 5061 | -10022 | -4322 | 19.2 | -559
+- P45: 812 | 5957 | -12506 | -5397 | 13.8 | -805
+- P90: -689 | 19050 | -29918 | -10708 | 9.1 | -1478
+- P120: -444 | 13159 | -23544 | -8339 | 7.3 | -1805
+- S8U: -263 | 10182 | -18100 | -7564 | 8.4 | -1580
+- S15U: -489 | 13408 | -23544 | -8339 | 7.3 | -1804
+- S30U: -444 | 13159 | -23544 | -8339 | 7.3 | -1805
+- S45U: -444 | 13159 | -23544 | -8339 | 7.3 | -1805
+- S60U: -444 | 13159 | -23544 | -8339 | 7.3 | -1805
+- A10U20U: -274 | 10667 | -20112 | -8149 | 7.4 | -1722
+- A20U10U: -433 | 12935 | -22408 | -8449 | 7.7 | -1823
+- A15U30U: -478 | 13371 | -23544 | -8339 | 7.3 | -1804
+- F40_80: 189 | 6004 | -12417 | -10306 | 11.8 | -704
+- F60_120: 307 | 8353 | -17327 | -8638 | 8.8 | -1059
+- F80_40: 185 | 8565 | -17662 | -6447 | 13.3 | -1309
+- F120_60: -482 | 18675 | -32177 | -12543 | 10.0 | -1766
 
 **Ma010c3eb** (current P60): now 705 | 3628 | -9085 | -4849 | 8.3 | -1051
 
@@ -591,6 +608,22 @@ Plain 60/60 is the pick for 16 of 26 complete books.
 
 **Mcae177ba** (current P60): now 341 | 3612 | -8184 | -4103 | 10.0 | -1025
 
+- P30: 251 | 2319 | -5211 | -3982 | 12.8 | -559
+- P45: 88 | 3920 | -9665 | -6068 | 11.2 | -815
+- P90: 316 | 5948 | -13058 | -7848 | 8.2 | -1421
+- P120: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- S8U: 21 | 7850 | -17451 | -8334 | 7.3 | -1647
+- S15U: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- S30U: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- S45U: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- S60U: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- A10U20U: -88 | 8569 | -19247 | -8669 | 7.0 | -1757
+- A20U10U: 15 | 8481 | -18897 | -8669 | 7.0 | -1768
+- A15U30U: -24 | 8825 | -19982 | -8669 | 7.0 | -1768
+- F40_80: 534 | 3856 | -10647 | -5063 | 9.5 | -720
+- F60_120: 674 | 4256 | -14713 | -3009 | 8.0 | -1004
+- F80_40: -286 | 7466 | -15313 | -7793 | 10.7 | -1295
+- F120_60: -230 | 10936 | -22062 | -5503 | 8.8 | -1739
 
 ## Fitted-bracket verdicts under the NEW gates (order 1810Z, Josh approved)
 
@@ -598,14 +631,15 @@ Gates: (1) walk-forward persistence >= 0.58 (every 14 days from 2023-10: pick th
 
 | book | own | fitted shape | walk-forward | prior-year band 2023 / 2024 / 2025 ($/wk worse %) | null | old 27/30 (info) | old positive-every-year (info) | verdict |
 |---|---|---|---|---|---|---|---|---|
-| L08df8bb0 | S15U | A10U20U | 0.575 (80 periods, 46 won; shared wf_gate.rolling) | GREEN / GREEN / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / GREEN 0.0% / GREEN 0.0% | pending | 0/0 | no | not kept: walk-forward persistence 0.575 over 80 periods |
+| L08df8bb0 | S15U | A10U20U | 0.575 (80 periods, 46 won; shared wf_gate.rolling) | GREEN / GREEN / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / GREEN 0.0% / GREEN 0.0% | pending | 25/30 | no | not kept: walk-forward persistence 0.575 over 80 periods |
 | L15f14deb | P60 | F40_80 | 0.466 (73 periods, 34 won; shared wf_gate.rolling) | RED / GREEN / GREEN (shared); mine, equal-risk $/wk only: RED 43.2% / GREEN 0.0% / GREEN 0.0% | pending | 11/30 | no | not kept: walk-forward persistence 0.466 over 73 periods prior-year RED (shared band) |
 | L1edb9fab | P60 | P30 | 0.514 (74 periods, 38 won; shared wf_gate.rolling) | GREEN / RED / RED (shared); mine, equal-risk $/wk only: GREEN 0.0% / RED 91.2% / RED 113.8% | pending | 30/30 | no | not kept: walk-forward persistence 0.514 over 74 periods prior-year RED (shared band) |
-| L40bde9ea | P60 | P45 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: GREEN 0.0% / RED 57.4% / GREEN 7.3% | pending | 0/0 | no | pending (series not complete) |
+| L40bde9ea | P60 | P45 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: GREEN 0.0% / RED 57.4% / GREEN 7.3% | pending | 30/30 | yes | pending (series not complete) |
 | L7c368a4f | P60 | P30 | 0.543 (70 periods, 38 won; shared wf_gate.rolling) | GREEN / RED / RED (shared); mine, equal-risk $/wk only: GREEN 0.0% / RED 94.8% / RED 130.7% | pending | 30/30 | no | not kept: walk-forward persistence 0.543 over 70 periods prior-year RED (shared band) |
 | L7ea48296 | P60 | P45 | 0.515 (68 periods, 35 won; shared wf_gate.rolling) | AMBER / GREEN / GREEN (shared); mine, equal-risk $/wk only: AMBER 27.5% / GREEN 0.0% / GREEN 0.0% | pending | 27/30 | yes | not kept: walk-forward persistence 0.515 over 68 periods |
-| Lc754cf58 | A20U10U | F60_120 | series not complete | prior-year months not landed | pending | 0/0 | no | pending (series not complete) |
-| Ma010c3eb | P60 | P45 | series not complete | prior-year months not landed | pending | 0/0 | no | pending (series not complete) |
+| Lc754cf58 | A20U10U | F60_120 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: GREEN 0.0% / GREEN 0.0% / GREEN 0.0% | pending | 7/30 | no | pending (series not complete) |
+| M7ea48296 | P60 | P45 | series not complete | prior-year months not landed | pending | 0/0 | no | pending (series not complete) |
+| Ma010c3eb | P60 | P45 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: GREEN 2.4% / GREEN 0.0% / RED 43.3% | pending | 23/30 | no | pending (series not complete) |
 
 One line per book: fitted bracket kept = verdict starts with PASSES (null still pending, so the label is LEAD at best); otherwise the book keeps its own bracket.
 
