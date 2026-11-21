@@ -1,6 +1,8 @@
+PARTIAL TEST RENDER, NOT A RESULT (grid jobs still running; the finisher overwrites this page when the session's results are complete)
+
 # BRACKET FIRST LOOK, ASIA (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-21 16:53 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 869 of 1890.
+Written 2026-11-21 16:57 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 869 of 1890.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
@@ -13,8 +15,8 @@ Written 2026-11-21 16:53 UTC by W-BRKT from the bfl17 grid results (17 shapes, t
 | fixed30/30 | 95 | 72 | 81 |
 | plain60/60 | 50 | 84 | 32 |
 | fixed80/40 | 44 | 77 | 43 |
-| sym8u | 38 | 47 | 32 |
 | fixed90/90 | 38 | 39 | 35 |
+| sym8u | 38 | 47 | 32 |
 | fixed120/60 | 27 | 67 | 32 |
 | fixed90/30 | 21 | 55 | 14 |
 | asym10u/20u | 11 | 9 | 9 |
@@ -25,15 +27,19 @@ Written 2026-11-21 16:53 UTC by W-BRKT from the bfl17 grid results (17 shapes, t
 
 Cells whose ladder bracket is already the best in L6M: 23 of 869. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 732.
 
+## NULL for the best-of-17 pick (exchangeable shape labels)
+
+If the 17 shapes were interchangeable, calling any one of them the "own bracket" would give per cell the same two numbers. Averaged over all 17 possible own brackets of every cell: own bracket is the best in L6M in 5.9% of cells (the real ladder bracket: 2.6%); SOME other shape beats it at equal risk in BOTH windows in 86.4% of cells (the real ladder bracket: 84.2%). READING: the real ladder bracket is NOT better than a random one and the share of cells with a "better" shape is what chance gives, so the headline count is not evidence of a better bracket; only cells that also pass the engine, walk-forward and the null count.
+
 ## Cells that FAILED the first look (not positive in L6M at plain 60/60 AND at sym15u) but are positive in L6M and L3M (>= 20 trades L6M) at another shape: the books the search never saw
 
-Grid cells (param x mode) in these jobs: 101318; failed at both pass-1 brackets: 31275; positive in both windows at another shape: 15688. By shape: {'sym8u': 479, 'fixed60/120': 1414, 'asym20u/10u': 203, 'fixed90/90': 1604, 'fixed40/80': 2300, 'asym10u/20u': 207, 'fixed45/45': 1796, 'fixed30/90': 4072, 'fixed120/60': 601, 'fixed30/30': 1644, 'fixed90/30': 636, 'fixed80/40': 562, 'sym30u': 78, 'fixed120/120': 58, 'asym15u/30u': 34}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
+Grid cells (param x mode) in these jobs: 113447; failed at both pass-1 brackets: 35120; positive in both windows at another shape: 17493. By shape: {'sym8u': 546, 'fixed60/120': 1569, 'asym20u/10u': 214, 'fixed90/90': 1760, 'fixed40/80': 2617, 'asym10u/20u': 223, 'fixed45/45': 2103, 'fixed30/90': 4438, 'fixed120/60': 683, 'fixed30/30': 1832, 'fixed90/30': 696, 'fixed80/40': 619, 'sym30u': 92, 'fixed120/120': 65, 'asym15u/30u': 36}. CAUTION: with 17 shapes some of these are chance (best-of-17 on 26 weeks); the engine step and the null decide.
 
 ## Clip: distinct shapes per ladder cell (of 17 weekly series)
 
 17 distinct: 192 cells, 16 distinct: 245 cells, 15 distinct: 82 cells, 14 distinct: 113 cells, 13 distinct: 64 cells, 12 distinct: 57 cells, 11 distinct: 116 cells
 
-Cells where sym15u and sym30u are identical (clipped to the same points): 13255 of 34298 grid cells in these jobs.
+Cells where sym15u and sym30u are identical (clipped to the same points): 14375 of 38391 grid cells in these jobs.
 
 ## Top 30 ladder cells by L6M equal-risk net points/week (best shape), L3M beside, plain 60/60 number beside
 
