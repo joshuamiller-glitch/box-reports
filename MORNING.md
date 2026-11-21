@@ -16214,3 +16214,8 @@ LAYERS-OFF VERDICT against the prereg rule ('layers are the cause only if in >= 
 - 22:25Z W-GRIDOPS AUTO-WIRE: /mnt/l2/l2vast/_brkt/pending_item6_c_43.txt wired at queue line 58, class item6 (60 rows)
 - 22:25Z W-GRIDOPS AUTO-WIRE: /mnt/l2/l2vast/_brkt/pending_step2b_nyam_44.txt wired at queue line 61, class nyam_BC (288 rows)
 - 22:25Z W-GRIDOPS AUTO-WIRE: /mnt/l2/l2vast/_brkt/pending_step2c_asia_42.txt wired at queue line 52, class asia_C (540 rows)
+- 22:25Z W-COMBO RESELECT-ASIA [loop asia-own] HB asia-own | step run/1 | waiting_on 4 sets | queued_or_running 4 | last_progress 22:25Z | pid 1217975
+- 22:25Z W-COMBO RESELECT-ASIA [loop asia-own] HB widening | step as 250 of 735 unaffected books complete; ny 81 of 982 unaffected books complete; fitted proposals seen 1 merged 1 rejected 0; pool 46, waiting controls 91 | waiting_on 56501 set-months | queued_or_running 24539 | last_progress 20:22Z | pid 1217975
+- (22:27Z) W-ORB: ORB fade lead page DS3_ORB_FADE_LEAD.md refreshed, label LEAD (controls 10/30 valid: cannot be CONFIRMED), identity {'202610': 'PASS (691 vs 691 trades, 37159.82 vs 37159.82)', '202504': 'PASS (637 vs 637 trades, 41239.76 vs 41239.76)'}; loop pid 3105118, stop: touch /mnt/l2/l2vast/_orb/STOP
+- 22:30Z W-NYENG (cron status line, every 30 min) NY AM D8 page 689 min old (D8_SPEC_STATUS.md); ; ladder pending_r5 lines 970613
+- 22:30Z WATCHDOG fired: F
