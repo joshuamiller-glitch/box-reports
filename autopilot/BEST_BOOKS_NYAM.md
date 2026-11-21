@@ -1,8 +1,8 @@
-# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-21 03:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-21 04:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 4247 distinct cells scored (2654 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2947; L6M and L3M > 0: 2106; labels {'WEAK-BUT-POSITIVE': 2382, 'BEST-AVAILABLE-NOT-PROVEN': 1300, 'LEAD': 565}. Job errors: 0. Run 605 s.
+**Counts:** 4246 distinct cells scored (2657 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2947; L6M and L3M > 0: 2106; labels {'WEAK-BUT-POSITIVE': 2382, 'BEST-AVAILABLE-NOT-PROVEN': 1299, 'LEAD': 565}. Job errors: 0. Run 702 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -105,15 +105,15 @@ Bars per hour = mean over every NY AM session (09:30-12:00, 2.5 h ET) in 2026-05
 
 | NYAM | 2,713 / 7,764 (0.35) | 2,617 / 7,377 | 728 / 1814 | p_L6M (null / real families at threshold = FDR) | 313 / 903 = 35% | 140 / 268 = 52% | 50 / 81 = 62% | 18 / 33 = 55% |
 
-## Where the live books rank (same table, same scoring; 4252 rows in this session)
+## Where the live books rank (same table, same scoring; 4251 rows in this session)
 
 | rank | OLD rank (before re-runs) | rank L3M | top-50 on both L6M and L3M | what it is (bar, trigger, settings, side, bracket) | bars per hour (L6M mean, this session) | cell | kind | src | SCORE L6M ($/wk / ulcer) | score L3M | L6M $/wk | L3M $/wk | L6M ulcer | L3M ulcer | L6M maxDD | L6M worst wk | trades/wk | win% | avg win | avg loss | pers 2wk L6M | pers 2wk all landed | 2023 $/wk | 2023 ulcer | 2023 worse% | 2023 | 2024 $/wk | 2024 ulcer | 2024 worse% | 2024 | 2025 $/wk | 2025 ulcer | 2025 worse% | 2025 | prior yrs | label | screen p L6M | screen p ALL | twins merged |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 214 | 96 | 74 |  | live book H7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_H7 | LIVE | JL3 | 0.272 | 0.746 | 339 | 546 | 1249 | 733 | -3149 | -1773 | 1.5 | 0.62 | 981 | -977 | 0.64 | 0.53 | 110 | 3142 | +87 | RED | -215 | 12674 | +163 | RED | 118 | 2700 | +84 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 569 | 255 | 1040 |  | live book O7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_O7 | LIVE | JL3 | 0.161 | 0.155 | 410 | 335 | 2548 | 2156 | -5970 | -2146 | 1.9 | 0.39 | 1640 | -680 | 0.64 | 0.66 | -150 | 8854 | +137 | RED | 743 | 1395 | -81 | GREEN | 525 | 2374 | -28 | GREEN | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 1797 | 786 | 495 |  | live book M7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_M7 | LIVE | JL3 | 0.047 | 0.301 | 338 | 843 | 7240 | 2806 | -14132 | -5751 | 9.2 | 0.42 | 1173 | -788 | 0.50 | 0.55 | -175 | 10942 | +152 | RED | 603 | 5798 | -78 | GREEN | 261 | 4989 | +23 | AMBER | RED | WEAK-BUT-POSITIVE |  |  | 0 |
-| 1894 | 828 | 2263 |  | live book P7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_P7 | LIVE | JL3 | 0.042 | 0.022 | 110 | 80 | 2646 | 3696 | -7712 | -3001 | 1.7 | 0.49 | 995 | -826 | 0.64 | 0.40 | 379 | 1091 | -244 | GREEN | -275 | 5952 | +349 | RED | -107 | 6270 | +197 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
-| 4210 | 1789 | 3854 |  | live book K7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 3 min (tm180 = 180 seconds) [tm180]; ~20 bars/hour | 20 | LIVE_K7 | LIVE | JL3 | -0.053 | -0.072 | -453 | -591 | 8572 | 8191 | -20010 | -5409 | 7.9 | 0.39 | 1165 | -827 | 0.43 | 0.49 | 27 | 11431 |  | n/a | 265 | 8709 |  | n/a | -53 | 7958 |  | n/a | not landed | BEST-AVAILABLE-NOT-PROVEN |  |  | 0 |
+| 1894 | 828 | 2262 |  | live book P7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_P7 | LIVE | JL3 | 0.042 | 0.022 | 110 | 80 | 2646 | 3696 | -7712 | -3001 | 1.7 | 0.49 | 995 | -826 | 0.64 | 0.40 | 379 | 1091 | -244 | GREEN | -275 | 5952 | +349 | RED | -107 | 6270 | +197 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
+| 4209 | 1789 | 3853 |  | live book K7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 3 min (tm180 = 180 seconds) [tm180]; ~20 bars/hour | 20 | LIVE_K7 | LIVE | JL3 | -0.053 | -0.072 | -453 | -591 | 8572 | 8191 | -20010 | -5409 | 7.9 | 0.39 | 1165 | -827 | 0.43 | 0.49 | 27 | 11431 |  | n/a | 265 | 8709 |  | n/a | -53 | 7958 |  | n/a | not landed | BEST-AVAILABLE-NOT-PROVEN |  |  | 0 |
 
 (live rows are JL3 own trades normalised to 1 lot; as-run base-lot numbers are in the CSV-side table below.)
 
@@ -187,10 +187,10 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
 | K7 | -11868 | 207 | 329 | -11898 | -17666 / -5271 | 1737 | 14.6% | 202 |
-| P7 | 6016 | 45 | 8168 | 5353 | 1159 / 10452 | 586 | 9.7% | 45 |
-| H7 | 8886 | 39 | 8170 | 9181 | 4686 / 11311 | 707 | 8.0% | 39 |
-| M7 | 8851 | 240 | 8167 | 9503 | 909 / 17719 | 1889 | 21.3% | 239 |
-| O7 | 10744 | 49 | 8187 | 10744 | 8949 / 12269 | 266 | 2.5% | 49 |
+| P7 | 6016 | 45 | 8170 | 5353 | 1159 / 10452 | 586 | 9.7% | 45 |
+| H7 | 8886 | 39 | 8172 | 9181 | 4686 / 11311 | 707 | 8.0% | 39 |
+| M7 | 8851 | 240 | 8169 | 9503 | 909 / 17719 | 1889 | 21.3% | 239 |
+| O7 | 10744 | 49 | 8189 | 10744 | 8949 / 12269 | 267 | 2.5% | 49 |
 
 The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 309 pairs over 259 cells): mean abs difference of its own L6M total $1828 = 26.6% of |total| (median 5.4%, 90th pct 36.7%); trade-count differences: mean abs 1.6 trades (primary mean 218).
 

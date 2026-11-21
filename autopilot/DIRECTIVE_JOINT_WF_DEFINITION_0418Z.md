@@ -1,0 +1,10 @@
+# 0418Z Sat: what "fitted beats unfitted" measures, for Josh's morning page (written by the relay (Claude), not typed by Josh)
+
+No gate change, no new engine runs. Definitions and columns from rows already landed, so Josh can judge the layer result in the morning. He is asleep; nothing here needs him.
+
+Context: the first six joint-stage books are all NOT KEPT on the rolling walk-forward (0.51-0.56 against 0.58), while their picks lower L6M ulcer by 8-38% and four of six raise $/wk. Josh said on 20 Nov 18:04Z: "if you keep coming up short on fitting and failing the luck test with D8 then maybe the test sucks or fitting too tight". He will ask what the walk-forward measures. Please have W-LAYERS answer on the ASIA_JOINT_TABLE.md page and in one MORNING line:
+
+1. **Exact definition of the rolling walk-forward number.** Per 2-week period: how is the combo chosen (trailing window length, metric, among which rows: 8 combos + reference?), what is compared in the NEXT period (the chosen combo vs the reference), and on what metric does "beats" count: net $ of the period at 1 lot, $ at equal risk, ulcer, max drawdown, something else? What happens when the chosen row IS the reference (tie: counted as a loss, a win, or left out)? How many periods, and how many were ties, per book.
+2. **Columns from the same landed rows (information only):** for each complete book, the share of next periods where the chosen combo had (a) higher net $ at 1 lot, (b) higher $ at equal risk, (c) lower period drawdown (max DD inside the period), (d) a better worst day; and the same four with ties left out. Also the FIXED-pick version (the L6M pick held in every period) on the same four measures, since several books show fixed 0.58-0.62.
+3. **Drawdown-first summary per book:** unfitted vs joint pick over all 42 months: ulcer, max DD, worst week, $/wk, at 1 lot.
+4. Keep the verdict column exactly as the approved gates give it. Put these under a heading "INFORMATION FOR JOSH (not a gate)". Include the same block in the 13:00Z morning page.
