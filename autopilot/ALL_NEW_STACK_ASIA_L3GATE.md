@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:49Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:52Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -32,7 +32,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
 | own-checks (run) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
-| staying-power (run) | L7c368a4f | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 |
+| staying-power (moves) | L7c368a4f | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 615 books with a BASE set; 491 have all 42 months landed = counted below; 73 still waiting for prior years)
 

@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:49Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:53Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -31,8 +31,8 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (run) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
-| staying-power (run) | L7c368a4f | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 |
+| own-checks (moves) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
+| staying-power (run) | L7c368a4f + L578701ed | 5675 / -14801 / -10059 / 4229 | 4927 / -10072 / -8937 / 3064 | 2095 / -5134 / -3277 / 965 | 8225 / -23263 / -4698 / 696 | 6804 / -20199 / -14470 / 1049 | 0.70 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 615 books with a BASE set; 491 have all 42 months landed = counted below; 73 still waiting for prior years)
 
@@ -69,9 +69,11 @@ Selected books in order (plain words):
 - L385f4f2e.J502 [PASS-2 FINAL BOOK L385f4f2e.J502 of L385f4f2e: pass-2 final J502 (W-P2A): signal-level entry filter = C1 confluence setting 5 + C3 time-window setting 2 on the _CANC events of L385f4f2e (volume bar 2600); LEAD at best until fitted: its plain _CANC base is $476/wk in L6M, 2023 only +$40/wk]: (no description in best_books full csv)
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 1 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 06:43Z UTC; pool 27 books): L7c368a4f + La010c3eb
 
-Phase: run. Pool used by this run: 28 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M86781ac0, Ma010c3eb, Mcae177ba).
+Phase: moves. Pool used by this run: 28 books (L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3faac8df, L40bde9ea, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7f41b347, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M86781ac0, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 

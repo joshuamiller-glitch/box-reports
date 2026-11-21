@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:49Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 06:53Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -13,17 +13,17 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $2456 per wk (positive), L3M $2434 per wk (positive); prior years $/wk: 2023 203 (positive), 2024 654 (positive), 2025 528 (positive); OWN persistence (share of positive 14-day blocks) 0.62 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $4229 per wk (positive), L3M $3064 per wk (positive); prior years $/wk: 2023 965 (positive), 2024 696 (positive), 2025 1049 (positive); OWN persistence (share of positive 14-day blocks) 0.70 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.31 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.43 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 4075 / -11123 / -7409 / 2456 | 4075 / -10016 / -6556 / 1754 | +702 |
-| L3M | 2028 / -5118 / -3617 / 2434 | 3790 / -8664 / -5531 / 990 | +1444 |
-| Y2023 | 4013 / -9990 / -2484 / 203 | 6344 / -10375 / -2535 / -50 | +253 |
-| Y2024 | 4626 / -11465 / -2843 / 654 | 2886 / -7965 / -2511 / 430 | +224 |
-| Y2025 | 5940 / -14312 / -10102 / 528 | 6050 / -11979 / -4555 / 395 | +133 |
+| L6M | 5675 / -14801 / -10059 / 4229 | 5675 / -13948 / -9129 / 2443 | +1786 |
+| L3M | 4927 / -10072 / -8937 / 3064 | 5277 / -12065 / -7702 / 1379 | +1685 |
+| Y2023 | 2095 / -5134 / -3277 / 965 | 8835 / -14448 / -3531 / -69 | +1034 |
+| Y2024 | 8225 / -23263 / -4698 / 696 | 4020 / -11092 / -3496 / 599 | +97 |
+| Y2025 | 6804 / -20199 / -14470 / 1049 | 8425 / -16681 / -6343 / 550 | +499 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 615 books with a BASE set; 491 have all 42 months landed = counted below; 73 still waiting for prior years)
 
@@ -55,9 +55,12 @@ Pool books: L15f14deb [BASE kept: time / line-break / median-Renko / swing bar],
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L7c368a4f | `TL3_ALN_AS_L7c368a4f_BASE` | 4075 / -11123 / -7409 / 2456 | 2028 / -5118 / -3617 / 2434 | 4013 / -9990 / -2484 / 203 | 4626 / -11465 / -2843 / 654 | 5940 / -14312 / -10102 / 528 | 0.62 | 28 |
+| 2 | L578701ed | `TL3_ALN_AS_STKd8ac766a69` | 5675 / -14801 / -10059 / 4229 | 4927 / -10072 / -8937 / 3064 | 2095 / -5134 / -3277 / 965 | 8225 / -23263 / -4698 / 696 | 6804 / -20199 / -14470 / 1049 | 0.70 | 15 | **L3M DISAGREES** (L3M return per ulcer worse by 48% than the stack before this step; shown, not a gate)
 
 Selected books in order (plain words): 
 - L7c368a4f [BASE kept: time / line-break / median-Renko / swing bar]: time bar 5 min [time_m_5]; ~12 bars/hour; trigger trig_pullback_ema / depth {"len": 10, "w": 0.5}; SIDE: BOTH SIDES; bracket plain60/60
+   fitted: none proposed yet (stage 1 not done for this book)
+- L578701ed [BASE kept: time / line-break / median-Renko / swing bar]: time bar 1 min [time_m_1]; ~60 bars/hour; trigger trig_book_dwm / dev_follow {"L": 200, "z": 2.0}; SIDE: BOTH SIDES as engine-run (screen mode was long; the long-only book is the M-id); bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 06:43Z UTC; pool 27 books): L7c368a4f + L578701ed
@@ -67,7 +70,7 @@ Phase: run. Pool used by this run: 28 books (L15f14deb, L1756b913, L1edb9fab, L2
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
 
-EQUAL-RISK LINE (this stack vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off)): today's Asia session scaled DOWN by k = 0.31 to the stack's drawdown: L6M 4075 / -10016 / -6556 / 1754 ; L3M 3790 / -8664 / -5531 / 990. The stack: L6M 4075 / -11123 / -7409 / 2456 ; L3M 2028 / -5118 / -3617 / 2434. Persistence of the stack vs that reference: 0.53; rule B per prior year: GREEN / RED / RED.
+EQUAL-RISK LINE (this stack vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off)): today's Asia session scaled DOWN by k = 0.43 to the stack's drawdown: L6M 5675 / -13948 / -9129 / 2443 ; L3M 5277 / -12065 / -7702 / 1379. The stack: L6M 5675 / -14801 / -10059 / 4229 ; L3M 4927 / -10072 / -8937 / 3064. Persistence of the stack vs that reference: 0.63; rule B per prior year: GREEN / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
