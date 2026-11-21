@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:14Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 20:20Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_LONDON.md.**
@@ -24,7 +24,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (b) positive $/wk in each of 2023, 2024, 2025 | 0 of 0 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 0 of 0 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 0 books) | 0 of 0 |
-| (e) not RED on rule B vs BARE D7 (the yardstick, W-BARE: all live books of the session, layers off), scaled to equal risk, in every prior year | 0 of 0 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 0 of 0 |
 | a + b | 0 |
 | a + b + c | 0 |
 | a + b + c + d | 0 : none |
@@ -52,7 +52,7 @@ RESULT: EMPTY: no book passes everything alone yet
 
 Phase: done. Pool used by this run: 0 books ().
 
-## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
+## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)

@@ -125,8 +125,8 @@ Option A earns more per unit of ulcer and has far smaller drawdowns in L6M/L3M (
 `D8_PRINT_RULE.md` (print rule, causal variants, bar classes), `D8_BAR_DEFS.md` (bar rules, tm rule, thresholds), `D8_FEED_CHECK.md` (feed alignment), `D8_TRIGDEBUG_*`, `D8_VECTORS_*` (per-book tables), `D8_P2_J502_FILTER.md`, `D8_CANF_COMPARE.md`, `D8_CAN_RESULTS.md`, `ASIA_ONE_BOOK_EXPLAIN.md`.
 
 <!-- AUTO:asia -->
-## AUTO SESSION SECTION ASIA (refreshed 2026-11-21 20:07Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-21 20:03Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION ASIA (refreshed 2026-11-21 20:17Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-21 20:09Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "asia-own" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
 Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 35 | weights: equal (1 each)
@@ -171,8 +171,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-21 20:07Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-21 20:03Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-21 20:17Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-21 20:09Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "ny-own" (equal weights): final set `TL3_ALN_NY_STKd8e739bd5e`
 Selection: ['L7cc56d99', 'L488784d8', 'B7bfd33b7', 'B6f77f23d', 'L6547965c'] | controls [30, 23, 30] | pool 8 | weights: equal (1 each)
@@ -203,3 +203,19 @@ Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this
 Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
 NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
 <!-- /AUTO:nyam -->
+
+<!-- AUTO:london -->
+## AUTO SESSION SECTION LONDON (refreshed 2026-11-21 20:17Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_london.json (updated 2026-11-21 20:09Z). A final is listed here only when its stack-rule page autopilot/LONDON_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
+NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
+<!-- /AUTO:london -->
+
+<!-- AUTO:nypm -->
+## AUTO SESSION SECTION NYPM (refreshed 2026-11-21 20:17Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-21 20:09Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
+NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
+<!-- /AUTO:nypm -->
