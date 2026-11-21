@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 00:59Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-21 01:04Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -21,7 +21,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $7425 per wk (positive), L3M $5776 per wk (positive); prior years $/wk: 2023 3530 (positive), 2024 2592 (positive), 2025 4337 (positive); OWN persistence (share of positive 14-day blocks) 0.78 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $7425 per wk (positive), L3M $5776 per wk (positive); prior years $/wk: 2023 3530 (positive), 2024 2592 (positive), 2025 4337 (positive); OWN persistence (share of positive 14-day blocks) 0.78 (>= 0.58 passes); stack controls: beats (30, 23, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
 
 ## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.18 so that the L6M ulcer matches)
 
@@ -88,9 +88,9 @@ Selected books in order (plain words):
 
 STOPPED at 5 books: no candidate passes the add rule.
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 23:57Z UTC; pool 5 books): L7cc56d99 + L488784d8
+Stack-level luck control: beats (30, 23, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
 
-Phase: final. Pool used by this run: 6 books (B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99).
+Phase: done. Pool used by this run: 6 books (B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99).
 
 ## REFERENCE BLOCK: BARE D7 (the yardstick, W-BARE: all live books of the session, layers off) (all fitted-D7 numbers and colours of this page live here only)
 
