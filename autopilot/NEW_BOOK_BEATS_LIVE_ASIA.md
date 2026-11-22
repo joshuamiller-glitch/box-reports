@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-22 23:00Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-22 23:05Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -718,12 +718,12 @@ Rate now: Asia landed last hour 0 set-months/h (box-1 tree view; see MORNING.md 
 Asia set-months landed: last 1 h 0, last 3 h 0; Asia queue lines pending (not DONE): 3.
 
 ## Proof that Asia sets are launched ahead of NY AM
-- QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 1062, _nye/pending_w , _lon 1063 (lower = earlier).
+- QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 1064, _nye/pending_w , _lon 1065 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > ALN > STK > EXE > NYL > NYF > FR > NYE
-- box1 running engine sets by tag: 33 TL3_NYE_      12 TL3_SR_
-- server2 running engine sets by tag: 38 TL3_SR_      18 TL3_ALN_
-- A running engine sets by tag: 118 TL3_ALN_      84 TL3_SR_
-- B running engine sets by tag: 110 TL3_ALN_      88 TL3_SR_
+- box1 running engine sets by tag: 28 TL3_SR_      26 TL3_NYE_
+- server2 running engine sets by tag: 48 TL3_ALN_       2 TL3_SR_
+- A running engine sets by tag: 127 TL3_ALN_      64 TL3_SR_
+- B running engine sets by tag: 124 TL3_ALN_      70 TL3_SR_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
