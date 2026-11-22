@@ -1,4 +1,4 @@
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-22T09:15:01Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-22T09:45:02Z)
 
 Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 3197; WITHOUT a first look: 0** (0 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 2511, 'B': 231, 'out': 394, 'out (RED B)': 2}.
 

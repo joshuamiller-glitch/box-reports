@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 09:44Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 09:49Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -88,7 +88,7 @@ STOPPED at 5 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 04:25Z UTC; pool 9 books): Le4fede95.BRF90_30 + B7bfd33b7
 
-Phase: moves. Pool used by this run: 22 books (B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Bf428c4a1.BRS8U, L05350e98, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L6547965c, L6d0d3174.BRF60_120, L7693034b.BRF30_90, L7cc56d99, L8cfda948.BRF90_30, L8f11883e.BRF30_90, Lbb254083.BRP45, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60).
+Phase: final. Pool used by this run: 22 books (B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Bf428c4a1.BRS8U, L05350e98, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L6547965c, L6d0d3174.BRF60_120, L7693034b.BRF30_90, L7cc56d99, L8cfda948.BRF90_30, L8f11883e.BRF30_90, Lbb254083.BRP45, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
