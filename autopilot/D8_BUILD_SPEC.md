@@ -125,8 +125,8 @@ Option A earns more per unit of ulcer and has far smaller drawdowns in L6M/L3M (
 `D8_PRINT_RULE.md` (print rule, causal variants, bar classes), `D8_BAR_DEFS.md` (bar rules, tm rule, thresholds), `D8_FEED_CHECK.md` (feed alignment), `D8_TRIGDEBUG_*`, `D8_VECTORS_*` (per-book tables), `D8_P2_J502_FILTER.md`, `D8_CANF_COMPARE.md`, `D8_CAN_RESULTS.md`, `ASIA_ONE_BOOK_EXPLAIN.md`.
 
 <!-- AUTO:asia -->
-## AUTO SESSION SECTION ASIA (refreshed 2026-11-22 06:41Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-22 06:41Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION ASIA (refreshed 2026-11-22 06:51Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-22 06:46Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "asia-own" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
 Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 80 | weights: equal (1 each)
@@ -178,11 +178,11 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 05:37Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 05:30Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 06:51Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 06:46Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_L43f0cbfb_R0BRS8U`
-Selection: ['L43f0cbfb.BRS8U'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+Selection: ['L43f0cbfb.BRS8U'] | controls [27, 18, 28] | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
