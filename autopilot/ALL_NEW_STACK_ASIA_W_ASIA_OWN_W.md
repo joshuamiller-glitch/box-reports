@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 09:39Z.
+# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 09:44Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
