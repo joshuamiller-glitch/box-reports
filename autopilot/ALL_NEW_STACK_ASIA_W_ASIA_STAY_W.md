@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-stay-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 10:40Z.
+# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-stay-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 11:04Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -16,7 +16,7 @@ Phase **done**; pool 80 books (L018fb0c0, L130cb48e, L1343f8bd.BRP45, L1525fc29.
 
 ## FINAL (weighted): Lb0e6dfa3.BRF40_80 x1
 
-Controls beaten (30): (29, 20, 30) (L6M drawdown-first / L3M / ulcer-only); own persistence 0.66; moves: no swap/drop/resize passed the add rule + gate
+Controls beaten (30): [29, 20, 30] (L6M drawdown-first / L3M / ulcer-only); own persistence 0.66; moves: no swap/drop/resize passed the add rule + gate
 
 ### this mix, 1-lot units (ulcer / maxDD / worst wk / $ per wk)
 
