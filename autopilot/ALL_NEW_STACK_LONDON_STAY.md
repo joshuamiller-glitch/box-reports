@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 23:49Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 23:54Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_LONDON_OWN_CHECKS.md.
@@ -60,9 +60,11 @@ Selected books in order (plain words):
 - L74274eca.BRF120_60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L74274eca.BRF120_60 of L74274eca: step 2 at the new shape F120_60 (R0BR, truly bare; W-BRKT step 2a/2b)]: (no description in best_books full csv)
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 1 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:14Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
 
-Phase: run. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
+Phase: final. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 

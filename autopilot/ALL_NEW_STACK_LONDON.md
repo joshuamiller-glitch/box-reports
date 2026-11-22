@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 23:49Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 23:54Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_LONDON.md.**
@@ -27,8 +27,8 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (moves) | L19201dfc.BRF90_30 | 1273 / -3809 / -2673 / 1768 | 1406 / -3402 / -2449 / 1643 | 1913 / -5238 / -2549 / 273 | 4372 / -11780 / -5793 / 251 | 5080 / -12803 / -4448 / 183 | 0.62 |
-| staying-power (run) | L74274eca.BRF120_60 | 5193 / -11653 / -6683 / 1584 | 4632 / -10904 / -6683 / 2144 | 9095 / -17549 / -8734 / 74 | 5736 / -15827 / -5004 / 826 | 6458 / -21198 / -9163 / 538 | 0.60 |
+| own-checks (final) | L19201dfc.BRF90_30 | 1273 / -3809 / -2673 / 1768 | 1406 / -3402 / -2449 / 1643 | 1913 / -5238 / -2549 / 273 | 4372 / -11780 / -5793 / 251 | 5080 / -12803 / -4448 / 183 | 0.62 |
+| staying-power (moves) | L74274eca.BRF120_60 | 5193 / -11653 / -6683 / 1584 | 4632 / -10904 / -6683 / 2144 | 9095 / -17549 / -8734 / 74 | 5736 / -15827 / -5004 / 826 | 6458 / -21198 / -9163 / 538 | 0.60 |
 
 ## GATE BY GATE: London, books ALONE on the all-new base (universe 4 books with a BASE set; 4 have all 42 months landed = counted below; 0 still waiting for prior years)
 
@@ -71,7 +71,7 @@ STOPPED at 1 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:13Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
 
-Phase: moves. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
+Phase: final. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
