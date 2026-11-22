@@ -178,17 +178,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 06:51Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 06:46Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
-
-### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_L43f0cbfb_R0BRS8U`
-Selection: ['L43f0cbfb.BRS8U'] | controls [27, 18, 28] | pool None | weights: see loop final JSON reselect_*_w*.json
-
-| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
-|---|---|---|---|---|---|---|---|---|
-| L43f0cbfb | pnf_14 | trig_levels_fibr_on | false_break {"M": 3, "k": 0.5} | long | 120/120 (median stop/target pts; shape per set name) | both | 1 | 25009 |
-
-Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 08:41Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 08:41Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
 NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
