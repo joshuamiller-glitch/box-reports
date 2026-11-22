@@ -23,3 +23,31 @@ JOINT PICK: TL3_SR_NY_STKd8b76ecd35_N2_JT3 -> {'SC': 0, 'BL': 6, 'CAP': 1, 'STK'
 | 2025 | 15583 / -59504 / -30226 / -17236 / 3561 (days stopped 0) | 12442 / -45085 / -24022 / -16111 / 3102 (days stopped 0) | 12920 / -45601 / -24897 / -16111 / 3405 (days stopped 0) | - |
 
 Cells: ulcer / max DD / worst week / worst DAY / $ per week. Not yet automatic here: NULL (needs W-SHORT null files for this stack), 30 CONTROLS (W-COMBO control sets), LOT CHECK at 2x and 4x the native lots (stage built next).
+
+## LOT CHECK and CONTROLS (automatic, 12:24Z)
+
+Per-lot results of the final combo at 1x / 2x / 4x the native lots (dollar columns divided by the lot multiple; ulcer / max DD / worst week / $ per week):
+
+| window | 1x | 2x per lot | 4x per lot |
+|---|---|---|---|
+| L6M | 3681 / -12120 / -1406 / 8151 | 3734 / -12130 / -3614 / 7743 | 3810 / -10716 / -3679 / 7267 |
+| L3M | 3483 / -9765 / -1406 / 6501 | 3725 / -9728 / -3614 / 5790 | 3748 / -9796 / -3679 / 5730 |
+| 2023 | 11777 / -33057 / -13132 / 1877 | 10421 / -29922 / -11913 / 1886 | 10454 / -30021 / -11927 / 1855 |
+| 2024 | 10014 / -28407 / -19393 / 2308 | 8751 / -24810 / -16446 / 2310 | 9128 / -25094 / -16530 / 2110 |
+| 2025 | 12920 / -45601 / -24897 / 3405 | 11834 / -41779 / -25029 / 3327 | 12004 / -41898 / -25212 / 3222 |
+
+Controls: no ctl_prefix / control sets for this final: not run (W-COMBO).
+
+## LOT CHECK and CONTROLS (automatic, 12:24Z)
+
+Per-lot results of the final combo at 1x / 2x / 4x the native lots (dollar columns divided by the lot multiple; ulcer / max DD / worst week / $ per week):
+
+| window | 1x | 2x per lot | 4x per lot |
+|---|---|---|---|
+| L6M | 3681 / -12120 / -1406 / 8151 | 3734 / -12130 / -3614 / 7743 | 3810 / -10716 / -3679 / 7267 |
+| L3M | 3483 / -9765 / -1406 / 6501 | 3725 / -9728 / -3614 / 5790 | 3748 / -9796 / -3679 / 5730 |
+| 2023 | 11777 / -33057 / -13132 / 1877 | 10421 / -29922 / -11913 / 1886 | 10454 / -30021 / -11927 / 1855 |
+| 2024 | 10014 / -28407 / -19393 / 2308 | 8751 / -24810 / -16446 / 2310 | 9128 / -25094 / -16530 / 2110 |
+| 2025 | 12920 / -45601 / -24897 / 3405 | 11834 / -41779 / -25029 / 3327 | 12004 / -41898 / -25212 / 3222 |
+
+Controls: no ctl_prefix / control sets for this final: not run (W-COMBO).

@@ -1,4 +1,4 @@
-# ASIA BOTH-SIDE SCREEN + NULL (W-SHORT for W-ASIA, order 1014Z item 5; refreshed 12:04Z UTC)
+# ASIA BOTH-SIDE SCREEN + NULL (W-SHORT for W-ASIA, order 1014Z item 5; refreshed 12:23Z UTC)
 
 The 1307 Asia ladder cells whose screen mode was long/short but whose engine sets traded BOTH sides, re-screened as mode = both (same row / module / variant / params / bracket). (a) screen numbers from the grid cache on the both-side stream: L6M / L3M points, trades, persistence, prior years in R per week, R0 (same thresholds: L6M > 0, L3M > 0, >= 100 trades, persistence > 0.60, no RED prior year) and own-stop (2 stops; only where the own-stop array exists). (b) random-entry draws with the SAME bracket on the both-side stream (gr3 mode 0: same count and side mix as the real both-side signals), p = (1 + k) / (1 + n): 30 draws for all cells, 200 for the beating cells; p_L6M / p_ALL / p_PRIOR as in the R3 ladder. Priority: beating cells (ids from NEW_BOOK_BEATS_LIVE_ASIA.md) first. Data: code/th_short/pulled_r3/asia_bothside.csv (all cells, all columns).
 
