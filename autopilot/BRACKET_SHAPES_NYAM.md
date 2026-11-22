@@ -1,12 +1,12 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-22 19:59Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-22 20:36Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 10; screen complete for 9; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
+Books in the table: 11; screen complete for 9; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
 Pick counts (complete books): S8U 3, P60 3, P30 1, A15U30U 1, S15U 1
 
 Plain 60/60 is the pick for 3 of 9 complete books.
@@ -24,6 +24,7 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 | L6547965c | P60 | 1275 | 3045 | 48 | -90 | [own] | 351 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 433 | 215 | -95 | 1238 | P60 |
 | L6df41b86 | S15U | 2020 | 8119 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
 | L7cc56d99 | S15U | 2445 | 4790 | -321 | -298 | -99 | -159 | 2445* | 2445* | [own] | 2445* | 2445* | 2445* | 2445* | 2445* | 2445* | -291 | 263 | -258 | -115 | S8U |
+| L8816c2ae | S15U | 1207 | 7766 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
 | Le0da99e2 | S15U | 1580 | 10109 | -119 | -409 | -405 | 1106 | 1566 | 1238 | [own] | 1566 | 1566 | 1566 | 256 | 1227 | 1557 | -502 | -112 | -142 | 338 | S15U |
 
 ## Table 2: L3M equal-risk $/wk (scaled to the current bracket's L3M ulcer)
@@ -39,6 +40,7 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 | L6547965c | 588 | -656 | -238 | [own] | -556 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1130 | 817 | -578 | 817 |
 | L6df41b86 | 844 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
 | L7cc56d99 | 2166 | -546 | -548 | 104 | -61 | 2166 | 2166 | [own] | 2166 | 2166 | 2166 | 2166 | 2166 | 2166 | -586 | 1060 | -558 | -224 |
+| L8816c2ae | 916 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
 | Le0da99e2 | 1680 | -698 | -622 | -942 | 403 | 1650 | 1067 | [own] | 1650 | 1650 | 1650 | 2141 | 1139 | 1632 | -753 | -691 | -447 | 3212 |
 
 ## Table 3: the picks in detail (only books where a shape wins in both windows)
@@ -206,6 +208,9 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 - F60_120: 622 | 11323 | -24911 | -9298 | 13.3 | -1103
 - F80_40: -1853 | 34396 | -52343 | -12721 | 20.6 | -1420
 - F120_60: -367 | 15275 | -32250 | -13168 | 15.2 | -2067
+
+**L8816c2ae** (current S15U): now 1207 | 7766 | -24924 | -11033 | 14.2 | -1960
+
 
 **Le0da99e2** (current S15U): now 1580 | 10109 | -24418 | -7382 | 15.6 | -1915
 
