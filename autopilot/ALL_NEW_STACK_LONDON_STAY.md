@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:09Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:14Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_LONDON_OWN_CHECKS.md.
@@ -9,41 +9,41 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
 
-## GATE BY GATE: London, books ALONE on the all-new base (universe 0 books with a BASE set; 0 have all 42 months landed = counted below; 0 still waiting for prior years)
+## GATE BY GATE: London, books ALONE on the all-new base (universe 4 books with a BASE set; 4 have all 42 months landed = counted below; 0 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 0 of 0 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 0 of 0 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 0 of 0 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 0 books) | 0 of 0 |
-| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 0 of 0 |
-| a + b | 0 |
-| a + b + c | 0 |
-| a + b + c + d | 0 : none |
+| (a) positive $/wk in L6M and L3M | 4 of 4 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 4 of 4 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 4 of 4 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 4 books) | 4 of 4 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 0 of 4 |
+| a + b | 4 |
+| a + b + c | 4 |
+| a + b + c + d | 4 : L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30 |
 | a + b + c + d + e | 0 : none |
 
-Nearest misses (all five gates known, fail exactly one): none.
+Nearest misses (all five gates known, fail exactly one): L12842dde.BRP45 (fails e), L19201dfc.BRF90_30 (fails e), L74274eca.BRF120_60 (fails e), Lc78f2492.BRF90_30 (fails e).
 NOT dead, controls (d) still pending: none.
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's London session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
-## POOL: books ALONE that pass everything: **0** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
-Books with all months landed: 4 of 0 in the universe; failed the prior-year positivity / persistence / controls: 0; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
-Pool books: none yet
+## POOL: books ALONE that pass everything: **4** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **0**)
+Books with all months landed: 4 of 4 in the universe; failed the prior-year positivity / persistence / controls: 0; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
+Pool books: L12842dde.BRP45 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L12842dde.BRP45 of L12842dde: step 2 at the new shape P45 (R0BR, truly bare; W-BRKT step 2a/2b)], L19201dfc.BRF90_30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L19201dfc.BRF90_30 of L19201dfc: step 2 at the new shape F90_30 (R0BR, truly bare; W-BRKT step 2a/2b)], L74274eca.BRF120_60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L74274eca.BRF120_60 of L74274eca: step 2 at the new shape F120_60 (R0BR, truly bare; W-BRKT step 2a/2b)], Lc78f2492.BRF90_30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK Lc78f2492.BRF90_30 of Lc78f2492: step 2 at the new shape F90_30 (R0BR, truly bare; W-BRKT step 2a/2b)]
 
-**Plainly: only 0 book(s) pass everything alone in London so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
+**Plainly: only 4 book(s) pass everything alone in London so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 
-RESULT: EMPTY: no book passes everything alone yet
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:14Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
 
-Phase: done. Pool used by this run: 0 books ().
+Phase: run. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
