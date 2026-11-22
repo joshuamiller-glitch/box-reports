@@ -1,4 +1,4 @@
-# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 18:29Z)
+# DS3_BRACKET_DD_BUILD - non-fixed target rules per book x session, engine on TL3_EV_JN05W2JL2 (written 21:31Z)
 <!-- PR2:BEGIN -->
 ## RE-SCORE UNDER THE CALIBRATED RULE (W-PR2, FIRST PASS, ulcer index primary; data ends 2026-10-30; written 21:02 UTC)
 
