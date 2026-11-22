@@ -162,3 +162,4 @@ The add steps must keep max drawdown and worst week within 15% (after scaling to
 - LEAD (13:05Z): which basis decides the weighted add rule: equal worst-prior-year max drawdown (your weights order; 4-book stack, $7,107/wk R1) or equal L6M ulcer (standing selection rule; the 5-book stack, bare $10,834/wk)? Both stacks are being fitted bare with all layers.
 
 ## ANSWERED 2026-11-22 15:20Z: Asia stack to build = 5-book TL3_ALN_AS_STKd8106b26ef (Josh, 09:58 ET). Add-rule basis question still open.
+- NY AM stage C share to 35% at ~17:00Z when B empties (LEAD DECISION night 16:02Z, caps nothing)
