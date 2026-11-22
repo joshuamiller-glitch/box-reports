@@ -1,4 +1,4 @@
-# STALE_RESULTS 2026-11-22T11:52:00Z: 403 of 620372 done leases (48 h) have inputs newer than their launch / signature changed
+# STALE_RESULTS 2026-11-22T12:14:17Z: 403 of 622546 done leases (48 h) have inputs newer than their launch / signature changed
 by basis (sig = content hash differs, reliable; mtime = lease without signature, only a file newer than the launch): {'sig': 403}
 by family: {'ALN': 393, 'SR': 10}
 full list: autopilot/stale_results.csv
