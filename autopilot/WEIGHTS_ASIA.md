@@ -1,7 +1,7 @@
-# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-22 05:21Z)
+# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-22 05:27Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md (sha in DECISIONS.md). A mix is the SUM of weight x book-alone daily P&L (42 months, 1 lot); no stack interaction; engine check pending.
-Run 2026-11-22 05:21Z; pool hash (asia pool file) bcecd372041d; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3, FINAL_asia_stay_d8+asia_stay_d8_nol3+asia_stay_d8_nol3_w.
+Run 2026-11-22 05:27Z; pool hash (asia pool file) 5dad67aff3fe; dynamic scopes (loop finals): FINAL_asia_stay_d8_nol3_w.
 
 ### Scope A - members J502 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
@@ -115,26 +115,7 @@ BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58 (937 mixes pass the guard an
 
 GATES for the top mix (equal-risk ranking): walk-forward persistence 0.175 over 80 periods (equal weights was the pick in 0; gate >= 0.58); prior-year band 2023 RED (+63%), 2024 GREEN (-10%), 2025 GREEN (-34%); null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
 
-### Scope FINAL_asia_own_d8+asia_own_d8_nol3 - members L385f4f2e (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
-
-Equal-weight reference: worst prior-year max DD -11407. Cells `ulcer / max DD / worst week / $/wk` at 1 lot x scale k; every mix scaled to the reference's worst-prior-year max DD (k shown).
-
-| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
-|---|---|---|---|---|---|---|---|---|
-| equal weights | 1 | 1.00 | 495 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2321 / -4696 / -2024 / 40 | 4258 / -11407 / -3539 / 217 | 4370 / -10172 / -3904 / 179 | - |
-
-Same ranking at equal L6M ulcer (every mix scaled to the reference's L6M ulcer):
-
-| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
-|---|---|---|---|---|---|---|---|---|
-
-BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58: NONE passes (0 mixes pass the L6M guard and the 0.58 persistence together).
-
-No distinct mix: with 1 member(s) every weight vector in the grid is the reference direction (or has no other direction passing the L6M guard): the only choice is a common SCALE, and at equal worst-prior-year max drawdown the scale is fixed by the basis (k = 1 for the reference itself). Sizing A to its worst prior year = its own 2024 max DD -11407.
-
-GATES for the top mix (equal-risk ranking): walk-forward persistence 1.0 over 62 periods (equal weights was the pick in 18; gate >= 0.58); prior-year band ; null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
-
-### Scope FINAL_asia_stay_d8+asia_stay_d8_nol3+asia_stay_d8_nol3_w - members Lb0e6dfa3 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
+### Scope FINAL_asia_stay_d8_nol3_w - members Lb0e6dfa3 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
 Equal-weight reference: worst prior-year max DD -12361. Cells `ulcer / max DD / worst week / $/wk` at 1 lot x scale k; every mix scaled to the reference's worst-prior-year max DD (k shown).
 
