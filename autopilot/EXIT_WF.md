@@ -27,6 +27,7 @@
 | old split | AS | Lff52ec0c | st_sw4_r3_ch3 | 0.86 (85) / 0.87 | +68 / +132 (red) | -25 / +106 (red) | -7 / +159 (red) | n/a | - | not kept |
 | old split | NY | L05350e98 | flowp_v15_t2 | 0.86 (85) / 0.86 | +6 / +149 (red) | -47 / +108 (red) | -4 / +209 (red) | n/a | - | not kept |
 | old split | NY | L6c84f416 | bricks3_v25 | 0.86 (85) / 0.85 | -31 / +32 (red) | -25 / +65 (red) | -57 / +15 (green) | n/a | 25 / 17 | not kept |
+| pass-2 stream (_CANC) | AS | L5c493ea5 | oppx_v15_t2 | 0.86 (85) / 0.86 | -18 / +133 (red) | -15 / +187 (red) | -31 / +173 (red) | n/a | - | not kept |
 | _CANC | AS | L29b1bc3f | flowp_v15_t2 | 0.86 (85) / 0.86 | -47 / +782 (red) | -24 / +184 (red) | +2 / +174 (red) | n/a | - | not kept |
 | _CANC | AS | L018fb0c0 | flowp_v15_t2 | 0.86 (85) / 0.88 | -12 / +242 (red) | +175 / +116 (red) | +25 / +206 (red) | n/a | - | not kept |
 | _CANC | AS | M817db5df | oppx_v15_t2 | 0.86 (85) / 0.85 | +12 / +225 (red) | -2 / +108 (red) | -77 / -142 (green) | n/a | - | not kept |
@@ -126,6 +127,7 @@
 | old split | AS | La1d1323c | v25_t2 | 0.59 (85) / 0.45 | -1 / -6 (green) | +1 / -100 (green) | +26 / +82 (red) | n/a | 27 / 21 | not kept |
 | old split | AS | L0f5e3cd0 | bricks3_v25 | 0.59 (85) / 0.58 | +82 / +103 (red) | -79 / -783 (green) | +88 / +92 (red) | n/a | 30 / 15 | not kept |
 | pass-2 stream (_CANC) | AS | Lc820c5e4 | oppx_v25 | 0.59 (85) / 0.61 | +24 / +92 (red) | -13 / +119 (red) | -4 / +44 (red) | n/a | - | not kept |
+| pass-2 stream (_CANC) | AS | L5c493ea5 | sar_v40 | 0.59 (85) / 0.54 | +30 / +99 (red) | -37 / +109 (red) | -36 / -36 (green) | n/a | - | not kept |
 | _CANC | AS | Lcae177ba | sar_v15 | 0.59 (85) / 0.64 | +12 / +111 (red) | -26 / +17 (amber) | -20 / +54 (red) | n/a | 29 / 17 | not kept |
 | pass-2 stream (_CANC) | AS | L2a1f24ef | v25_t2 | 0.58 (85) / 0.61 | +64 / +68 (red) | -2 / -23 (green) | +111 / +63 (red) | n/a | - | not kept |
 | _CANC | AS | L3a2258bd | sar_v15 | 0.58 (85) / 0.53 | +65 / +413 (red) | -15 / +55 (red) | -37 / -1082 (green) | n/a | - | not kept |
@@ -182,6 +184,7 @@
 - AS Lff52ec0c `st_sw4_r3_ch3`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - NY L05350e98 `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - NY L6c84f416 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2024]
+- AS L5c493ea5 `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L29b1bc3f `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L018fb0c0 `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS M817db5df `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024]
@@ -281,6 +284,7 @@
 - AS La1d1323c `v25_t2`: **exit not kept** - RED prior year(s) [2025]
 - AS L0f5e3cd0 `bricks3_v25`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS Lc820c5e4 `oppx_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- AS L5c493ea5 `sar_v40`: **exit not kept** - RED prior year(s) [2023, 2024]
 - AS Lcae177ba `sar_v15`: **exit not kept** - RED prior year(s) [2023, 2025]
 - AS L2a1f24ef `v25_t2`: **exit not kept** - walk-forward persistence 0.58 < 0.58; RED prior year(s) [2023, 2025]
 - AS L3a2258bd `sar_v15`: **exit not kept** - walk-forward persistence 0.58 < 0.58; RED prior year(s) [2023, 2024]
