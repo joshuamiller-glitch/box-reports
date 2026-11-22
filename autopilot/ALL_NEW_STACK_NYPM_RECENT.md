@@ -1,5 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:29Z.
-**YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:34Z.
 **RECENT BASIS (Josh, 10:48 ET Nov 22: "yes recents should drive this"; orders 1552Z + 1612Z): every add, swap and resize is judged at EQUAL L6M RISK: return per unit of L6M ulcer must beat the stack before by 1%, with the 15% L6M max-drawdown / worst-week guard (after scaling to the current ulcer); L3M is shown beside every step and is not a gate. PRIOR YEARS ARE A CHECK, NOT THE PICKER, and they can block only on the old test: a stack is not chosen if any of 2023, 2024, 2025 has a NEGATIVE mean $/wk or its own persistence (share of positive 14-day blocks) is under 0.58. The AMBER (15-30% worse) / RED (> 30% worse) colours are information with numbers (vs bare D7 scaled to the stack's L6M ulcer, and vs the stack before the step) and never block, because the L6M is the selection window and older years are nearly always weaker. The 15:58Z blocked results (band as blocker, EMPTY) are kept as the _literalband reference files: superseded by order 1612Z. The current-rule page of the same loop name (without RECENT) is the reference row; nothing of it was overwritten.**
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
@@ -15,7 +14,15 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 - L6M $1188 per wk (positive), L3M $483 per wk (positive); prior years $/wk: 2023 179 (positive), 2024 189 (positive), 2025 769 (positive); OWN persistence (share of positive 14-day blocks) 0.59 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE): PENDING, W-BARE has not landed it; L6M / L3M comparison appears here as soon as it does; the FITTED D7 numbers are only in the reference block at the bottom of the page.
+## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.19 so that the L6M ulcer matches)
+
+| window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
+|---|---|---|---|
+| L6M | 2064 / -6398 / -3204 / 1188 | 2064 / -4330 / -1276 / -9 | +1197 |
+| L3M | 2454 / -6398 / -3204 / 483 | 2661 / -4106 / -1276 / -181 | +663 |
+| Y2023 | 3604 / -10745 / -4977 / 179 | 2672 / -5140 / -1333 / -97 | +276 |
+| Y2024 | 4798 / -12186 / -5767 / 189 | 2069 / -5099 / -1552 / 130 | +59 |
+| Y2025 | 3153 / -7798 / -3803 / 769 | 3426 / -6384 / -1584 / -57 | +826 |
 
 ## TWO ASIA STACKS SIDE BY SIDE (research comparison; Josh picks): OWN-CHECKS stack vs STAYING-POWER stack (add rule also requires the stack's persistence not to fall and the worst prior-year ulcer <= 2x the L6M ulcer)
 
@@ -32,7 +39,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (b) positive $/wk in each of 2023, 2024, 2025 | 6 of 6 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 6 of 6 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 6 books) | 6 of 6 |
-| (e) not RED on rule B vs FITTED D7 AS RUN (reference only, not the yardstick), scaled to equal risk, in every prior year | 1 of 6 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 1 of 6 |
 | a + b | 6 |
 | a + b + c | 6 |
 | a + b + c + d | 6 : L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U |
@@ -61,7 +68,7 @@ Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FIN
 
 Phase: run. Pool used by this run: 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
-## REFERENCE BLOCK: FITTED D7 AS RUN (reference only, not the yardstick) (all fitted-D7 numbers and colours of this page live here only)
+## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)

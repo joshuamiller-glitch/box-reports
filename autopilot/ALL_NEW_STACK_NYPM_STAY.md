@@ -1,5 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:29Z.
-**YARDSTICK RULE (Josh 18:03Z): every comparison is BARE D7 vs BARE D8; the BARE D7 sets (W-BARE) have not landed: every line below marked FITTED D7 AS RUN is a reference only, not the yardstick.**
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 22:34Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYPM_OWN_CHECKS.md.
@@ -18,7 +17,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (b) positive $/wk in each of 2023, 2024, 2025 | 6 of 6 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 6 of 6 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 6 books) | 6 of 6 |
-| (e) not RED on rule B vs FITTED D7 AS RUN (reference only, not the yardstick), scaled to equal risk, in every prior year | 1 of 6 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 1 of 6 |
 | a + b | 6 |
 | a + b + c | 6 |
 | a + b + c + d | 6 : L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U |
@@ -48,7 +47,7 @@ RESULT: EMPTY: no stack passes
 
 Phase: done. Pool used by this run: 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
-## REFERENCE BLOCK: FITTED D7 AS RUN (reference only, not the yardstick) (all fitted-D7 numbers and colours of this page live here only)
+## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
