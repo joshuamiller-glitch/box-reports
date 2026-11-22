@@ -1,4 +1,4 @@
-# ALL-NEW STACK NY AM: RECENT BASIS vs CURRENT RULE (W-COMBO2, order 1552Z). Updated 2026-11-22 19:55Z.
+# ALL-NEW STACK NY AM: RECENT BASIS vs CURRENT RULE (W-COMBO2, order 1552Z). Updated 2026-11-22 20:25Z.
 
 **Basis of every number: search-set numbers, 1-lot units (x4-lot weighted sets divided by 4), carrying today's D7 wrapper (R1) as the search runs them; ulcer / max DD / worst wk / mean $ per wk. R0 (truly bare) rows of a final appear on its ASIA_STACKRULES page once W-LAYERS has registered it. Never compared with fitted D7.**
 **RECENT BASIS (Josh, 10:48 ET Nov 22: "yes recents should drive this"; orders 1552Z + 1612Z): every add, swap and resize is judged at EQUAL L6M RISK: return per unit of L6M ulcer must beat the stack before by 1%, with the 15% L6M max-drawdown / worst-week guard (after scaling to the current ulcer); L3M is shown beside every step and is not a gate. PRIOR YEARS ARE A CHECK, NOT THE PICKER, and they can block only on the old test: a stack is not chosen if any of 2023, 2024, 2025 has a NEGATIVE mean $/wk or its own persistence (share of positive 14-day blocks) is under 0.58. The AMBER (15-30% worse) / RED (> 30% worse) colours are information with numbers (vs bare D7 scaled to the stack's L6M ulcer, and vs the stack before the step) and never block, because the L6M is the selection window and older years are nearly always weaker. The 15:58Z blocked results (band as blocker, EMPTY) are kept as the _literalband reference files: superseded by order 1612Z. The current-rule page of the same loop name (without RECENT) is the reference row; nothing of it was overwritten.**
@@ -9,7 +9,7 @@ RECENT = equal L6M ulcer adds / swaps / resizes (15% guard, L3M beside), prior y
 
 | stack | members (weights) | phase | controls beaten (30) | L6M | L3M | 2023 | 2024 | 2025 | rule-B colours 23/24/25 | own persistence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| equal own CURRENT | L8cfda948.BRF90_30 + Lf0346d55.BRP60 + L7cc56d99 + Lbb254083.BRP45 | run | None | 3501 / -12521 / -3040 / 7181 | 3363 / -8566 / -696 / 5587 | 10107 / -26669 / -12438 / 1900 | 13136 / -34982 / -14850 / 1632 | 12859 / -46153 / -24068 / 2588 | RED/RED/RED | 0.71 |
+| equal own CURRENT | L8cfda948.BRF90_30 + Lf0346d55.BRP60 + L7cc56d99 + Lbb254083.BRP45 + L8f11883e.BRF30_90 | done | [30, 26, 30] | 3765 / -12120 / -1591 / 8283 | 3469 / -9765 / -1591 / 7047 | 11562 / -32662 / -13132 / 1942 | 12473 / -35875 / -19393 / 1942 | 12357 / -45085 / -24022 / 3102 | RED/RED/RED | 0.68 |
 | equal own RECENT | L8cfda948.BRF90_30 + Lf0346d55.BRP60 + L7cc56d99 + Lbb254083.BRP45 + L8f11883e.BRF30_90 | done | [30, 26, 30] | 3765 / -12120 / -1591 / 8283 | 3469 / -9765 / -1591 / 7047 | 11562 / -32662 / -13132 / 1942 | 12473 / -35875 / -19393 / 1942 | 12357 / -45085 / -24022 / 3102 | RED/RED/RED | 0.68 |
 | equal stay CURRENT | (no stack yet) | - | None | (not landed / no stack) | | | | | | |
 | equal stay RECENT | (no stack yet) | - | None | (not landed / no stack) | | | | | | |
@@ -22,7 +22,7 @@ RECENT = equal L6M ulcer adds / swaps / resizes (15% guard, L3M beside), prior y
 
 | stack | k | L6M | L3M | 2023 | 2024 | 2025 |
 |---|---|---|---|---|---|---|
-| equal own CURRENT | 1.00 | 3501 / -12521 / -3040 / 7181 | 3363 / -8566 / -696 / 5587 | 10107 / -26669 / -12438 / 1900 | 13136 / -34982 / -14850 / 1632 | 12859 / -46153 / -24068 / 2588 |
-| equal own RECENT | 0.93 | 3501 / -11271 / -1480 / 7703 | 3226 / -9081 / -1480 / 6553 | 10751 / -30373 / -12212 / 1806 | 11599 / -33361 / -18034 / 1806 | 11492 / -41925 / -22339 / 2884 |
-| weighted own CURRENT | 0.58 | 3501 / -12176 / -2723 / 5682 | 4276 / -12176 / -2723 / 3598 | 5528 / -13469 / -7155 / 1360 | 8587 / -18477 / -9557 / 841 | 8382 / -23497 / -13012 / 1832 |
-| weighted own RECENT | 0.91 | 3501 / -12198 / -3577 / 5882 | 3332 / -9954 / -3089 / 4771 | 7909 / -19728 / -10277 / 1532 | 12461 / -30118 / -12020 / 1037 | 13464 / -44794 / -20314 / 1940 |
+| equal own CURRENT | 1.00 | 3765 / -12120 / -1591 / 8283 | 3469 / -9765 / -1591 / 7047 | 11562 / -32662 / -13132 / 1942 | 12473 / -35875 / -19393 / 1942 | 12357 / -45085 / -24022 / 3102 |
+| equal own RECENT | 1.00 | 3765 / -12120 / -1591 / 8283 | 3469 / -9765 / -1591 / 7047 | 11562 / -32662 / -13132 / 1942 | 12473 / -35875 / -19393 / 1942 | 12357 / -45085 / -24022 / 3102 |
+| weighted own CURRENT | 0.63 | 3765 / -13094 / -2929 / 6111 | 4598 / -13094 / -2929 / 3869 | 5945 / -14484 / -7694 / 1462 | 9234 / -19870 / -10277 / 904 | 9014 / -25267 / -13992 / 1970 |
+| weighted own RECENT | 0.98 | 3765 / -13117 / -3847 / 6326 | 3583 / -10704 / -3321 / 5130 | 8504 / -21215 / -11051 / 1648 | 13400 / -32388 / -12926 / 1115 | 14478 / -48170 / -21845 / 2086 |
