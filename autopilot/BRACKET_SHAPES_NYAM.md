@@ -1,12 +1,12 @@
 # BRACKET SHAPES, NY AM pool (stage 1, every bracket on every book)
 
-Written 2026-11-22 19:25Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-22 19:59Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 9; screen complete for 9; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
+Books in the table: 10; screen complete for 9; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 4.
 Pick counts (complete books): S8U 3, P60 3, P30 1, A15U30U 1, S15U 1
 
 Plain 60/60 is the pick for 3 of 9 complete books.
@@ -22,6 +22,7 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 | L05350e98 | S15U | 952 | 3540 | -16 | 230 | 524 | 476 | 952* | 952* | [own] | 952* | 952* | 952* | 952* | 952* | 952* | 351 | 480 | 1112 | 1114 | S8U |
 | L488784d8 | P60 | 881 | 3025 | 1110* | 842 | [own] | 988 | 924 | 550 | 924 | 924 | 924 | 924 | 924 | 924 | 924 | 3101 | 1651 | 368 | 409 | P30 |
 | L6547965c | P60 | 1275 | 3045 | 48 | -90 | [own] | 351 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 1147 | 433 | 215 | -95 | 1238 | P60 |
+| L6df41b86 | S15U | 2020 | 8119 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
 | L7cc56d99 | S15U | 2445 | 4790 | -321 | -298 | -99 | -159 | 2445* | 2445* | [own] | 2445* | 2445* | 2445* | 2445* | 2445* | 2445* | -291 | 263 | -258 | -115 | S8U |
 | Le0da99e2 | S15U | 1580 | 10109 | -119 | -409 | -405 | 1106 | 1566 | 1238 | [own] | 1566 | 1566 | 1566 | 256 | 1227 | 1557 | -502 | -112 | -142 | 338 | S15U |
 
@@ -36,6 +37,7 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 | L05350e98 | 1043 | 89 | 15 | -374 | 11 | 1043 | 1043 | [own] | 1043 | 1043 | 1043 | 1043 | 1043 | 1043 | 112 | 26 | 529 | 388 |
 | L488784d8 | 838 | 1054 | 588 | [own] | 439 | 1014 | 1042 | 1014 | 1014 | 1014 | 1014 | 1014 | 1014 | 1014 | 2907 | 2638 | 162 | 146 |
 | L6547965c | 588 | -656 | -238 | [own] | -556 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1340 | 1130 | 817 | -578 | 817 |
+| L6df41b86 | 844 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
 | L7cc56d99 | 2166 | -546 | -548 | 104 | -61 | 2166 | 2166 | [own] | 2166 | 2166 | 2166 | 2166 | 2166 | 2166 | -586 | 1060 | -558 | -224 |
 | Le0da99e2 | 1680 | -698 | -622 | -942 | 403 | 1650 | 1067 | [own] | 1650 | 1650 | 1650 | 2141 | 1139 | 1632 | -753 | -691 | -447 | 3212 |
 
@@ -182,6 +184,9 @@ Plain 60/60 is the pick for 3 of 9 complete books.
 - F60_120: 811 | 11492 | -24854 | -5835 | 12.5 | -1064
 - F80_40: -289 | 9237 | -18365 | -10736 | 17.1 | -1419
 - F120_60: 1465 | 3604 | -12585 | -9757 | 13.8 | -1898
+
+**L6df41b86** (current S15U): now 2020 | 8119 | -19682 | -8904 | 13.4 | -1910
+
 
 **L7cc56d99** (current S15U): now 2445 | 4790 | -13326 | -7749 | 10.0 | -1950
 
