@@ -190,8 +190,34 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 19:58Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 19:51Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-22 20:09Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-22 20:06Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+### equal option "ny-own" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
+Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 36 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L8cfda948 | dchg_40 | trig_tape_block | b10_follow_sm {"L": 50, "z": 1.0, "sm": 3} | long | 90/30 (median stop/target pts; shape per set name) | long | 1 | 5106 |
+| Lf0346d55 | renko_20 | trig_book_ofi | follow_sm {"L": 200, "z": 2.0, "sm": 3} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6815 |
+| L7cc56d99 | lbrk_3_40 | trig_levels_vwap | break {"n": 2, "k": 0.25} | both | 120/120 (median stop/target pts; shape per set name) | both | 1 | 5466 |
+| Lbb254083 | renko_80 | trig_xmarket_fx | against_6J {"w": 15, "thr": 1.5} | both | 45/45 (median stop/target pts; shape per set name) | both | 1 | 1327 |
+| L8f11883e | time_m_20 | trig_levels_session_hl | retest {"M": 10, "tol": 0.5} | long | 30/90 (median stop/target pts; shape per set name) | long | 1 | 1223 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### equal option "ny-own-l3g" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
+Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 36 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L8cfda948 | dchg_40 | trig_tape_block | b10_follow_sm {"L": 50, "z": 1.0, "sm": 3} | long | 90/30 (median stop/target pts; shape per set name) | long | 1 | 5106 |
+| Lf0346d55 | renko_20 | trig_book_ofi | follow_sm {"L": 200, "z": 2.0, "sm": 3} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6815 |
+| L7cc56d99 | lbrk_3_40 | trig_levels_vwap | break {"n": 2, "k": 0.25} | both | 120/120 (median stop/target pts; shape per set name) | both | 1 | 5466 |
+| Lbb254083 | renko_80 | trig_xmarket_fx | against_6J {"w": 15, "thr": 1.5} | both | 45/45 (median stop/target pts; shape per set name) | both | 1 | 1327 |
+| L8f11883e | time_m_20 | trig_levels_session_hl | retest {"M": 10, "tol": 0.5} | long | 30/90 (median stop/target pts; shape per set name) | long | 1 | 1223 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
 NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
