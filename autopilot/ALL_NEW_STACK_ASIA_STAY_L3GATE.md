@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:19Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:24Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -68,7 +68,7 @@ STOPPED at 1 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 23:10Z UTC; pool 38 books): L7c368a4f
 
-Phase: moves. Pool used by this run: 47 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L578701ed.BRF30_90, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e3c5607.BRP45, L9e4754b9, La010c3eb, La776664b, Lb0e6dfa3.BRF40_80, Lb68a132d, Lc754cf58, Lcbc8a7ec, Ld60fb3e3.BRF40_80, Le207b901.BRF30_90, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
+Phase: final. Pool used by this run: 47 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L578701ed.BRF30_90, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e3c5607.BRP45, L9e4754b9, La010c3eb, La776664b, Lb0e6dfa3.BRF40_80, Lb68a132d, Lc754cf58, Lcbc8a7ec, Ld60fb3e3.BRF40_80, Le207b901.BRF30_90, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
