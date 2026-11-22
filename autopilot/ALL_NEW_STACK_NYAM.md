@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:39Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:44Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -75,9 +75,11 @@ Selected books in order (plain words):
 - B7bfd33b7 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base]: dollar-imbalance bar 6000 [dib_6000]; ~159 bars/hour; trigger trig_levels_profile_va / break_native {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket plain60/60
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 2 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 23:52Z UTC; pool 8 books): L7cc56d99 + L488784d8 + B7bfd33b7 + B6f77f23d + L6547965c
 
-Phase: run. Pool used by this run: 9 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2, Le4fede95.BRF90_30).
+Phase: moves. Pool used by this run: 9 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2, Le4fede95.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
