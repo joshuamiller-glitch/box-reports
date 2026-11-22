@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-22 05:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-22 05:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-22 05:15Z | WARNING serverC below 85% busy for 676 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-22 05:30Z | WARNING serverC below 85% busy for 679 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-22 05:15Z
+2026-11-22 05:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-22 05:15Z | WARNING serverC below 85% busy for 676
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 62.4 GB; live reservations 3 (3 GB); workers 15, of which TP-adopted 12 (RSS 19.3 GB) vs others 3 (RSS 3.3 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 88.45, 80.49, 71.58
-  by tag: NYR quota 12 running 10 hungry True RSS 16.8 GB PSS 13.5 GB; TOOLS quota 0 running 2 hungry False RSS 2.5 GB PSS 2.1 GB; REST quota 0 running 3 hungry False RSS 3.3 GB PSS 2.9 GB
-  cell-months finished last hour (DONE markers): 13746
-  top running jobs: TL3_NYE_Lbb064943_RK7CT21m (x12);TL3_SR_AS_L385f4f2e_P2JCX502_MNnull4_BL3 (x8);TL3_NYE_Lbb064943_RK7CT28m (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 87.19, 87.04, 89.15|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
+Server 1 (this box): MemAvail 72.6 GB; live reservations 11 (11 GB); workers 15, of which TP-adopted 14 (RSS 18.3 GB) vs others 1 (RSS 1.1 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 53.65, 57.31, 63.57
+  by tag: NYR quota 12 running 1 hungry True RSS 1.8 GB PSS 1.6 GB; NYE quota 16 running 11 hungry False RSS 14.7 GB PSS 13.4 GB; TOOLS quota 0 running 2 hungry False RSS 1.9 GB PSS 1.8 GB; REST quota 0 running 1 hungry False RSS 1.1 GB PSS 1.0 GB
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_Lbb064943_ALN (x24);TL3_SR_AS_L385f4f2e_P2JCX502_MNnull1_CAP5 (x12);TL3_SR_AS_L385f4f2e_P2JCX502_MNnull1_CAP6 (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 81.37, 83.99, 86.40|/dev/md2         28T  2.8T   26T  10% /mnt/l2|46|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
