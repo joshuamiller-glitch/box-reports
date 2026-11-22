@@ -6,6 +6,8 @@ Written 2026-11-22 20:47Z by the LEAD from BAREFIT_AS_STKd8106b26ef.md (verdict 
 
 Cells: ulcer / max DD / worst week / worst day / $ per week, per lot (L6M window = last 6 months).
 
+**CG NOT FITTED on new books until done (W-LAYERS2 21:30Z): the c_gov hook of the stack set governs tag P7 only, so every CG row reads zero change and CG1 in any joint pick below is a NO-OP. Fix in progress (gov_book for MF1..MF5); do not build CG from this file.**
+
 ## 1 lot(s) per book
 
 | window | truly bare | best joint |

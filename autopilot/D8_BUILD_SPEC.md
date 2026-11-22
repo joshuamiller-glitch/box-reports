@@ -524,7 +524,7 @@ Common engine facts (SPEC): decisions of the Trade Health cut rules run on the c
 - All-layers fit pages found: DIRECTIVE_ALL_LAYERS_REFIT_ADDENDUM_20261119_2233Z.md, DIRECTIVE_JOSH_FIT_ALL_LAYERS_1220Z.md
 <!-- /AUTO:LAYERS -->
 
-**ASIA LAYER DEFAULTS (fitted, 20:47Z, manual note outside the AUTO block): autopilot/D8_LAYER_DEFAULTS_ASIA.md = per lot basis 1 / 2 / 4 the best joint combo and the best setting of each layer as key = value lines, bare row beside. STATUS WEAK-BUT-POSITIVE / NOT PROVEN (prior years RED vs bare, null pending); panel default stays layers OFF until Josh chooses.**
+**CG (skip-after-losses) NOT FITTED on new books until done: CG1 in the fitted picks is a no-op (c_gov governed P7 only); fix in progress (W-LAYERS2 21:30Z).** **ASIA LAYER DEFAULTS (fitted, 20:47Z, manual note outside the AUTO block): autopilot/D8_LAYER_DEFAULTS_ASIA.md = per lot basis 1 / 2 / 4 the best joint combo and the best setting of each layer as key = value lines, bare row beside. STATUS WEAK-BUT-POSITIVE / NOT PROVEN (prior years RED vs bare, null pending); panel default stays layers OFF until Josh chooses.**
 
 <!-- AUTO:BOOK:L8f11883e -->
 ### BOOK L8f11883e (NY AM): time_m_20 + trig_levels_session_hl retest {"M": 10, "tol": 0.5} [GENERIC AUTO BLOCK, not hand-verified]
