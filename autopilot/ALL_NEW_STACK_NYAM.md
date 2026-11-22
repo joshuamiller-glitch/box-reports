@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:49Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 03:54Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -33,7 +33,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | Y2024 | 7254 / -21398 / -15512 / 441 | 2123 / -4639 / -2414 / 265 | +176 |
 | Y2025 | 17543 / -42190 / -11566 / 955 | 3051 / -9042 / -2750 / 105 | +850 |
 
-## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was B2010fec9 (swap / drop steps: none); WITH the guard this page's stack is Le4fede95.BRF90_30 + B7bfd33b7.
+## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was B2010fec9 (swap / drop steps: none); WITH the guard this page's stack is Le4fede95.BRF90_30 + B7bfd33b7.  Moves blocked by the guard: swap:B7bfd33b7>L488784d8 (max DD +26%, worst wk -24% at equal risk)
 
 ## NY AM STACK A: CHOSEN BY JOSH (13:28Z): L7cc56d99 (line-break bar 3_40 + VWAP-level break) + L488784d8: L6M 4313 / -12245 / -7742 / 3366 ; L3M 3616 / -10088 / -7377 / 2704 ; 2023 5576 / -14827 / -6948 / 1463 RED ; 2024 9984 / -20581 / -8704 / 672 RED ; 2025 9176 / -26571 / -14752 / 1580 RED ; persistence vs today 0.66 ; stack controls beaten 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only). It is the chosen NY AM stack; the runs below are alternatives for comparison.
 
@@ -79,7 +79,7 @@ STOPPED at 2 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 23:52Z UTC; pool 8 books): L7cc56d99 + L488784d8 + B7bfd33b7 + B6f77f23d + L6547965c
 
-Phase: moves. Pool used by this run: 9 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2, Le4fede95.BRF90_30).
+Phase: final. Pool used by this run: 9 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2, Le4fede95.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
