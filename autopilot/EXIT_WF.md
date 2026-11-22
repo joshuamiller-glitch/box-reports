@@ -18,6 +18,7 @@
 | _CANC | NY | L488784d8 | flowp_v15_t2 | 0.91 (85) / 0.91 | -16 / +132 (red) | +42 / +142 (red) | -16 / +141 (red) | n/a | - | not kept |
 | _CANC | AS | L018fb0c0 | flow_v25 | 0.91 (85) / 0.92 | +13 / +276 (red) | +235 / +115 (red) | +13 / +225 (red) | n/a | - | not kept |
 | _CANC | AS | L92a90948 | flow_v25 | 0.90 (82) / 0.89 | -79 / +1163 (red) | -52 / +130 (red) | -47 / +125 (red) | n/a | - | not kept |
+| stack member R0 (ny-equal-5 (order 1033Z)) | NY | Lf0346d55 | BRP60CEXflowp_v15_t2 | 0.89 (85) / 0.87 | -52 / +334 (red) | -8 / +117 (red) | +224 / +119 (red) | n/a | - | not kept |
 | _CANC | AS | Lcae177ba | flowp_v15_t2 | 0.89 (85) / 0.85 | -34 / +204 (red) | -42 / +181 (red) | -56 / +134 (red) | n/a | 9 / 9 | not kept |
 | _CANC | AS | L385f4f2e | flowp_v15_t2 | 0.89 (85) / 0.87 | -34 / +466 (red) | -35 / +176 (red) | -38 / +119 (red) | n/a | - | not kept |
 | _CANC | AS | L92a90948 | flowp_v15_t2 | 0.88 (82) / 0.89 | -85 / +288 (red) | -83 / +90 (red) | +50 / +121 (red) | n/a | - | not kept |
@@ -160,6 +161,7 @@
 - NY L488784d8 `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L018fb0c0 `flow_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L92a90948 `flow_v25`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
+- NY Lf0346d55 `BRP60CEXflowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS Lcae177ba `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L385f4f2e `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
 - AS L92a90948 `flowp_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
