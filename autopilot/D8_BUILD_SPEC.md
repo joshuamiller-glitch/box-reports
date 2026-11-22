@@ -125,8 +125,8 @@ Option A earns more per unit of ulcer and has far smaller drawdowns in L6M/L3M (
 `D8_PRINT_RULE.md` (print rule, causal variants, bar classes), `D8_BAR_DEFS.md` (bar rules, tm rule, thresholds), `D8_FEED_CHECK.md` (feed alignment), `D8_TRIGDEBUG_*`, `D8_VECTORS_*` (per-book tables), `D8_P2_J502_FILTER.md`, `D8_CANF_COMPARE.md`, `D8_CAN_RESULTS.md`, `ASIA_ONE_BOOK_EXPLAIN.md`.
 
 <!-- AUTO:asia -->
-## AUTO SESSION SECTION ASIA (refreshed 2026-11-22 12:36Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-22 12:34Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION ASIA (refreshed 2026-11-22 12:47Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-22 12:39Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "asia-own" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
 Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 80 | weights: equal (1 each)
@@ -161,6 +161,18 @@ Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 80 | weights: e
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
 | Lb0e6dfa3 | tm240 | trig_structure_libpattern | nr {"n": 7} | long | 40/80 (median stop/target pts; shape per set name) | both | 1 | 11058 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### weighted option "asia-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_AS_STKd8da2eb47b`
+Selection: ['Lb0e6dfa3.BRF40_80', 'L385f4f2e.J502', 'L9c2622b0.BRP45', 'L4aaacdb2.BRP30'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| Lb0e6dfa3 | tm240 | trig_structure_libpattern | nr {"n": 7} | long | 40/80 (median stop/target pts; shape per set name) | both | 1 | 11058 |
+| L385f4f2e | vol_2600 | trig_momentum_rsi | mom {"len": 14, "lvl": 60} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 815 |
+| L9c2622b0 | pnf_7 | trig_levels_vwap | break {"n": 3, "k": 0.5} | long | 45/45 (median stop/target pts; shape per set name) | both | 1 | 5845 |
+| L4aaacdb2 | vsess_30 | trig_bands_vwap | break {"minbars": 20, "k": 1.0} | both | 30/30 (median stop/target pts; shape per set name) | both | 1 | 1485 |
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
@@ -485,3 +497,14 @@ Common engine facts (SPEC): decisions of the Trade Health cut rules run on the c
 - NYAM: newest page NYAM_STACKRULES_NY_STKd8b76ecd35.md (modified 2026-11-22 12:24Z): BASIS OF EVERY NUMBER ON THIS PAGE: native lot basis: 1 lot(s) per trade (weighted finals: whole-number lots = weights x4); wrapper = R1 = today's wrapper on that lot basis (lin), R0 = truly bare (every wrapper rule off). Native lot basis 1 (R = $1200); R0 = t || JOINT PICK: TL3_SR_NY_STKd8b76ecd35_N2_JT3 -> {'SC': 0, 'BL': 6, 'CAP': 1, 'STK': 2, 'SZ': 0}; rolling walk-forward 0.562 over 64 periods; year colours GREEN/GREEN/GREEN; whole-history-dollars band (equal-risk $/wk change as % of the whole-history $/wk of R1) 
 - All-layers fit pages found: DIRECTIVE_ALL_LAYERS_REFIT_ADDENDUM_20261119_2233Z.md, DIRECTIVE_JOSH_FIT_ALL_LAYERS_1220Z.md
 <!-- /AUTO:LAYERS -->
+
+<!-- AUTO:BOOK:L8f11883e -->
+### BOOK L8f11883e (NY AM): time_m_20 + trig_levels_session_hl retest {"M": 10, "tol": 0.5} [GENERIC AUTO BLOCK, not hand-verified]
+Stack entry `L8f11883e.BRF30_90` (session nyam). Events file `/mnt/l2/l2vast/_brkt/ev/L8f11883e_R0_F30_90.parquet` (1223 events, stop/target median 30/90 pts, sides in the file [1]; ladder cell label: bracket sym8u, mode long). Engine base set `TL3_ALN_NY_L8f11883e_R0BRF30_90` (bare R0, 1 lot).
+**(a) BAR** [SPEC from code, generic]: row `time_m_20`; bar rule per type in D8_BAR_DEFS.md; per-day parameters: 20261027: time bar, no per-day threshold (s_vol 1.0420, s_n 1.4947, s_rng 2.1899); 20261110: time bar, no per-day threshold (s_vol 1.1110, s_n 1.6676, s_rng 3.0483). Window: NY AM.
+**(b) TRIGGER** [SPEC from code, generic]: module `trig_levels_session_hl` variant `retest` params {"M": 10, "tol": 0.5} (code code/th_grid/trig_levels_session_hl.py; rule text for this module family in D8_TRIGGER_DEFS.md sections 3.x; level-type triggers use the line machinery of section 3.7 A-D). Entry rules, one-position rule, re-entry, bracket mechanics: same as the hand-written blocks (market order at known time + 2 s, fill +1.0 s walking the book; stop/target in points as in the events file; session-end exit 02:00 ET Asia / 12:00 ET NY AM; one position per book).
+**(c) BRACKET**: 30/90 points (events file). **(d) FILTER**: none unless the stack entry says otherwise (entry L8f11883e.BRF30_90). **(e) DATA beyond NQ trades**: see module.
+**VERIFICATION**: OPEN: generic auto block; no independent re-implementation of this trigger has been run. Parity pages D8_PARITY_L8f11883e_<td>.md give bars, signals, trades and INPUTS from the engine files.
+**(f) PARITY**: `autopilot/D8_PARITY_L8f11883e_20261027.md`, `autopilot/D8_PARITY_L8f11883e_20261110.md`.
+**(g) STACK-LEVEL RULES / SIZE**: SPEC (engine code, R1 stand-in values, NOT FITTED, kept only as labelled reference until the fit lands): per-book BookLock (R = lots x stop x $20; give-back lock when the day peak >= 2R and the day falls to 0.5 x peak; week floor -12R), per-book DayHalt +$12,000 / -$4,800 (engine fee column), StackCut on an Asia stop (other open same-side books cut by max(1, ceil(0.5 x position)) = a full close at 1 lot), c_gov (skip an entry after 2 same-side losses), screens gate, one position per book, session-end flat (UWTime) 02:00 ET Asia / 12:00 ET NY AM with the 120 s rule. Truly bare R0 = none of these except the one-position rule and the session-end flat. OPEN: the fitted stack-rule and daily-stop values of the asia-own-w / NY AM stacks (W-LAYERS fit, order 0532Z item 1) are NOT posted yet; the daemon fills the stack-rule lines of the session section when ASIA_STACKRULES_<final>.md exists. Sizes: 1 lot per book (weights 1.0 each); live NinjaTrader lots = max(1, floor(1.75 x base + 0.5)) = 2 at base 1 (OPEN: no 2-lot engine run exists). Rounding: every halving floor(x + 0.5), minimum 1. FITTED STACK RULES + DAILY STOPS (PROVISIONAL: page NYAM_STACKRULES_NY_STKd8b76ecd35.md, finals_ready provisional flag = True): # NYAM_STACKRULES - stack-rule + daily-stop fit for TL3_ALN_NY_STKd8b76ecd35 (W-LAYERS, 2026-11-22 12:12Z) || BASIS OF EVERY NUMBER ON THIS PAGE: native lot basis: 1 lot(s) per trade (weighted finals: whole-number lots = weights x4); wrapper = R1 = today's wrapper on that lot basis (lin), R0 = truly bare (every wrapper rule off). Native lot basis 1 (R = $1200); R0 = truly bare, R1 = today's wrapper at this  || - SC: SC1 StackCut share 25% (scope Asia-only, lots 2; rounds up: 25% = 50% at 2 lots) (d ulcer +1437, fails guard); SC2 StackCut share 50% (scope Asia-only, lots 2; rounds up: 25% = 50% at 2 lots) (d ulcer +1437, fails guard); SC3 StackCut share 100% (scope Asia-only, lots 2; rounds up: 25% = 50% a || - BL: BL6 BookLock arm 2.0R give-back 67% (d ulcer -83); BL1 BookLock arm 1.5R give-back 33% (d ulcer -161, fails guard); BL4 BookLock arm 2.0R give-back 33% (d ulcer -71, fails guard) || JOINT PICK: TL3_SR_NY_STKd8b76ecd35_N2_JT3 -> {'SC': 0, 'BL': 6, 'CAP': 1, 'STK': 2, 'SZ': 0}; rolling walk-forward 0.562 over 64 periods; year colours GREEN/GREEN/GREEN; whole-history-dollars band (equal-risk $/wk change as % of the whole-history $/wk of R1) +3%/-31%/-6%; verdict: FAILS: rolling WF
+<!-- /AUTO:BOOK:L8f11883e -->
