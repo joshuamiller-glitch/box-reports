@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 04:24Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 04:29Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -21,19 +21,19 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $4013 per wk (positive), L3M $2213 per wk (positive); prior years $/wk: 2023 1144 (positive), 2024 441 (positive), 2025 955 (positive); OWN persistence (share of positive 14-day blocks) 0.62 (>= 0.58 passes); stack controls: beats (30, 21, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
+- L6M $2288 per wk (positive), L3M $1567 per wk (positive); prior years $/wk: 2023 480 (positive), 2024 305 (positive), 2025 652 (positive); OWN persistence (share of positive 14-day blocks) 0.62 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.12 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.06 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 4244 / -11076 / -6538 / 4013 | 4244 / -7497 / -3288 / -85 | +4098 |
-| L3M | 4481 / -11076 / -3974 / 2213 | 3598 / -6418 / -2229 / -258 | +2470 |
-| Y2023 | 9215 / -18872 / -7422 / 1144 | 2340 / -5534 / -1955 / 249 | +895 |
-| Y2024 | 7254 / -21398 / -15512 / 441 | 2123 / -4639 / -2414 / 265 | +176 |
-| Y2025 | 17543 / -42190 / -11566 / 955 | 3051 / -9042 / -2750 / 105 | +850 |
+| L6M | 2052 / -8254 / -2022 / 2288 | 2052 / -3625 / -1590 / -41 | +2329 |
+| L3M | 1536 / -4852 / -2022 / 1567 | 1740 / -3103 / -1078 / -125 | +1692 |
+| Y2023 | 8222 / -20218 / -6888 / 480 | 1132 / -2676 / -945 / 120 | +360 |
+| Y2024 | 11146 / -27115 / -7032 / 305 | 1027 / -2243 / -1167 / 128 | +176 |
+| Y2025 | 9811 / -23784 / -8521 / 652 | 1475 / -4372 / -1330 / 51 | +601 |
 
-## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was B2010fec9 (swap / drop steps: none); WITH the guard this page's stack is Le4fede95.BRF90_30 + B7bfd33b7.  Moves blocked by the guard: swap:B7bfd33b7>L488784d8 (max DD +26%, worst wk -24% at equal risk)
+## WHAT THE 15% MAX-DD / WORST-WEEK GUARD ON SWAPS AND DROPS CHANGED (relay reading of Josh's answer; same guard as adds): WITHOUT the guard the final stack was B2010fec9 (swap / drop steps: none); WITH the guard this page's stack is L8cfda948.BRF90_30.
 
 ## NY AM STACK A: CHOSEN BY JOSH (13:28Z): L7cc56d99 (line-break bar 3_40 + VWAP-level break) + L488784d8: L6M 4313 / -12245 / -7742 / 3366 ; L3M 3616 / -10088 / -7377 / 2704 ; 2023 5576 / -14827 / -6948 / 1463 RED ; 2024 9984 / -20581 / -8704 / 672 RED ; 2025 9176 / -26571 / -14752 / 1580 RED ; persistence vs today 0.66 ; stack controls beaten 29 of 30 (L6M drawdown-first), 22 of 30 (L3M), 30 of 30 (ulcer-only). It is the chosen NY AM stack; the runs below are alternatives for comparison.
 
@@ -66,25 +66,20 @@ Pool books: B57507767 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Le4fede95.BRF90_30 | `TL3_ALN_NY_Le4fede95_R0BRF90_30` | 3434 / -11654 / -5977 / 2890 | 3906 / -11654 / -5066 / 1398 | 4974 / -10328 / -5113 / 836 | 5151 / -11830 / -7795 / 418 | 9526 / -18587 / -12287 / 303 | 0.59 | 9 |
-| 2 | B7bfd33b7 | `TL3_ALN_NY_STKd80dcd5dc9` | 4244 / -11076 / -6538 / 4013 | 4481 / -11076 / -3974 / 2213 | 9215 / -18872 / -7422 / 1144 | 7254 / -21398 / -15512 / 441 | 17543 / -42190 / -11566 / 955 | 0.62 | 3 |
+| 1 | L8cfda948.BRF90_30 | `TL3_ALN_NY_L8cfda948_R0BRF90_30` | 2052 / -8254 / -2022 / 2288 | 1536 / -4852 / -2022 / 1567 | 8222 / -20218 / -6888 / 480 | 11146 / -27115 / -7032 / 305 | 9811 / -23784 / -8521 / 652 | 0.62 | 22 |
 
 Selected books in order (plain words): 
-- Le4fede95.BRF90_30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK Le4fede95.BRF90_30 of Le4fede95: step 2 at the new shape F90_30 (R0BR, truly bare; W-BRKT step 2a/2b)]: (no description in best_books full csv)
-   fitted: none proposed yet (stage 1 not done for this book)
-- B7bfd33b7 [R1 wrapper, landed before 16:31Z 11-21] [accumulating bar: D8 number = _CANC base]: dollar-imbalance bar 6000 [dib_6000]; ~159 bars/hour; trigger trig_levels_profile_va / break_native {"n": 2, "k": 0.25}; SIDE: BOTH SIDES; bracket plain60/60
+- L8cfda948.BRF90_30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L8cfda948.BRF90_30 of L8cfda948: step 2 at the new shape F90_30 (R0BR, truly bare; W-BRKT step 2a/2b)]: (no description in best_books full csv)
    fitted: none proposed yet (stage 1 not done for this book)
 
-STOPPED at 2 books: no candidate passes the add rule.
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 04:25Z UTC; pool 9 books): Le4fede95.BRF90_30 + B7bfd33b7
 
-Stack-level luck control: beats (30, 21, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
-
-Phase: done. Pool used by this run: 9 books (B57507767, B6f77f23d, B7bfd33b7, L05350e98, L488784d8, L6547965c, L7cc56d99, Le0da99e2, Le4fede95.BRF90_30).
+Phase: run. Pool used by this run: 22 books (B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Bf428c4a1.BRS8U, L05350e98, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L6547965c, L6d0d3174.BRF60_120, L7693034b.BRF30_90, L7cc56d99, L8cfda948.BRF90_30, L8f11883e.BRF30_90, Lbb254083.BRP45, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
 
-EQUAL-RISK LINE (this stack vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off)): today's NY AM session scaled DOWN by k = 0.12 to the stack's drawdown: L6M 4244 / -7497 / -3288 / -85 ; L3M 3598 / -6418 / -2229 / -258. The stack: L6M 4244 / -11076 / -6538 / 4013 ; L3M 4481 / -11076 / -3974 / 2213. Persistence of the stack vs that reference: 0.60; rule B per prior year: RED / RED / RED.
+EQUAL-RISK LINE (this stack vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off)): today's NY AM session scaled DOWN by k = 0.06 to the stack's drawdown: L6M 2052 / -3625 / -1590 / -41 ; L3M 1740 / -3103 / -1078 / -125. The stack: L6M 2052 / -8254 / -2022 / 2288 ; L3M 1536 / -4852 / -2022 / 1567. Persistence of the stack vs that reference: 0.62; rule B per prior year: RED / RED / RED.
 
 ## JOINT LAYER REFIT PLAN (W-COMBO with W-LAYERS ALL_NEW_LAYER_PROGRAMME.md; order 2233Z addendum; PLAN ONLY, no engine slots until the all-new stack of the session exists)
 **Principle (Josh):** every layer stays in D8; its SETTINGS are fitted fresh on the ALL-NEW stack, ALL TOGETHER. D7's settings are only the stand-in (level 0) while the search runs. Per-layer one-at-a-time runs are the SCREEN only; the VERDICT is ONE joint stage on the exact engine varying all layers together.
