@@ -160,7 +160,7 @@ Whole round trip per contract (fee + excess): target 9.4; cut 17.4; stop 18.2; 0
 | P7 | nyam | 11:30 | 32 | 62.0 | -6682.5 | 938.9 | -7621.4 |
 
 
-## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-22 04:27Z UTC)
+## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-22 04:59Z UTC)
 
 Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN05W2J = SBJ_*); prereg SMART_B_PREREG.md. Each cell is scored vs its base on the same months. **Caveat: the engine state cut fires in the engine but did not fire live on 11-11 (DS3_P7_CUT_FIDELITY.md).** Passive limits fill on a print through the level by 1 tick (touch variants are the optimistic bound). cut % = stack maxDD vs base (positive = shallower); d mean = all-weeks mean difference ($/wk); "d mean live-excess adj" adds the change in live-excess slip cost (B1 parameters) to the L6M all-weeks d mean (limit fills avoid market-exit excess; engine slip is inside gross). A window appears only when all its months are present.
 
@@ -178,7 +178,7 @@ Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN0
 | SB_DUP60S | JN05W2 | 6 | 96% ($302k of $316k) | 0 of 20 | 4.4 | -2659 | -2615 | 13/6 | - | - | - | - | - | - |
 | **B3 stop join** | | | | | | | | | | | | | | |
 | SB_SJ0 | JN05W2 | 6 | 101% ($319k of $316k) | 0 of 20 | -0.1 | 561 | 556 | 13/6 | - | - | - | - | - | - |
-| SB_SJ1 | JN05W2 | 6 | err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202506/trades.parquet' | | | | | | | | | | | |
+| SB_SJ1 | JN05W2 | 6 | 100% ($316k of $316k) | 0 of 20 | 0.0 | -33 | -33 | 13/6 | - | - | - | - | - | - |
 | SB_SJ5 | JN05W2 | 6 | 100% ($316k of $316k) | 0 of 20 | 0.0 | -6 | -6 | 13/6 | - | - | - | - | - | - |
 | SB_SJA1 | JN05W2 | 6 | 100% ($315k of $316k) | 0 of 20 | -0.6 | -82 | -90 | 13/6 | - | - | - | - | - | - |
 | SB_SJA3 | JN05W2 | 6 | 100% ($317k of $316k) | 0 of 20 | -0.4 | 9 | 1 | 13/6 | - | - | - | - | - | - |
@@ -193,7 +193,7 @@ Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN0
 | **B2 slices / split** | | | | | | | | | | | | | | |
 | SB_SL05 | JN05W2 | 6 | 106% ($336k of $316k) | 1 of 20 | -29.7 | 556 | 527 | 12/6 | - | - | - | - | - | - |
 | SB_SL1 | JN05W2 | 6 | 102% ($322k of $316k) | 0 of 20 | -29.0 | 653 | 627 | 12/6 | - | - | - | - | - | - |
-| SB_SL5 | JN05W2 | 6 | 88% ($277k of $316k) | 0 of 20 | 2.7 | -473 | -435 | 13/6 | - | - | - | - | - | - |
+| SB_SL5 | JN05W2 | 6 | err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202408/trades.parquet' | | | | | | | | | | | |
 | SB_SLALL | JN05W2 | 6 | 111% ($350k of $316k) | 1 of 20 | -37.7 | -522 | -610 | 12/6 | - | - | - | - | - | - |
 | SB_SP100 | JN05W2 | 12 | 111% ($352k of $316k) | 0 of 20 | 2.3 | 1532 | 1431 | 12/6 | -57.9 | -246 | - | - | - | - |
 | SB_SP50 | JN05W2 | 6 | 101% ($320k of $316k) | 1 of 20 | -11.7 | -413 | -450 | 12/6 | - | - | - | - | - | - |
