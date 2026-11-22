@@ -88,6 +88,7 @@
 | old split | AS | L7ea48296 | oppx_v25 | 0.68 (85) / 0.65 | -5 / +78 (red) | -57 / -116 (green) | -73 / -109 (green) | n/a | 26 / 13 | not kept |
 | old split | AS | L86781ac0 | oppx_v25 | 0.68 (85) / 0.71 | -59 / +67 (red) | -65 / -203 (green) | -36 / +25 (amber) | n/a | 29 / 16 | not kept |
 | old split | AS | L3faac8df | oppx_v25 | 0.68 (85) / 0.65 | +600 / +120 (red) | -66 / -672 (green) | +10 / +69 (red) | n/a | 18 / 12 | not kept |
+| pass-2 stream (_CANC) | AS | Ld8421129 | oppx_v15_t2 | 0.68 (85) / 0.67 | +18 / +106 (red) | -3 / -47 (green) | -47 / -6320 (green) | n/a | - | not kept |
 | _CANC | AS | Mcae177ba | oppx_v15_t2b | 0.68 (85) / 0.71 | -46 / -24 (green) | +8 / +49 (red) | +52 / +125 (red) | n/a | - | not kept |
 | old split | AS | Lcae177ba | stg1r_chand_v25 | 0.67 (85) / 0.66 | -23 / +103 (red) | -2 / +56 (red) | -53 / -108 (green) | n/a | 7 / 21 | not kept |
 | _CANC | AS | M7ea48296 | oppx_v15_t2 | 0.67 (85) / 0.66 | -5 / +139 (red) | +6 / +78 (red) | +86 / +112 (red) | n/a | - | not kept |
@@ -242,6 +243,7 @@
 - AS L7ea48296 `oppx_v25`: **exit not kept** - RED prior year(s) [2023]
 - AS L86781ac0 `oppx_v25`: **exit not kept** - RED prior year(s) [2023]
 - AS L3faac8df `oppx_v25`: **exit not kept** - RED prior year(s) [2023, 2025]
+- AS Ld8421129 `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023]
 - AS Mcae177ba `oppx_v15_t2b`: **exit not kept** - RED prior year(s) [2024, 2025]
 - AS Lcae177ba `stg1r_chand_v25`: **exit not kept** - RED prior year(s) [2023, 2024]
 - AS M7ea48296 `oppx_v15_t2`: **exit not kept** - RED prior year(s) [2023, 2024, 2025]
