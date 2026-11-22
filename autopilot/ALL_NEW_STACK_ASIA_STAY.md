@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 00:44Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 00:48Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_ASIA_OWN_CHECKS.md.
@@ -70,9 +70,11 @@ Selected books in order (plain words):
 - L385f4f2e.J502 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L385f4f2e.J502 of L385f4f2e: pass-2 final J502 (W-P2A): signal-level entry filter = C1 confluence setting 5 + C3 time-window setting 2 on the _CANC events of L385f4f2e (volume bar 2600); LEAD at best until fitted: its plain _CANC base is $476/wk in L6M, 2023 only +$40/wk]: (no description in best_books full csv)
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 3 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:11Z UTC; pool 35 books): L7c368a4f + L578701ed + L385f4f2e.J502
 
-Phase: run. Pool used by this run: 38 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, La776664b, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
+Phase: moves. Pool used by this run: 38 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L5dee2059, L65a26c02, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e4754b9, La010c3eb, La776664b, Lb68a132d, Lc754cf58, Lcbc8a7ec, Lec335094, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
