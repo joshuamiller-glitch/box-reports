@@ -1,7 +1,7 @@
-# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-22 00:09Z)
+# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-22 00:52Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md (sha in DECISIONS.md). A mix is the SUM of weight x book-alone daily P&L (42 months, 1 lot); no stack interaction; engine check pending.
-Run 2026-11-22 00:09Z; pool hash (asia pool file) 137363907ad8; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3.
+Run 2026-11-22 00:52Z; pool hash (asia pool file) 137363907ad8; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3, FINAL_asia_stay_d8_nol3.
 
 ### Scope A - members J502 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
@@ -133,3 +133,34 @@ BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58: NONE passes (0 mixes pass t
 No distinct mix: with 1 member(s) every weight vector in the grid is the reference direction (or has no other direction passing the L6M guard): the only choice is a common SCALE, and at equal worst-prior-year max drawdown the scale is fixed by the basis (k = 1 for the reference itself). Sizing A to its worst prior year = its own 2024 max DD -11407.
 
 GATES for the top mix (equal-risk ranking): walk-forward persistence 1.0 over 62 periods (equal weights was the pick in 18; gate >= 0.58); prior-year band ; null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
+
+### Scope FINAL_asia_stay_d8_nol3 - members L7c368a4f, L578701ed, L385f4f2e (511 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
+
+Equal-weight reference: worst prior-year max DD -24258. Cells `ulcer / max DD / worst week / $/wk` at 1 lot x scale k; every mix scaled to the reference's worst-prior-year max DD (k shown).
+
+| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
+|---|---|---|---|---|---|---|---|---|
+| equal weights | 1/1/1 | 1.00 | 3689 / -10998 / -5733 / 6821 | 4268 / -10998 / -5377 / 5562 | 2923 / -8559 / -3717 / 996 | 8370 / -23827 / -5706 / 911 | 8169 / -24258 / -19114 / 1238 | - |
+| top 1 | 1.5/2/4 | 0.47 | 2998 / -9330 / -3562 / 7867 | 3799 / -9330 / -3562 / 7024 | 3481 / -10289 / -3468 / 927 | 7880 / -24258 / -5841 / 907 | 9104 / -23744 / -19276 / 1209 | 0.473 |
+| top 2 | 1/1.5/3 | 0.64 | 2993 / -9389 / -3760 / 7852 | 3844 / -9389 / -3760 / 6991 | 3430 / -10117 / -3349 / 932 | 7855 / -24258 / -5748 / 876 | 9173 / -24005 / -18910 / 1195 | 0.484 |
+| top 3 | 1.5/1.5/3 | 0.58 | 2999 / -8996 / -3272 / 7761 | 3639 / -8996 / -3203 / 6981 | 3568 / -10730 / -3723 / 896 | 7997 / -24258 / -5982 / 975 | 8953 / -23635 / -19896 / 1225 | 0.484 |
+| top 4 | 1/2/3 | 0.57 | 3435 / -11092 / -4796 / 7607 | 4509 / -11092 / -4796 / 6388 | 2994 / -8669 / -3161 / 1043 | 7863 / -24258 / -5495 / 790 | 9152 / -24171 / -18262 / 1213 | 0.473 |
+| top 5 | 1.5/2/3 | 0.52 | 3354 / -10621 / -3997 / 7575 | 4216 / -10621 / -3997 / 6457 | 3141 / -9274 / -3527 / 1004 | 8074 / -23910 / -5750 / 890 | 8781 / -24258 / -19276 / 1243 | 0.452 |
+
+Same ranking at equal L6M ulcer (every mix scaled to the reference's L6M ulcer):
+
+| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
+|---|---|---|---|---|---|---|---|---|
+| top 1 | 0.5/0.25/2 | 2.41 | 3689 / -12490 / -5010 / 14688 | 3995 / -12332 / -774 / 15422 | 10376 / -25323 / -10725 / 890 | 20826 / -62026 / -15828 / 1858 | 19541 / -56684 / -34068 / 1821 | 0.172 |
+| top 2 | 1/0.25/4 | 1.24 | 3689 / -12207 / -5682 / 14482 | 3543 / -11487 / 788 / 15736 | 11411 / -26514 / -12122 / 685 | 22582 / -64760 / -17178 / 1907 | 20523 / -60251 / -33595 / 1716 | 0.172 |
+| top 3 | 0.5/0.25/1.5 | 2.65 | 3689 / -12223 / -3390 / 13292 | 3984 / -11103 / -1004 / 13626 | 8746 / -22585 / -9111 / 926 | 17464 / -53090 / -12715 / 1756 | 17088 / -48967 / -32288 / 1765 | 0.151 |
+| top 4 | 0.25/0/1 | 4.79 | 3689 / -11703 / -5961 / 13286 | 3045 / -10250 / 2288 / 14971 | 12208 / -26817 / -12681 / 434 | 22869 / -63045 / -17344 / 1824 | 20411 / -59674 / -30825 / 1494 | 0.194 |
+| top 5 | 1/0.25/3 | 1.39 | 3689 / -12082 / -4134 / 13212 | 3455 / -10764 / 722 / 14118 | 9902 / -24345 / -10754 / 711 | 19469 / -56627 / -14305 / 1833 | 18114 / -53420 / -32182 / 1671 | 0.172 |
+
+BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58 (114 mixes pass the guard and 0.58): 
+
+| mix | weights | k | L6M | L3M | 2023 | 2024 | 2025 | persistence |
+|---|---|---|---|---|---|---|---|---|
+| best passing | 0.25/0.5/1 | 1.90 | 2838 / -8972 / -3946 / 7372 | 3732 / -8972 / -3946 / 6525 | 3143 / -9191 / -2918 / 889 | 7370 / -22874 / -5231 / 762 | 8820 / -24258 / -17091 / 1097 | 0.602 |
+
+GATES for the top mix (equal-risk ranking): walk-forward persistence 0.263 over 80 periods (equal weights was the pick in 0; gate >= 0.58); prior-year band 2023 AMBER (+22%), 2024 GREEN (-6%), 2025 GREEN (+12%); null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
