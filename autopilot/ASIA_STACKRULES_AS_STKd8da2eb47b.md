@@ -1,5 +1,7 @@
 # ASIA_STACKRULES - stack-rule + daily-stop fit for TL3_ALN_AS_STKd8da2eb47b (W-LAYERS, 2026-11-22 10:19Z)
 
+> **FIT ON AN INCOMPLETE-ROUND FINAL**: asia-own-w add round 4 re-opened by W-COMBO (10:58Z audit, incomplete_steps: 4) (the search round was re-opened by W-COMBO; this stack was decided on a partial add round; a corrected final will be fitted as a new final and this fit marked SUPERSEDED).
+
 BASIS OF EVERY NUMBER ON THIS PAGE: weighted native lot basis: 1 lot(s) per trade (weighted finals: whole-number lots = weights x4); wrapper = R1 = today's wrapper on that lot basis (lin), R0 = truly bare (every wrapper rule off). Native lot basis 1 (R = $850); R0 = truly bare, R1 = today's wrapper at this lot basis (TL3_ALN_AS_STKd8da2eb47b). Families SC / BL / CAP / STK / SZ varied together on an OA(27,13,3,2) (reference + top-2 of the screen per family), 26 combos x 42 months. Gates: rolling walk-forward vs R1 >= 0.58, year band equal-risk $/wk (RED > 30%) with the whole-history-dollars band beside it, null >= 4/5 (0 of 5 draws beaten (real best-of -0.132 vs null [-0.298, -0.181, -0.253, -0.264, -0.142]) FAIL), 27/30 not a gate. WEAK = nothing passes; the best setting is still shown.
 
 Screen top-3 per family (one setting at a time, L6M, d ulcer vs R1; negative = better):
