@@ -1,12 +1,12 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-22 06:24Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-22 06:59Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 82; screen complete for 38; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 10.
+Books in the table: 83; screen complete for 38; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 10.
 Pick counts (complete books): P60 25, P45 4, P30 2, A10U20U 2, F40_80 1, S8U 1, F60_120 1, A20U10U 1, S15U 1
 
 Plain 60/60 is the pick for 25 of 38 complete books.
@@ -51,6 +51,7 @@ Plain 60/60 is the pick for 25 of 38 complete books.
 | L64313ba5BRP30 | A10U20U | 1606 | 2403 | - | - | - | - | - | - | - | - | - | - | [own] | - | - | - | - | - | - | A10U20U (partial) |
 | L65a26c02 | P60 | 1666 | 4969 | 202 | 1357 | [own] | 314 | 300 | 185 | 300 | 300 | 300 | 300 | 300 | 300 | 300 | 1479 | 450 | 235 | 39 | P60 |
 | L6b373671BRP60 | S15U | 2220 | 2591 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
+| L6f51709cBRP45 | P60 | 622 | 3005 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
 | L7669e599BRP45 | S15U | 1104 | 3075 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - | S15U (partial) |
 | L79fb26c4BRP45 | P60 | 1463 | 3994 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
 | L7c368a4f | P60 | 2456 | 4075 | 4941* | 1881 | [own] | -65 | -188 | -187 | -188 | -188 | -188 | -188 | -189 | -189 | -188 | 1316 | 2282 | 1185 | -219 | P30 |
@@ -138,6 +139,7 @@ Plain 60/60 is the pick for 25 of 38 complete books.
 | L64313ba5BRP30 | 673 | - | - | - | - | - | - | - | - | - | - | [own] | - | - | - | - | - | - |
 | L65a26c02 | 2028 | 1126 | 3426 | [own] | 254 | 1175 | 742 | 1175 | 1175 | 1175 | 1175 | 1175 | 1175 | 1175 | 1270 | 1166 | 3097 | 857 |
 | L6b373671BRP60 | 2255 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
+| L6f51709cBRP45 | 464 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 | L7669e599BRP45 | 1342 | - | - | - | - | - | - | [own] | - | - | - | - | - | - | - | - | - | - |
 | L79fb26c4BRP45 | 1199 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 | L7c368a4f | 2434 | 2570 | 358 | [own] | -183 | -154 | -156 | -154 | -154 | -154 | -154 | -154 | -154 | -154 | 901 | 761 | 736 | -190 |
@@ -564,6 +566,9 @@ Plain 60/60 is the pick for 25 of 38 complete books.
 - F120_60: 139 | 17534 | -31485 | -14704 | 17.1 | -1886
 
 **L6b373671BRP60** (current S15U): now 2220 | 2591 | -8707 | -4283 | 16.5 | -1071
+
+
+**L6f51709cBRP45** (current P60): now 622 | 3005 | -7436 | -2618 | 10.8 | -783
 
 
 **L7669e599BRP45** (current S15U): now 1104 | 3075 | -8330 | -3898 | 14.9 | -841
