@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 18:54Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 18:59Z.
 **VARIANT FOR COMPARISON ONLY: the add rule here ALSO has the L3M return-per-ulcer condition (candidate L3M ratio >= 95%% of the stack before); the MAIN selection has no L3M gate (page without the _L3GATE suffix).**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -21,7 +21,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $8283 per wk (positive), L3M $7047 per wk (positive); prior years $/wk: 2023 1942 (positive), 2024 1942 (positive), 2025 3102 (positive); OWN persistence (share of positive 14-day blocks) 0.68 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $8283 per wk (positive), L3M $7047 per wk (positive); prior years $/wk: 2023 1942 (positive), 2024 1942 (positive), 2025 3102 (positive); OWN persistence (share of positive 14-day blocks) 0.68 (>= 0.58 passes); stack controls: beats (30, 26, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
 
 ## YARDSTICK: BARE D7 session stack (TL3_ALN_NY_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.11 so that the L6M ulcer matches)
 
@@ -86,9 +86,9 @@ Selected books in order (plain words):
 
 STOPPED at 5 books: no candidate passes the add rule.
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 18:37Z UTC; pool 32 books): L8cfda948.BRF90_30 + Lf0346d55.BRP60 + L7cc56d99 + Lbb254083.BRP45 + L8f11883e.BRF30_90
+Stack-level luck control: beats (30, 26, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
 
-Phase: final. Pool used by this run: 34 books (B15d193ef.BRA15U30U, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60).
+Phase: done. Pool used by this run: 34 books (B15d193ef.BRA15U30U, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
