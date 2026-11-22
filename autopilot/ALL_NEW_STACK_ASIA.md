@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 06:24Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 06:29Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_ASIA.md.**
@@ -35,8 +35,8 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (run) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
-| staying-power (moves) | Lb0e6dfa3.BRF40_80 | 2643 / -8614 / -4590 / 2969 | 3040 / -8614 / -3461 / 1930 | 2935 / -9402 / -2099 / 386 | 4051 / -10907 / -5123 / 506 | 4295 / -12361 / -5081 / 690 | 0.66 |
+| own-checks (moves) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
+| staying-power (done) | Lb0e6dfa3.BRF40_80 | 2643 / -8614 / -4590 / 2969 | 3040 / -8614 / -3461 / 1930 | 2935 / -9402 / -2099 / 386 | 4051 / -10907 / -5123 / 506 | 4295 / -12361 / -5081 / 690 | 0.66 |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 1790 books with a BASE set; 879 have all 42 months landed = counted below; 198 still waiting for prior years)
 
@@ -73,9 +73,11 @@ Selected books in order (plain words):
 - L385f4f2e.J502 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L385f4f2e.J502 of L385f4f2e: pass-2 final J502 (W-P2A): signal-level entry filter = C1 confluence setting 5 + C3 time-window setting 2 on the _CANC events of L385f4f2e (volume bar 2600); LEAD at best until fitted: its plain _CANC base is $476/wk in L6M, 2023 only +$40/wk]: (no description in best_books full csv)
    fitted: none proposed yet (stage 1 not done for this book)
 
+STOPPED at 1 books: no candidate passes the add rule.
+
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 06:19Z UTC; pool 79 books): L385f4f2e.J502
 
-Phase: run. Pool used by this run: 80 books (L018fb0c0, L130cb48e, L1343f8bd.BRP45, L1525fc29.BRP45, L15f14deb, L1756b913, L1edb9fab, L1f5315f5.BRF40_80, L294c4530.BRP45, L29b1bc3f, L2aa4f77d.BRP45, L2b152d25.BRP30, L2fbba524.BRP30, L32bc5db3.BRP60, L36f1a14e.BRF30_90, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L459016c0.BRP30, L47a9c81c, L4aaacdb2.BRP30, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L552f6547.BRF30_90, L578701ed, L578701ed.BRF30_90, L5c493ea5.BRP60, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L6f51709c.BRP45, L7669e599.BRP45, L79fb26c4.BRP45, L7c368a4f, L7c8c909c.BRP45, L7ea48296, L7ea48296.BRP45, L7f41b347, L82f920bb.BRP30, L92a90948, L973b5c8a, L98c7ae1d.BRF40_80, L9aa7805c, L9c2622b0.BRP45, L9e3c5607.BRP45, L9e4754b9, L9f09df59.BRF60_120, La010c3eb, La34ff0e1.BRF40_80, La37b0d38.BRP45, La4dd3ce9.BRP45, La776664b, Lac4916e6.BRF40_80, Lb0e6dfa3.BRF40_80, Lb328c0d1.BRP45, Lb3f85ddc.BRF40_80, Lb68a132d, Lbfca747b.BRP45, Lc11f2bcc.BRF30_90, Lc754cf58, Lcbc8a7ec, Lcd4aa7cd.BRP30, Ld3a03a68.BRF30_90, Ld60fb3e3.BRF40_80, Ld8421129.BRP30, Le207b901.BRF30_90, Lec335094, Led34741b.BRF80_40, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
+Phase: moves. Pool used by this run: 80 books (L018fb0c0, L130cb48e, L1343f8bd.BRP45, L1525fc29.BRP45, L15f14deb, L1756b913, L1edb9fab, L1f5315f5.BRF40_80, L294c4530.BRP45, L29b1bc3f, L2aa4f77d.BRP45, L2b152d25.BRP30, L2fbba524.BRP30, L32bc5db3.BRP60, L36f1a14e.BRF30_90, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L459016c0.BRP30, L47a9c81c, L4aaacdb2.BRP30, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L552f6547.BRF30_90, L578701ed, L578701ed.BRF30_90, L5c493ea5.BRP60, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L6f51709c.BRP45, L7669e599.BRP45, L79fb26c4.BRP45, L7c368a4f, L7c8c909c.BRP45, L7ea48296, L7ea48296.BRP45, L7f41b347, L82f920bb.BRP30, L92a90948, L973b5c8a, L98c7ae1d.BRF40_80, L9aa7805c, L9c2622b0.BRP45, L9e3c5607.BRP45, L9e4754b9, L9f09df59.BRF60_120, La010c3eb, La34ff0e1.BRF40_80, La37b0d38.BRP45, La4dd3ce9.BRP45, La776664b, Lac4916e6.BRF40_80, Lb0e6dfa3.BRF40_80, Lb328c0d1.BRP45, Lb3f85ddc.BRF40_80, Lb68a132d, Lbfca747b.BRP45, Lc11f2bcc.BRF30_90, Lc754cf58, Lcbc8a7ec, Lcd4aa7cd.BRP30, Ld3a03a68.BRF30_90, Ld60fb3e3.BRF40_80, Ld8421129.BRP30, Le207b901.BRF30_90, Lec335094, Led34741b.BRF80_40, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 

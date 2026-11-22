@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 06:24Z.
+# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 06:29Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -6,7 +6,7 @@
 
 **The equal-weight loop `asia-own` is the REFERENCE ROW (its FINAL has no weights).**
 
-Phase **moves**; pool 47 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L578701ed.BRF30_90, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e3c5607.BRP45, L9e4754b9, La010c3eb, La776664b, Lb0e6dfa3.BRF40_80, Lb68a132d, Lc754cf58, Lcbc8a7ec, Ld60fb3e3.BRF40_80, Le207b901.BRF30_90, Lec335094); steps 5; stop: no candidate passes the add rule.
+Phase **final**; pool 47 books (L018fb0c0, L130cb48e, L15f14deb, L1756b913, L1edb9fab, L29b1bc3f, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L47a9c81c, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L578701ed, L578701ed.BRF30_90, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L7c368a4f, L7ea48296, L7ea48296.BRP45, L7f41b347, L92a90948, L973b5c8a, L9aa7805c, L9e3c5607.BRP45, L9e4754b9, La010c3eb, La776664b, Lb0e6dfa3.BRF40_80, Lb68a132d, Lc754cf58, Lcbc8a7ec, Ld60fb3e3.BRF40_80, Le207b901.BRF30_90, Lec335094); steps 5; stop: no candidate passes the add rule.
 
 ## STEPS
 
