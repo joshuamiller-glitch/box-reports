@@ -167,3 +167,4 @@ The add steps must keep max drawdown and worst week within 15% (after scaling to
 ## 2026-11-22 16:15Z NEEDED FOR TONIGHT'S SIM START: data for 11-16..11-20 is not on the box (newest 11-13 21:59Z). Please approve/provide an NQ + ES/YM pull for those five sessions so the Asia seed page becomes valid. Default: small pull of trades + 1-min + book; the lead will not spend without your paste.
 - NY PM control-set rewrite approved by LEAD at 19:35Z (backups kept, controls only)
 - c_gov (skip after losses) was never fitted on the new books (hook had no gov_book): CG1 in the 4-lot pick is a no-op; LEAD ordered the fix 21:25Z (hook layer only).
+- Fleet runs out of ordered work ~03:00Z: lift Asia widening (51.6k sm) and/or NY AM first looks (73.6k sm) holds? default keep held (LEAD 22:00Z)
