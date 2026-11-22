@@ -146,6 +146,7 @@
 | old split | AS | L3be74364 | bricks3_v25 | 0.45 (85) / 0.41 | +90 / +119 (red) | +90 / +82 (red) | +67 / +62 (red) | n/a | 15 / 6 | not kept |
 | old split | AS | Lcae177ba | pk7ac450 | 0.43 (85) / 0.45 | +43 / +111 (red) | +30 / +40 (red) | +20 / +57 (red) | n/a | 21 / 18 | not kept |
 | old split | AS | Lcae177ba | v25_t2 | 0.43 (85) / 0.45 | +43 / +111 (red) | +30 / +40 (red) | +20 / +57 (red) | n/a | 17 / 14 | not kept |
+| pass-2 stream (_CANC) | AS | Lc551769e | sar_v15 | 0.42 (85) / 0.42 | +43 / +152 (red) | +225 / +216 (red) | +88 / +73 (red) | n/a | - | not kept |
 
 ## one line per book
 
@@ -293,3 +294,4 @@
 - AS L3be74364 `bricks3_v25`: **exit not kept** - walk-forward persistence 0.45 < 0.58; RED prior year(s) [2023, 2024, 2025]
 - AS Lcae177ba `pk7ac450`: **exit not kept** - walk-forward persistence 0.44 < 0.58; RED prior year(s) [2023, 2024, 2025]
 - AS Lcae177ba `v25_t2`: **exit not kept** - walk-forward persistence 0.44 < 0.58; RED prior year(s) [2023, 2024, 2025]
+- AS Lc551769e `sar_v15`: **exit not kept** - walk-forward persistence 0.42 < 0.58; RED prior year(s) [2023, 2024, 2025]
