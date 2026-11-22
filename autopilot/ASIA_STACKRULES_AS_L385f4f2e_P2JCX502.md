@@ -1,4 +1,4 @@
-# ASIA_STACKRULES - stack-rule + daily-stop fit for TL3_ALN_AS_L385f4f2e_P2JCX502 (W-LAYERS, 2026-11-22 10:27Z)
+# ASIA_STACKRULES - stack-rule + daily-stop fit for TL3_ALN_AS_L385f4f2e_P2JCX502 (W-LAYERS, 2026-11-22 10:38Z)
 
 BASIS OF EVERY NUMBER ON THIS PAGE: native lot basis: 1 lot(s) per trade (weighted finals: whole-number lots = weights x4); wrapper = R1 = today's wrapper on that lot basis (lin), R0 = truly bare (every wrapper rule off). Native lot basis 1 (R = $1200); R0 = truly bare, R1 = today's wrapper at this lot basis (TL3_ALN_AS_L385f4f2e_P2JCX502). Families SC / BL / CAP / STK / SZ varied together on an OA(27,13,3,2) (reference + top-2 of the screen per family), 26 combos x 42 months. Gates: rolling walk-forward vs R1 >= 0.58, year band equal-risk $/wk (RED > 30%) with the whole-history-dollars band beside it, null >= 4/5 (0 of 5 draws beaten (real best-of -0.000 vs null [-0.13, -0.004, -0.024, -0.206, -0.032]) FAIL), 27/30 not a gate. WEAK = nothing passes; the best setting is still shown.
 
