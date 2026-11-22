@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 01:50Z.
+# ALL-NEW STACK, NY AM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-22 01:59Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYAM.md.**
@@ -45,13 +45,13 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 | (b) positive $/wk in each of 2023, 2024, 2025 | 265 of 364 |
 | (c) persistence >= 0.58 (positive 14-day blocks) | 198 of 364 |
 | (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 216 books) | 18 of 216 |
-| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 11 of 364 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 14 of 364 |
 | a + b | 237 |
 | a + b + c | 159 |
 | a + b + c + d | 18 : B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, L05350e98, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L6547965c, L7cc56d99, L8cfda948.BRF90_30, L8f11883e.BRF30_90, Lbb254083.BRP45, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80 |
 | a + b + c + d + e | 0 : none |
 
-Nearest misses (all five gates known, fail exactly one): B47b41c7f (fails d), B57507767 (fails e), B6f77f23d (fails e), B7bfd33b7 (fails e), Bace079e3.BRS8U (fails e), Bc3f587b2 (fails d), Bde046d66.BRF90_30 (fails e), L05350e98 (fails e), L11631333 (fails d), L39287638.BRF80_40 (fails e), L43f0cbfb.BRS8U (fails e), L4407508c.BRF120_60 (fails e), L488784d8 (fails e), L6547965c (fails e), L7cc56d99 (fails e), L8cfda948.BRF90_30 (fails e), L8f11883e.BRF30_90 (fails e), Lbb254083.BRP45 (fails e), Le0da99e2 (fails e), Le4fede95.BRF90_30 (fails e), Lee0bf761.BRF40_80 (fails e).
+Nearest misses (all five gates known, fail exactly one): B47b41c7f (fails d), B57507767 (fails e), B6f77f23d (fails e), B7bfd33b7 (fails e), Bace079e3.BRS8U (fails e), Bc3f587b2 (fails d), Bde046d66.BRF90_30 (fails e), L05350e98 (fails e), L0f98a9af (fails d), L11631333 (fails d), L39287638.BRF80_40 (fails e), L43f0cbfb.BRS8U (fails e), L4407508c.BRF120_60 (fails e), L488784d8 (fails e), L6547965c (fails e), L7cc56d99 (fails e), L7f91b649 (fails d), L8cfda948.BRF90_30 (fails e), L8f11883e.BRF30_90 (fails e), Lbb254083.BRP45 (fails e), Ld5812d5e (fails d), Le0da99e2 (fails e), Le4fede95.BRF90_30 (fails e), Lee0bf761.BRF40_80 (fails e).
 NOT dead, controls (d) still pending: none.
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
