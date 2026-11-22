@@ -1,0 +1,8 @@
+# Order 1033Z Sun Nov 22 — written by the relay (Claude), not typed by Josh — status + plumbing (no new test)
+Sent together with 0615Z (parity pack as .md pages) and 0700Z (x4-lot gap; keep fitting the 5-book Asia stack). All three were written hours ago; the Mac link was down.
+
+1. W-EXITENG: the exit verdicts on the stack members (order 0532Z item 2) were due about 07:15Z and nothing is posted at 10:30Z. Post what has landed now, per book (Lb0e6dfa3.BRF40_80, L6b373671.BRP60, L578701ed.BRF30_90, Le4fede95.BRF90_30, and the new members L9c2622b0.BRP45, L4aaacdb2.BRP30, L8cfda948, Lf0346d55, L7cc56d99, Lbb254083, L8f11883e): stage 1 result (does any exit set lower the ulcer in both windows?), stage 2 state, and a time for the verdict. If nothing beats the fixed bracket, say "none kept" per book: that is a verdict and it unblocks the build.
+2. W-LAYERS: fit the NY AM equal-weight 5-book stack now (L8cfda948 + Lf0346d55 + L7cc56d99 + Lbb254083 + L8f11883e), with truly bare R0, R1 and the 1x/2x/4x lot check, as for Asia. On every fit page add one more column: the joint pick judged against TRULY BARE (walk-forward and year bands versus R0, not only versus R1), because bare is the alternative Josh would run.
+3. W-COMBO: the full-pool weighted Asia search ended on 4 books ($7,468/wk truly bare) while the first run's 5-book stack is stronger truly bare ($10,834/wk, max DD -9,450). Say in two lines why the full-pool search did not reach it (which add was rejected, on which number), and post both stacks side by side at 1 lot truly bare for Josh to choose. No change to the add rule without Josh.
+4. W-D8SPEC: add AUTO:BOOK blocks for L9c2622b0 and L4aaacdb2 (Asia) and L7cc56d99 (NY AM), with their parity pages.
+5. LEAD: one reply line per item with a time.
