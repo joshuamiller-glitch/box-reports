@@ -1,4 +1,4 @@
-# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-21 23:09Z
+# DS3_RECENT_REREAD - the live questions re-read with the user's standing selection rule (W-RECENT). Updated 2026-11-22 00:19Z
 
 RULE USED: trailing 6 months to the newest session (3 months beside it), refit bi-weekly, validated by rolling the same procedure through history (month-end pick from 2023-09-30, trade the next 1M / 3M, also a 2-week re-pick), same procedure on the existing random controls, older years = tolerant AMBER 15-30% / RED >30% worse than the live setting. NO new engine cells were run; only results that had already landed.
 PICK WINDOW END: 2026-10-31. REFIT DATE: 2026-11-22 (bi-weekly). DATA END: 2026-10-31 (last session 2026-10-30; engine months 202304..202610, nothing from 202611). PRIOR-YEAR PERCENTAGES: on every row below (ulcer / max DD / mean, % worse than the reference, rolled OOS series; "not run" where the older months of the candidate sets have not landed).
@@ -104,7 +104,7 @@ Trailing-6M and 3M window to the data end (ref mean $/wk, ulcer, max DD): live 1
 | ALLENG 3M1 | 37 | 70% | +2.1% | -511 | 38% | 54% |
 | ALLENG 6M2W | 80 | 75% | +1.5% | -151 | 35% | 47% |
 
-Engine-exact persistent random controls (34 draws x {LS_K2_M30, LS_K2_M120, LH_K2, LH_K3}; same rolling procedure): 6M1: OOS ulcer chg mean -3.6% (5-95%: -17.8..+6.4), months beating 41%, switched 87%; 3M1: OOS ulcer chg mean -2.5% (5-95%: -15.6..+12.2), months beating 44%, switched 89%; 6M2W: OOS ulcer chg mean -5.2% (5-95%: -24.6..+7.3), months beating 33%, switched 87%. Engine-exact trailing-6M window (live 19686 / 9520 / 31112): LS_K2_M30 19205 / 9959 / 36615; LS_K2_M120 17289 / 12212 / 47779; LH_K2 19891 / 10116 / 35874; LH_K3 19694 / 9477 / 31486.
+Engine-exact persistent random controls (34 draws x {LS_K2_M30, LS_K2_M120, LH_K2, LH_K3}; same rolling procedure): 6M1: OOS ulcer chg mean -3.6% (5-95%: -17.8..+6.4), months beating 41%, switched 87%; 3M1: OOS ulcer chg mean -2.5% (5-95%: -15.6..+12.2), months beating 44%, switched 89%; 6M2W: OOS ulcer chg mean -5.3% (5-95%: -24.6..+7.3), months beating 32%, switched 87%. Engine-exact trailing-6M window (live 19686 / 9520 / 31112): LS_K2_M30 19205 / 9959 / 36615; LS_K2_M120 17289 / 12212 / 47779; LH_K2 19891 / 10116 / 35874; LH_K3 19694 / 9477 / 31486.
 
 ### Late-entry (extended-entry) size halving with a ROLLING tercile threshold (path arithmetic, 6 features; threshold from the trailing window, not frozen on 2023-25)
 | procedure | n | switched | OOS ulcer chg | d mean $/wk (mean chg) | months beating live | null (random halving of same share, 20 draws) ulcer chg mean (5-95%) / beating | real percentile |
