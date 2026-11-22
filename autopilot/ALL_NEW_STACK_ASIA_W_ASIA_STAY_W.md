@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-stay-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 06:19Z.
+# ALL-NEW STACK, ASIA: WEIGHTED LOOP asia-stay-w (W-COMBO, order 1416Z part 2). Updated 2026-11-22 06:24Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -27,6 +27,26 @@ Controls beaten (30): (29, 20, 30) (L6M drawdown-first / L3M / ulcer-only); own 
 | Y2023 | 2935 / -9402 / -2099 / 386 |
 | Y2024 | 4051 / -10907 / -5123 / 506 |
 | Y2025 | 4295 / -12361 / -5081 / 690 |
+
+### SCALED TO EQUAL WORST-PRIOR-YEAR MAX DD of the equal-weight final (k = 1.000) beside the equal-weight final ['Lb0e6dfa3.BRF40_80']
+
+| window | weighted x k | equal weights |
+|---|---|---|
+| L6M | 2643 / -8614 / -4590 / 2969 | 2643 / -8614 / -4590 / 2969 |
+| L3M | 3040 / -8614 / -3461 / 1930 | 3040 / -8614 / -3461 / 1930 |
+| Y2023 | 2935 / -9402 / -2099 / 386 | 2935 / -9402 / -2099 / 386 |
+| Y2024 | 4051 / -10907 / -5123 / 506 | 4051 / -10907 / -5123 / 506 |
+| Y2025 | 4295 / -12361 / -5081 / 690 | 4295 / -12361 / -5081 / 690 |
+
+### today's basis (scaled to equal L6M ulcer, k = 1.000)
+
+| window | weighted x k | equal weights |
+|---|---|---|
+| L6M | 2643 / -8614 / -4590 / 2969 | 2643 / -8614 / -4590 / 2969 |
+| L3M | 3040 / -8614 / -3461 / 1930 | 3040 / -8614 / -3461 / 1930 |
+| Y2023 | 2935 / -9402 / -2099 / 386 | 2935 / -9402 / -2099 / 386 |
+| Y2024 | 4051 / -10907 / -5123 / 506 | 4051 / -10907 / -5123 / 506 |
+| Y2025 | 4295 / -12361 / -5081 / 690 | 4295 / -12361 / -5081 / 690 |
 
 ### BARE D7 session stack at the same L6M ulcer as the weighted mix (bare vs bare only)
 
