@@ -21,3 +21,17 @@ JOINT PICK: TL3_SR_AS_Lb0e6dfa3_R0BRF40_80_N2_JT5 -> {'SC': 2, 'BL': 3, 'CAP': 0
 | 2025 | 4306 / -12361 / -5081 / -5558 / 690 (days stopped 0) | 4306 / -12361 / -5081 / -5558 / 690 (days stopped 0) | 4908 / -13445 / -5081 / -5558 / 264 (days stopped 0) | - |
 
 Cells: ulcer / max DD / worst week / worst DAY / $ per week. Not yet automatic here: NULL (needs W-SHORT null files for this stack), 30 CONTROLS (W-COMBO control sets), LOT CHECK at 2x and 4x the native lots (stage built next).
+
+## LOT CHECK and CONTROLS (automatic, 07:41Z)
+
+Per-lot results of the final combo at 1x / 2x / 4x the native lots (dollar columns divided by the lot multiple; ulcer / max DD / worst week / $ per week):
+
+| window | 1x | 2x per lot | 4x per lot |
+|---|---|---|---|
+| L6M | 2402 / -7664 / -5046 / 2407 | 2515 / -7937 / -5141 / 2321 | 2426 / -7643 / -4943 / 2248 |
+| L3M | 1387 / -5544 / -2892 / 2126 | 1512 / -6256 / -3634 / 2039 | 1532 / -6302 / -3689 / 1858 |
+| 2023 | 3144 / -9722 / -2099 / 384 | 3174 / -9762 / -2099 / 378 | 3313 / -9987 / -2121 / 361 |
+| 2024 | 4127 / -11206 / -5123 / 441 | 4197 / -11391 / -5108 / 428 | 4248 / -11342 / -5256 / 416 |
+| 2025 | 4908 / -13445 / -5081 / 264 | 5148 / -13632 / -5136 / 265 | 5280 / -13681 / -5110 / 230 |
+
+30 date-shift controls (same setting on the control sets): real gain beats 13 of 30 controls (27/30 shown only, not a gate).
