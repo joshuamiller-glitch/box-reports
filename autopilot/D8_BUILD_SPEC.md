@@ -224,8 +224,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:nyam -->
 
 <!-- AUTO:london -->
-## AUTO SESSION SECTION LONDON (refreshed 2026-11-23 02:04Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_london.json (updated 2026-11-23 02:03Z). A final is listed here only when its stack-rule page autopilot/LONDON_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION LONDON (refreshed 2026-11-23 02:57Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_london.json (updated 2026-11-23 02:48Z). A final is listed here only when its stack-rule page autopilot/LONDON_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "london-own" (equal weights): final set `TL3_ALN_LO_L19201dfc_R0BRF90_30`
 Selection: ['L19201dfc.BRF90_30'] | controls [29, 21, 30] | pool 4 | weights: equal (1 each)
