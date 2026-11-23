@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 06:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 06:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 06:30Z | box1: busy 91%, load1 35.34, workers 16, MemAvail 83 GB | server2: busy 94%, load1 77.48, workers 28, MemAvail 1148 GB | pending box1-eligible 951590 / server2-eligible 137945 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 183.80, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 1025 GB | serverB: busy 99%, load1 170.91, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 980 GB | serverC: busy 99%, load1 131.19, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1410 GB | serverD: busy 97%, load1 63.42, workers 1 (grid) + 62 (engine), 64 threads, MemAvail 1441 GB
+LATEST CORES.md LINE: 2026-11-23 06:45Z | box1: busy 100%, load1 66.17, workers 16, MemAvail 72 GB | server2: busy 95%, load1 84.95, workers 27, MemAvail 903 GB | pending box1-eligible 952414 / server2-eligible 125725 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 185.00, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1026 GB | serverB: busy 100%, load1 186.01, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 966 GB | serverC: busy 96%, load1 132.87, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1373 GB | serverD: busy 94%, load1 62.50, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1441 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 06:30Z
+2026-11-23 06:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 06:30Z | box1: busy 91%, load1 35.34, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 81.0 GB; live reservations 1 (1 GB); workers 16, of which TP-adopted 15 (RSS 23.4 GB) vs others 1 (RSS 1.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 35.34, 46.74, 57.54
-  by tag: NYR quota 12 running 15 hungry False RSS 23.4 GB PSS 17.6 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
-  cell-months finished last hour (DONE markers): 10303
-  top running jobs: TL3_NYE_L9f730c03_RK7CT70m (x12);TL3_NYE_L9f730c03_RK7CT63m (x10);TL3_NYE_L9f730c03_RK7CT56m (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 78.12, 78.70, 81.42|/dev/md2         28T  2.8T   26T  10% /mnt/l2|48|
+Server 1 (this box): MemAvail 70.9 GB; live reservations 1 (1 GB); workers 16, of which TP-adopted 15 (RSS 19.1 GB) vs others 1 (RSS 1.2 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 72.48, 65.09, 58.87
+  by tag: NYR quota 12 running 1 hungry True RSS 1.8 GB PSS 1.7 GB; NYE quota 16 running 14 hungry False RSS 17.3 GB PSS 15.7 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_L07430c49_ALN (x28);TL3_NYE_Ld2f8d21b_RK7CT77m (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 86.92, 81.42, 80.44|/dev/md2         28T  2.8T   26T  10% /mnt/l2|44|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 78.12, 78.70, 81.42|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261122_2205Z_london-nypm-stack-loops-see-no-books.md 20261122_2210Z_Josh-asia-stack-weights.md 20261123_0105Z_Josh-asia-book-styles-info.md 20261123_0200Z_Josh-fleet-next-work.md 20261123_0212Z_Josh-london-book-spec-for-D8.md
+20261123_0105Z_Josh-asia-book-styles-info.md 20261123_0200Z_Josh-fleet-next-work.md 20261123_0212Z_Josh-london-book-spec-for-D8.md 20261123_0640Z_Josh-asia-daily-loss-stop-test.md 20261123_0645Z_Josh-session-end-run-vs-flatten-test.md
