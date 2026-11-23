@@ -1,12 +1,19 @@
 # D8 ALL SESSIONS COMBINED (W-COMBINED; order 0745Z; Josh: "do we have combined #s now that we have all books by ny pm? like weekly DD/prfit?")
 
-Generated 2026-11-23 07:44Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+Generated 2026-11-23 07:45Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
 
 **Basis.** Every D8 row is TRULY BARE (R0): trigger + own bracket + scheduled session-end exit, no D7 account layers, no stack rules, no sizer, no zones/TH; 1 lot per book, dollars NET of $4.84 per lot round trip. Daily P&L is by Globex trading date; all series are put on ONE common trading-day calendar (union of every series' trading dates in the window, zero-filled), weeks are Monday-Sunday. $ per week = mean weekly P&L; ulcer = root-mean-square of the daily drawdown from the running peak; max DD = worst peak-to-trough on the daily cumulative; trades per day = trades per common trading day. Windows: L6M = 202605-202610, L3M = 202608-202610, prior years 2023 (from 202304), 2024, 2025 (without 202511).
 
 **Data end (per series, last trade date):** Asia D8 20261030; Asia D7 20261030; NY AM D8 20261030; NY AM D7 20261030; London D8 20261030; London D7 20261030; NY PM D8 20261030; NY PM D7 20261030. The engine sets run to month 202610 (the November tape hole 11-02..04 and later days are not in them); the newest live-week data (td 20261113) is NOT in these series.
 
 **How each D8 session stack is built here (all truly bare, 1 lot per book):** Asia = the bare run of the pinned 5-book stack `TL3_SR_AS_STKd8106b26ef_BF1_BASE` (Lb0e6dfa3.BRF40_80, L385f4f2e.J502, L92a90948, L6b373671.BRP60, L578701ed.BRF30_90). NY AM = bare run of `TL3_SR_NY_STKd8b76ecd35_BF1_BASE` (L8cfda948, Lf0346d55, L7cc56d99, Lbb254083, L8f11883e). London = the single book L19201dfc.BRF90_30 (`TL3_ALN_LO_L19201dfc_R0BRF90_30`, R0 base; recent-basis FINAL on the complete pool; exits pending). NY PM = the 4-book FINAL (L52359bf4.BRP30, L8e0bf58c.BRS8U, L4bdd521a.BRF80_40, L2c6916a5.BRP60) built as the SUM of the four members' own bare R0 sets (no bare stack run exists for it; books do not interact when bare, which the Asia weights check showed exact to the dollar). BARE D7 = the bare D7 stack of that session at 1 lot per book: Asia A7+H7+K7+P7+U7 `TL3_ALN_AS_STKLIVE_BARE`, NY AM `TL3_ALN_NY_STKLIVE_BARE`, London `TL3_ALN_LO_STKLIVE_BARE`, NY PM = K7 alone `TL3_ALN_NP_STKLIVE_BARER0` (see BARE_D7_YARDSTICK.md).
+
+## Headline (last 6 months, 1 lot per book, truly bare, net of $4.84 per lot)
+
+- **Asia + NY AM (launch set)**: bare D8 18,329 $/wk, max DD -17,237, worst week -4,596 (bare D7 5,055 $/wk, max DD -41,510, worst week -41,510)
+- **Asia + NY AM + London**: bare D8 20,097 $/wk, max DD -18,172, worst week -4,326 (bare D7 5,253 $/wk, max DD -60,089, worst week -44,615)
+- **all four**: bare D8 24,726 $/wk, max DD -17,437, worst week -3,975 (bare D7 5,205 $/wk, max DD -69,232, worst week -44,348)
+- Reading: in the last 6 months the combined bare D8 book had few losing weeks (see section 2); over all 42 months the whole history is much rougher (max DD and worst week in the all-months table). Bare D7 at the same 1 lot per book is far weaker and rougher on every window. Every window shorter than the whole history is a recent-conditions view.
 
 ## 1. The four session stacks, bare D8 beside bare D7 (1 lot per book)
 
@@ -114,7 +121,7 @@ Days with 2 or more sessions losing on the same day: **49 of 131 (37%)** (3 or m
 | 20261008 | -4,819 | 2,032 | -2,634 | -3,310 | -907 |
 | 20260811 | -4,316 | -718 | -304 | -1,529 | -1,764 |
 
-5 worst combined weeks:
+5 worst combined weeks (the first and last week of a window can be partial; in the last 6 months only about 1 week in 27 was a losing week, so this list includes weeks that were still positive):
 
 | week | combined | Asia | NY AM | London | NY PM |
 |---|---|---|---|---|---|
@@ -152,7 +159,7 @@ Days with 2 or more sessions losing on the same day: **492 of 907 (54%)** (3 or 
 | 20240718 | -14,109 | -299 | -1,313 | 595 | -13,092 |
 | 20250403 | -13,979 | -11,445 | 7,564 | -2,989 | -7,108 |
 
-5 worst combined weeks:
+5 worst combined weeks (the first and last week of a window can be partial):
 
 | week | combined | Asia | NY AM | London | NY PM |
 |---|---|---|---|---|---|
@@ -302,7 +309,8 @@ Fitted at 2 and 4 lots per book (Asia alone, last 6 months, truly bare vs joint 
 - R0 vs R1: every D8 row here is truly bare R0; the stack searches' own FINAL pages (ALL_NEW_STACK_*) carry today's D7 account layers (R1) and are NOT these numbers.
 - BARE D7 is built from the same raw trigger calls as the D8 books with the live layers removed (1 lot per book, plain 60/60 brackets, O7 40/90); NY PM D7 is K7 alone; compare bare with bare only.
 - NO FITTED D7 beside bare D8 and no fitted D8 beside bare D7 anywhere on this page; section 5 compares the fitted Asia row only with the bare D8 rows.
+- ALL-MONTHS NOTE: the fitted Asia pick looks worse than bare over all 42 months (higher ulcer and lower $/wk in the all-months table), which is the RED prior-year band of its fit page; it is a recent-window improvement only.
 - FILLS: 2- and 4-lot series are real engine runs (size-dependent fills), not multiples of the 1-lot series.
 - NEW BOOKS IN THE LIVE FILE: the Asia stack is the first one live; no live P&L is in this page.
 
-_Generated in 4 s._
+_Generated in 3 s._
