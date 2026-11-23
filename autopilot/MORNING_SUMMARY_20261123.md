@@ -112,3 +112,16 @@ Expected: NY AM bare-fit table (later this morning), NY PM FINAL + yardstick, Lo
 **Running now (12:05Z):** fleet ~470-570 slots at ~11k set-months an hour, all hosts >= 93% of cap. London bare fit joint (ETA ~15:30-17:00Z), NY PM tail of the SR queue, Asia daily-loss screen and joint re-run (ETA ~18:00-20:00Z), session-end and cross-session screens (fall-through), NY AM first looks (NY AM first looks started on spare slots only; Asia widening not started).
 
 **Still open for Josh:** (1) data for 11-16..11-20 so the Asia seed page is valid for SIM; (2) layers ON or OFF in the first SIM run (default OFF; Asia fitted pick failed its null and its prior-year bands; NY AM pick not yet nulled); (3) feature-store roll-session defect; (4) real live commission.
+
+---
+## UPDATE 16:05Z (fourth edition; next refresh 20:00Z)
+
+**New since 12:05Z**
+- **London L19201dfc.BRF90_30 (single book), truly bare all-layers joint (verdict 13:50Z), last 6 months per lot, ulcer / max DD / $ per week:** 1 lot bare 1,253 / -3,809 / $1,768 vs best joint 1,069 / -3,909 / $1,614 (persistence 0.527 FAILS 0.58; bands GREEN/RED/AMBER); 2 lots 1,329 / -3,918 / $1,632 vs 883 / -2,548 / $563 (walk-forward 0.775, persistence 0.796; AMBER/RED/RED); 4 lots 1,364 / -3,931 / $1,619 vs 1,099 / -3,328 / $1,331 (walk-forward 0.825, persistence 0.796; GREEN/AMBER/GREEN): the 4-lot pick is the most acceptable (WEAK-BUT-POSITIVE); London is a smooth single book so the layers have little to remove; layers OFF stays the tested configuration; null pending.
+- **NY PM** stack FINAL (recent basis, complete pool of 6): L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60 (controls 30/18/30); identity of its bare all-layers fit passed; its fit rows (about 1,500 left) are running; the daily-loss (2,370 rows), session-end and cross-session (249 rows) screens start after them.
+- **Daily-loss test, session-end test, cross-session locks:** identity proofs passed; screens queued behind the ordered fits; nothing scored yet. The merged cross-session set (15 books) equals the four separate stacks trade for trade.
+- **Combined numbers page** refreshes every 2 hours (see D8_ALL_SESSIONS_COMBINED.md).
+- **Queue state:** D8 canonical controls stream drained at ~14:05Z (no new D8 file since 12:29Z; canc_auto.py still loops); W-BRKT pool bracket rows done; NY AM first looks (pool-changing) are running on all spare slots: ~4,400 rows an hour, ~61.5k left (~14 h); Asia widening (~55k rows) not started (by order it follows the first looks). No pass from the first looks has been reported yet.
+- Orders accepted this morning: cross-session locks, session-end run-vs-flatten, daily loss stop test, depth-book lock info, London into D8, NY AM generic book specs, combined numbers, weights, book styles, Asia stack choice (5-book), add rule on recent basis; all answered or in flight (see MORNING.md).
+
+**Decisions still open for Josh:** (1) data for 11-16..11-20 so the Asia seed page is valid for SIM; (2) layers ON or OFF in the first SIM run (default OFF: tested bare; Asia fitted pick failed its null and prior-year bands; NY AM pick weak-but-positive, null pending; London weak-but-positive at 4 lots); (3) feature-store roll-session defect; (4) real live commission.
