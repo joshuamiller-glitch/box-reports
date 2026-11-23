@@ -190,8 +190,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-23 14:16Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-23 14:08Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-23 15:11Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-23 15:08Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "ny-own" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
 Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 39 | weights: equal (1 each)
@@ -220,7 +220,7 @@ Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_STKd88116a64e`
-Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U', 'Le4fede95.BRF90_30', 'Lf0346d55.BRP60', 'L8cfda948.BRF90_30'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U', 'Le4fede95.BRF90_30', 'Lf0346d55.BRP60', 'L8cfda948.BRF90_30', 'L4407508c.BRF120_60'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
