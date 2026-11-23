@@ -8,6 +8,8 @@ Cells: ulcer / max DD / worst week / worst day / $ per week, per lot (L6M window
 
 **CG NOT FITTED on new books until done (W-LAYERS2 21:30Z): the c_gov hook of the stack set governs tag P7 only, so every CG row reads zero change and CG1 in any joint pick below is a NO-OP. Fix in progress (gov_book for MF1..MF5); do not build CG from this file.**
 
+**NULL (21-23Z run, posted 00:11Z): search-aware null of the 5-book joint/screen FAILS: real best-of 38.7% ulcer cut vs null draws 33.3 / 38.9 / 19.0 / 44.5 / 31.5% = beats 3 of 5 (gate >= 4). Together with prior-year bands RED/RED/RED the layer settings below are WEAK / NOT PROVEN; panel default stays layers OFF (bare).**
+
 ## 1 lot(s) per book
 
 | window | truly bare | best joint |
