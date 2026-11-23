@@ -1,12 +1,98 @@
 # D8 ALL SESSIONS COMBINED (W-COMBINED; order 0745Z; Josh: "do we have combined #s now that we have all books by ny pm? like weekly DD/prfit?")
 
-Generated 2026-11-23 18:40Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+Generated 2026-11-23 20:05Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
 
 **Basis.** Every D8 row is TRULY BARE (R0): trigger + own bracket + scheduled session-end exit, no D7 account layers, no stack rules, no sizer, no zones/TH; 1 lot per book, dollars NET of $4.84 per lot round trip. Daily P&L is by Globex trading date; all series are put on ONE common trading-day calendar (union of every series' trading dates in the window, zero-filled), weeks are Monday-Sunday. $ per week = mean weekly P&L; ulcer = root-mean-square of the daily drawdown from the running peak; max DD = worst peak-to-trough on the daily cumulative; trades per day = trades per common trading day. Windows: L6M = 202605-202610, L3M = 202608-202610, prior years 2023 (from 202304), 2024, 2025 (without 202511).
 
 **Data end (per series, last trade date):** Asia D8 20261030; Asia D7 20261030; NY AM D8 20261030; NY AM D7 20261030; London D8 20261030; London D7 20261030; NY PM D8 20261030; NY PM D7 20261030. The engine sets run to month 202610 (the November tape hole 11-02..04 and later days are not in them); the newest live-week data (td 20261113) is NOT in these series.
 
 **How each D8 session stack is built here (all truly bare, 1 lot per book):** Asia = the bare run of the pinned 5-book stack `TL3_SR_AS_STKd8106b26ef_BF1_BASE` (Lb0e6dfa3.BRF40_80, L385f4f2e.J502, L92a90948, L6b373671.BRP60, L578701ed.BRF30_90). NY AM = bare run of `TL3_SR_NY_STKd8b76ecd35_BF1_BASE` (L8cfda948, Lf0346d55, L7cc56d99, Lbb254083, L8f11883e). London = the single book L19201dfc.BRF90_30 (`TL3_ALN_LO_L19201dfc_R0BRF90_30`, R0 base; recent-basis FINAL on the complete pool; exits pending). NY PM = the 4-book FINAL (L52359bf4.BRP30, L8e0bf58c.BRS8U, L4bdd521a.BRF80_40, L2c6916a5.BRP60), bare stack run `TL3_SR_NP_STKd893133bd8_BF1_BASE` (stack identity STKd893133bd8; it equals the sum of the four members' own bare R0 sets, as books do not interact when bare). BARE D7 = the bare D7 stack of that session at 1 lot per book: Asia A7+H7+K7+P7+U7 `TL3_ALN_AS_STKLIVE_BARE`, NY AM `TL3_ALN_NY_STKLIVE_BARE`, London `TL3_ALN_LO_STKLIVE_BARE`, NY PM = K7 alone `TL3_ALN_NP_STKLIVE_BARER0` (see BARE_D7_YARDSTICK.md).
+
+## 2-LOT REFRESH: combined profit and drawdown as tonight's D8 file runs (2 lots per book, plain 2-lot dollars)
+
+Refreshed 2026-11-23 20:05Z UTC by combine.py (cron every 2 h; re-resolves the NY PM pick each run). Directive: DIRECTIVE_COMBINED_REFRESH_20261123_2010Z.md. Reporting only.
+
+**NY PM = `TL3_SR_NP_STKd893133bd8_BF2_JT9`, which contains the cancel-tape STC cut on 2 books: NOT RUNNABLE IN THE FILE.** The STC-free pick (TL3_SR_NP_STKd893133bd8_BF2_JT201..280, W-LAYERS2, rank 0.002) has not landed as a verdict (no STC-free verdict named yet); this section re-runs on the cron and switches by itself when a verdict page names an STC-free JTxxx whose 42 months are all DONE. Until then the all-four row is a preview, not the file.
+
+Merged run = the four daily series added by trading date on one common calendar (true combined drawdown, not a sum of session drawdowns). Asia = BF2_JT19, NY AM = BF2_JT68, London = L19201dfc bare (BF2_BASE), NY PM as above. Dollars net of $4.84 per lot round trip, 2 lots per book, whole-stack plain 2-lot dollars (what the NinjaTrader panel shows with 2 in the lots field). Columns: $ per week = mean Monday-Sunday week; max DD = worst peak-to-trough of the daily cumulative; worst wk; worst day; ulcer = RMS daily drawdown.
+
+**Series end (last trade date in the sets used):** Asia 20261030; NY AM 20261030; London 20261030; NY PM 20261030; bare Asia 20261030; bare NY AM 20261030; bare NY PM 20261030. Engine sets stop at month 202610; November and the live weeks are NOT in them. Base: landed series only.
+
+### L6M (202605-202610) with L3M (202608-202610) beside
+
+| row | L6M $/wk | max DD | worst wk | worst day | ulcer | L3M $/wk | max DD | worst wk | worst day | ulcer |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Asia alone (BF2_JT19) | 9,849 | -8,694 | -3,660 | -7,635 | 2,733 | 8,862 | -6,429 | 847 | -4,676 | 2,013 |
+| NY AM alone (BF2_JT68) | 6,076 | -10,218 | -4,550 | -5,504 | 3,507 | 4,029 | -10,218 | -4,550 | -5,504 | 4,181 |
+| London alone (bare) | 3,265 | -7,836 | -5,371 | -6,629 | 2,673 | 2,737 | -7,836 | -4,903 | -6,629 | 3,034 |
+| NY PM alone (JT9) | 6,004 | -9,617 | -6,545 | -6,769 | 2,842 | 6,171 | -6,997 | -6,545 | -5,329 | 1,855 |
+| Asia + NY AM | 15,926 | -14,863 | -641 | -8,794 | 3,793 | 12,891 | -11,475 | 2,221 | -8,794 | 4,247 |
+| Asia + NY AM + London | 19,190 | -13,321 | -106 | -10,013 | 3,766 | 15,628 | -12,390 | 1,826 | -10,013 | 4,154 |
+| **ALL FOUR, as tonight's file runs (merged run)** | 25,194 | -11,986 | 226 | -10,871 | 3,386 | 21,799 | -11,986 | 6,747 | -8,454 | 3,437 |
+| reference only: all four truly BARE at 2 lots | 46,618 | -37,484 | -8,049 | -22,329 | 8,296 | 44,199 | -37,484 | 3,698 | -22,329 | 9,609 |
+| NY PM, all four sessions WITHOUT L8e0bf58c | not computable from landed series (see below) | | | | | | | | | |
+
+### 2023
+
+| row | $/wk | max DD | worst wk | worst day | ulcer |
+|---|---|---|---|---|---|
+| Asia alone (BF2_JT19) | 316 | -19,901 | -10,935 | -9,187 | 9,688 |
+| NY AM alone (BF2_JT68) | 1,738 | -40,383 | -16,292 | -10,894 | 14,949 |
+| London alone (bare) | 539 | -10,495 | -5,119 | -3,600 | 3,828 |
+| NY PM alone (JT9) | 1,745 | -17,616 | -12,403 | -6,227 | 6,217 |
+| Asia + NY AM | 2,054 | -38,824 | -10,095 | -8,717 | 12,125 |
+| Asia + NY AM + London | 2,593 | -36,495 | -12,979 | -9,699 | 11,804 |
+| **ALL FOUR, as tonight's file runs (merged run)** | 4,337 | -29,997 | -21,128 | -9,531 | 11,163 |
+| reference only: all four truly BARE at 2 lots | 9,891 | -36,758 | -30,525 | -20,343 | 10,522 |
+| NY PM, all four sessions WITHOUT L8e0bf58c | not computable from landed series | | | | |
+
+### 2024
+
+| row | $/wk | max DD | worst wk | worst day | ulcer |
+|---|---|---|---|---|---|
+| Asia alone (BF2_JT19) | 1,703 | -24,692 | -10,803 | -7,672 | 8,900 |
+| NY AM alone (BF2_JT68) | 2,532 | -22,333 | -14,148 | -8,492 | 8,653 |
+| London alone (bare) | 494 | -23,644 | -11,627 | -8,353 | 8,832 |
+| NY PM alone (JT9) | 2,103 | -34,979 | -14,610 | -9,812 | 11,049 |
+| Asia + NY AM | 4,235 | -39,295 | -20,373 | -10,409 | 11,670 |
+| Asia + NY AM + London | 4,728 | -44,903 | -28,871 | -11,520 | 12,198 |
+| **ALL FOUR, as tonight's file runs (merged run)** | 6,831 | -41,160 | -28,684 | -13,851 | 10,946 |
+| reference only: all four truly BARE at 2 lots | 11,114 | -66,922 | -43,454 | -36,048 | 19,118 |
+| NY PM, all four sessions WITHOUT L8e0bf58c | not computable from landed series | | | | |
+
+### 2025 (without 202511)
+
+| row | $/wk | max DD | worst wk | worst day | ulcer |
+|---|---|---|---|---|---|
+| Asia alone (BF2_JT19) | 532 | -48,777 | -21,341 | -11,348 | 21,958 |
+| NY AM alone (BF2_JT68) | 3,372 | -52,524 | -25,712 | -19,192 | 14,728 |
+| London alone (bare) | 323 | -25,810 | -9,017 | -6,024 | 10,764 |
+| NY PM alone (JT9) | 3,099 | -18,848 | -15,551 | -14,872 | 6,322 |
+| Asia + NY AM | 3,904 | -69,829 | -29,338 | -20,128 | 20,480 |
+| Asia + NY AM + London | 4,227 | -65,565 | -31,915 | -17,384 | 20,002 |
+| **ALL FOUR, as tonight's file runs (merged run)** | 7,325 | -54,140 | -28,427 | -21,813 | 15,047 |
+| reference only: all four truly BARE at 2 lots | 15,014 | -92,073 | -43,644 | -46,465 | 25,383 |
+| NY PM, all four sessions WITHOUT L8e0bf58c | not computable from landed series | | | | |
+
+### the 42 months (202304-202610)
+
+| row | $/wk | max DD | worst wk | worst day | ulcer |
+|---|---|---|---|---|---|
+| Asia alone (BF2_JT19) | 2,281 | -48,777 | -21,341 | -17,452 | 14,295 |
+| NY AM alone (BF2_JT68) | 2,929 | -52,524 | -25,712 | -19,192 | 13,291 |
+| London alone (bare) | 793 | -25,810 | -13,076 | -8,353 | 9,020 |
+| NY PM alone (JT9) | 2,914 | -35,094 | -15,551 | -14,872 | 9,260 |
+| Asia + NY AM | 5,210 | -76,177 | -29,338 | -20,128 | 16,556 |
+| Asia + NY AM + London | 6,003 | -81,092 | -31,915 | -20,988 | 17,293 |
+| **ALL FOUR, as tonight's file runs (merged run)** | 8,917 | -67,281 | -31,699 | -21,813 | 13,890 |
+| reference only: all four truly BARE at 2 lots | 16,797 | -151,187 | -71,361 | -46,465 | 26,355 |
+| NY PM, all four sessions WITHOUT L8e0bf58c | not computable from landed series | | | | |
+
+**In plain words:** over the last 6 months the fits cut the all-four max drawdown from -37,484 to -11,986 and the worst week from -8,049 to 226, and they changed the profit from 46,618 to 25,194 dollars per week (-21424 dollars per week; 2 lots per book; NY PM is still the JT9 preview).
+
+**NY PM "without L8e0bf58c" row: NOT BUILT.** The NY PM file tonight runs 3 books (L52359bf4, L4bdd521a, L2c6916a5; L8e0bf58c coded but OFF). The merged 2-lot sets (BF2_BASE, BF2_JT*) are whole-stack runs of all 4 books with stack rules and sizer acting across books, so L8e0bf58c cannot be subtracted, and the per-book bare 2-lot sets (TL3_ALN_NP_<book>_R0*_BF2S) have only 1 of 42 months landed. NEW ENGINE ROWS NEEDED, NOT QUEUED: 42 month-rows for the 3-book stack at the chosen pick (one set x 42 months, after the STC-free pick is named), plus 42 more for its bare 3-book reference (84 total). ETA once leased: at the current fleet rate of about 1,100 JT2xx rows per hour that is about 5 minutes of fleet throughput; wall time is set by when the rows are leased (needs an explicit order).
+
+---
 
 ## Headline (last 6 months, 1 lot per book, truly bare, net of $4.84 per lot)
 
@@ -431,4 +517,4 @@ Fitted at 2 and 4 lots per book (Asia alone, last 6 months, truly bare vs joint 
 - FILLS: 2- and 4-lot series are real engine runs (size-dependent fills), not multiples of the 1-lot series.
 - NEW BOOKS IN THE LIVE FILE: the Asia stack is the first one live; no live P&L is in this page.
 
-_Generated in 16 s._
+_Generated in 6 s._
