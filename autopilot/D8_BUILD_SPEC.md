@@ -125,11 +125,47 @@ Option A earns more per unit of ulcer and has far smaller drawdowns in L6M/L3M (
 `D8_PRINT_RULE.md` (print rule, causal variants, bar classes), `D8_BAR_DEFS.md` (bar rules, tm rule, thresholds), `D8_FEED_CHECK.md` (feed alignment), `D8_TRIGDEBUG_*`, `D8_VECTORS_*` (per-book tables), `D8_P2_J502_FILTER.md`, `D8_CANF_COMPARE.md`, `D8_CAN_RESULTS.md`, `ASIA_ONE_BOOK_EXPLAIN.md`.
 
 <!-- AUTO:asia -->
-## AUTO SESSION SECTION ASIA (refreshed 2026-11-23 22:40Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-23 22:36Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION ASIA (refreshed 2026-11-23 22:50Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-23 22:46Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+### equal option "asia-own" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
+Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 81 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L385f4f2e | vol_2600 | trig_momentum_rsi | mom {"len": 14, "lvl": 60} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 815 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### equal option "asia-own-l3g" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
+Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 81 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L385f4f2e | vol_2600 | trig_momentum_rsi | mom {"len": 14, "lvl": 60} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 815 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### equal option "asia-stay" (equal weights): final set `TL3_ALN_AS_Lb0e6dfa3_R0BRF40_80`
+Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 81 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| Lb0e6dfa3 | tm240 | trig_structure_libpattern | nr {"n": 7} | long | 40/80 (median stop/target pts; shape per set name) | both | 1 | 11058 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### equal option "asia-stay-l3g" (equal weights): final set `TL3_ALN_AS_Lb0e6dfa3_R0BRF40_80`
+Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 81 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| Lb0e6dfa3 | tm240 | trig_structure_libpattern | nr {"n": 7} | long | 40/80 (median stop/target pts; shape per set name) | both | 1 | 11058 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### weighted option "asia-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_AS_STKd8da2eb47b`
-Selection: ['Lb0e6dfa3.BRF40_80', 'L385f4f2e.J502'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+Selection: ['Lb0e6dfa3.BRF40_80', 'L385f4f2e.J502', 'L9c2622b0.BRP45', 'L4aaacdb2.BRP30'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
@@ -137,6 +173,15 @@ Selection: ['Lb0e6dfa3.BRF40_80', 'L385f4f2e.J502'] | controls None | pool None 
 | L385f4f2e | vol_2600 | trig_momentum_rsi | mom {"len": 14, "lvl": 60} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 815 |
 | L9c2622b0 | pnf_7 | trig_levels_vwap | break {"n": 3, "k": 0.5} | long | 45/45 (median stop/target pts; shape per set name) | both | 1 | 5845 |
 | L4aaacdb2 | vsess_30 | trig_bands_vwap | break {"minbars": 20, "k": 1.0} | both | 30/30 (median stop/target pts; shape per set name) | both | 1 | 1485 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### weighted option "asia-stay-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_AS_Lb0e6dfa3_R0BRF40_80`
+Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool None | weights: see loop final JSON reselect_*_w*.json
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| Lb0e6dfa3 | tm240 | trig_structure_libpattern | nr {"n": 7} | long | 40/80 (median stop/target pts; shape per set name) | both | 1 | 11058 |
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
