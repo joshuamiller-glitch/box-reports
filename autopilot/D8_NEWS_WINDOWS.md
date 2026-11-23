@@ -1,6 +1,6 @@
 # D8 NEWS WINDOWS (family NW): entry blocks around releases and open-trade rules
 
-Research only, 2 lots per book, written 2026-11-23 21:17 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
+Research only, 2 lots per book, written 2026-11-23 21:38 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
 
 **Calendar**: /mnt/l2/l2vast/_calendar/events.csv has events from **2024-10-01** (first row ISM manufacturing 10:00 ET) to 2026-12-23. Months 2023-04 to 2024-09 have NO events: they are NOT SCORED for NW (an NW set equals its pick there by construction; shown as "no calendar", never as evidence). So prior years here = 2024-10..2025-12 and 2026-01..04 (18 months, 2025-11 has no data) and L6M = 2026-05..10, L3M = 2026-08..10; data end 2026-10. 54 calendar rows are rule-derived (ISM dates), 1 UNVERIFIED, the rest verified. The calendar has no FOMC press-conference row: FOMC press = every FOMC decision date at 14:30 ET (synthetic). NOT in the calendar, so not tested: JOLTS, consumer confidence, new home sales and other 10:00 releases, Treasury auctions (in the file as AUC_* but not in the order).
 
