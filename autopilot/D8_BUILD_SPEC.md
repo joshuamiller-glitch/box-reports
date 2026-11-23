@@ -224,8 +224,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:nyam -->
 
 <!-- AUTO:london -->
-## AUTO SESSION SECTION LONDON (refreshed 2026-11-23 01:53Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_london.json (updated 2026-11-23 01:53Z). A final is listed here only when its stack-rule page autopilot/LONDON_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION LONDON (refreshed 2026-11-23 02:04Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_london.json (updated 2026-11-23 02:03Z). A final is listed here only when its stack-rule page autopilot/LONDON_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "london-own" (equal weights): final set `TL3_ALN_LO_L19201dfc_R0BRF90_30`
 Selection: ['L19201dfc.BRF90_30'] | controls [29, 21, 30] | pool 4 | weights: equal (1 each)
@@ -251,6 +251,15 @@ Selection: ['L19201dfc.BRF90_30'] | controls [29, 21, 30] | pool None | weights:
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
 | L19201dfc | trend_20 | trig_xmarket_commod | against_CL {"w": 15, "thr": 2.0} | both | 90/30 (median stop/target pts; shape per set name) | both | 1 | 1768 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### weighted option "london-stay-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_LO_L74274eca_R0BRF120_60`
+Selection: ['L74274eca.BRF120_60'] | controls [29, 18, 30] | pool None | weights: see loop final JSON reselect_*_w*.json
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L74274eca | vsess_200 | trig_xmarket_rates | with_ZB {"w": 5, "thr": 1.0} | both | 120/60 (median stop/target pts; shape per set name) | both | 1 | 20472 |
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
