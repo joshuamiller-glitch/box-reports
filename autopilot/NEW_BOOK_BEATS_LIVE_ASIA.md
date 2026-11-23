@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-23 07:30Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-23 07:35Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -720,10 +720,10 @@ Asia set-months landed: last 1 h 0, last 3 h 0; Asia queue lines pending (not DO
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 1100, _nye/pending_w , _lon 1101 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > ALN > STK > EXE > NYL > NYF > FR > NYE
-- box1 running engine sets by tag: 23 TL3_NYE_      10 TL3_LYR_
-- server2 running engine sets by tag: 40 TL3_ALN_      14 TL3_SR_
-- A running engine sets by tag: 119 TL3_ALN_      79 TL3_SR_
-- B running engine sets by tag: 115 TL3_ALN_      86 TL3_SR_
+- box1 running engine sets by tag: 22 TL3_NYE_      18 TL3_LYR_
+- server2 running engine sets by tag: 32 TL3_SR_      17 TL3_LYR_       2 TL3_ALN_
+- A running engine sets by tag: 126 TL3_ALN_      57 TL3_SR_      18 TL3_LYR_
+- B running engine sets by tag: 98 TL3_ALN_      88 TL3_SR_      12 TL3_LYR_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |

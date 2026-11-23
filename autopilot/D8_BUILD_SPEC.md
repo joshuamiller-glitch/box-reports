@@ -190,8 +190,34 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-23 07:25Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-23 07:20Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-23 07:35Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-23 07:35Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+### equal option "ny-own" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
+Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 38 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L8cfda948 | dchg_40 | trig_tape_block | b10_follow_sm {"L": 50, "z": 1.0, "sm": 3} | long | 90/30 (median stop/target pts; shape per set name) | long | 1 | 5106 |
+| Lf0346d55 | renko_20 | trig_book_ofi | follow_sm {"L": 200, "z": 2.0, "sm": 3} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6815 |
+| L7cc56d99 | lbrk_3_40 | trig_levels_vwap | break {"n": 2, "k": 0.25} | both | 120/120 (median stop/target pts; shape per set name) | both | 1 | 5466 |
+| Lbb254083 | renko_80 | trig_xmarket_fx | against_6J {"w": 15, "thr": 1.5} | both | 45/45 (median stop/target pts; shape per set name) | both | 1 | 1327 |
+| L8f11883e | time_m_20 | trig_levels_session_hl | retest {"M": 10, "tol": 0.5} | long | 30/90 (median stop/target pts; shape per set name) | long | 1 | 1223 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
+
+### equal option "ny-own-l3g" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
+Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 38 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L8cfda948 | dchg_40 | trig_tape_block | b10_follow_sm {"L": 50, "z": 1.0, "sm": 3} | long | 90/30 (median stop/target pts; shape per set name) | long | 1 | 5106 |
+| Lf0346d55 | renko_20 | trig_book_ofi | follow_sm {"L": 200, "z": 2.0, "sm": 3} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6815 |
+| L7cc56d99 | lbrk_3_40 | trig_levels_vwap | break {"n": 2, "k": 0.25} | both | 120/120 (median stop/target pts; shape per set name) | both | 1 | 5466 |
+| Lbb254083 | renko_80 | trig_xmarket_fx | against_6J {"w": 15, "thr": 1.5} | both | 45/45 (median stop/target pts; shape per set name) | both | 1 | 1327 |
+| L8f11883e | time_m_20 | trig_levels_session_hl | retest {"M": 10, "tol": 0.5} | long | 30/90 (median stop/target pts; shape per set name) | long | 1 | 1223 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_STKd88116a64e`
 Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U', 'Le4fede95.BRF90_30', 'Lf0346d55.BRP60', 'L8cfda948.BRF90_30', 'L4407508c.BRF120_60', 'B6f77f23d'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
@@ -258,8 +284,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:london -->
 
 <!-- AUTO:nypm -->
-## AUTO SESSION SECTION NYPM (refreshed 2026-11-23 07:14Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-23 07:10Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYPM (refreshed 2026-11-23 07:35Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-23 07:30Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "nypm-own" (equal weights): final set `TL3_ALN_NP_STKd893133bd8`
 Selection: ['L52359bf4.BRP30', 'L8e0bf58c.BRS8U', 'L4bdd521a.BRF80_40', 'L2c6916a5.BRP60'] | controls [30, 18, 30] | pool 6 | weights: equal (1 each)
@@ -273,12 +299,12 @@ Selection: ['L52359bf4.BRP30', 'L8e0bf58c.BRS8U', 'L4bdd521a.BRF80_40', 'L2c6916
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
-### weighted option "nypm-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NP_STKd8e3868036`
-Selection: ['L7b1adff3.BRP60', 'L4bdd521a.BRF80_40'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+### weighted option "nypm-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NP_STKd81d0693ad`
+Selection: ['L2c6916a5.BRP60', 'L4bdd521a.BRF80_40'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
-| L7b1adff3 | time_s_15 | trig_tape_div | div_fade {"N": 20, "k": 0.5} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6145 |
+| L2c6916a5 | tm15 | trig_tape_div | div_fade {"N": 20, "k": 0.5} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6142 |
 | L4bdd521a | tm1800 | trig_xmarket_ym | follow {"w": 5, "thr": 1.0} | both | 80/40 (median stop/target pts; shape per set name) | both | 1 | 1554 |
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
