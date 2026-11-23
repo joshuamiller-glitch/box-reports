@@ -1,0 +1,15 @@
+# Information request: exact spec of the state cut (STC) so it can be ported to NinjaTrader
+**Josh's words are quoted; lines marked (relay) are the relay's reading. Information only: no new test queued by this order, no gate or rule change, nothing live, no spend, no data deleted.**
+
+Josh, 23 Nov 13:00 MT: "why are you excluding level two?"
+Relay explained: STC needs the 10-level cancel tape; NinjaTrader reports level sizes, not whether a drop was a cancel or a trade; offered to port it properly (spec -> build -> record live -> compare with the box). Josh, 13:01 MT: "yes of course"
+
+## Please post `autopilot/D8_STC_SPEC.md` with (relay)
+1. THE RULE, read from the code, exact: the state it computes (canc_bid / canc_ask, the displayed-size EWMA and every other input), units, window lengths, EWMA constants, which of the 10 levels count and how they are weighted, how "mult 15.0" (STC4) and the other STC codes (STC1..) enter, on which clock it is evaluated (per event, per closed second), from when in the trade it is armed, the side logic for a long and a short, and what happens when it fires (exit at market one second later, like CU?). Warm-up: how much book history it needs before it can fire.
+2. THE CANCEL MEASURE from the raw feed: exactly which Databento records and fields count as a cancel at a level (action codes, how a modify that reduces size is treated, how a trade that removes size is kept OUT of the cancel count, what happens when a level leaves or enters the 10-level window because the price moved).
+3. A NINJATRADER-COMPATIBLE DEFINITION, your proposal: NT8 OnMarketDepth gives (side, position 0-9, operation Add / Update / Remove, price, new size, time) and the trade stream gives (time, price, size, bid, ask). State the closest reproduction of your cancel measure from those two streams only (for example: size drop at a price minus the volume traded at that price in the same instant = cancelled), and say where it must differ from yours.
+4. HOW CLOSE IS THE NT-COMPATIBLE VERSION ON YOUR OWN DATA: rebuild that NT-compatible measure from your stored 10-level book + trades (no cancel flags), for the books whose picks use STC, and report: correlation and error against the true cancel state, and above all how many STC exits fire at the same second, within 2 seconds, or not at all (and how many extra). This is information to decide the port; if it needs engine rows say the count and ETA first.
+5. A PARITY PACK for one recent day (a day with at least 3 STC exits on a book in the NY PM or London pick): the state series per second around each exit (inputs, value, threshold, fired yes / no) so the relay's C# can be checked the same way as the bar and signal parity pages.
+6. A RECORDING FORMAT: the columns you want the NinjaTrader strategy to write (per second: time UTC, the NT-compatible cancel state per side, displayed-size EWMA, best bid / ask) so you can compare a live session with your own data for that day after the daily pull.
+
+Machines stay full; this ranks behind the NY PM STC-free joint and the fits already ordered. Never include account numbers, keys or credentials.
