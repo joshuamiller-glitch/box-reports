@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 17:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 17:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 17:00Z | box1: busy 100%, load1 61.98, workers 20, MemAvail 61 GB | server2: busy 98%, load1 88.72, workers 27, MemAvail 590 GB | pending box1-eligible 947652 / server2-eligible 130616 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 185.65, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 990 GB | serverB: busy 100%, load1 174.02, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 953 GB | serverC: busy 100%, load1 133.58, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1376 GB | serverD: busy 97%, load1 64.23, workers 1 (grid) + 66 (engine), 64 threads, MemAvail 1438 GB
+LATEST CORES.md LINE: 2026-11-23 17:15Z | box1: busy 99%, load1 61.17, workers 17, MemAvail 79 GB | server2: busy 97%, load1 85.08, workers 27, MemAvail 736 GB | pending box1-eligible 946473 / server2-eligible 129444 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 166.62, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 1022 GB | serverB: busy 100%, load1 190.37, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 971 GB | serverC: busy 100%, load1 137.50, workers 1 (grid) + 136 (engine), 128 threads, MemAvail 1375 GB | serverD: busy 97%, load1 63.94, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1468 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 17:00Z
+2026-11-23 17:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 17:00Z | box1: busy 100%, load1 61.98, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 60.1 GB; live reservations 20 (20 GB); workers 20, of which TP-adopted 19 (RSS 22.7 GB) vs others 1 (RSS 1.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 61.98, 61.33, 59.07
-  by tag: NYE quota 16 running 13 hungry False RSS 18.3 GB PSS 16.7 GB; TOOLS quota 0 running 6 hungry False RSS 4.4 GB PSS 4.0 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
+Server 1 (this box): MemAvail 78.1 GB; live reservations 5 (5 GB); workers 17, of which TP-adopted 16 (RSS 20.2 GB) vs others 1 (RSS 1.2 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 61.17, 69.12, 67.45
+  by tag: NYR quota 12 running 1 hungry True RSS 2.1 GB PSS 1.9 GB; NYE quota 16 running 15 hungry False RSS 18.1 GB PSS 16.4 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_SR_NP_STKd8e3868036_BF1_JT55 (x36);TL3_NYE_L5d9abaae_ALN (x24);TL3_NYE_L18d28471_RK7CT7p (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 86.61, 86.02, 83.80|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
+  top running jobs: TL3_NYE_La046032b_ALN (x22);TL3_NYE_L32cec996_ALN (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 85.35, 84.97, 84.48|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 86.61, 86.02, 83.80|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261123_0740Z_Josh-depth-book-lock-info.md 20261123_0745Z_Josh-all-session-combined-numbers.md 20261123_0750Z_Josh-cross-session-locks-test.md 20261123_1055Z_london-exit-verdict-status.md 20261123_1125Z_nyam-layer-keys-for-the-port.md
+20261123_0750Z_Josh-cross-session-locks-test.md 20261123_1055Z_london-exit-verdict-status.md 20261123_1125Z_nyam-layer-keys-for-the-port.md 20261123_1705Z_Josh-nypm-book-specs-for-D8.md 20261123_1710Z_Josh-data-through-today-and-live-check.md
+- 17:15Z INBOX (typed by Josh in the session, not a relay file): "Josh here, typing directly. I approve the spend to pull data for td 20261116 through today for
