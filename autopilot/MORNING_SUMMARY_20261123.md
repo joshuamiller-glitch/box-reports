@@ -125,3 +125,18 @@ Expected: NY AM bare-fit table (later this morning), NY PM FINAL + yardstick, Lo
 - Orders accepted this morning: cross-session locks, session-end run-vs-flatten, daily loss stop test, depth-book lock info, London into D8, NY AM generic book specs, combined numbers, weights, book styles, Asia stack choice (5-book), add rule on recent basis; all answered or in flight (see MORNING.md).
 
 **Decisions still open for Josh:** (1) data for 11-16..11-20 so the Asia seed page is valid for SIM; (2) layers ON or OFF in the first SIM run (default OFF: tested bare; Asia fitted pick failed its null and prior-year bands; NY AM pick weak-but-positive, null pending; London weak-but-positive at 4 lots); (3) feature-store roll-session defect; (4) real live commission.
+
+## UPDATE 21:05Z (fifth edition)
+
+**New answers**
+- Data: Josh's typed approval executed. Catch-up pull finished at $0.00 (63 requests; NQ mbp-10 to 2026-11-23 ~09:26Z; ES/YM/6J/CL/ZB/ZN 1-min bars to 11-23). NQ days 20261116-20 ingested. Nightly top-up cron installed (01:30Z, guard <= $25/day, per request <= $25, disk reserve 60 GB). td 20261123 NQ day lands after the ~01:00Z release; parity pages for Lf0346d55 / L8cfda948 follow then.
+- Asia 2-lot re-run done: procedure best BF2_JT143, but LEAD keeps BF2_JT19 (JT143 ulcer only 3% better; max DD +41%, worst week +53%, L3M ulcer +33%, 2025 negative, needs cancel tape).
+- NY PM 2-lot: BF2_JT9 (with STC) ulcer -49%, max DD -60%, -31% $; STC-free pick BF2_JT209 (ulcer 1,447, max DD -4,830, $2,936/wk) is what the D8 file takes. Pages D8_LAYER_KEYS_NYPM(_STCFREE).md, D8_LAYER_DEFAULTS_NYPM(_STCFREE).md. Null pending.
+- Combined table (2 lots, merged, L6M): as tonight's file runs $25,061/wk, max DD -11,986, worst week +226 vs truly bare $46,618, -37,484, -8,049. "NY PM without L8e0bf58c" row needs 84 engine rows (not queued; say the word).
+- NY PM volume-book inputs page D8_NYPM_VOLBOOK_INPUTS.md; STC spec page D8_STC_SPEC.md (NT-style tick-rule version reproduces 197/219 exits in the same second; 1 s clock skew is the main risk).
+
+**Work in flight:** time-window (TW 6,802 rows) and news-window (NW 2,771 rows) screens at rank 4.5 (first looks ~21:30-22:30Z, guesses); Asia STC-free joint; 2-lot nulls (Asia, NY AM, then London, NY PM); mix3 (41.6k rows).
+
+**Open decisions for Josh:** layers ON/OFF in first SIM run (default OFF); feature-store roll-session defect; real live commission; L8e0bf58c unmerged-records port vs D8-rule re-run; whether to queue the 84 rows for the NY PM-without-L8e0bf58c row; optional exact re-run with NT-style state cut (126 set-months, ~8 core-hours).
+
+**Slips:** none against the 22:00Z file deadline. Summary refresh was ~1 h late (20:00Z -> 21:05Z).
