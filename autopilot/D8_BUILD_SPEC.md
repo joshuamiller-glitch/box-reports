@@ -284,8 +284,20 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:london -->
 
 <!-- AUTO:nypm -->
-## AUTO SESSION SECTION NYPM (refreshed 2026-11-23 06:20Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-23 06:20Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYPM (refreshed 2026-11-23 07:04Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-23 07:00Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+
+### equal option "nypm-own" (equal weights): final set `TL3_ALN_NP_STKd893133bd8`
+Selection: ['L52359bf4.BRP30', 'L8e0bf58c.BRS8U', 'L4bdd521a.BRF80_40', 'L2c6916a5.BRP60'] | controls [30, 18, 30] | pool 6 | weights: equal (1 each)
+
+| book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
+|---|---|---|---|---|---|---|---|---|
+| L52359bf4 | tm120 | trig_bands_atrchan | fade_ext {"n": 40, "atr": 14, "k": 4.0} | both | 30/30 (median stop/target pts; shape per set name) | both | 1 | 6863 |
+| L8e0bf58c | anch_PDN_B25 | trig_xmarket_rates | with_ZN {"w": 1, "thr": 1.0} | both | 120/120 (median stop/target pts; shape per set name) | both | 1 | 1861 |
+| L4bdd521a | tm1800 | trig_xmarket_ym | follow {"w": 5, "thr": 1.0} | both | 80/40 (median stop/target pts; shape per set name) | both | 1 | 1554 |
+| L2c6916a5 | tm15 | trig_tape_div | div_fade {"N": 20, "k": 0.5} | both | 60/60 (median stop/target pts; shape per set name) | both | 1 | 6142 |
+
+Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 Rounding rules (engine, sim.py / set JSON): lots are whole numbers; base lot = the book weight x 1 lot rounded half-up (floor(x + 0.5), min 1); live lots = max(1, floor(1.75 x base + 0.5)); rules written in R terms (R = base lots x stop pts x $20) so they scale with lots; daily stops +$12,000 / -$4,800 in the engine = +10R / -4R at stop 60 and 1 lot unless the page above states fitted values.
 NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_DEFS equivalents / D8_PRINT_RULE.md; bar types bmsg/bmsgq are not NT8-buildable; anch/entropy/dltor are untested family; open items = the ESTIMATE/assumption rows of D8_ASSUMPTIONS.md (R0 vs R1 labels).
