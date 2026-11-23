@@ -169,3 +169,5 @@ The add steps must keep max drawdown and worst week within 15% (after scaling to
 - c_gov (skip after losses) was never fitted on the new books (hook had no gov_book): CG1 in the 4-lot pick is a no-op; LEAD ordered the fix 21:25Z (hook layer only).
 - Fleet runs out of ordered work ~03:00Z: lift Asia widening (51.6k sm) and/or NY AM first looks (73.6k sm) holds? default keep held (LEAD 22:00Z)
 - Asia layers: search-aware null failed (beats 3 of 5 null draws, gate 4 of 5) + prior-year bands RED: switch the fitted layer setting ON (weak) or leave layers OFF (tested bare)? LEAD default: OFF/bare in the first SIM run, layers selectable (23:?? 00:12Z)
+
+## 2026-11-23 17:14Z DATA TO TODAY: needs Josh. Databento quote for 2026-11-13..today is \$0.00 today (window rolls), but starting any vendor pull needs his paste (wording: autopilot/DATA_TODAY_QUOTE.md). Or drop the NT8 NQ tick export. Nothing pulled; the lead was not allowed to order the pull itself.
