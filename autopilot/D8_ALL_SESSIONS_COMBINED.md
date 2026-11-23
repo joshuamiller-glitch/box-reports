@@ -1,6 +1,6 @@
 # D8 ALL SESSIONS COMBINED (W-COMBINED; order 0745Z; Josh: "do we have combined #s now that we have all books by ny pm? like weekly DD/prfit?")
 
-Generated 2026-11-23 10:40Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+Generated 2026-11-23 12:40Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
 
 **Basis.** Every D8 row is TRULY BARE (R0): trigger + own bracket + scheduled session-end exit, no D7 account layers, no stack rules, no sizer, no zones/TH; 1 lot per book, dollars NET of $4.84 per lot round trip. Daily P&L is by Globex trading date; all series are put on ONE common trading-day calendar (union of every series' trading dates in the window, zero-filled), weeks are Monday-Sunday. $ per week = mean weekly P&L; ulcer = root-mean-square of the daily drawdown from the running peak; max DD = worst peak-to-trough on the daily cumulative; trades per day = trades per common trading day. Windows: L6M = 202605-202610, L3M = 202608-202610, prior years 2023 (from 202304), 2024, 2025 (without 202511).
 
@@ -199,9 +199,9 @@ Only sessions whose bare run at that size is on disk are shown. Asia and NY AM: 
 |---|---|---|---|---|---|---|---|---|
 | Asia | 5,895 | 14,134 | -67,097 | -34,076 | -24,160 | 36% | 8.7 | 2,947 / 7,067 / -33,548 |
 | NY AM | 6,068 | 26,127 | -119,229 | -60,727 | -34,541 | 38% | 10.6 | 3,034 / 13,064 / -59,614 |
-| London | n/a (not on disk for this window) | | | | | | | |
+| London | 793 | 9,020 | -25,810 | -13,076 | -8,353 | 39% | 1.3 | 396 / 4,510 / -12,905 |
 | Asia + NY AM | 11,963 | 30,275 | -146,857 | -70,088 | -46,136 | 33% | 19.3 | 5,981 / 15,138 / -73,429 |
-| Asia + NY AM + London | n/a (not on disk for this window) | | | | | | | |
+| Asia + NY AM + London | 12,755 | 30,210 | -148,386 | -67,766 | -44,805 | 34% | 20.5 | 6,378 / 15,105 / -74,193 |
 
 ### 4 lots per book, L6M
 
@@ -229,9 +229,9 @@ Only sessions whose bare run at that size is on disk are shown. Asia and NY AM: 
 |---|---|---|---|---|---|---|---|---|
 | Asia | 10,661 | 29,898 | -135,873 | -67,043 | -48,597 | 37% | 8.7 | 2,665 / 7,475 / -33,968 |
 | NY AM | 11,205 | 53,834 | -239,127 | -121,983 | -68,998 | 39% | 10.6 | 2,801 / 13,458 / -59,782 |
-| London | n/a (not on disk for this window) | | | | | | | |
+| London | 1,545 | 18,354 | -52,146 | -26,147 | -16,881 | 39% | 1.3 | 386 / 4,588 / -13,036 |
 | Asia + NY AM | 21,866 | 63,903 | -297,233 | -144,211 | -92,766 | 33% | 19.3 | 5,467 / 15,976 / -74,308 |
-| Asia + NY AM + London | n/a (not on disk for this window) | | | | | | | |
+| Asia + NY AM + London | 23,411 | 63,658 | -300,951 | -139,582 | -90,110 | 34% | 20.5 | 5,853 / 15,914 / -75,238 |
 
 NY PM and the all-four combination at 2 and 4 lots per book: not on disk (1 lot only).
 
@@ -313,4 +313,4 @@ Fitted at 2 and 4 lots per book (Asia alone, last 6 months, truly bare vs joint 
 - FILLS: 2- and 4-lot series are real engine runs (size-dependent fills), not multiples of the 1-lot series.
 - NEW BOOKS IN THE LIVE FILE: the Asia stack is the first one live; no live P&L is in this page.
 
-_Generated in 7 s._
+_Generated in 13 s._
