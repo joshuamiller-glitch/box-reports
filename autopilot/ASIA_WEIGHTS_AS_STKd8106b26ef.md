@@ -1,4 +1,4 @@
-# ASIA_WEIGHTS_AS_STKd8106b26ef - whole-lot weight search, TRULY BARE stack TL3_ALN_AS_STKd8106b26ef (W-WEIGHTS, 2026-11-23 01:44Z)
+# ASIA_WEIGHTS_AS_STKd8106b26ef - whole-lot weight search, TRULY BARE stack TL3_ALN_AS_STKd8106b26ef (W-WEIGHTS, 2026-11-23 04:41Z)
 
 **HEADLINE.** Best whole-lot vector at 20 lots total: 3-8-2-6-1 (lots MF1..MF5): raw L6M ulcer 13015 vs 15873 for equal 4-4-4-4-4 and 39892 vs 38613 $/wk; at equal L6M ulcer (analytic scaling k=1.22) 48650 vs 38613 $/wk (+26%). Unconstrained best: 1-6-1-2-1 at equal L6M ulcer 71688 $/wk (+86% vs equal weights).
 **BUT NOT STABLE.** The best vectors win only 0.16-0.34 of the 14-day blocks against equal weights (floor 0.58) and the 182-day walk-forward re-pick wins 0.2/0.225 of blocks: a recent-window winner that does not repeat, so the weight edge is NOT proven; equal weights stay the build default and the pin is unchanged. Exact-engine verification: done, see the table at the bottom.
