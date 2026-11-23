@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 01:39Z.
+# ALL-NEW STACK, LONDON: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 01:44Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_LONDON_OWN_CHECKS.md.
@@ -11,7 +11,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $1584 per wk (positive), L3M $2144 per wk (positive); prior years $/wk: 2023 74 (positive), 2024 826 (positive), 2025 538 (positive); OWN persistence (share of positive 14-day blocks) 0.60 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $1584 per wk (positive), L3M $2144 per wk (positive); prior years $/wk: 2023 74 (positive), 2024 826 (positive), 2025 538 (positive); OWN persistence (share of positive 14-day blocks) 0.60 (>= 0.58 passes); stack controls: beats (29, 18, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
 
 ## YARDSTICK: BARE D7 session stack (TL3_ALN_LO_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.21 so that the L6M ulcer matches)
 
@@ -62,9 +62,9 @@ Selected books in order (plain words):
 
 STOPPED at 1 books: no candidate passes the add rule.
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:14Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
+Stack-level luck control: beats (29, 18, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
 
-Phase: final. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
+Phase: done. Pool used by this run: 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 

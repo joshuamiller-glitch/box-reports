@@ -1,7 +1,7 @@
-# ASIA_WEIGHTS_AS_STKd8106b26ef - whole-lot weight search, TRULY BARE stack TL3_ALN_AS_STKd8106b26ef (W-WEIGHTS, 2026-11-23 01:36Z)
+# ASIA_WEIGHTS_AS_STKd8106b26ef - whole-lot weight search, TRULY BARE stack TL3_ALN_AS_STKd8106b26ef (W-WEIGHTS, 2026-11-23 01:44Z)
 
 **HEADLINE.** Best whole-lot vector at 20 lots total: 3-8-2-6-1 (lots MF1..MF5): raw L6M ulcer 13015 vs 15873 for equal 4-4-4-4-4 and 39892 vs 38613 $/wk; at equal L6M ulcer (analytic scaling k=1.22) 48650 vs 38613 $/wk (+26%). Unconstrained best: 1-6-1-2-1 at equal L6M ulcer 71688 $/wk (+86% vs equal weights).
-**BUT NOT STABLE.** The best vectors win only 0.16-0.34 of the 14-day blocks against equal weights (floor 0.58) and the 182-day walk-forward re-pick wins 0.2/0.225 of blocks: a recent-window winner that does not repeat, so the weight edge is NOT proven; equal weights stay the build default and the pin is unchanged. Exact-engine verification: pending (4 vectors still running).
+**BUT NOT STABLE.** The best vectors win only 0.16-0.34 of the 14-day blocks against equal weights (floor 0.58) and the 182-day walk-forward re-pick wins 0.2/0.225 of blocks: a recent-window winner that does not repeat, so the weight edge is NOT proven; equal weights stay the build default and the pin is unchanged. Exact-engine verification: done, see the table at the bottom.
 
 Order 2210Z (Josh: "so all the books magically have the same weight?" / "yes to both"). Books: MF1 Lb0e6dfa3.BRF40_80; MF2 L385f4f2e.J502; MF3 L92a90948; MF4 L6b373671.BRP60; MF5 L578701ed.BRF30_90. Research only; truly bare (R0: no StackCut / BookLock / caps / stops / sizer / zones / Trade Health), 1-lot-unit fills at the stated lots, net of engine fees.
 
@@ -98,6 +98,14 @@ Floor 0.58 (drawdown first).
 
 | vector (lots MF1..MF5) | source | L6M ulcer / max DD / worst wk / worst day / $ wk | L3M $ wk | 2023 / 2024 / 2025 $ wk | gap vs analytic (L6M $ wk, ulcer) |
 |---|---|---|---|---|---|
+| 3-8-2-6-1 (total20) | analytic | 13015 / -48008 / -19806 / -38986 / 39892 | 43542 | 2329 / 5408 / 5312 | |
+| 3-8-2-6-1 | EXACT engine | 13015 / -48008 / -19806 / -38986 / 39892 | 43542 | 2329 / 5408 / 5312 | +0.0% $/wk, -0.0% ulcer |
+| 3-8-3-5-1 (total20) | analytic | 12546 / -47104 / -20536 / -30302 / 38293 | 42220 | 2275 / 5483 / 5833 | |
+| 3-8-3-5-1 | EXACT engine | 12546 / -47104 / -20536 / -30302 / 38293 | 42220 | 2275 / 5483 / 5833 | +0.0% $/wk, -0.0% ulcer |
+| 4-8-2-4-2 (total20) | analytic | 13645 / -51425 / -21945 / -27591 / 41125 | 42874 | 3056 / 5937 / 5511 | |
+| 4-8-2-4-2 | EXACT engine | 13645 / -51425 / -21945 / -27591 / 41125 | 42874 | 3056 / 5937 / 5511 | -0.0% $/wk, +0.0% ulcer |
+| 1-6-1-2-1 (unconstrained) | analytic | 5165 / -19111 / -12672 / -14183 / 23329 | 25068 | 1238 / 3068 / 3055 | |
+| 1-6-1-2-1 | EXACT engine | 5165 / -19111 / -12672 / -14183 / 23329 | 25068 | 1238 / 3068 / 3055 | +0.0% $/wk, +0.0% ulcer |
 
 ### Controls
 
