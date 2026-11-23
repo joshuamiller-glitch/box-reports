@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 16:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 16:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 16:00Z | box1: busy 100%, load1 56.16, workers 15, MemAvail 75 GB | server2: busy 98%, load1 87.82, workers 26, MemAvail 666 GB | pending box1-eligible 950229 / server2-eligible 132813 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 184.86, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 1001 GB | serverB: busy 100%, load1 176.78, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 984 GB | serverC: busy 99%, load1 130.57, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1380 GB | serverD: busy 99%, load1 65.60, workers 1 (grid) + 63 (engine), 64 threads, MemAvail 1438 GB
+LATEST CORES.md LINE: 2026-11-23 16:15Z | box1: busy 98%, load1 55.22, workers 15, MemAvail 81 GB | server2: busy 97%, load1 85.19, workers 28, MemAvail 881 GB | pending box1-eligible 951098 / server2-eligible 133905 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.58, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 1016 GB | serverB: busy 100%, load1 189.49, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 959 GB | serverC: busy 97%, load1 134.87, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1384 GB | serverD: busy 92%, load1 63.73, workers 1 (grid) + 65 (engine), 64 threads, MemAvail 1443 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 16:00Z
+2026-11-23 16:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 16:00Z | box1: busy 100%, load1 56.16, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 73.3 GB; live reservations 0 (0 GB); workers 15, of which TP-adopted 14 (RSS 20.4 GB) vs others 1 (RSS 1.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 56.16, 58.71, 61.42
-  by tag: NYE quota 16 running 14 hungry False RSS 20.4 GB PSS 18.7 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
-  cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L60c70abf_ALN (x24);TL3_NYE_Lcc841df6_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 90.29, 88.37, 86.39|/dev/md2         28T  2.8T   26T  10% /mnt/l2|50|
+Server 1 (this box): MemAvail 80.6 GB; live reservations 1 (1 GB); workers 15, of which TP-adopted 14 (RSS 20.3 GB) vs others 1 (RSS 1.2 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 55.22, 60.51, 62.59
+  by tag: NYR quota 12 running 14 hungry False RSS 20.3 GB PSS 16.5 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
+  cell-months finished last hour (DONE markers): 10553
+  top running jobs: TL3_NYE_L60c70abf_ALNCT91p (x12);TL3_NYE_L60c70abf_ALNCT84p (x12);TL3_NYE_L60c70abf_ALNCT98p (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 86.85, 86.54, 86.69|/dev/md2         28T  2.8T   26T  10% /mnt/l2|47|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 90.29, 88.37, 86.39|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261123_0640Z_Josh-asia-daily-loss-stop-test.md 20261123_0645Z_Josh-session-end-run-vs-flatten-test.md 20261123_0740Z_Josh-depth-book-lock-info.md 20261123_0745Z_Josh-all-session-combined-numbers.md 20261123_0750Z_Josh-cross-session-locks-test.md
+20261123_0740Z_Josh-depth-book-lock-info.md 20261123_0745Z_Josh-all-session-combined-numbers.md 20261123_0750Z_Josh-cross-session-locks-test.md 20261123_1055Z_london-exit-verdict-status.md 20261123_1125Z_nyam-layer-keys-for-the-port.md
