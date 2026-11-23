@@ -94,3 +94,21 @@ Expected: NY AM bare-fit table (later this morning), NY PM FINAL + yardstick, Lo
 5. Hold on the original-rule NY AM weighted loop (reference row only; costs ~3.8k rows): left running.
 
 **Slips since 05:10Z:** chain share flapped between 25% and 35% under the tier rule (fixed to key on the recent-basis tier only); W-GRIDOPS slot-report label artefact misread as a slow stack-fit (corrected); W-BRKT2 exceeded its scope when fixing London's pool flag (backups exist).
+
+---
+## UPDATE 12:05Z (third edition; next refresh 16:00Z)
+
+**New since 08:10Z**
+- **NY AM 5-book stack, truly bare all-layers fit (verdict 11:06Z):** last 6 months per lot, ulcer / max DD / $ per week: 1 lot bare 4,372 / -15,007 / $7,495 vs best joint 2,102 / -7,234 / $6,035 (walk-forward 0.628, persistence 0.645, bands AMBER/AMBER/RED); 2 lots bare 4,610 / -17,430 / $7,061 vs 1,760 / -5,109 / $3,038 (WF 0.838, RED/GREEN/GREEN); 4 lots bare 4,889 / -19,461 / $6,433 vs 1,733 / -6,632 / $2,532 (RED/GREEN/GREEN). Null pending. Label WEAK-BUT-POSITIVE, leaning LEAD at 2 and 4 lots, not proven. Bare D7 NY AM LOSES money (-$599/wk, L6M). The new daily-loss setting DLC2 (halt a book for the session after 3 consecutive full-stop losses) cuts ulcer AND raises dollars on NY AM (+$104 / +$305 / +$624 at 1 / 2 / 4 lots): first layer that does both.
+- **Stack FINALs on the recent basis (complete pools):** Asia = L385f4f2e.J502 alone (genuine rejection of every second book); NY AM = same 5 books as the settled stack (controls 30/26/30); London = L19201dfc.BRF90_30 alone (controls 29/21/30); NY PM = 4 books L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60 (controls 30/18/30: the L3M controls are the weak spot). Weighted recent loops still running (NY AM last, FINAL ~18:00-22:00Z).
+- **Cross-session locks (order 0750Z):** engine can run all four sessions in ONE set with no engine edit; identity proven (merged 15-book and 11-book sets = separate sets, trade for trade, 2026-10); proxy says carry-over 'skip later sessions after an earlier session lost > $3-5k per lot-per-book' is the best day-level candidate; 249 exact screen rows queued behind the ordered fits.
+- **Session-end run-vs-flatten (order 0645Z):** identity proven (hook never firing = bare); first look 2026-10: letting trades run to 17:00 ET +$7,900 over flatten (one month); full screens queued (466 Asia rows + 234 NY AM rows).
+- **Daily loss stop test (order 0640Z):** hook built, identity passed, 1,671-row Asia screen queued; the existing -3R stops were screened and made the stack worse.
+- **Skip-after-losses on the new books** (screened): raises ulcer and max DD at every N: not chosen.
+- **Combined book numbers (D8_ALL_SESSIONS_COMBINED.md, refreshes every 2 h):** Asia + NY AM $18,329/wk, max DD -17,237; + London $20,097/wk; all four $24,726/wk, max DD -17,437 (bare D8, 1 lot, L6M, net of $4.84).
+- Depth-book lock explained (BookLock fires inside one trade on a 30/90 book; helped at 2 and 4 lots), London book 1.89 trades per session.
+- Share changes (all within ordered priority): chain 25% (35% only for tier-0 batches), stack-fit 50% while pending_sr_fit > 2,000 rows (35% under 800); queue head order fixed several times (XS, DL/SE tags ranked).
+
+**Running now (12:05Z):** fleet ~470-570 slots at ~11k set-months an hour, all hosts >= 93% of cap. London bare fit joint (ETA ~15:30-17:00Z), NY PM tail of the SR queue, Asia daily-loss screen and joint re-run (ETA ~18:00-20:00Z), session-end and cross-session screens (fall-through), NY AM first looks (NY AM first looks started on spare slots only; Asia widening not started).
+
+**Still open for Josh:** (1) data for 11-16..11-20 so the Asia seed page is valid for SIM; (2) layers ON or OFF in the first SIM run (default OFF; Asia fitted pick failed its null and its prior-year bands; NY AM pick not yet nulled); (3) feature-store roll-session defect; (4) real live commission.
