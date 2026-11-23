@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 06:39Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 06:44Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYPM.md.**
@@ -27,7 +27,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (moves) | L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60 | 3038 / -9651 / -4238 / 4217 | 2375 / -7299 / -4238 / 3991 | 4147 / -16658 / -8495 / 1734 | 10616 / -28839 / -10732 / 1353 | 6495 / -19522 / -11299 / 2038 | 0.74 |
+| own-checks (final) | L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60 | 3038 / -9651 / -4238 / 4217 | 2375 / -7299 / -4238 / 3991 | 4147 / -16658 / -8495 / 1734 | 10616 / -28839 / -10732 / 1353 | 6495 / -19522 / -11299 / 2038 | 0.74 |
 | staying-power (done) |  | running | | | | | |
 
 ## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 6 books with a BASE set; 6 have all 42 months landed = counted below; 0 still waiting for prior years)
@@ -71,7 +71,7 @@ STOPPED at 4 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:14Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
 
-Phase: moves. Pool used by this run: 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
+Phase: final. Pool used by this run: 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
