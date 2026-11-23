@@ -5,7 +5,7 @@ Josh (quoted, 22 Nov): "can you do an overview of all the asia books - like what
 ## Plain answer (counts first)
 
 - Of the 54 Asia books that pass (a)-(d) truly bare at their own bracket: **52 are continuation types** (30 breakout, 21 momentum / trend-follow, 1 flow-follow) and **2 are pullback-with-trend** (a level retest and a fib-pullback). **0 are reversal / fade / false-break / counter-trend.** The 8 twins (same trade list as a passer) are listed below with their own trigger labels.
-- The five pinned books (Lb0e6dfa3 narrow-range breakout, L385f4f2e.J502 RSI momentum + confluence, L92a90948 efficiency-ratio trend, L6b373671 pivot-level break, L578701ed depth-pressure follow) are all continuation types, as the relay said.
+- The five pinned books (Lb0e6dfa3 narrow-range breakout, L385f4f2e.J502 RSI momentum + confluence, L92a90948 efficiency-ratio trend, L6b373671 pivot-level break, L578701ed depth-pressure follow) are all continuation types, as the relay said. Only three of them (Lb0e6dfa3, L6b373671, L578701ed) are among the 54 passers at a new bracket; J502 is a pass-2 final and L92a90948 failed the prior-year check at its one step-2 shape (see the note under table 1).
 - The search DID produce counter-trend candidates, and the gates removed them: see section 4. 269 counter-trend books reached step 2 (13% of the 2,076 that did), 173 of them were positive in both L6M and L3M at some shape, and none passed: 126 failed the prior-year check, 33 were stopped by the luck controls (lost more than 3 of 30), 14 are twins. Continuation books went through the same gates and 52 passed.
 - The two pullback-with-trend passers are NOT diversifiers of the stack: they correlate 0.24-0.31 daily and lose money on the stack's 20 worst days (section 3).
 
@@ -70,7 +70,7 @@ How labels were assigned: from the trigger DEFINITION in the engine's trigger li
 | L7c8c909c | vrb_700 | levels_fib15.break_native | breakout | P45 | 471 / 97 | 5271 | -14415 | -6521 | 139 / 487 / 475 | 0.66 | 27 of 30 | 6.68 |
 | M254b4124 | time_m_2 | manual_cci.go | breakout | F80_40 | 272 / 260 | 7886 | -19171 | -7646 | 39 / 398 / 125 | 0.61 | 27 of 30 | 3.51 |
 
-Note: the pinned L385f4f2e entry here is the plain L385f4f2e (the stack member is its J502 filtered version, TL3_ALN_AS_L385f4f2e_P2JCX502; see PINNED STACK). Trades / night = trades in the 131 L6M trading days of the 1-lot R0 set, divided by 131.
+Note: only THREE of the five pinned books are in this table (Lb0e6dfa3, L6b373671, L578701ed). The other two are not among the 54 passers at a new bracket: L385f4f2e.J502 is a pass-2 final (entry filter on the RSI-momentum book L385f4f2e: trig_momentum_rsi.mom len 14 lvl 60 on the 2600-volume bar, plus a confluence and time-window filter) and L92a90948 (trig_momentum_er.trend_z_native len 20 thr 0.5 on the 5000-tick bar, long-only label but both sides in the events file) has one step-2 set in the state (R0BRF60_120) and it stopped at the prior-year check (C_fail); it sits in the pinned stack from the 05:03Z run at its ladder bracket. Both are continuation types (momentum). Trades / night = trades in the 131 L6M trading days of the 1-lot R0 set, divided by 131.
 
 ### Twins (same trade list as the passer they inherit from)
 
