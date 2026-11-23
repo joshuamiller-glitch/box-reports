@@ -157,3 +157,4 @@ Five-line summary: (1) hist_replica NQ day files 2026-11-02..11-13 now exist (11
 - 2026-11-23T15:06:20Z loop alive pid 2819417: hist_replica data end 20261113 (980 days), last pass log: 2026-11-23T15:06:19Z complete new labels []
 - 2026-11-23T16:06:24Z loop alive pid 2819417: hist_replica data end 20261113 (980 days), last pass log: 2026-11-23T16:06:23Z complete new labels []
 - 2026-11-23T17:06:28Z loop alive pid 2819417: hist_replica data end 20261113 (980 days), last pass log: 2026-11-23T17:06:27Z complete new labels []
+- 2026-11-23T18:12:08Z loop alive pid 2819417: hist_replica data end 20261116 (981 days), last pass log: 2026-11-23T18:12:07Z 1-s state days installed [20261116]
