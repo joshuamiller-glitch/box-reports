@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 03:39Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-23 03:44Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 **READING: this stack passes its own checks (a+b+c+d: prior-year positivity, persistence, luck controls) but is NOT compared with today in prior years (gate e not applied). The full-gate reading is on ALL_NEW_STACK_NYPM.md.**
@@ -11,23 +11,23 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $1188 per wk (positive), L3M $483 per wk (positive); prior years $/wk: 2023 179 (positive), 2024 189 (positive), 2025 769 (positive); OWN persistence (share of positive 14-day blocks) 0.59 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $2131 per wk (positive), L3M $1817 per wk (positive); prior years $/wk: 2023 915 (positive), 2024 667 (positive), 2025 866 (positive); OWN persistence (share of positive 14-day blocks) 0.67 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.19 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.29 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 2064 / -6398 / -3204 / 1188 | 2064 / -4330 / -1276 / -9 | +1197 |
-| L3M | 2454 / -6398 / -3204 / 483 | 2661 / -4106 / -1276 / -181 | +663 |
-| Y2023 | 3604 / -10745 / -4977 / 179 | 2672 / -5140 / -1333 / -97 | +276 |
-| Y2024 | 4798 / -12186 / -5767 / 189 | 2069 / -5099 / -1552 / 130 | +59 |
-| Y2025 | 3153 / -7798 / -3803 / 769 | 3426 / -6384 / -1584 / -57 | +826 |
+| L6M | 3164 / -8914 / -4106 / 2131 | 3164 / -6637 / -1956 / -14 | +2145 |
+| L3M | 2184 / -6456 / -3156 / 1817 | 4079 / -6293 / -1956 / -277 | +2094 |
+| Y2023 | 4897 / -16138 / -6442 / 915 | 4095 / -7878 / -2043 / -148 | +1064 |
+| Y2024 | 8668 / -19192 / -6407 / 667 | 3171 / -7815 / -2379 / 199 | +468 |
+| Y2025 | 5948 / -14078 / -5410 / 866 | 5251 / -9785 / -2428 / -88 | +953 |
 
 ## TWO ASIA STACKS SIDE BY SIDE (research comparison; Josh picks): OWN-CHECKS stack vs STAYING-POWER stack (add rule also requires the stack's persistence not to fall and the worst prior-year ulcer <= 2x the L6M ulcer)
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (run) | L52359bf4.BRP30 | 2064 / -6398 / -3204 / 1188 | 2454 / -6398 / -3204 / 483 | 3604 / -10745 / -4977 / 179 | 4798 / -12186 / -5767 / 189 | 3153 / -7798 / -3803 / 769 | 0.59 |
+| own-checks (run) | L52359bf4.BRP30 + L8e0bf58c.BRS8U | 3164 / -8914 / -4106 / 2131 | 2184 / -6456 / -3156 / 1817 | 4897 / -16138 / -6442 / 915 | 8668 / -19192 / -6407 / 667 | 5948 / -14078 / -5410 / 866 | 0.67 |
 | staying-power (done) |  | running | | | | | |
 
 ## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 6 books with a BASE set; 6 have all 42 months landed = counted below; 0 still waiting for prior years)
@@ -62,6 +62,7 @@ Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FIN
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L52359bf4.BRP30 | `TL3_ALN_NP_L52359bf4_R0BRP30` | 2064 / -6398 / -3204 / 1188 | 2454 / -6398 / -3204 / 483 | 3604 / -10745 / -4977 / 179 | 4798 / -12186 / -5767 / 189 | 3153 / -7798 / -3803 / 769 | 0.59 | 6 |
+| 2 | L8e0bf58c.BRS8U | `TL3_ALN_NP_STKd8038520b9` | 3164 / -8914 / -4106 / 2131 | 2184 / -6456 / -3156 / 1817 | 4897 / -16138 / -6442 / 915 | 8668 / -19192 / -6407 / 667 | 5948 / -14078 / -5410 / 866 | 0.67 | 5 |
 (plain-words block error: FileNotFoundError(2, 'No such file or directory'))
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 22:14Z UTC; pool 0 books): EMPTY: no book passes everything alone yet
