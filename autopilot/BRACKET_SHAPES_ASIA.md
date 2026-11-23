@@ -1,21 +1,22 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-23 22:42Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-23 23:20Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 83; screen complete for 83; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 16.
-Pick counts (complete books): P60 44, S15U 13, P45 7, S8U 5, A10U20U 3, A20U10U 3, F40_80 2, P30 2, S30U 2, F60_120 1, A15U30U 1
+Books in the table: 84; screen complete for 84; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 16.
+Pick counts (complete books): P60 45, S15U 13, P45 7, S8U 5, A10U20U 3, A20U10U 3, F40_80 2, P30 2, S30U 2, F60_120 1, A15U30U 1
 
-Plain 60/60 is the pick for 44 of 83 complete books.
+Plain 60/60 is the pick for 45 of 84 complete books.
 
 ## Table 1: equal-risk $/wk in L6M (scaled to the current bracket's L6M ulcer; the current bracket's own $/wk is in the "now" column; * = WIN in both windows, [own] = the book's current bracket)
 
 | book | now | now $/wk | now ulcer | P30 | P45 | P60 | P90 | P120 | S8U | S15U | S30U | S45U | S60U | A10U20U | A20U10U | A15U30U | F40_80 | F60_120 | F80_40 | F120_60 | pick |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | L018fb0c0 | S15U | 617 | 6610 | 500 | 450 | 232 | 2402 | 588 | 561 | [own] | 588 | 588 | 588 | 479 | 941* | 588 | 1348 | 2446 | 8 | 204 | A20U10U |
+| L0569b2b6 | P60 | 610 | 4843 | -43 | 195 | [own] | -207 | -125 | -161 | -198 | -88 | -128 | -125 | -168 | -85 | -172 | -122 | 23 | -216 | -286 | P60 |
 | L08df8bb0 | S15U | 366 | 16893 | 1762 | 2878 | 3162 | 2303 | 366* | 336 | [own] | 366* | 366* | 366* | 373* | 366* | 366* | 8338 | 2963 | 644 | 2636 | A10U20U |
 | L130cb48e | P60 | 1465 | 4665 | 768 | 907 | [own] | -37 | -257 | -335 | -252 | -257 | -257 | -257 | -286 | -253 | -260 | 2097 | 138 | 444 | -160 | P60 |
 | L1343f8bdBRP45 | P60 | 1682 | 3064 | 1171 | 2692* | [own] | 193 | 1067 | 374 | 731 | 1067 | 1067 | 1067 | 1394 | 1637 | 677 | 311 | 263 | 489 | 353 | P45 |
@@ -104,6 +105,7 @@ Plain 60/60 is the pick for 44 of 83 complete books.
 | book | now $/wk L3M | P30 | P45 | P60 | P90 | P120 | S8U | S15U | S30U | S45U | S60U | A10U20U | A20U10U | A15U30U | F40_80 | F60_120 | F80_40 | F120_60 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | L018fb0c0 | 1606 | 1608 | 861 | 229 | 3621 | 1498 | 1952 | [own] | 1498 | 1498 | 1498 | 1222 | 2753 | 1498 | 1266 | 1712 | 792 | 1844 |
+| L0569b2b6 | 563 | -166 | -11 | [own] | -197 | -230 | -119 | -347 | -202 | -231 | -230 | -276 | 220 | -338 | -583 | -430 | -216 | -292 |
 | L08df8bb0 | 1656 | 555 | 1173 | 256 | 4144 | 1656 | 1140 | [own] | 1656 | 1656 | 1656 | 1681 | 1656 | 1656 | 1965 | 1587 | -64 | 2230 |
 | L130cb48e | 946 | -113 | 458 | [own] | 22 | -612 | -647 | -576 | -612 | -612 | -612 | -579 | -631 | -612 | 1502 | 99 | 2680 | -628 |
 | L1343f8bdBRP45 | 1989 | 398 | 3833 | [own] | 106 | 1011 | 286 | 405 | 1011 | 1011 | 1011 | 1113 | 1542 | 279 | 196 | 428 | 1557 | 443 |
@@ -228,6 +230,25 @@ Plain 60/60 is the pick for 44 of 83 complete books.
 - F60_120: 1624 | 4387 | -17170 | -8897 | 9.9 | -1029
 - F80_40: 15 | 11748 | -21088 | -6233 | 15.5 | -1319
 - F120_60: 347 | 11256 | -23871 | -8528 | 11.0 | -1719
+
+**L0569b2b6** (current P60): now 610 | 4843 | -11490 | -4942 | 18.0 | -1062
+
+- P30: -96 | 10851 | -21469 | -5605 | 30.3 | -565
+- P45: 242 | 6019 | -14930 | -6431 | 22.2 | -839
+- P90: -662 | 15457 | -27229 | -9777 | 12.3 | -1543
+- P120: -400 | 15436 | -26887 | -11978 | 9.5 | -1831
+- S8U: -511 | 15323 | -28572 | -8842 | 18.0 | -1087
+- S15U: -782 | 19159 | -33655 | -11978 | 11.9 | -1621
+- S30U: -268 | 14777 | -24668 | -11978 | 9.7 | -1799
+- S45U: -414 | 15593 | -27262 | -11978 | 9.5 | -1831
+- S60U: -400 | 15436 | -26887 | -11978 | 9.5 | -1831
+- A10U20U: -1029 | 29727 | -44353 | -12183 | 12.3 | -1316
+- A20U10U: -236 | 13381 | -27902 | -6353 | 12.7 | -1713
+- A15U30U: -636 | 17871 | -28468 | -11978 | 11.0 | -1564
+- F40_80: -297 | 11808 | -22837 | -13561 | 18.2 | -739
+- F60_120: 52 | 10891 | -20626 | -8368 | 12.7 | -1037
+- F80_40: -643 | 14452 | -28045 | -7791 | 20.3 | -1387
+- F120_60: -969 | 16414 | -31914 | -7377 | 13.6 | -1861
 
 **L08df8bb0** (current S15U): now 366 | 16893 | -31204 | -8838 | 9.0 | -1696
 
