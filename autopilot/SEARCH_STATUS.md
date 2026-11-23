@@ -1026,3 +1026,27 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 
 - Rankings are best-of-many on the last 6 months; the selection-corrected best-pick null (phase 2b) is not applied yet to any row.
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
+
+<!-- ENGINE_PLAN_ETAS -->
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-23 00:05Z):**
+
+- phase 1 pass 1: 9 jobs left at 305/h = 0.0 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 5239 jobs left at 274/h = 19.1 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 5 h at the current fleet (5837/h) or 8.2 h with A and B engine-ready (projected 3698/h). Full table: ENGINE_PLAN.md section 11.
+- luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
+- N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
+
+**DATED ESTIMATES (W-PLAN, written 2026-11-19 00:10Z; inputs: W-GRIDOPS 22:25Z / 23:05Z, W-SHORT R3 state at 23:32Z, engine queue report 00:00Z; rates change, the script re-prints this block as written until W-PLAN edits it):**
+
+| milestone | estimate | basis |
+|---|---|---|
+| REAL pass 1 end | Nov 19 ~03:00-08:00Z | W-GRIDOPS 03:00-06:00Z; measured 1,904 real jobs/h at 23:05Z with ~11.5k left at 00:00Z = ~6 h (06:00Z) |
+| pass 2 + exit families end | Nov 20 ~04:00-10:00Z | 23.6k jobs left at 690/h = 34 h (SEARCH_STATUS); W-GRIDOPS ~30 h |
+| null draws 1-2 end (calibration check, first full table) | Nov 19 ~23:00Z to Nov 21 ~00:00Z (95.5k jobs at nice 10, 25-50 h); a PARTIAL calibration table (sessions covered so far) was due ~23:55Z and is not on SURVIVOR_COUNTS.md yet | W-GRIDOPS |
+| null draws 3-5 end (5-draw calibration complete) | ~Nov 21 midday - Nov 22 (200k jobs, parked until real pass 1 ends, then ~5-6k jobs/h) | ASSUMED rate |
+| R3 compute end per session (stages A-D, clock order Asia, London, NY AM, NY PM) | stage A for all 7,650 family-bests: Nov 19 ~00:00-02:00Z (restarted 20:59Z, wall 3-5 h); stages B-D: Nov 19 ~08:00Z (ASSUMED, W-SHORT owns); the pass SET decision waits for the calibrated rule (draws 1-2): Nov 20-21 | W-SHORT |
+| engine queue (R5a on the 2,333-cell seed: NY AM 1,937 + NY PM 396, XA3 layers, London/Asia stages 2-3, NT2 controls) | 44.4k set-months = 30.7 h at 1,450/h -> drains ~Nov 20 07:00Z if nothing is added (R5a only: 12 set-months per cell; prior years and controls are added only for cells not negative) | lead report 00:00Z |
+| engine hours for the passers after calibration: per passer 264 set-months (12 + 72 + 180; W-SHORT) + layers ~1,133 set-months (640 with a validated fast replay) = ~1,400 set-months | at the measured 1,450 set-months/h (engine share today): P = 50 / 100 / 200 / 400 -> 48 / 96 / 193 / 386 h (31 / 62 / 125 / 250 h with the screen); at the whole pool after phase 1 (262 core-eq = ~5,800 set-months/h): 12 / 24 / 48 / 96 h (8 / 16 / 31 / 62 h) | 0.045 core-h per set-month |
+| D8 spec page (clock-order chain 4-8 h + 2 h after the last engine link) | P <= 100: Nov 21 ~20:00Z - Nov 22 ~04:00Z; P = 200: Nov 22 ~20:00Z - Nov 23 ~04:00Z; P = 400: Nov 24 ~20:00Z; earliest possible Nov 21 evening; +-12 h; moves with (a) the calibrated pass counts P, (b) the engine rate on A/B (A 69-118, B 132-168 set-months/h, oversubscribed), (c) whether the engine gets the whole pool after phase 1 | assumes phase 1 done Nov 20 ~10:00Z and the engine on the whole pool after it |
+48 h flag: the engine queue (30.7 h) is under 48 h; the passer engine work exceeds 48 h of the measured engine share for P >= 50 and of the whole pool for P >= ~200 (no screen). Josh decides between more machines and waiting once P is known.
+<!-- /ENGINE_PLAN_ETAS -->
