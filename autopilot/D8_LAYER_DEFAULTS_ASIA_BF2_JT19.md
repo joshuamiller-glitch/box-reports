@@ -1,6 +1,6 @@
 # D8_LAYER_DEFAULTS_ASIA_BF2_JT19 - Asia stack TL3_ALN_AS_STKd8106b26ef: panel values at the 2-lot pick TL3_SR_AS_STKd8106b26ef_BF2_JT19
 
-Written 2026-11-23 18:35Z by W-LAYERS2. The pick applies at every account size (dollar rules scale per lot / per R, see the keys page). Status: walk-forward 0.850 over 80 periods; fixed-pick persistence 0.817; year bands vs bare RED/RED/RED;; null: pending (2-lot null run queued, early-stop gate >= 4 of 5).
+Written 2026-11-23 19:38Z by W-LAYERS2. The pick applies at every account size (dollar rules scale per lot / per R, see the keys page). Status: walk-forward 0.850 over 80 periods; fixed-pick persistence 0.817; year bands vs bare RED/RED/RED;; null: pending (2-lot null run queued, early-stop gate >= 4 of 5).
 
 Cells ulcer / max DD / worst week / worst day / $ per week per lot (2-lot basis).
 

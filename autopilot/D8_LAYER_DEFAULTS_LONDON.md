@@ -1,6 +1,6 @@
 # D8_LAYER_DEFAULTS_LONDON - London stack TL3_ALN_LO_L19201dfc_R0BRF90_30: panel values at the 2-lot pick TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_JT14
 
-Written 2026-11-23 18:06Z by W-LAYERS2. The pick applies at every account size (dollar rules scale per lot / per R, see the keys page). Status: walk-forward 0.775 over 80 periods; fixed-pick persistence 0.796; year bands vs bare AMBER/RED/RED;; null: pending (2-lot null run queued, early-stop gate >= 4 of 5).
+Written 2026-11-23 19:38Z by W-LAYERS2. The pick applies at every account size (dollar rules scale per lot / per R, see the keys page). Status: walk-forward 0.775 over 80 periods; fixed-pick persistence 0.796; year bands vs bare AMBER/RED/RED;; null: pending (2-lot null run queued, early-stop gate >= 4 of 5).
 
 Cells ulcer / max DD / worst week / worst day / $ per week per lot (2-lot basis).
 

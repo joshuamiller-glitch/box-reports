@@ -1,0 +1,29 @@
+# D8_LAYER_DEFAULTS_NYPM - NYPM stack TL3_ALN_NP_STKd893133bd8: panel values at the 2-lot pick TL3_SR_NP_STKd893133bd8_BF2_JT9
+
+Written 2026-11-23 19:38Z by W-LAYERS2. The pick applies at every account size (dollar rules scale per lot / per R, see the keys page). Status: walk-forward 0.850 over 80 periods; fixed-pick persistence 0.946; year bands vs bare RED/GREEN/GREEN;; null: pending (2-lot null run queued, early-stop gate >= 4 of 5).
+
+Cells ulcer / max DD / worst week / worst day / $ per week per lot (2-lot basis).
+
+| window | truly bare | pick |
+|---|---|---|
+| L6M | 2787 / -12129 / -4283 / -8368 / 4368 | 1421 / -4809 / -3272 / -3384 / 3002 |
+| L3M | 2072 / -7272 / -4283 / -4369 / 4359 | 927 / -3498 / -3272 / -2664 / 3086 |
+| 2023 | 4065 / -15862 / -8512 / -6553 / 1708 | 3117 / -8808 / -6202 / -3113 / 872 |
+| 2024 | 10819 / -29376 / -10817 / -13077 / 1258 | 5525 / -17490 / -7305 / -4906 / 1051 |
+| 2025 | 6091 / -17988 / -11441 / -12878 / 2112 | 3167 / -9424 / -7775 / -7436 / 1549 |
+
+```
+LOSS.MF2 = CU3
+LOCK.MF2 = LK5
+TAKE.MF2 = SHV1
+ZONE.MF2 = ZONE4
+LOSS.MF3 = STC4    # STC: needs cancel tape
+LOCK.MF3 = LK7
+TAKE.MF3 = SHV2
+ZONE.MF3 = ZONE1
+LOSS.MF4 = STC4    # STC: needs cancel tape
+STK = STK6
+SZW = SZW3
+NTS = NTS2
+CG = CGB3
+```
