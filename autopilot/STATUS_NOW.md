@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 18:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 18:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 18:15Z | box1: busy 100%, load1 79.38, workers 22, MemAvail 64 GB | server2: busy 97%, load1 86.21, workers 26, MemAvail 857 GB | pending box1-eligible 940919 / server2-eligible 124167 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 157.36, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 990 GB | serverB: busy 100%, load1 186.43, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 950 GB | serverC: busy 99%, load1 136.48, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1364 GB | serverD: busy 96%, load1 64.27, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1434 GB
+LATEST CORES.md LINE: 2026-11-23 18:30Z | box1: busy 92%, load1 49.86, workers 13, MemAvail 74 GB | server2: busy 94%, load1 78.31, workers 25, MemAvail 1170 GB | pending box1-eligible 939596 / server2-eligible 122960 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 184.99, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 1003 GB | serverB: busy 100%, load1 173.49, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 964 GB | serverC: busy 100%, load1 137.56, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1362 GB | serverD: busy 97%, load1 64.31, workers 1 (grid) + 63 (engine), 64 threads, MemAvail 1442 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 18:15Z
+2026-11-23 18:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 18:15Z | box1: busy 100%, load1 79.38, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 63.0 GB; live reservations 5 (5 GB); workers 22, of which TP-adopted 21 (RSS 26.8 GB) vs others 1 (RSS 1.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 86.80, 79.17, 72.82
-  by tag: NYR quota 12 running 14 hungry False RSS 18.2 GB PSS 15.2 GB; TOOLS quota 0 running 7 hungry False RSS 8.6 GB PSS 7.8 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
+Server 1 (this box): MemAvail 72.9 GB; live reservations 8 (8 GB); workers 13, of which TP-adopted 12 (RSS 13.7 GB) vs others 1 (RSS 1.2 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 55.31, 50.36, 59.64
+  by tag: NYR quota 12 running 12 hungry False RSS 13.7 GB PSS 12.0 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L651b760c_ALNCT14p (x12);TL3_NYE_L651b760c_ALNCT7p (x10);TL3_NYE_L651b760c_ALNCT21p (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 84.03, 86.03, 85.87|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
+  top running jobs: TL3_NYE_L651b760c_ALNCT42m (x12);TL3_NYE_L651b760c_ALNCT35m (x10);TL3_NYE_L651b760c_ALNCT49m (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 78.84, 79.50, 81.94|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 84.03, 86.03, 85.87|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261123_1725Z_Josh-carry-over-first-and-fitted-combined.md 20261123_1840Z_Josh-fit-at-two-lots-only.md 20261123_1745Z_nypm-volume-book-inputs-for-the-port.md 20261123_1750Z_Josh-time-window-blocks-all-30min.md 20261123_1810Z_Josh-nypm-fit-first-and-keys-at-once.md
+20261123_1840Z_Josh-fit-at-two-lots-only.md 20261123_1745Z_nypm-volume-book-inputs-for-the-port.md 20261123_1750Z_Josh-time-window-blocks-all-30min.md 20261123_1810Z_Josh-nypm-fit-first-and-keys-at-once.md 20261123_1825Z_Josh-news-release-blocks-and-flatten.md
