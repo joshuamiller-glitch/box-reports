@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 20:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 20:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 20:00Z | box1: busy 98%, load1 39.72, workers 15, MemAvail 78 GB | server2: busy 97%, load1 88.43, workers 27, MemAvail 618 GB | pending box1-eligible 908948 / server2-eligible 118446 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 186.87, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 999 GB | serverB: busy 100%, load1 174.40, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 973 GB | serverC: busy 100%, load1 130.53, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1387 GB | serverD: busy 97%, load1 64.74, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1441 GB
+LATEST CORES.md LINE: 2026-11-23 20:15Z | box1: busy 99%, load1 68.83, workers 16, MemAvail 69 GB | server2: busy 98%, load1 84.45, workers 27, MemAvail 855 GB | pending box1-eligible 933412 / server2-eligible 117196 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 159.69, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 1005 GB | serverB: busy 100%, load1 190.42, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 963 GB | serverC: busy 100%, load1 136.91, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1373 GB | serverD: busy 98%, load1 63.11, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1433 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 20:00Z
+2026-11-23 20:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 20:00Z | box1: busy 98%, load1 39.72, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 76.9 GB; live reservations 8 (8 GB); workers 15, of which TP-adopted 14 (RSS 20.7 GB) vs others 1 (RSS 1.2 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 43.74, 58.33, 63.90
-  by tag: NYR quota 12 running 14 hungry False RSS 20.7 GB PSS 17.1 GB; REST quota 0 running 1 hungry False RSS 1.2 GB PSS 1.1 GB
+Server 1 (this box): MemAvail 69.1 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 14 (RSS 21.2 GB) vs others 2 (RSS 1.9 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 68.83, 71.58, 68.63
+  by tag: NYR quota 12 running 14 hungry False RSS 21.2 GB PSS 17.4 GB; REST quota 0 running 2 hungry False RSS 1.9 GB PSS 1.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_SR_NP_STKd893133bd8_BF2_JT255 (x18);TL3_NYE_Lbbdd2890_ALNCT84p (x12);TL3_SR_NP_STKd893133bd8_BF2_JT256 (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 88.90, 87.83, 86.29|/dev/md2         28T  2.8T   26T  10% /mnt/l2|45|
+  top running jobs: TL3_SR_NP_STKd893133bd8_BF2_JT276 (x25);TL3_NYE_Lbbdd2890_ALNCT77m (x12);TL3_NYE_Lbbdd2890_ALNCT70m (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 84.39, 86.51, 86.95|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 88.90, 87.83, 86.29|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261123_1840Z_Josh-fit-at-two-lots-only.md 20261123_1745Z_nypm-volume-book-inputs-for-the-port.md 20261123_1750Z_Josh-time-window-blocks-all-30min.md 20261123_1810Z_Josh-nypm-fit-first-and-keys-at-once.md 20261123_1825Z_Josh-news-release-blocks-and-flatten.md
+20261123_1750Z_Josh-time-window-blocks-all-30min.md 20261123_1810Z_Josh-nypm-fit-first-and-keys-at-once.md 20261123_1825Z_Josh-news-release-blocks-and-flatten.md 20261123_2005Z_Josh-state-cut-spec-for-ninjatrader.md 20261123_2010Z_Josh-combined-table-refresh-as-tonights-file.md
