@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-23 01:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-23 01:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-23 01:00Z | box1: busy 96%, load1 40.00, workers 13, MemAvail 85 GB | server2: busy 97%, load1 85.94, workers 27, MemAvail 689 GB | pending box1-eligible 946541 / server2-eligible 5137 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 161.62, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 1026 GB | serverB: busy 99%, load1 172.24, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 979 GB | serverC: busy 100%, load1 132.61, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1380 GB | serverD: busy 99%, load1 64.85, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1441 GB
+LATEST CORES.md LINE: 2026-11-23 01:15Z | box1: busy 100%, load1 65.43, workers 16, MemAvail 75 GB | server2: busy 97%, load1 86.90, workers 28, MemAvail 819 GB | pending box1-eligible 946267 / server2-eligible 4997 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 186.07, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1029 GB | serverB: busy 100%, load1 189.90, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 978 GB | serverC: busy 100%, load1 137.57, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1369 GB | serverD: busy 98%, load1 62.90, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1444 GB
 
 ## UTC TIME WRITTEN
-2026-11-23 01:00Z
+2026-11-23 01:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-23 01:00Z | box1: busy 96%, load1 40.00, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 83.2 GB; live reservations 3 (3 GB); workers 13, of which TP-adopted 12 (RSS 17.1 GB) vs others 1 (RSS 1.6 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 40.00, 55.56, 62.52
-  by tag: NYR quota 12 running 12 hungry False RSS 17.1 GB PSS 14.4 GB; REST quota 0 running 1 hungry False RSS 1.6 GB PSS 1.5 GB
-  cell-months finished last hour (DONE markers): 11371
-  top running jobs: TL3_NYE_L2d328a7e_RK7CT35m (x12);TL3_NYE_L2d328a7e_RK7CT28m (x10);TL3_NYE_L2d328a7e_RK7CT42m (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 85.46, 85.48, 84.13|/dev/md2         28T  2.8T   26T  10% /mnt/l2|53|
+Server 1 (this box): MemAvail 74.4 GB; live reservations 2 (2 GB); workers 16, of which TP-adopted 15 (RSS 20.8 GB) vs others 1 (RSS 1.6 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 65.43, 62.25, 60.42
+  by tag: NYE quota 16 running 15 hungry False RSS 20.8 GB PSS 18.8 GB; REST quota 0 running 1 hungry False RSS 1.6 GB PSS 1.5 GB
+  cell-months finished last hour (DONE markers): 
+  top running jobs: TL3_NYE_L4c702717_ALN (x13);TL3_NYE_L2d328a7e_ALN (x12);TL3_NYE_L0bac981a_ALN (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 85.83, 85.80, 85.17|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 85.46, 85.48, 84.13|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261122_1612Z_Josh-recent-basis-prior-year-check-fix.md 20261122_2140Z_layer-keys-definitions-for-the-port.md 20261122_2200Z_nyam-two-generic-book-specs.md 20261122_2205Z_london-nypm-stack-loops-see-no-books.md 20261122_2210Z_Josh-asia-stack-weights.md
+20261122_2140Z_layer-keys-definitions-for-the-port.md 20261122_2200Z_nyam-two-generic-book-specs.md 20261122_2205Z_london-nypm-stack-loops-see-no-books.md 20261122_2210Z_Josh-asia-stack-weights.md 20261123_0105Z_Josh-asia-book-styles-info.md
