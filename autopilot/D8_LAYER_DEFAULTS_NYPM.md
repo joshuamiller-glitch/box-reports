@@ -27,3 +27,5 @@ SZW = SZW3
 NTS = NTS2
 CG = CGB3
 ```
+
+**STC-FREE PICK beside it (joint without the STC family, 20:46Z): TL3_SR_NP_STKd893133bd8_BF2_JT209 = the same settings with LOSS.MF3 CU4 and LOSS.MF4 CU4 (full-stop level = no extra cut) instead of STC4 / STC4. L6M 1,447 / -4,830 / -3,644 / -3,384 / $2,936 (pick with STC: 1,421 / -4,809 / -3,272 / -3,384 / $3,002); L3M 966 / -3,870 / $3,032; walk-forward 0.887; persistence 0.946; bands RED/GREEN/GREEN. The state cut adds only ~2% of ulcer: RECOMMENDED for the D8 file = the STC-free pick JT209 (everything reproducible from an NT8 feed). Page: BAREFIT_NP_STKd893133bd8_R200_L2.md; keys: D8_LAYER_KEYS_NYPM_STCFREE.md / D8_LAYER_DEFAULTS_NYPM_STCFREE.md.**
