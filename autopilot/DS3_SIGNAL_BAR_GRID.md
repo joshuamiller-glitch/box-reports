@@ -1,14 +1,14 @@
 # DS3_SIGNAL_BAR_GRID - whole trigger library x every bar row x session (W-GRIDA), FIRST PASS, NAKED SCREEN
 VERDICT (data ends 2026-11-12; naked screen with bar-scaled brackets, no layers, NOT an engine verdict; first heat table on built bars; nulls: random-entry replicas rand1,randd8a,randd8ax,randd8b,randd8bx): see the headline table - a trigger x bar counts only by EXCESS over the null distribution of the BEST pick; nothing here is a pass until the engine row with layers exists.
 
-Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-24 10:11Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
+Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-24 10:41Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
 
 **CORRECTION 02:30Z (read first): every random-entry null file produced by the fast path before 02:30Z was an exact COPY of the real result (the fast runner did not recognise the tag p1randN), so all earlier excess / percentile / null columns and the claim of null draws were INVALID (excess 0.0, percentile 1.00 = no null). 31,413 such files were deleted; the 1,411 legacy-runner null files are valid. Nulls are being regenerated; a null column is shown only when the null pool covers >= 80% of the real pool, otherwise it reads NO NULL YET. Real results are unaffected.**
 
 **NULL AUDIT (assertions: a null file must differ from its real file; null mean pts/trade at plain 60/60 must be negative and above -6; a tag failing is rejected and its columns read NO NULL YET):**
 | null tag | files | sampled | identical to real | mean pts/trade London / NYAM / NYPM / Asia | accepted | share of real cells covered (per session) | note |
 |---|---|---|---|---|---|---|---|
-| p1rand1 | 65933 | 400 | 0.000 | -0.64 / -0.63 / -0.64 / -0.85 | YES | {"Asia": 0.818, "London": 0.823, "NYAM": 0.823, "NYPM": 0.823} |  |
+| p1rand1 | 65933 | 400 | 0.000 | -0.64 / -0.63 / -0.64 / -0.85 | YES | {"Asia": 0.821, "London": 0.824, "NYAM": 0.825, "NYPM": 0.825} |  |
 | p1rand10 | 459 | 400 | 0.000 | -0.66 / -0.57 / -0.59 / -0.97 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand11 | 459 | 400 | 0.000 | -0.67 / -0.58 / -0.58 / -0.99 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand12 | 453 | 400 | 0.000 | -0.65 / -0.59 / -0.59 / -0.99 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
@@ -19,7 +19,7 @@ Header: pick window end = newest data week (2026-11-12); refit date = every 2 we
 | p1rand17 | 317 | 317 | 0.000 | -0.64 / -0.60 / -0.59 / -0.98 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand18 | 317 | 317 | 0.000 | -0.66 / -0.59 / -0.61 / -0.96 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand19 | 400 | 400 | 0.000 | -0.66 / -0.61 / -0.62 / -0.95 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
-| p1rand2 | 65933 | 400 | 0.000 | -0.65 / -0.62 / -0.65 / -0.91 | YES | {"Asia": 0.813, "London": 0.818, "NYAM": 0.819, "NYPM": 0.819} |  |
+| p1rand2 | 65933 | 400 | 0.000 | -0.65 / -0.62 / -0.65 / -0.91 | YES | {"Asia": 0.819, "London": 0.823, "NYAM": 0.824, "NYPM": 0.824} |  |
 | p1rand20 | 527 | 400 | 0.000 | -0.65 / -0.61 / -0.62 / -0.98 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand21 | 135 | 135 | 0.000 | -0.65 / -0.62 / -0.61 / -0.92 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 | p1rand22 | 135 | 135 | 0.000 | -0.66 / -0.61 / -0.60 / -0.94 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
@@ -40,7 +40,7 @@ Header: pick window end = newest data week (2026-11-12); refit date = every 2 we
 | p1rand9 | 459 | 400 | 0.000 | -0.66 / -0.59 / -0.59 / -0.98 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 Draws per cell = number of accepted null tags covering the pool (see per-session null_cover); needs >= 5 before any LEAD label.
 
-**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-24 10:11Z):** result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 4381, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65933, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65933, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 2, "London": 2, "NYAM": 2, "NYPM": 2}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
+**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-24 10:41Z):** result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 4381, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65933, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65939, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69336, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 2, "London": 2, "NYAM": 2, "NYPM": 2}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
 
 **Every number on this page comes from: PASS 1 (coarse grid: 2-3 settings per variant spanning the range; brackets plain 60/60 + sym15u; real + rand1/rand2 nulls; long/short = side split).**
 
@@ -51,55 +51,55 @@ Draws per cell = number of accepted null tags covering the pool (see per-session
 4. Needs in D7: trigger modules are bar-indicator only (no new feed) except book/tape families flagged in TRIGGER_REGISTRY.md; non-time bars need a custom BarsType (BAR_REGISTRY.md).
 5. Next: top cells -> live layers (fast replay) -> exact JL3 engine with controls (identity first); then Asia.
 
-## Progress (2026-11-24 10:11Z)
-COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 4381, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65933, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65933, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-24T10:11Z rows=327 mods=146 todo=9 running=0. 
-Cells scored per session: {"Asia": 12087972, "London": 12988032, "NYAM": 14205223, "NYPM": 14216924}
+## Progress (2026-11-24 10:41Z)
+COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 4381, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65933, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65939, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69336, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-24T10:41Z rows=327 mods=146 todo=9 running=0. 
+Cells scored per session: {"Asia": 11993094, "London": 12899514, "NYAM": 14110974, "NYPM": 14122482}
 
 ## London
 ### Headline: best pick over the whole grid (OOS mean pts/week at 1 lot, 4.84 incl)
 | pick | OOS pts/wk | R/trade | ulcer (wk pts) | persistence | L6M pts/wk | L3M pts/wk | null mean | null max | excess | pctile | shifted-label mean | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| free | -19.3 | -0.014 | 1268.3 | 0.46 | -18.5 | -11.8 | 12.9 | 20.5 | -32.2 | 0.00 | -5.7 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "ok"} |
-| agreed | -26.9 | -0.021 | 1655.6 | 0.46 | -18.5 | -11.8 | 13.4 | 23.9 | -40.3 | 0.00 | -5.4 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "ok"} |
+| free | -19.3 | -0.014 | 1268.3 | 0.46 | -18.5 | -11.8 | 13.2 | 21.1 | -32.5 | 0.00 | -5.7 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "ok"} |
+| agreed | -26.9 | -0.021 | 1655.6 | 0.46 | -18.5 | -11.8 | 14.1 | 23.9 | -41.0 | 0.00 | -5.4 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "ok"} |
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | ACTIVITY(book) | ANCHORED | COMPOSITE | FOOTPRINT | INFORMATION | INFORMATION(book) | PRICE | PROFILE | SESSION-RELATIVE | SMOOTHING | TIME | UNKNOWN |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| bands | -33.7 [-43.8; 0.00] | -29.8 [-30.4; 0.00] | 3.9 [10.0; 1.00] | -12.5 [-2.1; 0.00] | -8.0 [15.8; 1.00] | -3.9 [-22.5; 0.00] | -21.3 [-17.9; 0.50] | -28.3 [-31.8; 0.00] | -5.1 [-8.6; 0.50] | -13.5 [-5.7; 0.50] | -3.9 [6.8; 1.00] | -13.6 [-15.5; 0.50] | -10.5 [-3.1; 0.50] |
+| bands | -33.7 [-43.8; 0.00] | -29.8 [-30.4; 0.00] | 3.9 [10.0; 1.00] | -12.5 [-2.1; 0.00] | -8.0 [15.8; 1.00] | -3.9 [-22.5; 0.00] | -21.3 [-17.9; 0.50] | -33.6 [-37.1; 0.00] | -5.1 [-8.6; 0.50] | -13.5 [-5.7; 0.50] | -3.9 [6.8; 1.00] | -13.6 [-15.5; 0.50] | -10.5 [-3.1; 0.50] |
 | bands (native) | -11.1 [16.1; 1.00] | 1.4 [-3.6; 0.50] | 16.0 [21.9; 1.00] | -12.1 [-12.7; 0.00] | -9.4 [12.2; 1.00] | 2.8 [-4.8; 0.50] | -9.3 [-3.8; 0.50] | -21.8 [-8.9; 0.00] | -24.2 [-23.2; 0.00] | -19.1 [-9.4; 0.00] | -21.2 [5.1; 1.00] | -5.5 [16.2; 1.00] | -14.6 [6.6; 0.50] |
-| barnative | -20.2 [3.0; 0.50] | -1.3 [18.5; 1.00] | -4.8 [-6.8; 0.00] | 7.2 [15.6; 0.50] | 1.3 [-1.3; 0.50] | -38.9 [-14.5; 0.00] | -20.3 [-2.5; 0.50] | 1.5 [16.0; 1.00] | 3.4 [-4.6; 0.00] | -8.2 [10.2; 0.50] | -30.3 [-36.0; 0.00] | -12.0 [0.9; 0.50] | -4.5 [13.6; 1.00] |
-| book | -2.2 [-9.3; 0.50] | -26.6 [-16.9; 0.00] | n/a (no signals by construction) | -22.6 [-30.9; 0.00] | n/a (no signals by construction) | -28.3 [-15.4; 0.00] | -29.4 [-20.1; 0.00] | 19.6 [37.2; 1.00] | n/a (no signals by construction) | 17.8 [26.4; 1.00] | -29.0 [-9.6; 0.00] | -12.6 [-7.7; 0.00] | -26.1 [-33.7; 0.00] |
-| book (native) | -1.1 [-2.3; 0.50] | -20.9 [-25.9; 0.00] | n/a (no signals by construction) | -6.8 [-10.9; 0.50] | n/a (no signals by construction) | -9.5 [-5.6; 0.50] | -6.1 [-3.4; 0.00] | -9.5 [-6.6; 0.00] | n/a (no signals by construction) | -8.1 [-3.9; 0.50] | -5.9 [-12.4; 0.50] | -9.4 [-1.5; 0.50] | -6.4 [2.1; 0.50] |
-| confluence | -3.3 [-13.5; 0.00] | -21.9 [2.5; 0.50] | -3.9 [-1.7; 0.50] | -33.6 [-32.4; 0.00] | -16.2 [4.0; 1.00] | -5.1 [11.8; 0.50] | -6.3 [14.5; 1.00] | -26.9 [-15.7; 0.50] | -5.5 [-2.3; 0.50] | -4.0 [-4.8; 0.50] | -27.6 [-20.1; 0.00] | 3.6 [4.6; 1.00] | -26.6 [-15.1; 0.50] |
-| levels | -19.2 [-13.9; 0.00] | -16.2 [-6.2; 0.00] | -7.3 [-2.8; 0.50] | -0.3 [-0.2; 0.50] | -35.8 [-17.2; 0.00] | 1.8 [1.6; 0.50] | -7.8 [10.7; 1.00] | 25.2 [23.3; 1.00] | -12.3 [-21.0; 0.00] | -6.3 [17.2; 1.00] | -13.1 [-17.2; 0.50] | 2.4 [21.3; 1.00] | -26.5 [-5.7; 0.00] |
-| levels (native) | -13.9 [1.1; 0.50] | -33.0 [-58.3; 0.00] | 0.5 [7.5; 0.50] | -15.6 [0.7; 0.50] | 11.0 [35.6; 1.00] | -29.8 [5.1; 0.50] | -34.5 [-17.3; 0.00] | -4.3 [6.3; 1.00] | -24.0 [-27.7; 0.00] | -34.8 [-40.7; 0.00] | -2.8 [-1.5; 0.50] | 14.3 [7.6; 1.00] | 1.1 [19.0; 1.00] |
-| live | -5.7 [1.2; 0.50] | -44.6 [-44.0; 0.00] | -1.1 [4.4; 1.00] | -38.7 [-25.3; 0.00] | -11.4 [-12.4; 0.00] | -6.3 [-13.1; 0.50] | -29.8 [-20.7; 0.00] | -9.1 [-18.4; 0.50] | n/a (no signals by construction) | -25.4 [-14.4; 0.50] | -7.5 [8.6; 1.00] | 3.0 [6.4; 1.00] | 2.9 [6.7; 0.50] |
-| manual | -20.3 [-1.7; 0.50] | -3.5 [3.3; 0.50] | -16.6 [-10.0; 0.00] | -33.1 [-28.9; 0.00] | -11.3 [-18.6; 0.00] | 13.3 [18.7; 1.00] | -9.1 [-2.0; 0.00] | -14.5 [-20.6; 0.00] | 2.6 [1.3; 0.50] | -7.3 [4.3; 0.50] | -7.2 [5.2; 0.50] | -25.2 [-15.1; 0.00] | -8.0 [7.0; 0.50] |
-| manual (native) | 0.6 [-4.1; 0.00] | 0.9 [16.9; 1.00] | 0.0 [5.3; 1.00] | -3.8 [-1.4; 0.50] | 2.2 [no null yet] | -7.7 [-2.8; 0.50] | 16.4 [27.3; 1.00] | -14.5 [-6.1; 0.50] | n/a (no signals by construction) | 4.8 [6.7; 0.50] | 1.6 [25.7; 1.00] | -20.9 [6.9; 1.00] | -28.9 [-9.3; 0.00] |
-| momentum | -6.2 [2.9; 1.00] | -1.0 [-0.1; 0.50] | 0.1 [-4.0; 0.50] | 2.6 [30.0; 1.00] | 2.7 [20.4; 1.00] | -24.9 [-19.4; 0.00] | -7.3 [0.7; 0.50] | 6.8 [8.4; 1.00] | 3.9 [9.7; 1.00] | -22.3 [3.1; 0.50] | 10.7 [15.4; 1.00] | -27.0 [-15.1; 0.00] | 19.9 [14.5; 1.00] |
-| momentum (native) | -19.6 [4.4; 0.50] | 5.4 [-0.7; 0.00] | -20.6 [-36.7; 0.00] | -12.6 [-1.7; 0.50] | 5.1 [1.5; 0.50] | -17.1 [-0.5; 0.50] | -1.6 [19.6; 1.00] | -8.6 [1.0; 0.50] | 1.8 [-1.5; 0.50] | 11.6 [5.9; 0.50] | -3.7 [-2.1; 0.50] | -17.4 [4.8; 0.50] | 5.9 [12.2; 0.50] |
-| pullback | -22.3 [-25.4; 0.00] | -5.4 [6.8; 0.50] | 4.9 [2.8; 0.50] | 4.1 [13.7; 1.00] | -20.2 [-5.2; 0.50] | -3.3 [9.7; 0.50] | -8.8 [5.2; 0.50] | 1.9 [-22.0; 0.00] | 0.1 [3.4; 1.00] | -31.7 [-24.5; 0.00] | -22.7 [-12.2; 0.00] | -4.2 [20.3; 1.00] | -3.5 [28.4; 1.00] |
-| pullback (native) | -7.7 [-10.3; 0.50] | -14.7 [-3.5; 0.00] | -1.5 [-3.0; 0.50] | 16.5 [10.8; 1.00] | -27.0 [-19.9; 0.00] | 11.4 [-13.0; 0.00] | 3.1 [11.1; 0.50] | -8.4 [26.6; 1.00] | 0.3 [5.8; 1.00] | -5.9 [5.1; 0.50] | 6.9 [11.4; 1.00] | -29.7 [-14.6; 0.00] | 4.9 [-15.5; 0.50] |
-| structure | 7.3 [31.4; 1.00] | -22.8 [-22.2; 0.00] | -11.1 [-3.9; 0.00] | 1.5 [-4.0; 0.00] | -20.3 [-38.5; 0.00] | -35.2 [-44.3; 0.00] | -17.7 [-24.0; 0.00] | -31.4 [-11.3; 0.00] | -1.0 [-16.7; 0.00] | -4.6 [4.2; 0.50] | 5.3 [-1.7; 0.50] | 1.8 [24.7; 1.00] | -1.1 [19.3; 1.00] |
-| structure (native) | -2.2 [6.1; 1.00] | 28.1 [53.2; 1.00] | n/a (no signals by construction) | 2.2 [8.4; 1.00] | 4.2 [11.3; 1.00] | -14.9 [-0.5; 0.50] | 2.4 [-1.1; 0.50] | -2.6 [-12.4; 0.00] | n/a (no signals by construction) | -21.8 [-21.6; 0.00] | -6.6 [1.0; 0.50] | -19.8 [-16.2; 0.00] | -7.2 [0.9; 0.50] |
-| tape | 7.4 [13.2; 1.00] | -10.8 [-6.6; 0.50] | -0.2 [-1.8; 0.50] | -30.0 [-19.3; 0.00] | -3.2 [6.4; 0.50] | -1.1 [20.2; 1.00] | -25.9 [-26.5; 0.00] | 1.9 [-2.2; 0.50] | -0.8 [9.5; 1.00] | -11.0 [17.3; 1.00] | -21.5 [-0.3; 0.50] | -39.4 [-34.7; 0.00] | -28.9 [-14.2; 0.00] |
-| tape (native) | -17.3 [-26.0; 0.00] | -32.7 [-24.3; 0.00] | -13.2 [no null yet] | 15.4 [32.8; 1.00] | -35.0 [-28.6; 0.00] | -31.0 [-5.4; 0.50] | -21.7 [-18.7; 0.00] | -12.1 [9.3; 1.00] | -7.7 [-22.3; 0.00] | 6.8 [12.4; 1.00] | -8.9 [-2.7; 0.50] | -30.3 [-16.5; 0.00] | -29.6 [-48.6; 0.00] |
-| trend | -28.7 [-36.3; 0.00] | -13.7 [-21.6; 0.00] | -6.4 [3.4; 0.50] | -7.8 [-15.0; 0.00] | -22.9 [-12.0; 0.00] | -10.0 [5.9; 1.00] | -17.9 [-28.5; 0.00] | -1.2 [4.4; 0.50] | 2.7 [8.7; 0.50] | -17.5 [-22.7; 0.00] | -14.2 [4.0; 1.00] | -26.0 [-0.6; 0.50] | -2.9 [15.6; 1.00] |
-| trend (native) | -6.4 [0.9; 0.50] | 11.8 [5.8; 0.50] | -12.8 [-17.6; 0.00] | 8.8 [-4.8; 0.00] | -3.4 [5.8; 1.00] | -5.5 [-1.7; 0.50] | -24.9 [5.8; 1.00] | -29.6 [-16.3; 0.00] | 1.9 [21.2; 1.00] | -21.5 [-0.6; 0.50] | -18.3 [-12.2; 0.00] | -21.1 [-22.8; 0.50] | -6.3 [-14.8; 0.00] |
-| xmarket | 0.3 [-2.1; 0.50] | 9.3 [6.7; 1.00] | 3.5 [6.0; 1.00] | 3.8 [25.4; 1.00] | 6.6 [23.8; 1.00] | -25.8 [-38.6; 0.00] | -51.1 [-57.2; 0.00] | 6.9 [16.8; 1.00] | -10.6 [-23.1; 0.00] | -27.1 [-16.3; 0.00] | -1.4 [0.4; 0.50] | -18.2 [-14.7; 0.50] | 1.7 [-12.1; 0.00] |
+| barnative | -20.2 [3.0; 0.50] | -1.3 [18.5; 1.00] | -4.8 [-6.8; 0.00] | 7.2 [15.6; 0.50] | 1.3 [-1.3; 0.50] | -38.9 [-14.5; 0.00] | -20.3 [-2.5; 0.50] | 1.5 [16.3; 1.00] | 3.4 [-4.6; 0.00] | -8.2 [10.2; 0.50] | -30.3 [-36.0; 0.00] | -12.0 [0.9; 0.50] | -4.5 [13.6; 1.00] |
+| book | -2.2 [-9.3; 0.50] | -26.6 [-16.9; 0.00] | n/a (no signals by construction) | -22.6 [-30.9; 0.00] | n/a (no signals by construction) | -28.3 [-15.4; 0.00] | -29.4 [-20.1; 0.00] | 19.6 [41.4; 1.00] | n/a (no signals by construction) | 17.8 [26.4; 1.00] | -29.0 [-9.6; 0.00] | -12.6 [-7.7; 0.00] | -26.1 [-33.7; 0.00] |
+| book (native) | -1.1 [-2.3; 0.50] | -20.9 [-25.9; 0.00] | n/a (no signals by construction) | -6.8 [-10.9; 0.50] | n/a (no signals by construction) | -9.5 [-5.6; 0.50] | -6.1 [-3.4; 0.00] | -9.5 [-8.8; 0.00] | n/a (no signals by construction) | -8.1 [-3.9; 0.50] | -5.9 [-12.4; 0.50] | -9.4 [-1.5; 0.50] | -6.4 [2.1; 0.50] |
+| confluence | -3.3 [-13.5; 0.00] | -21.9 [2.5; 0.50] | -3.9 [-1.7; 0.50] | -33.6 [-32.4; 0.00] | -16.2 [4.0; 1.00] | -5.1 [11.8; 0.50] | -6.3 [14.5; 1.00] | -27.0 [-15.6; 0.50] | -5.5 [-2.3; 0.50] | -4.0 [-4.8; 0.50] | -27.6 [-20.1; 0.00] | 3.6 [4.6; 1.00] | -26.6 [-15.1; 0.50] |
+| levels | -19.2 [-13.9; 0.00] | -16.2 [-6.2; 0.00] | -7.3 [-2.8; 0.50] | -0.3 [-0.2; 0.50] | -35.8 [-17.2; 0.00] | 1.8 [1.6; 0.50] | -7.8 [10.7; 1.00] | 17.6 [13.9; 1.00] | -12.3 [-21.0; 0.00] | -6.3 [17.2; 1.00] | -13.1 [-17.2; 0.50] | 2.4 [21.3; 1.00] | -26.5 [-5.7; 0.00] |
+| levels (native) | -13.9 [1.1; 0.50] | -33.0 [-58.3; 0.00] | 0.5 [7.5; 0.50] | -15.6 [0.7; 0.50] | 11.0 [35.6; 1.00] | -29.8 [5.1; 0.50] | -34.5 [-17.3; 0.00] | -2.7 [3.4; 0.50] | -24.0 [-27.7; 0.00] | -34.8 [-40.7; 0.00] | -2.8 [-1.5; 0.50] | 14.3 [7.6; 1.00] | 1.1 [19.0; 1.00] |
+| live | -5.7 [1.2; 0.50] | -44.6 [-44.0; 0.00] | -1.1 [4.4; 1.00] | -38.7 [-25.3; 0.00] | -11.4 [-12.4; 0.00] | -6.3 [-13.1; 0.50] | -29.8 [-20.7; 0.00] | -9.1 [-23.3; 0.00] | n/a (no signals by construction) | -25.4 [-14.4; 0.50] | -7.5 [8.6; 1.00] | 3.0 [6.4; 1.00] | 2.9 [6.7; 0.50] |
+| manual | -20.3 [-1.7; 0.50] | -3.5 [3.3; 0.50] | -16.6 [-10.0; 0.00] | -33.1 [-28.9; 0.00] | -11.3 [-18.6; 0.00] | 13.3 [18.7; 1.00] | -9.1 [-2.0; 0.00] | -13.2 [-12.7; 0.00] | 2.6 [1.3; 0.50] | -7.3 [4.3; 0.50] | -7.2 [5.2; 0.50] | -25.2 [-15.1; 0.00] | -8.0 [7.0; 0.50] |
+| manual (native) | 0.6 [-4.1; 0.00] | 0.9 [16.9; 1.00] | 0.0 [5.3; 1.00] | -3.8 [-1.4; 0.50] | 2.2 [no null yet] | -7.7 [-2.8; 0.50] | 16.4 [27.3; 1.00] | -19.9 [-14.1; 0.50] | n/a (no signals by construction) | 4.8 [6.7; 0.50] | 1.6 [25.7; 1.00] | -20.9 [6.9; 1.00] | -28.9 [-9.3; 0.00] |
+| momentum | -6.2 [2.9; 1.00] | -1.0 [-0.1; 0.50] | 0.1 [-4.0; 0.50] | 2.6 [30.0; 1.00] | 2.7 [20.4; 1.00] | -24.9 [-19.4; 0.00] | -7.3 [0.7; 0.50] | 6.8 [6.3; 1.00] | 3.9 [9.7; 1.00] | -22.3 [3.1; 0.50] | 10.7 [15.4; 1.00] | -27.0 [-15.1; 0.00] | 19.9 [14.5; 1.00] |
+| momentum (native) | -19.6 [4.4; 0.50] | 5.4 [-0.7; 0.00] | -20.6 [-36.7; 0.00] | -12.6 [-1.7; 0.50] | 5.1 [1.5; 0.50] | -17.1 [-0.5; 0.50] | -1.6 [19.6; 1.00] | -8.6 [4.3; 0.50] | 1.8 [-1.5; 0.50] | 11.6 [5.9; 0.50] | -3.7 [-2.1; 0.50] | -17.4 [4.8; 0.50] | 5.9 [12.2; 0.50] |
+| pullback | -22.3 [-25.4; 0.00] | -5.4 [6.8; 0.50] | 4.9 [2.8; 0.50] | 4.1 [13.7; 1.00] | -20.2 [-5.2; 0.50] | -3.3 [9.7; 0.50] | -8.8 [5.2; 0.50] | 1.9 [-22.9; 0.00] | 0.1 [3.4; 1.00] | -31.7 [-24.5; 0.00] | -22.7 [-12.2; 0.00] | -4.2 [20.3; 1.00] | -3.5 [28.4; 1.00] |
+| pullback (native) | -7.7 [-10.3; 0.50] | -14.7 [-3.5; 0.00] | -1.5 [-3.0; 0.50] | 16.5 [10.8; 1.00] | -27.0 [-19.9; 0.00] | 11.4 [-13.0; 0.00] | 3.1 [11.1; 0.50] | -8.4 [26.5; 1.00] | 0.3 [5.8; 1.00] | -5.9 [5.1; 0.50] | 6.9 [11.4; 1.00] | -29.7 [-14.6; 0.00] | 4.9 [-15.5; 0.50] |
+| structure | 7.3 [31.4; 1.00] | -22.8 [-22.2; 0.00] | -11.1 [-3.9; 0.00] | 1.5 [-4.0; 0.00] | -20.3 [-38.5; 0.00] | -35.2 [-44.3; 0.00] | -17.7 [-24.0; 0.00] | -31.4 [-14.9; 0.00] | -1.0 [-16.7; 0.00] | -4.6 [4.2; 0.50] | 5.3 [-1.7; 0.50] | 1.8 [24.7; 1.00] | -1.1 [19.3; 1.00] |
+| structure (native) | -2.2 [6.1; 1.00] | 28.1 [53.2; 1.00] | n/a (no signals by construction) | 2.2 [8.4; 1.00] | 4.2 [11.3; 1.00] | -14.9 [-0.5; 0.50] | 2.4 [-1.1; 0.50] | -0.8 [-7.8; 0.00] | n/a (no signals by construction) | -21.8 [-21.6; 0.00] | -6.6 [1.0; 0.50] | -19.8 [-16.2; 0.00] | -7.2 [0.9; 0.50] |
+| tape | 7.4 [13.2; 1.00] | -10.8 [-6.6; 0.50] | -0.2 [-1.8; 0.50] | -30.0 [-19.3; 0.00] | -3.2 [6.4; 0.50] | -1.1 [20.2; 1.00] | -25.9 [-26.5; 0.00] | 0.8 [-3.3; 0.50] | -0.8 [9.5; 1.00] | -11.0 [17.3; 1.00] | -21.5 [-0.3; 0.50] | -39.4 [-34.7; 0.00] | -28.9 [-14.2; 0.00] |
+| tape (native) | -17.3 [-26.0; 0.00] | -32.7 [-24.3; 0.00] | -13.2 [no null yet] | 15.4 [32.8; 1.00] | -35.0 [-28.6; 0.00] | -31.0 [-5.4; 0.50] | -21.7 [-18.7; 0.00] | -12.1 [12.1; 1.00] | -7.7 [-22.3; 0.00] | 6.8 [12.4; 1.00] | -8.9 [-2.7; 0.50] | -30.3 [-16.5; 0.00] | -29.6 [-48.6; 0.00] |
+| trend | -28.7 [-36.3; 0.00] | -13.7 [-21.6; 0.00] | -6.4 [3.4; 0.50] | -7.8 [-15.0; 0.00] | -22.9 [-12.0; 0.00] | -10.0 [5.9; 1.00] | -17.9 [-28.5; 0.00] | -1.2 [16.2; 1.00] | 2.7 [8.7; 0.50] | -17.5 [-22.7; 0.00] | -14.2 [4.0; 1.00] | -26.0 [-0.6; 0.50] | -2.9 [15.6; 1.00] |
+| trend (native) | -6.4 [0.9; 0.50] | 11.8 [5.8; 0.50] | -12.8 [-17.6; 0.00] | 8.8 [-4.8; 0.00] | -3.4 [5.8; 1.00] | -5.5 [-1.7; 0.50] | -24.9 [5.8; 1.00] | -29.6 [-19.7; 0.00] | 1.9 [21.2; 1.00] | -21.5 [-0.6; 0.50] | -18.3 [-12.2; 0.00] | -21.1 [-22.8; 0.50] | -6.3 [-14.8; 0.00] |
+| xmarket | 0.3 [-2.1; 0.50] | 9.3 [6.7; 1.00] | 3.5 [6.0; 1.00] | 3.8 [25.4; 1.00] | 6.6 [23.8; 1.00] | -25.8 [-38.6; 0.00] | -51.1 [-57.2; 0.00] | 6.9 [14.6; 0.50] | -10.6 [-23.1; 0.00] | -27.1 [-16.3; 0.00] | -1.4 [0.4; 0.50] | -18.2 [-14.7; 0.50] | 1.7 [-12.1; 0.00] |
 ### PASS 1: 10 best family cells in London (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | structure (native)|ACTIVITY(book) | 28.1 | 0.034 | 208.1 | 0.58 | 96.5 | -43.2 | {"2023": 19.2, "2024": 6.5, "2025": 17.6, "2026": 68.9} | -25.1 | 53.2 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| levels|PRICE | 25.2 | 0.027 | 242.0 | 0.56 | -3.2 | -0.5 | {"2023": -26.6, "2024": 25.7, "2025": 35.9, "2026": 28.5} | 2.0 | 23.3 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | momentum|UNKNOWN | 19.9 | 0.033 | 263.5 | 0.56 | -1.5 | -46.0 | {"2023": 68.2, "2024": 4.2, "2025": 40.7, "2026": -1.4} | 5.4 | 14.5 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| book|PRICE | 19.6 | 0.022 | 271.9 | 0.51 | 41.1 | 40.2 | {"2023": -22.3, "2024": -0.9, "2025": 33.5, "2026": 40.8} | -17.6 | 37.2 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| book|PRICE | 19.6 | 0.022 | 271.9 | 0.51 | 41.1 | 40.2 | {"2023": -22.3, "2024": -0.9, "2025": 33.5, "2026": 40.8} | -21.8 | 41.4 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | book|SESSION-RELATIVE | 17.8 | 0.011 | 257.9 | 0.56 | 52.4 | -10.8 | {"2023": -12.1, "2024": 5.3, "2025": -1.7, "2026": 65.0} | -8.7 | 26.4 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| levels|PRICE | 17.6 | 0.019 | 278.0 | 0.54 | -3.2 | -0.5 | {"2023": -26.6, "2024": 25.7, "2025": 31.0, "2026": 6.1} | 3.7 | 13.9 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | pullback (native)|COMPOSITE | 16.5 | 0.028 | 324.2 | 0.54 | 32.9 | 18.7 | {"2023": -1.2, "2024": -4.4, "2025": 43.6, "2026": 14.8} | 5.7 | 10.8 | 1.00 | {"2023": "ok", "2024": "AMBER", "2025": "ok", "2026": "ok"} |
 | manual (native)|INFORMATION(book) | 16.4 | 0.013 | 251.3 | 0.49 | 65.5 | 45.8 | {"2023": -1.8, "2024": -2.4, "2025": 9.7, "2026": 52.2} | -10.9 | 27.3 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | bands (native)|ANCHORED | 16.0 | 0.255 | 8.0 | 0.40 | 18.5 | 4.9 | {"2025": 0.0, "2026": 17.1} | -5.9 | 21.9 | 1.00 | {"2025": "ok", "2026": "ok"} |
 | tape (native)|COMPOSITE | 15.4 | 0.012 | 367.5 | 0.51 | 34.2 | -3.6 | {"2023": 5.1, "2024": -4.0, "2025": 2.1, "2026": 57.2} | -17.5 | 32.8 | 1.00 | {"2023": "ok", "2024": "AMBER", "2025": "ok", "2026": "ok"} |
 | levels (native)|TIME | 14.3 | 0.017 | 264.1 | 0.60 | 19.8 | 47.4 | {"2023": -41.6, "2024": 24.4, "2025": 26.2, "2026": 6.0} | 6.7 | 7.6 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
-Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M -52.7 pts/wk, rank 5% (top 94.8%); M7 tm60 L6M -39.6 pts/wk, rank 9% (top 90.6%); U7 tm600 L6M -10.7 pts/wk, rank 33% (top 67.2%); P7 tm60 L6M 65.6 pts/wk, rank 99% (top 1.3%); H7 tm60 L6M 2.9 pts/wk, rank 62% (top 38.2%); A7 tm60 L6M 14.3 pts/wk, rank 79% (top 21.2%). Rank = share of ALL London cells with a lower trailing-26w result.
+Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M -52.7 pts/wk, rank 5% (top 94.8%); M7 tm60 L6M -39.6 pts/wk, rank 9% (top 90.6%); U7 tm600 L6M -10.7 pts/wk, rank 33% (top 67.1%); P7 tm60 L6M 65.6 pts/wk, rank 99% (top 1.3%); H7 tm60 L6M 2.9 pts/wk, rank 62% (top 38.2%); A7 tm60 L6M 14.3 pts/wk, rank 79% (top 21.2%). Rank = share of ALL London cells with a lower trailing-26w result.
 
 ### PASS 2 (full grid, 7 brackets, selected pairs, own nulls): 10 best family cells in London (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
@@ -111,20 +111,20 @@ Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M
 | momentum|PRICE | 9.7 | 0.011 | 363.1 | 0.57 | -12.9 | -84.0 | {"2023": -21.8, "2024": 28.7, "2025": 14.9, "2026": -9.0} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "RED"} |
 | tape|COMPOSITE | 6.4 | 0.006 | 685.1 | 0.53 | 102.4 | 13.8 | {"2023": -26.1, "2024": -34.2, "2025": 11.3, "2026": 58.8} |  |  |  | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "ok"} |
 | pullback (native)|INFORMATION | 4.7 | 0.010 | 328.8 | 0.54 | 7.9 | 45.8 | {"2023": -34.5, "2024": 23.8, "2025": -2.3, "2026": 3.0} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
+| structure (native)|PRICE | 4.5 | 0.010 | 674.0 | 0.51 | 33.9 | 175.3 | {"2023": 10.6, "2024": 9.1, "2025": -38.3, "2026": 47.6} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"} |
 | live|TIME | 4.4 | -0.007 | 388.6 | 0.51 | 49.4 | 19.6 | {"2023": -44.0, "2024": -5.4, "2025": 8.4, "2026": 26.7} |  |  |  | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "ok"} |
-| structure (native)|PRICE | 4.1 | 0.010 | 676.9 | 0.49 | 33.9 | 175.3 | {"2023": 10.6, "2024": 9.1, "2025": -39.4, "2026": 47.6} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "RED", "2026": "ok"} |
-| tape|PRICE | 4.0 | 0.011 | 449.7 | 0.51 | -118.9 | -158.1 | {"2023": 28.2, "2024": 24.5, "2025": 22.0, "2026": -49.0} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "RED"} |
+| confluence|TIME | 3.8 | -0.007 | 284.1 | 0.56 | -2.1 | -52.6 | {"2023": -34.3, "2024": 12.4, "2025": 21.8, "2026": -15.7} |  |  |  | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "RED"} |
 
 ### Top 20 cells (pick window = trailing 26 weeks to the newest data day; agreed by neighbours; naked)
 | # | bar row | trigger.variant | params | bracket | side | L6M pts | L3M pts | trades | nb agree | cell null draws / mean / max L6M pts / pctile | pts by year |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | urenko_10 | momentum.momentum_stoch.zone_break_native | {"len": 14, "lvl": 70} | asym15u/30u | both | 6512 | 2679 | 332 | 1.00 | 5 / -610 / 1359 / 1.00 | {"2023": 46.0, "2024": 711.0, "2025": 731.0, "2026": 5289.0} |
-| 2 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | sym30u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 833.0, "2025": -2983.0, "2026": 6202.0} |
-| 3 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | sym15u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 833.0, "2025": -2983.0, "2026": 6202.0} |
+| 2 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | sym15u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 833.0, "2025": -2983.0, "2026": 6202.0} |
+| 3 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | asym20u/10u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 12.0, "2024": 600.0, "2025": -2983.0, "2026": 6202.0} |
 | 4 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | asym10u/20u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 872.0, "2025": -2975.0, "2026": 6202.0} |
 | 5 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | asym15u/30u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 833.0, "2025": -2983.0, "2026": 6202.0} |
 | 6 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | sym8u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 106.0, "2024": 410.0, "2025": -2975.0, "2026": 6199.0} |
-| 7 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | asym20u/10u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 12.0, "2024": 600.0, "2025": -2983.0, "2026": 6202.0} |
+| 7 | vnorm_400 | manual.manual_macd.histturn_native | {"f": 5, "s": 13, "g": 4} | sym30u | both | 6399 | 2685 | 273 | 1.00 | 5 / 1480 / 2815 / 1.00 | {"2023": 94.0, "2024": 833.0, "2025": -2983.0, "2026": 6202.0} |
 | 8 | mrenko_20 | levels.levels_vwap.break_native | {"n": 2, "k": 0.5} | asym20u/10u | both | 6284 | 2991 | 226 | 1.00 | 5 / 801 / 1930 / 1.00 | {"2023": 120.0, "2024": -1085.0, "2025": -1977.0, "2026": 7689.0} |
 | 9 | vsess_600 | trend.trend_ma_hma.cross | {"len": 21, "width": 2, "hyst": 0.0} | sym8u | both | 6120 | 2666 | 701 | 1.00 | 5 / -1086 / 562 / 1.00 | {"2023": -421.0, "2024": -1541.0, "2025": -1139.0, "2026": 6064.0} |
 | 10 | dltor_B130 | levels.levels_vwap.reject_native | {"tol": 0.5, "conf": "body"} | asym20u/10u | both | 6084 | 2102 | 245 | 1.00 | 5 / -256 / 3416 / 1.00 | {"2023": 76.0, "2024": 61.0, "2025": 1363.0, "2026": 7110.0} |
@@ -132,8 +132,8 @@ Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M
 | 12 | dltor_B130 | levels.levels_vwap.reject_native | {"tol": 0.5, "conf": "body"} | asym15u/30u | both | 6002 | 1997 | 238 | 1.00 | 5 / -514 / 2989 / 1.00 | {"2023": 228.0, "2024": 4.0, "2025": 1073.0, "2026": 6927.0} |
 | 13 | dltor_B130 | levels.levels_vwap.reject_native | {"tol": 0.5, "conf": "body"} | sym30u | both | 5987 | 1982 | 237 | 1.00 | 5 / -358 / 3219 / 1.00 | {"2023": 378.0, "2024": 121.0, "2025": 1041.0, "2026": 6917.0} |
 | 14 | dltor_B130 | levels.levels_vwap.reject_native | {"tol": 0.5, "conf": "body"} | sym15u | both | 5984 | 1978 | 238 | 1.00 | 5 / -458 / 2964 / 1.00 | {"2023": 222.0, "2024": -104.0, "2025": 1188.0, "2026": 6903.0} |
-| 15 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | sym15u | both | 5901 | 2810 | 163 | 1.00 | 5 / -618 / -55 / 1.00 | {"2023": -61.0, "2024": -106.0, "2025": 331.0, "2026": 6224.0} |
-| 16 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | sym30u | both | 5901 | 2810 | 163 | 1.00 | 5 / -618 / -55 / 1.00 | {"2023": -66.0, "2024": -38.0, "2025": 327.0, "2026": 6224.0} |
+| 15 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | sym30u | both | 5901 | 2810 | 163 | 1.00 | 5 / -618 / -55 / 1.00 | {"2023": -66.0, "2024": -38.0, "2025": 327.0, "2026": 6224.0} |
+| 16 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | sym15u | both | 5901 | 2810 | 163 | 1.00 | 5 / -618 / -55 / 1.00 | {"2023": -61.0, "2024": -106.0, "2025": 331.0, "2026": 6224.0} |
 | 17 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | asym10u/20u | both | 5901 | 2810 | 163 | 1.00 | 5 / -603 / -23 / 1.00 | {"2023": -179.0, "2024": -307.0, "2025": 309.0, "2026": 6270.0} |
 | 18 | dib_6000 | levels.levels_fvg15.reject_native | {"tol": 1.0, "conf": "body"} | asym15u/30u | both | 5901 | 2810 | 163 | 1.00 | 5 / -618 / -55 / 1.00 | {"2023": -59.0, "2024": -200.0, "2025": 331.0, "2026": 6224.0} |
 | 19 | qmid_B500 | structure.structure_libpattern.rangeexp | {"k": 1.5} | sym8u | both | 5898 | 3165 | 285 | 1.00 | 5 / 529 / 2805 / 1.00 | {"2023": -182.0, "2024": 733.0, "2025": -2694.0, "2026": 5056.0} |
@@ -143,39 +143,39 @@ Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M
 ### Headline: best pick over the whole grid (OOS mean pts/week at 1 lot, 4.84 incl)
 | pick | OOS pts/wk | R/trade | ulcer (wk pts) | persistence | L6M pts/wk | L3M pts/wk | null mean | null max | excess | pctile | shifted-label mean | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| free | -13.7 | -0.019 | 1511.2 | 0.48 | -97.1 | -12.4 | -26.3 | -10.2 | 12.7 | 0.50 | -14.0 | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "RED"} |
-| agreed | -6.8 | -0.010 | 1187.9 | 0.48 | -97.1 | -12.4 | -44.1 | -38.8 | 37.3 | 1.00 | -13.2 | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "RED"} |
+| free | -13.7 | -0.019 | 1511.2 | 0.48 | -97.1 | -12.4 | -16.4 | -4.2 | 2.7 | 0.50 | -14.0 | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "RED"} |
+| agreed | -6.8 | -0.010 | 1187.9 | 0.48 | -97.1 | -12.4 | -54.0 | -41.4 | 47.2 | 1.00 | -13.2 | {"2023": "RED", "2024": "RED", "2025": "ok", "2026": "RED"} |
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | ACTIVITY(book) | ANCHORED | COMPOSITE | FOOTPRINT | INFORMATION | INFORMATION(book) | PRICE | PROFILE | SESSION-RELATIVE | SMOOTHING | TIME | UNKNOWN |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| bands | 12.5 [8.3; 1.00] | 11.9 [28.1; 1.00] | -4.1 [16.5; 0.50] | 15.3 [28.9; 1.00] | -72.8 [-47.6; 0.00] | -0.8 [37.6; 1.00] | 44.1 [51.0; 1.00] | 7.4 [26.4; 1.00] | -12.7 [-18.7; 0.00] | 17.6 [34.7; 1.00] | 27.4 [11.9; 0.50] | 54.0 [45.1; 1.00] | 29.1 [26.1; 1.00] |
-| bands (native) | 6.9 [18.9; 1.00] | 12.2 [36.7; 1.00] | 10.7 [9.3; 1.00] | -28.1 [-6.4; 0.00] | -12.5 [-2.0; 0.50] | 25.9 [22.5; 1.00] | -14.1 [-8.9; 0.50] | 23.1 [48.8; 1.00] | -11.3 [-21.4; 0.00] | -8.1 [-3.6; 0.50] | 16.3 [8.5; 0.50] | 48.4 [84.0; 1.00] | 5.9 [7.6; 0.50] |
-| barnative | -40.6 [-34.9; 0.00] | -18.5 [-36.5; 0.00] | -22.8 [-23.4; 0.00] | 14.0 [81.5; 1.00] | 13.8 [43.7; 1.00] | -6.2 [11.6; 0.50] | -13.6 [-0.4; 0.50] | 41.7 [74.9; 1.00] | -3.5 [5.9; 0.50] | 36.1 [74.5; 1.00] | -8.0 [-23.8; 0.50] | 17.2 [-7.4; 0.50] | 1.4 [4.9; 0.50] |
-| book | 23.0 [32.9; 1.00] | 7.1 [20.5; 1.00] | n/a (no signals by construction) | 32.4 [51.4; 1.00] | n/a (no signals by construction) | 64.3 [65.7; 1.00] | 3.6 [12.7; 0.50] | 2.9 [19.7; 1.00] | n/a (no signals by construction) | 48.2 [55.5; 1.00] | 29.2 [50.5; 1.00] | 34.5 [39.1; 1.00] | 22.6 [63.6; 1.00] |
-| book (native) | 0.7 [26.1; 1.00] | 39.4 [53.4; 1.00] | n/a (no signals by construction) | 37.0 [47.6; 1.00] | n/a (no signals by construction) | -24.8 [14.8; 1.00] | 26.8 [41.3; 1.00] | 14.6 [35.4; 1.00] | n/a (no signals by construction) | 26.5 [34.4; 1.00] | 25.0 [25.8; 1.00] | -26.3 [19.1; 1.00] | 49.1 [71.9; 1.00] |
-| confluence | 12.2 [5.5; 1.00] | 31.2 [32.6; 1.00] | 2.7 [-3.1; 0.00] | 4.4 [8.4; 1.00] | 12.7 [36.7; 1.00] | -10.8 [12.1; 0.50] | 16.2 [29.5; 1.00] | 62.3 [54.2; 1.00] | -9.8 [-0.7; 0.50] | -11.6 [2.7; 0.50] | -8.8 [17.0; 1.00] | 1.9 [6.2; 0.50] | -3.4 [13.7; 1.00] |
-| levels | 10.4 [63.4; 1.00] | 0.5 [17.6; 1.00] | 18.3 [-0.8; 0.50] | 13.6 [37.7; 1.00] | -23.5 [7.5; 0.50] | -34.0 [-10.9; 0.00] | 8.4 [24.7; 1.00] | -22.4 [4.0; 0.50] | -15.6 [-10.4; 0.00] | 36.9 [42.3; 1.00] | 32.8 [74.2; 1.00] | -24.8 [20.9; 1.00] | 44.9 [57.4; 1.00] |
-| levels (native) | 23.7 [36.7; 1.00] | 8.7 [-27.8; 0.00] | -10.7 [-26.9; 0.00] | 10.7 [11.8; 0.50] | -46.8 [-48.2; 0.00] | -12.6 [-4.0; 0.00] | -10.5 [35.1; 1.00] | 22.2 [25.1; 1.00] | -35.6 [-49.1; 0.00] | 28.4 [39.6; 1.00] | 25.0 [43.3; 1.00] | 27.9 [37.5; 1.00] | 26.7 [43.5; 1.00] |
-| live | 6.5 [27.3; 1.00] | 11.5 [44.7; 1.00] | -8.3 [-8.8; 0.00] | 4.8 [45.0; 1.00] | 9.8 [1.0; 0.50] | 4.9 [24.9; 1.00] | 39.0 [70.8; 1.00] | -6.0 [-4.3; 0.50] | n/a (no signals by construction) | 37.2 [34.0; 1.00] | 12.8 [31.6; 1.00] | -10.9 [-16.1; 0.00] | 3.3 [27.5; 1.00] |
-| manual | 29.4 [55.3; 1.00] | 13.1 [32.4; 1.00] | -13.3 [5.7; 0.50] | 17.3 [42.1; 1.00] | 15.5 [21.4; 1.00] | 29.0 [50.9; 1.00] | 3.0 [-37.5; 0.00] | -6.8 [-20.4; 0.00] | -10.2 [-4.4; 0.00] | -15.1 [13.1; 1.00] | 21.6 [35.6; 1.00] | 37.8 [41.5; 1.00] | 33.4 [14.4; 1.00] |
-| manual (native) | -66.3 [-45.9; 0.00] | -27.0 [2.1; 0.50] | 5.6 [16.0; 1.00] | -12.1 [24.3; 1.00] | -48.2 [no null yet] | -40.6 [-50.4; 0.00] | -31.4 [-17.9; 0.00] | -18.6 [-44.3; 0.00] | n/a (no signals by construction) | -14.8 [-26.3; 0.00] | -26.9 [-26.4; 0.00] | -22.0 [-3.7; 0.50] | -29.0 [-24.5; 0.00] |
-| momentum | 22.7 [-9.6; 0.50] | 42.1 [49.2; 0.50] | 4.1 [17.3; 1.00] | 27.5 [34.8; 1.00] | -19.0 [-19.7; 0.00] | -13.2 [-9.7; 0.50] | 21.3 [21.9; 1.00] | 7.2 [22.2; 0.50] | -2.4 [2.4; 0.50] | -3.9 [-6.9; 0.50] | -3.3 [24.0; 0.50] | 21.9 [21.7; 1.00] | 17.0 [29.8; 1.00] |
-| momentum (native) | 26.2 [30.8; 1.00] | 17.5 [15.7; 0.50] | 9.7 [24.5; 1.00] | -2.9 [-16.5; 0.00] | -10.1 [-8.8; 0.50] | -12.8 [3.5; 0.50] | 4.4 [10.5; 1.00] | 59.5 [127.9; 1.00] | -16.3 [-19.8; 0.00] | 5.0 [24.0; 1.00] | -8.2 [-5.3; 0.50] | 28.2 [43.2; 1.00] | 9.3 [2.8; 0.50] |
+| bands | 12.5 [8.3; 1.00] | 11.9 [28.1; 1.00] | -4.1 [16.5; 0.50] | 15.3 [28.9; 1.00] | -72.8 [-47.6; 0.00] | -0.8 [37.6; 1.00] | 44.1 [51.0; 1.00] | 7.4 [24.9; 1.00] | -12.7 [-18.7; 0.00] | 17.6 [34.7; 1.00] | 27.4 [11.9; 0.50] | 54.0 [45.1; 1.00] | 29.1 [26.1; 1.00] |
+| bands (native) | 6.9 [18.9; 1.00] | 12.2 [36.7; 1.00] | 10.7 [9.3; 1.00] | -28.1 [-6.4; 0.00] | -12.5 [-2.0; 0.50] | 25.9 [22.5; 1.00] | -14.1 [-8.9; 0.50] | 23.1 [45.6; 1.00] | -11.3 [-21.4; 0.00] | -8.1 [-3.6; 0.50] | 16.3 [8.5; 0.50] | 48.4 [84.0; 1.00] | 5.9 [7.6; 0.50] |
+| barnative | -40.6 [-34.9; 0.00] | -18.5 [-36.5; 0.00] | -22.8 [-23.4; 0.00] | 14.0 [81.5; 1.00] | 13.8 [43.7; 1.00] | -6.2 [11.6; 0.50] | -13.6 [-0.4; 0.50] | 41.7 [75.5; 1.00] | -3.5 [5.9; 0.50] | 36.1 [74.5; 1.00] | -8.0 [-23.8; 0.50] | 17.2 [-7.4; 0.50] | 1.4 [4.9; 0.50] |
+| book | 23.0 [32.9; 1.00] | 7.1 [20.5; 1.00] | n/a (no signals by construction) | 32.4 [51.4; 1.00] | n/a (no signals by construction) | 64.3 [65.7; 1.00] | 3.6 [12.7; 0.50] | 2.9 [27.0; 1.00] | n/a (no signals by construction) | 48.2 [55.5; 1.00] | 29.2 [50.5; 1.00] | 34.5 [39.1; 1.00] | 22.6 [63.6; 1.00] |
+| book (native) | 0.7 [26.1; 1.00] | 39.4 [53.4; 1.00] | n/a (no signals by construction) | 37.0 [47.6; 1.00] | n/a (no signals by construction) | -24.8 [14.8; 1.00] | 26.8 [41.3; 1.00] | 27.5 [51.8; 1.00] | n/a (no signals by construction) | 26.5 [34.4; 1.00] | 25.0 [25.8; 1.00] | -26.3 [19.1; 1.00] | 49.1 [71.9; 1.00] |
+| confluence | 12.2 [5.5; 1.00] | 31.2 [32.6; 1.00] | 2.7 [-3.1; 0.00] | 4.4 [8.4; 1.00] | 12.7 [36.7; 1.00] | -10.8 [12.1; 0.50] | 16.2 [29.5; 1.00] | 67.4 [62.7; 1.00] | -9.8 [-0.7; 0.50] | -11.6 [2.7; 0.50] | -8.8 [17.0; 1.00] | 1.9 [6.2; 0.50] | -3.4 [13.7; 1.00] |
+| levels | 10.4 [63.4; 1.00] | 0.5 [17.6; 1.00] | 18.3 [-0.8; 0.50] | 13.6 [37.7; 1.00] | -23.5 [7.5; 0.50] | -34.0 [-10.9; 0.00] | 8.4 [24.7; 1.00] | -22.4 [3.1; 0.50] | -15.6 [-10.4; 0.00] | 36.9 [42.3; 1.00] | 32.8 [74.2; 1.00] | -24.8 [20.9; 1.00] | 44.9 [57.4; 1.00] |
+| levels (native) | 23.7 [36.7; 1.00] | 8.7 [-27.8; 0.00] | -10.7 [-26.9; 0.00] | 10.7 [11.8; 0.50] | -46.8 [-48.2; 0.00] | -12.6 [-4.0; 0.00] | -10.5 [35.1; 1.00] | 22.2 [26.4; 1.00] | -35.6 [-49.1; 0.00] | 28.4 [39.6; 1.00] | 25.0 [43.3; 1.00] | 27.9 [37.5; 1.00] | 26.7 [43.5; 1.00] |
+| live | 6.5 [27.3; 1.00] | 11.5 [44.7; 1.00] | -8.3 [-8.8; 0.00] | 4.8 [45.0; 1.00] | 9.8 [1.0; 0.50] | 4.9 [24.9; 1.00] | 39.0 [70.8; 1.00] | -6.0 [-7.1; 0.50] | n/a (no signals by construction) | 37.2 [34.0; 1.00] | 12.8 [31.6; 1.00] | -10.9 [-16.1; 0.00] | 3.3 [27.5; 1.00] |
+| manual | 29.4 [55.3; 1.00] | 13.1 [32.4; 1.00] | -13.3 [5.7; 0.50] | 17.3 [42.1; 1.00] | 15.5 [21.4; 1.00] | 29.0 [50.9; 1.00] | 3.0 [-37.5; 0.00] | -9.3 [-25.8; 0.00] | -10.2 [-4.4; 0.00] | -15.1 [13.1; 1.00] | 21.6 [35.6; 1.00] | 37.8 [41.5; 1.00] | 33.4 [14.4; 1.00] |
+| manual (native) | -66.3 [-45.9; 0.00] | -27.0 [2.1; 0.50] | 5.6 [16.0; 1.00] | -12.1 [24.3; 1.00] | -48.2 [no null yet] | -40.6 [-50.4; 0.00] | -31.4 [-17.9; 0.00] | -14.5 [-42.8; 0.00] | n/a (no signals by construction) | -14.8 [-26.3; 0.00] | -26.9 [-26.4; 0.00] | -22.0 [-3.7; 0.50] | -29.0 [-24.5; 0.00] |
+| momentum | 22.7 [-9.6; 0.50] | 42.1 [49.2; 0.50] | 4.1 [17.3; 1.00] | 27.5 [34.8; 1.00] | -19.0 [-19.7; 0.00] | -13.2 [-9.7; 0.50] | 21.3 [21.9; 1.00] | 7.2 [24.2; 0.50] | -2.4 [2.4; 0.50] | -3.9 [-6.9; 0.50] | -3.3 [24.0; 0.50] | 21.9 [21.7; 1.00] | 17.0 [29.8; 1.00] |
+| momentum (native) | 26.2 [30.8; 1.00] | 17.5 [15.7; 0.50] | 9.7 [24.5; 1.00] | -2.9 [-16.5; 0.00] | -10.1 [-8.8; 0.50] | -12.8 [3.5; 0.50] | 4.4 [10.5; 1.00] | 59.5 [133.1; 1.00] | -16.3 [-19.8; 0.00] | 5.0 [24.0; 1.00] | -8.2 [-5.3; 0.50] | 28.2 [43.2; 1.00] | 9.3 [2.8; 0.50] |
 | pullback | 31.8 [42.9; 1.00] | -11.4 [12.5; 0.50] | 12.8 [23.4; 1.00] | -8.7 [11.0; 1.00] | -13.8 [-21.9; 0.00] | 18.5 [40.3; 1.00] | 34.4 [31.2; 1.00] | -27.2 [-1.4; 0.50] | 2.1 [5.3; 1.00] | -9.3 [-23.6; 0.00] | 40.1 [43.0; 1.00] | 5.6 [18.6; 1.00] | -21.1 [-20.6; 0.00] |
-| pullback (native) | 16.0 [55.7; 1.00] | 14.4 [51.6; 1.00] | -22.3 [-17.6; 0.50] | 10.0 [28.4; 1.00] | 4.6 [31.1; 1.00] | 5.0 [5.4; 0.50] | 1.8 [15.0; 0.50] | -23.2 [-3.7; 0.00] | -5.8 [6.3; 0.50] | 12.2 [52.7; 1.00] | 9.4 [28.6; 1.00] | 18.6 [42.6; 1.00] | -5.7 [16.1; 1.00] |
-| structure | 15.1 [-2.2; 0.50] | 2.6 [17.8; 1.00] | 7.5 [23.2; 1.00] | -2.6 [30.7; 1.00] | 41.8 [63.5; 1.00] | 42.4 [93.8; 1.00] | 58.6 [57.7; 1.00] | 37.9 [50.6; 1.00] | -21.0 [-11.4; 0.00] | -20.8 [-27.5; 0.00] | 10.0 [32.1; 1.00] | -2.2 [19.4; 0.50] | 8.9 [10.6; 0.50] |
-| structure (native) | 36.1 [50.1; 1.00] | 3.7 [17.9; 1.00] | 5.0 [24.6; 1.00] | -1.3 [8.3; 0.50] | -0.0 [28.2; 1.00] | 15.2 [41.4; 1.00] | -8.2 [-11.7; 0.50] | 1.6 [5.0; 0.50] | n/a (no signals by construction) | -9.8 [3.4; 0.50] | 25.6 [23.3; 1.00] | 25.4 [29.8; 1.00] | 9.0 [0.7; 0.50] |
-| tape | -6.6 [-35.6; 0.00] | -11.7 [-5.6; 0.50] | -8.9 [-0.5; 0.50] | -0.4 [17.8; 1.00] | 11.3 [25.2; 1.00] | -16.4 [-20.4; 0.00] | -9.0 [29.3; 0.50] | 19.9 [15.0; 0.50] | -5.4 [-9.7; 0.00] | -24.2 [-33.1; 0.00] | -0.3 [6.1; 0.50] | -20.4 [-2.6; 0.50] | -13.7 [20.3; 1.00] |
-| tape (native) | 4.5 [28.7; 1.00] | 32.7 [41.9; 1.00] | -10.5 [no null yet] | -0.0 [30.9; 1.00] | -11.9 [5.3; 0.50] | -20.4 [-2.5; 0.50] | -9.7 [24.5; 1.00] | 22.6 [42.2; 1.00] | -6.1 [-5.6; 0.50] | -4.4 [-24.7; 0.00] | -19.4 [-46.3; 0.00] | -28.4 [-38.2; 0.00] | -34.3 [-60.4; 0.00] |
-| trend | -26.7 [-17.0; 0.00] | 14.8 [21.9; 1.00] | -20.3 [-9.3; 0.00] | -8.0 [-18.7; 0.00] | -34.2 [-23.8; 0.50] | 14.6 [28.2; 1.00] | -17.4 [-10.9; 0.50] | -1.8 [-7.9; 0.50] | -10.4 [-12.2; 0.00] | -8.6 [-14.4; 0.00] | 17.9 [12.9; 0.50] | -24.2 [-7.1; 0.00] | 37.7 [33.1; 1.00] |
-| trend (native) | -45.1 [-48.0; 0.00] | -1.8 [12.3; 0.50] | -23.6 [-0.5; 0.50] | -37.3 [-49.6; 0.00] | -9.3 [14.6; 0.50] | -12.7 [10.4; 0.50] | -7.4 [-20.0; 0.00] | 2.5 [-3.0; 0.50] | -29.6 [-30.9; 0.00] | -27.4 [-47.5; 0.00] | 17.5 [33.5; 1.00] | -12.0 [-2.8; 0.50] | 21.0 [46.3; 1.00] |
-| xmarket | -11.7 [9.2; 0.50] | -46.2 [-34.8; 0.00] | 10.1 [21.8; 1.00] | -41.1 [-36.7; 0.00] | 8.5 [33.9; 1.00] | -35.4 [-35.2; 0.00] | -12.9 [8.9; 1.00] | -23.4 [3.9; 0.50] | -4.9 [2.4; 1.00] | -22.7 [-9.4; 0.50] | 7.1 [24.1; 0.50] | 13.8 [36.4; 1.00] | 14.8 [44.9; 1.00] |
+| pullback (native) | 16.0 [55.7; 1.00] | 14.4 [51.6; 1.00] | -22.3 [-17.6; 0.50] | 10.0 [28.4; 1.00] | 4.6 [31.1; 1.00] | 5.0 [5.4; 0.50] | 1.8 [15.0; 0.50] | -16.7 [6.7; 1.00] | -5.8 [6.3; 0.50] | 12.2 [52.7; 1.00] | 9.4 [28.6; 1.00] | 18.6 [42.6; 1.00] | -5.7 [16.1; 1.00] |
+| structure | 15.1 [-2.2; 0.50] | 2.6 [17.8; 1.00] | 7.5 [23.2; 1.00] | -2.6 [30.7; 1.00] | 41.8 [63.5; 1.00] | 42.4 [93.8; 1.00] | 58.6 [57.7; 1.00] | 37.9 [45.5; 1.00] | -21.0 [-11.4; 0.00] | -20.8 [-27.5; 0.00] | 10.0 [32.1; 1.00] | -2.2 [19.4; 0.50] | 8.9 [10.6; 0.50] |
+| structure (native) | 36.1 [50.1; 1.00] | 3.7 [17.9; 1.00] | 5.0 [24.6; 1.00] | -1.3 [8.3; 0.50] | -0.0 [28.2; 1.00] | 15.2 [41.4; 1.00] | -8.2 [-11.7; 0.50] | 1.6 [6.8; 0.50] | n/a (no signals by construction) | -9.8 [3.4; 0.50] | 25.6 [23.3; 1.00] | 25.4 [29.8; 1.00] | 9.0 [0.7; 0.50] |
+| tape | -6.6 [-35.6; 0.00] | -11.7 [-5.6; 0.50] | -8.9 [-0.5; 0.50] | -0.4 [17.8; 1.00] | 11.3 [25.2; 1.00] | -16.4 [-20.4; 0.00] | -9.0 [29.3; 0.50] | 17.3 [9.6; 0.50] | -5.4 [-9.7; 0.00] | -24.2 [-33.1; 0.00] | -0.3 [6.1; 0.50] | -20.4 [-2.6; 0.50] | -13.7 [20.3; 1.00] |
+| tape (native) | 4.5 [28.7; 1.00] | 32.7 [41.9; 1.00] | -10.5 [no null yet] | -0.0 [30.9; 1.00] | -11.9 [5.3; 0.50] | -20.4 [-2.5; 0.50] | -9.7 [24.5; 1.00] | 22.6 [39.3; 1.00] | -6.1 [-5.6; 0.50] | -4.4 [-24.7; 0.00] | -19.4 [-46.3; 0.00] | -28.4 [-38.2; 0.00] | -34.3 [-60.4; 0.00] |
+| trend | -26.7 [-17.0; 0.00] | 14.8 [21.9; 1.00] | -20.3 [-9.3; 0.00] | -8.0 [-18.7; 0.00] | -34.2 [-23.8; 0.50] | 14.6 [28.2; 1.00] | -17.4 [-10.9; 0.50] | -1.8 [5.7; 1.00] | -10.4 [-12.2; 0.00] | -8.6 [-14.4; 0.00] | 17.9 [12.9; 0.50] | -24.2 [-7.1; 0.00] | 37.7 [33.1; 1.00] |
+| trend (native) | -45.1 [-48.0; 0.00] | -1.8 [12.3; 0.50] | -23.6 [-0.5; 0.50] | -37.3 [-49.6; 0.00] | -9.3 [14.6; 0.50] | -12.7 [10.4; 0.50] | -7.4 [-20.0; 0.00] | 2.5 [-2.1; 0.50] | -29.6 [-30.9; 0.00] | -27.4 [-47.5; 0.00] | 17.5 [33.5; 1.00] | -12.0 [-2.8; 0.50] | 21.0 [46.3; 1.00] |
+| xmarket | -11.7 [9.2; 0.50] | -46.2 [-34.8; 0.00] | 10.1 [21.8; 1.00] | -41.1 [-36.7; 0.00] | 8.5 [33.9; 1.00] | -35.4 [-35.2; 0.00] | -12.9 [8.9; 1.00] | -23.4 [1.8; 0.50] | -4.9 [2.4; 1.00] | -22.7 [-9.4; 0.50] | 7.1 [24.1; 0.50] | 13.8 [36.4; 1.00] | 14.8 [44.9; 1.00] |
 ### PASS 1: 10 best family cells in NYAM (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| confluence|PRICE | 67.4 | 0.067 | 288.5 | 0.62 | 93.6 | -55.2 | {"2023": 82.5, "2024": 75.1, "2025": 59.4, "2026": 62.8} | 4.6 | 62.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | book|INFORMATION | 64.3 | 0.046 | 417.2 | 0.60 | 183.8 | 247.7 | {"2023": 37.0, "2024": 2.5, "2025": 124.6, "2026": 74.6} | -1.4 | 65.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| confluence|PRICE | 62.3 | 0.063 | 296.3 | 0.60 | 93.6 | -55.2 | {"2023": 82.5, "2024": 59.4, "2025": 59.4, "2026": 62.8} | 8.1 | 54.2 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| momentum (native)|PRICE | 59.5 | 0.034 | 299.6 | 0.54 | 54.1 | 131.5 | {"2023": 55.2, "2024": 16.2, "2025": 130.9, "2026": 27.8} | -68.4 | 127.9 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| momentum (native)|PRICE | 59.5 | 0.034 | 299.6 | 0.54 | 54.1 | 131.5 | {"2023": 55.2, "2024": 16.2, "2025": 130.9, "2026": 27.8} | -73.6 | 133.1 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | structure|INFORMATION(book) | 58.6 | 0.041 | 377.7 | 0.57 | 71.1 | 146.1 | {"2023": 112.6, "2024": 17.6, "2025": 67.4, "2026": 79.5} | 0.9 | 57.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | bands|TIME | 54.0 | 0.030 | 466.9 | 0.59 | 94.7 | 36.4 | {"2023": 10.3, "2024": 24.4, "2025": 67.7, "2026": 86.9} | 8.9 | 45.1 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | book (native)|UNKNOWN | 49.1 | 0.028 | 857.9 | 0.59 | -28.6 | -124.2 | {"2023": -129.0, "2024": 22.3, "2025": 126.4, "2026": 46.0} | -22.9 | 71.9 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
@@ -183,7 +183,7 @@ Live books in London on their live bars (same screen, plain 60/60): K7 tm180 L6M
 | book|SESSION-RELATIVE | 48.2 | 0.019 | 651.5 | 0.58 | 25.2 | -19.2 | {"2023": -10.5, "2024": 1.4, "2025": 176.6, "2026": -29.6} | -7.4 | 55.5 | 1.00 | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "RED"} |
 | levels|UNKNOWN | 44.9 | 0.034 | 577.1 | 0.58 | 76.1 | 121.9 | {"2023": -14.9, "2024": -2.0, "2025": 107.2, "2026": 45.6} | -12.5 | 57.4 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | bands|INFORMATION(book) | 44.1 | 0.023 | 535.6 | 0.64 | 14.1 | 61.0 | {"2023": -25.7, "2024": 62.2, "2025": 89.8, "2026": -9.1} | -6.9 | 51.0 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "ok", "2026": "AMBER"} |
-Live books in NYAM on their live bars (same screen, plain 60/60): K7 tm180 L6M -75.5 pts/wk, rank 7% (top 93.4%); M7 tm60 L6M -8.9 pts/wk, rank 45% (top 54.9%); U7 tm600 L6M -11.4 pts/wk, rank 42% (top 57.8%); P7 tm60 L6M -60.7 pts/wk, rank 11% (top 89.5%); H7 tm60 L6M 28.8 pts/wk, rank 85% (top 14.7%); A7 tm60 L6M -17.2 pts/wk, rank 36% (top 63.6%); O7 tm60 L6M 15.1 pts/wk, rank 76% (top 23.8%). Rank = share of ALL NYAM cells with a lower trailing-26w result.
+Live books in NYAM on their live bars (same screen, plain 60/60): K7 tm180 L6M -75.5 pts/wk, rank 7% (top 93.4%); M7 tm60 L6M -8.9 pts/wk, rank 45% (top 54.9%); U7 tm600 L6M -11.4 pts/wk, rank 42% (top 57.7%); P7 tm60 L6M -60.7 pts/wk, rank 11% (top 89.5%); H7 tm60 L6M 28.8 pts/wk, rank 85% (top 14.6%); A7 tm60 L6M -17.2 pts/wk, rank 36% (top 63.5%); O7 tm60 L6M 15.1 pts/wk, rank 76% (top 23.7%). Rank = share of ALL NYAM cells with a lower trailing-26w result.
 
 ### PASS 2 (full grid, 7 brackets, selected pairs, own nulls): 10 best family cells in NYAM (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
@@ -221,39 +221,39 @@ Live books in NYAM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 | 17 | pnf_5 | book.book_cancel.ratio_follow | {"L": 50, "z": 1.0} | sym30u | both | 8430 | 3540 | 508 | 1.00 | 5 / 311 / 2691 / 1.00 | {"2023": 1715.0, "2024": -318.0, "2025": 3183.0, "2026": 10176.0} |
 | 18 | time_s_20 | xmarket.xmarket_fast.follow_RTY | {"w": 5, "thr": 1.0} | sym15u | both | 8370 | 2950 | 570 | 0.75 | 5 / -1518 / 1839 / 1.00 | {"2023": 2445.0, "2024": -2021.0, "2025": 3099.0, "2026": 9901.0} |
 | 19 | pnf_5 | book.book_cancel.ratio_follow | {"L": 200, "z": 2.0} | sym15u | both | 8334 | 2137 | 439 | 0.67 | 5 / -1000 / -40 / 1.00 | {"2023": -974.0, "2024": 373.0, "2025": 5390.0, "2026": 6562.0} |
-| 20 | tick_3200 | xmarket.xmarket_es.revert | {"w": 1, "thr": 1.0} | sym15u | both | 8330 | 2851 | 454 | 1.00 | 5 / -1219 / 1308 / 1.00 | {"2023": 1949.0, "2024": 71.0, "2025": 270.0, "2026": 9143.0} |
+| 20 | tick_3200 | xmarket.xmarket_es.revert | {"w": 1, "thr": 1.0} | sym8u | both | 8330 | 2851 | 454 | 1.00 | 5 / -1219 / 1308 / 1.00 | {"2023": 1979.0, "2024": 70.0, "2025": 270.0, "2026": 9143.0} |
 
 ## NYPM
 ### Headline: best pick over the whole grid (OOS mean pts/week at 1 lot, 4.84 incl)
 | pick | OOS pts/wk | R/trade | ulcer (wk pts) | persistence | L6M pts/wk | L3M pts/wk | null mean | null max | excess | pctile | shifted-label mean | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | free | -6.2 | -0.000 | 1093.6 | 0.48 | 41.7 | -24.2 | -12.6 | -8.4 | 6.4 | 1.00 | -17.5 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
-| agreed | -5.2 | 0.000 | 935.7 | 0.48 | 36.8 | -24.2 | -10.5 | -9.9 | 5.3 | 1.00 | -10.8 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
+| agreed | -5.2 | 0.000 | 935.7 | 0.48 | 36.8 | -24.2 | -7.7 | -5.6 | 2.5 | 1.00 | -10.8 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | ACTIVITY(book) | ANCHORED | COMPOSITE | FOOTPRINT | INFORMATION | INFORMATION(book) | PRICE | PROFILE | SESSION-RELATIVE | SMOOTHING | TIME | UNKNOWN |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| bands | 19.6 [18.0; 1.00] | -18.3 [-20.8; 0.00] | -17.6 [-39.8; 0.00] | -1.2 [20.4; 1.00] | 19.0 [30.1; 1.00] | 14.0 [26.6; 0.50] | -16.5 [5.2; 0.50] | -15.1 [13.0; 0.50] | -12.1 [-7.9; 0.00] | 2.8 [-13.9; 0.00] | 16.3 [28.4; 0.50] | -44.8 [-33.0; 0.50] | -26.9 [-40.4; 0.00] |
+| bands | 19.6 [18.0; 1.00] | -18.3 [-20.8; 0.00] | -17.6 [-39.8; 0.00] | -1.2 [20.4; 1.00] | 19.0 [30.1; 1.00] | 14.0 [26.6; 0.50] | -16.5 [5.2; 0.50] | -15.1 [14.9; 0.50] | -12.1 [-7.9; 0.00] | 2.8 [-13.9; 0.00] | 16.3 [28.4; 0.50] | -44.8 [-33.0; 0.50] | -26.9 [-40.4; 0.00] |
 | bands (native) | 26.3 [30.6; 1.00] | -20.6 [6.8; 0.50] | 5.6 [2.5; 1.00] | -16.7 [-20.5; 0.00] | -39.7 [-43.5; 0.00] | -73.0 [-55.0; 0.00] | -31.0 [-5.9; 0.00] | 34.4 [52.6; 1.00] | -29.2 [-24.1; 0.00] | -52.3 [-49.8; 0.00] | -31.7 [-16.9; 0.00] | -23.6 [-36.2; 0.00] | -41.6 [-46.2; 0.00] |
-| barnative | -0.9 [-5.2; 0.50] | 20.7 [23.2; 1.00] | -8.2 [4.2; 0.50] | -12.1 [-0.8; 0.50] | -10.3 [-3.3; 0.50] | 1.0 [20.0; 1.00] | -7.0 [-22.1; 0.00] | 14.0 [15.1; 1.00] | -10.9 [-2.1; 0.50] | 16.6 [34.8; 1.00] | -2.1 [18.7; 1.00] | -37.5 [-72.0; 0.00] | 16.5 [35.9; 1.00] |
-| book | -15.9 [-23.9; 0.00] | -35.5 [-66.1; 0.00] | n/a (no signals by construction) | -18.0 [-15.0; 0.00] | n/a (no signals by construction) | -17.0 [-9.1; 0.00] | -31.9 [-16.9; 0.00] | 4.9 [3.9; 0.50] | n/a (no signals by construction) | -5.3 [-11.2; 0.00] | 2.2 [39.2; 1.00] | -23.7 [-14.5; 0.00] | 11.2 [45.3; 1.00] |
-| book (native) | -20.8 [-26.1; 0.00] | -12.1 [12.6; 1.00] | n/a (no signals by construction) | 20.5 [25.5; 1.00] | n/a (no signals by construction) | -47.3 [-42.9; 0.00] | 1.2 [24.5; 1.00] | 12.1 [17.6; 1.00] | n/a (no signals by construction) | -13.6 [3.0; 0.50] | 39.1 [41.2; 1.00] | -31.7 [-13.0; 0.00] | 43.8 [47.2; 1.00] |
-| confluence | 9.8 [8.9; 0.50] | 4.6 [-14.8; 0.00] | -6.9 [-11.9; 0.00] | -28.1 [-10.4; 0.00] | -30.1 [-31.5; 0.00] | -5.7 [-8.5; 0.50] | -7.8 [-1.9; 0.00] | -35.3 [-32.1; 0.00] | 0.6 [-7.9; 0.50] | 5.1 [-0.9; 0.50] | -40.7 [-27.1; 0.00] | -26.3 [-40.6; 0.00] | 6.9 [-29.4; 0.00] |
+| barnative | -0.9 [-5.2; 0.50] | 20.7 [23.2; 1.00] | -8.2 [4.2; 0.50] | -12.1 [-0.8; 0.50] | -10.3 [-3.3; 0.50] | 1.0 [20.0; 1.00] | -7.0 [-22.1; 0.00] | 18.3 [21.7; 1.00] | -10.9 [-2.1; 0.50] | 16.6 [34.8; 1.00] | -2.1 [18.7; 1.00] | -37.5 [-72.0; 0.00] | 16.5 [35.9; 1.00] |
+| book | -15.9 [-23.9; 0.00] | -35.5 [-66.1; 0.00] | n/a (no signals by construction) | -18.0 [-15.0; 0.00] | n/a (no signals by construction) | -17.0 [-9.1; 0.00] | -31.9 [-16.9; 0.00] | 1.8 [5.0; 0.50] | n/a (no signals by construction) | -5.3 [-11.2; 0.00] | 2.2 [39.2; 1.00] | -23.7 [-14.5; 0.00] | 11.2 [45.3; 1.00] |
+| book (native) | -20.8 [-26.1; 0.00] | -12.1 [12.6; 1.00] | n/a (no signals by construction) | 20.5 [25.5; 1.00] | n/a (no signals by construction) | -47.3 [-42.9; 0.00] | 1.2 [24.5; 1.00] | 12.1 [16.8; 1.00] | n/a (no signals by construction) | -13.6 [3.0; 0.50] | 39.1 [41.2; 1.00] | -31.7 [-13.0; 0.00] | 43.8 [47.2; 1.00] |
+| confluence | 9.8 [8.9; 0.50] | 4.6 [-14.8; 0.00] | -6.9 [-11.9; 0.00] | -28.1 [-10.4; 0.00] | -30.1 [-31.5; 0.00] | -5.7 [-8.5; 0.50] | -7.8 [-1.9; 0.00] | -35.6 [-33.1; 0.00] | 0.6 [-7.9; 0.50] | 5.1 [-0.9; 0.50] | -40.7 [-27.1; 0.00] | -26.3 [-40.6; 0.00] | 6.9 [-29.4; 0.00] |
 | levels | 17.1 [18.3; 0.50] | 14.7 [21.6; 0.50] | -0.7 [-3.0; 0.50] | 23.1 [12.3; 1.00] | 1.3 [-15.0; 0.00] | -25.7 [-12.3; 0.00] | 7.4 [7.9; 1.00] | -20.7 [-27.1; 0.00] | -8.3 [1.7; 0.50] | -4.7 [-39.6; 0.00] | -21.5 [-44.6; 0.00] | -18.8 [-27.7; 0.00] | -34.5 [-33.6; 0.00] |
-| levels (native) | -6.4 [16.0; 1.00] | 20.1 [46.0; 1.00] | -1.8 [8.1; 1.00] | -24.4 [-22.0; 0.50] | 36.3 [44.0; 1.00] | -23.7 [-25.5; 0.00] | 32.2 [39.4; 1.00] | -16.3 [-19.6; 0.50] | 6.7 [6.4; 1.00] | -9.2 [4.0; 0.50] | -21.9 [-2.8; 0.50] | -15.4 [-6.9; 0.50] | -22.1 [-18.3; 0.00] |
+| levels (native) | -6.4 [16.0; 1.00] | 20.1 [46.0; 1.00] | -1.8 [8.1; 1.00] | -24.4 [-22.0; 0.50] | 36.3 [44.0; 1.00] | -23.7 [-25.5; 0.00] | 32.2 [39.4; 1.00] | -16.3 [-19.5; 0.50] | 6.7 [6.4; 1.00] | -9.2 [4.0; 0.50] | -21.9 [-2.8; 0.50] | -15.4 [-6.9; 0.50] | -22.1 [-18.3; 0.00] |
 | live | -18.9 [0.9; 0.50] | 1.8 [-0.3; 0.50] | -29.2 [-27.8; 0.00] | -20.7 [-7.4; 0.50] | -26.5 [-27.4; 0.00] | -46.0 [-21.8; 0.00] | -51.8 [-43.2; 0.00] | -33.7 [-46.8; 0.00] | n/a (no signals by construction) | -31.1 [-12.4; 0.00] | 24.9 [35.9; 1.00] | -31.3 [-53.1; 0.00] | -7.0 [-22.4; 0.00] |
-| manual | 33.4 [9.5; 0.50] | -16.0 [-2.7; 0.50] | -51.0 [-36.1; 0.00] | -15.4 [-16.8; 0.00] | 5.1 [21.6; 1.00] | -16.1 [-31.3; 0.50] | -5.2 [-12.6; 0.50] | 6.4 [12.6; 1.00] | -4.7 [2.3; 1.00] | -10.7 [0.2; 0.50] | -22.2 [16.9; 1.00] | 5.6 [6.3; 0.50] | -31.6 [-19.7; 0.00] |
-| manual (native) | 27.6 [12.7; 0.50] | 9.7 [4.2; 0.50] | -25.2 [-13.7; 0.00] | 38.5 [53.1; 1.00] | -15.6 [no null yet] | 3.4 [28.8; 1.00] | -15.4 [-6.0; 0.00] | 28.6 [26.5; 1.00] | n/a (no signals by construction) | 6.6 [20.0; 0.50] | -10.4 [-7.8; 0.00] | -17.8 [-0.5; 0.50] | -33.5 [-36.3; 0.00] |
-| momentum | 7.8 [12.9; 1.00] | -11.1 [13.2; 1.00] | -10.7 [3.5; 0.50] | -25.4 [-25.5; 0.50] | -35.3 [-21.8; 0.00] | 12.1 [-0.7; 0.50] | -13.2 [8.6; 0.50] | -11.0 [20.0; 1.00] | -11.3 [-11.8; 0.00] | -3.8 [9.9; 0.50] | -42.8 [-42.2; 0.00] | -8.8 [7.7; 0.50] | -35.2 [-36.0; 0.00] |
-| momentum (native) | 9.6 [30.3; 1.00] | 4.8 [16.1; 1.00] | -0.6 [-10.8; 0.00] | -24.1 [3.5; 0.50] | -11.1 [-4.2; 0.50] | -12.7 [13.9; 0.50] | -11.2 [-19.9; 0.00] | -1.8 [19.7; 1.00] | -4.3 [-2.6; 0.50] | 7.7 [24.4; 1.00] | -17.7 [1.6; 0.50] | -7.5 [4.1; 0.50] | -32.8 [-34.3; 0.00] |
-| pullback | -33.6 [-44.3; 0.00] | -24.6 [9.8; 0.50] | 28.3 [17.8; 1.00] | 19.9 [38.8; 1.00] | -21.5 [-10.3; 0.50] | -44.6 [-37.2; 0.00] | 8.8 [26.4; 1.00] | -4.9 [17.8; 1.00] | 0.8 [16.0; 1.00] | -26.8 [-0.7; 0.50] | -30.5 [-8.3; 0.50] | -17.4 [6.0; 1.00] | -3.3 [5.3; 0.50] |
-| pullback (native) | -18.9 [22.7; 1.00] | -28.1 [-21.1; 0.00] | -21.5 [-25.9; 0.00] | -24.4 [-35.9; 0.00] | -28.9 [-7.6; 0.00] | -19.9 [-7.8; 0.00] | -4.3 [-26.4; 0.00] | -4.1 [18.9; 1.00] | -29.6 [-27.4; 0.00] | -2.8 [34.7; 1.00] | -7.0 [-9.9; 0.50] | -14.0 [7.5; 0.50] | -3.1 [13.6; 1.00] |
-| structure | 19.9 [48.2; 1.00] | -15.1 [11.7; 0.50] | -25.2 [-11.1; 0.00] | -17.6 [6.8; 0.50] | 2.0 [-11.2; 0.50] | 11.3 [33.6; 1.00] | 15.2 [49.8; 1.00] | -33.6 [-2.6; 0.50] | -7.4 [-4.0; 0.50] | -30.5 [-47.7; 0.00] | -30.8 [-41.4; 0.00] | 15.7 [32.7; 1.00] | -34.4 [-10.2; 0.50] |
-| structure (native) | -0.2 [-14.7; 0.50] | -27.9 [-34.7; 0.00] | -9.9 [-12.0; 0.00] | -25.7 [-14.7; 0.50] | -39.7 [-31.3; 0.00] | -28.9 [-31.3; 0.00] | 2.6 [-13.1; 0.50] | -17.6 [-40.6; 0.00] | n/a (no signals by construction) | -17.7 [-8.2; 0.00] | 22.4 [32.3; 1.00] | 31.5 [49.1; 1.00] | -3.8 [-9.2; 0.00] |
-| tape | -7.4 [-14.1; 0.00] | 16.6 [13.9; 1.00] | -7.8 [7.9; 0.50] | 5.9 [-12.2; 0.00] | -53.4 [-54.1; 0.00] | 9.2 [7.2; 0.50] | 29.5 [38.4; 1.00] | -11.9 [-16.3; 0.00] | -8.0 [-12.2; 0.00] | -51.0 [-43.2; 0.00] | -25.0 [-15.1; 0.50] | -9.6 [14.0; 1.00] | 0.3 [8.4; 0.50] |
-| tape (native) | 14.2 [21.4; 1.00] | -11.8 [4.9; 0.50] | -26.2 [no null yet] | -31.8 [-16.0; 0.00] | -7.5 [14.6; 1.00] | -27.5 [-25.4; 0.00] | -20.8 [-38.4; 0.00] | 19.9 [44.1; 1.00] | n/a (no signals by construction) | 27.4 [21.1; 1.00] | -31.8 [-15.6; 0.00] | 7.6 [23.6; 1.00] | -15.2 [-2.0; 0.00] |
-| trend | -30.5 [-5.8; 0.50] | 24.0 [37.7; 1.00] | -12.5 [-26.9; 0.00] | 9.8 [58.7; 1.00] | -13.7 [-44.6; 0.00] | 43.7 [82.1; 1.00] | -36.2 [-39.3; 0.00] | 16.5 [35.2; 1.00] | 3.6 [13.3; 1.00] | -1.4 [15.6; 1.00] | -32.0 [-37.0; 0.00] | 35.4 [22.1; 1.00] | -39.6 [-10.4; 0.00] |
-| trend (native) | 12.5 [27.1; 1.00] | -7.5 [-22.6; 0.00] | 4.0 [-3.0; 0.00] | -26.3 [-27.5; 0.00] | -4.7 [-19.5; 0.00] | -13.7 [-0.7; 0.50] | -12.0 [-14.9; 0.00] | -15.7 [-18.8; 0.00] | -11.6 [-14.1; 0.00] | -16.0 [-12.7; 0.00] | -28.7 [-15.8; 0.00] | 23.1 [41.4; 1.00] | -16.0 [-17.5; 0.50] |
-| xmarket | 31.2 [46.2; 1.00] | -6.9 [-8.8; 0.00] | -16.8 [-30.1; 0.00] | -10.3 [-13.0; 0.00] | -22.9 [-28.4; 0.00] | -34.2 [-26.5; 0.00] | -16.9 [-33.2; 0.00] | -52.5 [-70.5; 0.00] | 13.7 [15.9; 1.00] | -15.6 [-10.2; 0.50] | 0.6 [5.3; 1.00] | -28.8 [-16.3; 0.00] | -1.6 [10.6; 0.50] |
+| manual | 33.4 [9.5; 0.50] | -16.0 [-2.7; 0.50] | -51.0 [-36.1; 0.00] | -15.4 [-16.8; 0.00] | 5.1 [21.6; 1.00] | -16.1 [-31.3; 0.50] | -5.2 [-12.6; 0.50] | -1.7 [3.0; 0.50] | -4.7 [2.3; 1.00] | -10.7 [0.2; 0.50] | -22.2 [16.9; 1.00] | 5.6 [6.3; 0.50] | -31.6 [-19.7; 0.00] |
+| manual (native) | 27.6 [12.7; 0.50] | 9.7 [4.2; 0.50] | -25.2 [-13.7; 0.00] | 38.5 [53.1; 1.00] | -15.6 [no null yet] | 3.4 [28.8; 1.00] | -15.4 [-6.0; 0.00] | 28.6 [29.9; 1.00] | n/a (no signals by construction) | 6.6 [20.0; 0.50] | -10.4 [-7.8; 0.00] | -17.8 [-0.5; 0.50] | -33.5 [-36.3; 0.00] |
+| momentum | 7.8 [12.9; 1.00] | -11.1 [13.2; 1.00] | -10.7 [3.5; 0.50] | -25.4 [-25.5; 0.50] | -35.3 [-21.8; 0.00] | 12.1 [-0.7; 0.50] | -13.2 [8.6; 0.50] | -11.0 [16.8; 1.00] | -11.3 [-11.8; 0.00] | -3.8 [9.9; 0.50] | -42.8 [-42.2; 0.00] | -8.8 [7.7; 0.50] | -35.2 [-36.0; 0.00] |
+| momentum (native) | 9.6 [30.3; 1.00] | 4.8 [16.1; 1.00] | -0.6 [-10.8; 0.00] | -24.1 [3.5; 0.50] | -11.1 [-4.2; 0.50] | -12.7 [13.9; 0.50] | -11.2 [-19.9; 0.00] | -1.8 [17.1; 1.00] | -4.3 [-2.6; 0.50] | 7.7 [24.4; 1.00] | -17.7 [1.6; 0.50] | -7.5 [4.1; 0.50] | -32.8 [-34.3; 0.00] |
+| pullback | -33.6 [-44.3; 0.00] | -24.6 [9.8; 0.50] | 28.3 [17.8; 1.00] | 19.9 [38.8; 1.00] | -21.5 [-10.3; 0.50] | -44.6 [-37.2; 0.00] | 8.8 [26.4; 1.00] | -7.2 [19.5; 1.00] | 0.8 [16.0; 1.00] | -26.8 [-0.7; 0.50] | -30.5 [-8.3; 0.50] | -17.4 [6.0; 1.00] | -3.3 [5.3; 0.50] |
+| pullback (native) | -18.9 [22.7; 1.00] | -28.1 [-21.1; 0.00] | -21.5 [-25.9; 0.00] | -24.4 [-35.9; 0.00] | -28.9 [-7.6; 0.00] | -19.9 [-7.8; 0.00] | -4.3 [-26.4; 0.00] | -3.0 [23.1; 1.00] | -29.6 [-27.4; 0.00] | -2.8 [34.7; 1.00] | -7.0 [-9.9; 0.50] | -14.0 [7.5; 0.50] | -3.1 [13.6; 1.00] |
+| structure | 19.9 [48.2; 1.00] | -15.1 [11.7; 0.50] | -25.2 [-11.1; 0.00] | -17.6 [6.8; 0.50] | 2.0 [-11.2; 0.50] | 11.3 [33.6; 1.00] | 15.2 [49.8; 1.00] | -33.6 [-5.0; 0.00] | -7.4 [-4.0; 0.50] | -30.5 [-47.7; 0.00] | -30.8 [-41.4; 0.00] | 15.7 [32.7; 1.00] | -34.4 [-10.2; 0.50] |
+| structure (native) | -0.2 [-14.7; 0.50] | -27.9 [-34.7; 0.00] | -9.9 [-12.0; 0.00] | -25.7 [-14.7; 0.50] | -39.7 [-31.3; 0.00] | -28.9 [-31.3; 0.00] | 2.6 [-13.1; 0.50] | -17.7 [-29.0; 0.00] | n/a (no signals by construction) | -17.7 [-8.2; 0.00] | 22.4 [32.3; 1.00] | 31.5 [49.1; 1.00] | -3.8 [-9.2; 0.00] |
+| tape | -7.4 [-14.1; 0.00] | 16.6 [13.9; 1.00] | -7.8 [7.9; 0.50] | 5.9 [-12.2; 0.00] | -53.4 [-54.1; 0.00] | 9.2 [7.2; 0.50] | 29.5 [38.4; 1.00] | -12.3 [-17.8; 0.00] | -8.0 [-12.2; 0.00] | -51.0 [-43.2; 0.00] | -25.0 [-15.1; 0.50] | -9.6 [14.0; 1.00] | 0.3 [8.4; 0.50] |
+| tape (native) | 14.2 [21.4; 1.00] | -11.8 [4.9; 0.50] | -26.2 [no null yet] | -31.8 [-16.0; 0.00] | -7.5 [14.6; 1.00] | -27.5 [-25.4; 0.00] | -20.8 [-38.4; 0.00] | 19.9 [36.0; 1.00] | n/a (no signals by construction) | 27.4 [21.1; 1.00] | -31.8 [-15.6; 0.00] | 7.6 [23.6; 1.00] | -15.2 [-2.0; 0.00] |
+| trend | -30.5 [-5.8; 0.50] | 24.0 [37.7; 1.00] | -12.5 [-26.9; 0.00] | 9.8 [58.7; 1.00] | -13.7 [-44.6; 0.00] | 43.7 [82.1; 1.00] | -36.2 [-39.3; 0.00] | 16.5 [34.8; 1.00] | 3.6 [13.3; 1.00] | -1.4 [15.6; 1.00] | -32.0 [-37.0; 0.00] | 35.4 [22.1; 1.00] | -39.6 [-10.4; 0.00] |
+| trend (native) | 12.5 [27.1; 1.00] | -7.5 [-22.6; 0.00] | 4.0 [-3.0; 0.00] | -26.3 [-27.5; 0.00] | -4.7 [-19.5; 0.00] | -13.7 [-0.7; 0.50] | -12.0 [-14.9; 0.00] | -15.7 [-15.3; 0.00] | -11.6 [-14.1; 0.00] | -16.0 [-12.7; 0.00] | -28.7 [-15.8; 0.00] | 23.1 [41.4; 1.00] | -16.0 [-17.5; 0.50] |
+| xmarket | 31.2 [46.2; 1.00] | -6.9 [-8.8; 0.00] | -16.8 [-30.1; 0.00] | -10.3 [-13.0; 0.00] | -22.9 [-28.4; 0.00] | -34.2 [-26.5; 0.00] | -16.9 [-33.2; 0.00] | -52.5 [-67.2; 0.00] | 13.7 [15.9; 1.00] | -15.6 [-10.2; 0.50] | 0.6 [5.3; 1.00] | -28.8 [-16.3; 0.00] | -1.6 [10.6; 0.50] |
 ### PASS 1: 10 best family cells in NYPM (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -267,7 +267,7 @@ Live books in NYAM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 | manual|ACTIVITY | 33.4 | 0.029 | 364.0 | 0.52 | 49.6 | 70.9 | {"2023": 91.4, "2024": 6.8, "2025": 63.8, "2026": 10.5} | 23.9 | 9.5 | 0.50 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | levels (native)|INFORMATION(book) | 32.2 | 0.030 | 242.0 | 0.53 | 48.1 | -44.7 | {"2023": 11.9, "2024": 25.4, "2025": 51.9, "2026": 23.4} | -7.2 | 39.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | structure (native)|TIME | 31.5 | 0.026 | 328.1 | 0.59 | 21.9 | -43.7 | {"2023": 49.7, "2024": -2.0, "2025": 41.2, "2026": 53.8} | -17.6 | 49.1 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -22.5 pts/wk, rank 24% (top 75.6%); M7 tm60 L6M -36.8 pts/wk, rank 15% (top 84.6%); U7 tm600 L6M 4.8 pts/wk, rank 61% (top 39.5%); P7 tm60 L6M -35.9 pts/wk, rank 16% (top 84.1%); H7 tm60 L6M -20.1 pts/wk, rank 26% (top 73.7%); A7 tm60 L6M -32.5 pts/wk, rank 18% (top 82.2%). Rank = share of ALL NYPM cells with a lower trailing-26w result.
+Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -22.5 pts/wk, rank 24% (top 75.5%); M7 tm60 L6M -36.8 pts/wk, rank 15% (top 84.6%); U7 tm600 L6M 4.8 pts/wk, rank 61% (top 39.4%); P7 tm60 L6M -35.9 pts/wk, rank 16% (top 84.1%); H7 tm60 L6M -20.1 pts/wk, rank 26% (top 73.6%); A7 tm60 L6M -32.5 pts/wk, rank 18% (top 82.2%). Rank = share of ALL NYPM cells with a lower trailing-26w result.
 
 ### PASS 2 (full grid, 7 brackets, selected pairs, own nulls): 10 best family cells in NYPM (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
@@ -288,22 +288,22 @@ Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | time_m_1 | book.book_cancel.canc_follow | {"L": 50, "z": 1.0} | sym8u | both | 7366 | 2160 | 380 | 1.00 | 5 / -1132 / 135 / 1.00 | {"2023": -3094.0, "2024": -995.0, "2025": 1960.0, "2026": 4416.0} |
 | 2 | tsf_5_200 | book.book_ofi.norm_follow | {"L": 50, "z": 1.0} | sym15u | both | 7160 | 603 | 320 | 1.00 | 5 / -290 / 1480 / 1.00 | {"2023": 1849.0, "2024": 706.0, "2025": 273.0, "2026": 6236.0} |
-| 3 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | sym30u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 272.0, "2024": -280.0, "2025": -3018.0, "2026": 5787.0} |
+| 3 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | asym10u/20u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 410.0, "2024": -292.0, "2025": -3018.0, "2026": 5787.0} |
 | 4 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | asym15u/30u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 272.0, "2024": -280.0, "2025": -3018.0, "2026": 5787.0} |
-| 5 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | asym10u/20u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 410.0, "2024": -292.0, "2025": -3018.0, "2026": 5787.0} |
-| 6 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | sym15u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 272.0, "2024": -280.0, "2025": -3018.0, "2026": 5787.0} |
+| 5 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | sym15u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 272.0, "2024": -280.0, "2025": -3018.0, "2026": 5787.0} |
+| 6 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | sym30u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 272.0, "2024": -280.0, "2025": -3018.0, "2026": 5787.0} |
 | 7 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | asym20u/10u | both | 7013 | 4035 | 316 | 1.00 | 5 / -265 / 561 / 1.00 | {"2023": 230.0, "2024": -352.0, "2025": -2964.0, "2026": 5787.0} |
-| 8 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym20u/10u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -334.0, "2024": 36.0, "2025": -677.0, "2026": 5485.0} |
-| 9 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | sym15u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
-| 10 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym10u/20u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -142.0, "2024": 126.0, "2025": -731.0, "2026": 5485.0} |
-| 11 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | sym30u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
-| 12 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym15u/30u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
+| 8 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | sym30u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
+| 9 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym15u/30u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
+| 10 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym20u/10u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -334.0, "2024": 36.0, "2025": -677.0, "2026": 5485.0} |
+| 11 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | sym15u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -307.0, "2024": 115.0, "2025": -731.0, "2026": 5485.0} |
+| 12 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | asym10u/20u | both | 7007 | 4043 | 319 | 1.00 | 5 / -168 / 1360 / 1.00 | {"2023": -142.0, "2024": 126.0, "2025": -731.0, "2026": 5485.0} |
 | 13 | dol_2600 | book.book_ofi.follow | {"L": 200, "z": 1.0} | sym8u | both | 6997 | 4019 | 316 | 1.00 | 5 / -254 / 586 / 1.00 | {"2023": 936.0, "2024": -146.0, "2025": -3078.0, "2026": 5771.0} |
 | 14 | dib_2000 | barnative.barnative_speed.burst_fade | {"len": 100, "r": 0.6} | plain60/60 | both | 6993 | 1620 | 1029 | 0.75 | 5 / 991 / 2269 / 1.00 | {"2023": 627.0, "2024": 603.0, "2025": -1983.0, "2026": 6898.0} |
 | 15 | dol_2600 | book.book_ofi.follow | {"L": 50, "z": 1.0} | sym8u | both | 6991 | 4027 | 319 | 1.00 | 5 / -231 / 1348 / 1.00 | {"2023": 121.0, "2024": 418.0, "2025": -963.0, "2026": 5469.0} |
 | 16 | tick_300 | tape.tape_stack.r3_follow | {"k": 3} | sym15u | both | 6975 | 1405 | 353 | 1.00 | 5 / -1233 / 2865 / 1.00 | {"2023": 598.0, "2024": 177.0, "2025": 3798.0, "2026": 6775.0} |
-| 17 | dib_240 | trend.trend_heikin.run | {"len": 4, "width": 0.0} | sym15u | both | 6891 | 2495 | 1640 | 1.00 | 5 / -3332 / -350 / 1.00 | {"2023": -1257.0, "2024": -2365.0, "2025": 548.0, "2026": 6215.0} |
-| 18 | dib_240 | trend.trend_heikin.run_native | {"len": 4, "width": 0.0} | sym15u | both | 6891 | 2495 | 1640 | 1.00 | 5 / -403 / 1479 / 1.00 | {"2023": -1257.0, "2024": -2365.0, "2025": 548.0, "2026": 6215.0} |
+| 17 | dib_240 | trend.trend_heikin.run_native | {"len": 4, "width": 0.0} | sym15u | both | 6891 | 2495 | 1640 | 1.00 | 5 / -403 / 1479 / 1.00 | {"2023": -1257.0, "2024": -2365.0, "2025": 548.0, "2026": 6215.0} |
+| 18 | dib_240 | trend.trend_heikin.run | {"len": 4, "width": 0.0} | sym15u | both | 6891 | 2495 | 1640 | 1.00 | 5 / -3332 / -350 / 1.00 | {"2023": -1257.0, "2024": -2365.0, "2025": 548.0, "2026": 6215.0} |
 | 19 | tick_300 | tape.tape_stack.r3_follow | {"k": 3} | asym15u/30u | both | 6807 | 1237 | 352 | 1.00 | 5 / -1270 / 2922 / 1.00 | {"2023": 671.0, "2024": 1010.0, "2025": 3843.0, "2026": 6718.0} |
 | 20 | tib_1200 | tape.tape_libvol.vwmacd | {"f": 19, "s": 39} | asym10u/20u | both | 6770 | 2602 | 474 | 1.00 | 5 / -213 / 1776 / 1.00 | {"2023": 1368.0, "2024": -2641.0, "2025": 3953.0, "2026": 5664.0} |
 
@@ -312,46 +312,46 @@ Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 | pick | OOS pts/wk | R/trade | ulcer (wk pts) | persistence | L6M pts/wk | L3M pts/wk | null mean | null max | excess | pctile | shifted-label mean | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | free | -24.6 | -0.020 | 1701.4 | 0.43 | 28.1 | -2.1 | -13.9 | -6.7 | -10.8 | 0.00 | -12.4 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
-| agreed | -24.6 | -0.020 | 1701.4 | 0.43 | 28.1 | -2.1 | -21.0 | -20.2 | -3.6 | 0.00 | -11.8 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
+| agreed | -25.7 | -0.020 | 1740.7 | 0.43 | 28.1 | -2.1 | -19.1 | -18.1 | -6.6 | 0.00 | -11.1 | {"2023": "RED", "2024": "RED", "2025": "RED", "2026": "RED"} |
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | INFORMATION | PRICE | TIME |
 |---|---|---|---|---|
-| bands | 8.0 [26.1; 1.00] | 16.1 [0.1; 0.50] | 21.9 [30.5; 1.00] | 13.5 [13.2; 1.00] |
-| bands (native) | -3.1 [6.1; 1.00] | 34.5 [48.0; 1.00] | -2.9 [26.8; 1.00] | 15.0 [19.9; 1.00] |
-| barnative | -15.4 [-8.3; 0.50] | -45.5 [-23.4; 0.00] | -13.8 [-10.4; 0.50] | -23.0 [-11.2; 0.50] |
+| bands | 8.0 [26.1; 1.00] | 16.1 [1.0; 0.50] | 21.9 [37.5; 1.00] | 13.5 [13.2; 1.00] |
+| bands (native) | -3.1 [6.1; 1.00] | 34.5 [47.4; 1.00] | -2.9 [27.2; 1.00] | 15.0 [19.9; 1.00] |
+| barnative | -15.4 [-8.3; 0.50] | -45.5 [-23.4; 0.00] | -21.2 [-26.0; 0.50] | -23.0 [-11.2; 0.50] |
 | book | -10.4 [3.0; 0.50] | -8.3 [-5.7; 0.50] | -3.6 [24.0; 1.00] | -8.2 [3.4; 0.50] |
-| book (native) | 1.7 [10.1; 1.00] | -34.7 [-20.5; 0.00] | 1.7 [9.5; 1.00] | -28.8 [-13.2; 0.00] |
-| confluence | 17.9 [20.1; 1.00] | 7.8 [18.0; 1.00] | 32.4 [28.6; 1.00] | -19.5 [-9.9; 0.50] |
-| levels | 9.8 [32.0; 1.00] | 7.6 [15.1; 1.00] | -10.2 [-2.6; 0.50] | -9.4 [23.6; 1.00] |
-| levels (native) | 26.8 [54.2; 1.00] | -15.8 [-5.4; 0.00] | 2.2 [4.3; 1.00] | -18.7 [4.3; 0.50] |
-| live | 15.4 [11.9; 1.00] | -2.5 [10.1; 1.00] | -4.9 [-3.9; 0.50] | -4.1 [4.7; 1.00] |
-| manual | 12.9 [12.1; 1.00] | 0.5 [3.6; 0.50] | -2.3 [13.8; 1.00] | -19.3 [-2.0; 0.50] |
-| manual (native) | -1.9 [16.4; 1.00] | -25.3 [-15.9; 0.50] | -15.1 [6.6; 1.00] | 7.4 [17.0; 1.00] |
-| momentum | 12.0 [21.3; 1.00] | -4.7 [7.3; 1.00] | 28.7 [19.4; 1.00] | -0.5 [17.7; 1.00] |
-| momentum (native) | -8.7 [-12.8; 0.00] | 14.1 [4.5; 0.50] | 5.4 [-10.0; 0.50] | 3.7 [-23.3; 0.00] |
-| pullback | 18.6 [26.7; 1.00] | 4.7 [18.8; 0.50] | 15.6 [28.0; 1.00] | -22.2 [-19.7; 0.00] |
-| pullback (native) | 16.8 [28.9; 1.00] | 8.2 [-3.1; 0.50] | 29.0 [53.8; 1.00] | 6.1 [30.7; 1.00] |
-| structure | -19.2 [-5.3; 0.00] | 7.1 [-3.6; 0.50] | 9.2 [16.5; 1.00] | -7.1 [1.6; 0.50] |
-| structure (native) | 17.8 [13.6; 0.50] | 15.7 [1.7; 0.50] | 7.6 [16.1; 0.50] | -20.1 [-13.9; 0.00] |
-| tape | 3.5 [-8.6; 0.00] | -11.8 [-2.8; 0.00] | 0.8 [8.5; 0.50] | 8.6 [25.6; 1.00] |
-| tape (native) | 9.1 [14.6; 1.00] | 20.1 [25.2; 1.00] | -16.9 [29.2; 1.00] | -1.7 [-2.1; 0.50] |
-| trend | 5.4 [28.5; 1.00] | 21.6 [21.9; 1.00] | -7.6 [11.7; 1.00] | -1.2 [6.3; 1.00] |
-| trend (native) | -14.1 [-14.2; 0.00] | 14.0 [49.0; 1.00] | -11.8 [4.2; 0.50] | -20.1 [-27.9; 0.00] |
-| xmarket | 7.4 [34.2; 1.00] | -26.6 [-10.0; 0.00] | 10.1 [-11.2; 0.00] | -26.0 [-15.6; 0.00] |
+| book (native) | 1.7 [10.1; 1.00] | -34.7 [-20.5; 0.00] | 1.7 [9.3; 1.00] | -28.8 [-13.2; 0.00] |
+| confluence | 17.9 [20.1; 1.00] | 7.8 [18.0; 1.00] | 32.4 [28.7; 1.00] | -19.5 [-9.9; 0.50] |
+| levels | 9.8 [32.0; 1.00] | 7.6 [15.1; 1.00] | -9.6 [-5.9; 0.00] | -9.4 [23.6; 1.00] |
+| levels (native) | 26.8 [54.2; 1.00] | -15.8 [-5.4; 0.00] | 2.2 [6.3; 1.00] | -18.7 [4.3; 0.50] |
+| live | 15.4 [11.9; 1.00] | -2.5 [10.1; 1.00] | -4.9 [2.1; 0.50] | -4.1 [4.7; 1.00] |
+| manual | 12.9 [12.1; 1.00] | 0.5 [3.6; 0.50] | 5.4 [22.4; 1.00] | -19.3 [-2.0; 0.50] |
+| manual (native) | -1.9 [16.4; 1.00] | -25.3 [-15.9; 0.50] | -15.1 [4.5; 0.50] | 7.4 [17.0; 1.00] |
+| momentum | 12.0 [21.3; 1.00] | -4.7 [7.3; 1.00] | 28.7 [18.7; 1.00] | -0.5 [17.7; 1.00] |
+| momentum (native) | -8.7 [-12.8; 0.00] | 14.1 [4.5; 0.50] | 5.4 [-5.0; 0.50] | 3.7 [-23.3; 0.00] |
+| pullback | 18.6 [26.7; 1.00] | 4.7 [18.8; 0.50] | 14.5 [28.2; 1.00] | -22.2 [-19.7; 0.00] |
+| pullback (native) | 16.8 [28.9; 1.00] | 8.2 [-3.1; 0.50] | 29.0 [45.8; 1.00] | 6.1 [30.7; 1.00] |
+| structure | -19.2 [-5.3; 0.00] | 7.1 [-3.6; 0.50] | 8.8 [22.2; 1.00] | -7.1 [1.6; 0.50] |
+| structure (native) | 17.8 [13.6; 0.50] | 15.7 [1.7; 0.50] | 7.6 [14.4; 0.50] | -20.1 [-13.9; 0.00] |
+| tape | 3.5 [-8.6; 0.00] | -11.8 [-2.8; 0.00] | 1.3 [9.8; 0.50] | 8.6 [25.6; 1.00] |
+| tape (native) | 9.1 [14.6; 1.00] | 20.1 [25.2; 1.00] | -14.4 [28.0; 1.00] | -1.7 [-2.1; 0.50] |
+| trend | 5.4 [28.5; 1.00] | 21.6 [22.4; 1.00] | -14.0 [9.9; 0.50] | -1.2 [6.3; 1.00] |
+| trend (native) | -14.1 [-14.2; 0.00] | 14.0 [49.0; 1.00] | -12.4 [3.6; 0.50] | -20.1 [-27.9; 0.00] |
+| xmarket | 7.4 [34.2; 1.00] | -26.6 [-10.0; 0.00] | 10.1 [-14.3; 0.00] | -26.0 [-15.6; 0.00] |
 ### PASS 1: 10 best family cells in Asia (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| bands (native)|INFORMATION | 34.5 | 0.040 | 239.3 | 0.60 | 117.2 | 78.2 | {"2023": 10.9, "2024": 13.1, "2025": 24.2, "2026": 79.4} | -13.6 | 48.0 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| confluence|PRICE | 32.4 | 0.038 | 352.2 | 0.52 | 115.4 | 72.4 | {"2023": -9.2, "2024": -1.2, "2025": 5.2, "2026": 117.5} | 3.7 | 28.6 | 1.00 | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| pullback (native)|PRICE | 29.0 | 0.030 | 163.9 | 0.58 | 3.4 | 16.9 | {"2023": 42.5, "2024": 27.3, "2025": 18.5, "2026": 39.1} | -24.8 | 53.8 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| momentum|PRICE | 28.7 | 0.022 | 302.4 | 0.59 | 4.3 | -2.8 | {"2023": 8.9, "2024": 37.5, "2025": 48.5, "2026": 1.3} | 9.3 | 19.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| bands (native)|INFORMATION | 34.5 | 0.040 | 239.3 | 0.60 | 117.2 | 78.2 | {"2023": 10.9, "2024": 13.1, "2025": 24.2, "2026": 79.4} | -12.9 | 47.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| confluence|PRICE | 32.4 | 0.038 | 352.2 | 0.52 | 115.4 | 72.4 | {"2023": -9.2, "2024": -1.2, "2025": 5.2, "2026": 117.5} | 3.7 | 28.7 | 1.00 | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| pullback (native)|PRICE | 29.0 | 0.030 | 163.9 | 0.58 | 3.4 | 16.9 | {"2023": 42.5, "2024": 27.3, "2025": 18.5, "2026": 39.1} | -16.7 | 45.8 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| momentum|PRICE | 28.7 | 0.022 | 302.4 | 0.59 | 4.3 | -2.8 | {"2023": 8.9, "2024": 37.5, "2025": 48.5, "2026": 1.3} | 10.0 | 18.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | levels (native)|ACTIVITY | 26.8 | 0.031 | 183.0 | 0.56 | 51.8 | 12.3 | {"2023": 14.2, "2024": 7.5, "2025": 40.5, "2026": 37.3} | -27.4 | 54.2 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| bands|PRICE | 21.9 | 0.021 | 217.3 | 0.56 | 36.8 | -14.0 | {"2023": 9.4, "2024": 14.4, "2025": 30.2, "2026": 24.8} | -8.7 | 30.5 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| trend|INFORMATION | 21.6 | 0.025 | 219.8 | 0.54 | 2.8 | -33.4 | {"2023": 6.6, "2024": 24.0, "2025": 7.4, "2026": 40.2} | -0.3 | 21.9 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| bands|PRICE | 21.9 | 0.021 | 217.3 | 0.56 | 36.8 | -14.0 | {"2023": 9.4, "2024": 14.4, "2025": 30.2, "2026": 24.8} | -15.7 | 37.5 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| trend|INFORMATION | 21.6 | 0.025 | 219.8 | 0.54 | 2.8 | -33.4 | {"2023": 6.6, "2024": 24.0, "2025": 7.4, "2026": 40.2} | -0.8 | 22.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | tape (native)|INFORMATION | 20.1 | 0.022 | 478.8 | 0.53 | 64.2 | 8.1 | {"2023": -37.6, "2024": 22.2, "2025": -25.3, "2026": 89.6} | -5.2 | 25.2 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
 | pullback|ACTIVITY | 18.6 | 0.019 | 461.5 | 0.58 | 62.2 | -53.7 | {"2023": 23.2, "2024": 28.5, "2025": 2.5, "2026": 24.3} | -8.1 | 26.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | confluence|ACTIVITY | 17.9 | 0.013 | 407.9 | 0.62 | 77.9 | 79.4 | {"2023": -12.7, "2024": 22.5, "2025": -16.2, "2026": 62.5} | -2.2 | 20.1 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
-Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 72.1 pts/wk, rank 98% (top 2.0%); M7 tm60 L6M 80.8 pts/wk, rank 99% (top 1.4%); U7 tm600 L6M 35.4 pts/wk, rank 90% (top 10.2%); P7 tm60 L6M 66.1 pts/wk, rank 97% (top 2.6%); H7 tm60 L6M 25.1 pts/wk, rank 84% (top 15.9%); A7 tm60 L6M 6.5 pts/wk, rank 65% (top 34.6%). Rank = share of ALL Asia cells with a lower trailing-26w result.
+Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 72.1 pts/wk, rank 98% (top 2.0%); M7 tm60 L6M 80.8 pts/wk, rank 99% (top 1.4%); U7 tm600 L6M 35.4 pts/wk, rank 90% (top 10.2%); P7 tm60 L6M 66.1 pts/wk, rank 97% (top 2.7%); H7 tm60 L6M 25.1 pts/wk, rank 84% (top 15.9%); A7 tm60 L6M 6.5 pts/wk, rank 65% (top 34.7%). Rank = share of ALL Asia cells with a lower trailing-26w result.
 
 ### PASS 2 (full grid, 7 brackets, selected pairs, own nulls): 10 best family cells in Asia (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
@@ -364,7 +364,7 @@ Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 7
 | bands (native)|PRICE | 27.9 | 0.033 | 289.6 | 0.56 | -7.3 | -74.9 | {"2023": -2.0, "2024": 11.2, "2025": 56.5, "2026": 23.5} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | trend|INFORMATION | 26.9 | 0.031 | 181.2 | 0.57 | 2.8 | -33.4 | {"2023": 6.6, "2024": 32.9, "2025": 15.0, "2026": 40.2} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | book (native)|ACTIVITY | 26.4 | 0.028 | 227.0 | 0.52 | 59.5 | 125.0 | {"2023": 6.5, "2024": 8.7, "2025": 18.9, "2026": 62.6} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| manual|PRICE | 24.2 | 0.025 | 213.5 | 0.54 | -23.6 | -53.5 | {"2023": 11.2, "2024": 27.3, "2025": 55.2, "2026": -12.0} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "RED"} |
+| manual|PRICE | 25.5 | 0.025 | 196.0 | 0.57 | -23.6 | -53.5 | {"2023": 4.2, "2024": 24.1, "2025": 64.3, "2026": -12.0} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "RED"} |
 | trend (native)|INFORMATION | 22.4 | 0.020 | 214.9 | 0.60 | 48.7 | -8.0 | {"2023": -1.5, "2024": 31.2, "2025": 7.5, "2026": 37.3} |  |  |  | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 
 ### Top 20 cells (pick window = trailing 26 weeks to the newest data day; agreed by neighbours; naked)
@@ -375,14 +375,14 @@ Live books in Asia on their live bars (same screen, plain 60/60): K7 tm180 L6M 7
 | 3 | urenko_14 | book.book_pslope.follow_native | {"L": 1800, "z": 1.0} | plain60/60 | both | 6879 | 4405 | 1062 | 0.75 | 5 / 607 / 2495 / 1.00 | {"2023": 406.0, "2024": 466.0, "2025": -3165.0, "2026": 6685.0} |
 | 4 | vol_350 | levels.levels_profile_nodes.break_native | {"n": 2, "k": 0.25} | sym8u | both | 6822 | 2719 | 315 | 1.00 | 25 / -1048 / 2016 / 1.00 | {"2023": -337.0, "2024": 673.0, "2025": 881.0, "2026": 6105.0} |
 | 5 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | asym10u/20u | both | 6781 | 2426 | 210 | 1.00 | 5 / 269 / 630 / 1.00 | {"2023": -251.0, "2024": 509.0, "2025": -919.0, "2026": 7266.0} |
-| 6 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | sym15u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -229.0, "2024": 579.0, "2025": -1048.0, "2026": 7260.0} |
-| 7 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | sym30u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -199.0, "2024": 595.0, "2025": -1058.0, "2026": 7260.0} |
-| 8 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | asym15u/30u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -229.0, "2024": 593.0, "2025": -1048.0, "2026": 7260.0} |
-| 9 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | asym20u/10u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -211.0, "2024": 742.0, "2025": -961.0, "2026": 7259.0} |
+| 6 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | asym20u/10u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -211.0, "2024": 742.0, "2025": -961.0, "2026": 7259.0} |
+| 7 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | sym15u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -229.0, "2024": 579.0, "2025": -1048.0, "2026": 7260.0} |
+| 8 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | sym30u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -199.0, "2024": 595.0, "2025": -1058.0, "2026": 7260.0} |
+| 9 | mom_20 | confluence.confluence_xfam.orbflow | {"k": 2, "w": 3} | asym15u/30u | both | 6781 | 2426 | 210 | 1.00 | 5 / 231 / 628 / 1.00 | {"2023": -229.0, "2024": 593.0, "2025": -1048.0, "2026": 7260.0} |
 | 10 | mrenko_14 | book.book_imb.delta_follow | {"lv": 1, "thr": 0.2} | asym20u/10u | both | 6755 | 1461 | 463 | 0.67 | 5 / -222 / 1625 / 1.00 | {"2023": -8.0, "2024": 145.0, "2025": -790.0, "2026": 6225.0} |
 | 11 | drb_240 | trend.trend_macd.hist_turn | {"len": 12, "width": 0.01} | sym15u | both | 6751 | 922 | 421 | 1.00 | 5 / 1088 / 3330 / 1.00 | {"2023": -77.0, "2024": -853.0, "2025": 1402.0, "2026": 4274.0} |
-| 12 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | asym15u/30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1768 / 48 / 1.00 | {"2023": 35.0, "2024": -1811.0, "2025": -37.0, "2026": 5560.0} |
-| 13 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1769 / 48 / 1.00 | {"2023": 200.0, "2024": -1629.0, "2025": 358.0, "2026": 5560.0} |
+| 12 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1769 / 48 / 1.00 | {"2023": 200.0, "2024": -1629.0, "2025": 358.0, "2026": 5560.0} |
+| 13 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | asym15u/30u | both | 6726 | 1912 | 361 | 1.00 | 5 / -1768 / 48 / 1.00 | {"2023": 35.0, "2024": -1811.0, "2025": -37.0, "2026": 5560.0} |
 | 14 | tib_1200 | trend.trend_adx_di.adx_cross | {"len": 28, "width": 15} | asym20u/10u | both | 6722 | 3365 | 335 | 1.00 | 5 / -1269 / 852 / 1.00 | {"2023": -605.0, "2024": -765.0, "2025": -1284.0, "2026": 6260.0} |
 | 15 | rng_20 | book.book_pslope.follow_native | {"L": 1800, "z": 1.5} | sym15u | both | 6709 | 1912 | 361 | 1.00 | 5 / -1774 / 48 / 1.00 | {"2023": 18.0, "2024": -1198.0, "2025": 523.0, "2026": 5386.0} |
 | 16 | mrenko_14 | book.book_thin.spr_fade | {"w": 2, "i": 0.2} | asym10u/20u | both | 6643 | 3503 | 344 | 1.00 | 5 / -948 / 1080 / 1.00 | {"2023": 289.0, "2024": 1057.0, "2025": 623.0, "2026": 6124.0} |
@@ -494,11 +494,11 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | London | K7 | tm300 | neighbour | -35.6 | -49.3 | -3.1 | 724.9 | 0.47 | 490 | 0.11 | WEAK |
 | London | M7 | tm60 | LIVE | -39.6 | -40.6 | -27.5 | 3018.7 | 0.35 | 527 | 0.09 | WEAK |
 | London | M7 | tm30 | neighbour | 19.0 | 1.2 | -14.1 | 2314.0 | 0.37 | 622 | 0.83 | WEAK |
-| London | M7 | tm45 | neighbour | 19.1 | -4.2 | -11.7 | 2066.1 | 0.41 | 565 | 0.83 | WEAK |
+| London | M7 | tm45 | neighbour | 19.1 | -4.2 | -11.7 | 2066.1 | 0.41 | 565 | 0.84 | WEAK |
 | London | M7 | tm120 | neighbour | -62.6 | -22.3 | -29.8 | 2972.8 | 0.42 | 388 | 0.03 | WEAK |
 | London | M7 | tm180 | neighbour | 2.4 | -15.6 | -18.7 | 2143.6 | 0.41 | 316 | 0.61 | WEAK |
 | London | U7 | tm600 | LIVE | -10.7 | -43.5 | -5.5 | 798.5 | 0.44 | 131 | 0.33 | WEAK |
-| London | U7 | tm300 | neighbour | -68.4 | -111.4 | -14.2 | 1004.3 | 0.41 | 233 | 0.02 | WEAK |
+| London | U7 | tm300 | neighbour | -68.4 | -111.4 | -14.2 | 1004.3 | 0.41 | 233 | 0.03 | WEAK |
 | London | U7 | tm420 | neighbour | 13.8 | -18.8 | -3.0 | 756.1 | 0.52 | 178 | 0.78 | WEAK |
 | London | U7 | tm780 | neighbour | 13.4 | 9.9 | -1.3 | 643.7 | 0.53 | 96 | 0.78 | WEAK |
 | London | U7 | tm900 | neighbour | -16.3 | -16.5 | -8.7 | 943.2 | 0.47 | 86 | 0.26 | WEAK |
@@ -509,7 +509,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | London | P7 | tm180 | neighbour | 26.7 | 28.5 | 3.7 | 897.9 | 0.47 | 378 | 0.89 | WEAK |
 | London | H7 | tm60 | LIVE | 2.9 | 23.9 | 2.8 | 372.3 | 0.53 | 121 | 0.62 |  |
 | London | H7 | tm30 | neighbour | 0.6 | 23.9 | 2.5 | 357.5 | 0.52 | 122 | 0.57 |  |
-| London | H7 | tm45 | neighbour | -14.1 | 8.4 | 3.1 | 362.4 | 0.52 | 130 | 0.28 |  |
+| London | H7 | tm45 | neighbour | -14.1 | 8.4 | 3.1 | 362.4 | 0.52 | 130 | 0.29 |  |
 | London | H7 | tm120 | neighbour | 3.2 | 25.6 | 4.9 | 378.8 | 0.49 | 128 | 0.62 |  |
 | London | H7 | tm180 | neighbour | 0.7 | 28.9 | -0.9 | 584.4 | 0.53 | 81 | 0.57 |  |
 | London | A7 | tm60 | LIVE | 14.3 | 18.2 | -6.1 | 830.6 | 0.43 | 326 | 0.79 |  |
@@ -529,7 +529,7 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | NYAM | M7 | tm180 | neighbour | -7.9 | 23.6 | 3.6 | 686.7 | 0.46 | 295 | 0.46 | WEAK |
 | NYAM | U7 | tm600 | LIVE | -11.4 | 7.0 | 9.9 | 250.3 | 0.52 | 80 | 0.42 |  |
 | NYAM | U7 | tm300 | neighbour | -11.9 | -0.8 | 17.6 | 278.5 | 0.52 | 146 | 0.42 |  |
-| NYAM | U7 | tm420 | neighbour | -0.2 | 29.1 | 12.1 | 359.1 | 0.58 | 117 | 0.56 |  |
+| NYAM | U7 | tm420 | neighbour | -0.2 | 29.1 | 12.1 | 359.1 | 0.58 | 117 | 0.57 |  |
 | NYAM | U7 | tm780 | neighbour | 7.6 | -23.3 | 4.7 | 450.9 | 0.48 | 83 | 0.69 |  |
 | NYAM | U7 | tm900 | neighbour | -8.3 | -13.3 | 6.2 | 425.8 | 0.51 | 72 | 0.46 |  |
 | NYAM | P7 | tm60 | LIVE | -60.7 | -138.1 | -12.1 | 1779.0 | 0.52 | 524 | 0.11 | WEAK |
@@ -538,10 +538,10 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | NYAM | P7 | tm120 | neighbour | -83.3 | -108.9 | -8.8 | 1172.0 | 0.47 | 360 | 0.05 | WEAK |
 | NYAM | P7 | tm180 | neighbour | -58.3 | -110.6 | -12.9 | 1064.8 | 0.51 | 297 | 0.11 | WEAK |
 | NYAM | H7 | tm60 | LIVE | 28.8 | 20.1 | 6.1 | 506.0 | 0.48 | 86 | 0.85 | WEAK |
-| NYAM | H7 | tm30 | neighbour | 31.1 | 29.4 | 6.0 | 514.6 | 0.49 | 87 | 0.86 | WEAK |
+| NYAM | H7 | tm30 | neighbour | 31.1 | 29.4 | 6.0 | 514.6 | 0.49 | 87 | 0.87 | WEAK |
 | NYAM | H7 | tm45 | neighbour | 13.9 | 13.9 | -3.7 | 932.6 | 0.51 | 87 | 0.75 | WEAK |
 | NYAM | H7 | tm120 | neighbour | 32.4 | 23.7 | 9.9 | 457.8 | 0.51 | 80 | 0.87 | WEAK |
-| NYAM | H7 | tm180 | neighbour | 1.7 | 43.8 | 3.6 | 360.5 | 0.49 | 76 | 0.61 | WEAK |
+| NYAM | H7 | tm180 | neighbour | 1.7 | 43.8 | 3.6 | 360.5 | 0.49 | 76 | 0.62 | WEAK |
 | NYAM | A7 | tm60 | LIVE | -17.2 | 3.9 | -1.6 | 946.9 | 0.46 | 241 | 0.36 |  |
 | NYAM | A7 | tm30 | neighbour | -52.8 | -39.6 | -10.3 | 971.6 | 0.49 | 382 | 0.13 |  |
 | NYAM | A7 | tm45 | neighbour | -39.4 | -34.4 | -12.0 | 1445.4 | 0.49 | 299 | 0.20 |  |
@@ -559,12 +559,12 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | NYPM | K7 | tm300 | neighbour | -59.0 | -94.6 | -28.9 | 2031.6 | 0.42 | 345 | 0.07 | WEAK |
 | NYPM | M7 | tm60 | LIVE | -36.8 | -112.7 | -1.0 | 758.8 | 0.54 | 410 | 0.15 |  |
 | NYPM | M7 | tm30 | neighbour | -24.1 | -0.2 | -18.6 | 1872.2 | 0.41 | 561 | 0.23 |  |
-| NYPM | M7 | tm45 | neighbour | -16.4 | -50.4 | -16.0 | 2237.2 | 0.46 | 485 | 0.29 |  |
+| NYPM | M7 | tm45 | neighbour | -16.4 | -50.4 | -16.0 | 2237.2 | 0.46 | 485 | 0.30 |  |
 | NYPM | M7 | tm120 | neighbour | 22.5 | 16.8 | -2.3 | 871.2 | 0.52 | 254 | 0.78 |  |
 | NYPM | M7 | tm180 | neighbour | -32.0 | -25.8 | -9.6 | 889.0 | 0.48 | 195 | 0.18 |  |
 | NYPM | U7 | tm600 | LIVE | 4.8 | 17.0 | 0.1 | 545.2 | 0.46 | 39 | 0.61 |  |
 | NYPM | U7 | tm300 | neighbour | -12.4 | -31.6 | -0.9 | 607.1 | 0.44 | 116 | 0.33 |  |
-| NYPM | U7 | tm420 | neighbour | 10.4 | 17.1 | -2.2 | 833.3 | 0.48 | 67 | 0.67 |  |
+| NYPM | U7 | tm420 | neighbour | 10.4 | 17.1 | -2.2 | 833.3 | 0.48 | 67 | 0.68 |  |
 | NYPM | U7 | tm780 | neighbour | -19.1 | -8.4 | -0.7 | 469.3 | 0.46 | 33 | 0.27 |  |
 | NYPM | U7 | tm900 | neighbour | -12.1 | -14.3 | -6.2 | 692.8 | 0.33 | 26 | 0.34 |  |
 | NYPM | P7 | tm60 | LIVE | -35.9 | -97.6 | -18.4 | 3000.2 | 0.56 | 449 | 0.16 |  |
@@ -2157,6 +2157,6 @@ Live bar per book used here: EXACT live bars: K7 tm180 (3-min), M7 tm60 (1-min),
 | zones | retest_native | urenko_14 | {"M": 3, "tol": 0.5} | sym30u / both | 138 | 3160 | -470 | -589 | -815 | 2282 | 2 | 315 |
 
 ## DATA-QUALITY NOTICE: the load-dependent "SLOW" acceptance check silently dropped 30 modules from the job lists (found 05:00Z, fixed 05:40Z)
-Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 117 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
+Affected modules (pass-1 cells missing for them while rejected): bands_donchian, bands_envelope, bands_keltner, momentum_cci, momentum_mvote, momentum_willr, trend_heikin, trend_hma_turn, trend_supertrend, xmarket_commod, xmarket_es, xmarket_nkd, xmarket_rates, xmarket_rty, xmarket_tick, xmarket_leaders, levels_sd5, levels_sd15, levels_sd60, levels_fib5, levels_fib15, levels_fib60, levels_sdx3, levels_sdx5, levels_sdx15, levels_sdx30, levels_sdx60, levels_sdx_rng28, levels_sdx_vol1100, levels_sdx_renko28. All 146 modules are accepted again; their missing (row, module) pass-1 jobs are re-queued (stage b for level modules on time/volume/range rows, stage d for the rest). Missing pairs now: 0 of 14280 (modules x 476 bar rows); pass-1 result files written in the last hour: 0 (all modules); ETA for these at that rate if they were alone: 0.0 h, real ETA depends on stage order (b before d).
 Their pass-1 tables above are therefore PARTIAL for those modules (bands: Keltner/Donchian/envelope; momentum: CCI/mvote/Williams %R; trend: Supertrend/HMA turn/Heikin-Ashi; xmarket: ES/RTY/NKD/rates/commodities/tick/leaders; levels: supply-demand sd5/15/60, sdx3/5/15/30/60 + rng/vol/renko variants, Fibonacci 5/15/60).
 
