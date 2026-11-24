@@ -21,3 +21,17 @@ JOINT PICK: TL3_SR_NP_STKd8b4bcfb9e_N2_JT4 -> {'SC': 1, 'BL': 1, 'CAP': 2, 'STK'
 | 2025 | 4340 / -16310 / -6186 / -6308 / 1419 (days stopped 0) | 4462 / -18105 / -6184 / -8103 / 1358 (days stopped 0) | 4551 / -12435 / -6325 / -6094 / 1344 (days stopped 0) | no bare D7 R0 rows for this session (NY PM: none) |
 
 Cells: ulcer / max DD / worst week / worst DAY / $ per week. Not yet automatic here: NULL (needs W-SHORT null files for this stack), 30 CONTROLS (W-COMBO control sets), LOT CHECK at 2x and 4x the native lots (stage built next).
+
+## LOT CHECK and CONTROLS (automatic, 17:41Z)
+
+Per-lot results of the final combo at 1x / 2x / 4x the native lots (dollar columns divided by the lot multiple; ulcer / max DD / worst week / $ per week):
+
+| window | 1x | 2x per lot | 4x per lot |
+|---|---|---|---|
+| L6M | 2030 / -5386 / -4707 / 2481 | 2001 / -5276 / -4158 / 2384 | 1895 / -4970 / -4189 / 2407 |
+| L3M | 1717 / -4839 / -2272 / 2619 | 1745 / -4902 / -2314 / 2439 | 1776 / -4970 / -2367 / 2384 |
+| 2023 | 9147 / -19173 / -4783 / 500 | 8322 / -17366 / -5056 / 516 | 9445 / -18878 / -5070 / 459 |
+| 2024 | 10632 / -25180 / -8052 / 793 | 8822 / -23284 / -8404 / 936 | 9393 / -23456 / -8451 / 875 |
+| 2025 | 4551 / -12435 / -6325 / 1344 | 4102 / -16138 / -6387 / 1252 | 4186 / -16334 / -6447 / 1208 |
+
+Controls: no ctl_prefix / control sets for this final: not run (W-COMBO).
