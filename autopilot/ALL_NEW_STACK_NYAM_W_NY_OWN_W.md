@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 08:19Z.
+# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 08:24Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -6,7 +6,7 @@
 
 **The equal-weight loop `ny-own` is the REFERENCE ROW (its FINAL has no weights).**
 
-Phase **run**; pool 39 books (B15d193ef.BRA15U30U, B32cec996, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L32cec996, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L57507767, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L6df41b86, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8816c2ae, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60); steps 6.
+Phase **run**; pool 39 books (B15d193ef.BRA15U30U, B32cec996, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L32cec996, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L57507767, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L6df41b86, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8816c2ae, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Le0da99e2, Le4fede95.BRF90_30, Lee0bf761.BRF40_80, Lf0346d55.BRP60); steps 9.
 
 ## STEPS
 
@@ -18,11 +18,14 @@ Phase **run**; pool 39 books (B15d193ef.BRA15U30U, B32cec996, B3987e3da.BRF60_12
 | 4 | add Le4fede95.BRF90_30 x1 | (see FINAL) | `TL3_ALN_NY_STKd80fb4c846` | 6018 / -20933 / -4682 / 9769 | 7351 / -20933 / -4682 / 6185 | 9504 / -23155 / -12300 / 2338 | 14762 / -31765 / -16430 / 1446 | 14410 / -40394 / -22369 / 3150 | 0.69 | -40394 |
 | 5 | add Lf0346d55.BRP60 x0.5 | (see FINAL) | `TL3_ALN_NY_STKd8f0d71362` | 6211 / -22902 / -3267 / 10043 | 7492 / -22902 / -3267 / 6423 | 10708 / -27952 / -11657 / 2029 | 15619 / -30644 / -17680 / 1612 | 14421 / -38804 / -20948 / 3120 | 0.68 | -38804 |
 | 6 | add L8cfda948.BRF90_30 x1 | (see FINAL) | `TL3_ALN_NY_STKd8524b1692` | 5238 / -19769 / -2522 / 12128 | 5464 / -19769 / -2522 / 8142 | 11607 / -34164 / -11844 / 2450 | 12840 / -31543 / -21357 / 1507 | 12395 / -37096 / -19987 / 3998 | 0.68 | -37096 |
+| 7 | add L4407508c.BRF120_60 x0.25 | (see FINAL) | `TL3_ALN_NY_STKd8baa07371` | 5433 / -20512 / -2381 / 12582 | 5526 / -19889 / -2381 / 8671 | 11970 / -35287 / -11854 / 2485 | 12224 / -31857 / -17907 / 1637 | 10511 / -32854 / -20084 / 4329 | 0.69 | -35287 |
+| 8 | add L39287638.BRF80_40 x0.25 | (see FINAL) | `TL3_ALN_NY_STKd81aabf5b4` | 5048 / -20313 / -2305 / 12870 | 4843 / -17470 / -2305 / 9043 | 11881 / -33765 / -11601 / 2554 | 12885 / -33420 / -21155 / 1640 | 11344 / -34802 / -20480 / 4329 | 0.70 | -34802 |
+| 9 | add L64390867.BRF80_40 x0.5 | (see FINAL) | `TL3_ALN_NY_STKd8cd0279ff` | 5276 / -21112 / -2419 / 12874 | 4894 / -17467 / -2419 / 9145 | 11229 / -32391 / -12650 / 2714 | 10890 / -29391 / -21367 / 1731 | 11502 / -34372 / -20242 / 4510 | 0.68 | -34372 |
 
 ### BARE D7 session stack at the same L6M ulcer as the weighted mix (bare vs bare only)
 
-| L6M | 5238 / -9251 / -4057 / -105 |
-| L3M | 4440 / -7920 / -2751 / -318 |
-| Y2023 | 2888 / -6829 / -2412 / 307 |
-| Y2024 | 2620 / -5724 / -2979 / 327 |
-| Y2025 | 3765 / -11158 / -3394 / 129 |
+| L6M | 5276 / -9319 / -4087 / -105 |
+| L3M | 4473 / -7978 / -2771 / -320 |
+| Y2023 | 2909 / -6879 / -2430 / 310 |
+| Y2024 | 2639 / -5766 / -3000 / 330 |
+| Y2025 | 3793 / -11239 / -3419 / 130 |
