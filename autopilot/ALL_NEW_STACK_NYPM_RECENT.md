@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:39Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:44Z.
 **RECENT BASIS (Josh, 10:48 ET Nov 22: "yes recents should drive this"; orders 1552Z + 1612Z): every add, swap and resize is judged at EQUAL L6M RISK: return per unit of L6M ulcer must beat the stack before by 1%, with the 15% L6M max-drawdown / worst-week guard (after scaling to the current ulcer); L3M is shown beside every step and is not a gate. PRIOR YEARS ARE A CHECK, NOT THE PICKER, and they can block only on the old test: a stack is not chosen if any of 2023, 2024, 2025 has a NEGATIVE mean $/wk or its own persistence (share of positive 14-day blocks) is under 0.58. The AMBER (15-30% worse) / RED (> 30% worse) colours are information with numbers (vs bare D7 scaled to the stack's L6M ulcer, and vs the stack before the step) and never block, because the L6M is the selection window and older years are nearly always weaker. The 15:58Z blocked results (band as blocker, EMPTY) are kept as the _literalband reference files: superseded by order 1612Z. The current-rule page of the same loop name (without RECENT) is the reference row; nothing of it was overwritten.**
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
@@ -12,23 +12,23 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $1425 per wk (positive), L3M $995 per wk (positive); prior years $/wk: 2023 189 (positive), 2024 125 (positive), 2025 569 (positive); OWN persistence (share of positive 14-day blocks) 0.59 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $2433 per wk (positive), L3M $2204 per wk (positive); prior years $/wk: 2023 503 (positive), 2024 867 (positive), 2025 1358 (positive); OWN persistence (share of positive 14-day blocks) 0.68 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
 
-## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.18 so that the L6M ulcer matches)
+## YARDSTICK: BARE D7 session stack (TL3_ALN_NP_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.21 so that the L6M ulcer matches)
 
 | window | this stack: ulcer / maxDD / worst wk / mean | BARE D7 scaled to the same risk | stack $/wk minus bare $/wk |
 |---|---|---|---|
-| L6M | 1892 / -5518 / -4328 / 1425 | 1892 / -3969 / -1170 / -8 | +1433 |
-| L3M | 1978 / -5359 / -3498 / 995 | 2439 / -3763 / -1170 / -166 | +1161 |
-| Y2023 | 5806 / -13410 / -5164 / 189 | 2449 / -4711 / -1221 / -89 | +278 |
-| Y2024 | 8610 / -17474 / -4683 / 125 | 1896 / -4673 / -1422 / 119 | +6 |
-| Y2025 | 5240 / -14319 / -7696 / 569 | 3140 / -5851 / -1452 / -52 | +621 |
+| L6M | 2218 / -6395 / -5112 / 2433 | 2218 / -4652 / -1371 / -10 | +2443 |
+| L3M | 2037 / -5889 / -2342 / 2204 | 2859 / -4411 / -1371 / -194 | +2398 |
+| Y2023 | 8453 / -17458 / -4783 / 503 | 2871 / -5522 / -1432 / -104 | +607 |
+| Y2024 | 10392 / -25100 / -8162 / 867 | 2223 / -5478 / -1667 / 139 | +728 |
+| Y2025 | 4384 / -18105 / -6184 / 1358 | 3681 / -6859 / -1702 / -61 | +1420 |
 
 ## TWO ASIA STACKS SIDE BY SIDE (research comparison; Josh picks): OWN-CHECKS stack vs STAYING-POWER stack (add rule also requires the stack's persistence not to fall and the worst prior-year ulcer <= 2x the L6M ulcer)
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (run) | L6d238076.BRF90_30 | 1892 / -5518 / -4328 / 1425 | 1978 / -5359 / -3498 / 995 | 5806 / -13410 / -5164 / 189 | 8610 / -17474 / -4683 / 125 | 5240 / -14319 / -7696 / 569 | 0.59 |
+| own-checks (run) | L6d238076.BRF90_30 + L8dff280f.BRP90 | 2218 / -6395 / -5112 / 2433 | 2037 / -5889 / -2342 / 2204 | 8453 / -17458 / -4783 / 503 | 10392 / -25100 / -8162 / 867 | 4384 / -18105 / -6184 / 1358 | 0.68 |
 | staying-power (done) |  | running | | | | | |
 
 ## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 7 books with a BASE set; 7 have all 42 months landed = counted below; 0 still waiting for prior years)
@@ -61,7 +61,9 @@ Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FIN
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | L6d238076.BRF90_30 | `TL3_ALN_NP_L6d238076_R0BRF90_30` | 1892 / -5518 / -4328 / 1425 | 1978 / -5359 / -3498 / 995 | 5806 / -13410 / -5164 / 189 | 8610 / -17474 / -4683 / 125 | 5240 / -14319 / -7696 / 569 | 0.59 | 7 |
+| 2 | L8dff280f.BRP90 | `TL3_ALN_NP_STKd8b4bcfb9e` | 2218 / -6395 / -5112 / 2433 | 2037 / -5889 / -2342 / 2204 | 8453 / -17458 / -4783 / 503 | 10392 / -25100 / -8162 / 867 | 4384 / -18105 / -6184 / 1358 | 0.68 | 6 |
 - prior-year band, step 1 (first book: no stack before; colours vs bare D7 at equal L6M ulcer (information only)): 2023 RED / 2024 RED / 2025 RED
+- prior-year band, step 2 (vs the stack before this step scaled to the candidate L6M ulcer (k = 1.17), information only): 2023 AMBER / 2024 RED / 2025 GREEN
 (plain-words block error: FileNotFoundError(2, 'No such file or directory'))
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 12:37Z UTC; pool 6 books): L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60

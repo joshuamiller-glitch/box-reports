@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:39Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:44Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYPM_OWN_CHECKS.md.
@@ -39,9 +39,11 @@ Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FIN
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 12:39Z UTC; pool 6 books): EMPTY: no stack passes
+STOPPED at 0 books: no candidate passes the add rule.
 
-Phase: run. Pool used by this run: 7 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
+RESULT: EMPTY: no stack passes
+
+Phase: done. Pool used by this run: 7 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
