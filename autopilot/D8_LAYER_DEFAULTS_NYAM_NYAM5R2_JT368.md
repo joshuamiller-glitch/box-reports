@@ -35,3 +35,5 @@ DLA = DLA16
 DLB = DLB6
 DLC = DLC2
 ```
+
+**2-LOT NULL, NY AM equal five (21:49Z, search-aware, best-of the full menu incl. DL and CGB on the L6M screen): FAIL. Real best-of ulcer cut -35.0% vs null draws -30.5 / -40.0 / -56.3% = beats 1 of the 3 draws run (gate >= 4 of 5; stopped after the 2nd miss). Label: WEAK-BUT-POSITIVE (NOT PROVEN) for BF2_JT68 / JT368; the other gates are clean (walk-forward 0.838, persistence 0.914, bands RED / GREEN / GREEN, no STC).**
