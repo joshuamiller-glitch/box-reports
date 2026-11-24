@@ -25,3 +25,20 @@ Asia combination re-run rounds (W-COMBO) and controls; NY AM follow-up -> lost r
 
 ## Slips
 Asia DONE moved from ~08:30Z to ~10:30-14:00Z (controls added as books pass; two Asia widening bursts took slots 0.75 h before they were put behind). Summary first edition ~8.2 h after the 21:05Z one (hourly MORNING.md lines carried the status).
+
+## UPDATE 12:05Z (second edition)
+
+**New since 08:10Z**
+- **Fleet order held as Josh ordered (2135Z):** Asia follow-up empty since 05:57Z; NY AM follow-up and the 2,556 lost NY AM rows fully leased by 08:18Z; now running NY AM first looks (mix3, 14.4k rows left, ~2 h) with London first looks inside it. Asia pool stable at 87 books since the 06:26Z combination re-run (W-COMBO: equal FINALs 4, weighted 2; NY AM pool 39; London 4; NY PM 6).
+- **NY PM recent-basis FINAL:** same 4-book stack (L52359bf4.BRP30, L8e0bf58c.BRS8U, L4bdd521a.BRF80_40, L2c6916a5.BRP60), controls 30/18/30; L6M 1 lot ulcer 3,038, max DD -9,651, +$4,217/wk vs truly bare D7 K7 -$48/wk (wrapper mismatch noted).
+- **Carry-over (exact) and session end: nothing for the delivered picks, flatten stays** (D8_CARRYOVER.md, D8_SESSION_END.md). Asia->NY AM skip at $12,000 (2 lots) stays LEAD-thin on the bare base only.
+- **Asia depth book (7 same-side stops live):** no per-book skip/pause rule helps (ASIA_DEPTH_REPEAT_STOPS.md).
+- **Step 0 for London and NY PM:** the engine first-look ladder covered 36% (London) and 34% (NY PM) of family-bests vs Asia 49% and NY AM 40% (cause: list built from the 11-18 copy of the passers); missing cells added: London 1,462 cells (8,772 rows, builders ~10k rows/h), NY PM 782 cells (4,692 rows, dedicated file _nye/pending_nypm_step0.txt). Same hole remains for Asia (2,051) and NY AM (7,226) family-bests: not queued (pool-changing; would extend step (a)).
+- **Plumbing:** the pruned-row hole (a row that fails once vanishes) cost 204 XF + 2,556 NY AM rows (re-appended); audit loop every 15 min; fail-counter/stale-exit race adopted by W-GRIDOPS; tail-only list _s2/TAIL_ONLY.txt for fillers; auto-wire gotcha: files named pending_step2_nypm* jump to the head, use pending_tail_*.txt.
+- **Throughput:** row mix drives the rate (NY AM follow-up rows 241-353 s vs Asia 131 s, mix3 ~118 s).
+
+**Work in flight:** NY AM first looks (mix3) ~12:20-12:30Z, then London step-0 (up to 8.8k rows) and NY PM step-0 (4.7k) ~13:50-14:10Z; NY PM step 2a filler (441 rows, tail only); Asia and NY AM combination rounds and null draws (NY AM null running).
+
+**Open decisions for Josh** (unchanged): layers ON/OFF in first SIM; feature-store roll-session defect; real live commission; L8e0bf58c port vs D8-rule re-run; 84 engine rows for NY PM-without-L8e0bf58c; early-close days need a holiday calendar or engine rule (live flatten 16:55 ET); puller hardening window; optional NT-style STC re-run (126 set-months); whether to engine-look the never-looked Asia/NY AM family-bests (would extend Asia/NY AM step (a)).
+
+**Slips:** Asia DONE (a-e) ~10:30-14:00Z (b and c rounds not yet started as measured); idle risk ~13:50Z if no new rows are queued (fillers: NY PM step 2a 441 rows queued; carry-over null has no file).
