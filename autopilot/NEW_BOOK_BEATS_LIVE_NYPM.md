@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-21 12:00Z
+# NEW_BOOK_BEATS_LIVE_NYPM - does a new book beat the live NY PM book(s) in the exact engine? (W-NYENG, order 0210Z), refreshed 2026-11-24 18:46Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); provisional until Asia and London are decided; label BETTER = calibration pending, NOT calibrated.** Rule: REPLACE row (the new book switched on, the named live book's NY PM entries switched OFF) beats that live book when, DRAWDOWN FIRST, the stack ulcer change is < 0 AND the mean $/week change is >= 0 on BOTH the last 6 and last 3 months (engine base lots, $4.84 RT proxy); then prior years must show no RED (> 30% worse on ulcer / max DD / mean) where run; persistence > 0.60 and the 30 date-shift controls are still PENDING for every row below (shown as counts). Bare R0/R3 only orders the engine queue. Live books of this session: K7. verdict yes / no / pending (not run or months not landed). Sorted by the best last-6-month stack-ulcer change of any REPLACE row (most negative first). Full table of every cell: /mnt/l2/l2vast/_nye/beats_NYPM.csv.
 
@@ -9,10 +9,10 @@
 |---|---|---|---|---|---|
 | 51 | time_m_3 / manual_macd.zero {"f": 5, "s": 13, "g": 5} / sym15u / both | yes (L6M du -411 dm +419 | L3M du -721 dm +324) | not run | K7:0 | 0 of 30 |
 | 231 | [twin of L200d27da] time_m_3 / manual_macd.zero {"f": 5, "s": 13, "g": 5} / sym15u / both | yes (L6M du -411 dm +419 | L3M du -721 dm +324) | not run | K7:0 | 0 of 30 |
-| 228 | [twin of L0ff67f61] swing_atr_0.4 / tape_stack.r5_fade {"k": 4} / sym15u / both | yes (L6M du -347 dm +694 | L3M du -563 dm +2012 RED Y2023) | not run | K7:3 | 0 of 30 |
-| 222 | [twin of L79612dbe] drb_1200 / levels_profile_va.break {"n": 2, "k": 0.5} / asym20u/10u / both | yes (L6M du -96 dm +109 | L3M du -311 dm +1142) | not run | K7:3 | 0 of 30 |
+| 227 | [twin of L0ff67f61] swing_atr_0.4 / tape_stack.r5_fade {"k": 4} / sym15u / both | yes (L6M du -347 dm +694 | L3M du -563 dm +2012 RED Y2023) | not run | K7:3 | 0 of 30 |
+| 221 | [twin of L79612dbe] drb_1200 / levels_profile_va.break {"n": 2, "k": 0.5} / asym20u/10u / both | yes (L6M du -96 dm +109 | L3M du -311 dm +1142) | not run | K7:3 | 0 of 30 |
 | 273 | [twin of Lba08182a] drb_1200 / book_cancel.net_follow_native {"L": 3600, "z": 2.0} / plain60/60 / both | yes (L6M du -75 dm +434 | L3M du -367 dm +1130) | not run | K7:0 | 0 of 30 |
-| 207 | mom_20 / momentum_roc.zero {"len": 60, "wd": 5} / sym15u / both | yes (L6M du -53 dm +200 | L3M du -265 dm +810 RED Y2023) | not run | K7:3 | 0 of 30 |
+| 206 | mom_20 / momentum_roc.zero {"len": 60, "wd": 5} / sym15u / both | yes (L6M du -53 dm +200 | L3M du -265 dm +810 RED Y2023) | not run | K7:3 | 0 of 30 |
 | 662 | mrenko_14 / trend_ma_kama.cross_native {"len": 25, "width": 1.0, "ratio": 3} / sym15u / both | yes (L6M du -36 dm +237 | L3M du -113 dm +1089) | not run | K7:0 | 0 of 30 |
 | 157 | [twin of L087795dd] mrenko_14 / trend_ma_kama.cross_native {"len": 25, "width": 1.0, "ratio": 3} / sym15u / both | yes (L6M du -36 dm +237 | L3M du -113 dm +1089) | not run | K7:0 | 0 of 30 |
 | 31 | tib_6000 / levels_trendline.break_native {"n": 3, "k": 0.5} / sym15u / long | yes (L6M du -13 dm +369 | L3M du -98 dm +1096) | not run | K7:0 | 0 of 30 |
