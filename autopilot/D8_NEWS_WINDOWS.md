@@ -1,6 +1,6 @@
 # D8 NEWS WINDOWS (family NW): entry blocks around releases and open-trade rules
 
-Research only, 2 lots per book, written 2026-11-24 02:14 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
+Research only, 2 lots per book, written 2026-11-24 02:34 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
 
 **Calendar**: /mnt/l2/l2vast/_calendar/events.csv has events from **2024-10-01** (first row ISM manufacturing 10:00 ET) to 2026-12-23. Months 2023-04 to 2024-09 have NO events: they are NOT SCORED for NW (an NW set equals its pick there by construction; shown as "no calendar", never as evidence). So prior years here = 2024-10..2025-12 and 2026-01..04 (18 months, 2025-11 has no data) and L6M = 2026-05..10, L3M = 2026-08..10; data end 2026-10. 54 calendar rows are rule-derived (ISM dates), 1 UNVERIFIED, the rest verified. The calendar has no FOMC press-conference row: FOMC press = every FOMC decision date at 14:30 ET (synthetic). NOT in the calendar, so not tested: JOLTS, consumer confidence, new home sales and other 10:00 releases, Treasury auctions (in the file as AUC_* but not in the order).
 
@@ -10,18 +10,14 @@ Windows and definitions: daily series house convention (exit ET date +7h, p484 =
 
 ## Best per session (verdict = gate AND L6M ulcer lower AND L3M not higher; null = best-of-N settings, real beats k of the first 5, needs 4)
 
-- Asia (AS_STKd8106b26ef_JT19): best CH_EVE_EBa2b5, L6M ulcer +0.0% (L3M +0.0%), verdict NO-EFFECT; null best-of-30: real beats 0 of first 5 (needs 4), 0 of 200 draws -> FAIL.
-- London (LO_L19201dfc_R0BRF90_30_BASE): best R830_EBa30, L6M ulcer -3.7% (L3M -1.9%), verdict PASS; null best-of-16: real beats 1 of first 5 (needs 4), 42 of 200 draws -> FAIL.
-- NYPM (NP_STKd893133bd8_BASE): best G3_EBa5b5, L6M ulcer -3.6% (L3M +0.0%), verdict PASS; null best-of-95: real beats 2 of first 5 (needs 4), 124 of 200 draws -> FAIL.
-- NYAM (NY_STKd8b76ecd35_JT68): best R10_OBa2, L6M ulcer +1.1% (L3M -1.7%), verdict FAIL; null best-of-30: real beats 3 of first 5 (needs 4), 52 of 200 draws -> FAIL.
+- Asia (AS_STKd8106b26ef_JT19): best CH_EVE_EBa2b5, L6M ulcer +0.0% (L3M +0.0%), verdict NO-EFFECT; null not run in this scoring (no null draws in nw_null.json).
+- London (LO_L19201dfc_R0BRF90_30_BASE): best R830_EBa30, L6M ulcer -3.7% (L3M -1.9%), verdict PASS; null not run in this scoring (no null draws in nw_null.json).
+- NYPM (NP_STKd893133bd8_BASE): best G3_EBa5b5, L6M ulcer -3.6% (L3M +0.0%), verdict PASS; null not run in this scoring (no null draws in nw_null.json).
+- NYAM (NY_STKd8b76ecd35_JT68): best R10_OBa2, L6M ulcer +1.1% (L3M -1.7%), verdict FAIL; null not run in this scoring (no null draws in nw_null.json).
 
 Rows landed: 171 of 171 sets complete (all scored months). Verdict and null use complete sets only.
 
 ## Asia (AS_STKd8106b26ef_JT19, pick TL3_SR_AS_STKd8106b26ef_BF2_JT19)
-
-Null (best-of-30 settings, placebo release dates, emulation, 200 draws): real best L6M ulcer change +0.0%, null best median +0.0%; real beats 0 of the first 5 draws (needs 4) and 0 of 200 draws (p of null doing as well = 1.000). Settings that look good by luck (L6M ulcer <= -10% and L3M lower): real 0 of 30, null mean 0.0 of 30.
-
-Emulation fidelity (emulated vs exact L6M ulcer change, 30 settings with exact rows): median abs difference 0.0 points, max 0.0 points.
 
 Reference (no rule = the pick), on release days of each group, L6M | all scored months:
 
@@ -48,10 +44,6 @@ Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 
 ## London (LO_L19201dfc_R0BRF90_30_BASE, pick TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_BASE)
 
-Null (best-of-16 settings, placebo release dates, emulation, 200 draws): real best L6M ulcer change -3.7%, null best median -9.2%; real beats 1 of the first 5 draws (needs 4) and 42 of 200 draws (p of null doing as well = 0.790). Settings that look good by luck (L6M ulcer <= -10% and L3M lower): real 0 of 16, null mean 2.5 of 16.
-
-Emulation fidelity (emulated vs exact L6M ulcer change, 16 settings with exact rows): median abs difference 0.1 points, max 5.7 points.
-
 Reference (no rule = the pick), on release days of each group, L6M | all scored months:
 
 | group | L6M release days | L6M worst single trade | L6M worst day | L6M $ on release days | all-months worst single trade | all-months worst day |
@@ -76,10 +68,6 @@ Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 | R830_OBa2 | +2.9 | +1.9 | 3206 | -8043 | -5791 | -6629 | -3625 / -3625 | -3694 / -3679 | 0 | 4 | -2 / -19 / -0 | 0.78 | NO-GAIN |
 
 ## NYPM (NP_STKd893133bd8_BASE, pick TL3_SR_NP_STKd893133bd8_BF2_BASE)
-
-Null (best-of-95 settings, placebo release dates, emulation, 200 draws): real best L6M ulcer change -4.1%, null best median -2.7%; real beats 2 of the first 5 draws (needs 4) and 124 of 200 draws (p of null doing as well = 0.380). Settings that look good by luck (L6M ulcer <= -10% and L3M lower): real 0 of 95, null mean 0.2 of 95.
-
-Emulation fidelity (emulated vs exact L6M ulcer change, 95 settings with exact rows): median abs difference 0.4 points, max 7.7 points.
 
 Reference (no rule = the pick), on release days of each group, L6M | all scored months:
 
@@ -108,10 +96,6 @@ Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 
 ## NYAM (NY_STKd8b76ecd35_JT68, pick TL3_SR_NY_STKd8b76ecd35_BF2_JT68)
 
-Null (best-of-30 settings, placebo release dates, emulation, 200 draws): real best L6M ulcer change -3.1%, null best median -7.0%; real beats 3 of the first 5 draws (needs 4) and 52 of 200 draws (p of null doing as well = 0.740). Settings that look good by luck (L6M ulcer <= -10% and L3M lower): real 0 of 30, null mean 3.1 of 30.
-
-Emulation fidelity (emulated vs exact L6M ulcer change, 30 settings with exact rows): median abs difference 18.6 points, max 56.8 points.
-
 Reference (no rule = the pick), on release days of each group, L6M | all scored months:
 
 | group | L6M release days | L6M worst single trade | L6M worst day | L6M $ on release days | all-months worst single trade | all-months worst day |
@@ -137,14 +121,14 @@ Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 
 ## Best NW setting per session (drawdown first; "none" = the pick, reference only)
 
-### London: R830_EBa30 [WEAK-BUT-POSITIVE]
+### London: R830_EBa30 [LEAD (null pending)]
 
 L6M ulcer -3.7% (L3M -1.9%), $/wk L6M 3318 vs ref 3265, maxDD -7836 vs -7836, worst week -4903 vs -5371; release-day worst single trade -3625 vs ref -3625; release-day worst day -3679 vs ref -3679; prior years ulcer % +0 / +5 / +3; walk-forward 0.944 (PASS).
 Exact ET clock rules (relay can code):
 
 - release 08:30 ET: no new entry from 08:00 up to (not incl.) 08:35 (the London book is flat at 08:30:01 anyway)
 
-### NYPM: G3_EBa5b15 [WEAK-BUT-POSITIVE]
+### NYPM: G3_EBa5b15 [LEAD (null pending)]
 
 L6M ulcer -3.6% (L3M +0.0%), $/wk L6M 8908 vs ref 8736, maxDD -24257 vs -24257, worst week -8566 vs -8566; release-day worst single trade -2405 vs ref -2405; release-day worst day -222 vs ref -3248; prior years ulcer % +2 / +9 / +0; walk-forward 0.889 (PASS).
 Exact ET clock rules (relay can code):
