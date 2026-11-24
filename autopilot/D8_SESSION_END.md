@@ -2,6 +2,13 @@
 
 Research only. Scored from the landed engine rows (code/th_sessend sets, hook se_hooks.py, no engine edit). Reference row = FLATTEN at the scheduled session end (Asia 02:00 ET, NY AM 12:00 ET; executed +1.0 s). Everything below is per 2 lots per book, net of $4.84 per lot, daily P&L by Globex day (exit time +7 h ET date), weeks Mon-Fri, ulcer = RMS of the daily drawdown. L6M = 2026-05..10, L3M = 2026-08..10. Scorer files (scratch): scratchpad/se_xs/se_score.py, se_null.py, se_md.py, se_book.py.
 
+## REVISION (prior years and London / NY PM landed; scorer scratchpad/se_xs/se_score2.py)
+- PRIOR YEARS (36 months, fixed setting, six finalists; table in the addendum below): NO variant holds up. Asia SEB1 (the L6M best on the pick): 2023 ulcer x1.03 / $/wk x0.90, 2024 x1.02 / x1.03, 2025 x0.86 / x1.45; blocks over all history 36 win / 57 lose = 0.39 (gate 0.58 FAIL). Asia SEA1 (plain RUN) is clearly worse in 2023-2024 (ulcer x1.62-1.70) and SEC4 loses $/wk 45% in 2023. NY AM SED2: 2023 x0.93 / x0.78, 2024 x1.16 / x0.99, 2025 x1.02 / x1.08, blocks 35/58 = 0.38 FAIL. NY AM SEC5 41/50. So the L6M improvements of SEB1 and SED2 do not persist: LABELS DOWNGRADED to BEST-AVAILABLE-NOT-PROVEN; FLATTEN STAYS the D8 rule for Asia and NY AM. (2026 Jan-Apr ratios in the table are on a near-zero base and should be ignored.)
+- LONDON bare (77 of 78 L6M set-months landed): no variant helps: every run variant raises ulcer (SEB1 x1.10, SEA1 x1.28) and cuts $/wk (x0.82-0.99); the profit-conditional ones (SEC) and tighten ones (SED) are neutral (ulcer 1.00, $/wk 0.98-1.00). Best = none (flatten). Label none.
+- NY PM pick JT209 (56 of 78 set-months landed, 22 still missing or blocked; partial rows are compared on their own months): plain RUN is clearly bad (SEA1 ulcer x1.46, DD x1.34, $/wk x0.81, 2 win / 11 lose blocks); the least bad are SED2 (4 months: ulcer x1.00, DD x0.98, $/wk x1.02, 5/7 blocks) and SEC6 (neutral). Best = none (flatten); label none, partial. No prior years queued for London / NY PM (nothing to confirm).
+- EARLY-CLOSE EXIT-GAP MONTHS = UNSCORABLE (rule): Asia 202605 (6 sets), NY AM 202605/06/09 (11 sets), NY AM SEA1 prior-year 202309, 202401, 202501 (Labor Day 09-04-2023, MLK 01-15-2024, 01-20-2025 are holidays; consistent with the guard cause), London SEA1 202609 and NY PM SEA1 202609 (Labor Day 2026-09-07), and the NY PM months listed at the bottom (some may still be running). They are excluded, not imputed; the 14-day block tallies use only landed months.
+- The earlier table's "BEST SETTING PER SESSION" and labels above remain as the L6M reading; read them with this revision: nothing is WEAK-BUT-POSITIVE after prior years, flatten is the answer for all four sessions.
+
 ## STATUS AND WHAT IS NOT IN THIS PAGE
 - Two sessions were run: Asia (5-book TL3_ALN_AS_STKd8106b26ef) and NY AM (5-book TL3_ALN_NY_STKd8b76ecd35), each 13 settings on (a) the delivered 2-lot pick (SK sets; Asia BF2_JT19, NY AM BF2_JT68; this is what D8 carries) and (b) the bare 2-lot base (SE sets, BF2_BASE; reference for the layer-free effect). London (bare) and NY PM (bare) were NEVER run: no set, no row. To run them: 13 settings x 6 months x 2 sessions = 156 rows plus 2 identity rows each (about 160 rows total; the hook and set generator exist, se_gen2.py needs the London/NY PM pick name). I have NOT queued anything; LEAD to say yes/no. Rate ~3.9k rows/h fleet-wide, but these ride rank 4.5 (share 0.15-0.35), so ETA 1-3 h after a yes (my estimate, not measured).
 - 17 of the 312 L6M set-months did not land and are not queued or leased anywhere (checked pending_sr_fit.txt, _s2/leases, the parked file): Asia SE_SEA1/SEC1/SEC2/SEC3 and SK_SEC1/SK_SEC3 202605 (6 rows; 202605 contains Memorial Day 2026-05-25); NY AM SE_SEB4 202605/06/09, SE_SEC1 202606, SK_SEA1 202605/06/09, SK_SEB4 202605/06/09, SK_SEC1 202606 (11 rows; 202605/06/09 are exactly the months with the CME early-close holidays 05-25, 06-19, 09-07; W-NYENG's 08:14Z diagnosis in MORNING.md names the same months failing on the exit-at-last-print guard for other NY AM sets). The probable cause is the guard failing a hook that carries a trade past an early close (variants that run to 17:00); I did NOT verify that for these sets. Where a setting lacks months, it is compared with the reference on the SAME months (the reference column shows them), so ratios are comparable but a 3- or 5-month row is thinner. The status file's "all rows landed" was wrong on this point. Count to re-run: 17 rows, minutes of fleet once the guard cause is fixed.
@@ -181,3 +188,65 @@ Best-of-13 null (emulation, see method): pick rule = lowest L6M ulcer among sett
 - London and NY PM (never run).
 - That the live relay/NinjaTrader can place the replaced exit at +15 min / the stop move at the second; the engine prices the exits as a market walk of the book at the event time.
 - Fees: the engine carries $1.18/lot; every number here is re-based to $4.84/lot all-in by the scorer (gross minus 4.84 x lots), same as XSESS_EXACT.
+
+# SE addendum (scorer se_score2.py): London bare, NY PM pick JT209 (L6M) and prior years of the six finalists
+
+### LONDON bare: TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_BASE (reference = flatten, same months). Cells ratios variant/flatten L6M: ulcer / max DD / $/wk / worst week / worst day | L3M ulcer / $/wk | blocks win/lose/same
+
+| setting | months | flatten $/wk / ulcer / max DD | ulcer x | DD x | $/wk x | worst wk x | worst day x | L3M ulcer x / $/wk x | blocks |
+|---|---|---|---|---|---|---|---|---|---|
+| SEA1 | 5 | 3,050/2,766/-7,836 | 1.28 | 1.33 | 0.98 | 0.65 | 1.08 | 1.41 / 0.68 | 6/5/2 |
+| SEB1 | 6 | 3,265/2,673/-7,836 | 1.10 | 1.10 | 0.85 | 0.81 | 0.89 | 1.13 / 0.70 | 8/5/1 |
+| SEB2 | 6 | 3,265/2,673/-7,836 | 1.15 | 1.07 | 0.82 | 0.79 | 0.94 | 1.17 / 0.68 | 6/7/1 |
+| SEB3 | 6 | 3,265/2,673/-7,836 | 1.11 | 0.98 | 0.99 | 0.65 | 1.08 | 1.14 / 0.85 | 7/6/1 |
+| SEB4 | 6 | 3,265/2,673/-7,836 | 1.27 | 1.33 | 0.98 | 0.65 | 1.08 | 1.38 / 0.82 | 6/7/1 |
+| SEC1 | 6 | 3,265/2,673/-7,836 | 1.01 | 1.00 | 0.97 | 1.00 | 1.00 | 1.01 / 0.86 | 4/2/8 |
+| SEC2 | 6 | 3,265/2,673/-7,836 | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 1.01 / 0.94 | 2/1/11 |
+| SEC3 | 6 | 3,265/2,673/-7,836 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 / 1.00 | 0/0/14 |
+| SEC4 | 6 | 3,265/2,673/-7,836 | 1.01 | 1.00 | 0.98 | 1.00 | 1.00 | 1.01 / 0.97 | 0/6/8 |
+| SEC5 | 6 | 3,265/2,673/-7,836 | 1.00 | 1.00 | 0.98 | 1.00 | 1.00 | 1.00 / 0.98 | 0/3/11 |
+| SEC6 | 6 | 3,265/2,673/-7,836 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 / 1.00 | 0/0/14 |
+| SED1 | 6 | 3,265/2,673/-7,836 | 1.00 | 0.99 | 0.98 | 1.00 | 1.00 | 1.00 / 0.98 | 5/8/1 |
+| SED2 | 6 | 3,265/2,673/-7,836 | 1.00 | 0.99 | 0.99 | 1.00 | 1.00 | 0.99 / 0.99 | 5/8/1 |
+
+### NY PM delivered pick JT209: TL3_SR_NP_STKd893133bd8_BF2_JT209 (reference = flatten, same months). Cells ratios variant/flatten L6M: ulcer / max DD / $/wk / worst week / worst day | L3M ulcer / $/wk | blocks win/lose/same
+
+| setting | months | flatten $/wk / ulcer / max DD | ulcer x | DD x | $/wk x | worst wk x | worst day x | L3M ulcer x / $/wk x | blocks |
+|---|---|---|---|---|---|---|---|---|---|
+| SEA1 | 5 | 5,326/3,293/-9,660 | 1.46 | 1.34 | 0.81 | 1.09 | 1.14 | 1.14 / 0.89 | 2/11/0 |
+| SEB1 | 3 | 6,063/2,046/-7,740 | 1.03 | 1.02 | 1.03 | 1.02 | 1.05 | 1.03 / 1.03 | 3/4/0 |
+| SEB2 | 2 | 4,814/2,112/-7,740 | 1.12 | 1.09 | 1.07 | 1.10 | 1.06 | 1.12 / 1.07 | 2/4/0 |
+| SEB3 | 5 | 5,669/3,097/-9,660 | 1.46 | 1.34 | 0.85 | 1.09 | 1.14 | 1.12 / 0.83 | 0/11/0 |
+| SEB4 | 2 | 4,814/2,353/-7,740 | 1.14 | 1.08 | 0.89 | 1.09 | 1.15 | 1.14 / 0.89 | 1/5/0 |
+| SEC1 | 3 | 5,296/2,454/-7,740 | 1.36 | 1.29 | 0.91 | 1.31 | 1.17 | 1.33 / 0.92 | 1/8/0 |
+| SEC2 | 6 | 5,871/2,949/-9,660 | 1.21 | 1.21 | 0.97 | 1.24 | 1.05 | 1.18 / 0.98 | 6/7/1 |
+| SEC3 | 6 | 5,871/2,894/-9,660 | 1.06 | 1.00 | 0.97 | 1.24 | 1.00 | 1.17 / 0.99 | 6/3/5 |
+| SEC4 | 4 | 6,118/2,200/-7,740 | 1.07 | 1.11 | 1.02 | 1.11 | 1.07 | 1.06 / 0.98 | 3/7/0 |
+| SEC5 | 6 | 5,871/2,883/-9,660 | 1.05 | 1.02 | 1.00 | 1.07 | 1.05 | 1.03 / 1.00 | 6/7/1 |
+| SEC6 | 6 | 5,871/2,894/-9,660 | 1.01 | 1.00 | 1.00 | 1.07 | 1.00 | 1.04 / 1.01 | 6/3/5 |
+| SED1 | 4 | 4,949/3,400/-9,660 | 1.07 | 1.09 | 1.05 | 1.07 | 1.05 | 1.05 / 0.97 | 2/8/0 |
+| SED2 | 4 | 5,662/2,307/-8,397 | 1.00 | 0.98 | 1.02 | 1.00 | 1.02 | 1.00 / 0.97 | 5/7/0 |
+
+### PRIOR YEARS, six finalists on the 2-lot pick (fixed setting, per year, matched months; ratio variant/flatten: ulcer, $/wk; 14-day blocks over all landed months win/lose/same)
+
+| session | setting | months landed of 36 | 2023 | 2024 | 2025 | 2026 Jan-Apr | all history blocks |
+|---|---|---|---|---|---|---|---|
+| AS | SEB1 | 36 | 1.03, 0.90 (9 mo) | 1.02, 1.03 (12 mo) | 0.86, 1.45 (11 mo) | 0.96, 1.09 (4 mo) | 36/57/0 |
+| AS | SEA1 | 36 | 1.62, 1.80 (9 mo) | 1.70, 1.12 (12 mo) | 1.13, 0.89 (11 mo) | 1.14, 1.09 (4 mo) | 24/69/0 |
+| AS | SEC4 | 36 | 1.10, 0.55 (9 mo) | 1.05, 1.09 (12 mo) | 0.92, 1.28 (11 mo) | 1.21, 0.70 (4 mo) | 33/60/0 |
+| NY | SED2 | 36 | 0.93, 0.78 (9 mo) | 1.16, 0.99 (12 mo) | 1.02, 1.08 (11 mo) | 1.07, 0.53 (4 mo) | 35/58/0 |
+| NY | SEA1 | 33 | 0.77, 1.02 (8 mo) | 1.95, 0.66 (11 mo) | 1.10, 1.18 (10 mo) | 1.01, 3.40 (4 mo) | 31/53/0 |
+| NY | SEC5 | 36 | 0.89, 0.95 (9 mo) | 1.21, 0.92 (12 mo) | 1.01, 1.00 (11 mo) | 1.10, -0.11 (4 mo) | 41/50/2 |
+
+UNSCORABLE months (not landed; early-close exit-gap rule, or still running): 
+- LO SEA1 months not landed: 202609
+- NP SEA1 months not landed: 202609
+- NP SEB1 months not landed: 202605,202606,202607
+- NP SEB2 months not landed: 202605,202606,202607,202609
+- NP SEB3 months not landed: 202605
+- NP SEB4 months not landed: 202605,202606,202607,202609
+- NP SEC1 months not landed: 202605,202607,202609
+- NP SEC4 months not landed: 202605,202607
+- NP SED1 months not landed: 202605,202609
+- NP SED2 months not landed: 202607,202609
+- NY SEA1 prior-year months UNSCORABLE (not landed): 202309,202401,202501
