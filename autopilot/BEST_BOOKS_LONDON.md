@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-24 22:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-24 23:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 1898 distinct cells scored (392 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 604; L6M and L3M > 0: 356; labels {'BEST-AVAILABLE-NOT-PROVEN': 1294, 'WEAK-BUT-POSITIVE': 552, 'LEAD': 52}. Job errors: 0. Run 384 s.
+**Counts:** 1898 distinct cells scored (392 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 604; L6M and L3M > 0: 356; labels {'BEST-AVAILABLE-NOT-PROVEN': 1294, 'WEAK-BUT-POSITIVE': 554, 'LEAD': 50}. Job errors: 0. Run 562 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -86,8 +86,8 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 
 ## Prior-year colour summary (REPORT ONLY; the rule and the labels are unchanged)
 
-- New books, top 200 by own-merit rank (200 books): GREEN 0 / AMBER 0 / RED 42 / not landed 158.
-  Prior years positive in absolute $/wk, books with all 3 years landed (41): 0 of 3: 0, 1 of 3: 1, 2 of 3: 8, 3 of 3: 32. Books with 1-2 years landed (1): 2 of 2 positive: 1.
+- New books, top 200 by own-merit rank (200 books): GREEN 0 / AMBER 0 / RED 44 / not landed 156.
+  Prior years positive in absolute $/wk, books with all 3 years landed (43): 0 of 3: 0, 1 of 3: 1, 2 of 3: 8, 3 of 3: 34. Books with 1-2 years landed (1): 2 of 2 positive: 1.
 - Live books (4 books): GREEN 0 / AMBER 0 / RED 2 / not landed 2.
   Prior years positive in absolute $/wk, books with all 3 years landed (4): 0 of 3: 0, 1 of 3: 3, 2 of 3: 0, 3 of 3: 1. Books with 1-2 years landed (0): none.
 
@@ -130,7 +130,7 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 |  | 2 | YES | unresolved (cell not in ladder_cells.json) |  | L07c1dd1c | NEW | RM7 | 0.642 | 1.411 | 2075 | 2877 | 3233 | 2039 | -8839 | -7209 | 6.8 | 0.59 | 1602 | -1581 | 0.86 | 0.61 | 451 | 3528 | +80 | RED | 321 | 4300 | +88 | RED | 284 | 9565 | +95 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 2 |  | 29 | YES | volume bar 500 contracts [vol_500]; ~19 bars/hour; trigger trig_levels_vwap / break {"n": 3, "k": 0.25}; SIDE: BOTH SIDES; bracket asym15u/30u | 19 | LA5 | NEW | RM7 | 0.560 | 0.606 | 2138 | 2262 | 3819 | 3731 | -9472 | -4964 | 7.6 | 0.56 | 1693 | -1536 | 0.71 | 0.55 | 311 | 2588 | +85 | RED | -71 | 13068 | +103 | RED | 384 | 11549 | +94 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
-| 3 |  | 111 |  | unresolved (cell not in ladder_cells.json) |  | Lc137237a | NEW | RM7 | 0.529 | 0.269 | 2294 | 1393 | 4335 | 5172 | -12221 | -8060 | 21.5 | 0.53 | 1103 | -1010 | 0.79 | 0.79 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
+| 3 |  | 111 |  | unresolved (cell not in ladder_cells.json) |  | Lc137237a | NEW | RM7 | 0.529 | 0.269 | 2294 | 1393 | 4335 | 5172 | -12221 | -8060 | 21.5 | 0.53 | 1103 | -1010 | 0.79 | 0.60 | 437 | 4123 | +81 | RED | 436 | 7140 | +88 | RED | 537 | 9637 | +89 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 4 |  | 152 |  | unresolved (cell not in ladder_cells.json) |  | Lcc77efb7 | NEW | RM7 | 0.497 | 0.209 | 1732 | 661 | 3486 | 3158 | -8995 | -5354 | 7.4 | 0.57 | 1631 | -1634 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
 | 5 |  | 131 |  | unresolved (cell not in ladder_cells.json) |  | L2075382d | NEW | RM7 | 0.287 | 0.247 | 937 | 851 | 3259 | 3450 | -9043 | -4829 | 7.5 | 0.54 | 1069 | -976 | 0.50 | 0.60 | 253 | 3079 | +73 | RED | 288 | 2813 | +69 | RED | 119 | 15394 | +97 | RED | RED | WEAK-BUT-POSITIVE |  |  | 2 |
 | 6 |  | 90 |  | live book P7 as run in JL3 (own trades, 1-lot normalised); live bar row per LIVE_BOOKS_REFERENCE.md time bar 1 min (tm60 = 60 seconds) [tm60]; ~60 bars/hour | 60 | LIVE_P7 | LIVE | JL3 | 0.278 | 0.321 | 822 | 933 | 2957 | 2902 | -8357 | -4856 | 15.3 | 0.46 | 965 | -714 | 0.50 | 0.45 | 76 | 3808 | +93 | RED | -54 | 6226 | +107 | RED | -1075 | 38795 | +231 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
@@ -166,7 +166,7 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 | 36 |  | 46 | YES | unresolved (cell not in ladder_cells.json) |  | Mf8d54bf1 | NEW | RM7 | 0.136 | 0.495 | 490 | 710 | 3615 | 1435 | -7446 | -3589 | 4.7 | 0.52 | 1092 | -985 | 0.64 | 0.62 | 203 | 2275 | +59 | RED | 156 | 4741 | +76 | RED | 20 | 7560 | +98 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 37 |  | 87 |  | unresolved (cell not in ladder_cells.json) |  | L2c53d3a2 | NEW | RM7 | 0.134 | 0.331 | 1134 | 2047 | 8486 | 6179 | -20186 | -11775 | 21.4 | 0.52 | 1077 | -1063 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 4 |
 | 38 |  | 206 |  | tick-imbalance bar 15000 [tib_15000]; ~3 bars/hour; trigger trig_manual_macd / sigcross_native {"f": 5, "s": 13, "g": 4}; SIDE: LONG ONLY; bracket plain60/60 | 3 | Md12eae61 | NEW | RM7 | 0.133 | 0.153 | 610 | 604 | 4591 | 3940 | -10661 | -4163 | 12.3 | 0.50 | 1075 | -982 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD | 0.622 | 0.169 | 0 |
-| 39 |  | 9 | YES | unresolved (cell not in ladder_cells.json) |  | M919e3a77 | NEW | RM7 | 0.133 | 0.981 | 531 | 1063 | 4000 | 1084 | -9752 | -2414 | 3.9 | 0.55 | 1063 | -1015 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
+| 39 |  | 9 | YES | unresolved (cell not in ladder_cells.json) |  | M919e3a77 | NEW | RM7 | 0.133 | 0.981 | 531 | 1063 | 4000 | 1084 | -9752 | -2414 | 3.9 | 0.55 | 1063 | -1015 | 0.71 | 0.58 | 145 | 1955 | +73 | RED | 195 | 1635 | +63 | RED | 142 | 4729 | +77 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 40 |  | 11 | YES | unresolved (cell not in ladder_cells.json) |  | Lcf783247 | NEW | RM7 | 0.133 | 0.947 | 1423 | 2490 | 10731 | 2629 | -26278 | -16038 | 9.8 | 0.53 | 1716 | -1607 | 0.57 | 0.59 | 679 | 3904 | +52 | RED | 485 | 4202 | +66 | RED | 175 | 8934 | +88 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 41 |  | 381 |  | unresolved (cell not in ladder_cells.json) |  | M5de424cc | NEW | RM7 | 0.132 | 0.055 | 633 | 330 | 4790 | 5945 | -14074 | -6738 | 12.9 | 0.50 | 1090 | -1011 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
 | 42 |  | 44 | YES | UniRenko bar 14 ticks [urenko_14]; ~42 bars/hour; trigger trig_levels_sdx5 / retest {"d": "E", "M": 6, "tol": 0.5}; SIDE: BOTH SIDES; bracket plain60/60 | 42 | L431323b6 | NEW | RM7 | 0.132 | 0.514 | 535 | 1016 | 4050 | 1975 | -8507 | -3124 | 5.8 | 0.53 | 1025 | -958 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE | 0.348 | 0.025 | 0 |
