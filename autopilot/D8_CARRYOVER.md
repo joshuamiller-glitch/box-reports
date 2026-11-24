@@ -1,19 +1,20 @@
-# D8_CARRYOVER: carry-over rule (earlier session lost more than X -> skip / half the later session), 2-lot basis, EXACT rows where landed + emulation for the rest (W-STATUS scorer, 2026-11-24 04:52Z)
+# D8_CARRYOVER: carry-over rule (earlier session lost more than X -> skip / half the later session), 2-lot basis, EXACT rows where landed + emulation for the rest (W-STATUS scorer, 2026-11-24 04:56Z)
 
-Research only. PARTIAL until the XF rows and the NY PM base rows land (see status); re-run the scorer (scratchpad/se_xs/run_carry.sh) at the end. Units: per 2 lots per book, net of $4.84 per lot, Globex-day P&L, weekly = Mon-Fri; ulcer = RMS of daily drawdown; ratios = rule / reference (below 1 on risk = better, above 1 on $/wk = better). L6M = 2026-05..10, L3M = 2026-08..10.
+Research only. PARTIAL until the XF (fitted-pick) rows land (see status); re-run the scorer (scratchpad/se_xs/run_carry.sh) at the end. Units: per 2 lots per book, net of $4.84 per lot, Globex-day P&L, weekly = Mon-Fri; ulcer = RMS of daily drawdown; ratios = rule / reference (below 1 on risk = better, above 1 on $/wk = better). L6M = 2026-05..10, L3M = 2026-08..10.
 
 ## STATUS (landed set-months of the 2-lot carry sets, L6M = 6 months each)
 
 | family | base set | carry sets | set-months landed / needed | base L6M months landed |
 |---|---|---|---|---|
 | XS | TL3_SR_XS_ASNYLO_BF2_BASE | 32 | 192 / 192 | 6 of 6 |
-| XS | TL3_SR_XS_ASNYLONP_BF2_BASE | 16 | 96 / 96 | 1 of 6 |
-| XF | TL3_SR_XF_ASNYLO_BF2_BASE__v1 | 32 | 32 / 192 | 5 of 6 |
-| XF | TL3_SR_XF_ASNYLONP_BF2_BASE | 16 | 16 / 96 | 5 of 6 |
+| XS | TL3_SR_XS_ASNYLONP_BF2_BASE | 16 | 96 / 96 | 6 of 6 |
+| XF | TL3_SR_XF_ASNYLO_BF2_BASE__v1 | 32 | 32 / 192 | 6 of 6 |
+| XF | TL3_SR_XF_ASNYLONP_BF2_BASE | 16 | 16 / 96 | 6 of 6 |
 
 - XS bare ASNYLO (Asia+NY AM+London, 11 books): COMPLETE (all 32 carry sets x 6 months and the merged BASE x 6 months). Identity of the merged base against the three separate per-session BF2 sets, trade for trade over all 6 months: _SR_XS_ASNYLO_BF2_BASE 4147 trades vs 4147, max daily difference $0.00.
-- XF fitted-pick ASNYLO: only part landed (rows above); the identity of its merged base vs the separate picks (JT19 + JT68 + London bare) is exact on 202605,202606,202607,202608,202610 (3605 trades both). Scored below by EMULATION on the separate pick trades, with the landed exact rows as a check (they fire on 0 of the landed days, as the emulation says).
-- NY AM -> NY PM (NYNP, bare 15-book set): the 16 carry sets x 6 months LANDED but the merged 15-book BASE months 202605-202609 are still unstarted (pending_sr_fit, 5 rows) and the separate NY PM BF2S sets exist only for 202610, so NO reference exists and NYNP is NOT scorable yet. Rows needed: 5 (XS NP base) + 5 (XF NP base) + the XF NP carry sets still running. The next scorer run picks them up automatically.
+- XF fitted-pick ASNYLO: only part landed (rows above); the identity of its merged base vs the separate picks (JT19 + JT68 + London bare) is exact on 202605,202606,202607,202608,202609,202610 (4171 trades both). Scored below by EMULATION on the separate pick trades, with the landed exact rows as a check (they fire on 0 of the landed days, as the emulation says).
+- NY AM -> NY PM (NYNP): bare 15-book set scored exactly in section 1c when its merged base is complete (landed 04:54Z); prior years and the emulation do NOT exist for it (the separate NY PM BF2S sets exist only for 202610).
+- NYNP and the ANY row of section 1c use the 15-book NP set; its NP books have no prior-year base rows, so no prior years / emulation for them.
 - Prior years: no exact prior-year carry row exists. Prior years below are EMULATED (method below), validated on L6M against the exact rows.
 - Null: emulated best-of-32 sign-flip (below), not a random-entry null; the random-entry null needs engine rows (not queued; count: 32 sets x 6 months x 5 random streams ~ 960 rows per base; tell me if wanted).
 
@@ -129,6 +130,29 @@ EMULATED on the separate per-session exact trade lists (rule applied to trades; 
 | any earlier session -> each later session | skip | 8000 (emu-only) | 0 / 7 | 1.00 / 1.00 / 1.000 | 1.00 / 1.000 | 1.00, 1.00 | 0.89, 1.02 | 1.00, 0.98 | 0.77, 1.43 | 0.88 / 1.014 | 3/3/87 |
 | any earlier session -> each later session | half | 8000 (emu-only) | 0 / 7 | 1.00 / 1.00 / 1.000 | 1.00 / 1.000 | 1.00, 1.00 | 0.92, 1.01 | 1.00, 0.99 | 0.88, 1.21 | 0.93 / 1.007 | 3/3/87 |
 
+### 1c. NY AM -> NY PM (NYNP), bare 15-book set, EXACT L6M
+
+Base = TL3_SR_XS_ASNYLONP_BF2_BASE (merged BASE rows, merged BASE); reference = same set, rules off, same months. Base L6M: $/wk / ulcer / max DD / worst week / worst day = 46,618/8,389/-37,484/-8,049/-22,329
+
+| pair | act | X | months | days fired L6M | ulcer x | max DD x | $/wk x | worst wk x | worst day x | L3M ulcer x / $/wk x | recovered-day cost n, $ | saved n, $ | blocks win/lose/same | prior years |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| NY AM -> NY PM | skip | 3000 | 6 | 20 | 1.15 | 1.01 | 0.930 | 2.93 | 1.03 | 1.02 / 0.97 | 16, -98,821 | 4, 10,998 | 3/7/4 | not available (no NP prior-year base) |
+| NY AM -> NY PM | half | 3000 | 6 | 20 | 1.05 | 1.01 | 0.966 | 1.92 | 1.01 | 1.01 / 0.98 | 16, -48,786 | 4, 5,499 | 3/7/4 | not available (no NP prior-year base) |
+| NY AM -> NY PM | skip | 4000 | 6 | 16 | 1.12 | 1.01 | 0.943 | 2.93 | 1.02 | 1.02 / 0.98 | 12, -82,662 | 4, 10,998 | 3/6/5 | not available (no NP prior-year base) |
+| NY AM -> NY PM | half | 4000 | 6 | 16 | 1.04 | 1.01 | 0.972 | 1.92 | 1.01 | 1.01 / 0.99 | 12, -40,734 | 4, 5,499 | 3/6/5 | not available (no NP prior-year base) |
+| NY AM -> NY PM | skip | 5000 | 6 | 8 | 1.03 | 1.00 | 0.981 | 1.00 | 1.00 | 1.00 / 0.98 | 5, -34,393 | 3, 10,217 | 3/3/8 | not available (no NP prior-year base) |
+| NY AM -> NY PM | half | 5000 | 6 | 8 | 1.01 | 1.00 | 0.990 | 1.00 | 1.00 | 1.00 / 0.99 | 5, -17,234 | 3, 5,106 | 3/3/8 | not available (no NP prior-year base) |
+| NY AM -> NY PM | skip | 6000 | 6 | 5 | 1.03 | 1.00 | 0.989 | 1.00 | 1.00 | 1.00 / 1.00 | 3, -21,749 | 2, 8,024 | 2/2/10 | not available (no NP prior-year base) |
+| NY AM -> NY PM | half | 6000 | 6 | 5 | 1.01 | 1.00 | 0.995 | 1.00 | 1.00 | 1.00 / 1.00 | 3, -10,917 | 2, 4,002 | 2/2/10 | not available (no NP prior-year base) |
+| any earlier session -> each later session | skip | 3000 | 6 | 29 | 1.10 | 0.83 | 0.876 | 3.75 | 0.88 | 0.86 / 0.92 | 21, -182,472 | 8, 27,024 | 3/9/2 | not available (no NP prior-year base) |
+| any earlier session -> each later session | half | 3000 | 6 | 29 | 0.99 | 0.88 | 0.949 | 2.32 | 0.88 | 0.89 / 0.97 | 21, -80,710 | 8, 16,045 | 5/7/2 | not available (no NP prior-year base) |
+| any earlier session -> each later session | skip | 4000 | 6 | 21 | 1.08 | 0.83 | 0.914 | 3.75 | 0.88 | 0.85 / 0.95 | 14, -128,350 | 7, 20,709 | 4/8/2 | not available (no NP prior-year base) |
+| any earlier session -> each later session | half | 4000 | 6 | 21 | 1.00 | 0.88 | 0.960 | 2.32 | 0.88 | 0.90 / 0.98 | 15, -59,380 | 6, 8,856 | 3/9/2 | not available (no NP prior-year base) |
+| any earlier session -> each later session | skip | 5000 | 6 | 14 | 1.00 | 0.84 | 0.943 | 1.97 | 0.88 | 0.85 / 0.95 | 9, -88,397 | 5, 16,994 | 3/8/3 | not available (no NP prior-year base) |
+| any earlier session -> each later session | half | 5000 | 6 | 14 | 0.97 | 0.88 | 0.980 | 1.44 | 0.88 | 0.88 / 0.99 | 10, -32,711 | 4, 7,568 | 2/9/3 | not available (no NP prior-year base) |
+| any earlier session -> each later session | skip | 6000 | 6 | 5 | 0.87 | 0.76 | 0.989 | 1.00 | 0.88 | 0.74 / 1.02 | 3, -24,996 | 2, 11,574 | 2/3/9 | not available (no NP prior-year base) |
+| any earlier session -> each later session | half | 6000 | 6 | 5 | 0.92 | 0.88 | 0.995 | 1.00 | 0.88 | 0.87 / 1.01 | 3, -12,508 | 2, 5,837 | 2/3/9 | not available (no NP prior-year base) |
+
 ## 2. FITTED-PICK BASE (XF = Asia JT19 + NY AM JT68 + London bare, as D8 delivers), 2 lots
 
 Exact XF rows landed: 32 of 192 (202608); in the months landed every rule fires on 0 days, matching the emulation for those months. Emulated all 42 months below.
@@ -209,8 +233,8 @@ EMULATED on the separate per-session exact trade lists (rule applied to trades; 
 | Asia -> NY AM | HALF size instead of skip (any X) | ulcer 0.90-0.92, max DD 0.88, worst day 0.84, $/wk 0.98-1.005 | 0.87-0.89 | same days | exactly half of the skip numbers | same shape, half the size | same blocks as skip | | same label as the skip at the same X; 2 lots -> 1 lot |
 | Asia -> London | ASLO 3000 skip (best of the pair) | 0.99 / 1.00 / 0.98 / 1.006 | 1.00 / 1.00 | 14 (56) | 6 days -$10,029 vs 8 days +$15,739 | 1.00, 0.99 / 1.07, 0.97 / 0.99, 0.99 | L6M 6 win / 3 lose, 3.5y 15 / 26 = 0.37 (FAIL) | not in the pair null | none (reference row). The rule moves ulcer 1% and max DD 0%: London books are too small a part of the day to matter. BEST-AVAILABLE-NOT-PROVEN: 3000 skip |
 | London -> NY AM | none | 1.00 / 1.00 / 1.00 / 1.005 (3000 skip) | 0.99 / 1.01 | 1 (6) at 3000; 0 at 4000+ | 0 vs 1 day +$5,273 | no change in 2023 / 2024, 2025 1.04 ulcer worse | 3 / 3 over 3.5y | | none (reference row): 1 firing day in L6M, no evidence either way |
-| NY AM -> NY PM | NOT SCORABLE yet | | | | | | | | the 16 carry sets are landed but no reference rows exist (5 base months unstarted, listed in status); will be scored by the next scorer run |
-| ANY earlier -> each later | ANY 6000 skip | 0.81 / 0.76 / 0.73 / 1.017 | 0.75 / 1.02 | 3-4 (18) | 1 day -$2,193 vs 2 days +$19,797 | 1.00, 1.00 / 0.97, 0.99 / 0.71, 1.05 | 7 win / 9 lose = 0.44 (FAIL) | 74% FAIL | WEAK-BUT-POSITIVE (same two days; in this set it only touches London and NY AM; NY PM not in the set) |
+| NY AM -> NY PM | none (reference row); least bad = HALF at 6000 | skip: ulcer 1.03-1.15, max DD 1.00-1.01, $/wk 0.93-0.99; half: ulcer 1.01-1.05, $/wk 0.97-0.995; worst week 1.9-2.9x worse at 3000/4000 | skip 1.00-1.02 / 0.97-1.00 | 20 / 16 / 8 / 5 at 3000 / 4000 / 5000 / 6000 | 3000 skip: 16 days -$98,821 vs 4 days +$10,998; 6000 skip: 3 days -$21,749 vs 2 days +$8,024 | not available (no NP prior-year base rows) | 3/7, 3/6, 3/3, 2/2 (skip) | no | none (reference row): the NY PM books make money back after a bad NY AM; skipping them costs far more than it saves (wrong-signed). BEST-AVAILABLE-NOT-PROVEN is the reference itself |
+| ANY earlier -> each later | ANY 6000 skip | 0.81 / 0.76 / 0.73 / 1.017 | 0.74 / 1.02 | 3 (18) | 1 day -$2,193 vs 2 days +$19,797 | 1.00, 1.00 / 0.97, 0.99 / 0.71, 1.05 | 7 win / 9 lose = 0.44 (FAIL) | 74% FAIL | WEAK-BUT-POSITIVE (same two days; in this set it only touches London and NY AM; NY PM not in the set) |
 
 ### FITTED-PICK BASE (what D8 delivers)
 Carry-over does NOT help the delivered picks. Emulated on the separate pick trades (Asia JT19 + NY AM JT68 + London bare): at 3000 Asia -> NY AM fires 3 days in L6M and makes it WORSE (ulcer x1.21, max DD x1.22, $/wk x0.98); at 4000 and above it does not fire in L6M or L3M at all (8, 4 and 1 days in 42 months at 4000 / 5000 / 6000); ANY 3000 ulcer x1.25. The pick already carries StackCut / BookLock / the stack day stop which cut the same losing nights, so an extra cross-session skip has almost nothing left to remove. Label for the delivered picks: none (reference row); BEST-AVAILABLE-NOT-PROVEN = Asia -> NY AM skip at 4000 ($8,000 at 2 lots) over 42 months: ulcer x0.95, $/wk x1.005, 8 days fired, 6 win / 2 lose blocks, but 0 firing days in L6M so the "pick on recent" gate has nothing to stand on. The exact XF rows are still arriving (landed months fired 0 days, consistent); I will re-score them in the end-of-run pass.
@@ -220,7 +244,7 @@ Carry-over does NOT help the delivered picks. Emulated on the separate pick trad
 
 ## WHAT I COULD NOT VERIFY
 - Prior years are emulated, not engine rows; the emulator reproduces L6M exact fired days within 0-2 days and the deltas within about $1k per day except the single days noted, so prior-year numbers are good to about that, not exact.
-- NYNP (no base) and the exact XF rows (still running).
+- Prior years for NYNP / ANY in the NP set (no NP prior-year bases) and the exact XF rows (still running).
 - The null is a sign-flip emulation, not the random-entry null; a real one needs engine rows (count above).
 - Whether the engine's day_pnl includes the $1.18 fee exactly (inferred from the emulation matching on the engine-fee basis).
 - The carry rule in D8's live relay: the engine reads the open P&L of an earlier-session trade still in progress; the Asia books are flat by 02:00 ET so in practice this term is zero.
