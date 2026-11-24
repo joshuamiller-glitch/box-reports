@@ -1,7 +1,7 @@
-# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-24 06:10Z)
+# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-24 06:14Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md (sha in DECISIONS.md). A mix is the SUM of weight x book-alone daily P&L (42 months, 1 lot); no stack interaction; engine check pending.
-Run 2026-11-24 06:10Z; pool hash (asia pool file) d6ac4824e775; dynamic scopes (loop finals): FINAL_asia_own_d8_nol3_recent_w, FINAL_asia_own_d8_nol3_w, FINAL_asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w.
+Run 2026-11-24 06:14Z; pool hash (asia pool file) 99a1b48f3727; dynamic scopes (loop finals): FINAL_asia_own_d8_nol3_recent_w, FINAL_asia_own_d8_nol3_w, FINAL_asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w.
 
 ### Scope A - members J502 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
