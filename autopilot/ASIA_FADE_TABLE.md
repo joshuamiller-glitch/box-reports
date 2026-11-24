@@ -51,3 +51,34 @@
 | L302f2cbb | time_m_60 fib60 reject_native tol0.5 body | P60 | 1971 | 1515 | 2215 | -6292 | -4604 | 0.25 |
 | L051dcad5 | pnf_14 piv_wf false_break_native M2 k0.5 | P30 | 1832 | 1502 | 2128 | -6976 | -2613 | 0.16 |
 | Le3823c3e | vsess_450 gaps false_break_native M2 k0.5 | P45 | 1570 | 856 | 2135 | -5904 | -5573 | 0.20 |
+
+## SCORING (18:40Z): prior years, walk-forward, stack controls for L1acc170a on STKd8da2eb47b (bare, 1-lot units; controls shift the fade only +-7k days, stack fixed)
+
+### Size 0.25 (Z25): with fade vs without, 1-lot units, bare
+| window | without $/wk / ulcer / maxDD | with $/wk / ulcer / maxDD | ulcer change |
+|---|---|---|---|
+| L6M | 6833 / 3528 / -12811 | 7361 / 3305 / -11897 | -6.3% |
+| L3M | 5619 / 4276 / -12811 | 5979 / 3767 / -11897 | -11.9% |
+| Y2023 | 835 / 3084 / -6915 | 862 / 3048 / -6251 | -1.2% |
+| Y2024 | 1188 / 5961 / -15661 | 1085 / 6614 / -16463 | +11.0% |
+| Y2025 | 1077 / 6860 / -19438 | 1294 / 6461 / -19209 | -5.8% |
+| ALL | 2131 / 6005 / -30795 | 2292 / 6040 / -30263 | +0.6% |
+Walk-forward (10-weekday blocks, all 42 months, n=92): with >= without in 59.8% (strictly better 59.8%). Gate >= 58%.
+Stack controls (fade shifted +-7k days, k=1..15; stack fixed; missing 10): real L6M ulcer gain 223 beats 20 of 20 controls on L6M ulcer gain (control gains median -81, max 107); on ALL-period ulcer gain real -35 beats 16 of 20.
+
+### Size 0.5 (Z50): with fade vs without, 1-lot units, bare
+| window | without $/wk / ulcer / maxDD | with $/wk / ulcer / maxDD | ulcer change |
+|---|---|---|---|
+| L6M | 6833 / 3528 / -12811 | 7830 / 3341 / -11591 | -5.3% |
+| L3M | 5619 / 4276 / -12811 | 6347 / 3622 / -10989 | -15.3% |
+| Y2023 | 835 / 3084 / -6915 | 882 / 3077 / -6189 | -0.2% |
+| Y2024 | 1188 / 5961 / -15661 | 966 / 8345 / -20229 | +40.0% |
+| Y2025 | 1077 / 6860 / -19438 | 1468 / 6384 / -19206 | -6.9% |
+| ALL | 2131 / 6005 / -30795 | 2422 / 6599 / -29707 | +9.9% |
+Walk-forward (10-weekday blocks, all 42 months, n=92): with >= without in 58.7% (strictly better 58.7%). Gate >= 58%.
+Stack controls (fade shifted +-7k days, k=1..15; stack fixed; missing 8): real L6M ulcer gain 187 beats 19 of 22 controls on L6M ulcer gain (control gains median -330, max 427); on ALL-period ulcer gain real -595 beats 13 of 22.
+
+VERDICT (delivery gates, as far as scored):
+- Size 0.25: L6M ulcer -6.3%, max DD better, $/wk +7.7%; L3M better; prior years ulcer 2023 -1.2%, 2024 +11.0% (maxDD worse, $/wk 1188 -> 1085), 2025 -5.8% (inside the 15% band by ulcer; the band rule B colour itself was not recomputed here); walk-forward 59.8% (gate 58%: passes, marginal); controls: 20 of 20 landed beaten, 10 control sets still missing months (re-queued), need 7 of those 10 for 27/30: OPEN. Whole 42-month ulcer +0.6% (no gain over all history), so the benefit is a recent-window effect.
+- Size 0.5: prior-year 2024 ulcer +40.0% and max DD -20229 vs -15661 = fails the band; walk-forward 58.7% (marginal); controls 19 of 22 landed: OPEN (needs all 8 remaining). Not a candidate.
+- Not yet done for either size: exit run, 2-lot joint fit, null label.
