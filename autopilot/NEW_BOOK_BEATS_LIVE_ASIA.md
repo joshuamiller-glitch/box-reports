@@ -1,4 +1,4 @@
-# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-24 06:05Z
+# NEW_BOOK_BEATS_LIVE_ASIA - does a new book beat the live Asia book(s) in the exact engine? (W-ASIA, order 0400Z), refreshed 2026-11-24 06:30Z
 
 **vs TODAY's stack (JL3, today's DAY-DONE); Asia is decided FIRST; label BETTER = calibration pending, NOT calibrated.** Asia rule (higher bar, order 1731Z / 0210Z item 4): a REPLACE row (new book ON, the named live Asia book's Asia entries OFF) beats that live book only if on BOTH L6M and L3M the stack ulcer is LOWER (drawdown first) AND mean $/wk is not lower AND worst week and max drawdown are not worse; then prior years (no RED = >30% worse; AMBER shown), persistence > 0.60, 30 date-shift controls, calibration. du = d stack ulcer (negative = better), dm = d mean $/wk (base lots, $4.84 RT).
 
@@ -693,7 +693,7 @@ Sign: d = REPLACE stack minus today's stack; for ulcer lower (negative d) is bet
 | Lba6d553c time_m_2 | [twin of L5dee2059] | no (L6M du +1989 dm +170 | L3M du +759 dm +1591) | no (L6M du +1173 dm -364 | L3M du +1425 dm +1168) | copied |
 | Lbcfd73ea kagi_20 | [twin of L887fd783] | no (L6M du +2011 dm -427 | L3M du +803 dm -94) | no (L6M du +2127 dm -22 | L3M du +2647 dm +1157) | copied |
 
-# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-24T05:45:03Z)
+# ASIA_REMAINING_WORK (W-ASIA, order 1337Z; refreshed 2026-11-24T06:15:03Z)
 
 Cells in the Asia ladder: 3197 (old L-ids of screen long/short cells = both-side books + M twins + both-mode cells). **First look done: 3197; WITHOUT a first look: 0** (0 stage-A lines left; unbuilt cells 0). Stages (all cells): {'C': 59, 'out (L6M negative)': 2511, 'B': 231, 'out': 394, 'out (RED B)': 2}.
 
@@ -720,10 +720,10 @@ Asia set-months landed: last 1 h 0, last 3 h 0; Asia queue lines pending (not DO
 ## Proof that Asia sets are launched ahead of NY AM
 - QUEUES.txt order on server 2 dispatcher: _asi position ?, _nye/pending_l 1154, _nye/pending_w , _lon 1155 (lower = earlier).
 - PRIORITY.txt admission order (TP admit, all hosts): NT > NYR > ASI > ALN > STK > EXE > NYL > NYF > FR > NYE
-- box1 running engine sets by tag: 23 TL3_NYE_
-- server2 running engine sets by tag: 28 TL3_SR_      27 TL3_ALN_
-- A running engine sets by tag: 121 TL3_ALN_      74 TL3_SR_
-- B running engine sets by tag: 114 TL3_SR_      93 TL3_ALN_
+- box1 running engine sets by tag: 31 TL3_NYE_
+- server2 running engine sets by tag: 52 TL3_ALN_
+- A running engine sets by tag: 192 TL3_ALN_       6 TL3_SR_
+- B running engine sets by tag: 183 TL3_ALN_       1 TL3_SR_
 
 ## Best five rows (drawdown first: most negative L6M du among cells with a finished REPLACE row)
 | cell | ADD | REPLACE K7 | REPLACE P7 | REPLACE A7 | REPLACE H7 | REPLACE U7 | controls |
