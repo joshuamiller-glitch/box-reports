@@ -1,12 +1,12 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-24 04:00Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-24 04:41Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 87; screen complete for 86; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 17.
+Books in the table: 88; screen complete for 86; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 17.
 Pick counts (complete books): P60 46, S15U 13, P45 8, S8U 5, A10U20U 3, A20U10U 3, F40_80 2, P30 2, S30U 2, F60_120 1, A15U30U 1
 
 Plain 60/60 is the pick for 46 of 86 complete books.
@@ -92,6 +92,7 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 | Ldcdb0b6e | P60 | 1814 | 4907 | 291 | 927 | [own] | -223 | -19 | 93 | -7 | -19 | -19 | -19 | 156 | -85 | -22 | 671 | 582 | 141 | -54 | P60 |
 | Le207b901BRF30_90 | S15U | 1604 | 2645 | 850 | 631 | 15 | -124 | 42 | 42 | [own] | 42 | 42 | 42 | 42 | 42 | 42 | 1467 | 105 | -95 | -148 | S15U |
 | Lec335094 | P60 | 934 | 3740 | 205 | 452 | [own] | -19 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | -104 | 1403 | -53 | 180 | 403 | P60 |
+| Lecb20c2d | P60 | 359 | 6226 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
 | Led34741bBRF80_40 | A15U30U | 1043 | 4252 | 265 | 832 | 2044 | 70 | 76 | 353 | 68 | 76 | 76 | 76 | 223 | 73 | [own] | 111 | 672 | 1001 | 46 | A15U30U |
 | Lf43211b5 | P60 | 916 | 6095 | 141 | 938* | [own] | -25 | -335 | 363 | -335 | -335 | -335 | -335 | -230 | -308 | -335 | 2402 | -133 | -37 | -189 | P45 |
 | Lff52ec0c | P60 | 1882 | 3866 | 319 | 523 | [own] | 205 | 191 | -34 | 757 | 276 | 191 | 191 | 350 | 1174 | 484 | 1107 | 704 | 387 | 245 | P60 |
@@ -184,6 +185,7 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 | Ldcdb0b6e | 1888 | 363 | 848 | [own] | -414 | -90 | 403 | 41 | -90 | -90 | -90 | 443 | -309 | -56 | 105 | -33 | 2995 | 72 |
 | Le207b901BRF30_90 | 1339 | 1029 | 4 | -248 | -372 | -38 | -38 | [own] | -38 | -38 | -38 | -38 | -38 | -38 | 550 | -141 | -275 | -281 |
 | Lec335094 | 1005 | 149 | 726 | [own] | 54 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 401 | 114 | -268 | 971 | 2278 |
+| Lecb20c2d | 259 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 | Led34741bBRF80_40 | 1163 | -26 | 435 | 1345 | -68 | -46 | 239 | -51 | -46 | -46 | -46 | 56 | -45 | [own] | -60 | 59 | 1163 | 809 |
 | Lf43211b5 | 595 | -171 | 809 | [own] | -144 | -465 | 1390 | -465 | -465 | -465 | -465 | -376 | -382 | -465 | 983 | -18 | -386 | -808 |
 | Lff52ec0c | 1357 | 945 | 668 | [own] | -377 | -325 | 175 | -148 | -319 | -325 | -325 | -469 | 1037 | -304 | 4550 | -77 | 295 | 382 |
@@ -1665,6 +1667,9 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 - F60_120: -131 | 9159 | -19156 | -9113 | 11.9 | -1094
 - F80_40: 434 | 9048 | -21559 | -8801 | 18.4 | -1349
 - F120_60: 831 | 7723 | -23963 | -9573 | 12.3 | -1699
+
+**Lecb20c2d** (current P60): now 359 | 6226 | -15808 | -8171 | 19.4 | -1044
+
 
 **Led34741bBRF80_40** (current A15U30U): now 1043 | 4252 | -10973 | -6541 | 19.1 | -1290
 
