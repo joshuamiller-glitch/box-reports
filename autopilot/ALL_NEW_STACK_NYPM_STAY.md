@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:34Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:39Z.
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
 Both readings: this page = FULL GATE (a+b+c+d+e). The own-checks reading (a+b+c+d only) is on ALL_NEW_STACK_NYPM_OWN_CHECKS.md.
@@ -9,43 +9,39 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 **GOVERNING READING (Josh, 13:28Z): own checks = a+b+c+d (recent positive, every prior year positive, persistence >= 0.58, >= 27/30 luck controls). The comparison with today in prior years (e) stays on this page as information and is applied AFTER exits, pass 2 and the joint layer fit.** 1-minute bars are eligible in Asia (not London / NY).
 
-## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 6 books with a BASE set; 6 have all 42 months landed = counted below; 0 still waiting for prior years)
+## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 7 books with a BASE set; 7 have all 42 months landed = counted below; 0 still waiting for prior years)
 
 | gate | books passing |
 |---|---|
-| (a) positive $/wk in L6M and L3M | 6 of 6 |
-| (b) positive $/wk in each of 2023, 2024, 2025 | 6 of 6 |
-| (c) persistence >= 0.58 (positive 14-day blocks) | 6 of 6 |
-| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 6 books) | 6 of 6 |
-| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 1 of 6 |
-| a + b | 6 |
-| a + b + c | 6 |
-| a + b + c + d | 6 : L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U |
+| (a) positive $/wk in L6M and L3M | 7 of 7 |
+| (b) positive $/wk in each of 2023, 2024, 2025 | 7 of 7 |
+| (c) persistence >= 0.58 (positive 14-day blocks) | 7 of 7 |
+| (d) >= 27 of 30 luck controls beaten, drawdown-first (all 30 landed for 7 books) | 7 of 7 |
+| (e) not RED on rule B vs BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off), scaled to equal risk, in every prior year | 1 of 7 |
+| a + b | 7 |
+| a + b + c | 7 |
+| a + b + c + d | 7 : L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U |
 | a + b + c + d + e | 1 : L8dff280f.BRP90 |
 
-Nearest misses (all five gates known, fail exactly one): L2c6916a5.BRP60 (fails e), L4bdd521a.BRF80_40 (fails e), L52359bf4.BRP30 (fails e), L7b1adff3.BRP60 (fails e), L8e0bf58c.BRS8U (fails e).
+Nearest misses (all five gates known, fail exactly one): L2c6916a5.BRP60 (fails e), L4bdd521a.BRF80_40 (fails e), L52359bf4.BRP30 (fails e), L6d238076.BRF90_30 (fails e), L7b1adff3.BRP60 (fails e), L8e0bf58c.BRS8U (fails e).
 NOT dead, controls (d) still pending: none.
 
 Earlier stacks are kept as the record: autopilot/ALL_NEW_STACK_NYAM_PARTIAL_PRE_RESELECT_0405Z.md (the NY AM partial selection that began with L39470318, which fails its luck controls 18 of 30).
 
 **Method:** pool = books ALONE on the all-new base (no live book trades anywhere, account layers ON) that pass (a) prior years landed and mean $/wk > 0 in L6M, L3M, 2023, 2024, 2025 (reading B, provisional), (b) persistence >= 0.58 (share of positive 14-day blocks), (c) >= 27 of 30 luck controls (drawdown-first). Selection from EMPTY on the pool: equal-risk drawdown-first add rule (mean >= best single, return per ulcer +1%, max DD / worst week within 15% after scaling to the current ulcer, L3M not worse), exact runs of ALL 42 months per candidate stack; a step is NOT accepted if the stack becomes RED on rule B in any prior year (vs today's NY PM session scaled to the stack's L6M ulcer) or its persistence vs that reference falls under 0.58. Swap / drop moves use the same gate; the max-DD guard is not applied (Josh's open question), the page reports what it would have changed. Gates are Josh's and unchanged.
 
-## POOL: books ALONE that pass everything: **6** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **1**)
-Books with all months landed: 7 of 6 in the universe; failed the prior-year positivity / persistence / controls: 0; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
-Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L2c6916a5.BRP60 of L2c6916a5: step 2 at the new shape P60 (R0BR, truly bare; W-BRKT step 2a/2b)], L4bdd521a.BRF80_40 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L4bdd521a.BRF80_40 of L4bdd521a: step 2 at the new shape F80_40 (R0BR, truly bare; W-BRKT step 2a/2b)], L52359bf4.BRP30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L52359bf4.BRP30 of L52359bf4: step 2 at the new shape P30 (R0BR, truly bare; W-BRKT step 2a/2b)], L7b1adff3.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L7b1adff3.BRP60 of L7b1adff3: step 2 at the new shape P60 (R0BR, truly bare; W-BRKT step 2a/2b)], L8dff280f.BRP90 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L8dff280f.BRP90 of L8dff280f: step 2 at the new shape P90 (R0BR, truly bare; W-BRKT step 2a/2b)], L8e0bf58c.BRS8U [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L8e0bf58c.BRS8U of L8e0bf58c: step 2 at the new shape S8U (R0BR, truly bare; W-BRKT step 2a/2b)]
-
-**Plainly: only 6 book(s) pass everything alone in NY PM so far. That is the result to date; it tells how much exits, pass 2 and the joint layer fit have to deliver.**
+## POOL: books ALONE that pass everything: **7** (reading A, stricter: also rule B not RED vs the equal-risk reference in every prior year: **1**)
+Books with all months landed: 7 of 7 in the universe; failed the prior-year positivity / persistence / controls: 0; waiting for prior years: 0; passed (a)+(b), controls still running: 0.
+Pool books: L2c6916a5.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L2c6916a5.BRP60 of L2c6916a5: step 2 at the new shape P60 (R0BR, truly bare; W-BRKT step 2a/2b)], L4bdd521a.BRF80_40 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L4bdd521a.BRF80_40 of L4bdd521a: step 2 at the new shape F80_40 (R0BR, truly bare; W-BRKT step 2a/2b)], L52359bf4.BRP30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L52359bf4.BRP30 of L52359bf4: step 2 at the new shape P30 (R0BR, truly bare; W-BRKT step 2a/2b)], L6d238076.BRF90_30 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L6d238076.BRF90_30 of L6d238076: step 2 at the new shape F90_30 (R0BR, truly bare; W-BRKT step 2a/2b)], L7b1adff3.BRP60 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L7b1adff3.BRP60 of L7b1adff3: step 2 at the new shape P60 (R0BR, truly bare; W-BRKT step 2a/2b)], L8dff280f.BRP90 [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L8dff280f.BRP90 of L8dff280f: step 2 at the new shape P90 (R0BR, truly bare; W-BRKT step 2a/2b)], L8e0bf58c.BRS8U [R1 wrapper, landed before 16:31Z 11-21] [PASS-2 FINAL BOOK L8e0bf58c.BRS8U of L8e0bf58c: step 2 at the new shape S8U (R0BR, truly bare; W-BRKT step 2a/2b)]
 
 ## STEPS (every step: L6M | L3M | 2023 | 2024 | 2025, each ulcer / maxDD / worst wk / mean per wk, prior years with rule B colour vs the equal-risk reference; persistence vs that reference)
 
 | step | added / move | stack set | L6M | L3M | 2023 | 2024 | 2025 | own persistence | tried |
 |---|---|---|---|---|---|---|---|---|---|
 
-STOPPED at 0 books: no candidate passes the add rule.
+LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 12:39Z UTC; pool 6 books): EMPTY: no stack passes
 
-RESULT: EMPTY: no stack passes
-
-Phase: done. Pool used by this run: 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
+Phase: run. Pool used by this run: 7 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
