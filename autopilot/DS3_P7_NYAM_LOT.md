@@ -1,5 +1,5 @@
 # DS3_P7_NYAM_LOT - P7 NY AM lots on JL3, all layers on (W-P7L, order 11-17 23:30Z)
-VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-24 10:58Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': 'LEAD', 'HP': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})'}
+VERDICT (data ends 2026-11-13; FIRST PASS; updated 2026-11-24 11:29Z): best L6M ulcer cell = HP (NY AM 7, only 11:00-12:00); tiers: {'L0': 'LEAD', 'HP': 'NOT FINISHED (fewer than 10 valid controls in L6M/L3M: {\'L6M\': 0, \'L3M\': 0, \'HOLD\': 0, \'GAP\': 0, \'PRE\': 0, "X\'": 0})'}
 
 Five-line summary: (1) pick window end 2026-11-13 (trailing 6M 2026-05-14..2026-11-13, 3M beside, 1M also). (2) refit date 2026-11-24, then every 2 weeks (walk-forward refit dates every 14 days from 2023-10-02). (3) data end 2026-11-13 (202611 base-lot store months via W-DATA). (4) rule: P7 NY AM lots 7 live = base 4 vs base 3 / 2 / 1 / 0 (live 5 / 4 / 2 / 0; live 3 is not reachable with x1.75) and the two halves at 7 live (HA 09:30-11:00 only, HP 11:00-12:00 only); walk-forward rule R6 = cut when trailing-6M P7 NY AM P&L is negative. (5) prior-year % vs live: see the per-year table (AMBER 15-30%, RED >30% worse on ulcer / max DD / mean).
 
