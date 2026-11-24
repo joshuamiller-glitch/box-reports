@@ -32,3 +32,5 @@ CG = CGB1
 DLA = DLA11
 DLC = DLC3
 ```
+
+**2-LOT NULL (15:49Z, search-aware, best-of the full menu on the L6M screen of the 4-book stack): FAIL. Real best-of ulcer cut -42.9% vs null draws -72.4 / -63.2% = beats 0 of the 2 draws run (gate >= 4 of 5; stopped after the 2nd miss). Label: WEAK-BUT-POSITIVE (NOT PROVEN); other gates: walk-forward 0.875, persistence 0.839, bands RED / GREEN / AMBER, no STC. BARE vs BARE vs the bare D7 Asia stack scaled to the SAME max drawdown: 4-book bare per lot L6M 2,943 / -10,556 / -5,111 / $7,217 vs D7 scaled (k 0.327) 4,295 / -10,556 / -6,909 / $1,849 per wk = 3.9x the dollars at equal max DD; the pick JT110 (max DD -3,776): $3,783 per wk vs D7 scaled (k 0.117) $661 = 5.7x.**

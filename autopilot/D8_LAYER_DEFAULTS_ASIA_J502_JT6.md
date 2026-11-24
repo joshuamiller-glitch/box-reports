@@ -23,3 +23,5 @@ STK = STK1
 SZW = SZW3
 NTS = NTS2
 ```
+
+**2-LOT NULL (15:45Z, search-aware, best-of the full menu on the L6M screen of J502 alone): FAIL. Real best-of ulcer cut -36.8% vs null draws -67.3 / -35.3 / -46.3% = beats 1 of the 3 draws run (gate >= 4 of 5; stopped after the 2nd miss). Label: WEAK-BUT-POSITIVE (NOT PROVEN): the other gates are clean (walk-forward 0.846, persistence 0.902, bands GREEN / GREEN / GREEN, no STC). BARE vs BARE vs the bare D7 Asia stack (TL3_ALN_AS_STKLIVE_BARE, 1-lot base, scaled to the SAME max drawdown): J502 alone bare per lot L6M 530 / -1,922 / -1,617 / $2,071 vs D7 scaled (k 0.0595) 782 / -1,922 / -1,258 / $337 per wk = 6.1x the dollars at equal max DD; the pick JT6 1,267 DD: $1,259 per wk vs D7 scaled (k 0.0392) $222 = 5.7x.**
