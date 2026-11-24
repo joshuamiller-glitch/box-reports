@@ -32,3 +32,5 @@ CAP = CAP8
 SZW = SZW3
 NTS = NTS2
 ```
+
+**2-LOT NULL (04:27Z, search-aware, best-of the whole screen menu incl. DL / CGB, 5-book Asia stack, L6M): FAIL. Real best-of ulcer cut -42.9% vs null draws -44.0 / -39.9 / -19.0 / -54.5%: beats 2 of the 4 draws run (gate >= 4 of 5; stopped after the 2nd miss). The Asia layer gains are NOT clearly more than what the same search finds on random-entry books: label WEAK / NOT PROVEN for every Asia layer pick (JT19, JT143, JT243); the panel default stays bare (layers OFF = what was tested) until Josh chooses.**
