@@ -82,3 +82,8 @@ VERDICT (delivery gates, as far as scored):
 - Size 0.25: L6M ulcer -6.3%, max DD better, $/wk +7.7%; L3M better; prior years ulcer 2023 -1.2%, 2024 +11.0% (maxDD worse, $/wk 1188 -> 1085), 2025 -5.8% (inside the 15% band by ulcer; the band rule B colour itself was not recomputed here); walk-forward 59.8% (gate 58%: passes, marginal); controls: 20 of 20 landed beaten, 10 control sets still missing months (re-queued), need 7 of those 10 for 27/30: OPEN. Whole 42-month ulcer +0.6% (no gain over all history), so the benefit is a recent-window effect.
 - Size 0.5: prior-year 2024 ulcer +40.0% and max DD -20229 vs -15661 = fails the band; walk-forward 58.7% (marginal); controls 19 of 22 landed: OPEN (needs all 8 remaining). Not a candidate.
 - Not yet done for either size: exit run, 2-lot joint fit, null label.
+
+## RE-SCORE of the stack controls under the LEAD rule (19:00Z): score each control on the months it HAS, real stack-with vs without on the SAME months; < 4 of 6 L6M months = unscorable; gate = 90% of scorable (27 of 30)
+(The earlier 20-of-20 / 19-of-22 lines above required all 42 months and dropped sets with a missing prior-year month. The missing months are all PRIOR-YEAR months (the engine's F4 exit-gap guard fires on shifted dates); every control has all 6 L6M months, so all 30 are scorable on the L6M basis.)
+- L1acc170a at 0.25: beats 29 of 30 controls on L6M ulcer gain (gate 27): PASS. Same test over all available months (prior years included): 25 of 30 (gate 27): below the gate.
+- L1acc170a at 0.5: L6M 27 of 30 (gate 27); all months 20 of 30. Already fails the 2024 band.
