@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-24 13:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-24 13:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-24 13:15Z | box1: busy 100%, load1 76.92, workers 16, MemAvail 49 GB | server2: busy 98%, load1 86.30, workers 27, MemAvail 744 GB | pending box1-eligible 818128 / server2-eligible 19603 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 187.94, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 956 GB | serverB: busy 100%, load1 190.98, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 916 GB | serverC: busy 100%, load1 138.80, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1327 GB | serverD: busy 97%, load1 63.64, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1416 GB
+LATEST CORES.md LINE: 2026-11-24 13:30Z | box1: busy 100%, load1 64.86, workers 19, MemAvail 52 GB | server2: busy 96%, load1 83.33, workers 28, MemAvail 902 GB | pending box1-eligible 817366 / server2-eligible 17992 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 187.04, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 958 GB | serverB: busy 100%, load1 184.99, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 911 GB | serverC: busy 100%, load1 139.15, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1338 GB | serverD: busy 99%, load1 66.91, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1418 GB
 
 ## UTC TIME WRITTEN
-2026-11-24 13:15Z
+2026-11-24 13:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-24 13:15Z | box1: busy 100%, load1 76.92, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 48.2 GB; live reservations 8 (8 GB); workers 16, of which TP-adopted 16 (RSS 22.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 76.92, 73.06, 66.37
-  by tag: ALN quota 10 running 1 hungry True RSS 1.2 GB PSS 1.0 GB; NYE quota 16 running 10 hungry False RSS 13.6 GB PSS 12.5 GB; LON quota 12 running 4 hungry True RSS 6.7 GB PSS 6.1 GB; TOOLS quota 0 running 1 hungry False RSS 0.7 GB PSS 0.6 GB
+Server 1 (this box): MemAvail 52.1 GB; live reservations 13 (13 GB); workers 19, of which TP-adopted 19 (RSS 25.6 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 64.86, 67.82, 67.85
+  by tag: NYE quota 16 running 13 hungry False RSS 17.0 GB PSS 15.6 GB; LON quota 12 running 6 hungry True RSS 8.6 GB PSS 7.9 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L727a72a9_ALN (x10);TL3_NYE_L579e2d83_ALN (x10);TL3_SR_NP_STKd8b4bcfb9e_R1x4 (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 86.23, 86.66, 85.74|/dev/md2         28T  2.8T   26T  10% /mnt/l2|55|
+  top running jobs: TL3_NYE_L3f67e925_ALN (x26);TL3_LON_M52ce092e_RM7 (x6);TL3_LON_M629beef4_RM7 (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 83.45, 84.24, 84.84|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 86.23, 86.66, 85.74|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261123_2135Z_Josh-one-session-at-a-time-asia-first.md 20261123_2330Z_time-windows-after-midnight-rows-look-broken.md 20261124_0250Z_Josh-depth-book-repeat-stops-skip-rule.md 20261124_0345Z_asia-step-a-counts-do-not-agree.md 20261124_0432Z_carryover-and-session-end-status.md
+20261124_0250Z_Josh-depth-book-repeat-stops-skip-rule.md 20261124_0345Z_asia-step-a-counts-do-not-agree.md 20261124_0432Z_carryover-and-session-end-status.md 20261124_1316Z_Josh-deliver-asia-final-now.md 20261124_1320Z_asia-final-looks-stalled-30-sets-28-controls.md
