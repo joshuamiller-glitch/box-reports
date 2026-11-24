@@ -1,12 +1,12 @@
 # BRACKET SHAPES, ASIA pool (stage 1, every bracket on every book)
 
-Written 2026-11-23 23:58Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
+Written 2026-11-24 00:40Z UTC by W-BRKT (order 1454Z, Josh: "sure why not"). Data end 2026-10-31 (research cap). Pick window: trailing 6 months (L6M 2026-05..10) with trailing 3 months (L3M 2026-08..10) beside it; refit 2026-11-22. Prior-year check (positive every prior year and 27 of 30 luck controls) is run only on shapes that win in BOTH L6M and L3M.
 
 What this is: every pool book, SAME trigger events, book alone on the all-new base (live books off, account layers on), 17 bracket shapes. Judged by RISK, not width: each shape is scaled to the same last-6-months ulcer (RMS drawdown) as the book's current bracket, then compared on $/wk, max drawdown and worst week. A shape WINS if, at equal ulcer, $/wk is at least the current bracket's in L6M and L3M, and max drawdown and worst week are not more than 15% worse (L6M), and $/wk > 0. NOTE: the 15% max-DD / worst-week part of this rule is an AGENT-ADDED guard (W-BRKT), not one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); see BRACKET_FOUR_GATES.md for the books it removed, judged under his four gates only.
 
 ## Summary
 
-Books in the table: 86; screen complete for 86; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 17.
+Books in the table: 87; screen complete for 86; books whose pick differs from their current bracket (provisional, before the prior-year and luck-control check): 17.
 Pick counts (complete books): P60 46, S15U 13, P45 8, S8U 5, A10U20U 3, A20U10U 3, F40_80 2, P30 2, S30U 2, F60_120 1, A15U30U 1
 
 Plain 60/60 is the pick for 46 of 86 complete books.
@@ -31,6 +31,7 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 | L2b152d25BRP30 | S15U | 1286 | 2113 | 1715 | 867 | 611 | -23 | 21 | 21 | [own] | 21 | 21 | 21 | 21 | 21 | 21 | 912 | 253 | 315 | -111 | S15U |
 | L2fbba524BRP30 | A20U10U | 1788 | 3660 | 711 | 1340 | 278 | -87 | 46 | -92 | 39 | 46 | 46 | 46 | 35 | [own] | 36 | 285 | 48 | 932 | 393 | A20U10U |
 | L32bc5db3BRP60 | S15U | 999 | 4795 | 12 | 1080 | 1399 | -190 | -138 | -138 | [own] | -138 | -138 | -138 | -138 | -138 | -138 | 193 | 773 | 234 | -189 | S15U |
+| L36523944 | P60 | 366 | 6194 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - | P60 (partial) |
 | L36f1a14eBRF30_90 | S15U | 927 | 2620 | 1381 | 327 | 508 | 306 | 117 | 117 | [own] | 117 | 117 | 117 | 117 | 117 | 117 | 709 | 898 | 67 | -35 | S15U |
 | L385f4f2e | P60 | 476 | 3982 | 229 | 480 | [own] | 94 | -215 | -217 | -215 | -215 | -215 | -215 | -215 | -215 | -215 | 891 | 134 | 327 | -72 | P60 |
 | L385f4f2eJ502 | P60 | 2157 | 469 | 292 | 927 | [own] | 1504 | 464 | 461 | 464 | 464 | 464 | 464 | 464 | 464 | 464 | 488 | 556 | 1287 | 1118 | P60 |
@@ -122,6 +123,7 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 | L2b152d25BRP30 | 1609 | 1281 | 2174 | 1504 | 116 | -69 | -69 | [own] | -69 | -69 | -69 | -69 | -69 | -69 | 1285 | 354 | 491 | -120 |
 | L2fbba524BRP30 | 1208 | 263 | 189 | 246 | -129 | -177 | -159 | -178 | -177 | -177 | -177 | -132 | [own] | -179 | -118 | -168 | 84 | -125 |
 | L32bc5db3BRP60 | 288 | 1514 | 4999 | 803 | -263 | 97 | 97 | [own] | 97 | 97 | 97 | 97 | 97 | 97 | 619 | 33 | 70 | -212 |
+| L36523944 | 597 | - | - | [own] | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 | L36f1a14eBRF30_90 | 98 | 1248 | 285 | 1640 | -189 | 269 | 269 | [own] | 269 | 269 | 269 | 269 | 269 | 269 | 708 | 1928 | -249 | 624 |
 | L385f4f2e | 457 | 359 | -222 | [own] | -216 | -234 | -235 | -234 | -234 | -234 | -234 | -234 | -234 | -234 | -148 | -24 | 292 | 6 |
 | L385f4f2eJ502 | 2514 | 188 | 488 | [own] | 1864 | 700 | 691 | 700 | 700 | 700 | 700 | 700 | 700 | 700 | 712 | 669 | 985 | 1403 |
@@ -520,6 +522,9 @@ Plain 60/60 is the pick for 46 of 86 complete books.
 - F60_120: 943 | 5846 | -12180 | -9502 | 13.8 | -1038
 - F80_40: 276 | 5657 | -13024 | -7624 | 26.4 | -1329
 - F120_60: -626 | 15882 | -33836 | -11536 | 15.6 | -1781
+
+**L36523944** (current P60): now 366 | 6194 | -16997 | -7661 | 19.4 | -1038
+
 
 **L36f1a14eBRF30_90** (current S15U): now 927 | 2620 | -6636 | -3393 | 8.6 | -545
 
@@ -1871,7 +1876,7 @@ Gates: (1) walk-forward persistence >= 0.58 (every 14 days from 2023-10: pick th
 | L82f920bbBRP30 | S15U | P60 | 0.34 (47 periods, 16 won; shared wf_gate.rolling) | RED / RED / GREEN (shared); mine, equal-risk $/wk only: RED 44.2% / RED 71.8% / GREEN 0.0% | pending | 19/30 | no | not kept: walk-forward persistence 0.34 over 47 periods prior-year RED (shared band) |
 | L9e3c5607BRP45 | S8U | P45 | 0.594 (69 periods, 41 won; shared wf_gate.rolling) | GREEN / AMBER / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / AMBER 15.8% / GREEN 0.0% | pending | 25/30 | no | PASSES walk-forward + prior-year band + null |
 | Lc754cf58 | A20U10U | F60_120 | 0.713 (80 periods, 57 won; shared wf_gate.rolling) | GREEN / GREEN / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / GREEN 0.0% / GREEN 0.0% | pending | 7/30 | no | walk-forward pass, UNCONFIRMED (real_gain 0.00 on L6M: the bracket does not bind in the recent window, S8U = own bracket there, null FAILED, 2023 GREEN) |
-| Lf43211b5 | P60 | P45 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: RED 36.9% / RED 75.1% / GREEN 0.0% | pending | 0/0 | no | pending (series not complete) |
+| Lf43211b5 | P60 | P45 | series not complete | - / - / - (shared); mine, equal-risk $/wk only: RED 36.9% / RED 75.1% / GREEN 0.0% | pending | 2/6 | no | pending (series not complete) |
 | M7ea48296 | P60 | P45 | 0.595 (74 periods, 44 won; shared wf_gate.rolling) | GREEN / AMBER / GREEN (shared); mine, equal-risk $/wk only: GREEN 0.0% / AMBER 17.0% / GREEN 0.0% | pending | 25/30 | no | PASSES walk-forward + prior-year band + null |
 | Ma010c3eb | P60 | P45 | 0.551 (69 periods, 38 won; shared wf_gate.rolling) | GREEN / GREEN / RED (shared); mine, equal-risk $/wk only: GREEN 2.4% / GREEN 0.0% / RED 43.3% | pending | 23/30 | no | not kept: walk-forward persistence 0.551 over 69 periods prior-year RED (shared band) |
 
