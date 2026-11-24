@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:54Z.
+# ALL-NEW STACK, NY PM: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 12:59Z.
 **RECENT BASIS (Josh, 10:48 ET Nov 22: "yes recents should drive this"; orders 1552Z + 1612Z): every add, swap and resize is judged at EQUAL L6M RISK: return per unit of L6M ulcer must beat the stack before by 1%, with the 15% L6M max-drawdown / worst-week guard (after scaling to the current ulcer); L3M is shown beside every step and is not a gate. PRIOR YEARS ARE A CHECK, NOT THE PICKER, and they can block only on the old test: a stack is not chosen if any of 2023, 2024, 2025 has a NEGATIVE mean $/wk or its own persistence (share of positive 14-day blocks) is under 0.58. The AMBER (15-30% worse) / RED (> 30% worse) colours are information with numbers (vs bare D7 scaled to the stack's L6M ulcer, and vs the stack before the step) and never block, because the L6M is the selection window and older years are nearly always weaker. The 15:58Z blocked results (band as blocker, EMPTY) are kept as the _literalband reference files: superseded by order 1612Z. The current-rule page of the same loop name (without RECENT) is the reference row; nothing of it was overwritten.**
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
@@ -28,7 +28,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (moves) | L6d238076.BRF90_30 + L8dff280f.BRP90 | 2218 / -6395 / -5112 / 2433 | 2037 / -5889 / -2342 / 2204 | 8453 / -17458 / -4783 / 503 | 10392 / -25100 / -8162 / 867 | 4384 / -18105 / -6184 / 1358 | 0.68 |
+| own-checks (final) | L6d238076.BRF90_30 + L8dff280f.BRP90 | 2218 / -6395 / -5112 / 2433 | 2037 / -5889 / -2342 / 2204 | 8453 / -17458 / -4783 / 503 | 10392 / -25100 / -8162 / 867 | 4384 / -18105 / -6184 / 1358 | 0.68 |
 | staying-power (done) |  | running | | | | | |
 
 ## GATE BY GATE: NY PM, books ALONE on the all-new base (universe 7 books with a BASE set; 7 have all 42 months landed = counted below; 0 still waiting for prior years)
@@ -70,7 +70,7 @@ STOPPED at 2 books: no candidate passes the add rule.
 
 LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 12:37Z UTC; pool 6 books): L52359bf4.BRP30 + L8e0bf58c.BRS8U + L4bdd521a.BRF80_40 + L2c6916a5.BRP60
 
-Phase: moves. Pool used by this run: 7 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
+Phase: final. Pool used by this run: 7 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L6d238076.BRF90_30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
