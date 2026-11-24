@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: WEIGHTED LOOP london-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 06:24Z.
+# ALL-NEW STACK, LONDON: WEIGHTED LOOP london-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 06:29Z.
 
 **DECISION BASIS: EQUAL L6M ULCER (recent basis, order 1552Z; 15% L6M max-DD / worst-week guard; L3M beside; prior years only as the 15-30% band, RED not chosen).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -6,7 +6,7 @@
 
 **The equal-weight loop `london-own-recent` is the REFERENCE ROW (its FINAL has no weights).**
 
-Phase **final**; pool 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30); steps 4; stop: no candidate passes the add rule.
+Phase **done**; pool 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BRF120_60, Lc78f2492.BRF90_30); steps 4; stop: no candidate passes the add rule.
 
 ## STEPS
 
@@ -20,6 +20,40 @@ Phase **final**; pool 4 books (L12842dde.BRP45, L19201dfc.BRF90_30, L74274eca.BR
 - prior-year band, step 2 (vs the stack before this step scaled to the candidate L6M ulcer (k = 1.02), information only): 2023 RED / 2024 GREEN / 2025 RED
 - prior-year band, step 3 (vs the stack before this step scaled to the candidate L6M ulcer (k = 1.10), information only): 2023 RED / 2024 GREEN / 2025 GREEN
 - prior-year band, step 4 (vs the stack before this step scaled to the candidate L6M ulcer (k = 1.06), information only): 2023 AMBER / 2024 RED / 2025 AMBER
+
+## FINAL (weighted): L19201dfc.BRF90_30 x1 + L12842dde.BRP45 x0.5 + L74274eca.BRF120_60 x0.25
+
+Controls beaten (30): (30, 23, 30) (L6M drawdown-first / L3M / ulcer-only); own persistence 0.72; moves: no swap/drop/resize passed the add rule + gate
+
+### this mix, 1-lot units (ulcer / maxDD / worst wk / $ per wk)
+
+| window | weighted |
+|---|---|
+| L6M | 1515 / -4846 / -2519 / 2508 |
+| L3M | 1824 / -4846 / -2283 / 2309 |
+| Y2023 | 3603 / -9037 / -6115 / 404 |
+| Y2024 | 2199 / -10083 / -4090 / 666 |
+| Y2025 | 11792 / -22867 / -9457 / 244 |
+
+### SCALED TO EQUAL WORST-PRIOR-YEAR MAX DD of the equal-weight final (k = 0.560) beside the equal-weight final ['L19201dfc.BRF90_30']
+
+| window | weighted x k | equal weights |
+|---|---|---|
+| L6M | 848 / -2713 / -1411 / 1404 | 1273 / -3809 / -2673 / 1768 |
+| L3M | 1021 / -2713 / -1278 / 1293 | 1406 / -3402 / -2449 / 1643 |
+| Y2023 | 2017 / -5060 / -3424 / 226 | 1913 / -5238 / -2549 / 273 |
+| Y2024 | 1231 / -5645 / -2290 / 373 | 4372 / -11780 / -5793 / 251 |
+| Y2025 | 6602 / -12803 / -5295 / 137 | 5080 / -12803 / -4448 / 183 |
+
+### today's basis (scaled to equal L6M ulcer, k = 0.840)
+
+| window | weighted x k | equal weights |
+|---|---|---|
+| L6M | 1273 / -4072 / -2117 / 2107 | 1273 / -3809 / -2673 / 1768 |
+| L3M | 1533 / -4072 / -1918 / 1940 | 1406 / -3402 / -2449 / 1643 |
+| Y2023 | 3028 / -7593 / -5138 / 340 | 1913 / -5238 / -2549 / 273 |
+| Y2024 | 1847 / -8473 / -3436 / 559 | 4372 / -11780 / -5793 / 251 |
+| Y2025 | 9908 / -19214 / -7946 / 205 | 5080 / -12803 / -4448 / 183 |
 
 ### BARE D7 session stack at the same L6M ulcer as the weighted mix (bare vs bare only)
 
