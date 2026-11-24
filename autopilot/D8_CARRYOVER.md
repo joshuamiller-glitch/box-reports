@@ -1,4 +1,4 @@
-# D8_CARRYOVER: carry-over rule (earlier session lost more than X -> skip / half the later session), 2-lot basis, EXACT rows where landed + emulation for the rest (W-STATUS scorer, 2026-11-24 04:56Z)
+# D8_CARRYOVER: carry-over rule (earlier session lost more than X -> skip / half the later session), 2-lot basis, EXACT rows where landed + emulation for the rest (W-STATUS scorer, 2026-11-24 05:59Z)
 
 Research only. PARTIAL until the XF (fitted-pick) rows land (see status); re-run the scorer (scratchpad/se_xs/run_carry.sh) at the end. Units: per 2 lots per book, net of $4.84 per lot, Globex-day P&L, weekly = Mon-Fri; ulcer = RMS of daily drawdown; ratios = rule / reference (below 1 on risk = better, above 1 on $/wk = better). L6M = 2026-05..10, L3M = 2026-08..10.
 
@@ -8,8 +8,8 @@ Research only. PARTIAL until the XF (fitted-pick) rows land (see status); re-run
 |---|---|---|---|---|
 | XS | TL3_SR_XS_ASNYLO_BF2_BASE | 32 | 192 / 192 | 6 of 6 |
 | XS | TL3_SR_XS_ASNYLONP_BF2_BASE | 16 | 96 / 96 | 6 of 6 |
-| XF | TL3_SR_XF_ASNYLO_BF2_BASE__v1 | 32 | 32 / 192 | 6 of 6 |
-| XF | TL3_SR_XF_ASNYLONP_BF2_BASE | 16 | 16 / 96 | 6 of 6 |
+| XF | TL3_SR_XF_ASNYLO_BF2_BASE__v1 | 32 | 54 / 192 | 6 of 6 |
+| XF | TL3_SR_XF_ASNYLONP_BF2_BASE | 16 | 30 / 96 | 6 of 6 |
 
 - XS bare ASNYLO (Asia+NY AM+London, 11 books): COMPLETE (all 32 carry sets x 6 months and the merged BASE x 6 months). Identity of the merged base against the three separate per-session BF2 sets, trade for trade over all 6 months: _SR_XS_ASNYLO_BF2_BASE 4147 trades vs 4147, max daily difference $0.00.
 - XF fitted-pick ASNYLO: only part landed (rows above); the identity of its merged base vs the separate picks (JT19 + JT68 + London bare) is exact on 202605,202606,202607,202608,202609,202610 (4171 trades both). Scored below by EMULATION on the separate pick trades, with the landed exact rows as a check (they fire on 0 of the landed days, as the emulation says).
@@ -155,7 +155,44 @@ Base = TL3_SR_XS_ASNYLONP_BF2_BASE (merged BASE rows, merged BASE); reference = 
 
 ## 2. FITTED-PICK BASE (XF = Asia JT19 + NY AM JT68 + London bare, as D8 delivers), 2 lots
 
-Exact XF rows landed: 32 of 192 (202608); in the months landed every rule fires on 0 days, matching the emulation for those months. Emulated all 42 months below.
+Exact XF rows landed: 54 of 192 (202605,202606,202607,202608,202609,202610); in the months landed every rule fires on 0 days, matching the emulation for those months. Emulated all 42 months below.
+
+EXACT rows (XF merged base, fixed hook):
+
+Base = TL3_SR_XF_ASNYLO_BF2_BASE__v1; reference row = the same set with the rules off, same months. Base L6M (exact): $/wk / ulcer / max DD / worst week / worst day = 12,737/4,794/-12,390/1,826/-6,454 (months 202608)
+
+| pair | act | X ($ per lot-per-book; $ at 2 lots = 2X) | months | days fired L6M exact / 3.5y emulated | ulcer x | max DD x | $/wk x | worst wk x | worst day x | L3M ulcer x / $/wk x | days that would have recovered: n, cost $ | days saved: n, $ | prior yrs 2023 / 2024 / 2025 emulated: ulcer x, $/wk x | blocks L6M win/lose/same | blocks 3.5y emu win/lose/same |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia -> NY AM | skip | 3000 | 1 | 0 / 19 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.04, 0.91 / 1.00, 1.00 / 0.99, 0.98 | 0/0/3 | 8/4/81 |
+| Asia -> NY AM | half | 3000 | 1 | 0 / 19 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.02, 0.95 / 1.00, 1.00 / 0.98, 0.99 | 0/0/3 | 8/4/81 |
+| Asia -> NY AM | skip | 4000 | 1 | 0 / 8 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.04, 0.97 / 1.00, 1.00 / 0.99, 1.00 | 0/0/3 | 6/2/85 |
+| Asia -> NY AM | half | 4000 | 1 | 0 / 8 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.02, 0.99 / 1.00, 1.00 / 0.98, 1.00 | 0/0/3 | 6/2/85 |
+| Asia -> NY AM | skip | 5000 | 1 | 0 / 4 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.03, 0.98 | 0/0/3 | 3/1/89 |
+| Asia -> NY AM | half | 5000 | 1 | 0 / 4 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.01, 0.99 | 0/0/3 | 3/1/89 |
+| Asia -> NY AM | skip | 6000 | 1 | 0 / 1 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.00, 1.00 | 0/0/3 | 1/0/92 |
+| Asia -> NY AM | half | 6000 | 1 | 0 / 1 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.00, 1.00 | 0/0/3 | 1/0/92 |
+| Asia -> London | skip | 3000 | 1 | 0 / 17 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 0.98 / 0.94, 1.01 / 1.01, 1.03 | 0/0/3 | 5/5/83 |
+| Asia -> London | half | 3000 | 1 | 0 / 17 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 0.99 / 0.97, 1.01 / 1.00, 1.02 | 0/0/3 | 5/5/83 |
+| Asia -> London | skip | 4000 | 1 | 0 / 6 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.01, 1.03 | 0/0/3 | 3/3/87 |
+| Asia -> London | half | 4000 | 1 | 0 / 6 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.00, 1.01 | 0/0/3 | 3/3/87 |
+| Asia -> London | skip | 5000 | 1 | 0 / 4 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 0.95, 1.04 | 0/0/3 | 2/2/89 |
+| Asia -> London | half | 5000 | 1 | 0 / 4 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 0.98, 1.02 | 0/0/3 | 2/2/89 |
+| Asia -> London | skip | 6000 | 1 | 0 / 1 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.00, 1.00 | 0/0/3 | 0/1/92 |
+| Asia -> London | half | 6000 | 1 | 0 / 1 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.00, 1.00 | 0/0/3 | 0/1/92 |
+| London -> NY AM | skip | 3000 | 1 | 0 / 6 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 0.99 / 1.04, 0.98 | 0/0/3 | 3/3/87 |
+| London -> NY AM | half | 3000 | 1 | 0 / 6 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 0.99 / 1.02, 0.99 | 0/0/3 | 3/3/87 |
+| London -> NY AM | skip | 4000 | 1 | 0 / 2 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 0.99 / 1.00, 1.00 | 0/0/3 | 1/1/91 |
+| London -> NY AM | half | 4000 | 1 | 0 / 2 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 0.99 / 1.00, 1.00 | 0/0/3 | 1/1/91 |
+| any earlier session -> each later session | skip | 3000 | 3 | 1 / 34 | 1.01 | 1.00 | 0.997 | 1.00 | 1.00 | 1.00 / 1.00 | 1, -755 | 0, 0 | 1.07, 0.94 / 1.05, 0.99 / 1.24, 0.88 | 0/1/9 | 9/14/70 |
+| any earlier session -> each later session | half | 3000 | 4 | 4 / 34 | 0.99 | 1.00 | 0.993 | 1.00 | 1.00 | 1.00 / 1.00 | 3, -5,173 | 1, 2,741 | 1.03, 0.97 / 1.02, 1.00 / 1.08, 0.94 | 1/2/7 | 9/14/70 |
+| any earlier session -> each later session | skip | 4000 | 3 | 0 / 18 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.04, 0.97 / 0.97, 1.01 / 1.22, 0.91 | 0/0/8 | 7/7/79 |
+| any earlier session -> each later session | half | 4000 | 1 | 0 / 18 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.02, 0.99 / 0.99, 1.00 / 1.07, 0.95 | 0/0/3 | 7/7/79 |
+| any earlier session -> each later session | skip | 5000 | 3 | 0 / 7 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 0.90, 1.04 | 0/0/8 | 4/2/87 |
+| any earlier session -> each later session | half | 5000 | 6 | 0 / 7 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 0.95, 1.02 | 0/0/14 | 4/2/87 |
+| any earlier session -> each later session | skip | 6000 | 4 | 0 / 5 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.03, 0.98 | 0/0/9 | 3/2/88 |
+| any earlier session -> each later session | half | 6000 | 3 | 0 / 5 | 1.00 | 1.00 | 1.000 | 1.00 | 1.00 | 1.00 / 1.00 | 0, 0 | 0, 0 | 1.00, 1.00 / 1.00, 1.00 / 1.01, 0.99 | 0/0/10 | 3/2/88 |
+
+Emulated (all 42 months, for prior years):
 
 EMULATED on the separate per-session exact trade lists (rule applied to trades; see method), base L6M $/wk/ulcer/max DD/worst wk/worst day = 19,190/3,766/-13,321/-106/-10,013; base prior-year $/wk 2023 2,593, 2024 4,728, 2025 4,227, 2026 Jan-Apr 1,197.
 
