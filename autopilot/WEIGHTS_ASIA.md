@@ -1,7 +1,7 @@
-# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-24 00:24Z)
+# WEIGHTS_ASIA - weight search on book-alone sums (W-LAYERS, 2026-11-24 00:29Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md (sha in DECISIONS.md). A mix is the SUM of weight x book-alone daily P&L (42 months, 1 lot); no stack interaction; engine check pending.
-Run 2026-11-24 00:24Z; pool hash (asia pool file) 89e0846abefc; dynamic scopes (loop finals): FINAL_asia_own_d8_nol3+asia_own_d8_nol3_recent_w, FINAL_asia_own_d8_nol3_w, FINAL_asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w.
+Run 2026-11-24 00:29Z; pool hash (asia pool file) 29c30aad2744; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3+asia_own_d8_nol3_recent_w, FINAL_asia_own_d8_nol3_w, FINAL_asia_stay_d8+asia_stay_d8_nol3+asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w.
 
 ### Scope A - members J502 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
@@ -115,7 +115,7 @@ BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58 (937 mixes pass the guard an
 
 GATES for the top mix (equal-risk ranking): walk-forward persistence 0.175 over 80 periods (equal weights was the pick in 0; gate >= 0.58); prior-year band 2023 RED (+63%), 2024 GREEN (-10%), 2025 GREEN (-34%); null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
 
-### Scope FINAL_asia_own_d8_nol3+asia_own_d8_nol3_recent_w - members L385f4f2e (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
+### Scope FINAL_asia_own_d8+asia_own_d8_nol3+asia_own_d8_nol3_recent_w - members L385f4f2e (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
 Equal-weight reference: worst prior-year max DD -11407. Cells `ulcer / max DD / worst week / $/wk` at 1 lot x scale k; every mix scaled to the reference's worst-prior-year max DD (k shown).
 
@@ -165,7 +165,7 @@ BEST MIX AMONG THOSE WITH BLOCK PERSISTENCE >= 0.58 (2453 mixes pass the guard a
 
 GATES for the top mix (equal-risk ranking): walk-forward persistence 0.175 over 80 periods (equal weights was the pick in 0; gate >= 0.58); prior-year band 2023 GREEN (+4%), 2024 GREEN (-4%), 2025 GREEN (-2%); null: PENDING (needs random-entry book series, ~2,000 sm); 27/30: not computed (shown only).
 
-### Scope FINAL_asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w - members Lb0e6dfa3 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
+### Scope FINAL_asia_stay_d8+asia_stay_d8_nol3+asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w - members Lb0e6dfa3 (7 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
 Equal-weight reference: worst prior-year max DD -12361. Cells `ulcer / max DD / worst week / $/wk` at 1 lot x scale k; every mix scaled to the reference's worst-prior-year max DD (k shown).
 
