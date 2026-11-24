@@ -1,0 +1,12 @@
+# ASIA FADE SPEC: L1acc170a (twin L45c6baf5, same trade list) - candidate only, NOT passed any delivery gate yet
+
+Why it is spec'd: the only one of the 5 fades whose add to STKd8da2eb47b lowers BOTH L6M ulcer and L6M max DD at sizes 0.25 and 0.5 (ASIA_FADE_TABLE.md): without 3528 / -12811; +0.25: 3305 / -11897, $/wk 6833 -> 7361; +0.5: 3341 / -11591, $/wk 7830. At size 1 it is worse (4236 / -17269). On J502 alone it does NOT lower ulcer (546 -> 574 at 0.25).
+
+- Bar: kagi_20 (twin: dchg_20; same trades). Trigger: trig_levels_vwap, variant false_break, params {"M": 3, "k": 0.5} (fade of a failed break of the VWAP level; both sides, mode long+short alternating as in the events file). Entry events: /mnt/l2/l2vast/_brkt/ev/L1acc170a_R0_P45.parquet (23,058 events, cols ts, side, stop_pts, tgt_pts, lots, exit_ts; exit_ts in the file is the session end, the bracket decides the real exit).
+- Bracket: P45 = fixed 45 pt stop / 45 pt target (stop_pts = tgt_pts = 45). Searched shapes: own sym15u, best both-window shape fixed45/45.
+- Size in the test: 0.25 = 1 lot, 0.5 = 2 lots, with the stack members at 4 lots each (x4 convention, numbers /4).
+- Standalone (1 lot, bare): L6M 2113 $/wk, L3M 1439, ulcer 2279, max DD -5967, worst wk -2647; daily correlation with the stack (BF1_BASE) 0.20.
+- WARNING for coding: it fires very often (75 entries 23:00Z-06:00Z on 20261027 (89 from 22:00Z) and about 52 on 20261110, many seconds to minutes apart, sides alternating). The ~3-5 per night of the other Asia books is the norm. Fill realism, same-side lot cap (6) and the live bar rebuild (kagi_20) must be checked before anyone trusts the $.
+- Signals 20261027 (UTC, side +1 = long, from 22:01Z on 20261026 to 05:49Z): full list is in the events file rows 22323-22411 (89 events from 2026-10-26 22:01:14Z to 2026-10-27 05:49:55Z; first Asia-session (>=23:00Z) ones: 23:04:09 -1, 23:06:25 -1, 23:09:38 +1, 23:10:57 -1, 23:11:57 +1 ...). 20261110: rows 22921-22972 (52 events, 2026-11-09 23:28:19Z -1 first, 2026-11-10 06:57:17Z +1 last). Parity bars (kagi_20 bar closes) are not in files: need the bar builder run.
+- Inputs not in files here: the live-cut price inputs for VWAP level; code for kagi_20 live bars (kagi reversal size rule): see code/th_grid bar library.
+- STILL OPEN: prior-year rows + 30 date-shift stack controls per size queued (62 sets / 2592 rows, BF4_FD names, gating file), walk-forward >= 58%, exit run, 2-lot joint fit, null label.
