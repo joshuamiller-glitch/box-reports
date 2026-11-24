@@ -28,3 +28,7 @@ Corollary for the relay report: the live file's missing cap is NOT a fidelity ga
 Cap-off copies built (`cde` removed) in /mnt/l2/l2vast/_th_sz/ijk/exact/sets/: TL3_SR_AS_L385f4f2e_P2JCX502_BF2_JT6_CAPOFF, TL3_SR_AS_STKd8da2eb47b_BF2_JT110_CAPOFF, TL3_SR_NY_STKd8b76ecd35_BF2_JT68_CAPOFF, TL3_SR_NP_STKd893133bd8_BF2_JT209_CAPOFF, TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_BASE_CAPOFF.
 Queued 30 rows (5 sets x 202605..202610): Asia 12 rows in pending_asia_gating.txt (about 1,700 rows ahead), NY AM, NY PM and London 18 rows in pending_stack_urgent.txt.
 Expected result: trades identical to the capped sets (with-cap vs cap-off L6M and L3M $/wk, ulcer and max DD equal). The prediction is NOT yet verified by the runs. Compare with `runs_rf/<set>_CAPOFF/<ym>/trades.parquet` against `runs_rf/<set>/<ym>/trades.parquet` once the rows land. A combined-set cap-off was not queued, because it adds no merged-set JSON beyond these five.
+
+## 4. Cap-off results (updated by W-CAPAUDIT)
+- Asia J502 JT6 and Asia 4-book JT110, all 6 L6M months: 12/12 month files IDENTICAL (trade count and every column equal, e.g. JT110 221/299/332/203/222/287 trades, 0 differing). With-cap = cap-off, so $/wk, ulcer and max DD differ by 0.
+- NY AM, NY PM, London: 18 rows wired to _split/pending_cap_audit.txt (QUEUES line 5; the rows vanished twice from pending_stack_urgent.txt). Not landed at the time of this update.
