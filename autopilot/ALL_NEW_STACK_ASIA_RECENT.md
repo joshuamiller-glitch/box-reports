@@ -1,4 +1,4 @@
-# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 00:13Z.
+# ALL-NEW STACK, ASIA: RE-SELECTION FROM PASSERS [OWN-CHECKS READING a+b+c+d] (W-COMBO, order 0403Z/0421Z). DRY RUN / LEAD. Updated 2026-11-24 00:19Z.
 **RECENT BASIS (Josh, 10:48 ET Nov 22: "yes recents should drive this"; orders 1552Z + 1612Z): every add, swap and resize is judged at EQUAL L6M RISK: return per unit of L6M ulcer must beat the stack before by 1%, with the 15% L6M max-drawdown / worst-week guard (after scaling to the current ulcer); L3M is shown beside every step and is not a gate. PRIOR YEARS ARE A CHECK, NOT THE PICKER, and they can block only on the old test: a stack is not chosen if any of 2023, 2024, 2025 has a NEGATIVE mean $/wk or its own persistence (share of positive 14-day blocks) is under 0.58. The AMBER (15-30% worse) / RED (> 30% worse) colours are information with numbers (vs bare D7 scaled to the stack's L6M ulcer, and vs the stack before the step) and never block, because the L6M is the selection window and older years are nearly always weaker. The 15:58Z blocked results (band as blocker, EMPTY) are kept as the _literalband reference files: superseded by order 1612Z. The current-rule page of the same loop name (without RECENT) is the reference row; nothing of it was overwritten.**
 **ADD RULE (MAIN, Josh's standing rule: pick on the trailing 6 months, the trailing 3 months SHOWN BESIDE it): stack mean >= best single book, return per unit ulcer +1%%, max DD and worst week within the 15%% guard (after scaling to the current ulcer); the L3M is shown beside every step with an L3M DISAGREES note when its return per ulcer is worse by > 5%%; L3M is NOT a gate.**
 
@@ -18,7 +18,7 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 ## OWN-CHECKS READING OF THIS STACK (recent positive L6M and L3M, each prior year positive, own persistence >= 0.58, >= 27/30 controls)
 
-- L6M $2157 per wk (positive), L3M $2514 per wk (positive); prior years $/wk: 2023 40 (positive), 2024 217 (positive), 2025 179 (positive); OWN persistence (share of positive 14-day blocks) 0.65 (>= 0.58 passes); stack controls: PENDING (30 stack controls queued / running).
+- L6M $2157 per wk (positive), L3M $2514 per wk (positive); prior years $/wk: 2023 40 (positive), 2024 217 (positive), 2025 179 (positive); OWN persistence (share of positive 14-day blocks) 0.65 (>= 0.58 passes); stack controls: beats (30, 27, 30) of 30 (L6M drawdown-first, L3M, ulcer-only).
 
 ## YARDSTICK: BARE D7 session stack (TL3_ALN_AS_STKLIVE_BARE) at the SAME drawdown as this stack (bare lots scaled by k = 0.03 so that the L6M ulcer matches)
 
@@ -36,8 +36,8 @@ D8 STATUS OF THE KEY BOOKS (visible whether or not they are in the pool): Lda55d
 
 | stack | books | L6M | L3M | 2023 | 2024 | 2025 | own persistence |
 |---|---|---|---|---|---|---|---|
-| own-checks (moves) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
-| staying-power (done) | Lb0e6dfa3.BRF40_80 | 2643 / -8614 / -4590 / 2969 | 3040 / -8614 / -3461 / 1930 | 2935 / -9402 / -2099 / 386 | 4051 / -10907 / -5123 / 506 | 4295 / -12361 / -5081 / 690 | 0.66 |
+| own-checks (done) | L385f4f2e.J502 | 469 / -1915 / -1600 / 2157 | 519 / -1915 / -219 / 2514 | 2327 / -4696 / -2024 / 40 | 4263 / -11407 / -3539 / 217 | 4368 / -10172 / -3904 / 179 | 0.65 |
+| staying-power (run) |  | running | | | | | |
 
 ## GATE BY GATE: Asia, books ALONE on the all-new base (universe 2116 books with a BASE set; 1129 have all 42 months landed = counted below; 274 still waiting for prior years)
 
@@ -77,9 +77,9 @@ Selected books in order (plain words):
 
 STOPPED at 1 books: no candidate passes the add rule.
 
-LAST COMPLETED SELECTION (kept visible while a re-run is in progress; finished 00:09Z UTC; pool 83 books): L385f4f2e.J502
+Stack-level luck control: beats (30, 27, 30) of 30 (drawdown-first L6M, L3M, ulcer-only).
 
-Phase: moves. Pool used by this run: 84 books (L018fb0c0, L0569b2b6, L130cb48e, L1343f8bd.BRP45, L1525fc29.BRP45, L15f14deb, L1756b913, L1edb9fab, L1f5315f5.BRF40_80, L294c4530.BRP45, L29b1bc3f, L2aa4f77d.BRP45, L2b152d25.BRP30, L2fbba524.BRP30, L32bc5db3.BRP60, L36523944, L36f1a14e.BRF30_90, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L459016c0.BRP30, L47a9c81c, L4aaacdb2.BRP30, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L552f6547.BRF30_90, L578701ed, L578701ed.BRF30_90, L5c493ea5.BRP60, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L6f51709c.BRP45, L7669e599.BRP45, L79fb26c4.BRP45, L7c368a4f, L7c8c909c.BRP45, L7ea48296, L7ea48296.BRP45, L7f41b347, L82f920bb.BRP30, L92a90948, L973b5c8a, L98c7ae1d.BRF40_80, L9aa7805c, L9c2622b0.BRP45, L9e3c5607.BRP45, L9e4754b9, L9f09df59.BRF60_120, La010c3eb, La34ff0e1.BRF40_80, La37b0d38.BRP45, La4dd3ce9.BRP45, La776664b, Lac4916e6.BRF40_80, Lb0e6dfa3.BRF40_80, Lb328c0d1.BRP45, Lb3f85ddc.BRF40_80, Lb68a132d, Lbfca747b.BRP45, Lc11f2bcc.BRF30_90, Lc754cf58, Lcbc8a7ec, Lcd4aa7cd.BRP30, Ld3a03a68.BRF30_90, Ld60fb3e3.BRF40_80, Ld8421129.BRP30, Le207b901.BRF30_90, Lec335094, Led34741b.BRF80_40, Lf43211b5, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba, Mf5f0441a).
+Phase: done. Pool used by this run: 84 books (L018fb0c0, L0569b2b6, L130cb48e, L1343f8bd.BRP45, L1525fc29.BRP45, L15f14deb, L1756b913, L1edb9fab, L1f5315f5.BRF40_80, L294c4530.BRP45, L29b1bc3f, L2aa4f77d.BRP45, L2b152d25.BRP30, L2fbba524.BRP30, L32bc5db3.BRP60, L36523944, L36f1a14e.BRF30_90, L385f4f2e, L385f4f2e.J502, L3a2258bd, L3faac8df, L40bde9ea, L459016c0.BRP30, L47a9c81c, L4aaacdb2.BRP30, L4cdac967.BRP45, L5026acdc.BRF30_90, L5483cb3c.BRP45, L548972b6.BRF40_80, L552f6547.BRF30_90, L578701ed, L578701ed.BRF30_90, L5c493ea5.BRP60, L5dee2059, L64313ba5.BRP30, L65a26c02, L6b373671.BRP60, L6f51709c.BRP45, L7669e599.BRP45, L79fb26c4.BRP45, L7c368a4f, L7c8c909c.BRP45, L7ea48296, L7ea48296.BRP45, L7f41b347, L82f920bb.BRP30, L92a90948, L973b5c8a, L98c7ae1d.BRF40_80, L9aa7805c, L9c2622b0.BRP45, L9e3c5607.BRP45, L9e4754b9, L9f09df59.BRF60_120, La010c3eb, La34ff0e1.BRF40_80, La37b0d38.BRP45, La4dd3ce9.BRP45, La776664b, Lac4916e6.BRF40_80, Lb0e6dfa3.BRF40_80, Lb328c0d1.BRP45, Lb3f85ddc.BRF40_80, Lb68a132d, Lbfca747b.BRP45, Lc11f2bcc.BRF30_90, Lc754cf58, Lcbc8a7ec, Lcd4aa7cd.BRP30, Ld3a03a68.BRF30_90, Ld60fb3e3.BRF40_80, Ld8421129.BRP30, Le207b901.BRF30_90, Lec335094, Led34741b.BRF80_40, Lf43211b5, Lff52ec0c, M7423c0d9, M7ea48296, M817db5df, M86781ac0, Ma010c3eb, Mcae177ba, Mf5f0441a).
 
 ## REFERENCE BLOCK: BARE D7 R0 (truly bare: raw triggers + own bracket, every D7 rule off) (all fitted-D7 numbers and colours of this page live here only)
 
