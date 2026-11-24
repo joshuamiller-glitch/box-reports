@@ -1,14 +1,14 @@
 # BRACKET FIRST LOOK, NYPM (step 1, order 1632Z; prereg autopilot/PREREG_BRKT_FIRSTLOOK_STEP1.md)
 
-Written 2026-11-24 18:59 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 407 of 410.
+Written 2026-11-24 19:19 UTC by W-BRKT from the bfl17 grid results (17 shapes, the ladder cells' grid jobs); screen level, weekly bins, net points per lot after cost; equal risk = scaled to the ulcer (weekly) of the cell's ladder bracket; L6M = weeks 2026-05-01..10-31, L3M = 2026-08-01..10-31; shapes with < 20 trades in L6M are not ranked. The 15% max-DD / worst-week guard is agent-added, not Josh's, and is not applied. Cells read: 408 of 410.
 
 ## Per shape: ladder cells where it is the best at equal risk
 
 | shape | best in L6M | best in L3M | best in BOTH windows (beats own bracket in both) |
 |---|---|---|---|
 | fixed120/60 | 45 | 48 | 42 |
+| fixed90/90 | 41 | 26 | 34 |
 | fixed60/120 | 41 | 30 | 29 |
-| fixed90/90 | 40 | 25 | 33 |
 | sym8u | 39 | 36 | 26 |
 | plain60/60 | 35 | 47 | 21 |
 | fixed30/90 | 31 | 33 | 22 |
@@ -24,7 +24,7 @@ Written 2026-11-24 18:59 UTC by W-BRKT from the bfl17 grid results (17 shapes, t
 | fixed120/120 | 3 | 1 | 3 |
 | asym15u/30u | 1 | 4 | 2 |
 
-Cells whose ladder bracket is already the best in L6M: 15 of 407. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 317.
+Cells whose ladder bracket is already the best in L6M: 15 of 408. Cells with some shape beating the ladder bracket at equal risk in BOTH windows: 318.
 
 ## NULL for the best-of-17 pick (exchangeable shape labels)
 
@@ -36,7 +36,7 @@ Grid cells (param x mode) in these jobs: 48654; failed at both pass-1 brackets: 
 
 ## Clip: distinct shapes per ladder cell (of 17 weekly series)
 
-17 distinct: 136 cells, 16 distinct: 105 cells, 15 distinct: 18 cells, 14 distinct: 68 cells, 13 distinct: 6 cells, 12 distinct: 32 cells, 11 distinct: 40 cells, 2 distinct: 2 cells
+17 distinct: 137 cells, 16 distinct: 105 cells, 15 distinct: 18 cells, 14 distinct: 68 cells, 13 distinct: 6 cells, 12 distinct: 32 cells, 11 distinct: 40 cells, 2 distinct: 2 cells
 
 Cells where sym15u and sym30u are identical (clipped to the same points): 6183 of 16612 grid cells in these jobs.
 
@@ -75,7 +75,7 @@ Cells where sym15u and sym30u are identical (clipped to the same points): 6183 o
 | L20756075 | vol_350 | trend_psar | sym30u | plain60/60 | 254.28 | 150.56 | 17.55 | 70.22 |
 | L95416473 | time_s_30 | levels_profile_va | sym15u | fixed60/120 | 248.51 | 3.32 | 10.92 | 44.34 |
 
-## Not yet read (grid files not landed): 1 ladder cells
+## Not yet read (grid files not landed): 0 ladder cells
 
-They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: L34ac185c
+They are NOT dropped: the finisher re-reads them when their files land and appends their step-2 rows in a second file. Cells: 
 
