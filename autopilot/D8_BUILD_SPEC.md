@@ -125,11 +125,11 @@ Option A earns more per unit of ulcer and has far smaller drawdowns in L6M/L3M (
 `D8_PRINT_RULE.md` (print rule, causal variants, bar classes), `D8_BAR_DEFS.md` (bar rules, tm rule, thresholds), `D8_FEED_CHECK.md` (feed alignment), `D8_TRIGDEBUG_*`, `D8_VECTORS_*` (per-book tables), `D8_P2_J502_FILTER.md`, `D8_CANF_COMPARE.md`, `D8_CAN_RESULTS.md`, `ASIA_ONE_BOOK_EXPLAIN.md`.
 
 <!-- AUTO:asia -->
-## AUTO SESSION SECTION ASIA (refreshed 2026-11-24 05:48Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-24 05:45Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION ASIA (refreshed 2026-11-24 06:21Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_asia.json (updated 2026-11-24 06:20Z). A final is listed here only when its stack-rule page autopilot/ASIA_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "asia-own" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
-Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 86 | weights: equal (1 each)
+Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 87 | weights: equal (1 each)
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
@@ -138,7 +138,7 @@ Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 86 | weights: equal
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### equal option "asia-own-l3g" (equal weights): final set `TL3_ALN_AS_L385f4f2e_P2JCX502`
-Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 86 | weights: equal (1 each)
+Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 87 | weights: equal (1 each)
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
@@ -147,7 +147,7 @@ Selection: ['L385f4f2e.J502'] | controls [30, 27, 30] | pool 86 | weights: equal
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### equal option "asia-stay" (equal weights): final set `TL3_ALN_AS_Lb0e6dfa3_R0BRF40_80`
-Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 86 | weights: equal (1 each)
+Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 87 | weights: equal (1 each)
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
@@ -156,7 +156,7 @@ Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 86 | weights: e
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
 ### equal option "asia-stay-l3g" (equal weights): final set `TL3_ALN_AS_Lb0e6dfa3_R0BRF40_80`
-Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 86 | weights: equal (1 each)
+Selection: ['Lb0e6dfa3.BRF40_80'] | controls [29, 20, 30] | pool 87 | weights: equal (1 each)
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
