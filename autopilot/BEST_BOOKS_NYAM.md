@@ -1,8 +1,8 @@
-# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-24 16:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_NYAM - own-merit scorecard, NY AM session (W-BEST; GENERATED AT 2026-11-24 17:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 4258 distinct cells scored (2674 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2957; L6M and L3M > 0: 2110; labels {'WEAK-BUT-POSITIVE': 2391, 'BEST-AVAILABLE-NOT-PROVEN': 1301, 'LEAD': 566}. Job errors: 0. Run 654 s.
+**Counts:** 4258 distinct cells scored (2674 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 2957; L6M and L3M > 0: 2110; labels {'WEAK-BUT-POSITIVE': 2391, 'BEST-AVAILABLE-NOT-PROVEN': 1301, 'LEAD': 566}. Job errors: 0. Run 534 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -187,10 +187,10 @@ Method: the same live book / the same new cell in different stacks. Stacks (excl
 | live book (session) | JL3 own L6M total $ | JL3 trades | n stacks | median over stacks $ | min / max $ | mean abs diff vs JL3 $ | mean abs diff as % of |JL3 total| | median trade count |
 |---|---|---|---|---|---|---|---|---|
 | K7 | -11868 | 207 | 329 | -11898 | -17666 / -5271 | 1737 | 14.6% | 202 |
-| P7 | 6016 | 45 | 8199 | 5353 | 1159 / 10452 | 586 | 9.7% | 45 |
-| H7 | 8886 | 39 | 8201 | 8936 | 4686 / 11311 | 707 | 8.0% | 39 |
-| M7 | 8851 | 240 | 8198 | 9503 | 909 / 17719 | 1890 | 21.4% | 239 |
-| O7 | 10744 | 49 | 8218 | 10744 | 8949 / 12269 | 266 | 2.5% | 49 |
+| P7 | 6016 | 45 | 8467 | 5981 | 1159 / 10452 | 567 | 9.4% | 45 |
+| H7 | 8886 | 39 | 8469 | 8926 | 4686 / 11311 | 685 | 7.7% | 39 |
+| M7 | 8851 | 240 | 8466 | 9403 | 909 / 17719 | 1830 | 20.7% | 239 |
+| O7 | 10744 | 49 | 8486 | 10744 | 8949 / 12269 | 258 | 2.4% | 49 |
 
 The NEW book itself, primary set vs another stack of the same cell (e.g. RA7 vs ADD vs RK7/RP7/RH7/RU7, 309 pairs over 259 cells): mean abs difference of its own L6M total $1828 = 26.6% of |total| (median 5.4%, 90th pct 36.7%); trade-count differences: mean abs 1.6 trades (primary mean 218).
 
