@@ -1,7 +1,7 @@
-# WEIGHTS_NYAM - weight search on book-alone sums (W-LAYERS, 2026-11-24 00:48Z)
+# WEIGHTS_NYAM - weight search on book-alone sums (W-LAYERS, 2026-11-24 04:02Z)
 
 Prereg: autopilot/WEIGHTS_PREREG.md. SUM of book-alone series, no stack interaction; engine check pending.
-Run 2026-11-24 00:48Z; pool hash (asia pool file) 29c30aad2744; dynamic scopes (loop finals): FINAL_asia_own_d8+asia_own_d8_nol3+asia_own_d8_nol3_recent_w, FINAL_asia_own_d8_nol3_w, FINAL_asia_stay_d8+asia_stay_d8_nol3+asia_stay_d8_nol3_recent_w_stayclause_1700+asia_stay_d8_nol3_w.
+Run 2026-11-24 04:02Z; pool hash (asia pool file) 29c30aad2744; dynamic scopes (loop finals): FINAL_asia_own_d8, FINAL_asia_stay_d8_nol3+asia_stay_d8_nol3_recent_w_stayclause_1700.
 
 ### Scope NYAM - members L7cc56d99, L488784d8, B7bfd33b7, B6f77f23d, L6547965c (32767 mixes; weight grid [0, 0.25, 0.5, 1, 1.5, 2, 3, 4]; SUM of book-alone series, no stack interaction)
 
