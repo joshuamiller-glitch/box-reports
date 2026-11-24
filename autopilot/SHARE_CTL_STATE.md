@@ -1,3 +1,3 @@
-# SHARE_CTL_STATE 2026-11-24T17:08:24Z
-ALN leased last 30 min: 1005 (threshold 300); ALN running: 82; follow-up share now 0.30; C/D FOLLOWUP_FIRST: C=off,D=off
+# SHARE_CTL_STATE 2026-11-24T17:12:49Z
+ALN leased last 30 min: 991 (threshold 300); ALN running: 73; follow-up share now 0.30; C/D FOLLOWUP_FIRST: C=off,D=off
 Rule: ALN leased >= 300 / 30 min => share >= 0.30 and C/D follow-ups-first ON (only ever raises). Asia end: freed share goes to NY AM first looks + ALN + pass-2, London only by refill rule / london_switch.py.
