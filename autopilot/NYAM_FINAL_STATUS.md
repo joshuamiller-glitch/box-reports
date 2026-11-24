@@ -1,0 +1,39 @@
+# NYAM_FINAL_STATUS (2026-11-24T16:17Z) - read-only compile by W-ASIAFINAL, same method as ASIA_FINAL_STATUS.md. Nothing queued or changed. "not in files" = not found.
+Sources: _combo/finals_ready_nyam.json (08:31Z), reselect_nyam_*.json (+ _v files), pool_status counters (reselect_nyam_status.json), ALL_NEW_STACK_NYAM*.md (16:14Z), _s2/leases, QUEUES.txt files, allnew_pending.txt, _exiteng/stack_exit_state.json, D8_LAYER_DEFAULTS_NYAM.md, BAREFIT_NY_STKd8b76ecd35.md.
+
+## 1. Step (a)
+- Pool 39 books (reselect state: pool 39; finals_ready pool_hash 72a34d3135). Pool growth 30 -> 31 -> ... -> 38 over 11-22 16:19Z to 11-23 12:52Z; 38 -> 39 at the re-run that started 08:05Z 11-24 (last _v file 08:05:29Z). No change since: about 8 h at 16:15Z.
+- pool_status (reselect_nyam_status.json): universe 1,772; pool 39; passed a+b+c waiting for controls (waitCTL) 0; fail 700; waiting for prior years 243; waiting for _CANC base (waitCANC) 765; D8-out 25; flags decided 739.
+- Controls: waitCTL = 0, so no control set of a passing book is missing. All control sets of the three weighted/equal finals landed (30 of 30 each).
+- Rows with no lease and in no QUEUES file (my cross-check of all universe books against runs_rf DONE, 1,773 books): 39,354 set-months in 1,034 books, which split as:
+  - 674 books / 24,264 rows: first look landed and L6M or L3M <= 0 = rejected, prior years not needed (by design, not lost).
+  - 355 books / 2,130 L6M rows: no L6M month landed on the name the loops use. 93 of them (558 rows) are in _combo/r0_held_ny.txt (R0 second looks held, released per cell by combo_r0_release.py = by design). 262 books (1,572 rows) are R0 second-look sets (names TL3_ALN_NY_<id>_R0) in no queue/lease/held file; list saved in scratchpad ny_262.txt. Not run, not gating anything judged so far; whether anybody intends to release them is not in files.
+  - 5 books passed the first look but their prior-year rows are missing (180 rows): B899a9f36 and L2f955c5f (72 rows) are in no pending/queue/held file under _d8spec, _split, _brkt, _combo, _exiteng, _layers, _s2; L39ff9fc2, L40d2f769, L42fec511 (108 rows) are found in r0_held files. Candidates for W-D8SPEC canc_auto to pick up on its 10-min cycle; if they are still absent next cycle they are lost rows.
+- allnew_pending.txt: 1,881 NY rows (67 stack-round sets, STKd8*), ALL have lease state done (06:23-07:46Z) and DONE in runs_rf. Landed, stale lines, not outstanding.
+- Counters, real gate or artifact: "widening 272 of 2110 books complete, 74,256 set-months missing" (COUNTDOWN 15:17Z) = artifact: counts every first-look candidate incl. the 674 rejected, as in Asia. "books fitted (stage 1) 0 of pool 39": fitted_books.json holds only AS (1 book) = not a gate for the pick. waitCTL 0: no W-BRKT D_stop inflation for NY. Weighted loops "waiting_on 30 sets": ny-own-w and ny-own-recent-w each list their 30 control sets, all 30 of 30 landed for L6M (counter wants 42 months) = artifact. ny-own, ny-own-l3g, ny-own-recent heartbeat: waiting_on 0, queued_or_running 0.
+- first-look landing (W-D8SPEC HB 16:01Z): NY AM first-look cells 1127/1159 landed; mix3 NY AM first looks (3,029 unleased per LEAD note) are ladder cells, not this pool.
+
+## 2. Step (b), W-COMBO NY AM loops (loops: ny-own, ny-own-l3g, ny-own-recent, ny-own-w, ny-own-recent-w; no ny-stay loop exists)
+All phase done, pool 39. Last rounds: ny-own / ny-own-l3g round 13:03Z (page rewritten 16:14Z), ny-own-recent 13:08Z, ny-own-w 08:25Z, ny-own-recent-w 08:01Z. Waiting on: nothing.
+| FINAL | members (size) | set | controls (L6M DD-first / L3M / ulcer-only) | L6M | L3M | 2023 / 2024 / 2025 $/wk |
+|---|---|---|---|---|---|---|
+| equal (ny-own, l3g, recent) | L8cfda948.BRF90_30, Lf0346d55.BRP60, L7cc56d99, Lbb254083.BRP45, L8f11883e.BRF30_90 (1 each) | TL3_ALN_NY_STKd8b76ecd35 | 30 / 26 / 30 | ulcer 3,765, maxDD -12,120, worst wk -1,591, $8,283/wk | $7,047 (ulcer 3,469) | 1,942 / 1,942 / 3,102; persistence 0.68 |
+| weighted (ny-own-w, x4 lots engine) | L43f0cbfb.BRS8U 1, B7bfd33b7 1, Bf428c4a1.BRS8U 1, Le4fede95.BRF90_30 1, Lf0346d55.BRP60 0.5, L8cfda948.BRF90_30 1, L4407508c.BRF120_60 0.25, L39287638.BRF80_40 0.25, L64390867.BRF80_40 0.5 | TL3_ALN_NY_STKd8cd0279ff | 30 / 25 / 30 | 1-lot units: ulcer 5,276, maxDD -21,112, worst wk -2,419, $12,874/wk | $9,145 (ulcer 4,894) | 2,714 / 1,731 / 4,510; persistence 0.68 |
+Bare D7 NY AM at the same ulcer (page yardstick): equal stack L6M -$75/wk, L3M -$228, 2023/24/25 $221 / $235 / $93; weighted L6M -$105, L3M -$320, $310 / $330 / $130.
+DONE-round rule: pool list unchanged about 8 h (> 30 min) and waitCTL 0 with all final controls decided: met on the pool; 243 waitPY and 765 waitCANC books are first-look/prior-year backlog of the wider universe, not the pool. The rule is a LEAD declaration.
+
+## 3. Step (c), exit run per FINAL member (stack_exit_state.json; stage 1 = exit ulcer below bare on L6M and L3M; 8 recipes per member)
+- No recipe passes stage 1: Bf428c4a1.BRS8U, L43f0cbfb.BRS8U, L64390867.BRF80_40, L8cfda948.BRF90_30, L8f11883e.BRF30_90, Lbb254083.BRP45, Le4fede95.BRF90_30.
+- One recipe passes stage 1 and has prior years landed: Lf0346d55.BRP60 flowp_v15_t2 (L6M ulcer 3,050 vs 3,503 bare, mean -$233 vs +$1,854; prior years -$153 / -$124 / -$540 vs +$137 / +$776 / +$895); L39287638.BRF80_40 flow_v25 (L6M mean -$56 vs +$1,049; prior years -$118 / -$51 / -$229); L4407508c.BRF120_60 flow_v25 (L6M mean -$141 vs +$1,526; -$125 / -$58 / -$95). All three: money negative everywhere = not kept (my reading; stage-2 verdict line not posted by W-EXITENG). 30 of 30 controls landed on each; exit sets 38 of 42 months landed.
+- Not in the stack-exit state (no BR tag): L7cc56d99 and B7bfd33b7. D8_EXIT_SCREEN.md has no NY AM rows for any of the 12 member ids. Exit verdict for those two: not in files.
+- Net: no exit kept for any member that has a verdict; L7cc56d99 and B7bfd33b7 not in files.
+
+## 4. Step (d), joint 2-lot fit
+BF2_JT68 = TL3_SR_NY_STKd8b76ecd35_BF2_JT68, i.e. the EQUAL FINAL stack (STKd8b76ecd35). The equal FINAL has not changed since 11-22 14:37Z (same five books and set through pool 22 -> 39), so JT68 is still on the current equal FINAL. The weighted FINAL STKd8cd0279ff has no joint fit (BAREFIT_NY page exists only for STKd8b76ecd35, 11-23 11:08Z; no BAREFIT_NY_STKd8cd0279ff in files).
+JT68 (D8_LAYER_DEFAULTS_NYAM.md, 2 lots): L6M bare 4,610 / -17,430 / -16,945 / -7,910 / 7,061 -> pick 1,760 / -5,109 / -2,275 / -2,752 / 3,038; L3M pick 2,091 / -5,109 / -2,275 / -2,752 / 2,014 ($/wk); walk-forward 0.838 over 80 periods, persistence 0.914, year bands RED/GREEN/GREEN; null pending in that file (a later null verdict for NY AM: not in files); label WEAK-BUT-POSITIVE leaning LEAD, NOT PROVEN.
+
+## 5. The NY AM file's five
+Taken as the equal-FINAL five (the five named in the 11-22/11-23 directives): L8cfda948.BRF90_30, Lf0346d55.BRP60, L7cc56d99, Lbb254083.BRP45, L8f11883e.BRF30_90 are ALL in the current equal FINAL. In the weighted FINAL: Lf0346d55 (0.5) and L8cfda948 only; L7cc56d99, Lbb254083 and L8f11883e are not. Which five books "the file" means is not stated in one file; this is my reading.
+
+## 6. Still running (set names, rows, owner, ETA)
+Nothing for the pool: no loop waits on sets, all 1,881 pending NY rows are done, leases for the 3 landed finals are done. Open items: (i) 38 of 42 months of the three exit sets landed (the 4 missing months are not queued; non-gating, exits not kept); (ii) 5 passed books with 180 prior-year rows (2 books / 72 rows in no file) for W-D8SPEC canc_auto; (iii) 262 R0 second-look books (1,572 rows) not released, owner combo_r0_release.py (W-COMBO); (iv) no joint fit for the weighted FINAL (owner W-LAYERS2, rows needed not in files); (v) 32 NY first-look cells (1,127 of 1,159) in W-D8SPEC, ETA not in files. ETA in minutes: not in files.

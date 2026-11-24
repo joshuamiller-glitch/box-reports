@@ -285,8 +285,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:london -->
 
 <!-- AUTO:nypm -->
-## AUTO SESSION SECTION NYPM (refreshed 2026-11-24 12:47Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-24 12:37Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYPM (refreshed 2026-11-24 16:19Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nypm.json (updated 2026-11-24 16:14Z). A final is listed here only when its stack-rule page autopilot/NYPM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### weighted option "nypm-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NP_STKd81d0693ad`
 Selection: ['L2c6916a5.BRP60', 'L4bdd521a.BRF80_40'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
