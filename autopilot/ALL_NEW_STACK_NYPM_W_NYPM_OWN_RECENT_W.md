@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY PM: WEIGHTED LOOP nypm-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 06:49Z.
+# ALL-NEW STACK, NY PM: WEIGHTED LOOP nypm-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-24 06:54Z.
 
 **DECISION BASIS: EQUAL L6M ULCER (recent basis, order 1552Z; 15% L6M max-DD / worst-week guard; L3M beside; prior years only as the 15-30% band, RED not chosen).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -6,7 +6,7 @@
 
 **The equal-weight loop `nypm-own-recent` is the REFERENCE ROW (its FINAL has no weights).**
 
-Phase **run**; pool 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U); steps 4.
+Phase **moves**; pool 6 books (L2c6916a5.BRP60, L4bdd521a.BRF80_40, L52359bf4.BRP30, L7b1adff3.BRP60, L8dff280f.BRP90, L8e0bf58c.BRS8U); steps 4; stop: no candidate passes the add rule.
 
 ## STEPS
 
