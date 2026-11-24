@@ -146,101 +146,101 @@ Pooled per row (group release days) and per release type; L6M | L3M | prior wind
 
 | code | complete | L6M ulcer % | L3M ulcer % | L6M $/wk | L6M maxDD | L6M worst wk | L6M worst day | L3M $/wk | removed L6M | closed early L6M | added L6M | rel-day worst trade rule/ref (L6M) | rel-day worst day rule/ref (L6M) | rel-day worst trade rule/ref (all months) | rel-day worst day rule/ref (all months) | 2024Q4 / 2025 / 2026a ulcer % | WF | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| G1_EBa2b5 | partial | +0.1 | +0.4 | 8678 | -24257 | -10011 | -16735 | 8869 | 11 | 0 | 2 | -4800 / -4800 | -5491 / -5060 | -4800 / -4800 | -5491 / -5060 | n/a / n/a / n/a | nan | nan |
-| G1_EBa2b30 | partial | +0.4 | +1.5 | 8721 | -24257 | -9973 | -16735 | 8686 | 20 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -6682 / -5548 | +0 / n/a / n/a | nan | nan |
-| G1_EBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa5b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa5b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa15b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa15b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_EBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OCa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OBa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OCa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OBa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OCa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_OBa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CCa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G1_CBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| FD_W1 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| FD_W2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| FD_W3 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| FD_W4 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| FD_W5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa2b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa2b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa5b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa5b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa15b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa15b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_EBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OCa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OBa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OCa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OBa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OCa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_OBa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CCa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G2_CBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa2b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa2b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa5b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa5b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa15b5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa15b30 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_EBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OCa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OBa2 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa2b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa2b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OCa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OBa5 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa5b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa5b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OCa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_OBa15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa15b15 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CCa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
-| G3_CBa15b60 | partial | +nan | +nan | nan | nan | nan | nan | nan | 0 | 0 | 0 | nan / nan | nan / nan | nan / nan | nan / nan | n/a / n/a / n/a | nan | nan |
+| G3_EBa5b5 | partial | -3.6 | +0.0 | 8908 | -24257 | -8566 | -16735 | 8812 | 3 | 0 | 0 | -2405 / -2405 | -222 / -3248 | -2405 / -2405 | -222 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa5b15 | partial | -3.6 | +0.0 | 8908 | -24257 | -8566 | -16735 | 8812 | 4 | 0 | 1 | -2405 / -2405 | -222 / -3248 | -2405 / -2405 | -222 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa15b60 | partial | -3.5 | +0.2 | 8776 | -24257 | -8566 | -16735 | 8536 | 9 | 0 | 2 | -2405 / -2405 | -2272 / -3248 | -2405 / -2405 | -2272 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa15b5 | partial | -2.8 | +0.0 | 8863 | -24257 | -8566 | -16735 | 8812 | 4 | 0 | 2 | -2405 / -2405 | -1457 / -3248 | -2405 / -2405 | -1457 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa15b15 | partial | -2.8 | +0.0 | 8863 | -24257 | -8566 | -16735 | 8812 | 5 | 0 | 3 | -2405 / -2405 | -1457 / -3248 | -2405 / -2405 | -1457 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa5b60 | partial | -2.8 | +0.2 | 8731 | -24257 | -8566 | -16735 | 8536 | 8 | 0 | 2 | -2405 / -2405 | -2272 / -3248 | -2405 / -2405 | -2272 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_OCa15 | yes | -0.5 | -1.9 | 8951 | -24257 | -8566 | -16735 | 9197 | 0 | 6 | 4 | -4800 / -4800 | 610 / -5060 | -4800 / -4800 | -15284 / -9450 | -18 / +1 / +22 | 0.833 | PASS |
+| G2_EBa15b5 | yes | -0.5 | -1.8 | 8889 | -24257 | -8566 | -16735 | 8778 | 10 | 0 | 0 | -4800 / -4800 | -1511 / -5060 | -4800 / -4800 | -8260 / -9450 | +1 / -2 / -3 | 0.889 | PASS |
+| G2_EBa5b5 | yes | -0.5 | -1.8 | 8799 | -24257 | -8566 | -16735 | 8778 | 5 | 0 | 0 | -4800 / -4800 | -1511 / -5060 | -4800 / -4800 | -9450 / -9450 | +1 / -1 / +1 | 0.889 | PASS |
+| G2_EBa2b5 | yes | -0.5 | -1.8 | 8843 | -24257 | -8566 | -16735 | 8870 | 4 | 0 | 0 | -4800 / -4800 | -1511 / -5060 | -4800 / -4800 | -9450 / -9450 | +1 / -1 / +1 | 0.889 | PASS |
+| G1_OBa15 | yes | -0.4 | -1.4 | 8823 | -24257 | -8566 | -16735 | 8932 | 0 | 3 | 3 | -4800 / -4800 | -2625 / -5060 | -4800 / -4800 | -16609 / -9450 | -17 / +1 / +28 | 0.833 | PASS |
+| G2_EBa15b15 | yes | -0.4 | -1.4 | 8620 | -24257 | -9072 | -16735 | 8772 | 14 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -5932 / -9450 | -1 / -2 / -18 | 0.87 | PASS |
+| G2_CBa15b15 | partial | -0.4 | -1.4 | 8974 | -24257 | -9072 | -16735 | 9137 | 14 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -2701 / -5060 | n/a / n/a / n/a | nan | nan |
+| G2_CCa15b15 | partial | -0.3 | -1.4 | 9010 | -24257 | -10627 | -16735 | 9311 | 14 | 3 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -3103 / -5548 | -5 / n/a / n/a | nan | nan |
+| G2_OBa2 | yes | +0.0 | +0.0 | 9049 | -24257 | -8566 | -16735 | 8632 | 2 | 0 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -9450 / -9450 | -3 / -3 / +0 | 0.889 | PASS |
+| G2_OCa2 | yes | +0.0 | +0.0 | 9171 | -24257 | -8566 | -16735 | 8688 | 2 | 3 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -5084 / -9450 | -3 / -3 / -15 | 0.852 | PASS |
+| G3_EBa2b15 | partial | +0.0 | +0.0 | 8781 | -24257 | -8566 | -16735 | 8812 | 2 | 0 | 1 | -2405 / -2405 | -3248 / -3248 | -2405 / -2405 | -3248 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa2b5 | partial | +0.0 | +0.0 | 8781 | -24257 | -8566 | -16735 | 8812 | 1 | 0 | 0 | -2405 / -2405 | -3248 / -3248 | -2405 / -2405 | -3248 / -3248 | n/a / n/a / n/a | nan | nan |
+| G2_OBa5 | partial | +0.0 | +0.0 | 9049 | -24257 | -8566 | -16735 | 8632 | 2 | 0 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -9450 / -9450 | -9 / n/a / +0 | nan | nan |
+| G2_OCa5 | partial | +0.0 | +0.0 | 9225 | -24257 | -8566 | -16735 | 8809 | 2 | 2 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -5060 / -9450 | -9 / n/a / -17 | nan | nan |
+| G2_OBa15 | partial | +0.0 | +0.0 | 9050 | -24257 | -8566 | -16735 | 8632 | 2 | 0 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -5060 / -5060 | n/a / n/a / n/a | nan | nan |
+| G2_OCa15 | partial | +0.0 | +0.0 | 9086 | -24257 | -8566 | -16735 | 8806 | 2 | 3 | 2 | -4800 / -4800 | -5060 / -5060 | -4800 / -4800 | -5060 / -5060 | n/a / n/a / n/a | nan | nan |
+| G1_EBa2b5 | yes | +0.1 | +0.4 | 8678 | -24257 | -10011 | -16735 | 8869 | 11 | 0 | 2 | -4800 / -4800 | -5491 / -5060 | -4800 / -4800 | -9536 / -9450 | +0 / +2 / +0 | 0.852 | PASS |
+| G1_EBa5b5 | yes | +0.1 | +0.4 | 8678 | -24257 | -10011 | -16735 | 8869 | 11 | 0 | 2 | -4800 / -4800 | -5491 / -5060 | -4800 / -4800 | -9536 / -9450 | +0 / +2 / -0 | 0.833 | PASS |
+| G1_EBa5b30 | yes | +0.4 | +1.5 | 8721 | -24257 | -9973 | -16735 | 8686 | 20 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -7071 / -9450 | +0 / -2 / -8 | 0.889 | PASS |
+| G1_EBa2b30 | yes | +0.4 | +1.5 | 8721 | -24257 | -9973 | -16735 | 8686 | 20 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -7071 / -9450 | +0 / -2 / -8 | 0.889 | PASS |
+| G3_EBa2b60 | partial | +0.8 | +0.2 | 8604 | -24257 | -8566 | -16735 | 8536 | 6 | 0 | 2 | -2405 / -2405 | -3253 / -3248 | -2405 / -2405 | -3253 / -3248 | n/a / n/a / n/a | nan | nan |
+| G2_CBa15b60 | partial | +1.2 | -0.6 | 7921 | -24257 | -11044 | -16735 | 7837 | 30 | 0 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -4007 / -5548 | -1 / n/a / n/a | nan | nan |
+| G2_EBa15b30 | yes | +1.3 | +4.7 | 7955 | -24257 | -10258 | -16735 | 7482 | 19 | 0 | 1 | -4810 / -4800 | -5106 / -5060 | -4810 / -4800 | -8327 / -9450 | +0 / +0 / -18 | 0.833 | PASS |
+| G2_EBa2b15 | yes | +1.4 | -1.4 | 8574 | -24257 | -12701 | -16735 | 8864 | 8 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -7146 / -9450 | -1 / -2 / -14 | 0.87 | PASS |
+| G2_EBa5b15 | yes | +1.4 | -1.4 | 8530 | -24257 | -12701 | -16735 | 8772 | 9 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -7146 / -9450 | -1 / -1 / -14 | 0.87 | PASS |
+| G2_CCa2b15 | yes | +1.4 | -1.4 | 9049 | -24257 | -12701 | -16735 | 9285 | 8 | 3 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -9471 / -9450 | -4 / -6 / +1 | 0.833 | PASS |
+| G2_CBa2b15 | yes | +1.4 | -1.4 | 8927 | -24257 | -12701 | -16735 | 9229 | 8 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -4681 / -9450 | -4 / -6 / -14 | 0.87 | PASS |
+| G2_CBa5b15 | partial | +1.4 | -1.4 | 8882 | -24257 | -12701 | -16735 | 9137 | 9 | 0 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -2701 / -5060 | n/a / n/a / n/a | nan | nan |
+| G2_CCa5b15 | partial | +1.4 | -1.4 | 9058 | -24257 | -12701 | -16735 | 9314 | 9 | 2 | 0 | -4800 / -4800 | -2701 / -5060 | -4800 / -4800 | -2933 / -5548 | -5 / n/a / n/a | nan | nan |
+| G3_CCa2b15 | partial | +2.1 | +17.7 | 8790 | -24257 | -8566 | -16735 | 8618 | 2 | 7 | 6 | -2350 / -2405 | -1726 / -3248 | -2350 / -2405 | -1726 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_OBa2 | yes | +2.2 | -1.2 | 8559 | -24257 | -13395 | -16735 | 8880 | 0 | 2 | 2 | -4800 / -4800 | -3300 / -5060 | -4800 / -4800 | -16260 / -9450 | -11 / +2 / +26 | 0.87 | PASS |
+| G1_OBa5 | yes | +2.2 | -1.4 | 8578 | -24257 | -13510 | -16735 | 8928 | 0 | 2 | 2 | -4800 / -4800 | -2670 / -5060 | -4800 / -4800 | -15930 / -9450 | -10 / +2 / +25 | 0.889 | PASS |
+| G2_CCa15b60 | partial | +2.4 | -0.8 | 7958 | -24257 | -12599 | -16735 | 8012 | 30 | 3 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -4007 / -5060 | n/a / n/a / n/a | nan | nan |
+| G3_EBa5b30 | partial | +2.9 | +4.7 | 8563 | -24257 | -8566 | -16735 | 8448 | 7 | 0 | 3 | -2405 / -2405 | -4409 / -3248 | -2405 / -2405 | -4409 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa15b30 | partial | +2.9 | +4.7 | 8562 | -24257 | -8566 | -16735 | 8448 | 8 | 0 | 4 | -2405 / -2405 | -4409 / -3248 | -2405 / -2405 | -4409 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_OCa5 | yes | +2.9 | -1.4 | 8588 | -24257 | -14070 | -16735 | 8926 | 0 | 5 | 2 | -4800 / -4800 | -2670 / -5060 | -4800 / -4800 | -16115 / -9450 | -10 / +2 / +25 | 0.907 | PASS |
+| G1_OCa2 | yes | +3.0 | -1.2 | 8536 | -24257 | -14085 | -16735 | 8877 | 0 | 5 | 2 | -4800 / -4800 | -3300 / -5060 | -4800 / -4800 | -16460 / -9450 | -11 / +2 / +27 | 0.889 | PASS |
+| G3_CBa2b15 | partial | +3.0 | +17.7 | 8721 | -24257 | -8566 | -16735 | 8567 | 2 | 3 | 6 | -2350 / -2405 | -2041 / -3248 | -2350 / -2405 | -2041 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CCa15b15 | partial | +3.0 | +19.3 | 8746 | -24257 | -8566 | -16735 | 8573 | 5 | 5 | 6 | -2350 / -2405 | -1496 / -3248 | -2350 / -2405 | -1496 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_EBa5b15 | yes | +3.1 | +1.5 | 8675 | -24257 | -13601 | -16735 | 8778 | 14 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -8412 / -9450 | +0 / +1 / -4 | 0.852 | PASS |
+| G1_EBa2b15 | yes | +3.1 | +1.5 | 8675 | -24257 | -13601 | -16735 | 8778 | 14 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -8412 / -9450 | +0 / +1 / -4 | 0.852 | PASS |
+| G3_CCa5b15 | partial | +3.2 | +19.3 | 8782 | -24257 | -8566 | -16735 | 8665 | 4 | 6 | 6 | -2350 / -2405 | -1721 / -3248 | -2350 / -2405 | -1721 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CBa5b15 | partial | +3.4 | +18.5 | 8724 | -24257 | -8566 | -16735 | 8590 | 4 | 3 | 6 | -2350 / -2405 | -2316 / -3248 | -2350 / -2405 | -2316 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CCa2b60 | partial | +3.6 | +17.8 | 8574 | -24257 | -8566 | -16735 | 8303 | 7 | 7 | 5 | -2400 / -2405 | -3452 / -3248 | -2400 / -2405 | -3452 / -3248 | n/a / n/a / n/a | nan | nan |
+| G2_EBa2b30 | yes | +3.8 | +2.8 | 7909 | -24257 | -13886 | -16735 | 7574 | 13 | 0 | 1 | -4810 / -4800 | -3911 / -5060 | -4810 / -4800 | -9541 / -9450 | +0 / +1 / -14 | 0.833 | PASS |
+| G2_CCa2b60 | yes | +3.9 | -0.8 | 7997 | -24257 | -14673 | -16735 | 7986 | 24 | 3 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -5252 / -9450 | -1 / -6 / -14 | 0.852 | FAIL |
+| G2_CCa5b60 | partial | +3.9 | -0.8 | 8006 | -24257 | -14673 | -16735 | 8014 | 25 | 2 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -4007 / -5548 | -2 / n/a / n/a | nan | nan |
+| G1_EBa15b5 | yes | +4.2 | +0.4 | 8501 | -24257 | -14801 | -16735 | 8869 | 12 | 0 | 2 | -4800 / -4800 | -5491 / -5060 | -4800 / -4800 | -10727 / -9450 | +0 / +3 / -0 | 0.852 | PASS |
+| G2_EBa5b30 | yes | +4.3 | +4.7 | 7865 | -24257 | -13886 | -16735 | 7482 | 14 | 0 | 1 | -4810 / -4800 | -5106 / -5060 | -4810 / -4800 | -9541 / -9450 | +0 / +1 / -14 | 0.815 | PASS |
+| G2_CBa2b60 | yes | +4.4 | -0.8 | 7874 | -24257 | -14673 | -16735 | 7929 | 24 | 0 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -4007 / -9450 | -1 / -4 / -20 | 0.852 | FAIL |
+| G2_CBa5b60 | partial | +4.4 | -0.6 | 7830 | -24257 | -14673 | -16735 | 7837 | 25 | 0 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -4007 / -9450 | -2 / n/a / -20 | nan | nan |
+| G3_CBa15b15 | partial | +4.4 | +23.7 | 8701 | -24257 | -8566 | -16735 | 8479 | 5 | 2 | 6 | -2350 / -2405 | -1496 / -3248 | -2350 / -2405 | -1496 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_EBa15b30 | yes | +4.5 | +1.5 | 8543 | -24257 | -14763 | -16735 | 8686 | 21 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -7071 / -9450 | +0 / -1 / -8 | 0.889 | PASS |
+| G3_CCa15b60 | partial | +4.5 | +19.4 | 8530 | -24257 | -8566 | -16735 | 8258 | 10 | 5 | 5 | -2400 / -2405 | -3223 / -3248 | -2400 / -2405 | -3223 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CBa2b60 | partial | +4.6 | +17.9 | 8505 | -24257 | -8566 | -16735 | 8251 | 7 | 3 | 5 | -2400 / -2405 | -3767 / -3248 | -2400 / -2405 | -3767 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CCa5b60 | partial | +4.7 | +19.3 | 8566 | -24257 | -8566 | -16735 | 8350 | 9 | 6 | 5 | -2400 / -2405 | -3447 / -3248 | -2400 / -2405 | -3447 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_CBa5b60 | partial | +5.1 | +18.6 | 8508 | -24257 | -8566 | -16735 | 8275 | 9 | 3 | 5 | -2400 / -2405 | -4042 / -3248 | -2400 / -2405 | -4042 / -3248 | n/a / n/a / n/a | nan | nan |
+| G2_EBa15b60 | yes | +5.6 | +4.8 | 7568 | -24257 | -11044 | -16735 | 7472 | 30 | 0 | 1 | -4820 / -4800 | -5160 / -5060 | -4820 / -4800 | -8327 / -9450 | +2 / -1 / -20 | 0.852 | FAIL |
+| G3_CBa15b60 | partial | +5.9 | +23.9 | 8485 | -24257 | -8566 | -16735 | 8164 | 10 | 2 | 5 | -2400 / -2405 | -3223 / -3248 | -2400 / -2405 | -3223 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_OCa2 | partial | +6.3 | +17.7 | 8611 | -24257 | -8566 | -16735 | 8524 | 0 | 7 | 6 | -2415 / -2405 | -6531 / -3248 | -2415 / -2405 | -6531 / -3248 | n/a / n/a / n/a | nan | nan |
+| FD_W4 | yes | +6.4 | -1.8 | 8590 | -24257 | -16688 | -16735 | 9411 | 24 | 5 | 0 | -4800 / -4800 | -742 / -5060 | -4800 / -4800 | -13806 / -9450 | -5 / +1 / +17 | 0.815 | PASS |
+| G3_OBa2 | partial | +7.3 | +17.7 | 8542 | -24257 | -8566 | -16735 | 8473 | 0 | 3 | 6 | -2415 / -2405 | -6846 / -3248 | -2415 / -2405 | -6846 / -3248 | n/a / n/a / n/a | nan | nan |
+| G2_EBa2b60 | yes | +7.5 | +2.9 | 7522 | -24257 | -14673 | -16735 | 7564 | 24 | 0 | 1 | -4820 / -4800 | -4007 / -5060 | -4820 / -4800 | -9541 / -9450 | +2 / -0 / -20 | 0.815 | FAIL |
+| G2_EBa5b60 | yes | +8.0 | +4.8 | 7477 | -24257 | -14673 | -16735 | 7472 | 25 | 0 | 1 | -4820 / -4800 | -5116 / -5060 | -4820 / -4800 | -9541 / -9450 | +2 / +0 / -20 | 0.815 | FAIL |
+| G1_EBa5b60 | yes | +8.4 | +2.5 | 7716 | -24257 | -17424 | -16735 | 7541 | 33 | 0 | 1 | -4810 / -4800 | -5513 / -5060 | -4810 / -4800 | -7442 / -9450 | +0 / -2 / -8 | 0.796 | PASS |
+| G1_EBa2b60 | yes | +8.4 | +2.5 | 7716 | -24257 | -17424 | -16735 | 7541 | 33 | 0 | 1 | -4810 / -4800 | -5513 / -5060 | -4810 / -4800 | -7442 / -9450 | +0 / -2 / -6 | 0.796 | PASS |
+| G3_OCa15 | partial | +9.6 | +19.3 | 8442 | -24257 | -8566 | -16735 | 8480 | 1 | 5 | 4 | -2415 / -2405 | -5067 / -3248 | -2415 / -2405 | -5067 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_EBa15b15 | yes | +9.8 | +1.5 | 8497 | -24257 | -18392 | -16735 | 8778 | 15 | 0 | 1 | -4800 / -4800 | -6682 / -5060 | -4800 / -4800 | -9602 / -9450 | +0 / +2 / -4 | 0.87 | PASS |
+| G3_OBa15 | partial | +10.9 | +23.7 | 8396 | -24257 | -8566 | -16735 | 8385 | 1 | 2 | 4 | -2415 / -2405 | -5067 / -3248 | -2415 / -2405 | -5067 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_OCa5 | partial | +11.3 | +19.3 | 8432 | -24257 | -8566 | -16735 | 8572 | 0 | 6 | 5 | -2415 / -2405 | -6526 / -3248 | -2415 / -2405 | -6526 / -3248 | n/a / n/a / n/a | nan | nan |
+| G3_EBa2b30 | partial | +11.5 | +4.7 | 8436 | -24257 | -8566 | -16735 | 8448 | 5 | 0 | 3 | -2405 / -2405 | -7838 / -3248 | -2405 / -2405 | -7838 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_CCa15b15 | yes | +11.9 | -1.1 | 8450 | -24257 | -19972 | -16735 | 8987 | 17 | 6 | 2 | -4800 / -4800 | -3402 / -5060 | -4815 / -4800 | -9602 / -9450 | -6 / +2 / -19 | 0.87 | PASS |
+| G3_OBa5 | partial | +11.9 | +18.5 | 8374 | -24257 | -8566 | -16735 | 8496 | 0 | 3 | 5 | -2415 / -2405 | -7121 / -3248 | -2415 / -2405 | -7121 / -3248 | n/a / n/a / n/a | nan | nan |
+| G1_CBa15b15 | yes | +12.0 | -0.6 | 8411 | -24257 | -19972 | -16735 | 8906 | 17 | 3 | 2 | -4800 / -4800 | -4247 / -5060 | -4815 / -4800 | -9602 / -9450 | -4 / +2 / -15 | 0.87 | PASS |
+| FD_W2 | yes | +12.4 | -1.9 | 7767 | -24257 | -19944 | -16735 | 8174 | 83 | 0 | 0 | 0 / -4800 | 0 / -5060 | 0 / -4800 | 0 / -9450 | -10 / -5 / -19 | 0.815 | PASS |
+| G1_CBa2b15 | yes | +13.2 | -0.1 | 8368 | -24257 | -20561 | -16735 | 8854 | 16 | 2 | 2 | -4800 / -4800 | -4922 / -5060 | -4815 / -4800 | -10242 / -9450 | -1 / +2 / -13 | 0.852 | PASS |
+| G1_CBa5b15 | yes | +13.3 | -0.6 | 8387 | -24257 | -20676 | -16735 | 8903 | 16 | 2 | 2 | -4800 / -4800 | -4292 / -5060 | -4815 / -4800 | -10152 / -9450 | -0 / +2 / -14 | 0.852 | PASS |
+| G1_CCa5b15 | yes | +14.4 | -0.6 | 8397 | -24257 | -21236 | -16735 | 8900 | 16 | 5 | 2 | -4800 / -4800 | -4292 / -5060 | -4815 / -4800 | -10152 / -9450 | -0 / +2 / -14 | 0.852 | PASS |
+| G1_CCa2b15 | yes | +14.5 | -0.1 | 8345 | -24257 | -21251 | -16735 | 8852 | 16 | 5 | 2 | -4800 / -4800 | -4922 / -5060 | -4815 / -4800 | -10242 / -9450 | -2 / +2 / -13 | 0.852 | PASS |
+| G1_EBa15b60 | yes | +17.1 | +2.5 | 7539 | -24257 | -22214 | -16735 | 7541 | 34 | 0 | 1 | -4810 / -4800 | -5513 / -5060 | -4810 / -4800 | -7442 / -9450 | +0 / -2 / -8 | 0.796 | PASS |
+| G1_CCa15b60 | yes | +19.8 | -1.6 | 7709 | -24257 | -23794 | -16735 | 8202 | 34 | 6 | 1 | -4810 / -4800 | -3850 / -5060 | -4810 / -4800 | -7272 / -9450 | -11 / -1 / -7 | 0.796 | PASS |
+| G1_CBa15b60 | yes | +19.9 | -1.3 | 7670 | -24257 | -23794 | -16735 | 8121 | 34 | 3 | 1 | -4810 / -4800 | -3850 / -5060 | -4810 / -4800 | -8467 / -9450 | -9 / -1 / -3 | 0.796 | PASS |
+| G1_CBa2b60 | yes | +21.3 | -0.9 | 7627 | -24384 | -24384 | -16735 | 8069 | 33 | 2 | 1 | -4810 / -4800 | -4440 / -5060 | -4810 / -4800 | -9182 / -9450 | -7 / -1 / -1 | 0.815 | PASS |
+| G1_CBa5b60 | yes | +21.5 | -1.2 | 7646 | -24499 | -24499 | -16735 | 8118 | 33 | 2 | 1 | -4810 / -4800 | -4555 / -5060 | -4810 / -4800 | -8852 / -9450 | -5 / -1 / -2 | 0.815 | PASS |
+| G1_CCa5b60 | yes | +22.6 | -1.2 | 7656 | -25059 | -25059 | -16735 | 8115 | 33 | 5 | 1 | -4810 / -4800 | -5115 / -5060 | -4810 / -4800 | -9037 / -9450 | -6 / -1 / -1 | 0.833 | PASS |
+| FD_W3 | yes | +22.6 | -1.2 | 7656 | -25059 | -25059 | -16735 | 8115 | 33 | 5 | 1 | -4810 / -4800 | -5115 / -5060 | -4810 / -4800 | -9037 / -9450 | -6 / -1 / -1 | 0.833 | PASS |
+| G1_CCa2b60 | yes | +22.8 | -0.9 | 7604 | -25074 | -25074 | -16735 | 8066 | 33 | 5 | 1 | -4810 / -4800 | -5130 / -5060 | -4810 / -4800 | -9382 / -9450 | -7 / -1 / -0 | 0.833 | PASS |
+| FD_W5 | yes | +23.2 | -1.2 | 7494 | -24257 | -23997 | -16735 | 8298 | 54 | 2 | 0 | -4795 / -4800 | -4931 / -5060 | -4795 / -4800 | -5793 / -9450 | -5 / -1 / -12 | 0.815 | PASS |
+| FD_W1 | yes | +23.8 | -1.2 | 7504 | -24557 | -24557 | -16735 | 8296 | 54 | 5 | 0 | -4795 / -4800 | -4612 / -5060 | -4795 / -4800 | -5978 / -9450 | -6 / -1 / -12 | 0.833 | PASS |
 
 ### per release type (rule vs reference on that type's release days)
 
@@ -248,8 +248,254 @@ Pooled per row (group release days) and per release type; L6M | L3M | prior wind
 |--|--|--|--|--|--|--|--|
 | G1_EBa2b5 | FOMC | L6M | 4 | 74 / 83 | 24599 / 26162 | -4800 / -4800 | -5491 / -5060 |
 | G1_EBa2b5 | FOMC | L3M | 2 | 25 / 32 | 9043 / 7080 | -4715 / -4715 | -5491 / -5060 |
+| G1_EBa2b15 | FOMC | L6M | 4 | 70 / 83 | 24502 / 26162 | -4800 / -4800 | -6682 / -5060 |
+| G1_EBa2b15 | FOMC | L3M | 2 | 24 / 32 | 7853 / 7080 | -4715 / -4715 | -6682 / -5060 |
 | G1_EBa2b30 | FOMC | L6M | 4 | 64 / 83 | 25750 / 26162 | -4800 / -4800 | -6682 / -5060 |
 | G1_EBa2b30 | FOMC | L3M | 2 | 23 / 32 | 6657 / 7080 | -4715 / -4715 | -6682 / -5060 |
+| G1_EBa2b60 | FOMC | L6M | 4 | 51 / 83 | -1379 / 26162 | -4810 / -4800 | -5513 / -5060 |
+| G1_EBa2b60 | FOMC | L3M | 2 | 15 / 32 | -8225 / 7080 | -4810 / -4715 | -5513 / -5060 |
+| G1_EBa5b5 | FOMC | L6M | 4 | 74 / 83 | 24599 / 26162 | -4800 / -4800 | -5491 / -5060 |
+| G1_EBa5b5 | FOMC | L3M | 2 | 25 / 32 | 9043 / 7080 | -4715 / -4715 | -5491 / -5060 |
+| G1_EBa5b15 | FOMC | L6M | 4 | 70 / 83 | 24502 / 26162 | -4800 / -4800 | -6682 / -5060 |
+| G1_EBa5b15 | FOMC | L3M | 2 | 24 / 32 | 7853 / 7080 | -4715 / -4715 | -6682 / -5060 |
+| G1_EBa5b30 | FOMC | L6M | 4 | 64 / 83 | 25750 / 26162 | -4800 / -4800 | -6682 / -5060 |
+| G1_EBa5b30 | FOMC | L3M | 2 | 23 / 32 | 6657 / 7080 | -4715 / -4715 | -6682 / -5060 |
+| G1_EBa5b60 | FOMC | L6M | 4 | 51 / 83 | -1379 / 26162 | -4810 / -4800 | -5513 / -5060 |
+| G1_EBa5b60 | FOMC | L3M | 2 | 15 / 32 | -8225 / 7080 | -4810 / -4715 | -5513 / -5060 |
+| G1_EBa15b5 | FOMC | L6M | 4 | 73 / 83 | 19808 / 26162 | -4800 / -4800 | -5491 / -5060 |
+| G1_EBa15b5 | FOMC | L3M | 2 | 25 / 32 | 9043 / 7080 | -4715 / -4715 | -5491 / -5060 |
+| G1_EBa15b15 | FOMC | L6M | 4 | 69 / 83 | 19712 / 26162 | -4800 / -4800 | -6682 / -5060 |
+| G1_EBa15b15 | FOMC | L3M | 2 | 24 / 32 | 7853 / 7080 | -4715 / -4715 | -6682 / -5060 |
+| G1_EBa15b30 | FOMC | L6M | 4 | 63 / 83 | 20960 / 26162 | -4800 / -4800 | -6682 / -5060 |
+| G1_EBa15b30 | FOMC | L3M | 2 | 23 / 32 | 6657 / 7080 | -4715 / -4715 | -6682 / -5060 |
+| G1_EBa15b60 | FOMC | L6M | 4 | 50 / 83 | -6169 / 26162 | -4810 / -4800 | -5513 / -5060 |
+| G1_EBa15b60 | FOMC | L3M | 2 | 15 / 32 | -8225 / 7080 | -4810 / -4715 | -5513 / -5060 |
+| G1_OCa2 | FOMC | L6M | 4 | 85 / 83 | 20762 / 26162 | -4800 / -4800 | -3300 / -5060 |
+| G1_OCa2 | FOMC | L3M | 2 | 33 / 32 | 9146 / 7080 | -4765 / -4715 | -3300 / -5060 |
+| G1_OBa2 | FOMC | L6M | 4 | 85 / 83 | 21377 / 26162 | -4800 / -4800 | -3300 / -5060 |
+| G1_OBa2 | FOMC | L3M | 2 | 33 / 32 | 9181 / 7080 | -4765 / -4715 | -3300 / -5060 |
+| G1_CCa2b15 | FOMC | L6M | 4 | 69 / 83 | 15607 / 26162 | -4800 / -4800 | -4922 / -5060 |
+| G1_CCa2b15 | FOMC | L3M | 2 | 23 / 32 | 8812 / 7080 | -3200 / -4715 | -4922 / -5060 |
+| G1_CBa2b15 | FOMC | L6M | 4 | 69 / 83 | 16222 / 26162 | -4800 / -4800 | -4922 / -5060 |
+| G1_CBa2b15 | FOMC | L3M | 2 | 23 / 32 | 8847 / 7080 | -3200 / -4715 | -4922 / -5060 |
+| G1_CCa2b60 | FOMC | L6M | 4 | 51 / 83 | -4404 / 26162 | -4810 / -4800 | -5130 / -5060 |
+| G1_CCa2b60 | FOMC | L3M | 2 | 15 / 32 | -1395 / 7080 | -4810 / -4715 | -3753 / -5060 |
+| G1_CBa2b60 | FOMC | L6M | 4 | 51 / 83 | -3789 / 26162 | -4810 / -4800 | -4440 / -5060 |
+| G1_CBa2b60 | FOMC | L3M | 2 | 15 / 32 | -1360 / 7080 | -4810 / -4715 | -3753 / -5060 |
+| G1_OCa5 | FOMC | L6M | 4 | 85 / 83 | 22167 / 26162 | -4800 / -4800 | -2670 / -5060 |
+| G1_OCa5 | FOMC | L3M | 2 | 33 / 32 | 9776 / 7080 | -4765 / -4715 | -2670 / -5060 |
+| G1_OBa5 | FOMC | L6M | 4 | 85 / 83 | 21892 / 26162 | -4800 / -4800 | -2670 / -5060 |
+| G1_OBa5 | FOMC | L3M | 2 | 33 / 32 | 9811 / 7080 | -4765 / -4715 | -2670 / -5060 |
+| G1_CCa5b15 | FOMC | L6M | 4 | 69 / 83 | 17012 / 26162 | -4800 / -4800 | -4292 / -5060 |
+| G1_CCa5b15 | FOMC | L3M | 2 | 23 / 32 | 9442 / 7080 | -3200 / -4715 | -4292 / -5060 |
+| G1_CBa5b15 | FOMC | L6M | 4 | 69 / 83 | 16737 / 26162 | -4800 / -4800 | -4292 / -5060 |
+| G1_CBa5b15 | FOMC | L3M | 2 | 23 / 32 | 9477 / 7080 | -3200 / -4715 | -4292 / -5060 |
+| G1_CCa5b60 | FOMC | L6M | 4 | 51 / 83 | -2999 / 26162 | -4810 / -4800 | -5115 / -5060 |
+| G1_CCa5b60 | FOMC | L3M | 2 | 15 / 32 | -765 / 7080 | -4810 / -4715 | -3123 / -5060 |
+| G1_CBa5b60 | FOMC | L6M | 4 | 51 / 83 | -3274 / 26162 | -4810 / -4800 | -4555 / -5060 |
+| G1_CBa5b60 | FOMC | L3M | 2 | 15 / 32 | -730 / 7080 | -4810 / -4715 | -3123 / -5060 |
+| G1_OCa15 | FOMC | L6M | 4 | 87 / 83 | 31968 / 26162 | -4800 / -4800 | 610 / -5060 |
+| G1_OCa15 | FOMC | L3M | 2 | 34 / 32 | 13301 / 7080 | -4765 / -4715 | 610 / -5060 |
+| G1_OBa15 | FOMC | L6M | 4 | 86 / 83 | 28523 / 26162 | -4800 / -4800 | -2625 / -5060 |
+| G1_OBa15 | FOMC | L3M | 2 | 33 / 32 | 9856 / 7080 | -4765 / -4715 | -2625 / -5060 |
+| G1_CCa15b15 | FOMC | L6M | 4 | 68 / 83 | 18442 / 26162 | -4800 / -4800 | -3402 / -5060 |
+| G1_CCa15b15 | FOMC | L3M | 2 | 23 / 32 | 10577 / 7080 | -3200 / -4715 | -3402 / -5060 |
+| G1_CBa15b15 | FOMC | L6M | 4 | 68 / 83 | 17387 / 26162 | -4800 / -4800 | -4247 / -5060 |
+| G1_CBa15b15 | FOMC | L3M | 2 | 23 / 32 | 9522 / 7080 | -3200 / -4715 | -4247 / -5060 |
+| G1_CCa15b60 | FOMC | L6M | 4 | 50 / 83 | -1569 / 26162 | -4810 / -4800 | -3850 / -5060 |
+| G1_CCa15b60 | FOMC | L3M | 2 | 15 / 32 | 370 / 7080 | -4810 / -4715 | -2233 / -5060 |
+| G1_CBa15b60 | FOMC | L6M | 4 | 50 / 83 | -2624 / 26162 | -4810 / -4800 | -3850 / -5060 |
+| G1_CBa15b60 | FOMC | L3M | 2 | 15 / 32 | -685 / 7080 | -4810 / -4715 | -3078 / -5060 |
+| FD_W1 | FOMC | L6M | 4 | 29 / 83 | -7091 / 26162 | -4795 / -4800 | -4612 / -5060 |
+| FD_W1 | FOMC | L3M | 2 | 9 / 32 | 1583 / 7080 | -3200 / -4715 | -3239 / -5060 |
+| FD_W2 | FOMC | L6M | 4 | 0 / 83 | 0 / 26162 | 0 / -4800 | 0 / -5060 |
+| FD_W2 | FOMC | L3M | 2 | 0 / 32 | 0 / 7080 | 0 / -4715 | 0 / -5060 |
+| FD_W3 | FOMC | L6M | 4 | 51 / 83 | -2999 / 26162 | -4810 / -4800 | -5115 / -5060 |
+| FD_W3 | FOMC | L3M | 2 | 15 / 32 | -765 / 7080 | -4810 / -4715 | -3123 / -5060 |
+| FD_W4 | FOMC | L6M | 4 | 59 / 83 | 22219 / 26162 | -4800 / -4800 | -742 / -5060 |
+| FD_W4 | FOMC | L3M | 2 | 20 / 32 | 16081 / 7080 | -3200 / -4715 | -742 / -5060 |
+| FD_W5 | FOMC | L6M | 4 | 29 / 83 | -7366 / 26162 | -4795 / -4800 | -4931 / -5060 |
+| FD_W5 | FOMC | L3M | 2 | 9 / 32 | 1618 / 7080 | -3200 / -4715 | -3239 / -5060 |
+| G2_EBa2b5 | FOMC_PRESS | L6M | 4 | 79 / 83 | 29045 / 26162 | -4800 / -4800 | -1511 / -5060 |
+| G2_EBa2b5 | FOMC_PRESS | L3M | 2 | 29 / 32 | 9044 / 7080 | -4715 / -4715 | -1511 / -5060 |
+| G2_EBa2b15 | FOMC_PRESS | L6M | 4 | 75 / 83 | 21784 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_EBa2b15 | FOMC_PRESS | L3M | 2 | 27 / 32 | 8969 / 7080 | -4715 / -4715 | -2701 / -5060 |
+| G2_EBa2b30 | FOMC_PRESS | L6M | 4 | 71 / 83 | 3828 / 26162 | -4810 / -4800 | -3911 / -5060 |
+| G2_EBa2b30 | FOMC_PRESS | L3M | 2 | 24 / 32 | -7802 / 7080 | -4810 / -4715 | -3911 / -5060 |
+| G2_EBa2b60 | FOMC_PRESS | L6M | 4 | 60 / 83 | -6631 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_EBa2b60 | FOMC_PRESS | L3M | 2 | 22 / 32 | -7928 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_EBa5b5 | FOMC_PRESS | L6M | 4 | 78 / 83 | 27850 / 26162 | -4800 / -4800 | -1511 / -5060 |
+| G2_EBa5b5 | FOMC_PRESS | L3M | 2 | 28 / 32 | 7849 / 7080 | -4715 / -4715 | -1511 / -5060 |
+| G2_EBa5b15 | FOMC_PRESS | L6M | 4 | 74 / 83 | 20589 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_EBa5b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 7773 / 7080 | -4715 / -4715 | -2701 / -5060 |
+| G2_EBa5b30 | FOMC_PRESS | L6M | 4 | 70 / 83 | 2632 / 26162 | -4810 / -4800 | -5106 / -5060 |
+| G2_EBa5b30 | FOMC_PRESS | L3M | 2 | 23 / 32 | -8998 / 7080 | -4810 / -4715 | -5106 / -5060 |
+| G2_EBa5b60 | FOMC_PRESS | L6M | 4 | 59 / 83 | -7826 / 26162 | -4820 / -4800 | -5116 / -5060 |
+| G2_EBa5b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -9123 / 7080 | -4820 / -4715 | -5116 / -5060 |
+| G2_EBa15b5 | FOMC_PRESS | L6M | 4 | 73 / 83 | 30293 / 26162 | -4800 / -4800 | -1511 / -5060 |
+| G2_EBa15b5 | FOMC_PRESS | L3M | 2 | 28 / 32 | 7849 / 7080 | -4715 / -4715 | -1511 / -5060 |
+| G2_EBa15b15 | FOMC_PRESS | L6M | 4 | 69 / 83 | 23032 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_EBa15b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 7773 / 7080 | -4715 / -4715 | -2701 / -5060 |
+| G2_EBa15b30 | FOMC_PRESS | L6M | 4 | 65 / 83 | 5076 / 26162 | -4810 / -4800 | -5106 / -5060 |
+| G2_EBa15b30 | FOMC_PRESS | L3M | 2 | 23 / 32 | -8998 / 7080 | -4810 / -4715 | -5106 / -5060 |
+| G2_EBa15b60 | FOMC_PRESS | L6M | 4 | 54 / 83 | -5383 / 26162 | -4820 / -4800 | -5160 / -5060 |
+| G2_EBa15b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -9123 / 7080 | -4820 / -4715 | -5116 / -5060 |
+| G2_OCa2 | FOMC_PRESS | L6M | 4 | 83 / 83 | 37912 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OCa2 | FOMC_PRESS | L3M | 2 | 31 / 32 | 6690 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_OBa2 | FOMC_PRESS | L6M | 4 | 83 / 83 | 34607 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OBa2 | FOMC_PRESS | L3M | 2 | 31 / 32 | 5955 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_CCa2b15 | FOMC_PRESS | L6M | 4 | 75 / 83 | 34609 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CCa2b15 | FOMC_PRESS | L3M | 2 | 27 / 32 | 14449 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CBa2b15 | FOMC_PRESS | L6M | 4 | 75 / 83 | 31304 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CBa2b15 | FOMC_PRESS | L3M | 2 | 27 / 32 | 13714 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CCa2b60 | FOMC_PRESS | L6M | 4 | 60 / 83 | 6194 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CCa2b60 | FOMC_PRESS | L3M | 2 | 22 / 32 | -2448 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_CBa2b60 | FOMC_PRESS | L6M | 4 | 60 / 83 | 2889 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CBa2b60 | FOMC_PRESS | L3M | 2 | 22 / 32 | -3183 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_OCa5 | FOMC_PRESS | L6M | 4 | 83 / 83 | 39352 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OCa5 | FOMC_PRESS | L3M | 2 | 31 / 32 | 8260 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_OBa5 | FOMC_PRESS | L6M | 4 | 83 / 83 | 34607 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OBa5 | FOMC_PRESS | L3M | 2 | 31 / 32 | 5955 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_CCa5b15 | FOMC_PRESS | L6M | 4 | 74 / 83 | 34854 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CCa5b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 14823 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CBa5b15 | FOMC_PRESS | L6M | 4 | 74 / 83 | 30109 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CBa5b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 12518 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CCa5b60 | FOMC_PRESS | L6M | 4 | 59 / 83 | 6439 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CCa5b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -2073 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_CBa5b60 | FOMC_PRESS | L6M | 4 | 59 / 83 | 1694 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CBa5b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -4378 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_OCa15 | FOMC_PRESS | L6M | 4 | 83 / 83 | 35612 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OCa15 | FOMC_PRESS | L3M | 2 | 31 / 32 | 8225 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_OBa15 | FOMC_PRESS | L6M | 4 | 83 / 83 | 34637 / 26162 | -4800 / -4800 | -5060 / -5060 |
+| G2_OBa15 | FOMC_PRESS | L3M | 2 | 31 / 32 | 5955 / 7080 | -3200 / -4715 | -5060 / -5060 |
+| G2_CCa15b15 | FOMC_PRESS | L6M | 4 | 69 / 83 | 33557 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CCa15b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 14788 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CBa15b15 | FOMC_PRESS | L6M | 4 | 69 / 83 | 32582 / 26162 | -4800 / -4800 | -2701 / -5060 |
+| G2_CBa15b15 | FOMC_PRESS | L3M | 2 | 26 / 32 | 12518 / 7080 | -3200 / -4715 | -2701 / -5060 |
+| G2_CCa15b60 | FOMC_PRESS | L6M | 4 | 54 / 83 | 5142 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CCa15b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -2108 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G2_CBa15b60 | FOMC_PRESS | L6M | 4 | 54 / 83 | 4167 / 26162 | -4820 / -4800 | -4007 / -5060 |
+| G2_CBa15b60 | FOMC_PRESS | L3M | 2 | 21 / 32 | -4378 / 7080 | -4820 / -4715 | -4007 / -5060 |
+| G3_EBa2b5 | FOMC_MIN | L6M | 4 | 32 / 33 | 2320 / 1101 | -2405 / -2405 | -3248 / -3248 |
+| G3_EBa2b5 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b5 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa2b5 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b15 | FOMC_MIN | L6M | 4 | 32 / 33 | 2320 / 1101 | -2405 / -2405 | -3248 / -3248 |
+| G3_EBa2b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b15 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa2b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b30 | FOMC_MIN | L6M | 4 | 31 / 33 | -7005 / 1101 | -2405 / -2405 | -7838 / -3248 |
+| G3_EBa2b30 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b30 | FOMC_MIN | L3M | 2 | 16 / 18 | 1055 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa2b30 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b60 | FOMC_MIN | L6M | 4 | 29 / 33 | -2461 / 1101 | -2405 / -2405 | -3253 / -3248 |
+| G3_EBa2b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa2b60 | FOMC_MIN | L3M | 2 | 15 / 18 | 2205 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa2b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b5 | FOMC_MIN | L6M | 4 | 30 / 33 | 5750 / 1101 | -2405 / -2405 | -222 / -3248 |
+| G3_EBa5b5 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b5 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa5b5 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b15 | FOMC_MIN | L6M | 4 | 30 / 33 | 5750 / 1101 | -2405 / -2405 | -222 / -3248 |
+| G3_EBa5b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b15 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa5b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b30 | FOMC_MIN | L6M | 4 | 29 / 33 | -3576 / 1101 | -2405 / -2405 | -4409 / -3248 |
+| G3_EBa5b30 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b30 | FOMC_MIN | L3M | 2 | 16 / 18 | 1055 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa5b30 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b60 | FOMC_MIN | L6M | 4 | 27 / 33 | 969 / 1101 | -2405 / -2405 | -2272 / -3248 |
+| G3_EBa5b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa5b60 | FOMC_MIN | L3M | 2 | 15 / 18 | 2205 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa5b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b5 | FOMC_MIN | L6M | 4 | 31 / 33 | 4515 / 1101 | -2405 / -2405 | -1457 / -3248 |
+| G3_EBa15b5 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b5 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa15b5 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b15 | FOMC_MIN | L6M | 4 | 31 / 33 | 4515 / 1101 | -2405 / -2405 | -1457 / -3248 |
+| G3_EBa15b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b15 | FOMC_MIN | L3M | 2 | 17 / 18 | 5790 / 4571 | -2405 / -2405 | 1314 / 94 |
+| G3_EBa15b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b30 | FOMC_MIN | L6M | 4 | 29 / 33 | -3596 / 1101 | -2405 / -2405 | -4409 / -3248 |
+| G3_EBa15b30 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b30 | FOMC_MIN | L3M | 2 | 16 / 18 | 1055 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa15b30 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b60 | FOMC_MIN | L6M | 4 | 26 / 33 | 2168 / 1101 | -2405 / -2405 | -2272 / -3248 |
+| G3_EBa15b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_EBa15b60 | FOMC_MIN | L3M | 2 | 15 / 18 | 2205 / 4571 | -2405 / -2405 | -2272 / 94 |
+| G3_EBa15b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa2 | FOMC_MIN | L6M | 4 | 39 / 33 | -2273 / 1101 | -2415 / -2405 | -6531 / -3248 |
+| G3_OCa2 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa2 | FOMC_MIN | L3M | 2 | 20 / 18 | 2041 / 4571 | -2350 / -2405 | 722 / 94 |
+| G3_OCa2 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa2 | FOMC_MIN | L6M | 4 | 39 / 33 | -4133 / 1101 | -2415 / -2405 | -6846 / -3248 |
+| G3_OBa2 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa2 | FOMC_MIN | L3M | 2 | 20 / 18 | 1376 / 4571 | -2350 / -2405 | 654 / 94 |
+| G3_OBa2 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa2b15 | FOMC_MIN | L6M | 4 | 37 / 33 | 2557 / 1101 | -2350 / -2405 | -1726 / -3248 |
+| G3_CCa2b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa2b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 3261 / 4571 | -2350 / -2405 | 722 / 94 |
+| G3_CCa2b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa2b15 | FOMC_MIN | L6M | 4 | 37 / 33 | 697 / 1101 | -2350 / -2405 | -2041 / -3248 |
+| G3_CBa2b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa2b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 2596 / 4571 | -2350 / -2405 | 722 / 94 |
+| G3_CBa2b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa2b60 | FOMC_MIN | L6M | 4 | 31 / 33 | -3270 / 1101 | -2400 / -2405 | -3452 / -3248 |
+| G3_CCa2b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa2b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -835 / 4571 | -2350 / -2405 | -1557 / 94 |
+| G3_CCa2b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa2b60 | FOMC_MIN | L6M | 4 | 31 / 33 | -5130 / 1101 | -2400 / -2405 | -3767 / -3248 |
+| G3_CBa2b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa2b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -1500 / 4571 | -2350 / -2405 | -2222 / 94 |
+| G3_CBa2b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa5 | FOMC_MIN | L6M | 4 | 38 / 33 | -7113 / 1101 | -2415 / -2405 | -6526 / -3248 |
+| G3_OCa5 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa5 | FOMC_MIN | L3M | 2 | 20 / 18 | 2661 / 4571 | -2350 / -2405 | 452 / 94 |
+| G3_OCa5 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa5 | FOMC_MIN | L6M | 4 | 38 / 33 | -8688 / 1101 | -2415 / -2405 | -7121 / -3248 |
+| G3_OBa5 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa5 | FOMC_MIN | L3M | 2 | 20 / 18 | 1681 / 4571 | -2350 / -2405 | 582 / 94 |
+| G3_OBa5 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa5b15 | FOMC_MIN | L6M | 4 | 35 / 33 | 2341 / 1101 | -2350 / -2405 | -1721 / -3248 |
+| G3_CCa5b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa5b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 3881 / 4571 | -2350 / -2405 | 452 / 94 |
+| G3_CCa5b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa5b15 | FOMC_MIN | L6M | 4 | 35 / 33 | 766 / 1101 | -2350 / -2405 | -2316 / -3248 |
+| G3_CBa5b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa5b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 2901 / 4571 | -2350 / -2405 | 582 / 94 |
+| G3_CBa5b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa5b60 | FOMC_MIN | L6M | 4 | 29 / 33 | -3486 / 1101 | -2400 / -2405 | -3447 / -3248 |
+| G3_CCa5b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa5b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -215 / 4571 | -2350 / -2405 | -667 / 94 |
+| G3_CCa5b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa5b60 | FOMC_MIN | L6M | 4 | 29 / 33 | -5061 / 1101 | -2400 / -2405 | -4042 / -3248 |
+| G3_CBa5b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa5b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -1195 / 4571 | -2350 / -2405 | -1777 / 94 |
+| G3_CBa5b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa15 | FOMC_MIN | L6M | 4 | 36 / 33 | -6848 / 1101 | -2415 / -2405 | -5067 / -3248 |
+| G3_OCa15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OCa15 | FOMC_MIN | L3M | 2 | 20 / 18 | 1466 / 4571 | -2350 / -2405 | 447 / 94 |
+| G3_OCa15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa15 | FOMC_MIN | L6M | 4 | 36 / 33 | -8078 / 1101 | -2415 / -2405 | -5067 / -3248 |
+| G3_OBa15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_OBa15 | FOMC_MIN | L3M | 2 | 20 / 18 | 236 / 4571 | -2350 / -2405 | -268 / 94 |
+| G3_OBa15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa15b15 | FOMC_MIN | L6M | 4 | 34 / 33 | 1371 / 1101 | -2350 / -2405 | -1496 / -3248 |
+| G3_CCa15b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa15b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 2686 / 4571 | -2350 / -2405 | 447 / 94 |
+| G3_CCa15b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa15b15 | FOMC_MIN | L6M | 4 | 34 / 33 | 141 / 1101 | -2350 / -2405 | -1496 / -3248 |
+| G3_CBa15b15 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa15b15 | FOMC_MIN | L3M | 2 | 19 / 18 | 1456 / 4571 | -2350 / -2405 | -268 / 94 |
+| G3_CBa15b15 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa15b60 | FOMC_MIN | L6M | 4 | 28 / 33 | -4456 / 1101 | -2400 / -2405 | -3223 / -3248 |
+| G3_CCa15b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CCa15b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -1410 / 4571 | -2350 / -2405 | -1857 / 94 |
+| G3_CCa15b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa15b60 | FOMC_MIN | L6M | 4 | 28 / 33 | -5686 / 1101 | -2400 / -2405 | -3223 / -3248 |
+| G3_CBa15b60 | CHAIR_SPEECH | L6M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| G3_CBa15b60 | FOMC_MIN | L3M | 2 | 17 / 18 | -2640 / 4571 | -2350 / -2405 | -2372 / 94 |
+| G3_CBa15b60 | CHAIR_SPEECH | L3M | 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
 
 ## NYAM (NY_STKd8b76ecd35_JT68)
 

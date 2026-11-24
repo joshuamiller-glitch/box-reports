@@ -1,6 +1,6 @@
 # D8 NEWS WINDOWS (family NW): entry blocks around releases and open-trade rules
 
-Research only, 2 lots per book, written 2026-11-24 00:01 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
+Research only, 2 lots per book, written 2026-11-24 00:22 UTC by code/th_nw/nw_score.py (hook nw_hooks.py, builder nw_gen.py, queue nw_next.py, scorer nw_score.py, calendar nw_cal.py). Order: DIRECTIVE_NEWS_WINDOWS_20261123_1825Z.md (Josh: "if in open trade it could get taken for a huge ride").
 
 **Calendar**: /mnt/l2/l2vast/_calendar/events.csv has events from **2024-10-01** (first row ISM manufacturing 10:00 ET) to 2026-12-23. Months 2023-04 to 2024-09 have NO events: they are NOT SCORED for NW (an NW set equals its pick there by construction; shown as "no calendar", never as evidence). So prior years here = 2024-10..2025-12 and 2026-01..04 (18 months, 2025-11 has no data) and L6M = 2026-05..10, L3M = 2026-08..10; data end 2026-10. 54 calendar rows are rule-derived (ISM dates), 1 UNVERIFIED, the rest verified. The calendar has no FOMC press-conference row: FOMC press = every FOMC decision date at 14:30 ET (synthetic). NOT in the calendar, so not tested: JOLTS, consumer confidence, new home sales and other 10:00 releases, Treasury auctions (in the file as AUC_* but not in the order).
 
@@ -8,7 +8,7 @@ Research only, 2 lots per book, written 2026-11-24 00:01 UTC by code/th_nw/nw_sc
 
 Windows and definitions: daily series house convention (exit ET date +7h, p484 = gross - 4.84 x lots), zero-filled on the pick's trading days; ulcer = RMS drawdown (primary); "release day" = trading date of the release; worst single trade = lowest p484 of one trade whose exit trading date is a release day; worst day = lowest daily sum over release days of the group. Verdict: pick on L6M ulcer with L3M not worse, walk-forward >= 0.58, prior years not RED (>30% worse at equal-risk $/wk), best-of-many null 4 of 5 (placebo release dates, emulation). Selection rule: refit with the next joint.
 
-Rows landed: 30 of 171 sets complete (all scored months). Verdict and null use complete sets only.
+Rows landed: 83 of 171 sets complete (all scored months). Verdict and null use complete sets only.
 
 ## Asia (AS_STKd8106b26ef_JT19, pick TL3_SR_AS_STKd8106b26ef_BF2_JT19)
 
@@ -54,14 +54,26 @@ Reference (no rule = the pick), on release days of each group, L6M | all scored 
 
 | group | L6M release days | L6M worst single trade | L6M worst day | L6M $ on release days | all-months worst single trade | all-months worst day |
 |--|--|--|--|--|--|--|
-| G1 | 4 | -4800 | -5060 | 26162 | -4800 | -5060 |
-| G2 | nan | nan | nan | nan | nan | nan |
-| G3 | nan | nan | nan | nan | nan | nan |
+| G1 | 4 | -4800 | -5060 | 26162 | -4800 | -9450 |
+| G2 | 4 | -4800 | -5060 | 26162 | -4800 | -9450 |
+| G3 | 4 | -2405 | -3248 | 1101 | -2405 | -3248 |
 
 Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 
 | code | L6M ulcer % | L3M ulcer % | L6M $/wk | L6M maxDD | L6M worst wk | L6M worst day | L6M rel-day worst trade (rule / ref) | L6M rel-day worst day (rule / ref) | removed | closed early | prior yrs ulcer % (2024Q4 / 2025 / 2026a) | WF | verdict |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| G1_OCa15 | -0.5 | -1.9 | 8951 | -24257 | -8566 | -16735 | -4800 / -4800 | 610 / -5060 | 0 | 6 | -18 / +1 / +22 | 0.83 | PASS |
+| G2_EBa15b5 | -0.5 | -1.8 | 8889 | -24257 | -8566 | -16735 | -4800 / -4800 | -1511 / -5060 | 10 | 0 | +1 / -2 / -3 | 0.89 | PASS |
+| G2_EBa5b5 | -0.5 | -1.8 | 8799 | -24257 | -8566 | -16735 | -4800 / -4800 | -1511 / -5060 | 5 | 0 | +1 / -1 / +1 | 0.89 | PASS |
+| G2_EBa2b5 | -0.5 | -1.8 | 8843 | -24257 | -8566 | -16735 | -4800 / -4800 | -1511 / -5060 | 4 | 0 | +1 / -1 / +1 | 0.89 | PASS |
+| G1_OBa15 | -0.4 | -1.4 | 8823 | -24257 | -8566 | -16735 | -4800 / -4800 | -2625 / -5060 | 0 | 3 | -17 / +1 / +28 | 0.83 | PASS |
+| G2_EBa15b15 | -0.4 | -1.4 | 8620 | -24257 | -9072 | -16735 | -4800 / -4800 | -2701 / -5060 | 14 | 0 | -1 / -2 / -18 | 0.87 | PASS |
+| G2_OBa2 | +0.0 | +0.0 | 9049 | -24257 | -8566 | -16735 | -4800 / -4800 | -5060 / -5060 | 2 | 0 | -3 / -3 / +0 | 0.89 | PASS |
+| G2_OCa2 | +0.0 | +0.0 | 9171 | -24257 | -8566 | -16735 | -4800 / -4800 | -5060 / -5060 | 2 | 3 | -3 / -3 / -15 | 0.85 | PASS |
+| G1_EBa2b5 | +0.1 | +0.4 | 8678 | -24257 | -10011 | -16735 | -4800 / -4800 | -5491 / -5060 | 11 | 0 | +0 / +2 / +0 | 0.85 | PASS |
+| G1_EBa5b5 | +0.1 | +0.4 | 8678 | -24257 | -10011 | -16735 | -4800 / -4800 | -5491 / -5060 | 11 | 0 | +0 / +2 / -0 | 0.83 | PASS |
+| G1_EBa5b30 | +0.4 | +1.5 | 8721 | -24257 | -9973 | -16735 | -4800 / -4800 | -6682 / -5060 | 20 | 0 | +0 / -2 / -8 | 0.89 | PASS |
+| G1_EBa2b30 | +0.4 | +1.5 | 8721 | -24257 | -9973 | -16735 | -4800 / -4800 | -6682 / -5060 | 20 | 0 | +0 / -2 / -8 | 0.89 | PASS |
 
 ## NYAM (NY_STKd8b76ecd35_JT68, pick TL3_SR_NY_STKd8b76ecd35_BF2_JT68)
 
@@ -78,4 +90,9 @@ Top settings by L6M ulcer (full list of every row in D8_NEWS_WINDOWS_ROWS.md):
 
 ## Best NW setting per session (drawdown first; "none" = the pick, reference only)
 
-No setting yet passes the pick filter (L6M and L3M ulcer both lower); see the tables.
+### NYPM: G1_OCa15 [LEAD (null pending)]
+
+L6M ulcer -0.5% (L3M -1.9%), $/wk L6M 8951 vs ref 8736, maxDD -24257 vs -24257, worst week -8566 vs -8566; release-day worst single trade -4800 vs ref -4800; release-day worst day 610 vs ref -5060; prior years ulcer % -18 / +1 / +22; walk-forward 0.833 (PASS).
+Exact ET clock rules (relay can code):
+
+- release 14:00 ET: at 13:45 every open trade is closed at market
