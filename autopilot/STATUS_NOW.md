@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-25 17:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-25 18:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-25 17:45Z | box1: busy 100%, load1 68.05, workers 14, MemAvail 62 GB | server2: busy 96%, load1 81.88, workers 24, MemAvail 789 GB | pending box1-eligible 517920 / server2-eligible 32878 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 183.81, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 989 GB | serverB: busy 100%, load1 173.04, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 960 GB | serverC: busy 99%, load1 136.14, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1436 GB | serverD: busy 92%, load1 58.55, workers 1 (grid) + 54 (engine), 64 threads, MemAvail 1465 GB
+LATEST CORES.md LINE: 2026-11-25 18:00Z | box1: busy 93%, load1 45.54, workers 11, MemAvail 60 GB | server2: busy 96%, load1 83.13, workers 28, MemAvail 839 GB | pending box1-eligible 517935 / server2-eligible 34857 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 164.54, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 982 GB | serverB: busy 100%, load1 196.04, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 938 GB | serverC: busy 100%, load1 138.14, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1432 GB | serverD: busy 100%, load1 66.01, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1463 GB
 
 ## UTC TIME WRITTEN
-2026-11-25 17:45Z
+2026-11-25 18:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-25 17:45Z | box1: busy 100%, load1 68.05, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 61.3 GB; live reservations 6 (6 GB); workers 14, of which TP-adopted 14 (RSS 16.9 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 68.05, 71.95, 67.40
-  by tag: NYR quota 12 running 10 hungry True RSS 13.2 GB PSS 11.3 GB; TOOLS quota 0 running 4 hungry False RSS 3.7 GB PSS 3.2 GB
+Server 1 (this box): MemAvail 59.2 GB; live reservations 7 (7 GB); workers 11, of which TP-adopted 11 (RSS 14.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 45.54, 46.23, 55.82
+  by tag: NYR quota 12 running 11 hungry True RSS 14.2 GB PSS 12.0 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_SR_TW_NY_STKd8cd0279ff_BF1_N9_W0930_ALL (x12);TL3_NYE_L424f0b68_ALNCT91p (x12);TL3_NYE_L424f0b68_ALNCT84p (x12);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 83.11, 82.69, 83.47|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
+  top running jobs: TL3_NYE_La220ae63_ALNCT28m (x12);TL3_NYE_La220ae63_ALNCT21m (x12);TL3_NYE_La220ae63_ALNCT14m (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 82.24, 83.53, 83.78|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 83.11, 82.69, 83.47|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261125_0848Z_nyam-new-member-Lca8ca9cb-spec-now.md 20261125_1508Z_Josh-NYPM-all-cores-now.md 20261125_1512Z_Josh-NYAM-30min-block-test-after-NYPM.md 20261125_1540Z_relay-link-intermittent-today-keep-chain-running.md 20261125_1625Z_Josh-NYPM-drawdown-at-6-lots.md
+20261125_1508Z_Josh-NYPM-all-cores-now.md 20261125_1512Z_Josh-NYAM-30min-block-test-after-NYPM.md 20261125_1540Z_relay-link-intermittent-today-keep-chain-running.md 20261125_1625Z_Josh-NYPM-drawdown-at-6-lots.md 20261125_1752Z_Josh-London-when-ready.md
