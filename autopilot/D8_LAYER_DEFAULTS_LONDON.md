@@ -23,3 +23,12 @@ SZW = SZW2
 DLA = DLA4
 DLB = DLB3
 ```
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - written 2026-11-25 02:11Z by W-LAYERS2 (documentation only; the history above is not rewritten)
+TOP LINE: 0BRF90_30_BF2_JT14: CODING CHANGE: YES: the CAP pair's second side (and the static median-R dollars) must be coded as above; the written named-side value is correct.
+**Set TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_JT14**
+- CAP: the set carries the SAME static dollar caps on EVERY book: profit +$27,000, loss -$14,400 (engine day cap sim.py:722-730, once per 1-minute bar, CLOSED day P&L only, closing an open trade with exit name DayHalt; the dollars are k x the MEDIAN book R of $3,600 at this basis, stackrule_gen.py:57 reassigns lots = max(2, ...) before the CAP lambda at :71, so the page wording 'each book's own R' is WRONG for CAP). The page names only ONE side of the pair: the profit rows (CAP1-4) ALSO set the loss cap at 4 R (= $14,400) and the loss rows (CAP5-8) ALSO set the profit cap at 10 R (= $36,000): the other side is part of the tested set and must be coded.
+- STK (whole-stack day profit stop): static dollars $21,600 on the SUM of the day P&L (closed) of the listed books (lay_hooks.py stack_caps, evaluated in check_limits once per minute); = k x the median book R ($3,600); no per-book scaling; the written value is correct.
+- DLB (stack daily-loss halt, Y = $4,000 per lot per book): threshold = -Y x base_qty of the checking book (dl_hooks.py:51); all books carry 2 lots here, so it is -$8,000 in total: the written meaning is correct (equal lots).
+- FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
+- Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.

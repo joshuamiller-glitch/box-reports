@@ -379,3 +379,6 @@ ZONE.MF5.ZONE6 = zone no-trade set MF5 Skip within 50 pts
 
 ## 8. NY AM (question 6)
 NOT YET: TL3_ALN_NY_STKd8b76ecd35 bare fit is still running (screens restarted 20:40Z after the identity harness fix); the same page will be written for it when its table lands. The setting codes and their numbers (sections 2-4) are the same code; the member tags and stop sizes differ (read from its set JSON).
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - W-LAYERS2 (documentation only; history not rewritten)
+TOP LINE: reference page (the 1 / 2 / 4-lot Asia picks, superseded by the 2-lot pages): wherever it says CAP uses each book's own R, the engine value is STATIC median-book-R dollars on every book (stackrule_gen.py:57 + :71; sim.py:722-730, closed P&L only, once a minute), and a CAP row also sets the OTHER side of the pair (profit rows: loss cap = 4 R; loss rows: profit cap = 10 R); DLB threshold = -Y x base_qty of the checking book (dl_hooks.py:51). Fitted results do not change. Set-specific values: the per-pick correction sections on D8_LAYER_KEYS_ASIA_<pick>.md.

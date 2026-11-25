@@ -32,3 +32,11 @@ CG = CGB1
 DLA = DLA11
 DLC = DLC3
 ```
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - written 2026-11-25 02:11Z by W-LAYERS2 (documentation only; the history above is not rewritten)
+TOP LINE: da2eb47b_BF2_JT210: CODING CHANGE: YES: the CAP pair's second side (and the static median-R dollars) must be coded as above; the written named-side value is correct.
+**Set TL3_SR_AS_STKd8da2eb47b_BF2_JT210**
+- CAP: the set carries the SAME static dollar caps on EVERY book: profit +$12,750, loss -$6,800 (engine day cap sim.py:722-730, once per 1-minute bar, CLOSED day P&L only, closing an open trade with exit name DayHalt; the dollars are k x the MEDIAN book R of $1,700 at this basis, stackrule_gen.py:57 reassigns lots = max(2, ...) before the CAP lambda at :71, so the page wording 'each book's own R' is WRONG for CAP). The page names only ONE side of the pair: the profit rows (CAP1-4) ALSO set the loss cap at 4 R (= $6,800) and the loss rows (CAP5-8) ALSO set the profit cap at 10 R (= $17,000): the other side is part of the tested set and must be coded.
+  Own R of the books differs here (own R per book at this basis: 1,600, 2,400, 1,800, 1,200): the static dollars are NOT scaled per book.
+- FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
+- Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.

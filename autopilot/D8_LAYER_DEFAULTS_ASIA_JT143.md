@@ -36,3 +36,11 @@ DLC = DLC12
 ```
 
 **2-LOT NULL (04:27Z, search-aware, best-of the whole screen menu incl. DL / CGB, 5-book Asia stack, L6M): FAIL. Real best-of ulcer cut -42.9% vs null draws -44.0 / -39.9 / -19.0 / -54.5%: beats 2 of the 4 draws run (gate >= 4 of 5; stopped after the 2nd miss). The Asia layer gains are NOT clearly more than what the same search finds on random-entry books: label WEAK / NOT PROVEN for every Asia layer pick (JT19, JT143, JT243); the panel default stays bare (layers OFF = what was tested) until Josh chooses.**
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - written 2026-11-25 02:11Z by W-LAYERS2 (documentation only; the history above is not rewritten)
+TOP LINE: 106b26ef_BF2_JT143: CODING CHANGE: YES: the CAP pair's second side (and the static median-R dollars) must be coded as above; the written named-side value is correct.
+**Set TL3_SR_AS_STKd8106b26ef_BF2_JT143**
+- CAP: the set carries the SAME static dollar caps on EVERY book: profit +$24,000, loss -$14,400 (engine day cap sim.py:722-730, once per 1-minute bar, CLOSED day P&L only, closing an open trade with exit name DayHalt; the dollars are k x the MEDIAN book R of $2,400 at this basis, stackrule_gen.py:57 reassigns lots = max(2, ...) before the CAP lambda at :71, so the page wording 'each book's own R' is WRONG for CAP). The page names only ONE side of the pair: the profit rows (CAP1-4) ALSO set the loss cap at 4 R (= $9,600) and the loss rows (CAP5-8) ALSO set the profit cap at 10 R (= $24,000): the other side is part of the tested set and must be coded.
+  Own R of the books differs here (own R per book at this basis: 1,600, 2,400, 2,400, 2,400, 1,200): the static dollars are NOT scaled per book.
+- FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
+- Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.

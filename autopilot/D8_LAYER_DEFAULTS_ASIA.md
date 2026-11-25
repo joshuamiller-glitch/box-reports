@@ -203,3 +203,6 @@ NTS = NTS1  # no-trade-set halving 0.5 (today's rule)  d_ulcer -1101 d_$/wk -137
 CG = CG1  # skip after 1 same-side losses (c_gov)  d_ulcer +0 d_$/wk +0  WEAK (fails 15% guard)
 ```
 
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - W-LAYERS2 (documentation only; history not rewritten)
+TOP LINE: reference page (the 1 / 2 / 4-lot Asia picks, superseded by the 2-lot pages): wherever it says CAP uses each book's own R, the engine value is STATIC median-book-R dollars on every book (stackrule_gen.py:57 + :71; sim.py:722-730, closed P&L only, once a minute), and a CAP row also sets the OTHER side of the pair (profit rows: loss cap = 4 R; loss rows: profit cap = 10 R); DLB threshold = -Y x base_qty of the checking book (dl_hooks.py:51). Fitted results do not change. Set-specific values: the per-pick correction sections on D8_LAYER_KEYS_ASIA_<pick>.md.

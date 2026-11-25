@@ -27,3 +27,10 @@ SZW = SZW3
 NTS = NTS2
 CG = CGB3
 ```
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - written 2026-11-25 02:11Z by W-LAYERS2 (documentation only; the history above is not rewritten)
+TOP LINE: 93133bd8_BF2_JT209: NO CHANGE to what the page tells the relay to code (this set has no CAP; DLB / STK values are as written).
+**Set TL3_SR_NP_STKd893133bd8_BF2_JT209**
+- STK (whole-stack day loss stop): static dollars $11,200 on the SUM of the day P&L (closed) of the listed books (lay_hooks.py stack_caps, evaluated in check_limits once per minute); = k x the median book R ($2,800); no per-book scaling; the written value is correct.
+- FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
+- Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.

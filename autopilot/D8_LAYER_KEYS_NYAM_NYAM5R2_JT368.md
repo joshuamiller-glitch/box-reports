@@ -45,3 +45,11 @@ class chain = hooklist in written order, a LATER hook is OUTER and runs first. E
 ```
 
 **2-LOT NULL, NY AM equal five (21:49Z, search-aware, best-of the full menu incl. DL and CGB on the L6M screen): FAIL. Real best-of ulcer cut -35.0% vs null draws -30.5 / -40.0 / -56.3% = beats 1 of the 3 draws run (gate >= 4 of 5; stopped after the 2nd miss). Label: WEAK-BUT-POSITIVE (NOT PROVEN) for BF2_JT68 / JT368; the other gates are clean (walk-forward 0.838, persistence 0.914, bands RED / GREEN / GREEN, no STC).**
+
+## CORRECTION 2026-11-25 (CAP/DLB engine reading) - written 2026-11-25 02:11Z by W-LAYERS2 (documentation only; the history above is not rewritten)
+TOP LINE: b76ecd35_BF2_JT368: NO CHANGE to what the page tells the relay to code (this set has no CAP; DLB / STK values are as written).
+**Set TL3_SR_NY_STKd8b76ecd35_BF2_JT368**
+- STK (whole-stack day profit stop): static dollars $19,200 on the SUM of the day P&L (closed) of the listed books (lay_hooks.py stack_caps, evaluated in check_limits once per minute); = k x the median book R ($2,400); no per-book scaling; the written value is correct.
+- DLB (stack daily-loss halt, Y = $8,000 per lot per book): threshold = -Y x base_qty of the checking book (dl_hooks.py:51); all books carry 2 lots here, so it is -$16,000 in total: the written meaning is correct (equal lots).
+- FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
+- Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.
