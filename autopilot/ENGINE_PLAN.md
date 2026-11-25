@@ -158,36 +158,36 @@ Hourly measured rates (appended by W-PLAN each hour; format: HHZ box1 / Dallas /
 - 18:40Z box 1 ~320/h (partial hour, 11 workers), Dallas ~196/h (partial, 24 workers), A 0, B 0.
 
 <!-- ENGINE_PLAN_LIVE -->
-## 11. LIVE NUMBERS (auto, W-PLAN code/th_plan/plan_refresh.py, refreshed 2026-11-25 04:05Z; sections 1-9 above are the written plan, this block is the measurement)
+## 11. LIVE NUMBERS (auto, W-PLAN code/th_plan/plan_refresh.py, refreshed 2026-11-25 05:05Z; sections 1-9 above are the written plan, this block is the measurement)
 
 Measured engine set-months per clock hour (DONE marks; UTC hour; the current hour is partial):
 
 | hour (Z) | box 1 London | Dallas (server 2) | A Frankfurt | B Singapore | total |
 |---|---|---|---|---|---|
-| 11-24T22 | 0 | 831 | 1570 | 1797 | 4198 |
 | 11-24T23 | 0 | 460 | 765 | 916 | 2141 |
 | 11-25T00 | 0 | 451 | 811 | 960 | 2222 |
 | 11-25T01 | 0 | 1011 | 1864 | 2182 | 5057 |
 | 11-25T02 | 0 | 678 | 1217 | 1427 | 3322 |
 | 11-25T03 | 0 | 1036 | 1875 | 2125 | 5036 |
-| 11-25T04 | 0 | 123 | 239 | 298 | 660 |
-| workers now | 0 | 52 | 191 | 198 | 441 |
-| mean of last 3 full hours | 0 | 908 | 1652 | 1911 | 4472 |
+| 11-25T04 | 0 | 1194 | 2198 | 2557 | 5949 |
+| 11-25T05 | 0 | 76 | 176 | 222 | 474 |
+| workers now | 0 | 56 | 198 | 198 | 452 |
+| mean of last 3 full hours | 0 | 969 | 1763 | 2036 | 4769 |
 
-Hyper-thread factor for A/B: MEASURED 0.50 per worker vs Dallas (A Frankfurt, 191 workers; note: workers share cores with the grid, so a lower bound).
+Hyper-thread factor for A/B: MEASURED 0.51 per worker vs Dallas (A Frankfurt, 198 workers; note: workers share cores with the grid, so a lower bound).
 Engine-ready status: box 1 London NO engine runs yet, Dallas (server 2) engine runs seen, A Frankfurt engine runs seen, B Singapore engine runs seen.
 
-Hours for the engine workload (section 2 totals, no screen / with validated fast replay) at the CURRENT measured fleet rate of 4472 set-months/h; and at the rate if A and B reach Dallas-equivalent per-thread speed x 0.50:
+Hours for the engine workload (section 2 totals, no screen / with validated fast replay) at the CURRENT measured fleet rate of 4769 set-months/h; and at the rate if A and B reach Dallas-equivalent per-thread speed x 0.51:
 
 | N per session | set-months (no screen / screen) | hours at current fleet | hours with A and B engine-ready (projected) |
 |---|---|---|---|
-| 3 | 16700 / 13700 | 4 / 3 h | 5.8 / 4.7 h |
-| 6 | 30400 / 24500 | 7 / 5 h | 10.5 / 8.4 h |
-| 10 | 48700 / 38800 | 11 / 9 h | 16.8 / 13.4 h |
-| 20 | 94300 / 74600 | 21 / 17 h | 32.5 / 25.7 h |
-| 50 | 231400 / 182100 | 52 / 41 h | 79.8 / 62.8 h |
+| 3 | 16700 / 13700 | 4 / 3 h | 5.5 / 4.5 h |
+| 6 | 30400 / 24500 | 6 / 5 h | 10.1 / 8.1 h |
+| 10 | 48700 / 38800 | 10 / 8 h | 16.1 / 12.8 h |
+| 20 | 94300 / 74600 | 20 / 16 h | 31.2 / 24.7 h |
+| 50 | 231400 / 182100 | 49 / 38 h | 76.6 / 60.3 h |
 
-Projected engine rate with A and B engine-ready: 2901 set-months/h (box 1 + Dallas measured + 2 x 128 threads x 17 per Dallas thread x factor x 90% busy).
+Projected engine rate with A and B engine-ready: 3021 set-months/h (box 1 + Dallas measured + 2 x 128 threads x 17 per Dallas thread x factor x 90% busy).
 
 Queue inventory (set-months waiting; nothing deleted; decision list for Josh):
 
@@ -209,7 +209,7 @@ Queue inventory (set-months waiting; nothing deleted; decision list for Josh):
 | S3J | _rebuild/s3j_pending.txt | 378 | park |
 | S3 first | _rebuild/s3_first.txt | 505 | park |
 | MB | _major_b/pending.txt | 59 | park |
-| TOTAL parked / cancel candidates | | 45203 | ~16 h of the projected fleet; none runs unless a core is free |
+| TOTAL parked / cancel candidates | | 45203 | ~15 h of the projected fleet; none runs unless a core is free |
 
 ### Ladder (order 1932Z): cheapest test first, no cap, a cell leaves only by FAILING a test (core-hours: R1-R3 and R5 per-unit costs from section 11 head; UPPER BOUNDS where the pass share of the previous rung is unknown)
 
@@ -250,7 +250,7 @@ Per session if EVERY family-best went through R5 (upper bound, not the plan; the
 | NYPM | 1638 / 1168 | 280-456 | 631 | 3889 | 9110 | 13631 | 52 | 142 |
 
 HONEST LINE (> 48 h of the fleet): no screen rung (R1-R4) needs more than 48 h on the pool (R4: 38 h at 25% of A+B). The ENGINE for the BH passers needs more than 48 h of the pool when the number of passers P exceeds ~187 (more than ~277 on the pool with the validated fast replay); on the current fleet (box 1 + Dallas) above P ~ 68. Counts of BH passers per session are not known until stage B/C finish; if they exceed the break-even, Josh decides between more machines and waiting. Nothing is trimmed to fit.
-Measured engine rate on A / B (first 30 min, includes cache builds, NOT steady state): A 2460 (last 30 min x2), B 2876 (last 30 min x2) set-months/h; per-set-month cost 0.045 core-h on Dallas/box 1 (160-180 s) versus 0.30 on A when the engine was starved (1,072 s at nice 10). The order text quotes 0.3 per set-month; 7.8 core-h per cell for 30 controls implies 0.043: both are shown, the measured non-starved value is used for the totals.
+Measured engine rate on A / B (first 30 min, includes cache builds, NOT steady state): A 2058 (last 30 min x2), B 2376 (last 30 min x2) set-months/h; per-set-month cost 0.045 core-h on Dallas/box 1 (160-180 s) versus 0.30 on A when the engine was starved (1,072 s at nice 10). The order text quotes 0.3 per set-month; 7.8 core-h per cell for 30 controls implies 0.043: both are shown, the measured non-starved value is used for the totals.
 
 
 **DATED ESTIMATES (W-PLAN, written 2026-11-19 00:10Z; inputs: W-GRIDOPS 22:25Z / 23:05Z, W-SHORT R3 state at 23:32Z, engine queue report 00:00Z; rates change, the script re-prints this block as written until W-PLAN edits it):**
