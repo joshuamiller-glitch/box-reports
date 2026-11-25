@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-25 15:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-25 15:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-25 15:30Z | box1: busy 100%, load1 64.83, workers 21, MemAvail 56 GB | server2: busy 98%, load1 90.57, workers 26, MemAvail 667 GB | pending box1-eligible 519339 / server2-eligible 33239 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 160.31, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1001 GB | serverB: busy 100%, load1 189.55, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 948 GB | serverC: busy 100%, load1 131.36, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1451 GB | serverD: busy 92%, load1 59.14, workers 1 (grid) + 61 (engine), 64 threads, MemAvail 1477 GB
+LATEST CORES.md LINE: 2026-11-25 15:45Z | box1: busy 100%, load1 71.38, workers 22, MemAvail 57 GB | server2: busy 96%, load1 82.07, workers 24, MemAvail 702 GB | pending box1-eligible 519345 / server2-eligible 34097 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 181.93, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 959 GB | serverB: busy 100%, load1 171.48, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 921 GB | serverC: busy 100%, load1 135.15, workers 1 (grid) + 133 (engine), 128 threads, MemAvail 1397 GB | serverD: busy 92%, load1 59.67, workers 1 (grid) + 55 (engine), 64 threads, MemAvail 1455 GB
 
 ## UTC TIME WRITTEN
-2026-11-25 15:30Z
+2026-11-25 15:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-25 15:30Z | box1: busy 100%, load1 64.83, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 54.8 GB; live reservations 1 (1 GB); workers 21, of which TP-adopted 21 (RSS 28.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 64.83, 61.50, 62.42
-  by tag: NYR quota 12 running 16 hungry False RSS 23.5 GB PSS 18.4 GB; TOOLS quota 0 running 5 hungry False RSS 4.9 GB PSS 4.6 GB
+Server 1 (this box): MemAvail 56.3 GB; live reservations 0 (0 GB); workers 22, of which TP-adopted 22 (RSS 26.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 71.38, 69.46, 65.85
+  by tag: NYR quota 12 running 17 hungry False RSS 21.0 GB PSS 17.4 GB; TOOLS quota 0 running 5 hungry False RSS 5.3 GB PSS 4.8 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_SR_LO_L19201dfc_R0BRF90_30_BF2_JT247 (x16);TL3_NYE_L934040dc_ALNCT56m (x12);TL3_NYE_L934040dc_ALNCT63m (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 88.88, 87.19, 85.84|/dev/md2         28T  2.8T   26T  10% /mnt/l2|53|
+  top running jobs: TL3_SR_NP_STKd8w42pme_BF1_JT29 (x18);TL3_NYE_L7cd05a65_ALNCT63p (x12);TL3_NYE_L7cd05a65_ALNCT56p (x12);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 79.26, 82.36, 84.19|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 88.88, 87.19, 85.84|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261125_0215Z_nyam-jt91-coding-readings-to-confirm.md 20261125_0308Z_nyam-file-size-table-please.md 20261125_0848Z_nyam-new-member-Lca8ca9cb-spec-now.md 20261125_1508Z_Josh-NYPM-all-cores-now.md 20261125_1512Z_Josh-NYAM-30min-block-test-after-NYPM.md
+20261125_0308Z_nyam-file-size-table-please.md 20261125_0848Z_nyam-new-member-Lca8ca9cb-spec-now.md 20261125_1508Z_Josh-NYPM-all-cores-now.md 20261125_1512Z_Josh-NYAM-30min-block-test-after-NYPM.md 20261125_1540Z_relay-link-intermittent-today-keep-chain-running.md
