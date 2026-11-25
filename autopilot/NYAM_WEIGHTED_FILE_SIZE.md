@@ -1,4 +1,4 @@
-# NYAM_WEIGHTED_FILE_SIZE - the weighted 9-book NY AM pick BF1_JT91 at the FILE'S whole-lot sizes (W-LAYERS2, 2026-11-25 03:22Z)
+# NYAM_WEIGHTED_FILE_SIZE - the weighted 9-book NY AM pick BF1_JT91 at the FILE'S whole-lot sizes (W-LAYERS2, 2026-11-25 03:27Z)
 
 BAND RULE READING (correction 03:30Z): the band number is the pick's equal-risk $/wk SHORTFALL against bare, (bare $/wk - pick $/wk scaled to bare's ulcer) / |bare $/wk|; RED > +30%, AMBER > +15%, else GREEN. A NEGATIVE number means the pick earns MORE than bare at equal risk, so -128% = GREEN is correct (6/3/2 2024: pick $8,433/wk at ulcer 20,245 scales to about $26,000 at bare ulcer 62,415, against bare $11,410). Earlier wording "equal-risk $/wk +x%" read as a gain; it is the shortfall.
 
@@ -37,9 +37,10 @@ Gates at this size (rows allow): fixed-pick persistence vs bare 0.849; prior-yea
 
 CAVEAT: the two sizes also change DLB9's threshold (-$4,000 vs -$8,000, smallest-lot rule), so this comparison mixes the lots of two small books with the stack halt level; the NODLB rows below separate them.
 
-## DLB9 at each size
-NODLB rows still running (12 rows queued 03:08Z); this section is filled when they land.
+## DLB9 at each size (L6M, from the same pick with the stack halt removed: sets FS631_NODLB / FS632_NODLB)
 
+- 6/3/1: DLB9 changed 93 of 131 L6M trading days (entries blocked after it fired; days where it fired with nothing left to block are not visible); pick with DLB9: ulcer 34552 / max DD -91745 / $23368 per wk vs without DLB9: 21978 / -58458 / $32273 per wk; sum of the P&L of the changed days: with -188493 vs without 51935.
+- 6/3/2: DLB9 changed 73 of 131 L6M trading days (entries blocked after it fired; days where it fired with nothing left to block are not visible); pick with DLB9: ulcer 20453 / max DD -64115 / $25395 per wk vs without DLB9: 21925 / -58458 / $32264 per wk; sum of the P&L of the changed days: with -297058 vs without -111585.
 
 ## Rolling walk-forward at the file size: feasible, not started
 
