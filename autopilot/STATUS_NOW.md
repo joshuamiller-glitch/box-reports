@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-25 02:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-25 02:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-25 02:00Z | box1: busy 100%, load1 63.45, workers 13, MemAvail 46 GB | server2: busy 97%, load1 86.30, workers 28, MemAvail 662 GB | pending box1-eligible 541663 / server2-eligible 86643 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 183.49, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 1003 GB | serverB: busy 100%, load1 182.38, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 953 GB | serverC: busy 90%, load1 109.79, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1445 GB | serverD: busy 92%, load1 63.65, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1463 GB
+LATEST CORES.md LINE: 2026-11-25 02:15Z | box1: busy 100%, load1 63.84, workers 9, MemAvail 54 GB | server2: busy 98%, load1 90.41, workers 29, MemAvail 687 GB | pending box1-eligible 541573 / server2-eligible 86964 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 187.89, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 997 GB | serverB: busy 100%, load1 174.74, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 954 GB | serverC: busy 100%, load1 138.54, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1431 GB | serverD: busy 100%, load1 67.12, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1460 GB
 
 ## UTC TIME WRITTEN
-2026-11-25 02:00Z
+2026-11-25 02:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-25 02:00Z | box1: busy 100%, load1 63.45, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 44.6 GB; live reservations 11 (11 GB); workers 13, of which TP-adopted 13 (RSS 16.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 63.45, 56.48, 57.34
-  by tag: NYR quota 12 running 1 hungry True RSS 1.2 GB PSS 1.1 GB; NYE quota 16 running 10 hungry False RSS 13.5 GB PSS 12.0 GB; TOOLS quota 0 running 2 hungry False RSS 1.8 GB PSS 1.6 GB
+Server 1 (this box): MemAvail 52.8 GB; live reservations 14 (14 GB); workers 9, of which TP-adopted 9 (RSS 12.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 63.84, 63.53, 62.68
+  by tag: NYR quota 12 running 8 hungry True RSS 10.7 GB PSS 9.4 GB; NYE quota 16 running 1 hungry False RSS 1.6 GB PSS 1.5 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_SR_NY_STKd8cd0279ff_FS631_BARE (x20);TL3_NYE_L9d8152f8_ALN (x16);TL3_NYE_L9d8152f8_ALNCT7p (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 87.82, 85.20, 84.04|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
+  top running jobs: TL3_SR_NY_STKd8cd0279ff_BF1_NL1_LOSSMF7_STC1 (x12);TL3_NYE_L9d8152f8_ALNCT105p (x12);TL3_NYE_L9d8152f8_ALNCT7m (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 91.02, 89.96, 87.69|/dev/md2         28T  2.8T   26T  10% /mnt/l2|55|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 87.82, 85.20, 84.04|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261124_1926Z_live-file-has-no-same-side-lot-cap.md 20261124_2026Z_Josh-NYAM-weighted-nine-fit-and-code-now.md 20261124_2125Z_nyam-coding-status-and-inputs-needed.md 20261124_2214Z_Josh-restore-parked-weighted-nine-fit-rows.md 20261125_0140Z_Josh-NYAM-weighted-verdict-now.md
+20261124_2026Z_Josh-NYAM-weighted-nine-fit-and-code-now.md 20261124_2125Z_nyam-coding-status-and-inputs-needed.md 20261124_2214Z_Josh-restore-parked-weighted-nine-fit-rows.md 20261125_0140Z_Josh-NYAM-weighted-verdict-now.md 20261125_0215Z_nyam-jt91-coding-readings-to-confirm.md
