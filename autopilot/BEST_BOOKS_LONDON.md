@@ -1,8 +1,8 @@
-# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-25 01:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_LONDON - own-merit scorecard, London session (W-BEST; GENERATED AT 2026-11-25 01:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 1898 distinct cells scored (392 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 604; L6M and L3M > 0: 356; labels {'BEST-AVAILABLE-NOT-PROVEN': 1294, 'WEAK-BUT-POSITIVE': 556, 'LEAD': 48}. Job errors: 0. Run 626 s.
+**Counts:** 1898 distinct cells scored (392 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 4 live-book rows; L6M $/wk > 0: 604; L6M and L3M > 0: 356; labels {'BEST-AVAILABLE-NOT-PROVEN': 1294, 'WEAK-BUT-POSITIVE': 556, 'LEAD': 48}. Job errors: 0. Run 519 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
@@ -86,8 +86,8 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 
 ## Prior-year colour summary (REPORT ONLY; the rule and the labels are unchanged)
 
-- New books, top 200 by own-merit rank (200 books): GREEN 0 / AMBER 1 / RED 47 / not landed 152.
-  Prior years positive in absolute $/wk, books with all 3 years landed (47): 0 of 3: 0, 1 of 3: 1, 2 of 3: 10, 3 of 3: 36. Books with 1-2 years landed (1): 2 of 2 positive: 1.
+- New books, top 200 by own-merit rank (200 books): GREEN 0 / AMBER 1 / RED 48 / not landed 151.
+  Prior years positive in absolute $/wk, books with all 3 years landed (48): 0 of 3: 0, 1 of 3: 1, 2 of 3: 10, 3 of 3: 37. Books with 1-2 years landed (1): 2 of 2 positive: 1.
 - Live books (4 books): GREEN 0 / AMBER 0 / RED 2 / not landed 2.
   Prior years positive in absolute $/wk, books with all 3 years landed (4): 0 of 3: 0, 1 of 3: 3, 2 of 3: 0, 3 of 3: 1. Books with 1-2 years landed (0): none.
 
@@ -177,7 +177,7 @@ Bars per hour = mean over every London session (02:00-08:30, 6.5 h ET) in 2026-0
 | 47 |  | 350 |  | median Renko bar 20 ticks [mrenko_20]; ~14 bars/hour; trigger trig_levels_trendline / break {"n": 2, "k": 0.0}; SIDE: LONG ONLY; bracket plain60/60 | 14 | M45234700 | NEW | RM7 | 0.125 | 0.067 | 623 | 372 | 4984 | 5544 | -14165 | -5178 | 10.5 | 0.52 | 1076 | -1034 | 0.57 | 0.57 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE | 0.613 | 0.323 | 0 |
 | 48 |  | 362 |  | unresolved (cell not in ladder_cells.json) |  | L73b40f7a | NEW | RM7 | 0.124 | 0.064 | 1043 | 691 | 8392 | 10876 | -22001 | -9473 | 8.4 | 0.51 | 1682 | -1477 | 0.50 | 0.56 | 94 | 6383 | +91 | RED | 427 | 4885 | +59 | RED | -22 | 10534 | +102 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 | 49 |  | 136 |  | unresolved (cell not in ladder_cells.json) |  | LB4 | NEW | RM7 | 0.124 | 0.237 | 913 | 1160 | 7374 | 4895 | -15711 | -8339 | 7.5 | 0.51 | 1653 | -1457 | 0.71 | 0.71 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | LEAD |  |  | 0 |
-| 50 |  | 226 |  | unresolved (cell not in ladder_cells.json) |  | Lff8c6f0f | NEW | RM7 | 0.123 | 0.137 | 904 | 977 | 7382 | 7108 | -17611 | -8893 | 11.4 | 0.53 | 1471 | -1501 | 0.50 | 0.50 |  |  |  | n/a |  |  |  | n/a |  |  |  | n/a | not landed | WEAK-BUT-POSITIVE |  |  | 0 |
+| 50 |  | 226 |  | unresolved (cell not in ladder_cells.json) |  | Lff8c6f0f | NEW | RM7 | 0.123 | 0.137 | 904 | 977 | 7382 | 7108 | -17611 | -8893 | 11.4 | 0.53 | 1471 | -1501 | 0.50 | 0.61 | 294 | 4610 | +68 | RED | 903 | 4498 | +0 | GREEN | 403 | 5908 | +55 | RED | RED | WEAK-BUT-POSITIVE |  |  | 0 |
 
 ## Caveat: account-layer effect on a book's own stream (L6M own total, p484 as run, base lots)
 
