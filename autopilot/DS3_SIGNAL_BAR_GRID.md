@@ -1,7 +1,7 @@
 # DS3_SIGNAL_BAR_GRID - whole trigger library x every bar row x session (W-GRIDA), FIRST PASS, NAKED SCREEN
 VERDICT (data ends 2026-11-12; naked screen with bar-scaled brackets, no layers, NOT an engine verdict; first heat table on built bars; nulls: random-entry replicas rand1,randd8a,randd8ax,randd8b,randd8bx): see the headline table - a trigger x bar counts only by EXCESS over the null distribution of the BEST pick; nothing here is a pass until the engine row with layers exists.
 
-Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-25 03:47Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
+Header: pick window end = newest data week (2026-11-12); refit date = every 2 weeks, this table refreshed 2026-11-25 04:17Z; trials counted = number of cells (below); correction = best-pick null (random-entry replicas, shifted labels 2/3/5 weeks), no White/SPA at screen level; PBO not computed here; selection = walk-forward rolling (trailing 26 weeks pick, next 2 weeks scored), all numbers out of sample; prior-year flags AMBER 15-30% / RED >30% worse than doing nothing; data end 2026-11-12. Spec: autopilot/PREREG_SIGNAL_BAR_GRID.md.
 
 **CORRECTION 02:30Z (read first): every random-entry null file produced by the fast path before 02:30Z was an exact COPY of the real result (the fast runner did not recognise the tag p1randN), so all earlier excess / percentile / null columns and the claim of null draws were INVALID (excess 0.0, percentile 1.00 = no null). 31,413 such files were deleted; the 1,411 legacy-runner null files are valid. Nulls are being regenerated; a null column is shown only when the null pool covers >= 80% of the real pool, otherwise it reads NO NULL YET. Real results are unaffected.**
 
@@ -40,7 +40,7 @@ Header: pick window end = newest data week (2026-11-12); refit date = every 2 we
 | p1rand9 | 459 | 400 | 0.000 | -0.66 / -0.59 / -0.59 / -0.98 | YES | {"Asia": null, "London": null, "NYAM": null, "NYPM": null} |  |
 Draws per cell = number of accepted null tags covering the pool (see per-session null_cover); needs >= 5 before any LEAD label.
 
-**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-25 03:47Z):** result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 6036, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65946, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65946, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 2, "London": 2, "NYAM": 2, "NYPM": 2}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
+**STATUS (PARTIAL until pass 1 completes; refreshed 2026-11-25 04:17Z):** result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 6036, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65945, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65945, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; bar families present as columns: ACTIVITY, ACTIVITY(book), ANCHORED, COMPOSITE, FOOTPRINT, INFORMATION, INFORMATION(book), PRICE, PROFILE, SESSION-RELATIVE, SMOOTHING, TIME, UNKNOWN; null draws per cell (random-entry replicas in the scored sessions): {"Asia": 2, "London": 2, "NYAM": 2, "NYPM": 2}; live-seven baseline: IN (125 rows). Sessions published: Asia, London, NYAM, NYPM (a session whose scoring failed is simply absent). Next refresh within 30 min (gcycle).
 
 **Every number on this page comes from: PASS 1 (coarse grid: 2-3 settings per variant spanning the range; brackets plain 60/60 + sym15u; real + rand1/rand2 nulls; long/short = side split).**
 
@@ -51,8 +51,8 @@ Draws per cell = number of accepted null tags covering the pool (see per-session
 4. Needs in D7: trigger modules are bar-indicator only (no new feed) except book/tape families flagged in TRIGGER_REGISTRY.md; non-time bars need a custom BarsType (BAR_REGISTRY.md).
 5. Next: top cells -> live layers (fast replay) -> exact JL3 engine with controls (identity first); then Asia.
 
-## Progress (2026-11-25 03:47Z)
-COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 6036, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65946, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65946, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-25T03:47Z rows=327 mods=146 todo=9 running=0. 
+## Progress (2026-11-25 04:17Z)
+COVERAGE (this table is PARTIAL while pass 1 runs): result files per tag {"acctt1": 4, "acctt2": 1, "bench14": 1, "bench7": 1, "bfl17": 6036, "bfl17test": 1, "bfl7test": 1, "d8real": 24, "d8realx": 622, "p1audit": 436, "p1audit2": 436, "p1det": 3, "p1flow_absorbx": 213, "p1flow_bookx": 213, "p1flow_deltax": 214, "p1flow_speedx": 212, "p1flow_wallx": 212, "p1gridops_test": 0, "p1probe": 2, "p1rand1": 65945, "p1rand10": 459, "p1rand11": 459, "p1rand12": 453, "p1rand13": 348, "p1rand14": 317, "p1rand15": 317, "p1rand16": 317, "p1rand17": 317, "p1rand18": 317, "p1rand19": 400, "p1rand2": 65945, "p1rand20": 527, "p1rand21": 135, "p1rand22": 135, "p1rand23": 135, "p1rand24": 135, "p1rand25": 135, "p1rand26": 2, "p1rand27": 2, "p1rand28": 2, "p1rand29": 2, "p1rand3": 26672, "p1rand30": 2, "p1rand4": 26534, "p1rand5": 26441, "p1rand6": 459, "p1rand7": 459, "p1rand8": 459, "p1rand9": 459, "p1real": 69334, "p1realx": 4124, "p1stale": 67, "p1stamptest": 1, "rand1": 0, "randd8a": 0, "randd8ax": 0, "randd8b": 0, "randd8bx": 0, "real": 1654}; loop status: 2026-11-25T04:17Z rows=327 mods=146 todo=9 running=0. 
 Cells scored per session: {"Asia": 11992410, "London": 12898830, "NYAM": 14110290, "NYPM": 14121798}
 
 ## London
@@ -316,37 +316,37 @@ Live books in NYPM on their live bars (same screen, plain 60/60): K7 tm180 L6M -
 ### Heat table (neighbour-agreed pick): trigger family x bar family; cell = OOS pts/wk [excess over null best-pick; percentile among null draws]; ulcer/persistence in the csv
 | trigger family | ACTIVITY | INFORMATION | PRICE | TIME |
 |---|---|---|---|---|
-| bands | 8.0 [26.1; 1.00] | 16.1 [1.0; 0.50] | 21.9 [30.8; 1.00] | 13.5 [13.2; 1.00] |
+| bands | 8.0 [26.1; 1.00] | 16.1 [1.0; 0.50] | 21.9 [29.7; 1.00] | 13.5 [13.2; 1.00] |
 | bands (native) | -3.1 [6.1; 1.00] | 34.5 [47.4; 1.00] | -2.9 [33.8; 1.00] | 15.0 [19.9; 1.00] |
-| barnative | -15.4 [-8.3; 0.50] | -45.5 [-25.3; 0.00] | -21.2 [-23.3; 0.50] | -23.0 [-11.2; 0.50] |
+| barnative | -15.4 [-8.3; 0.50] | -45.5 [-25.3; 0.00] | -21.2 [-23.8; 0.50] | -23.0 [-11.2; 0.50] |
 | book | -10.4 [3.0; 0.50] | -8.3 [-5.7; 0.50] | -3.6 [23.9; 1.00] | -8.2 [3.4; 0.50] |
 | book (native) | 1.7 [10.1; 1.00] | -34.7 [-20.5; 0.00] | 1.7 [9.3; 1.00] | -28.8 [-13.2; 0.00] |
-| confluence | 17.9 [20.1; 1.00] | 7.8 [18.0; 1.00] | 32.4 [28.8; 1.00] | -19.5 [-9.9; 0.50] |
-| levels | 9.8 [32.0; 1.00] | 7.6 [15.1; 1.00] | -9.6 [-5.4; 0.00] | -9.4 [23.6; 1.00] |
-| levels (native) | 26.8 [54.2; 1.00] | -15.8 [-5.4; 0.00] | 2.2 [16.2; 1.00] | -18.7 [4.3; 0.50] |
+| confluence | 17.9 [20.1; 1.00] | 7.8 [18.0; 1.00] | 32.4 [29.2; 1.00] | -19.5 [-9.9; 0.50] |
+| levels | 9.8 [32.0; 1.00] | 7.6 [15.6; 1.00] | -9.6 [-4.7; 0.50] | -9.4 [23.6; 1.00] |
+| levels (native) | 26.8 [54.2; 1.00] | -15.8 [-5.7; 0.00] | 2.2 [16.2; 1.00] | -18.7 [4.3; 0.50] |
 | live | 15.4 [11.9; 1.00] | -2.5 [10.1; 1.00] | -4.9 [-0.6; 0.50] | -4.1 [4.7; 1.00] |
-| manual | 12.9 [12.1; 1.00] | 0.5 [3.6; 0.50] | 5.4 [35.2; 1.00] | -19.3 [-2.0; 0.50] |
+| manual | 12.9 [12.1; 1.00] | 0.5 [2.4; 0.50] | 5.4 [35.2; 1.00] | -19.3 [-2.0; 0.50] |
 | manual (native) | -1.9 [16.4; 1.00] | -25.3 [-15.9; 0.50] | -15.1 [6.1; 1.00] | 7.4 [17.0; 1.00] |
 | momentum | 12.0 [21.3; 1.00] | -4.7 [7.3; 1.00] | 28.7 [23.1; 1.00] | -0.5 [17.7; 1.00] |
 | momentum (native) | -8.7 [-12.8; 0.00] | 14.1 [4.5; 0.50] | 5.4 [-4.5; 0.50] | 3.7 [-23.3; 0.00] |
 | pullback | 18.6 [26.7; 1.00] | 4.7 [18.8; 0.50] | 14.5 [26.0; 1.00] | -22.2 [-19.7; 0.00] |
 | pullback (native) | 16.8 [28.9; 1.00] | 8.2 [-3.1; 0.50] | 29.0 [51.8; 1.00] | 6.1 [30.7; 1.00] |
-| structure | -19.2 [-5.3; 0.00] | 7.1 [-3.6; 0.50] | 8.8 [22.8; 1.00] | -7.1 [1.6; 0.50] |
+| structure | -19.2 [-5.3; 0.00] | 7.1 [-3.6; 0.50] | 8.8 [22.4; 1.00] | -7.1 [1.6; 0.50] |
 | structure (native) | 17.8 [13.6; 0.50] | 15.7 [1.7; 0.50] | 7.6 [14.4; 0.50] | -20.1 [-13.9; 0.00] |
-| tape | 3.5 [-8.6; 0.00] | -11.8 [-2.8; 0.00] | 1.3 [10.3; 0.50] | 8.6 [25.6; 1.00] |
-| tape (native) | 9.1 [14.6; 1.00] | 20.1 [25.2; 1.00] | 5.2 [46.7; 1.00] | -1.7 [-2.1; 0.50] |
-| trend | 5.4 [28.5; 1.00] | 21.6 [22.4; 1.00] | -14.0 [9.4; 0.50] | -1.2 [6.3; 1.00] |
+| tape | 3.5 [-8.6; 0.00] | -11.8 [-2.8; 0.00] | 1.3 [6.6; 0.50] | 8.6 [25.6; 1.00] |
+| tape (native) | 9.1 [14.6; 1.00] | 20.1 [25.2; 1.00] | 5.2 [40.1; 1.00] | -1.7 [-2.1; 0.50] |
+| trend | 5.4 [28.5; 1.00] | 21.6 [22.4; 1.00] | -14.0 [11.4; 1.00] | -1.2 [6.3; 1.00] |
 | trend (native) | -14.1 [-14.2; 0.00] | 14.0 [49.0; 1.00] | -12.4 [4.5; 0.50] | -20.1 [-27.9; 0.00] |
 | xmarket | 7.4 [34.2; 1.00] | -26.6 [-10.0; 0.00] | 10.1 [-12.7; 0.00] | -26.0 [-15.6; 0.00] |
 ### PASS 1: 10 best family cells in Asia (trigger family x bar family; neighbour-agreed rolling pick, out of sample, pts/week per lot)
 | family cell | OOS pts/wk | R/trade | ulcer | persistence | L6M | L3M | by year (pts/wk) | null mean | excess | pctile | year flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | bands (native)|INFORMATION | 34.5 | 0.040 | 239.3 | 0.60 | 117.2 | 78.2 | {"2023": 10.9, "2024": 13.1, "2025": 24.2, "2026": 79.4} | -12.9 | 47.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| confluence|PRICE | 32.4 | 0.038 | 352.2 | 0.52 | 115.4 | 72.4 | {"2023": -9.2, "2024": -1.2, "2025": 5.2, "2026": 117.5} | 3.6 | 28.8 | 1.00 | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| confluence|PRICE | 32.4 | 0.038 | 352.2 | 0.52 | 115.4 | 72.4 | {"2023": -9.2, "2024": -1.2, "2025": 5.2, "2026": 117.5} | 3.2 | 29.2 | 1.00 | {"2023": "AMBER", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | pullback (native)|PRICE | 29.0 | 0.030 | 163.9 | 0.58 | 3.4 | 16.9 | {"2023": 42.5, "2024": 27.3, "2025": 18.5, "2026": 39.1} | -22.8 | 51.8 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | momentum|PRICE | 28.7 | 0.022 | 302.4 | 0.59 | 4.3 | -2.8 | {"2023": 8.9, "2024": 37.5, "2025": 48.5, "2026": 1.3} | 5.7 | 23.1 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | levels (native)|ACTIVITY | 26.8 | 0.031 | 183.0 | 0.56 | 51.8 | 12.3 | {"2023": 14.2, "2024": 7.5, "2025": 40.5, "2026": 37.3} | -27.4 | 54.2 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
-| bands|PRICE | 21.9 | 0.021 | 217.3 | 0.56 | 36.8 | -14.0 | {"2023": 9.4, "2024": 14.4, "2025": 30.2, "2026": 24.8} | -8.9 | 30.8 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
+| bands|PRICE | 21.9 | 0.021 | 217.3 | 0.56 | 36.8 | -14.0 | {"2023": 9.4, "2024": 14.4, "2025": 30.2, "2026": 24.8} | -7.8 | 29.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | trend|INFORMATION | 21.6 | 0.025 | 219.8 | 0.54 | 2.8 | -33.4 | {"2023": 6.6, "2024": 24.0, "2025": 7.4, "2026": 40.2} | -0.8 | 22.4 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
 | tape (native)|INFORMATION | 20.1 | 0.022 | 478.8 | 0.53 | 64.2 | 8.1 | {"2023": -37.6, "2024": 22.2, "2025": -25.3, "2026": 89.6} | -5.2 | 25.2 | 1.00 | {"2023": "RED", "2024": "ok", "2025": "RED", "2026": "ok"} |
 | pullback|ACTIVITY | 18.6 | 0.019 | 461.5 | 0.58 | 62.2 | -53.7 | {"2023": 23.2, "2024": 28.5, "2025": 2.5, "2026": 24.3} | -8.1 | 26.7 | 1.00 | {"2023": "ok", "2024": "ok", "2025": "ok", "2026": "ok"} |
