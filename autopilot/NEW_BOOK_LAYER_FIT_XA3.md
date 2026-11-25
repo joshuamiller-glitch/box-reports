@@ -1,4 +1,4 @@
-# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-25 11:00Z
+# NEW_BOOK_LAYER_FIT_XA3 - own fitted layers of the new book on the exact engine (W-NYENG phase 3a), refreshed 2026-11-25 11:30Z
 
 **All rows are vs TODAY's stack (JL3, today's DAY-DONE) and vs the cell's own ADD row; provisional until Asia and London are decided.** Each layer setting is fitted on the trailing 6 months (3 months beside) one layer at a time; 'off' = the ADD row (reference only, every live layer stays ON). Engine base lots, $4.84 RT proxy. Columns: stack ulcer change vs ADD (negative = better), worst week change, max DD change, mean $/week change (all WITH setting minus the ADD row), then the same ulcer / mean vs JL3, the new book's own ulcer x ADD and trades x ADD (a setting must keep trades >= 80 percent). Selection: every setting is the best of a grid on the same window; prior years / 2-week roll / 30 layered controls still to run. Identity: TL3_NYL_XA3_ID1-9 PASS (autopilot NEW_BOOK_LAYER_PLAN.md).
 
