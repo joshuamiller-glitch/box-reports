@@ -1,6 +1,6 @@
-# STALE_RESULTS 2026-11-25T07:14:12Z: 40749 of 466111 done leases (48 h) have inputs newer than their launch / signature changed
-by basis (sig = content hash differs, reliable; mtime = lease without signature, only a file newer than the launch): {'sig': 40749}
-by family: {'SR': 40749}
+# STALE_RESULTS 2026-11-25T07:44:27Z: 39872 of 465351 done leases (48 h) have inputs newer than their launch / signature changed
+by basis (sig = content hash differs, reliable; mtime = lease without signature, only a file newer than the launch): {'sig': 39872}
+by family: {'SR': 39872}
 full list: autopilot/stale_results.csv
-signature-differs by family (parked STK stacks NV1/NV2/AX/AS_/CX/AC excluded; those are "stale, parked" by lead decision 0110Z): {'SR': 40749}
+signature-differs by family (parked STK stacks NV1/NV2/AX/AS_/CX/AC excluded; those are "stale, parked" by lead decision 0110Z): {'SR': 39872}
 mtime-only Asia (~8,700) and NYE (1,530, content test: 1,530 of 1,530 identical) are false positives and excluded from the F alert.
