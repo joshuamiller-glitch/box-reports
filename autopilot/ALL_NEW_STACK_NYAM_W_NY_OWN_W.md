@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-25 08:39Z.
+# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-w (W-COMBO, order 1416Z part 2). Updated 2026-11-25 08:44Z.
 
 **DECISION BASIS: EQUAL WORST-PRIOR-YEAR MAX DRAWDOWN (today's L6M-ulcer basis printed beside it).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -6,7 +6,7 @@
 
 **The equal-weight loop `ny-own` is the REFERENCE ROW (its FINAL has no weights).**
 
-Phase **run**; pool 42 books (B15d193ef.BRA15U30U, B32cec996, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L32cec996, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L57507767, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L6df41b86, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8816c2ae, L8a3e478b, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Lca8ca9cb, Lcfcd8c17, Le0da99e2, Le4fede95.BRF90_30); steps 8.
+Phase **moves**; pool 42 books (B15d193ef.BRA15U30U, B32cec996, B3987e3da.BRF60_120, B57507767, B6f77f23d, B7bfd33b7, Bace079e3.BRS8U, Bde046d66.BRF90_30, Be65f7dfd.BRP60, Bf428c4a1.BRS8U, L05350e98, L20d2d063.BRF60_120, L30250fb1.BRF30_90, L32cec996, L39287638.BRF80_40, L43f0cbfb.BRS8U, L4407508c.BRF120_60, L488784d8, L57507767, L5f66d4c6.BRF80_40, L64390867.BRF80_40, L6547965c, L6c6a79f5.BRA15U30U, L6d0d3174.BRF60_120, L6df41b86, L7693034b.BRF30_90, L7cc56d99, L870542d8.BRF60_120, L8816c2ae, L8a3e478b, L8cfda948.BRF90_30, L8f11883e.BRF30_90, L9acce162.BRF120_60, L9dbacdbe.BRF80_40, Lbb254083.BRP45, Lbb6282e1.BRF80_40, Lca8ca9cb, Lcfcd8c17, Le0da99e2, Le4fede95.BRF90_30); steps 8; stop: no candidate passes the add rule.
 
 ## STEPS
 
