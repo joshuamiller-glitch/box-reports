@@ -190,8 +190,8 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-25 08:14Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-25 08:04Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-25 08:59Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-25 08:54Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### equal option "ny-own" (equal weights): final set `TL3_ALN_NY_STKd8b76ecd35`
 Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90'] | controls [30, 26, 30] | pool 42 | weights: equal (1 each)
@@ -219,7 +219,7 @@ Selection: ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
-### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_STKd8cd0279ff`
+### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_STKd89c869417`
 Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U', 'Le4fede95.BRF90_30', 'Lf0346d55.BRP60', 'L8cfda948.BRF90_30', 'L4407508c.BRF120_60', 'Lca8ca9cb'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
@@ -231,8 +231,7 @@ Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U', 'Le4fede95.BRF90_
 | Lf0346d55 | renko_20 | trig_book_ofi | follow_sm {"L": 200, "z": 2.0, "sm": 3} | both | 60/60 (median stop/target pts; shape per set name) | both | 2 | 6815 |
 | L8cfda948 | dchg_40 | trig_tape_block | b10_follow_sm {"L": 50, "z": 1.0, "sm": 3} | long | 90/30 (median stop/target pts; shape per set name) | long | 4 | 5106 |
 | L4407508c | time_m_3 | trig_bands_bollinger | walk {"n": 30, "k": 1.5, "N": 2} | long | 120/60 (median stop/target pts; shape per set name) | long | 1 | 1362 |
-| L39287638 | vsess_50 | trig_trend_ma_ema | cross {"len": 20, "width": 2, "hyst": 0.0} | both | 80/40 (median stop/target pts; shape per set name) | both | 1 | 1286 |
-| L64390867 | time_m_20 | trig_bands_avwap0830 | break_0830_native {"clk": 3, "k": 1.0} | long | 80/40 (median stop/target pts; shape per set name) | long | 2 | 801 |
+| Lca8ca9cb | ? | ? |   | both | 50/100 (median stop/target pts; shape per set name) | both | 1 | 9398 |
 
 Stack-rule fit page for this final: NOT YET WRITTEN (chain not complete for this option; no stack rules or daily stops stated).
 
