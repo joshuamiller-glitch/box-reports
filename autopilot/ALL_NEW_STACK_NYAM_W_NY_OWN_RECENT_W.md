@@ -1,4 +1,4 @@
-# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-25 03:34Z.
+# ALL-NEW STACK, NY AM: WEIGHTED LOOP ny-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-25 03:39Z.
 
 **DECISION BASIS: EQUAL L6M ULCER (recent basis, order 1552Z; 15% L6M max-DD / worst-week guard; L3M beside; prior years only as the 15-30% band, RED not chosen).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
@@ -37,25 +37,25 @@ Controls beaten (30): (30, 26, 30) (L6M drawdown-first / L3M / ulcer-only); own 
 | Y2024 | 12473 / -35875 / -19393 / 1942 |
 | Y2025 | 12357 / -45085 / -24022 / 3102 |
 
-### SCALED TO EQUAL WORST-PRIOR-YEAR MAX DD of the equal-weight final (k = 1.000) beside the equal-weight final ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60', 'L7cc56d99', 'Lbb254083.BRP45', 'L8f11883e.BRF30_90']
+### SCALED TO EQUAL WORST-PRIOR-YEAR MAX DD of the equal-weight final (k = 0.726) beside the equal-weight final ['L8cfda948.BRF90_30', 'Lf0346d55.BRP60']
 
 | window | weighted x k | equal weights |
 |---|---|---|
-| L6M | 3765 / -12120 / -1591 / 8283 | 3765 / -12120 / -1591 / 8283 |
-| L3M | 3469 / -9765 / -1591 / 7047 | 3469 / -9765 / -1591 / 7047 |
-| Y2023 | 11562 / -32662 / -13132 / 1942 | 11562 / -32662 / -13132 / 1942 |
-| Y2024 | 12473 / -35875 / -19393 / 1942 | 12473 / -35875 / -19393 / 1942 |
-| Y2025 | 12357 / -45085 / -24022 / 3102 | 12357 / -45085 / -24022 / 3102 |
+| L6M | 2733 / -8798 / -1155 / 6013 | 3034 / -9776 / -3314 / 4065 |
+| L3M | 2518 / -7089 / -1155 / 5115 | 2897 / -6806 / -3314 / 3082 |
+| Y2023 | 8392 / -23709 / -9533 / 1410 | 10388 / -22781 / -8896 / 619 |
+| Y2024 | 9054 / -26042 / -14078 / 1410 | 8925 / -25402 / -8762 / 821 |
+| Y2025 | 8970 / -32727 / -17437 / 2251 | 11886 / -32727 / -12986 / 1151 |
 
-### today's basis (scaled to equal L6M ulcer, k = 1.000)
+### today's basis (scaled to equal L6M ulcer, k = 0.806)
 
 | window | weighted x k | equal weights |
 |---|---|---|
-| L6M | 3765 / -12120 / -1591 / 8283 | 3765 / -12120 / -1591 / 8283 |
-| L3M | 3469 / -9765 / -1591 / 7047 | 3469 / -9765 / -1591 / 7047 |
-| Y2023 | 11562 / -32662 / -13132 / 1942 | 11562 / -32662 / -13132 / 1942 |
-| Y2024 | 12473 / -35875 / -19393 / 1942 | 12473 / -35875 / -19393 / 1942 |
-| Y2025 | 12357 / -45085 / -24022 / 3102 | 12357 / -45085 / -24022 / 3102 |
+| L6M | 3034 / -9767 / -1282 / 6675 | 3034 / -9776 / -3314 / 4065 |
+| L3M | 2795 / -7869 / -1282 / 5679 | 2897 / -6806 / -3314 / 3082 |
+| Y2023 | 9317 / -26321 / -10583 / 1565 | 10388 / -22781 / -8896 / 619 |
+| Y2024 | 10051 / -28911 / -15629 / 1565 | 8925 / -25402 / -8762 / 821 |
+| Y2025 | 9959 / -36332 / -19359 / 2499 | 11886 / -32727 / -12986 / 1151 |
 
 ### BARE D7 session stack at the same L6M ulcer as the weighted mix (bare vs bare only)
 
