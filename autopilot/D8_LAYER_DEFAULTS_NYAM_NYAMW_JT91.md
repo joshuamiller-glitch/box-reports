@@ -54,3 +54,7 @@ TOP LINE: 8cd0279ff_BF1_JT91: CODING CHANGE: YES: the CAP pair's second side (an
 - DLB: lots differ per book ([1.0, 2.0, 4.0]): threshold = -$4,000 x the lots of the smallest-lot book not yet halted (dl_hooks.py:51): see the JT91 readings section.
 - FITTED RESULTS DO NOT CHANGE: the fit ran this exact engine code (the numbers on the page already include the static caps, the hidden side of the CAP pair and the DLB checking-book rule); only the written descriptions were incomplete.
 - Engine code: sim.py:722-730 (day caps; `if b.day_halt: return` first line), stackrule_gen.py:57 and :71 (CAP dollars), dl_hooks.py:51 (DLB), D8_LAYER_KEYS_NYAM_NYAMW_JT91.md section Relay readings 2026-11-25 02:15Z.
+
+## NULL RESULT 2026-11-25 03:31Z
+
+Null FAILED: real best single-setting L6M ulcer cut -41.2% vs random-entry draws -50.4% and -81.9%; beats 0 of 2 draws, early stop after 2 misses (gate needs >=4 of 5). Label: NULL FAIL, plus 2023 RED. At the file size DLB9 also makes the pick worse (see NYAM_WEIGHTED_FILE_SIZE.md). No gate changed.
