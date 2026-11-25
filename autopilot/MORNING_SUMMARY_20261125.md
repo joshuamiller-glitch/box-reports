@@ -1,4 +1,4 @@
-# MORNING SUMMARY 2026-11-25 (written by LEAD, first edition ~11:35Z; refresh by 12:30Z, then again when the new NY AM eight-book pick lands)
+# MORNING SUMMARY 2026-11-25 (written by LEAD, first edition ~11:35Z; second edition ~12:25Z below; refresh when prior years / walk-forward for the new eight land)
 
 Research and shadow only: nothing was touched on the execution server or any live chart.
 
@@ -32,3 +32,8 @@ Eight NY AM spec pages (L43f0cbfb, B7bfd33b7, Bf428c4a1, Le4fede95, L39287638, L
 
 ## Slips (honest)
 The weighted nine was ordered "ready for NY AM tomorrow"; it was delivered 01:56Z (target met) but the pool then grew and the stack changed, so what is ready for today's open is JT91 (weak, null failed). The new eight will not be gated before 14:30Z. A clock-skew note: three of my entries between 03:22Z and 03:27Z carried later stamps than the real time.
+
+## UPDATE 12:25Z (second edition)
+- **New NY AM eight-book stack: PROVISIONAL pick JT154 exists** (screen done 11:51Z, joint L6M rows landed ~12:15Z). L6M at the native x4 basis, ulcer / max DD / $ per wk: bare 27,178 / -$97,355 / $51,505 -> JT154 14,720 / -$46,473 / $19,159; L3M ulcer 28,739 -> 10,716. Pages with a PROVISIONAL banner: BAREFIT_NY_STKd8w42_PROV.md, D8_LAYER_KEYS_NYAM_W42_PROV.md, D8_LAYER_DEFAULTS_NYAM_W42_PROV.md. No walk-forward, prior-year bands pending (36 rows queued, ~1-2 h), null pending.
+- **Side by side with the delivered nine (JT91):** JT91 ulcer 9,465 / max DD -$25,973 / $17,388; JT154 earns ~$1,800 a week more but its ulcer is 56% higher and its max DD 79% higher. Drawdown first, JT91 is better on L6M. LEAD default for the 14:30Z open stays A: JT91 on the nine (your call).
+- Full gated verdict for the new eight (walk-forward on all 242 combos x 42 months, ~8,400 rows open): ~15:30Z.
