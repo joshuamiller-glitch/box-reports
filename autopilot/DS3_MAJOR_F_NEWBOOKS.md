@@ -1,4 +1,4 @@
-# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-25 16:55Z (unattended loop, every 30 min)
+# DS3_MAJOR_F_NEWBOOKS - new London / New York books (MAJOR-CHANGES PROGRAMME part F, W-MF). FIRST PASS. Refreshed 2026-11-25 17:25Z (unattended loop, every 30 min)
 
 > VALIDATION (W-MF, FIRST PASS): trials counted = 3604 standalone cells (wave 1: 109 configs x 4 exits, PREREG_MF.md, ledger MF1; wave 2: 222 configs x 4 exits incl. limit variants, PREREG_MF2.md, ledger MF2); correction = per-family and per-session best-of selection on 2023-04..2025-10 only, then HOLD 2025-11..2026-04 and L6M 2026-05..10 untouched; White RC over the selection cells (1,000 block bootstraps) + deflated Sharpe on the untouched year with N = cells of the group; PBO not computed (selection is a single frozen pick, rolling 12m/3m version shown); engine controls: 30 date-shifted stack controls NOT FINISHED (staged by the loop after the real months land); shifted-label standalone controls (+-11/23/37 days) shown. Data end 2026-10-30 (ES bars end 2026-10-16).
 
