@@ -16,12 +16,12 @@ Delivered stack in the file: STKd893133bd8 (BF2_JT9 / JT209) = L52359bf4.BRP30 +
 ## 3. Coding status per book
 | book | in the delivered stack | hand-verified spec | page |
 |---|---|---|---|
-| L2c6916a5 | yes | hand-written block in D8_BUILD_SPEC.md (re-implemented 23 Nov, D8_NYPM_NOTES.md) | AUTO:BOOK:L2c6916a5 + D8_PARITY_L2c6916a5_*.md |
-| L4bdd521a | yes | hand-written block | AUTO:BOOK:L4bdd521a + D8_PARITY_L4bdd521a_*.md |
+| L2c6916a5 | yes | hand-written block in D8_BUILD_SPEC.md (re-implemented 23 Nov, D8_NYPM_NOTES.md); PAGE D8_NYPM_SPEC_L2c6916a5.md DONE 2026-11-25 (W-NYAMSPEC1; block confirmed correct; not in D8Asia.cs) | AUTO:BOOK:L2c6916a5 + D8_PARITY_L2c6916a5_*.md |
+| L4bdd521a | yes | hand-written block; PAGE D8_NYPM_SPEC_L4bdd521a.md DONE 2026-11-25 (W-NYAMSPEC1; not in D8Asia.cs) | AUTO:BOOK:L4bdd521a + D8_PARITY_L4bdd521a_*.md |
 | L52359bf4 | yes | hand-written block | AUTO:BOOK:L52359bf4 + D8_PARITY_L52359bf4_*.md |
 | L8e0bf58c | yes | hand-written block + volume-book inputs | AUTO:BOOK:L8e0bf58c, D8_NYPM_VOLBOOK_INPUTS.md |
 | L6d238076 | no | DONE, 2026-11-25 | autopilot/D8_NYPM_SPEC_L6d238076.md |
-| L8dff280f | no | assigned to W-NYAMSPEC1 (second half of the list); page not present at 15:25Z | autopilot/D8_NYPM_SPEC_L8dff280f.md (pending) |
+| L8dff280f | no | DONE, 2026-11-25 (W-NYAMSPEC1); not in D8Asia.cs | autopilot/D8_NYPM_SPEC_L8dff280f.md |
 | L7b1adff3 | no | not in any weighted or equal pick; generic block only; not specified | AUTO:BOOK:L7b1adff3 (generic) |
 
 ## 4. Tape and parity inputs
