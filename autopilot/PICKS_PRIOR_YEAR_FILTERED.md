@@ -102,3 +102,83 @@ Least-bad three (fewest RED / losing prior years, then best L6M):
 | least-bad c46 (RED [2024], loses []) | $8342/wk, DD -11703, ulcer 3276 | $10049/wk, DD -11292, ulcer 3293 | $1069/wk, DD -25846, ulcer 9110 | $1001/wk, DD -21585, ulcer 8516 | $1604/wk, DD -60500, ulcer 24952 | 0.903 | GREEN/RED/GREEN |
 | least-bad c38 (RED [2024], loses []) | $7447/wk, DD -12096, ulcer 3639 | $9177/wk, DD -12096, ulcer 3733 | $963/wk, DD -22802, ulcer 8148 | $504/wk, DD -24379, ulcer 8319 | $959/wk, DD -42005, ulcer 13495 | 0.817 | GREEN/RED/GREEN |
 
+## 5. NY AM nine STKd8cd0279ff (242 combos x 42 months; fit basis 4/4/4/4/2/4/1/1/2)
+
+
+Combos with all 42 months landed: 242 (incomplete, skipped: 0). PASS the prior-year filter (no RED band, $/wk > 0 in 2023, 2024, 2025, walk-forward persistence >= 0.58): **4**; of those inside the 15% L6M guard: **1**. BARE itself passes: YES (its prior-year $/wk: 10796 / 7854 / 16106).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 | walk-forward | bands 2023/24/25 |
+|---|---|---|---|---|---|---|---|
+| BARE | $51363/wk, DD -99970, ulcer 28581 | $36277/wk, DD -99970, ulcer 29290 | $10796/wk, DD -129883, ulcer 45201 | $7854/wk, DD -109316, ulcer 40989 | $16106/wk, DD -188315, ulcer 58108 | - | - |
+| OLD pick c91 | $17388/wk, DD -25973, ulcer 9465 | $10992/wk, DD -21737, ulcer 8365 | $-2150/wk, DD -141822, ulcer 70766 | $6015/wk, DD -44894, ulcer 12241 | $6606/wk, DD -65610, ulcer 22161 | 0.817 | RED/GREEN/GREEN | (fails: RED [2023]) loses money [2023]
+| **NEW pick c162** | $36786/wk, DD -52244, ulcer 14679 | $25497/wk, DD -46899, ulcer 13086 | $6909/wk, DD -84093, ulcer 35167 | $6267/wk, DD -107079, ulcer 39114 | $14198/wk, DD -94622, ulcer 25988 | 0.860 | AMBER/AMBER/GREEN |
+
+New pick settings: {'BL': ('BL', 6), 'CAP': ('CAP', 6), 'STK': ('STK', 7), 'SZW': ('SZW', 2), 'NTS': ('NTS', 2), 'CG': ('CGB', 2)}
+
+## 6. NY AM eight STKd8w42 (242 combos x 42 months)
+
+
+Combos with all 42 months landed: 242 (incomplete, skipped: 0). PASS the prior-year filter (no RED band, $/wk > 0 in 2023, 2024, 2025, walk-forward persistence >= 0.58): **3**; of those inside the 15% L6M guard: **0**. BARE itself passes: YES (its prior-year $/wk: 10045 / 7774 / 15973).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 | walk-forward | bands 2023/24/25 |
+|---|---|---|---|---|---|---|---|
+| BARE | $51505/wk, DD -97355, ulcer 27178 | $35029/wk, DD -97355, ulcer 28739 | $10045/wk, DD -139446, ulcer 47077 | $7774/wk, DD -127211, ulcer 48345 | $15973/wk, DD -193440, ulcer 58643 | - | - |
+| OLD pick c154 | $19159/wk, DD -46473, ulcer 14720 | $13631/wk, DD -32268, ulcer 10716 | $-656/wk, DD -95765, ulcer 54235 | $2236/wk, DD -99980, ulcer 37886 | $5724/wk, DD -77811, ulcer 25605 | 0.806 | RED/RED/AMBER | (fails: RED [2023, 2024]) loses money [2023]
+
+**RESULT: the filtered pick is BARE (no layer set).** 3 combos pass the filter but none lowers L6M ulcer inside the 15% guard; BARE itself PASSES (earns above zero in every prior year), so the books are fine and the layer settings are the problem.
+
+Best passers by L6M (drawdown first), shown although they do not beat bare inside the guard:
+
+| passer c86 (STC) | $32559/wk, DD -75177, ulcer 20003 | $16703/wk, DD -75177, ulcer 23972 | $6814/wk, DD -125580, ulcer 43794 | $9858/wk, DD -110339, ulcer 26848 | $11790/wk, DD -149308, ulcer 49105 | 0.602 | AMBER/GREEN/GREEN |
+| passer c167 (STC) | $32563/wk, DD -75177, ulcer 20003 | $16703/wk, DD -75177, ulcer 23972 | $6880/wk, DD -125580, ulcer 43772 | $9850/wk, DD -110339, ulcer 26822 | $11904/wk, DD -151918, ulcer 49445 | 0.602 | AMBER/GREEN/GREEN |
+| passer c5 (STC) | $32373/wk, DD -75177, ulcer 20755 | $18001/wk, DD -75177, ulcer 25194 | $6880/wk, DD -119292, ulcer 41288 | $11742/wk, DD -74353, ulcer 23515 | $12829/wk, DD -137292, ulcer 45234 | 0.624 | AMBER/GREEN/GREEN |
+
+## 7a. Asia 4-book STKd8da2eb47b, 2-lot joint
+
+
+Combos with all 42 months landed: 80 (incomplete, skipped: 0). PASS the prior-year filter (no RED band, $/wk > 0 in 2023, 2024, 2025, walk-forward persistence >= 0.58): **0**; of those inside the 15% L6M guard: **0**. BARE itself passes: YES (its prior-year $/wk: 1803 / 2375 / 2570).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 | walk-forward | bands 2023/24/25 |
+|---|---|---|---|---|---|---|---|
+| BARE | $14435/wk, DD -21112, ulcer 5887 | $12075/wk, DD -21112, ulcer 6940 | $1803/wk, DD -12873, ulcer 5781 | $2375/wk, DD -31565, ulcer 11673 | $2570/wk, DD -32197, ulcer 12472 | - | - |
+| OLD pick c32 | $8799/wk, DD -7410, ulcer 1942 | $6996/wk, DD -6882, ulcer 2038 | $10/wk, DD -19153, ulcer 12140 | $1465/wk, DD -21565, ulcer 7885 | $1238/wk, DD -25521, ulcer 9457 | 0.796 | RED/GREEN/RED | (fails: RED [2023, 2025])
+
+**RESULT: the filtered pick is BARE (no layer set).** No combo passes the prior-year filter at all; BARE itself PASSES (earns above zero in every prior year), so the books are fine and the layer settings are the problem.
+
+Least-bad three (fewest RED / losing prior years, then best L6M):
+
+| least-bad c5 (RED [2023], loses []) | $8518/wk, DD -7787, ulcer 2206 | $5877/wk, DD -7787, ulcer 2691 | $133/wk, DD -15736, ulcer 8114 | $1632/wk, DD -21197, ulcer 7722 | $1268/wk, DD -24194, ulcer 8364 | 0.839 | RED/GREEN/AMBER |
+| least-bad c61 (RED [2025], loses []) | $8332/wk, DD -7215, ulcer 2598 | $6194/wk, DD -7215, ulcer 2905 | $854/wk, DD -7800, ulcer 3326 | $1513/wk, DD -19581, ulcer 6883 | $891/wk, DD -23563, ulcer 7375 | 0.914 | AMBER/GREEN/RED |
+| least-bad c57 (RED [2023], loses []) | $8324/wk, DD -8847, ulcer 2732 | $7723/wk, DD -7320, ulcer 2167 | $580/wk, DD -9155, ulcer 3770 | $1341/wk, DD -19398, ulcer 6494 | $1185/wk, DD -19043, ulcer 6008 | 0.892 | RED/GREEN/GREEN |
+
+## 7c. Asia 4-book STKd8da2eb47b, 2-lot joint r100 (the joint JT110 came from)
+
+
+Combos with all 42 months landed: 80 (incomplete, skipped: 0). PASS the prior-year filter (no RED band, $/wk > 0 in 2023, 2024, 2025, walk-forward persistence >= 0.58): **0**; of those inside the 15% L6M guard: **0**. BARE itself passes: YES (its prior-year $/wk: 1803 / 2375 / 2570).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 | walk-forward | bands 2023/24/25 |
+|---|---|---|---|---|---|---|---|
+| BARE | $14435/wk, DD -21112, ulcer 5887 | $12075/wk, DD -21112, ulcer 6940 | $1803/wk, DD -12873, ulcer 5781 | $2375/wk, DD -31565, ulcer 11673 | $2570/wk, DD -32197, ulcer 12472 | - | - |
+| OLD pick c10 | $7565/wk, DD -7552, ulcer 2000 | $6033/wk, DD -6473, ulcer 1986 | $506/wk, DD -10319, ulcer 4764 | $1348/wk, DD -20744, ulcer 7658 | $1105/wk, DD -23697, ulcer 6524 | 0.839 | RED/GREEN/AMBER | (fails: RED [2023])
+
+**RESULT: the filtered pick is BARE (no layer set).** No combo passes the prior-year filter at all; BARE itself PASSES (earns above zero in every prior year), so the books are fine and the layer settings are the problem.
+
+Least-bad three (fewest RED / losing prior years, then best L6M):
+
+| least-bad c10 (RED [2023], loses []) | $7565/wk, DD -7552, ulcer 2000 | $6033/wk, DD -6473, ulcer 1986 | $506/wk, DD -10319, ulcer 4764 | $1348/wk, DD -20744, ulcer 7658 | $1105/wk, DD -23697, ulcer 6524 | 0.839 | RED/GREEN/AMBER |
+| least-bad c61 (RED [2025], loses []) | $7957/wk, DD -7215, ulcer 2534 | $5888/wk, DD -7215, ulcer 2960 | $887/wk, DD -7800, ulcer 3296 | $1521/wk, DD -19581, ulcer 6861 | $870/wk, DD -23563, ulcer 7447 | 0.903 | GREEN/GREEN/RED |
+| least-bad c44 (RED [2025], loses []) | $7230/wk, DD -8143, ulcer 2652 | $7008/wk, DD -6104, ulcer 2224 | $1210/wk, DD -8188, ulcer 3011 | $1208/wk, DD -19772, ulcer 7387 | $1105/wk, DD -23514, ulcer 8787 | 0.903 | GREEN/AMBER/RED |
+
+## 7b. Asia 4-book STKd8da2eb47b, 2-lot STC-FREE joint (r200)
+
+
+Combos with all 42 months landed: 80 (incomplete, skipped: 0). PASS the prior-year filter (no RED band, $/wk > 0 in 2023, 2024, 2025, walk-forward persistence >= 0.58): **1**; of those inside the 15% L6M guard: **1**. BARE itself passes: YES (its prior-year $/wk: 1803 / 2375 / 2570).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 | walk-forward | bands 2023/24/25 |
+|---|---|---|---|---|---|---|---|
+| BARE | $14435/wk, DD -21112, ulcer 5887 | $12075/wk, DD -21112, ulcer 6940 | $1803/wk, DD -12873, ulcer 5781 | $2375/wk, DD -31565, ulcer 11673 | $2570/wk, DD -32197, ulcer 12472 | - | - |
+| OLD pick c10 | $7565/wk, DD -7552, ulcer 2000 | $6033/wk, DD -6473, ulcer 1986 | $506/wk, DD -10319, ulcer 4764 | $1348/wk, DD -20744, ulcer 7658 | $1105/wk, DD -23697, ulcer 6524 | 0.839 | RED/GREEN/AMBER | (fails: RED [2023])
+| **NEW pick c75** | $7316/wk, DD -10523, ulcer 2886 | $5656/wk, DD -10523, ulcer 3151 | $815/wk, DD -10634, ulcer 3687 | $1223/wk, DD -22546, ulcer 8441 | $1309/wk, DD -20086, ulcer 6696 | 0.892 | AMBER/AMBER/GREEN |
+
+New pick settings: {'LOCK.MF1': ('LK', 2), 'TAKE.MF1': ('FR_TAKE', 4), 'ZONE.MF1': ('ZONE', 3), 'LOSS.MF2': ('FR_LOSS', 9), 'LOCK.MF2': ('LK', 7), 'TAKE.MF2': ('TK', 12), 'TAKE.MF3': ('TK', 2), 'ZONE.MF3': ('ZONE', 4), 'LOSS.MF4': ('CU', 3), 'LOCK.MF4': ('LK', 2), 'TAKE.MF4': ('SHV', 2), 'ZONE.MF4': ('ZONE', 4), 'STK': ('STK', 8), 'SZW': ('SZW', 3), 'NTS': ('NTS', 1), 'CG': ('CGB', 1), 'DLA': ('DLA', 4), 'DLB': ('DLB', 14), 'DLC': ('DLC', 4)}
+
