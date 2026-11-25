@@ -190,11 +190,11 @@ NT8 computability: bar and trigger definitions per D8_BAR_DEFS.md / D8_TRIGGER_D
 <!-- /AUTO:asia -->
 
 <!-- AUTO:nyam -->
-## AUTO SESSION SECTION NYAM (refreshed 2026-11-25 06:01Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
-Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-25 05:58Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
+## AUTO SESSION SECTION NYAM (refreshed 2026-11-25 06:56Z by spec_refresh.py; options side by side, NOTHING frozen without Josh)
+Source: /mnt/l2/l2vast/_combo/finals_ready_nyam.json (updated 2026-11-25 06:48Z). A final is listed here only when its stack-rule page autopilot/NYAM_STACKRULES_<final>.md exists (pool complete + stack FINAL + stack-rule fit page).
 
 ### weighted option "ny-own-w" (weights per W-COMBO loop (sizes 0.25/0.5/1/2)): final set `TL3_ALN_NY_STKd8cd0279ff`
-Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
+Selection: ['L43f0cbfb.BRS8U', 'B7bfd33b7', 'Bf428c4a1.BRS8U'] | controls None | pool None | weights: see loop final JSON reselect_*_w*.json
 
 | book | bar row | trigger | variant + params | side | bracket (stop/target) | sides | lots (base) | events |
 |---|---|---|---|---|---|---|---|---|
