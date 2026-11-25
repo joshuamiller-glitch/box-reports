@@ -1,6 +1,157 @@
 # D8 ALL SESSIONS COMBINED (W-COMBINED; order 0745Z; Josh: "do we have combined #s now that we have all books by ny pm? like weekly DD/prfit?")
 
-Generated 2026-11-25 20:40Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+Generated 2026-11-25 21:25Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+
+# W-COMB6 (order 1930Z, Josh 25 Nov 19:14Z): ALL FOUR SESSIONS COMBINED AT 6 LOTS, THEN BEST LOTS PER SESSION
+
+Refreshed 2026-11-25 21:25Z UTC by code/d8_combined/combine.py + combine6.py (cron every 2 h). Reporting only; every number is a whole-stack engine run at the stated lots (net of $4.84 per lot round trip); sessions are added by Globex trading date on ONE common trading-day calendar (union of the dates of every set on this block, zero-filled; weeks Monday-Sunday), so combined max DD / ulcer come from the true combined daily curve, not a sum of session drawdowns. Windows: L6M = 202605-202610 (lead), L3M = 202608-202610, 2023 (from 202304), 2024, 2025 (without 202511). Engine sets end at month 202610 (last trade date 20261030; November is not in them). Lots rule of the file: book lots = round-half-up(weight x session lots), min 1.
+
+## PART 1: COMBINED AT 6 LOTS PER SESSION
+
+### Lots per session and per book at 6
+
+| session | picks as the file runs them | lots per book | books |
+|---|---|---|---|
+| Asia | STKd8da2eb47b + JT110 (4 books) | 6 / 6 / 6 / 6 | Lb0e6dfa3.BRF40_80, L385f4f2e.J502, L9c2622b0.BRP45, L4aaacdb2.BRP30 |
+| London | STKd8w42lo + JT4 (3 books) | 6 / 3 / 2 (variant 6 / 3 / 1) | L19201dfc.BRF90_30, L12842dde.BRP45, L74274eca.BRF120_60 |
+| NY AM | STKd8cd0279ff + JT91 (9 books) | 6 / 6 / 6 / 6 / 3 / 6 / 2 / 2 / 3 (variant 6 / 3 / 1: 6 / 6 / 6 / 6 / 3 / 6 / 1 / 1 / 3) | MF1..MF9 = L43f0cbfb, B7bfd33b7, Bf428c4a1, Le4fede95, Lf0346d55, L8cfda948, L4407508c, L39287638, L64390867 |
+| NY PM | STKd8w42pm + JT19 (5 books) | 6 / 6 / 12 / 6 / 3 | L6d238076.BRF90_30, L8dff280f.BRP90, L4bdd521a.BRF80_40, L8e0bf58c.BRS8U, L52359bf4.BRP30 |
+
+Honest note on the picks: London JT4 is GATE FAIL (prior-year bands RED / RED / RED; see LONDON_PRIMARY_FILE_SIZE.md) and NY AM JT91 has 2023 RED; NY PM JT19 is PROVISIONAL. Asia JT110 is the delivered Asia pick (bands RED / GREEN / AMBER). These are the picks the file runs today, shown as asked; the filter-first re-rank below replaces them when W-LAYERS2 posts it. The file's CURRENT lots (Asia 6, London 6, NY AM 4, NY PM 3 per the order) differ from 6 / 6 / 6 / 6: the second table row in part 2 shows that mix.
+
+### AS THE FILE RUNS THEM (6 lots in every session)
+
+| session | set | lots per book | data end (last trade date / last month with trades) |
+|---|---|---|---|
+| Asia | `TL3_SR_AS_STKd8da2eb47b_BF6J_BASE` | 6 / 6 / 6 / 6 | 20261030 / 202610 |
+| NY AM | `TL3_SR_NY_STKd8cd0279ff_FS632_PICKC` | 6 / 6 / 6 / 6 / 3 / 6 / 2 / 2 / 3 | 20261030 / 202610 |
+| London | `TL3_SR_LO_STKd8w42lo_FSlo6b_PICKC` | 6 / 3 / 2 (6b; the 6a variant 6 / 3 / 1 below) | 20261030 / 202610 |
+| NY PM | `TL3_SR_NP_STKd8w42pm_FSpm6_PICKC` | 6 / 6 / 12 / 6 / 3 | 20261030 / 202610 |
+
+Last 6 months (lead) and last 3 months: whole-stack dollars at the stated lots; max DD of the combined daily curve (not a sum of session drawdowns).
+
+| row | L6M $/wk | max DD | ulcer | worst day | worst week | trades/day | L3M $/wk | max DD | ulcer | worst day | worst week | trades/day |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | 19,826 | -25,411 | 7,196 | -16,994 | -13,172 | 12.0 | 15,195 | -25,411 | 7,231 | -13,025 | 1,092 | 11.0 |
+| NY AM | 25,395 | -64,115 | 20,453 | -22,747 | -26,776 | 16.8 | 18,575 | -30,520 | 13,792 | -17,787 | -8,145 | 13.8 |
+| London | 8,081 | -14,183 | 5,502 | -13,998 | -7,636 | 13.5 | 11,002 | -13,037 | 5,125 | -9,836 | -7,003 | 13.5 |
+| NY PM | 19,392 | -25,044 | 8,180 | -24,302 | -23,907 | 11.5 | 20,133 | -21,602 | 6,452 | -16,709 | -8,332 | 10.7 |
+| **COMBINED (four sessions, one daily curve)** | 72,693 | -43,535 | 13,319 | -42,709 | -24,050 | 53.8 | 64,905 | -43,535 | 12,657 | -42,709 | -17,744 | 48.8 |
+
+Prior years (not-a-disaster check): $ per week / max DD.
+
+| row | 2023 | 2024 | 2025 (no 202511) |
+|---|---|---|---|
+| Asia | 1,342 / -30,311 | 3,548 / -60,319 | 2,515 / -65,762 |
+| NY AM | -2,949 / -164,468 | 8,433 / -63,854 | 10,501 / -132,214 |
+| London | 409 / -39,097 | 9 / -43,837 | -1,990 / -138,170 |
+| NY PM | 3,779 / -68,141 | 3,084 / -114,292 | 5,585 / -161,083 |
+| **COMBINED (four sessions, one daily curve)** | 2,581 / -229,269 | 15,074 / -91,472 | 16,611 / -133,224 |
+
+London 6 / 3 / 1 variant (FSlo6a_PICKC) instead of 6 / 3 / 2: London alone L6M $7,535/wk, max DD -12,776; COMBINED L6M $72,148/wk, max DD -42,201, ulcer 13,050, worst week -20,413; L3M $63,816/wk, max DD -42,201.
+
+### FILTER-FIRST PICKS (6 lots in every session)
+
+PENDING: page posted; no COMB6 PICK lines yet. The table is added here on the next refresh once the page names the four sessions' picks and their 6-lot runs have landed (builder: size_build.build(session, 6, pick=...)).
+
+## PART 2: BEST LOTS PER SESSION (max income with least drawdown), engine run per session and size, every mix combined on the common calendar
+
+Session base lots from {0, 2, 3, 4, 6, 8}; book lots = round-half-up(weight x session lots), min 1 (the file rule). Each cell is a whole-stack engine run of the pick at those lots (results are not linear in lots, nothing scaled by arithmetic). Picks as the file runs them: Asia JT110, London JT4, NY AM JT91, NY PM JT19 (static caps scaled by file lots / fit lots, the stack day-stop thresholds unchanged, as in the existing file-size runs). The size builder `code/d8_combined/size_build.py` reproduces the existing 6- and 3-lot sets exactly. Window L6M = 202605-202610 (lead), prior years are the not-a-disaster check.
+
+### Cell inventory (session size runs landed, 42 of 42 months)
+
+| session | 0 | 2 | 3 | 4 | 6 | 8 |
+|---|---|---|---|---|---|---|
+| Asia | off | yes | PENDING | PENDING | yes | PENDING |
+| NY AM | off | PENDING | PENDING | yes | yes | PENDING |
+| London | off | PENDING | yes | yes | yes | PENDING |
+| NY PM | off | PENDING | yes | yes | yes | PENDING |
+
+Per-session sizes alone (whole-stack engine runs, pick as the file runs it; L6M $/wk / max DD / ulcer; L3M $/wk / max DD; 2023, 2024, 2025 $/wk / max DD):
+
+| session | base lots | book lots | L6M | L3M | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|---|---|
+| Asia | 2 | 2/2/2/2 | 7,565 / -7,552 / 2,000 | 6,033 / -6,473 | 506 / -10,319 | 1,348 / -20,744 | 1,105 / -23,697 |
+| Asia | 6 | 6/6/6/6 | 19,826 / -25,411 / 7,196 | 15,195 / -25,411 | 1,342 / -30,311 | 3,548 / -60,319 | 2,515 / -65,762 |
+| NY AM | 4 | 4/4/4/4/2/4/1/1/2 | 17,388 / -25,973 / 9,465 | 10,992 / -21,737 | -2,150 / -141,822 | 6,015 / -44,894 | 6,606 / -65,610 |
+| NY AM | 6 | 6/6/6/6/3/6/2/2/3 | 25,395 / -64,115 / 20,453 | 18,575 / -30,520 | -2,949 / -164,468 | 8,433 / -63,854 | 10,501 / -132,214 |
+| London | 3 | 3/2/1 | 5,731 / -8,380 / 3,058 | 7,373 / -7,005 | 112 / -24,713 | 573 / -26,943 | -1,251 / -80,370 |
+| London | 4 | 4/2/1 | 5,847 / -8,124 / 3,210 | 7,590 / -8,124 | 293 / -24,534 | 529 / -31,437 | -1,227 / -83,262 |
+| London | 6 | 6/3/2 | 8,081 / -14,183 / 5,502 | 11,002 / -13,037 | 409 / -39,097 | 9 / -43,837 | -1,990 / -138,170 |
+| NY PM | 3 | 3/3/6/3/2 | 11,679 / -17,925 / 4,837 | 12,291 / -10,994 | 2,458 / -34,664 | 2,290 / -70,695 | 3,157 / -77,403 |
+| NY PM | 4 | 4/4/8/4/2 | 13,298 / -18,074 / 5,536 | 14,084 / -12,874 | 2,824 / -40,583 | 2,199 / -82,569 | 3,810 / -101,174 |
+| NY PM | 6 | 6/6/12/6/3 | 19,392 / -25,044 / 8,180 | 20,133 / -21,602 | 3,779 / -68,141 | 3,084 / -114,292 | 5,585 / -161,083 |
+
+Mixes combined: 143 of 1295 (a mix needs all its session-size runs landed). Order of sessions in a mix: Asia / London / NY AM / NY PM; 0 = session off. Order of SESS in code: AS/NY/LO/NP.
+
+### FRONTIER on L6M by combined max drawdown (for each level of risk the mix with the highest $ per week; every row listed has no other mix with a smaller-or-equal max DD and higher $/wk)
+
+#### By max DD
+
+| mix (Asia / London / NY AM / NY PM) | combined max DD (L6M) | ulcer (L6M) | $/wk (L6M) | worst wk | worst day | L3M $/wk / max DD | 2023 $/wk / max DD | 2024 $/wk / max DD | 2025 $/wk / max DD | mark |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 / 0 / 0 / 0 | -7,552 | 2,000 | 7,565 | -4,497 | -4,501 | 6,033 / -6,473 | 506 / -10,319 | 1,348 / -20,744 | 1,105 / -23,697 |  |
+| 2 / 4 / 0 / 0 | -9,077 | 2,685 | 13,412 | -4,211 | -7,716 | 13,623 / -9,077 | 800 / -17,843 | 1,878 / -24,328 | -122 / -73,610 |  |
+| 2 / 6 / 0 / 0 | -13,284 | 4,001 | 15,646 | -4,864 | -10,672 | 17,035 / -10,834 | 916 / -36,086 | 1,358 / -38,883 | -885 / -120,522 |  |
+| 2 / 0 / 0 / 4 | -17,218 | 4,382 | 20,863 | -8,674 | -13,711 | 20,117 / -13,969 | 3,331 / -44,850 | 3,548 / -72,922 | 4,915 / -92,599 |  |
+| 2 / 4 / 0 / 4 | -17,280 | 4,877 | 26,710 | -12,444 | -16,439 | 27,707 / -17,276 | 3,624 / -43,292 | 4,077 / -70,175 | 3,688 / -105,055 |  |
+| 2 / 6 / 0 / 3 | -21,120 | 5,480 | 27,325 | -13,230 | -18,858 | 29,326 / -18,638 | 3,373 / -48,221 | 3,647 / -66,746 | 2,272 / -84,325 |  |
+| 2 / 6 / 0 / 4 | -21,195 | 5,898 | 28,943 | -13,836 | -21,195 | 31,119 / -20,845 | 3,740 / -52,241 | 3,557 / -74,533 | 2,925 / -106,948 |  |
+| 2 / 3 / 0 / 6 | -25,245 | 7,178 | 32,689 | -19,253 | -23,034 | 33,539 / -25,245 | 4,397 / -66,261 | 5,005 / -95,085 | 5,439 / -163,632 |  |
+| 2 / 4 / 0 / 6 | -26,005 | 7,222 | 32,804 | -18,982 | -23,034 | 33,756 / -26,005 | 4,579 / -64,820 | 4,962 / -99,178 | 5,463 / -164,965 |  |
+| 2 / 0 / 4 / 4 | -27,698 | 8,558 | 38,250 | -12,296 | -20,111 | 31,110 / -25,600 | 1,180 / -146,600 | 9,562 / -66,392 | 11,521 / -81,356 |  |
+| 6 / 4 / 0 / 4 | -28,248 | 6,840 | 38,970 | -11,930 | -20,010 | 36,869 / -23,476 | 4,459 / -51,256 | 6,276 / -80,449 | 5,098 / -122,872 |  |
+| 6 / 6 / 0 / 4 | -30,803 | 7,532 | 41,204 | -15,507 | -21,813 | 40,281 / -27,044 | 4,575 / -61,009 | 5,756 / -71,941 | 4,335 / -124,734 |  |
+| 2 / 4 / 4 / 4 | -33,067 | 8,988 | 44,097 | -10,588 | -27,633 | 38,700 / -19,784 | 1,474 / -153,432 | 10,092 / -61,368 | 10,294 / -90,602 |  |
+| 2 / 4 / 6 / 3 | -34,017 | 11,743 | 50,486 | -14,194 | -26,680 | 44,489 / -31,870 | 308 / -185,335 | 12,601 / -56,504 | 13,536 / -116,862 |  |
+| 2 / 4 / 6 / 4 | -34,113 | 11,720 | 52,104 | -11,507 | -27,740 | 46,283 / -33,859 | 675 / -186,370 | 12,510 / -67,400 | 14,189 / -122,021 |  |
+| 2 / 0 / 6 / 6 | -35,454 | 12,566 | 52,352 | -17,218 | -31,448 | 44,742 / -35,454 | 1,336 / -212,026 | 12,866 / -90,924 | 17,192 / -130,579 |  |
+| 2 / 6 / 6 / 3 | -36,679 | 12,250 | 52,720 | -17,771 | -29,855 | 47,901 / -35,112 | 424 / -196,050 | 12,081 / -68,244 | 12,773 / -146,379 |  |
+| 2 / 6 / 6 / 4 | -37,752 | 12,238 | 54,338 | -15,084 | -32,191 | 49,695 / -37,446 | 791 / -197,085 | 11,990 / -80,182 | 13,426 / -138,982 |  |
+| 6 / 4 / 6 / 4 | -37,810 | 12,072 | 64,365 | -16,471 | -35,715 | 55,444 / -37,810 | 1,510 / -181,087 | 14,710 / -75,837 | 15,599 / -116,006 |  |
+| 6 / 6 / 6 / 4 | -40,104 | 12,663 | 66,599 | -20,048 | -37,518 | 58,856 / -39,703 | 1,626 / -191,802 | 14,189 / -75,056 | 14,836 / -148,063 |  |
+| 6 / 4 / 6 / 6 | -42,387 | 12,780 | 70,460 | -20,473 | -40,907 | 61,493 / -42,387 | 2,465 / -218,554 | 15,594 / -95,186 | 17,375 / -122,717 |  |
+| 6 / 6 / 6 / 6 | -43,535 | 13,319 | 72,693 | -24,050 | -42,709 | 64,905 / -43,535 | 2,581 / -229,269 | 15,074 / -91,472 | 16,611 / -133,224 | **6/6/6/6** |
+| 6 / 6 / 4 / 3 | -42,591 | 10,820 | 56,973 | -21,815 | -26,009 | 49,480 / -26,257 | 2,058 / -163,604 | 11,861 / -58,945 | 10,288 / -88,082 | **FILE CURRENT** not on frontier |
+
+### FRONTIER on L6M by ulcer
+
+#### By ulcer
+
+| mix (Asia / London / NY AM / NY PM) | combined max DD (L6M) | ulcer (L6M) | $/wk (L6M) | worst wk | worst day | L3M $/wk / max DD | 2023 $/wk / max DD | 2024 $/wk / max DD | 2025 $/wk / max DD | mark |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 / 0 / 0 / 0 | -7,552 | 2,000 | 7,565 | -4,497 | -4,501 | 6,033 / -6,473 | 506 / -10,319 | 1,348 / -20,744 | 1,105 / -23,697 |  |
+| 2 / 4 / 0 / 0 | -9,077 | 2,685 | 13,412 | -4,211 | -7,716 | 13,623 / -9,077 | 800 / -17,843 | 1,878 / -24,328 | -122 / -73,610 |  |
+| 2 / 6 / 0 / 0 | -13,284 | 4,001 | 15,646 | -4,864 | -10,672 | 17,035 / -10,834 | 916 / -36,086 | 1,358 / -38,883 | -885 / -120,522 |  |
+| 2 / 0 / 0 / 3 | -18,504 | 4,099 | 19,244 | -11,361 | -14,023 | 18,324 / -10,800 | 2,964 / -38,930 | 3,638 / -63,531 | 4,262 / -72,134 |  |
+| 2 / 0 / 0 / 4 | -17,218 | 4,382 | 20,863 | -8,674 | -13,711 | 20,117 / -13,969 | 3,331 / -44,850 | 3,548 / -72,922 | 4,915 / -92,599 |  |
+| 2 / 3 / 0 / 3 | -19,507 | 4,434 | 24,976 | -10,668 | -13,383 | 25,697 / -13,656 | 3,076 / -40,535 | 4,211 / -58,276 | 3,011 / -81,364 |  |
+| 2 / 4 / 0 / 3 | -18,566 | 4,443 | 25,091 | -9,653 | -13,245 | 25,914 / -14,416 | 3,257 / -39,869 | 4,168 / -62,368 | 3,035 / -81,907 |  |
+| 2 / 3 / 0 / 4 | -18,220 | 4,843 | 26,594 | -12,714 | -16,439 | 27,490 / -16,517 | 3,443 / -43,953 | 4,120 / -66,082 | 3,664 / -103,723 |  |
+| 2 / 4 / 0 / 4 | -17,280 | 4,877 | 26,710 | -12,444 | -16,439 | 27,707 / -17,276 | 3,624 / -43,292 | 4,077 / -70,175 | 3,688 / -105,055 |  |
+| 2 / 6 / 0 / 3 | -21,120 | 5,480 | 27,325 | -13,230 | -18,858 | 29,326 / -18,638 | 3,373 / -48,221 | 3,647 / -66,746 | 2,272 / -84,325 |  |
+| 2 / 6 / 0 / 4 | -21,195 | 5,898 | 28,943 | -13,836 | -21,195 | 31,119 / -20,845 | 3,740 / -52,241 | 3,557 / -74,533 | 2,925 / -106,948 |  |
+| 6 / 4 / 0 / 3 | -29,535 | 6,754 | 37,352 | -14,616 | -18,951 | 35,075 / -20,307 | 4,093 / -48,455 | 6,367 / -71,111 | 4,445 / -104,631 |  |
+| 6 / 4 / 0 / 4 | -28,248 | 6,840 | 38,970 | -11,930 | -20,010 | 36,869 / -23,476 | 4,459 / -51,256 | 6,276 / -80,449 | 5,098 / -122,872 |  |
+| 6 / 6 / 0 / 3 | -32,089 | 7,452 | 39,585 | -18,193 | -20,753 | 38,487 / -24,442 | 4,208 / -58,209 | 5,847 / -66,616 | 3,682 / -111,995 |  |
+| 6 / 6 / 0 / 4 | -30,803 | 7,532 | 41,204 | -15,507 | -21,813 | 40,281 / -27,044 | 4,575 / -61,009 | 5,756 / -71,941 | 4,335 / -124,734 |  |
+| 6 / 4 / 0 / 6 | -34,429 | 8,388 | 45,065 | -15,932 | -25,202 | 42,918 / -32,205 | 5,414 / -72,275 | 7,161 / -106,433 | 6,874 / -170,977 |  |
+| 6 / 6 / 0 / 6 | -36,983 | 9,045 | 47,298 | -19,509 | -27,004 | 46,330 / -35,773 | 5,530 / -79,750 | 6,641 / -95,798 | 6,110 / -172,891 |  |
+| 2 / 4 / 4 / 6 | -39,548 | 10,069 | 50,192 | -14,590 | -32,259 | 44,748 / -23,868 | 2,429 / -189,683 | 10,976 / -78,299 | 12,069 / -102,368 |  |
+| 6 / 0 / 4 / 4 | -36,317 | 10,089 | 50,511 | -17,260 | -23,782 | 40,271 / -35,317 | 2,016 / -144,156 | 11,762 / -89,991 | 12,931 / -84,967 |  |
+| 6 / 4 / 4 / 4 | -39,747 | 10,092 | 56,358 | -15,551 | -25,266 | 47,861 / -27,063 | 2,309 / -151,977 | 12,291 / -77,132 | 11,704 / -90,585 |  |
+| 6 / 6 / 4 / 4 | -40,950 | 10,614 | 58,591 | -19,129 | -27,477 | 51,273 / -27,488 | 2,425 / -162,713 | 11,771 / -69,024 | 10,941 / -97,771 |  |
+| 6 / 4 / 4 / 6 | -44,114 | 11,025 | 62,453 | -19,554 | -30,457 | 53,910 / -32,239 | 3,264 / -186,556 | 13,176 / -101,330 | 13,480 / -116,749 |  |
+| 6 / 6 / 4 / 6 | -45,753 | 11,587 | 64,686 | -23,131 | -32,260 | 57,322 / -33,387 | 3,380 / -196,758 | 12,655 / -92,481 | 12,716 / -123,936 |  |
+| 6 / 6 / 6 / 4 | -40,104 | 12,663 | 66,599 | -20,048 | -37,518 | 58,856 / -39,703 | 1,626 / -191,802 | 14,189 / -75,056 | 14,836 / -148,063 |  |
+| 6 / 4 / 6 / 6 | -42,387 | 12,780 | 70,460 | -20,473 | -40,907 | 61,493 / -42,387 | 2,465 / -218,554 | 15,594 / -95,186 | 17,375 / -122,717 |  |
+| 6 / 6 / 6 / 6 | -43,535 | 13,319 | 72,693 | -24,050 | -42,709 | 64,905 / -43,535 | 2,581 / -229,269 | 15,074 / -91,472 | 16,611 / -133,224 | **6/6/6/6** |
+| 6 / 6 / 4 / 3 | -42,591 | 10,820 | 56,973 | -21,815 | -26,009 | 49,480 / -26,257 | 2,058 / -163,604 | 11,861 / -58,945 | 10,288 / -88,082 | **FILE CURRENT** not on frontier |
+
+
+_COMB6 block built in 5 s._
+
+---
 
 **Basis.** Every D8 row is TRULY BARE (R0): trigger + own bracket + scheduled session-end exit, no D7 account layers, no stack rules, no sizer, no zones/TH; 1 lot per book, dollars NET of $4.84 per lot round trip. Daily P&L is by Globex trading date; all series are put on ONE common trading-day calendar (union of every series' trading dates in the window, zero-filled), weeks are Monday-Sunday. $ per week = mean weekly P&L; ulcer = root-mean-square of the daily drawdown from the running peak; max DD = worst peak-to-trough on the daily cumulative; trades per day = trades per common trading day. Windows: L6M = 202605-202610, L3M = 202608-202610, prior years 2023 (from 202304), 2024, 2025 (without 202511).
 
@@ -10,7 +161,7 @@ Generated 2026-11-25 20:40Z UTC by code/d8_combined/combine.py (reads finished e
 
 ## 2-LOT REFRESH: combined profit and drawdown as tonight's D8 file runs (2 lots per book, plain 2-lot dollars)
 
-Refreshed 2026-11-25 20:40Z UTC by combine.py (cron every 2 h; re-resolves the NY PM pick each run). Directive: DIRECTIVE_COMBINED_REFRESH_20261123_2010Z.md. Reporting only.
+Refreshed 2026-11-25 21:25Z UTC by combine.py (cron every 2 h; re-resolves the NY PM pick each run). Directive: DIRECTIVE_COMBINED_REFRESH_20261123_2010Z.md. Reporting only.
 
 **NY PM = the STC-free pick `TL3_SR_NP_STKd893133bd8_BF2_JT209` (rank 0.002 run, W-LAYERS2): runnable in the file.**
 
@@ -517,4 +668,4 @@ Fitted at 2 and 4 lots per book (Asia alone, last 6 months, truly bare vs joint 
 - FILLS: 2- and 4-lot series are real engine runs (size-dependent fills), not multiples of the 1-lot series.
 - NEW BOOKS IN THE LIVE FILE: the Asia stack is the first one live; no live P&L is in this page.
 
-_Generated in 12 s._
+_Generated in 13 s._
