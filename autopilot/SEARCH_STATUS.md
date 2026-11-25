@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-25 15:35Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-25 16:05Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -6,16 +6,16 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
-| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 293802 result files | 9 jobs | 316 | 0.0 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 5169 (a top cells 14, a2 exit families 0, c family cells 5155) | 160 | 32.3 h |
+| pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 293803 result files | 9 jobs | 311 | 0.0 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 5159 (a top cells 14, a2 exit families 0, c family cells 5145) | 125 | 41.3 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
-Pass-1 results on disk by tag: real 69334, null draw 1 65945, null draw 2 65991, extra draws (3-25) 86397 files. Pass-1 results still waiting for their pass-2 upgrade: real 54036.
+Pass-1 results on disk by tag: real 69334, null draw 1 65945, null draw 2 65992, extra draws (3-25) 86397 files. Pass-1 results still waiting for their pass-2 upgrade: real 54036.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 85.96 workers 86; 109.94.96.39 load 181.74 workers 104; 206.223.224.21 load 193.24 workers 104; grid workers 294 (110 computing), engine workers 442; forward-path tables built (summed over servers) 731.
+Machines (grid partitioned across servers): 207.188.7.103 load 86.63 workers 86; 109.94.96.39 load 181.04 workers 104; 206.223.224.21 load 188.89 workers 104; grid workers 294 (110 computing), engine workers 433; forward-path tables built (summed over servers) 731.
 
-Since 11:35Z: pass-1 todo 9 -> 9 (+0), pass-2 todo 5659 -> 5169 (-490). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 12:05Z: pass-1 todo 9 -> 9 (+0), pass-2 todo 5648 -> 5159 (-489). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search: FIVE draws, calibration check of the ladder (orders 1932Z + 2042Z; prereg sha 125fd12566e72aa6 + amendment)
 
@@ -23,9 +23,9 @@ What it is: 5 random-entry draws (tags p1rand1..p1rand5; draws 6-20 cancelled 20
 
 | item | now |
 |---|---|
-| results/hour, REAL search (p1real files, pass 1 and 2 together) | 38 |
-| results/hour, NULL draws (p1rand1..20 files) | 438 |
-| null result files on disk, draws 1 / 2 | 65945 / 65991 (real: 69334) |
+| results/hour, REAL search (p1real files, pass 1 and 2 together) | 30 |
+| results/hour, NULL draws (p1rand1..20 files) | 406 |
+| null result files on disk, draws 1 / 2 | 65945 / 65992 (real: 69334) |
 | null result files, draws 3-20 (all) | 85714 |
 | share of the (row, module) files complete incl. error stubs, per draw (total ~65.8k jobs per draw; grid is not split by session, so every session sees the same share) | draw 1 103%, draw 2 103%, draw 3 41%, draw 4 40%, draw 5 40% |
 | draws complete (files incl. error stubs >= 99.5 percent of ~65.8k) | 0 of 5 |
@@ -35,7 +35,7 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 15:27Z
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 15:57Z
 
 | tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
 |---|---|---|---|---|---|
@@ -73,10 +73,10 @@ Counts are the files on each host before the merge (A and B results are copied t
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 94.9 | 85.96 | 294 (110) | 221 | 0 | 476 |
-| A Frankfurt | 128 | 100.0 | 181.74 | 104 (29) | 97 | 0 | 285 |
-| B Singapore | 128 | 99.9 | 193.24 | 104 (37) | 99 | 0 | 307 |
-| box 1 London (lead, engine fillers) | 32 | 99 | 62.45 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 98.6 | 86.63 | 294 (110) | 216 | 0 | 436 |
+| A Frankfurt | 128 | 100.0 | 181.04 | 104 (29) | 96 | 0 | 303 |
+| B Singapore | 128 | 99.9 | 188.89 | 104 (37) | 93 | 0 | 285 |
+| box 1 London (lead, engine fillers) | 32 | 99 | 69.37 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
@@ -129,7 +129,7 @@ Engine capacity decides the ORDER cells are tested in (best first), never WHETHE
 
 ### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-25 15:22Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-25 16:02Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -139,7 +139,7 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 15:20Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 16:00Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
@@ -1028,11 +1028,11 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
 
 <!-- ENGINE_PLAN_ETAS -->
-**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-25 15:05Z):**
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-25 16:05Z):**
 
-- phase 1 pass 1: 10 jobs left at 318/h = 0.0 h (rate from the grid line above; sums over machines).
-- phase 1 pass 2: 5166 jobs left at 127/h = 40.7 h at today's allocation.
-- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 14 h at the current fleet (2235/h) or 21.5 h with A and B engine-ready (projected 1414/h). Full table: ENGINE_PLAN.md section 11.
+- phase 1 pass 1: 9 jobs left at 311/h = 0.0 h (rate from the grid line above; sums over machines).
+- phase 1 pass 2: 5159 jobs left at 125/h = 41.3 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 10 h at the current fleet (3113/h) or 15.2 h with A and B engine-ready (projected 1999/h). Full table: ENGINE_PLAN.md section 11.
 - luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
 - N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
 
