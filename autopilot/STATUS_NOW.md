@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 09:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 09:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 09:15Z | AUTO-FILL step run: dispatcher alive pid 1045293/1045294/1142694
+LATEST CORES.md LINE: 2026-11-26 09:30Z | AUTO-FILL step run: dispatcher alive pid 1154705/1154706/1197093
 
 ## UTC TIME WRITTEN
-2026-11-26 09:15Z
+2026-11-26 09:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 09:15Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 57.7 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 15 (RSS 20.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 68.51, 63.85, 56.00
-  by tag: NYR quota 12 running 15 hungry False RSS 20.0 GB PSS 16.5 GB
+Server 1 (this box): MemAvail 71.0 GB; live reservations 2 (2 GB); workers 12, of which TP-adopted 12 (RSS 17.7 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 38.95, 38.88, 46.95
+  by tag: NYR quota 12 running 12 hungry False RSS 17.7 GB PSS 14.8 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L5ecc2269_ALNCT21p (x12);TL3_NYE_L5ecc2269_ALNCT14p (x8);TL3_NYE_L5ecc2269_ALNCT28p (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 55.26, 54.80, 53.59|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_L5ecc2269_ALNCT56m (x12);TL3_NYE_L5ecc2269_ALNCT63m (x10);TL3_NYE_L5ecc2269_ALNCT49m (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 55.51, 59.10, 57.31|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
