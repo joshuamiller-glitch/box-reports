@@ -1,15 +1,3 @@
-2026-11-26 13:20Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 0/68)
-2026-11-26 13:25Z | box1: busy 98%, load1 37.53, workers 14, MemAvail 72 GB | server2: busy 77%, load1 55.28, workers 0, MemAvail 685 GB | pending box1-eligible 509579 / server2-eligible 159 (shared queues count in both; unleased, not DONE) | serverA: busy 56%, load1 61.83, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1030 GB | serverB: busy 60%, load1 117.12, workers 105 (grid) + 80 (engine), 128 threads, MemAvail 919 GB | serverC: busy 3%, load1 6.46, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1494 GB | serverD: busy 5%, load1 4.95, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 13:25Z | WARNING serverA below 85% busy for 92 readings in a row with jobs pending
-2026-11-26 13:25Z | WARNING serverB below 85% busy for 122 readings in a row with jobs pending
-2026-11-26 13:25Z | WARNING serverC below 85% busy for 122 readings in a row with jobs pending
-2026-11-26 13:25Z | WARNING serverD below 85% busy for 123 readings in a row with jobs pending
-2026-11-26 13:25Z | WARNING server2 below 85% busy for 12 readings in a row with jobs pending
-2026-11-26 13:25Z | AUTO-FILL step run: dispatcher alive pid 1937151/1937153/2030604
-2026-11-26 13:30Z | box1: busy 84%, load1 40.02, workers 15, MemAvail 71 GB | server2: busy 77%, load1 55.16, workers 0, MemAvail 733 GB | pending box1-eligible 509531 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 41%, load1 54.09, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1031 GB | serverB: busy 76%, load1 91.36, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 975 GB | serverC: busy 0%, load1 0.19, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.13, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 13:30Z | WARNING serverA below 85% busy for 93 readings in a row with jobs pending
-2026-11-26 13:30Z | WARNING serverB below 85% busy for 123 readings in a row with jobs pending
-2026-11-26 13:30Z | WARNING serverC below 85% busy for 123 readings in a row with jobs pending
 2026-11-26 13:30Z | WARNING serverD below 85% busy for 124 readings in a row with jobs pending
 2026-11-26 13:30Z | WARNING server2 below 85% busy for 13 readings in a row with jobs pending
 2026-11-26 13:30Z | AUTO-FILL step run: dispatcher alive pid 2049962/2049963/2051421
@@ -303,3 +291,10 @@
 2026-11-26 16:40Z | HOST serverC PRODUCING NOTHING (E-ENGINE host serverC slots 38/140)
 2026-11-26 16:40Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 29/68)
 2026-11-26 16:40Z | HOST SLOT_HEAL PRODUCING NOTHING (16:34Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 2589796, supervisor restarts it (once per 30 min per hos)
+2026-11-26 16:45Z | box1: busy 100%, load1 84.01, workers 2, MemAvail 32 GB | server2: busy 77%, load1 56.19, workers 0, MemAvail 832 GB | pending box1-eligible 508264 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 61%, load1 78.54, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1032 GB | serverB: busy 50%, load1 64.17, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 981 GB | serverC: busy 1%, load1 0.28, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 1%, load1 0.27, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
+2026-11-26 16:45Z | WARNING serverA below 85% busy for 132 readings in a row with jobs pending
+2026-11-26 16:45Z | WARNING serverB below 85% busy for 162 readings in a row with jobs pending
+2026-11-26 16:45Z | WARNING serverC below 85% busy for 162 readings in a row with jobs pending
+2026-11-26 16:45Z | WARNING serverD below 85% busy for 163 readings in a row with jobs pending
+2026-11-26 16:45Z | WARNING server2 below 85% busy for 4 readings in a row with jobs pending
+2026-11-26 16:45Z | AUTO-FILL step run: dispatcher alive pid 2703908/2703910/2741197
