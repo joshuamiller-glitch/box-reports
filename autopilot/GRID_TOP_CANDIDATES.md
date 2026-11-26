@@ -1,4 +1,4 @@
-# GRID_TOP_CANDIDATES - trigger x bar candidates so far (W-GRIDA), refreshed 2026-11-26 12:04Z
+# GRID_TOP_CANDIDATES - trigger x bar candidates so far (W-GRIDA), refreshed 2026-11-26 12:34Z
 
 ## NOTICE 1 (W-LEVEL, 13:20Z) - POINT-AND-FIGURE (pnf_*) LOOK-AHEAD CHECK: NO LOOK-AHEAD IN THE BAR CONSTRUCTION
 - Test: an independent causal replay of the P&F rule (box = p x trailing-20-day median range scale, excluding today; 3-box reversal) on 4 trading days of NQ prints (202606), session by session, versus the stored pnf_14 bars: column count, column extreme (close) and the bar's known_ts (= the print that confirms the reversal) agree in every complete session (20 of 20; the 21st is a session cut by my day-file window, not a bar error). The fill (fpx/fts) is the first print strictly after known_ts in every checked bar.
