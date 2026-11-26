@@ -1,12 +1,3 @@
-2026-11-26 14:45Z | WARNING serverA below 85% busy for 108 readings in a row with jobs pending
-2026-11-26 14:45Z | WARNING serverB below 85% busy for 138 readings in a row with jobs pending
-2026-11-26 14:45Z | WARNING serverC below 85% busy for 138 readings in a row with jobs pending
-2026-11-26 14:45Z | WARNING serverD below 85% busy for 139 readings in a row with jobs pending
-2026-11-26 14:45Z | WARNING server2 below 85% busy for 28 readings in a row with jobs pending
-2026-11-26 14:45Z | AUTO-FILL step run: dispatcher alive pid 2269687/2269690/2311525
-2026-11-26 14:50Z | box1: busy 98%, load1 47.01, workers 12, MemAvail 57 GB | server2: busy 77%, load1 49.39, workers 0, MemAvail 953 GB | pending box1-eligible 509022 / server2-eligible 159 (shared queues count in both; unleased, not DONE) | serverA: busy 64%, load1 79.30, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1031 GB | serverB: busy 50%, load1 64.47, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 982 GB | serverC: busy 18%, load1 5.51, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.08, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 14:50Z | WARNING serverA below 85% busy for 109 readings in a row with jobs pending
-2026-11-26 14:50Z | WARNING serverB below 85% busy for 139 readings in a row with jobs pending
 2026-11-26 14:50Z | WARNING serverC below 85% busy for 139 readings in a row with jobs pending
 2026-11-26 14:50Z | WARNING serverD below 85% busy for 140 readings in a row with jobs pending
 2026-11-26 14:50Z | WARNING server2 below 85% busy for 29 readings in a row with jobs pending
@@ -300,3 +291,10 @@
 2026-11-26 18:00Z | AUTO-FILL step run: dispatcher alive pid 2907673/2907675/2996085
 2026-11-26 18:00Z | HOST server2 PRODUCING NOTHING (E-ENGINE host server2 slots 0/28)
 2026-11-26 18:00Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 0/68)
+2026-11-26 18:05Z | box1: busy 97%, load1 45.50, workers 4, MemAvail 37 GB | server2: busy 74%, load1 52.24, workers 0, MemAvail 835 GB | pending box1-eligible 508260 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 41%, load1 53.48, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1031 GB | serverB: busy 66%, load1 74.72, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 983 GB | serverC: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1494 GB | serverD: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
+2026-11-26 18:05Z | WARNING serverA below 85% busy for 148 readings in a row with jobs pending
+2026-11-26 18:05Z | WARNING serverB below 85% busy for 178 readings in a row with jobs pending
+2026-11-26 18:05Z | WARNING serverC below 85% busy for 178 readings in a row with jobs pending
+2026-11-26 18:05Z | WARNING serverD below 85% busy for 179 readings in a row with jobs pending
+2026-11-26 18:05Z | WARNING server2 below 85% busy for 20 readings in a row with jobs pending
+2026-11-26 18:05Z | AUTO-FILL step run: dispatcher alive pid 2907673/2907675/3015913
