@@ -232,3 +232,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 19:58Z Josh: Q1 repeat at t>=3 is ~142 h of fleet (1.28M set-months): yes/no?
 - 22:13Z Josh: test 8 exact drift null: 20-draw version ~6.7 h of fleet (200-draw is 67 h, over the limit): queue 20-draw or skip? default skip
 - 23:39Z Josh: tsf bar (8 of 24 books in A4/A5) needs a print-granularity decision before any coding
+- 23:41Z Josh: ES/RTY tape owned (mbp-10 L2 39 months each, 1-min bars): port level modules and run (quick screen ~10 min wall per instrument after bar rows; exact needs engine port)? waiting for your word
