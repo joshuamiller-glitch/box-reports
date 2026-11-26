@@ -1,5 +1,3 @@
-2026-11-26 17:30Z | WARNING serverA below 85% busy for 141 readings in a row with jobs pending
-2026-11-26 17:30Z | WARNING serverB below 85% busy for 171 readings in a row with jobs pending
 2026-11-26 17:30Z | WARNING serverC below 85% busy for 171 readings in a row with jobs pending
 2026-11-26 17:30Z | WARNING serverD below 85% busy for 172 readings in a row with jobs pending
 2026-11-26 17:30Z | WARNING server2 below 85% busy for 13 readings in a row with jobs pending
@@ -298,3 +296,5 @@
 2026-11-26 23:00Z | WARNING serverD below 85% busy for 4 readings in a row with jobs pending
 2026-11-26 23:05Z | box1: busy 97%, load1 47.59, workers 15, MemAvail 83 GB | server2: busy 94%, load1 77.71, workers 25, MemAvail 1062 GB | pending box1-eligible 508224 / server2-eligible 225488 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 162.67, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 944 GB | serverB: busy 100%, load1 187.32, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 890 GB | serverC: busy 51%, load1 78.28, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1416 GB | serverD: busy 88%, load1 56.76, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1449 GB
 2026-11-26 23:05Z | WARNING serverC below 85% busy for 12 readings in a row with jobs pending
+2026-11-26 23:10Z | box1: busy 94%, load1 39.75, workers 12, MemAvail 88 GB | server2: busy 93%, load1 75.59, workers 27, MemAvail 1107 GB | pending box1-eligible 508333 / server2-eligible 224610 (shared queues count in both; unleased, not DONE) | serverA: busy 99%, load1 157.40, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 949 GB | serverB: busy 100%, load1 191.68, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 899 GB | serverC: busy 61%, load1 71.26, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1427 GB | serverD: busy 88%, load1 54.84, workers 1 (grid) + 62 (engine), 64 threads, MemAvail 1444 GB
+2026-11-26 23:10Z | WARNING serverC below 85% busy for 13 readings in a row with jobs pending
