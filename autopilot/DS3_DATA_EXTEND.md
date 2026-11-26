@@ -228,3 +228,4 @@ Five-line summary: (1) hist_replica NQ day files 2026-11-02..11-13 now exist (11
 - 2026-11-26T14:17:14Z loop alive pid 2819417: hist_replica data end 20261124 (987 days), last pass log: 2026-11-26T14:17:14Z complete new labels []
 - 2026-11-26T15:17:20Z loop alive pid 2819417: hist_replica data end 20261124 (987 days), last pass log: 2026-11-26T15:17:19Z complete new labels []
 - 2026-11-26T16:17:25Z loop alive pid 2819417: hist_replica data end 20261124 (987 days), last pass log: 2026-11-26T16:17:24Z complete new labels []
+- 2026-11-26T17:17:27Z loop alive pid 2819417: hist_replica data end 20261124 (987 days), last pass log: 2026-11-26T17:17:27Z skip pass: MemAvailable 28 GB < 45
