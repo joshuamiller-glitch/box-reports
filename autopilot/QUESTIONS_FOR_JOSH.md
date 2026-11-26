@@ -230,3 +230,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 19:09Z Josh: dated JT menu for Part C is ~575k set-months (not buildable in 48 h): narrower scope (e.g. London only, fewer refit dates) or skip?
 - 19:37Z Josh: resume the paused candidate backlog as lowest-priority filler (box1 disk 99% full)? default: stays paused
 - 19:58Z Josh: Q1 repeat at t>=3 is ~142 h of fleet (1.28M set-months): yes/no?
+- 22:13Z Josh: test 8 exact drift null: 20-draw version ~6.7 h of fleet (200-draw is 67 h, over the limit): queue 20-draw or skip? default skip
