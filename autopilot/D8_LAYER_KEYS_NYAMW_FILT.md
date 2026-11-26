@@ -44,7 +44,7 @@ class chain = hooklist in written order, a LATER hook is OUTER and runs first. E
 ## ENGINE CHECK 2026-11-26 00:09Z (W-LAYERS2; documentation only: the fitted numbers already include all of this; where a line above says otherwise THIS SECTION WINS)
 
 1. **CAP** = static DOLLAR caps on EVERY book, both sides: profit +$48000, loss -$14400 (engine day cap sim.py:722-730, once per 1-minute bar, CLOSED day P&L only, closes the open trade with exit name DayHalt; stackrule_gen.py:57 and :71 set the dollars as k x the MEDIAN book R, NOT each book's own R; the profit rows CAP1-4 also set the loss cap at 4R and the loss rows CAP5-8 also set the profit cap at 10R, so the pair is coded as above, not one side). Own book R differs but the dollars are NOT scaled per book at the fit basis.
-2. **STK** (lay_hooks.stack_caps) = whole-stack day stop: loss -$28800, profit off (closed day P&L of all books, same engine path as CAP).
+2. **STK** (lay_hooks.stack_caps) = whole-stack day stop: loss -$28800, profit stop off (closed day P&L of all books, same engine path as CAP).
 3. **DLA / DLB / DLC**: none in this pick (no dl_hooks in the set).
 4. **SC** (StackCut): NOT in this pick (stackcut_share None); the label "scope Asia-only" in older pages is a hard-coded string in stackrule_gen.py:60 and means nothing here.
 5. **Scaling at the file sizes**: the size rows scale the per-book static CAP dollars by file lots / fit lots (PICKC sets); the STK stack dollars, the DLB dollars and the StackCut share are NOT rescaled (DLB follows the smallest-lot rule above). If the build keeps the fit-basis dollars unscaled the file-size results differ; that variant is not tested.
