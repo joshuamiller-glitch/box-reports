@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 18:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 18:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 18:00Z | AUTO-FILL step run: dispatcher alive pid 2907673/2907675/2996085
+LATEST CORES.md LINE: 2026-11-26 18:15Z | AUTO-FILL step run: dispatcher alive pid 3035623/3035627/3060622
 
 ## UTC TIME WRITTEN
-2026-11-26 18:00Z
+2026-11-26 18:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 18:00Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 29.9 GB; live reservations 0 (0 GB); workers 1, of which TP-adopted 1 (RSS 1.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 49.62, 54.68, 60.48
-  by tag: NYE quota 16 running 1 hungry False RSS 1.6 GB PSS 1.5 GB
+Server 1 (this box): MemAvail 16.4 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 50.10, 48.49, 53.09
+  by tag: 
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Ld59f163d_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 52.75, 52.86, 53.31|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: 
+Server 2 (rs4 metal): load / disk / tp_launch procs: 57.32, 58.16, 55.86|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
