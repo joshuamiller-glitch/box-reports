@@ -293,7 +293,35 @@ Best-of-9 luck penalty vs the held cell: Asia best 26/13w diff +54, haircut 30, 
 
 ## EXACT ENGINE: calibration of the quick screen
 
-PENDING. Sets TL3_ALN_<S>_W<hash>_R0RT (truly bare R0, 1 lot, own bracket, fees in); build on box1 (niced), rows appended to _split/pending_nyam_gating.txt AFTER W-ROTA and W-ROT2 rows. Status in MORNING.md LEAD NOTEs. Live books (iii): 18 of 20 already have full bare R0 sets (TL3_ALN_<S>_<id>_R0BR<bracket>, 42-43 months), no new run needed.
+**(iii) The live books, bare R0, all months, exact vs quick screen (same books, same weeks 2023-04 to 2026-10; existing full bare R0 sets TL3_ALN_<S>_<id>_R0BR<bracket>, 1 lot, own bracket, fees in; nothing new run)**
+
+| session | live book | exact $/lot/wk | quick $/lot/wk | exact / quick | exact L6M | quick L6M | weekly correlation |
+|---|---|---|---|---|---|---|---|
+| Asia | Lb0e6dfa3_R0_F40_80 | 1010 | 501 | 2.02 | 3333 | 1218 | 0.66 |
+| Asia | L9c2622b0_R0_P45 | 795 | 482 | 1.65 | 2018 | 555 | 0.64 |
+| Asia | L4aaacdb2_R0_P30 | 265 | 313 | 0.84 | 672 | 582 | 0.92 |
+| London | L19201dfc.BRF90_30 | 447 | 486 | 0.92 | 1782 | 1759 | 0.97 |
+| London | L12842dde.BRP45 | 513 | 105 | 4.87 | 1402 | 522 | 0.70 |
+| London | L74274eca.BRF120_60 | 589 | 717 | 0.82 | 1535 | 1494 | 0.79 |
+| NYAM | L43f0cbfb.BRS8U | 1558 | 843 | 1.85 | 4086 | 2359 | 0.69 |
+| NYAM | Le4fede95.BRF90_30 | 785 | 775 | 1.01 | 2888 | 2981 | 0.92 |
+| NYAM | Lf0346d55.BRP60 | 728 | 590 | 1.23 | 1503 | 1073 | 0.95 |
+| NYAM | L8cfda948.BRF90_30 | 745 | 656 | 1.14 | 2308 | 1660 | 0.80 |
+| NYAM | L4407508c.BRF120_60 | 610 | 520 | 1.17 | 1566 | 1405 | 0.94 |
+| NYAM | L39287638.BRF80_40 | 496 | 564 | 0.88 | 1080 | 1004 | 0.93 |
+| NYAM | L64390867.BRF80_40 | 333 | 197 | 1.69 | 448 | 287 | 0.92 |
+| NYPM | L52359bf4_R0_P30 | 652 | 278 | 2.35 | 1307 | 891 | 0.93 |
+| NYPM | L8e0bf58c_R0_S8U | 486 | 393 | 1.24 | 1279 | 1274 | 0.88 |
+| NYPM | L4bdd521a_R0_F80_40 | 602 | 526 | 1.14 | 784 | 720 | 0.97 |
+| NYPM | L2c6916a5_R0_P60 | 429 | 443 | 0.97 | 1130 | 791 | 0.93 |
+
+17 live books: exact is on average 1.52 x the quick screen (median ratio 1.17); weekly correlation median 0.92. The quick screen is therefore a ranking-grade, not a level-grade, measure of a book (levels differ by tens of percent either way; the quick screen misses the exact engine's fills and rollover handling). Mapped to a grid cell: 17 of 20 (missing L385f4f2e_CX502, B7bfd33b7, Bf428c4a1.BRS8U; the exact sets exist for the last of these but it has no grid cell to compare). The grid cell is W-ROTA's identification of the live definition and can differ from the live file.
+
+**(i) Asia partB_best: 3 of 960 picks landed (2 weeks)**: exact $/lot/wk 0 (max DD 0, worst 0, L6M 0, L3M 0) vs quick -61 (max DD 9774, worst -7535, L6M 0, L3M 0)
+
+**(i) NYPM partB_best: 4 of 960 picks landed (2 weeks)**: exact $/lot/wk 0 (max DD 0, worst 0, L6M 0, L3M 0) vs quick 185 (max DD 0, worst 0, L6M 0, L3M 0)
+
+Still PENDING (landed/total picks): Asia best 0/58; Asia ew 0/195; London best 0/34; London ew 0/105; NYAM best 0/130; NYAM ew 0/195; NYPM best 0/54; NYPM ew 0/195; Asia T1 0/12; London T1 0/8; NYAM T1 0/20; NYPM T1 0/12; Asia partB_best 3/960; London partB_best 0/104; NYAM partB_best 0/800; NYPM partB_best 4/960. Rows queued behind W-ROTA and W-ROT2 in pending_nyam_gating.txt; the table above fills as sets land.
 
 ## Hindsight and survivor effects
 - Candidate set = the stored grid (cells with >= 5 trades over 3.6 years, a filter that looks at the whole span); modules, brackets and bar types were chosen by people who saw earlier data; 13 of 17 level modules had stale pre-06:00Z grid results (UNVERIFIED), as flagged in stage A.
