@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 16:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 17:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 16:45Z | AUTO-FILL step run: dispatcher alive pid 2703908/2703910/2741197
+LATEST CORES.md LINE: 2026-11-26 17:00Z | AUTO-FILL step run: dispatcher alive pid 2703908/2703910/2785199
 
 ## UTC TIME WRITTEN
-2026-11-26 16:45Z
+2026-11-26 17:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 16:45Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 32.7 GB; live reservations 0 (0 GB); workers 2, of which TP-adopted 1 (RSS 1.4 GB) vs others 1 (RSS 1.4 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 84.01, 77.31, 63.49
-  by tag: NYR quota 12 running 1 hungry True RSS 1.4 GB PSS 1.3 GB; REST quota 0 running 1 hungry False RSS 1.4 GB PSS 1.2 GB
+Server 1 (this box): MemAvail 32.1 GB; live reservations 3 (3 GB); workers 4, of which TP-adopted 4 (RSS 6.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 66.12, 69.71, 68.51
+  by tag: NYR quota 12 running 4 hungry True RSS 6.1 GB PSS 5.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: 
-Server 2 (rs4 metal): load / disk / tp_launch procs: 56.61, 56.75, 57.85|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_L2935a58f_ALNCT35m (x4);TL3_NYE_L2935a58f_ALNCT21m (x2);TL3_NYE_L188c2b52_ALNCT14m (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 46.41, 47.57, 51.81|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
