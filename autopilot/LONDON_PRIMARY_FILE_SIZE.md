@@ -56,3 +56,21 @@ The "per session" lots are the per-book lots above (a session = one book entry w
 - base 4: day-stop changed 7 of 131 L6M days; changed-day P&L with -16476 vs without -17483
 - base 3a: day-stop changed 7 of 131 L6M days; changed-day P&L with -15297 vs without -16303
 - base 3b: day-stop changed 8 of 131 L6M days; changed-day P&L with -10752 vs without -11654
+
+## 4. ADDED 2026-11-26: BARE ROWS AT BASE 8/4/2 AND 6/3/2 (London three-book bare is the delivered London: no layer set passes the prior-year filter; PICK rows above are the old JT4 for reference only)
+
+Lots per book and R at risk (R = median stop pts x $20 per lot):
+
+| book | events | stop pts (R $/lot) | base 8/4/2 lots (R at risk) | base 6/3/2 lots (R at risk) | base 4/2/1 fit basis lots (R at risk) |
+|---|---|---|---|---|---|
+| MF1 | L19201dfc.BRF90_30 | 90.0 ($1800) | 8 ($14400) | 6 ($10800) | 4 ($7200) |
+| MF2 | L12842dde.BRP45 | 45.0 ($900) | 4 ($3600) | 3 ($2700) | 2 ($1800) |
+| MF3 | L74274eca.BRF120_60 | 120.0 ($2400) | 2 ($4800) | 2 ($4800) | 1 ($2400) |
+
+Total at risk if every book is stopped: base 8/4/2 $22800, base 6/3/2 $18300, base 4/2/1 $11400. Whole three-book stack dollars (not per lot).
+
+| row | L6M | L3M | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|
+| base 8/4/2 BARE | $19562/wk, ulcer 13228, max DD -39760, worst wk -20695, worst day -25970 | $18013/wk, ulcer 15645, max DD -39760, worst wk -20172, worst day -20881 | $2789/wk, max DD -73097, ulcer 30689 | $4319/wk, max DD -85706, ulcer 24719 | $1221/wk, max DD -224333, ulcer 145224 |
+| base 6/3/2 BARE | $15548/wk, ulcer 10602, max DD -33376, worst wk -18230, worst day -19907 | $14989/wk, ulcer 12554, max DD -33376, worst wk -16062, worst day -17848 | $2343/wk, max DD -60777, ulcer 24247 | $3941/wk, max DD -63468, ulcer 15420 | $1384/wk, max DD -169030, ulcer 102502 |
+| base 4/2/1 BARE (fit basis) | $10773/wk, ulcer 6305, max DD -19383, worst wk -10078, worst day -12650 | $9954/wk, ulcer 7424, max DD -19383, worst wk -9051, worst day -10341 | $1617/wk, max DD -36148, ulcer 14449 | $2535/wk, max DD -41168, ulcer 10615 | $1023/wk, max DD -107674, ulcer 60261 |
