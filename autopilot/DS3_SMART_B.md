@@ -160,7 +160,7 @@ Whole round trip per contract (fee + excess): target 9.4; cut 17.4; stop 18.2; 0
 | P7 | nyam | 11:30 | 32 | 62.0 | -6682.5 | 938.9 | -7621.4 |
 
 
-## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-26 06:28Z UTC)
+## B5 / B3 / B2 EXACT RESULTS (generated 2026-11-26 06:59Z UTC)
 
 Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN05W2J = SBJ_*); prereg SMART_B_PREREG.md. Each cell is scored vs its base on the same months. **Caveat: the engine state cut fires in the engine but did not fire live on 11-11 (DS3_P7_CUT_FIDELITY.md).** Passive limits fill on a print through the level by 1 tick (touch variants are the optimistic bound). cut % = stack maxDD vs base (positive = shallower); d mean = all-weeks mean difference ($/wk); "d mean live-excess adj" adds the change in live-excess slip cost (B1 parameters) to the L6M all-weeks d mean (limit fills avoid market-exit excess; engine slip is inside gross). A window appears only when all its months are present.
 
@@ -200,7 +200,7 @@ Hook code/th_smart_b/sb_hooks.py (outermost hooklist entry on JN05W2 = SB_*, JN0
 | SB_SP85 | JN05W2 | 43 | 102% ($324k of $316k) | 1 of 20 | 15.6 | 1203 | 1206 | 13/6 | 15.7 | 579 | -3.6 | -4.8 | - | 0.0 / 18% |
 | **B2 passive entry** | | | | | | | | | | | | | | |
 | SB_LE_bid0_T10M | JN05W2 | 6 | 94% ($298k of $316k) | 0 of 20 | -4.1 | -109 | -113 | 13/6 | - | - | - | - | - | - |
-| SB_LE_bid0_T10S | JN05W2 | 6 | err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202502/trades.parquet' | | | | | | | | | | | |
+| SB_LE_bid0_T10S | JN05W2 | 6 | 59% ($187k of $316k) | 3 of 20 | -58.3 | -11798 | -11467 | 13/6 | - | - | - | - | - | - |
 | SB_LE_bid0_T5M | JN05W2 | 12 | 93% ($296k of $316k) | 0 of 20 | 0.9 | 132 | 135 | 13/6 | -4.8 | -625 | - | - | - | - |
 | SB_LE_mid0_T10M | JN05W2 | 6 | 91% ($288k of $316k) | 0 of 20 | -7.7 | -1151 | -1140 | 13/6 | - | - | - | - | - | - |
 | SB_LE_mid0_T10Mt | JN05W2 | 12 | 102% ($322k of $316k) | 0 of 20 | 20.2 | 1158 | 1176 | 13/6 | -5.0 | 283 | - | - | - | - |
