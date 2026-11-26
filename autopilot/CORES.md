@@ -1,10 +1,3 @@
-2026-11-26 16:00Z | HOST SLOT_HEAL PRODUCING NOTHING (16:02Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 2479253, supervisor restarts it (once per 30 min per hos)
-2026-11-26 16:05Z | box1: busy 99%, load1 66.16, workers 9, MemAvail 53 GB | server2: busy 75%, load1 53.32, workers 0, MemAvail 848 GB | pending box1-eligible 508529 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 41%, load1 52.84, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1034 GB | serverB: busy 66%, load1 74.88, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 979 GB | serverC: busy 13%, load1 5.95, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1469 GB | serverD: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 16:05Z | WARNING serverA below 85% busy for 124 readings in a row with jobs pending
-2026-11-26 16:05Z | WARNING serverB below 85% busy for 154 readings in a row with jobs pending
-2026-11-26 16:05Z | WARNING serverC below 85% busy for 154 readings in a row with jobs pending
-2026-11-26 16:05Z | WARNING serverD below 85% busy for 155 readings in a row with jobs pending
-2026-11-26 16:05Z | WARNING server2 below 85% busy for 44 readings in a row with jobs pending
 2026-11-26 16:05Z | AUTO-FILL step run: dispatcher alive pid 2589795/2589796/2590672
 2026-11-26 16:10Z | box1: busy 100%, load1 61.58, workers 11, MemAvail 61 GB | server2: busy 76%, load1 68.02, workers 28, MemAvail 728 GB | pending box1-eligible 508496 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 42%, load1 54.99, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1034 GB | serverB: busy 54%, load1 92.15, workers 105 (grid) + 71 (engine), 128 threads, MemAvail 925 GB | serverC: busy 5%, load1 21.38, workers 1 (grid) + 31 (engine), 128 threads, MemAvail 1441 GB | serverD: busy 0%, load1 0.16, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
 2026-11-26 16:10Z | WARNING serverA below 85% busy for 125 readings in a row with jobs pending
@@ -298,3 +291,14 @@
 2026-11-26 19:45Z | WARNING serverD below 85% busy for 9 readings in a row with jobs pending
 2026-11-26 19:45Z | WARNING server2 below 85% busy for 2 readings in a row with jobs pending
 2026-11-26 19:45Z | AUTO-FILL step run: dispatcher alive pid 3148310/3148312/3847583
+2026-11-26 19:50Z | box1: busy 94%, load1 35.91, workers 2, MemAvail 28 GB | server2: busy 73%, load1 52.52, workers 0, MemAvail 951 GB | pending box1-eligible 508168 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 61%, load1 77.88, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1031 GB | serverB: busy 50%, load1 63.92, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 986 GB | serverC: busy 0%, load1 0.17, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1494 GB | serverD: busy 0%, load1 0.08, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
+2026-11-26 19:50Z | WARNING serverA below 85% busy for 3 readings in a row with jobs pending
+2026-11-26 19:50Z | WARNING serverB below 85% busy for 7 readings in a row with jobs pending
+2026-11-26 19:50Z | WARNING serverC below 85% busy for 199 readings in a row with jobs pending
+2026-11-26 19:50Z | WARNING serverD below 85% busy for 10 readings in a row with jobs pending
+2026-11-26 19:50Z | WARNING server2 below 85% busy for 3 readings in a row with jobs pending
+2026-11-26 19:50Z | AUTO-FILL step run: dispatcher alive pid 3865882
+2026-11-26 19:50Z | HOST serverA PRODUCING NOTHING (E-ENGINE host serverA slots 0/102)
+2026-11-26 19:50Z | HOST serverC PRODUCING NOTHING (E-ENGINE host serverC slots 0/140)
+2026-11-26 19:50Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 0/68)
+2026-11-26 19:50Z | HOST SLOT_HEAL PRODUCING NOTHING (19:50Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 3148312, supervisor restarts it (once per 30 min per hos)
