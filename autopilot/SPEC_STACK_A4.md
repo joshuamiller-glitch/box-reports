@@ -1,6 +1,6 @@
 # SPEC_STACK_A4: coding spec pages for the six Asia books of forward-register stack A4 (both-sides LEVEL books; every statement marked SPEC or READING)
 
-Written 2026-11-26 23:34Z by W-SPEC9 (sub-agent of LEAD, not typed by Josh). Order: autopilot/DIRECTIVE_TEST9_2313Z.md part B (relay design under Josh's standing 18:22Z order). RESEARCH / SHADOW ONLY: nothing built, nothing coded, no gate or code change, nothing queued, nothing live, no spend, nothing deleted; the execution server, the live D8Asia.cs and every chart are untouched (D8Asia.cs was only read for its class list). Layout copied from the hand-verified pages D8_NYAM_SPEC_*.md / D8_BUILD_SPEC.md per-book blocks (sections 0 identity, 1 BAR, 2 TRIGGER, 3 signal to order, 4 sides and bracket, 5 other inputs, 6 one position / window / warm-up, 7 what trades, 8 parity data) with a stack overview, an existing-versus-new table and a coding list added.
+Written 2026-11-26 23:39Z by W-SPEC9 (sub-agent of LEAD, not typed by Josh). Order: autopilot/DIRECTIVE_TEST9_2313Z.md part B (relay design under Josh's standing 18:22Z order). RESEARCH / SHADOW ONLY: nothing built, nothing coded, no gate or code change, nothing queued, nothing live, no spend, nothing deleted; the execution server, the live D8Asia.cs and every chart are untouched (D8Asia.cs was only read for its class list). Layout copied from the hand-verified pages D8_NYAM_SPEC_*.md / D8_BUILD_SPEC.md per-book blocks (sections 0 identity, 1 BAR, 2 TRIGGER, 3 signal to order, 4 sides and bracket, 5 other inputs, 6 one position / window / warm-up, 7 what trades, 8 parity data) with a stack overview, an existing-versus-new table and a coding list added.
 
 Marks: **SPEC** = read from code or measured by re-running the engine code in this session; **READING** = my inference (stated as such). Where a source could not be found it says so; nothing is guessed. Book ids and parameters are those of FORWARD_REGISTER_STACKS.md (W-TEST8 section, seed 20261128); the stack is A4 only as a REGISTER object (equal weight, 1 lot per book, bare R0, no stack rules).
 
@@ -82,9 +82,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `fixed120/120` 
 - [SPEC] Warm-up of the trigger: plain u = 5.0 pt needs no history. Memory M / hold n of the variant: 10 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; box/theta uses s_rng.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 26 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.08; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 6, 11.5, 47.75, 201.
-- [SPEC] Fired line (first line in list order that fired) over those trades: VWAP0 14, AVPDL 4, AVPDH 4, YVWAP 2, WVWAP 2.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 271; share whose signal bar is bar 0 of the session: 0.05; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 7, 26, 74.5, 569.
+- [SPEC] Held weeks only: 26 grid trades; share on bar 0: 0.08; signal-bar index quantiles: 0, 6, 11.5, 47.75, 201.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: VWAP0 14, AVPDL 4, AVPDH 4, YVWAP 2, WVWAP 2.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/W73585da1_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -92,7 +93,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `fixed120/120` 
 - bars of the session: 265, first known 2026-10-22T22:00:01.025Z, last known 2026-10-23T05:59:25.208Z; rebuilt-from-tape check 265/265/265; threshold values: box_ticks=15, box_pts=3.750
 SIGNALS (raw events of the session: 71 in total, 2 shown (those inside the input windows or traded); all are in the CSV file; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 6,2026-10-22T22:04:47.027Z,1,AVPDL__V,29136.32,29146.50,5.00,Y
 7,2026-10-22T22:05:30.825Z,-1,AVPDL__V,29136.32,29116.50,5.00,no
 ```
@@ -102,9 +103,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 6,1,2026-10-22T22:04:48.360Z,29130.25,0.6389,29130.41,2026-10-23T05:59:59.668Z,29134.75,SessionEnd,120.0,120.0,4.34,81.97
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 8 of 265 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 8 of 265 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-22T22:00:01.025Z,29116.50,29127.75,29116.50,29127.75,5.00,2026-10-22T20:52:01Z,2026-10-22T20:52:00Z,,VWAP0=29354.73,
 1,2026-10-22T22:00:31.264Z,29124.00,29124.00,29090.25,29090.25,5.00,2026-10-22T22:00:01Z,2026-10-22T22:00:00Z,,AVPDL=29136.54,
 2,2026-10-22T22:01:00.080Z,29094.00,29131.50,29094.00,29131.50,5.00,2026-10-22T22:00:31Z,2026-10-22T22:00:00Z,,AVPDL=29136.54,
@@ -123,7 +124,7 @@ k=6 2026-10-22T22:04:47.027Z side +1 fired AVPDL: YVWAP=29283.77; AVPDH=29236.87
 - bars of the session: 139, first known 2026-10-15T22:00:56.349Z, last known 2026-10-16T05:58:06.921Z; rebuilt-from-tape check 139/139/139; threshold values: box_ticks=15, box_pts=3.750
 SIGNALS (raw events of the session: 14 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 30,2026-10-16T00:13:04.541Z,1,VWAP0__V,30041.08,30051.50,5.00,Y
 31,2026-10-16T00:14:38.325Z,-1,VWAP0__V,30041.12,30036.50,5.00,no
 32,2026-10-16T00:15:03.384Z,1,VWAP0__V,30041.11,30047.75,5.00,no
@@ -145,9 +146,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 30,1,2026-10-16T00:13:06.442Z,30037.00,0.6389,30037.16,2026-10-16T03:49:45.280Z,30157.16,Target,120.0,120.0,120.00,2395.16
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 15 of 139 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 15 of 139 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 17,2026-10-15T23:52:56.359Z,29991.50,29991.50,29984.00,29984.00,5.00,2026-10-15T23:51:20Z,2026-10-15T23:51:00Z,AVPDL=29970.96,VWAP0=30052.78,
 18,2026-10-15T23:56:03.134Z,29987.75,30002.75,29987.75,30002.75,5.00,2026-10-15T23:52:56Z,2026-10-15T23:52:00Z,AVPDL=29970.96,VWAP0=30052.18,
 19,2026-10-16T00:00:26.227Z,29999.00,29999.00,29980.25,29980.25,5.00,2026-10-15T23:56:03Z,2026-10-15T23:56:00Z,AVPDL=29970.99,VWAP0=30050.16,
@@ -173,7 +174,7 @@ k=30 2026-10-16T00:13:04.541Z side +1 fired VWAP0: VWAP0=30041.08; YVWAP=29921.8
 - bars of the session: 78, first known 2026-10-08T22:00:08.144Z, last known 2026-10-09T05:59:18.627Z; rebuilt-from-tape check 78/78/78; threshold values: box_ticks=16, box_pts=4.000
 SIGNALS (raw events of the session: 11 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 7,2026-10-08T22:39:09.814Z,1,AVPDH__V,31045.89,31072.50,5.00,Y
 8,2026-10-08T23:09:45.651Z,-1,AVPDH__V,31045.93,31020.50,5.00,no
 39,2026-10-09T00:57:16.521Z,1,VWAP0__V,31009.16,31024.50,5.00,no
@@ -192,9 +193,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 7,1,2026-10-08T22:39:11.101Z,31060.00,0.6389,31060.16,2026-10-09T05:59:57.199Z,31158.00,SessionEnd,120.0,120.0,97.84,1951.97
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 9 of 78 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (windows of 13 bars before to 1 bar after each traded signal bar, 9 of 78 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-08T22:00:08.144Z,31020.50,31020.50,31016.50,31016.50,5.00,2026-10-08T20:53:32Z,2026-10-08T20:53:00Z,,MVWAP=31120.16,
 1,2026-10-08T22:01:11.232Z,31020.50,31028.50,31020.50,31028.50,5.00,2026-10-08T22:00:08Z,2026-10-08T22:00:00Z,AVPDL=30930.25,AVPDH=31046.03,
 2,2026-10-08T22:04:15.371Z,31024.50,31024.50,30996.50,30996.50,5.00,2026-10-08T22:01:11Z,2026-10-08T22:01:00Z,AVPDL=30930.50,AVPDH=31046.01,
@@ -249,9 +250,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - [SPEC] Warm-up of the trigger: plain u = 5.0 pt needs no history. Memory M / hold n of the variant: 1 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; tsf thresholds use s_vol.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 276 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.24; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 1, 2, 6, 24.
-- [SPEC] Fired line (first line in list order that fired) over those trades: FIBR_PD_DN236 52, FIBR_PD_DN382 34, FIBR_PD_DN786 33, FIBR_PD_XU1272 30, FIBR_PD_DN500 29, FIBR_PD_XD1272 28, FIBR_PD_DN618 20, FIBR_PD_XU1618 15, FIBR_PD_XD1618 11, FIBR_PD_DN650 9, FIBR_PD_XD2000 4, FIBR_PD_XU2000 3.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 494; share whose signal bar is bar 0 of the session: 0.25; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 0.25, 2, 6, 25.
+- [SPEC] Held weeks only: 276 grid trades; share on bar 0: 0.24; signal-bar index quantiles: 0, 1, 2, 6, 24.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: FIBR_PD_DN236 52, FIBR_PD_DN382 34, FIBR_PD_DN786 33, FIBR_PD_XU1272 30, FIBR_PD_DN500 29, FIBR_PD_XD1272 28, FIBR_PD_DN618 20, FIBR_PD_XU1618 15, FIBR_PD_XD1618 11, FIBR_PD_DN650 9, FIBR_PD_XD2000 4, FIBR_PD_XU2000 3.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/We7eba185_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -259,7 +261,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - bars of the session: 18, first known 2026-10-22T22:00:15.892Z, last known 2026-10-23T05:59:59.668Z; rebuilt-from-tape check 18/18/18; threshold values: L=25, thr_contracts=39.866, s_vol=0.997
 SIGNALS (raw events of the session: 7 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 1,2026-10-22T22:25:07.557Z,1,FIBR_PD_DN786,29153.21,29160.00,5.00,Y
 2,2026-10-23T00:49:07.781Z,1,FIBR_PD_UP236,29165.57,29182.50,5.00,Y
 5,2026-10-23T02:23:40.212Z,-1,FIBR_PD_DN786,29153.21,29149.75,5.00,Y
@@ -276,9 +278,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 5,-1,2026-10-23T02:23:41.782Z,29150.50,0.4398,29150.39,2026-10-23T05:59:59.668Z,29135.25,SessionEnd,60.0,60.0,15.14,297.96
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 3 trades.
-INPUTS (all 18 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 18 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-22T22:00:15.892Z,29116.50,29128.00,29090.75,29093.25,5.00,2026-10-22T20:59:58Z,2026-10-22T20:59:00Z,,FIBR_PD_XD2000=29429.00,
 1,2026-10-22T22:25:07.557Z,29093.00,29165.75,29090.00,29160.00,5.00,2026-10-22T22:00:15Z,2026-10-22T22:00:00Z,FIBR_PD_DN786=29153.21,FIBR_PD_UP236=29165.57,+1 FIBR_PD_DN786
 2,2026-10-23T00:49:07.781Z,29160.00,29187.75,29022.75,29182.50,5.00,2026-10-22T22:25:07Z,2026-10-22T22:25:00Z,FIBR_PD_UP236=29165.57,FIBR_PD_DN650=29229.61,+1 FIBR_PD_UP236
@@ -309,7 +311,7 @@ k=5 2026-10-23T02:23:40.212Z side -1 fired FIBR_PD_DN786: FIBR_PD_DN236=29462.18
 - bars of the session: 4, first known 2026-10-15T23:07:36.490Z, last known 2026-10-16T05:59:58.154Z; rebuilt-from-tape check 4/4/4; threshold values: L=25, thr_contracts=34.827, s_vol=0.871
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 1,2026-10-16T01:55:28.884Z,1,FIBR_PD_DN236,30061.23,30067.00,5.00,Y
 2,2026-10-16T02:27:30.569Z,1,FIBR_PD_UP786,30073.86,30114.00,5.00,no
 ```
@@ -319,9 +321,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 1,1,2026-10-16T01:55:31.728Z,30069.00,0.4398,30069.11,2026-10-16T02:36:47.750Z,30129.11,Target,60.0,60.0,60.00,1195.16
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (all 4 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 4 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-15T23:07:36.490Z,30089.00,30128.00,30027.50,30046.75,5.00,2026-10-15T20:59:59Z,2026-10-15T20:59:00Z,FIBR_PD_XD1272=29919.49,FIBR_PD_DN786=30202.71,
 1,2026-10-16T01:55:28.884Z,30047.00,30091.75,29959.25,30067.00,5.00,2026-10-15T23:07:36Z,2026-10-15T23:07:00Z,FIBR_PD_DN236=30061.23,FIBR_PD_UP786=30073.86,+1 FIBR_PD_DN236
 2,2026-10-16T02:27:30.569Z,30067.00,30114.75,30043.25,30114.00,5.00,2026-10-16T01:55:28Z,2026-10-16T01:55:00Z,FIBR_PD_UP786=30073.86,FIBR_PD_XU1272=30352.95,+1 FIBR_PD_UP786
@@ -336,7 +338,7 @@ k=1 2026-10-16T01:55:28.884Z side +1 fired FIBR_PD_DN236: FIBR_PD_DN236=30061.23
 - bars of the session: 11, first known 2026-10-07T22:00:36.852Z, last known 2026-10-08T05:59:59.026Z; rebuilt-from-tape check 11/11/11; threshold values: L=25, thr_contracts=34.285, s_vol=0.857
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 0,2026-10-07T22:00:36.852Z,1,FIBR_PD_XD1272,31414.57,31419.25,5.00,Y
 9,2026-10-08T04:00:18.887Z,-1,FIBR_PD_DN236,31356.35,31354.75,5.00,Y
 ```
@@ -347,9 +349,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 9,-1,2026-10-08T04:00:20.638Z,31355.25,0.4398,31355.14,2026-10-08T05:59:59.026Z,31325.25,SessionEnd,60.0,60.0,29.89,592.96
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 2 trades.
-INPUTS (all 11 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 11 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-07T22:00:36.852Z,31403.00,31419.25,31403.00,31419.25,5.00,2026-10-07T20:59:58Z,2026-10-07T20:59:00Z,FIBR_PD_XD1272=31414.57,FIBR_PD_DN786=31491.72,+1 FIBR_PD_XD1272
 1,2026-10-08T00:41:43.288Z,31419.75,31459.00,31382.25,31385.50,5.00,2026-10-07T22:00:36Z,2026-10-07T22:00:00Z,FIBR_PD_UP786=31362.49,FIBR_PD_XU1272=31498.21,
 2,2026-10-08T00:44:03.103Z,31385.25,31387.75,31377.50,31382.00,5.00,2026-10-08T00:41:43Z,2026-10-08T00:41:00Z,FIBR_PD_UP786=31362.49,FIBR_PD_XU1272=31498.21,
@@ -410,9 +412,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - [SPEC] Warm-up of the trigger: native u needs 20 earlier bars of the continuous series (rolling 100, shifted). Memory M / hold n of the variant: 2 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; tsf thresholds use s_vol.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 264 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.03; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 2, 4, 7, 17.
-- [SPEC] Fired line (first line in list order that fired) over those trades: PIV_D_P 84, CPR_TC 48, PIV_D_S1 34, PIV_D_R1 28, CPR_BC 19, PIV_W_P 18, PIV_D_R2 12, PIV_W_R1 7, PIV_D_S2 4, PIV_W_S1 3, PIV_D_R3 2, PIV_W_S2 2.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 441; share whose signal bar is bar 0 of the session: 0.02; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 2, 4, 6, 22.
+- [SPEC] Held weeks only: 264 grid trades; share on bar 0: 0.03; signal-bar index quantiles: 0, 2, 4, 7, 17.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: PIV_D_P 84, CPR_TC 48, PIV_D_S1 34, PIV_D_R1 28, CPR_BC 19, PIV_W_P 18, PIV_D_R2 12, PIV_W_R1 7, PIV_D_S2 4, PIV_W_S1 3, PIV_D_R3 2, PIV_W_S2 2.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/W68089a3e_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -420,7 +423,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - bars of the session: 10, first known 2026-10-22T22:17:47.443Z, last known 2026-10-23T05:59:59.668Z; rebuilt-from-tape check 10/10/10; threshold values: L=5, thr_contracts=398.663, s_vol=0.997
 SIGNALS (raw events of the session: 1 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 8,2026-10-23T05:34:53.780Z,-1,CPR_TC,29201.29,29136.75,34.25,Y
 ```
 TRADES (grid engine; entry = first print >= signal known time + 1 s, plus slippage; entry_raw = that print's price; net = gross - 0.242 pt)
@@ -429,9 +432,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 8,-1,2026-10-23T05:34:54.846Z,29124.00,0.4398,29123.89,2026-10-23T05:43:42.055Z,29184.25,Stop,60.0,60.0,-60.36,-1212.04
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (all 10 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 10 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-22T22:17:47.443Z,29116.50,29149.25,29090.00,29125.00,33.88,2026-10-22T20:59:58Z,2026-10-22T20:59:00Z,PIV_W_S1=28676.92,PIV_D_S3=29466.17,
 1,2026-10-22T23:33:00.148Z,29125.00,29165.75,29060.00,29060.00,34.25,2026-10-22T22:17:47Z,2026-10-22T22:17:00Z,PIV_D_S1=28920.42,CPR_TC=29201.29,
 2,2026-10-23T00:42:47.982Z,29059.50,29142.00,29022.75,29142.00,34.25,2026-10-22T23:33:00Z,2026-10-22T23:33:00Z,PIV_D_S1=28920.42,CPR_TC=29201.29,
@@ -452,7 +455,7 @@ k=8 2026-10-23T05:34:53.780Z side -1 fired CPR_TC: PIV_D_P=29257.58; PIV_D_R1=29
 - bars of the session: 7, first known 2026-10-15T23:07:02.367Z, last known 2026-10-16T05:59:58.154Z; rebuilt-from-tape check 7/7/7; threshold values: L=5, thr_contracts=348.266, s_vol=0.871
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 1,2026-10-15T23:36:18.600Z,-1,CPR_TC,30063.38,30000.00,31.25,Y
 4,2026-10-16T03:50:17.816Z,1,PIV_D_P,29986.50,30179.00,31.25,Y
 ```
@@ -463,9 +466,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 4,1,2026-10-16T03:50:18.939Z,30176.25,0.4398,30176.36,2026-10-16T05:59:58.154Z,30191.00,SessionEnd,60.0,60.0,14.64,287.96
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 2 trades.
-INPUTS (all 7 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 7 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-15T23:07:02.367Z,30089.00,30128.00,30027.50,30035.00,31.25,2026-10-15T20:59:59Z,2026-10-15T20:59:00Z,PIV_D_S1=29955.08,CPR_TC=30246.46,
 1,2026-10-15T23:36:18.600Z,30035.25,30064.00,30000.00,30000.00,31.25,2026-10-15T23:07:02Z,2026-10-15T23:07:00Z,PIV_D_P=29986.50,CPR_TC=30063.38,-1 CPR_TC
 2,2026-10-16T00:27:58.158Z,29999.50,30052.50,29962.00,29962.25,31.25,2026-10-15T23:36:18Z,2026-10-15T23:36:00Z,PIV_W_S3=29913.50,PIV_D_P=29986.50,
@@ -484,7 +487,7 @@ k=4 2026-10-16T03:50:17.816Z side +1 fired PIV_D_P: PIV_D_P=29986.50; PIV_D_R1=3
 - bars of the session: 9, first known 2026-10-08T22:57:29.280Z, last known 2026-10-09T05:59:57.199Z; rebuilt-from-tape check 9/9/9; threshold values: L=5, thr_contracts=342.848, s_vol=0.857
 SIGNALS (raw events of the session: 3 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 2,2026-10-09T00:16:39.053Z,-1,CPR_TC,31011.12,30979.50,24.88,Y
 5,2026-10-09T03:09:02.079Z,1,PIV_D_P,31046.00,31056.00,25.25,Y
 7,2026-10-09T05:56:18.174Z,1,CPR_BC,31080.88,31171.00,25.50,Y
@@ -497,9 +500,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 7,1,2026-10-09T05:56:19.206Z,31170.25,0.4398,31170.36,2026-10-09T05:59:57.199Z,31158.00,SessionEnd,60.0,60.0,-12.36,-252.04
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 3 trades.
-INPUTS (all 9 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 9 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-08T22:57:29.280Z,31020.50,31072.50,30995.00,31035.00,24.88,2026-10-08T20:59:59Z,2026-10-08T20:59:00Z,PIV_D_S3=30939.17,PIV_D_S2=31041.08,
 1,2026-10-08T23:47:00.924Z,31034.50,31036.50,30990.00,30990.00,24.88,2026-10-08T22:57:29Z,2026-10-08T22:57:00Z,PIV_W_P=30896.08,CPR_TC=31011.12,
 2,2026-10-09T00:16:39.053Z,30990.00,31002.50,30953.00,30979.50,24.88,2026-10-08T23:47:00Z,2026-10-08T23:47:00Z,PIV_W_P=30896.08,CPR_TC=31011.12,-1 CPR_TC
@@ -561,9 +564,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `fixed120/60` =
 - [SPEC] Warm-up of the trigger: plain u = 5.0 pt needs no history. Memory M / hold n of the variant: 3 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; box/theta uses s_rng.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 211 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.09; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 3, 4, 11, 49.
-- [SPEC] Fired line (first line in list order that fired) over those trades: PRF1_HVN1 51, PRF1_HVN2 30, PRF1_SPH 22, PRF1_LVN2 22, PRF1_LVN1 21, PRF1_SPL 18, PRF5_LVN1 15, PRF5_HVN1 12, PRF5_LVN2 11, PRF5_HVN2 9.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 269; share whose signal bar is bar 0 of the session: 0.09; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 3, 4, 11, 49.
+- [SPEC] Held weeks only: 211 grid trades; share on bar 0: 0.09; signal-bar index quantiles: 0, 3, 4, 11, 49.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: PRF1_HVN1 51, PRF1_HVN2 30, PRF1_SPH 22, PRF1_LVN2 22, PRF1_LVN1 21, PRF1_SPL 18, PRF5_LVN1 15, PRF5_HVN1 12, PRF5_LVN2 11, PRF5_HVN2 9.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/W0e7037ba_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -571,7 +575,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `fixed120/60` =
 - bars of the session: 18, first known 2026-10-22T22:00:14.742Z, last known 2026-10-23T01:43:39.987Z; rebuilt-from-tape check 18/18/18; threshold values: box_ticks=88, box_pts=22.000, NL=3
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 3,2026-10-22T22:24:07.655Z,1,PRF1__HVN1,29137.25,29160.75,5.00,Y
 11,2026-10-23T00:47:07.579Z,1,PRF1__HVN1,29137.25,29160.50,5.00,Y
 ```
@@ -582,9 +586,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 11,1,2026-10-23T00:47:08.622Z,29160.00,0.6389,29160.16,2026-10-23T05:59:59.668Z,29134.75,SessionEnd,120.0,60.0,-25.41,-513.03
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 2 trades.
-INPUTS (all 18 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 18 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-22T22:00:14.742Z,29116.50,29116.50,29094.50,29094.50,5.00,2026-10-22T20:49:51Z,2026-10-22T20:49:00Z,,PRF5_LVN1=29693.75,
 1,2026-10-22T22:00:46.318Z,29094.50,29116.75,29094.50,29116.75,5.00,2026-10-22T22:00:14Z,2026-10-22T22:00:00Z,,PRF1_HVN1=29137.25,
 2,2026-10-22T22:01:49.984Z,29116.75,29138.75,29116.75,29138.75,5.00,2026-10-22T22:00:46Z,2026-10-22T22:00:00Z,PRF1_HVN1=29137.25,PRF1_LVN1=29162.25,
@@ -614,7 +618,7 @@ k=11 2026-10-23T00:47:07.579Z side +1 fired PRF1_HVN1: PRF1_HVN1=29137.25; PRF1_
 - bars of the session: 18, first known 2026-10-15T22:00:15.323Z, last known 2026-10-16T05:01:12.956Z; rebuilt-from-tape check 18/18/18; threshold values: box_ticks=87, box_pts=21.750, NL=3
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 8,2026-10-16T00:22:26.505Z,-1,PRF1__HVN2,29991.00,29979.75,5.00,Y
 9,2026-10-16T00:51:09.383Z,1,PRF1__HVN2,29991.00,30045.75,5.00,no
 ```
@@ -624,9 +628,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 8,-1,2026-10-16T00:22:27.624Z,29980.25,0.6389,29980.09,2026-10-16T02:22:42.516Z,30100.50,Stop,120.0,60.0,-120.41,-2413.03
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (all 18 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 18 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-15T22:00:15.323Z,30089.00,30110.75,30089.00,30110.75,5.00,2026-10-15T20:56:46Z,2026-10-15T20:56:00Z,,PRF1_HVN1=30173.00,
 1,2026-10-15T22:31:16.596Z,30110.75,30110.75,30088.75,30088.75,5.00,2026-10-15T22:00:15Z,2026-10-15T22:00:00Z,PRF1_HVN2=29991.00,PRF1_LVN2=30115.50,
 2,2026-10-15T22:54:14.573Z,30088.75,30088.75,30067.00,30067.00,5.00,2026-10-15T22:31:16Z,2026-10-15T22:31:00Z,PRF1_HVN2=29991.00,PRF1_LVN2=30115.50,
@@ -655,7 +659,7 @@ k=8 2026-10-16T00:22:26.505Z side -1 fired PRF1_HVN2: PRF1_HVN1=29959.00; PRF1_H
 - bars of the session: 8, first known 2026-10-07T22:02:10.798Z, last known 2026-10-08T05:55:44.273Z; rebuilt-from-tape check 8/8/8; threshold values: box_ticks=92, box_pts=23.000, NL=3
 SIGNALS (raw events of the session: 3 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 2,2026-10-08T00:15:22.257Z,-1,PRF5__LVN1,31451.50,31402.75,5.00,Y
 4,2026-10-08T01:57:39.705Z,1,PRF1__HVN1,31377.25,31449.25,5.00,no
 5,2026-10-08T03:16:14.638Z,-1,PRF1__LVN2,31401.50,31379.50,5.00,no
@@ -666,9 +670,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 2,-1,2026-10-08T00:15:23.364Z,31402.50,0.6389,31402.34,2026-10-08T05:51:22.350Z,31342.34,Target,120.0,60.0,60.00,1195.16
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (all 8 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 8 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-07T22:02:10.798Z,31403.00,31426.00,31403.00,31426.00,5.00,2026-10-07T19:55:00Z,2026-10-07T19:55:00Z,PRF5_LVN1=30981.75,PRF1_LVN1=31491.25,
 1,2026-10-07T23:15:07.894Z,31426.00,31449.00,31426.00,31449.00,5.00,2026-10-07T22:02:10Z,2026-10-07T22:02:00Z,PRF1_LVN2=31401.50,PRF5_LVN1=31451.50,
 2,2026-10-08T00:15:22.257Z,31449.00,31449.00,31402.75,31402.75,5.00,2026-10-07T23:15:07Z,2026-10-07T23:15:00Z,PRF1_LVN2=31401.50,PRF5_LVN1=31451.50,-1 PRF5_LVN1
@@ -725,9 +729,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - [SPEC] Warm-up of the trigger: plain u = 5.0 pt needs no history. Memory M / hold n of the variant: 3 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; tsf thresholds use s_vol.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 10 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.10; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 3, 4, 11.5, 33.
-- [SPEC] Fired line (first line in list order that fired) over those trades: OB15_BEARLO 7, OB15_BULHI 2, OB15_BEARHI 1.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 96; share whose signal bar is bar 0 of the session: 0.11; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 3, 7, 11.25, 41.
+- [SPEC] Held weeks only: 10 grid trades; share on bar 0: 0.10; signal-bar index quantiles: 0, 3, 4, 11.5, 33.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: OB15_BEARLO 7, OB15_BULHI 2, OB15_BEARHI 1.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/Wf5779582_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -735,7 +740,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - bars of the session: 37, first known 2026-10-21T22:03:02.464Z, last known 2026-10-22T05:59:59.408Z; rebuilt-from-tape check 37/37/37; threshold values: L=10, thr_contracts=59.799, s_vol=0.997
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 15,2026-10-22T02:06:41.553Z,-1,OB15_BULHI,29744.25,29741.75,5.00,Y
 16,2026-10-22T02:17:24.459Z,-1,OB15_BULLO,29715.50,29700.25,5.00,no
 ```
@@ -745,9 +750,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 15,-1,2026-10-22T02:06:42.869Z,29740.50,0.4398,29740.39,2026-10-22T02:32:39.248Z,29680.39,Target,60.0,60.0,60.00,1195.16
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 1 trades.
-INPUTS (all 37 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 37 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-21T22:03:02.464Z,29984.00,29993.25,29896.00,29901.50,5.00,2026-10-21T20:59:59Z,2026-10-21T20:59:00Z,OB15_BULHI=29744.25,OB15_BEARLO=30059.25,
 1,2026-10-21T22:35:07.120Z,29901.25,29921.00,29831.75,29858.00,5.00,2026-10-21T22:03:02Z,2026-10-21T22:03:00Z,OB15_BULHI=29744.25,OB15_BEARLO=30059.25,
 2,2026-10-21T22:52:19.675Z,29859.75,29863.25,29833.50,29846.00,5.00,2026-10-21T22:35:07Z,2026-10-21T22:35:00Z,OB15_BULHI=29744.25,OB15_BEARLO=30059.25,
@@ -795,7 +800,7 @@ k=15 2026-10-22T02:06:41.553Z side -1 fired OB15_BULHI: OB15_BULHI=29744.25; OB1
 - bars of the session: 19, first known 2026-10-11T22:00:00.000Z, last known 2026-10-12T05:59:59.772Z; rebuilt-from-tape check 19/19/19; threshold values: L=10, thr_contracts=51.427, s_vol=0.857
 SIGNALS (raw events of the session: 2 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 2,2026-10-11T23:02:23.937Z,1,OB15_BEARLO,31181.50,31190.00,5.00,Y
 3,2026-10-11T23:31:04.096Z,1,OB15_BEARHI,31217.25,31266.00,5.00,Y
 ```
@@ -806,9 +811,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 3,1,2026-10-11T23:31:05.159Z,31268.00,0.4398,31268.11,2026-10-12T00:52:40.695Z,31207.75,Stop,60.0,60.0,-60.36,-1212.04
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 2 trades.
-INPUTS (all 19 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 19 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-11T22:00:00.000Z,31145.50,31145.50,31145.50,31145.50,5.00,2026-10-09T20:59:59Z,2026-10-09T20:59:00Z,,OB15_BEARLO=31181.50,
 1,2026-10-11T22:04:05.117Z,31149.25,31186.00,31124.50,31180.50,5.00,2026-10-11T22:00:00Z,2026-10-11T22:00:00Z,,OB15_BEARLO=31181.50,
 2,2026-10-11T23:02:23.937Z,31180.50,31200.00,31172.00,31190.00,5.00,2026-10-11T22:04:05Z,2026-10-11T22:04:00Z,OB15_BEARLO=31181.50,OB15_BEARHI=31217.25,+1 OB15_BEARLO
@@ -839,7 +844,7 @@ k=3 2026-10-11T23:31:04.096Z side +1 fired OB15_BEARHI: OB15_BEARHI=31217.25; OB
 - bars of the session: 24, first known 2026-09-30T22:05:59.255Z, last known 2026-10-01T05:59:59.928Z; rebuilt-from-tape check 24/24/24; threshold values: L=10, thr_contracts=50.544, s_vol=0.842
 SIGNALS (raw events of the session: 4 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 3,2026-09-30T23:38:36.472Z,1,OB15_BEARLO,30811.25,30825.00,5.00,Y
 4,2026-10-01T00:05:11.452Z,-1,OB15_BEARLO,30811.25,30795.00,5.00,Y
 7,2026-10-01T01:15:01.808Z,1,OB15_BEARLO,30811.25,30815.00,5.00,Y
@@ -853,9 +858,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 7,1,2026-10-01T01:15:03.005Z,30814.00,0.4398,30814.11,2026-10-01T03:00:49.251Z,30874.11,Target,60.0,60.0,60.00,1195.16
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 3 trades.
-INPUTS (all 24 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 24 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-09-30T22:05:59.255Z,30707.00,30735.75,30684.50,30731.25,5.00,2026-09-30T20:59:59Z,2026-09-30T20:59:00Z,OB15_BULHI=30600.00,OB15_BEARLO=30811.25,
 1,2026-09-30T22:44:02.733Z,30731.25,30794.75,30712.75,30778.25,5.00,2026-09-30T22:05:59Z,2026-09-30T22:05:00Z,OB15_BULHI=30600.00,OB15_BEARLO=30811.25,
 2,2026-09-30T23:08:42.478Z,30778.50,30783.50,30759.50,30762.75,5.00,2026-09-30T22:44:02Z,2026-09-30T22:44:00Z,OB15_BULHI=30600.00,OB15_BEARLO=30811.25,
@@ -930,9 +935,10 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - [SPEC] Warm-up of the trigger: native u needs 20 earlier bars of the continuous series (rolling 100, shifted). Memory M / hold n of the variant: 2 bar(s). The bar series is ONE continuous series of ALL sessions (all six session codes), so the previous-session bars (close 16:00-18:00 ET, pre-market 08:30-09:30 ET etc.) must be built and kept; the first bar of the session sees them (T0 = previous bar's close).
 - [SPEC] Warm-up of the bar: none beyond the daily scale table (trailing 20 stats rows; fewer than 5 rows fall back to r0) because every kernel restarts at each session boundary; tsf thresholds use s_vol.
 
-**7. WHAT ACTUALLY TRADES (held-week grid trades, measured)**
-- [SPEC] 55 grid trades in the held weeks; share of trades whose signal bar is bar 0 of the session: 0.07; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 2, 4, 7, 19.
-- [SPEC] Fired line (first line in list order that fired) over those trades: FIB15_R236 25, FIB15_R382 11, FIB15_R786 6, FIB15_R618 6, FIB15_R500 6, FIB15_R650 1.
+**7. WHAT ACTUALLY TRADES (grid trades, measured)**
+- [SPEC] All grid trades of this cell in the loaded months (from 170 days before the first held week to the data end): 416; share whose signal bar is bar 0 of the session: 0.06; signal-bar index within its session, quantiles (min, 25%, median, 75%, max): 0, 1, 3, 6, 19.
+- [SPEC] Held weeks only: 55 grid trades; share on bar 0: 0.07; signal-bar index quantiles: 0, 2, 4, 7, 19.
+- [SPEC] Fired line (first line in list order that fired) over the held-week trades: FIB15_R236 25, FIB15_R382 11, FIB15_R786 6, FIB15_R618 6, FIB15_R500 6, FIB15_R650 1.
 
 **8. PARITY DATA: 3 dated sessions (bars, levels, signal, entry, exit)** Engine = gcore2x (grid). Full per-bar tables with every line value: `autopilot/spec_stack_inputs/W65dc0e76_td<td>.csv` (one file per session; small). Raw tape pages are NOT written (the tape is /mnt/l2/l2vast/_bars/trades/<UTC day>.parquet; D8_PARITY_TAPE pages are 7.9 MB each, box1 is 99% full).
 
@@ -940,7 +946,7 @@ See section A of this page (ENGINE text). Book-specific: bracket `plain60/60` = 
 - bars of the session: 10, first known 2026-10-22T22:17:47.443Z, last known 2026-10-23T05:59:59.668Z; rebuilt-from-tape check 10/10/10; threshold values: L=5, thr_contracts=398.663, s_vol=0.997
 SIGNALS (raw events of the session: 4 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 3,2026-10-23T01:12:29.405Z,1,FIB15_R618,29107.81,29120.00,34.25,Y
 7,2026-10-23T04:31:35.919Z,1,FIB15_R382,29140.02,29173.00,34.25,Y
 8,2026-10-23T05:34:53.780Z,-1,FIB15_R786,29189.02,29136.75,34.25,Y
@@ -954,9 +960,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 8,-1,2026-10-23T05:34:54.846Z,29124.00,0.4398,29123.89,2026-10-23T05:43:42.055Z,29184.25,Stop,60.0,60.0,-60.36,-1212.04
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 3 trades.
-INPUTS (all 10 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 10 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-22T22:17:47.443Z,29116.50,29149.25,29090.00,29125.00,33.88,2026-10-22T20:59:58Z,2026-10-22T20:59:00Z,FIB15_R500=29124.00,FIB15_R382=29145.48,
 1,2026-10-22T23:33:00.148Z,29125.00,29165.75,29060.00,29060.00,34.25,2026-10-22T22:17:47Z,2026-10-22T22:17:00Z,,FIB15_R786=29071.95,
 2,2026-10-23T00:42:47.982Z,29059.50,29142.00,29022.75,29142.00,34.25,2026-10-22T23:33:00Z,2026-10-22T23:33:00Z,FIB15_R382=29129.94,FIB15_R236=29143.62,
@@ -979,7 +985,7 @@ k=8 2026-10-23T05:34:53.780Z side -1 fired FIB15_R786: FIB15_R236=29150.52; FIB1
 - bars of the session: 7, first known 2026-10-15T23:07:02.367Z, last known 2026-10-16T05:59:58.154Z; rebuilt-from-tape check 7/7/7; threshold values: L=5, thr_contracts=348.266, s_vol=0.871
 SIGNALS (raw events of the session: 4 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 0,2026-10-15T23:07:02.367Z,-1,FIB15_R382,30099.53,30035.00,31.25,Y
 1,2026-10-15T23:36:18.600Z,-1,FIB15_R236,30074.32,30000.00,31.25,no
 4,2026-10-16T03:50:17.816Z,1,FIB15_R236,29981.26,30179.00,31.25,Y
@@ -992,9 +998,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 4,1,2026-10-16T03:50:18.939Z,30176.25,0.4398,30176.36,2026-10-16T05:59:58.154Z,30191.00,SessionEnd,60.0,60.0,14.64,287.96
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 2 trades.
-INPUTS (all 7 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 7 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-15T23:07:02.367Z,30089.00,30128.00,30027.50,30035.00,31.25,2026-10-15T20:59:59Z,2026-10-15T20:59:00Z,FIB15_R650=30031.32,FIB15_R618=30039.47,-1 FIB15_R382
 1,2026-10-15T23:36:18.600Z,30035.25,30064.00,30000.00,30000.00,31.25,2026-10-15T23:07:02Z,2026-10-15T23:07:00Z,FIB15_E1272=29992.91,FIB15_R236=30074.32,-1 FIB15_R236
 2,2026-10-16T00:27:58.158Z,29999.50,30052.50,29962.00,29962.25,31.25,2026-10-15T23:36:18Z,2026-10-15T23:36:00Z,FIB15_E1618=29937.46,FIB15_E1272=29992.91,
@@ -1013,7 +1019,7 @@ k=4 2026-10-16T03:50:17.816Z side +1 fired FIB15_R236: FIB15_R236=29981.26; FIB1
 - bars of the session: 9, first known 2026-10-08T22:57:29.280Z, last known 2026-10-09T05:59:57.199Z; rebuilt-from-tape check 9/9/9; threshold values: L=5, thr_contracts=342.848, s_vol=0.857
 SIGNALS (raw events of the session: 3 in total; 'trade' = Y if the grid engine took it, otherwise blocked by the open position or entry after the session end [READING])
 ```csv
-k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u,trade
+k,signal_bar_known_utc,side,fired_line,level_at_T0,close,u_trigger,trade
 2,2026-10-09T00:16:39.053Z,-1,FIB15_R236,31030.02,30979.50,24.88,Y
 5,2026-10-09T03:09:02.079Z,1,FIB15_R236,30982.43,31056.00,25.25,Y
 7,2026-10-09T05:56:18.174Z,1,FIB15_R236,31052.12,31171.00,25.50,Y
@@ -1026,9 +1032,9 @@ k,side,entry_utc,entry_raw,slip_ticks,entry_px,exit_utc,exit_px,exit_reason,stop
 7,1,2026-10-09T05:56:19.206Z,31170.25,0.4398,31170.36,2026-10-09T05:59:57.199Z,31158.00,SessionEnd,60.0,60.0,-12.36,-252.04
 ```
 - check: the independent print-by-print scan equals the sim_slice points for all of 3 trades.
-INPUTS (all 9 bars; level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
+INPUTS (all 9 bars; u_trigger = the trigger's own unit (5.0 pt for plain variants; rolling-100 median bar range shifted one bar for native variants; NOT the bracket unit, which is the stop/target of TRADES); level columns = the nearest finite line below / at-or-below the close and above the close among the module's lines at the bar's decision time T0; every line value is in the CSV file)
 ```csv
-k,known_utc,open,high,low,close,u,T0_utc,line_minute_utc,line_below,line_above,event
+k,known_utc,open,high,low,close,u_trigger,T0_utc,line_minute_utc,line_below,line_above,event
 0,2026-10-08T22:57:29.280Z,31020.50,31072.50,30995.00,31035.00,24.88,2026-10-08T20:59:59Z,2026-10-08T20:59:00Z,FIB15_R786=30994.88,,
 1,2026-10-08T23:47:00.924Z,31034.50,31036.50,30990.00,30990.00,24.88,2026-10-08T22:57:29Z,2026-10-08T22:57:00Z,FIB15_R650=30977.16,FIB15_R786=30994.88,
 2,2026-10-09T00:16:39.053Z,30990.00,31002.50,30953.00,30979.50,24.88,2026-10-08T23:47:00Z,2026-10-08T23:47:00Z,FIB15_R618=30961.26,FIB15_R500=30982.50,-1 FIB15_R236
@@ -1076,6 +1082,6 @@ k=7 2026-10-09T05:56:18.174Z side +1 fired FIB15_R236: FIB15_R236=31052.12; FIB1
 
 ## E. OPEN POINTS FOR LEAD (READING unless marked)
 - Print granularity for `tsf` (and any activity bar): the grid used the old per-record tape; D8 uses run-merged prints. A tsf book needs a LEAD decision before coding (build the old record semantics, or re-run the books on a run-merge `tsf`).
-- Line files are the engine's stored files (data end 2026-11-13); a coder reproducing them from the tape will meet the 3-day store hole at 2026-10-31..11-04 for profile lines (see D8_NYAM_SPEC_Le4fede95 / B7bfd33b7).
-- Near-twins inside the register: `dchg_N` and `kagi_N` rows are the same bars; ob15 / fib15 / piv_floor books on the same tsf row share signals; the register's stack score therefore counts some of these twice (the register's own near-twin rule is by module+variant+side+bar type).
+- Line files are the engine's stored files (written 2026-11-17, data to 2026-11-13). The trade tape has no files for 2026-10-31..11-04 (D8_BAR_DEFS), which touches profile / pivot / volume lines built over those days (see D8_NYAM_SPEC_Le4fede95 / B7bfd33b7 for the PRF5 hole); every dated session on this page is before 2026-10-25, so none is affected.
+- Shared inputs inside the register [SPEC]: `dchg_N` and `kagi_N` rows are the SAME bars (same kernel, same thresholds), so a dchg book and a kagi book with the same module/variant/params/bracket produce the same signals (the Test 8 table lists such pairs, e.g. Wb1ab799c vs W050c781f, W10e7f4cd vs Wca8c5296); books on the same bar row share the bars but not the signals. A coder needs one builder for both.
 - The 'level at T0' rule and the fact that Asia bar 0 / NY AM bar 0 take their lines and memory from the previous session are engine behaviours an NT8 coder would not guess; they are the main source of mismatch risk.
