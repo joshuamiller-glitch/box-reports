@@ -1,13 +1,3 @@
-2026-11-26 03:30Z | WARNING serverB below 85% busy for 3 readings in a row with jobs pending
-2026-11-26 03:30Z | WARNING serverC below 85% busy for 3 readings in a row with jobs pending
-2026-11-26 03:30Z | WARNING serverD below 85% busy for 4 readings in a row with jobs pending
-2026-11-26 03:30Z | WARNING server2 below 85% busy for 3 readings in a row with jobs pending
-2026-11-26 03:30Z | AUTO-FILL step run: dispatcher alive pid 2316524/2316525/4124370
-2026-11-26 03:30Z | HOST box1 PRODUCING NOTHING (unreachable (TimeoutExpired(['bash', '-c', 'G=/mnt/l2/l2vast/_grid/res; R=/mnt/l2/l2vast/_th_))
-2026-11-26 03:30Z | HOST server2 PRODUCING NOTHING (E-ENGINE host server2 slots 0/28)
-2026-11-26 03:30Z | HOST serverA PRODUCING NOTHING (E-ENGINE host serverA slots 0/102)
-2026-11-26 03:30Z | HOST serverB PRODUCING NOTHING (E-ENGINE host serverB slots 0/102)
-2026-11-26 03:30Z | HOST serverC PRODUCING NOTHING (E-ENGINE host serverC slots 0/140)
 2026-11-26 03:30Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 0/68)
 2026-11-26 03:30Z | HOST SLOT_HEAL PRODUCING NOTHING (03:32Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 2316525, supervisor restarts it (once per 30 min per hos)
 2026-11-26 03:35Z | box1: busy 97%, load1 50.78, workers 15, MemAvail 55 GB | server2: busy 78%, load1 55.80, workers 0, MemAvail 695 GB | pending box1-eligible 513628 / server2-eligible 159 (shared queues count in both; unleased, not DONE) | serverA: busy 41%, load1 51.66, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1032 GB | serverB: busy 53%, load1 63.62, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 990 GB | serverC: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
@@ -301,3 +291,10 @@
 2026-11-26 06:40Z | HOST box1 PRODUCING NOTHING (unreachable (TimeoutExpired(['bash', '-c', 'G=/mnt/l2/l2vast/_grid/res; R=/mnt/l2/l2vast/_th_))
 2026-11-26 06:40Z | HOST serverB PRODUCING NOTHING (E-ENGINE host serverB slots 0/102)
 2026-11-26 06:40Z | HOST SLOT_HEAL PRODUCING NOTHING (06:40Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 487681, supervisor restarts it (once per 30 min per host)
+2026-11-26 06:45Z | box1: busy 99%, load1 60.38, workers 11, MemAvail 60 GB | server2: busy 75%, load1 51.13, workers 0, MemAvail 956 GB | pending box1-eligible 512526 / server2-eligible 465 (shared queues count in both; unleased, not DONE) | serverA: busy 60%, load1 78.03, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1030 GB | serverB: busy 50%, load1 62.03, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 985 GB | serverC: busy 0%, load1 0.08, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
+2026-11-26 06:45Z | WARNING serverA below 85% busy for 12 readings in a row with jobs pending
+2026-11-26 06:45Z | WARNING serverB below 85% busy for 42 readings in a row with jobs pending
+2026-11-26 06:45Z | WARNING serverC below 85% busy for 42 readings in a row with jobs pending
+2026-11-26 06:45Z | WARNING serverD below 85% busy for 43 readings in a row with jobs pending
+2026-11-26 06:45Z | WARNING server2 below 85% busy for 42 readings in a row with jobs pending
+2026-11-26 06:45Z | AUTO-FILL step run: dispatcher alive pid 604268/604269/606345
