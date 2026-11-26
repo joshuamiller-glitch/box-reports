@@ -229,3 +229,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 18:43Z Josh: test 3 Part C (fittings only) costs ~90 h fleet; A London-only ~11 h (recommended) / B all four ~90 h / C skip; menu assumed = 8 exit settings + bare
 - 19:09Z Josh: dated JT menu for Part C is ~575k set-months (not buildable in 48 h): narrower scope (e.g. London only, fewer refit dates) or skip?
 - 19:37Z Josh: resume the paused candidate backlog as lowest-priority filler (box1 disk 99% full)? default: stays paused
+- 19:58Z Josh: Q1 repeat at t>=3 is ~142 h of fleet (1.28M set-months): yes/no?
