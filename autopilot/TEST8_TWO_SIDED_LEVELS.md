@@ -1,6 +1,6 @@
 # TEST 8: level books that trade BOTH sides, judged against drift (W-TEST8)
 
-Written 2026-11-26 22:13 UTC. **QUICK SCREEN label on every number** (grid tape walk / gcore2x re-simulation, 1 NQ lot per held unit at $20/point, grid cost in, no stack rules, no account layers; 160 held weeks 2023-10 to 2026-10 = weeks 26..185 of the grid). Order: autopilot/DIRECTIVE_TEST8_2149Z.md (relay design under Josh's standing 18:22Z order, not Josh's words). One named primary, no best-of penalty. Exact rows are queued, see section F.
+Written 2026-11-26 23:52 UTC. **QUICK SCREEN label on every number** (grid tape walk / gcore2x re-simulation, 1 NQ lot per held unit at $20/point, grid cost in, no stack rules, no account layers; 160 held weeks 2023-10 to 2026-10 = weeks 26..185 of the grid). Order: autopilot/DIRECTIVE_TEST8_2149Z.md (relay design under Josh's standing 18:22Z order, not Josh's words). One named primary, no best-of penalty. Exact rows are queued, see section F.
 
 ## ANSWER FIRST
 
@@ -172,14 +172,14 @@ Overlap with the Test 6 stacks: Wbcfa80fb (N4) is also in N1 and Wf74d00e3 (N5) 
 
 Exact rows queued 22:01Z at the END of /mnt/l2/l2vast/_split/pending_nyam_gating.txt via _test5/queue_rows.py under its lock: held cells bare R0 (TL3_ALN_<AS|LO|NY|NP>_<id>_R0RT, 606 cells, 3,025 set-months of the held periods; 2,921 already in the queue from Tests 4-7/Q1, 66 done, 38 new; 8 cells needed stage-B event files, built), stacks TL3_SR_<AS|NY>_T8<A4|A5|N4|N5>_BARE and _LY (bare and with the session live account layers: Asia JT275 = STK8, SZW3, CGB1, DLA4, DLB14, DLC4; NY AM JT162 = BL6, CAP6, STK7, SZW2, NTS2, CGB2; 42 months, 1 lot per book, per-book Trade Health not applied) = 336 new set-months. Rows ahead of the new rows when queued: about 241,700. Served at about 8,500-9,000 rows/h: new rows come up about 27-28 h later (Fri 28 Nov early); the held-cell rows already in the queue sit at positions 7.6k to 200k (median 14.8k).
 
-Exact held-period status (refreshed 22:13 UTC; re-run code/th_test8/exact8.py then page8.py):
+Exact held-period status (refreshed 23:52 UTC; re-run code/th_test8/exact8.py then page8.py):
 
 | session | held periods landed (all months DONE) | of | exact $/lot/wk on landed periods | quick $/lot/wk same periods |
 |---|---|---|---|---|
-| Asia | 0 | 144 | pending | pending |
-| London | 0 | 75 | pending | pending |
-| NYAM | 6 | 336 | -1 | 908 |
-| NYPM | 5 | 75 | 223 | 335 |
+| Asia | 134 | 144 | 123 | 378 |
+| London | 16 | 75 | -162 | -13 |
+| NYAM | 281 | 336 | -66 | 507 |
+| NYPM | 51 | 75 | 90 | 376 |
 
 Exact drift null: **not queued.** Count: 3,025 held-cell set-months x 200 draws = 605,000 set-months = about 67 h of the whole fleet at 9,000/h (over the 60 h limit). Option for LEAD: 20 draws = 60,500 set-months, about 6.7 h of fleet. The quick-screen null is the same engine on the same signals (draw 0 reproduces the stored grid weekly points exactly for 487 of 606 cells, 80%).
 

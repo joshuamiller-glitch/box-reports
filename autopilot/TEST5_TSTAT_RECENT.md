@@ -78,7 +78,14 @@ Each 13-week date draw 12 of the books the primary would hold (London 5; fewer i
 
 ## EXACT (primary's held cells per session, bare R0, held periods; added to the calibration)
 
-PENDING: the build of the primary's exact sets (4,075 cells, 4,208 held periods) is running on box 1 (niced, 3 procs); rows are appended to pending_nyam_gating.txt only after the Test 3, Test 4 and Part C rows (waiter /mnt/l2/l2vast/_test5/queue_chain5.sh). Finishing commands are in MORNING.md.
+| session | version | held periods landed | weeks | exact $/lot/wk | exact max DD | exact worst wk | exact L6M | exact L3M | quick $/lot/wk (same periods) | quick max DD | quick L6M | quick L3M | exact / quick |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | N>=100, t>=4 | 1588 of 1697 | 160 | 191 | 12253 | -5232 | 333 | 203 | 186 | 7026 | 432 | 228 | 1.03 |
+| London | N>=100, t>=4 | 64 of 333 | 134 | -152 | 25922 | -5970 | -202 | -537 | -135 | 25674 | -132 | -422 | 1.12 |
+| NYAM | N>=100, t>=4 | 1471 of 1968 | 160 | 339 | 18212 | -6251 | 161 | 450 | 211 | 23785 | -79 | 292 | 1.61 |
+| NYPM | N>=100, t>=4 | 123 of 210 | 160 | 318 | 22790 | -4572 | 779 | 268 | 275 | 26212 | 604 | 277 | 1.16 |
+
+Bare R0, own bracket, 1 lot per book, equal weight over the books held that week, events from raw signals (stage B build, W-ROTA method); only held periods whose months all landed are used (quick screen restricted to the same periods). Calibration: compare the exact / quick column with Test 3 (average 1.52x, median 1.17 on 17 live books).
 
 ## Per session: all 24 versions, grids and slopes (QUICK SCREEN; recent columns first)
 

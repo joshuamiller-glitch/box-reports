@@ -1,6 +1,3 @@
-2026-11-26 17:45Z | WARNING serverA below 85% busy for 144 readings in a row with jobs pending
-2026-11-26 17:45Z | WARNING serverB below 85% busy for 174 readings in a row with jobs pending
-2026-11-26 17:45Z | WARNING serverC below 85% busy for 174 readings in a row with jobs pending
 2026-11-26 17:45Z | WARNING serverD below 85% busy for 175 readings in a row with jobs pending
 2026-11-26 17:45Z | WARNING server2 below 85% busy for 16 readings in a row with jobs pending
 2026-11-26 17:45Z | AUTO-FILL step run: dispatcher alive pid 2907673/2907675/2953093
@@ -298,3 +295,6 @@
 2026-11-26 23:45Z | box1: busy 99%, load1 57.06, workers 15, MemAvail 84 GB | server2: busy 96%, load1 85.06, workers 25, MemAvail 822 GB | pending box1-eligible 508186 / server2-eligible 230600 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 175.17, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 1005 GB | serverB: busy 98%, load1 156.04, workers 105 (grid) + 92 (engine), 128 threads, MemAvail 965 GB | serverC: busy 35%, load1 45.73, workers 1 (grid) + 136 (engine), 128 threads, MemAvail 1473 GB | serverD: busy 72%, load1 47.02, workers 1 (grid) + 60 (engine), 64 threads, MemAvail 1479 GB
 2026-11-26 23:45Z | WARNING serverC below 85% busy for 20 readings in a row with jobs pending
 2026-11-26 23:45Z | WARNING serverD below 85% busy for 6 readings in a row with jobs pending
+2026-11-26 23:50Z | box1: busy 90%, load1 37.47, workers 12, MemAvail 76 GB | server2: busy 95%, load1 79.03, workers 24, MemAvail 854 GB | pending box1-eligible 508142 / server2-eligible 239042 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 176.92, workers 105 (grid) + 93 (engine), 128 threads, MemAvail 1008 GB | serverB: busy 98%, load1 151.10, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 970 GB | serverC: busy 36%, load1 45.95, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1472 GB | serverD: busy 72%, load1 46.17, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1483 GB
+2026-11-26 23:50Z | WARNING serverC below 85% busy for 21 readings in a row with jobs pending
+2026-11-26 23:50Z | WARNING serverD below 85% busy for 7 readings in a row with jobs pending
