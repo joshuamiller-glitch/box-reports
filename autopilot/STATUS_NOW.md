@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 05:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 05:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 05:00Z | AUTO-FILL step run: dispatcher alive pid 171292/171294/234321
+LATEST CORES.md LINE: 2026-11-26 05:15Z | AUTO-FILL step run: dispatcher alive pid 274700/274702/295139
 
 ## UTC TIME WRITTEN
-2026-11-26 05:00Z
+2026-11-26 05:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 05:00Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 68.7 GB; live reservations 1 (1 GB); workers 14, of which TP-adopted 14 (RSS 18.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 39.31, 48.43, 53.34
-  by tag: NYR quota 12 running 14 hungry False RSS 18.4 GB PSS 14.9 GB
+Server 1 (this box): MemAvail 58.1 GB; live reservations 5 (5 GB); workers 12, of which TP-adopted 11 (RSS 12.8 GB) vs others 1 (RSS 0.8 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 57.82, 56.77, 54.20
+  by tag: NYR quota 12 running 11 hungry True RSS 12.8 GB PSS 11.2 GB; REST quota 0 running 1 hungry False RSS 0.8 GB PSS 0.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L188c2b52_ALNCT77p (x12);TL3_NYE_L188c2b52_ALNCT84p (x10);TL3_NYE_L188c2b52_ALNCT70p (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 48.14, 48.95, 52.08|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_L188c2b52_ALNCT98m (x12);TL3_NYE_L188c2b52_ALNCT105m (x12);TL3_NYE_L3e2fd56b_ALN (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 56.39, 57.75, 55.52|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
