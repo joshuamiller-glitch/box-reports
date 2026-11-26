@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 18:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 19:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 18:45Z | AUTO-FILL step run: dispatcher alive pid 3148310/3148312/3208884
+LATEST CORES.md LINE: 2026-11-26 19:00Z | WARNING serverC below 85% busy for 189 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-26 18:45Z
+2026-11-26 19:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 18:45Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 34.7 GB; live reservations 1 (1 GB); workers 1, of which TP-adopted 1 (RSS 0.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 57.09, 53.50, 49.48
-  by tag: NYE quota 16 running 1 hungry False RSS 0.6 GB PSS 0.6 GB
+Server 1 (this box): MemAvail 24.8 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 53.75, 51.92, 51.72
+  by tag: 
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_La695a562_ALN (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 52.86, 57.89, 58.11|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_L788749c5_ALN (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 77.31, 75.00, 67.26|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 52.86, 57.89, 58.11|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261126_1506Z_Josh-rotation-test-graded-prior-year-levels.md 20261126_1520Z_Josh-rotation-test-first-on-all-six-backlog-paused.md 20261126_1711Z_Josh-rotation-test-2-qualify-families-on-off.md 20261126_1818Z_Josh-test-3-qualified-fixed-basket-slow-requalify.md 20261126_1822Z_Josh-test-3-add-brackets-only-and-fittings-only.md
+20261126_1520Z_Josh-rotation-test-first-on-all-six-backlog-paused.md 20261126_1711Z_Josh-rotation-test-2-qualify-families-on-off.md 20261126_1818Z_Josh-test-3-qualified-fixed-basket-slow-requalify.md 20261126_1822Z_Josh-test-3-add-brackets-only-and-fittings-only.md 20261126_1849Z_Josh-test-4-strict-qualification-ladder-and-part-C-scope.md
