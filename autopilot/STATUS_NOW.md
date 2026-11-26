@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 00:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 00:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 00:00Z | box1: busy 99%, load1 44.75, workers 10, MemAvail 65 GB | server2: busy 96%, load1 81.10, workers 26, MemAvail 804 GB | pending box1-eligible 515034 / server2-eligible 9231 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 185.83, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 906 GB | serverB: busy 100%, load1 195.28, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 852 GB | serverC: busy 100%, load1 137.95, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1331 GB | serverD: busy 95%, load1 63.32, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1405 GB
+LATEST CORES.md LINE: 2026-11-26 00:15Z | box1: busy 98%, load1 44.00, workers 16, MemAvail 66 GB | server2: busy 98%, load1 88.60, workers 27, MemAvail 615 GB | pending box1-eligible 515029 / server2-eligible 8228 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 186.30, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 897 GB | serverB: busy 100%, load1 183.22, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 864 GB | serverC: busy 100%, load1 138.63, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1312 GB | serverD: busy 99%, load1 66.89, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1407 GB
 
 ## UTC TIME WRITTEN
-2026-11-26 00:00Z
+2026-11-26 00:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 00:00Z | box1: busy 99%, load1 44.75, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 63.9 GB; live reservations 5 (5 GB); workers 10, of which TP-adopted 10 (RSS 15.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 44.75, 54.18, 56.95
-  by tag: NYR quota 12 running 10 hungry True RSS 15.2 GB PSS 12.6 GB
+Server 1 (this box): MemAvail 64.9 GB; live reservations 1 (1 GB); workers 16, of which TP-adopted 15 (RSS 19.5 GB) vs others 1 (RSS 0.7 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 44.00, 53.05, 55.48
+  by tag: NYR quota 12 running 15 hungry False RSS 19.5 GB PSS 16.1 GB; REST quota 0 running 1 hungry False RSS 0.7 GB PSS 0.6 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L6f495d48_ALNCT63p (x12);TL3_NYE_L6f495d48_ALNCT56p (x8);TL3_NYE_L6f495d48_ALNCT70p (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 82.60, 83.58, 84.59|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
+  top running jobs: TL3_NYE_L6f495d48_ALNCT77m (x12);TL3_NYE_L6f495d48_ALNCT70m (x12);TL3_NYE_L6f495d48_ALNCT84m (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 92.21, 89.22, 87.20|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 82.60, 83.58, 84.59|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261125_1625Z_Josh-NYPM-drawdown-at-6-lots.md 20261125_1752Z_Josh-London-when-ready.md 20261125_1930Z_Josh-combined-all-sessions-fitted-at-6-and-best-session-lots.md 20261125_2057Z_Josh-pick-best-recent-that-passes-prior-years.md 20261125_2120Z_Josh-selection-rule-bake-off-walk-forward.md
+20261125_1752Z_Josh-London-when-ready.md 20261125_1930Z_Josh-combined-all-sessions-fitted-at-6-and-best-session-lots.md 20261125_2057Z_Josh-pick-best-recent-that-passes-prior-years.md 20261125_2120Z_Josh-selection-rule-bake-off-walk-forward.md 20261125_2240Z_Josh-frontier-on-filter-first-picks-and-keys.md

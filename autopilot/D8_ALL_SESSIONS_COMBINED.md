@@ -1,10 +1,43 @@
 # D8 ALL SESSIONS COMBINED (W-COMBINED; order 0745Z; Josh: "do we have combined #s now that we have all books by ny pm? like weekly DD/prfit?")
 
-Generated 2026-11-26 00:14Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
+Generated 2026-11-26 00:17Z UTC by code/d8_combined/combine.py (reads finished engine sets only; queues and edits nothing; refreshed by cron every 2 h). Information only: no new runs.
 
 # W-COMB6 (order 1930Z, Josh 25 Nov 19:14Z): ALL FOUR SESSIONS COMBINED AT 6 LOTS, THEN BEST LOTS PER SESSION
 
-Refreshed 2026-11-26 00:14Z UTC by code/d8_combined/combine.py + combine6.py (cron every 2 h). Reporting only; every number is a whole-stack engine run at the stated lots (net of $4.84 per lot round trip); sessions are added by Globex trading date on ONE common trading-day calendar (union of the dates of every set on this block, zero-filled; weeks Monday-Sunday), so combined max DD / ulcer come from the true combined daily curve, not a sum of session drawdowns. Windows: L6M = 202605-202610 (lead), L3M = 202608-202610, 2023 (from 202304), 2024, 2025 (without 202511). Engine sets end at month 202610 (last trade date 20261030; November is not in them). Lots rule of the file: book lots = round-half-up(weight x session lots), min 1.
+Refreshed 2026-11-26 00:17Z UTC by code/d8_combined/combine.py + combine6.py (cron every 2 h). Reporting only; every number is a whole-stack engine run at the stated lots (net of $4.84 per lot round trip); sessions are added by Globex trading date on ONE common trading-day calendar (union of the dates of every set on this block, zero-filled; weeks Monday-Sunday), so combined max DD / ulcer come from the true combined daily curve, not a sum of session drawdowns. Windows: L6M = 202605-202610 (lead), L3M = 202608-202610, 2023 (from 202304), 2024, 2025 (without 202511). Engine sets end at month 202610 (last trade date 20261030; November is not in them). Lots rule of the file: book lots = round-half-up(weight x session lots), min 1.
+
+## BUILD v38 ROW: Asia 6 / London 8 / NY AM 6 / NY PM 6, exactly as the build runs it (order 00:25Z)
+
+Asia = 4-book + JT275 (STC-free) at 6/6/6/6; London = three-book STKd8w42lo BARE at 8/4/2 (L19201dfc 8, L12842dde 4, L74274eca 2); NY AM = nine-book + JT162 at 6/6/6/6/3/6/2/2/3; NY PM = delivered four STKd893133bd8 + JT241 at 6 lots each. Whole-stack engine runs, no new runs were needed (the London 8/4/2 bare run was among the 462 filter-first rows, landed). London milder-menu pick from W-LAYERS2: NOT YET POSTED; the same row is added here when it exists.
+
+### BUILD v38 (6 / 8 / 6 / 6)
+
+| session | set | lots per book | data end (last trade date / last month with trades) |
+|---|---|---|---|
+| Asia | `TL3_SR_AS_STKd8da2eb47b_FSff6_PICKC` | 6 / 6 / 6 / 6 | 20261030 / 202610 |
+| NY AM | `TL3_SR_NY_STKd8cd0279ff_FSff6_PICKC` | 6 / 6 / 6 / 6 / 3 / 6 / 2 / 2 / 3 | 20261030 / 202610 |
+| London | `TL3_SR_LO_STKd8w42lo_FSffb8_BARE` | 8 / 4 / 2 | 20261030 / 202610 |
+| NY PM | `TL3_SR_NP_STKd893133bd8_FSf46_PICKC` | 6 / 6 / 6 / 6 | 20261030 / 202610 |
+
+Last 6 months (lead) and last 3 months: whole-stack dollars at the stated lots; max DD of the combined daily curve (not a sum of session drawdowns).
+
+| row | L6M $/wk | max DD | ulcer | worst day | worst week | trades/day | L3M $/wk | max DD | ulcer | worst day | worst week | trades/day |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | 17,132 | -36,934 | 10,007 | -16,443 | -19,755 | 12.3 | 11,869 | -36,934 | 11,249 | -16,351 | -19,755 | 10.7 |
+| NY AM | 54,201 | -69,974 | 20,538 | -49,899 | -35,029 | 23.9 | 38,989 | -54,493 | 16,065 | -46,331 | -13,674 | 20.0 |
+| London | 19,562 | -39,760 | 13,228 | -25,970 | -20,695 | 10.2 | 18,013 | -39,760 | 15,645 | -20,881 | -20,172 | 9.7 |
+| NY PM | 14,299 | -30,613 | 9,301 | -20,406 | -23,047 | 8.8 | 15,328 | -20,350 | 6,575 | -13,783 | -18,119 | 8.5 |
+| **COMBINED (four sessions, one daily curve)** | 105,194 | -38,773 | 11,739 | -38,773 | -15,957 | 55.2 | 84,199 | -36,920 | 12,895 | -30,196 | -15,957 | 49.0 |
+
+Prior years (not-a-disaster check): $ per week / max DD.
+
+| row | 2023 | 2024 | 2025 (no 202511) |
+|---|---|---|---|
+| Asia | 2,020 / -33,442 | 3,211 / -64,207 | 3,032 / -67,941 |
+| NY AM | 9,630 / -133,152 | 9,411 / -200,647 | 21,019 / -150,989 |
+| London | 2,789 / -73,097 | 4,319 / -85,706 | 1,221 / -224,333 |
+| NY PM | 4,965 / -30,973 | 3,065 / -134,363 | 6,197 / -75,805 |
+| **COMBINED (four sessions, one daily curve)** | 19,403 / -81,530 | 20,007 / -132,209 | 31,469 / -172,717 |
 
 ## PART 1: COMBINED AT 6 LOTS PER SESSION
 
@@ -88,7 +121,7 @@ Filter-first picks used (from PICKS_PRIOR_YEAR_FILTERED.md at refresh time): NY 
 | Asia | `TL3_SR_AS_STKd8da2eb47b_FSff6_PICKC` | 6 / 6 / 6 / 6 | 20261030 / 202610 |
 | NY AM | `TL3_SR_NY_STKd8cd0279ff_FSff6_PICKC` | 6 / 6 / 6 / 6 / 3 / 6 / 2 / 2 / 3 | 20261030 / 202610 |
 | London | `TL3_SR_LO_STKd8w42lo_FSlo6b_BARE` | 6 / 3 / 2 (6b; the 6a variant 6 / 3 / 1 below) | 20261030 / 202610 |
-| NY PM | `TL3_SR_NP_STKd893133bd8_FSf46_PICKC` | 6 / 6 / 12 / 6 / 3 | 20261030 / 202610 |
+| NY PM | `TL3_SR_NP_STKd893133bd8_FSf46_PICKC` | 6 / 6 / 6 / 6 | 20261030 / 202610 |
 
 Last 6 months (lead) and last 3 months: whole-stack dollars at the stated lots; max DD of the combined daily curve (not a sum of session drawdowns).
 
@@ -684,7 +717,7 @@ Mixes combined: 1295 of 1295 (a mix needs all its session-size runs landed). Ord
 | 6 / 6 / 4 / 3 | -54,988 | 11,754 | 72,494 | -1,950 | -31,855 | 54,230 / -54,988 | 13,264 / -60,950 | 13,504 / -99,083 | 23,272 / -86,530 | **FILE CURRENT** not on frontier |
 
 
-_COMB6 block built in 24 s._
+_COMB6 block built in 26 s._
 
 ---
 
@@ -696,7 +729,7 @@ _COMB6 block built in 24 s._
 
 ## 2-LOT REFRESH: combined profit and drawdown as tonight's D8 file runs (2 lots per book, plain 2-lot dollars)
 
-Refreshed 2026-11-26 00:14Z UTC by combine.py (cron every 2 h; re-resolves the NY PM pick each run). Directive: DIRECTIVE_COMBINED_REFRESH_20261123_2010Z.md. Reporting only.
+Refreshed 2026-11-26 00:17Z UTC by combine.py (cron every 2 h; re-resolves the NY PM pick each run). Directive: DIRECTIVE_COMBINED_REFRESH_20261123_2010Z.md. Reporting only.
 
 **NY PM = the STC-free pick `TL3_SR_NP_STKd893133bd8_BF2_JT209` (rank 0.002 run, W-LAYERS2): runnable in the file.**
 
@@ -1203,4 +1236,4 @@ Fitted at 2 and 4 lots per book (Asia alone, last 6 months, truly bare vs joint 
 - FILLS: 2- and 4-lot series are real engine runs (size-dependent fills), not multiples of the 1-lot series.
 - NEW BOOKS IN THE LIVE FILE: the Asia stack is the first one live; no live P&L is in this page.
 
-_Generated in 29 s._
+_Generated in 30 s._
