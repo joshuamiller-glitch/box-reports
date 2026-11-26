@@ -1,6 +1,6 @@
 # ROTATION TEST 2: qualify on history, one pick per family, switch on by recent results (W-ROT2)
 
-**QUICK SCREEN label on every number below** unless it says EXACT: grid weekly arrays (th_grid/gcore2 tape walk, not the exact engine, not calibrated against it), 1 NQ lot per book at $20/point, grid cost in, no stack rules, no account layers, no depth fills. The exact re-score of the picked books is in the last section (filled when the sets land). Order: Josh 17:06Z / 17:09Z (autopilot/DIRECTIVE_ROTATION_TEST_2_1711Z.md), followed word for word, 108 versions per session, none added. Written 2026-11-26 by W-ROT2.
+**QUICK SCREEN label on every number below** unless it says EXACT: grid weekly arrays (th_grid/gcore2 tape walk, not the exact engine, not calibrated against it), 1 NQ lot per book at $20/point, grid cost in, no stack rules, no account layers, no depth fills. The exact re-score of the picked books (EXACT engine) is in the last section. Order: Josh 17:06Z / 17:09Z (autopilot/DIRECTIVE_ROTATION_TEST_2_1711Z.md), followed word for word, 108 versions per session, none added. Written 2026-11-26 by W-ROT2.
 
 ## ANSWER FIRST (QUICK SCREEN)
 
@@ -9,7 +9,8 @@
 3. **Recency adds in the last months, not over the three years.** Median change in $/lot/wk versus the 100%-history twin (same size, refit, on/off), 50/50 and 100% trailing: Asia -17 / -16, London +68 / +59, NY AM -10 / -11, NY PM -5 / -4, four summed +11 / +6, so over the whole OOS it helps in London and slightly in the sum and hurts elsewhere. In the last 6 months the picture is clear: median L6M $/lot/wk of the 100%-history versions is Asia -82, London -341, NY AM -210, four summed -145 (NY PM +78), against 50/50 and 100% trailing at Asia +50 / +66, London -7, NY AM -108 / -117, four summed +14. History-only picks bleed recently; blends stop the bleeding but earn little. The best versions are mostly 50/50 with the 4-month window, which is the best-of-108 choice and carries the luck haircut.
 4. **Quick screen size of money.** Every number here is per lot of a median cell of a family, not of a best cell. Four sessions summed, best version: 21 $/lot/wk, max drawdown 1,904 $/lot, worst week -901 $/lot, L6M +46, L3M +70. The fixed live mixes (hindsight) earned 529 $/lot/wk on the same weeks in stage A. This test does not beat them and does not claim to; its purpose is whether qualifying plus rotating works with no hindsight, and the answer from the quick screen is no (FAIL vs zero).
 5. **Turnover and book count (the cost of running it).** Turnover per refit 0.23 to 0.90 of the slots replaced over the 108 versions (best versions 0.37 to 0.61). Different books the last 6 months would have needed: best versions Asia 66, London 44, NY AM 54, NY PM 11, four-session best 253 (median version 170); fewest 71, most 439 for the four-session sum. Eligible families per date: 4,100 to 17,400 per session (table per session). A live file cannot hold that many books; this is a research test, not a build.
-6. **Honest reading of the luck penalty.** 108 versions, but the 100%-history rows are duplicates between the 3M and 4M window (18 of the 108 rows are the same series as another row), so the true count of distinct tries is 90; the penalty is applied to all 108 as ordered. A best-of-108 haircut is 38 to 91 $/lot/wk (block bootstrap, 2,000 draws, block 4 weeks, White reality check). Nothing survives it.
+6. **EXACT re-score (last section): the verdicts do not change.** Best versions exact: Asia +26, London +26, NY AM +87, NY PM +55 $/lot/wk, close to the quick screen (24, 26, 83, 19); after the same best-of-108 haircut all four are below zero. The equal-weight sample is too small to judge the basket exact (4 cells per refit date).
+7. **Honest reading of the luck penalty.** 108 versions, but the 100%-history rows are duplicates between the 3M and 4M window (18 of the 108 rows are the same series as another row), so the true count of distinct tries is 90; the penalty is applied to all 108 as ordered. A best-of-108 haircut is 38 to 91 $/lot/wk (block bootstrap, 2,000 draws, block 4 weeks, White reality check). Nothing survives it.
 
 ### Verdicts (PASS = best version after the best-of-108 haircut is above the benchmark AND the reality-check p is 0.10 or lower; else FAIL)
 
@@ -170,8 +171,32 @@ Recency vs 100%-history twin (same N, refit, on/off): median change $/lot/wk, 50
 Best-of-rows penalty (108 versions, block bootstrap 2,000 draws, block 4 weeks, White reality check): vs zero best-by-mean row 21 $/lot/wk, luck haircut 38, after -17, RC p 0.81, versions positive 23 of 108; vs equal-weight best row 20, haircut 38, after -18, RC p 0.72.
 Different books the last 6 months needed (best version): 253; median over 108 versions 170; fewest 71, most 439.
 
-## EXACT re-score of the picked books (best version per session + equal-weight sample)
+## EXACT re-score of the picked books (EXACT engine, landed 2026-11-26 19:36Z)
 
-PENDING. Sets TL3_ALN_<S>_W<hash>_R0RT (truly bare R0, 1 lot, own bracket, fees in), months held only, queued behind W-ROTA's stage B rows. Status in MORNING.md LEAD NOTEs.
+Sets TL3_ALN_<S>_W<hash>_R0RT: truly bare R0 (own bracket, 1 lot, fees in, no D7 layers), only the months each pick was held, built from the picked cells of the best version per session (2,001 distinct cells incl. the equal-weight sample; 1,987 sets built, 6 cells failed to build for unknown module names, so 3 to 7 blocks of Asia / London best versions are missing and excluded from BOTH series) plus an equal-weight sample: 4 randomly drawn (seeded, no ranking) family-median cells per eligible-family list at each 4-week refit date, 40 dates (a sample of 4 per date is small: its exact result is noisy and must not be read as the equal-weight basket; the full-basket quick-screen row above is the better equal-weight reference, the sample serves to compare exact against quick screen on the same cells). 3,626 set-months replayed after W-ROTA's 6,423 (no engine, gate or park change). 2025-11 is a zero month for both series (tape hole). Weekly bins by Eastern entry date, 160 OOS weeks; "per lot" = divided by the slots (best version) or the 4 sampled cells (sample).
 
-Code: code/th_rot2/{walk,chain,metrics,resolve,build2}.py; data on server C /mnt/l2/l2vast/_rot2/{out2,stageb_picks.json}; build files /mnt/l2/l2vast/_rot2/ on box1 (small).
+**Reading (EXACT):** the exact engine reproduces the quick screen for the picked books closely in Asia (+26 vs +24 $/lot/wk), London (+26 vs +26) and NY AM (+87 vs +83); NY PM is better exact (+55 vs +19) with a lower drawdown (8,999 vs 12,534 $/lot). The best versions stay positive exact, but they were picked as best of 108 on these same weeks; applying the quick-screen best-of-108 luck haircut (Asia 60, London 60, NY AM 91, NY PM 74 $/lot/wk) to the exact means leaves Asia -34, London -34, NY AM -4, NY PM -19: **the verdicts do not change (FAIL vs zero in every session)**. NY AM is the closest (+87 exact, reality-check p 0.56 on the quick screen). The equal-weight sample is negative exact in all four sessions (-65, -3, -164, -37 $/lot/wk) while the full equal-weight basket on the quick screen is +108 / -46 / +27 / -84; the sample of 4 cells is too small to say more than that exact and quick screen disagree by tens of $/lot/wk on the same cells (differences are size-dependent fills, depth, stop/target tape effects), the same warning as stage B of test 1.
+
+| session | series | blocks landed | weeks | L3M $/lot/wk | L6M $/lot/wk | $/lot/wk | max DD $/lot | worst wk | 2023 Q4 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | best version (50% hist, 4M, N12, r2w, always): EXACT | 73/80 | 146 | 62 | 11 | 26 | 1,818 | -1,172 | 38 | -5 | -12 | 99 |
+| Asia | best version (50% hist, 4M, N12, r2w, always): quick screen, same weeks | 73/80 | 146 | 122 | 52 | 24 | 2,193 | -1,266 | 44 | -24 | -14 | 109 |
+| Asia | equal-weight sample (4 cells per 4w refit): EXACT | 40/40 | 160 | -1,026 | -369 | -65 | 19,922 | -8,233 | -203 | -116 | 63 | -123 |
+| Asia | equal-weight sample (4 cells per 4w refit): quick screen, same weeks | 40/40 | 160 | -807 | -167 | -31 | 17,663 | -7,960 | -48 | -71 | 43 | -68 |
+| London | best version (50% hist, 4M, N5, r1w, gate): EXACT | 154/160 | 154 | 33 | -8 | 26 | 6,065 | -1,930 | -89 | 147 | -48 | 1 |
+| London | best version (50% hist, 4M, N5, r1w, gate): quick screen, same weeks | 154/160 | 154 | 33 | -13 | 26 | 3,939 | -1,776 | -68 | 89 | 5 | -0 |
+| London | equal-weight sample (4 cells per 4w refit): EXACT | 40/40 | 160 | -822 | -449 | -3 | 13,795 | -4,780 | 118 | 69 | 114 | -278 |
+| London | equal-weight sample (4 cells per 4w refit): quick screen, same weeks | 40/40 | 160 | -668 | -376 | -88 | 20,924 | -4,389 | 6 | 1 | -81 | -235 |
+| NYAM | best version (50% hist, 4M, N8, r1w, always): EXACT | 160/160 | 160 | 30 | 37 | 87 | 3,294 | -1,240 | 122 | 78 | 158 | -3 |
+| NYAM | best version (50% hist, 4M, N8, r1w, always): quick screen, same weeks | 160/160 | 160 | 46 | 32 | 83 | 2,214 | -1,449 | -40 | 63 | 200 | -2 |
+| NYAM | equal-weight sample (4 cells per 4w refit): EXACT | 40/40 | 160 | 258 | -170 | -164 | 46,790 | -5,676 | -761 | 374 | -164 | -645 |
+| NYAM | equal-weight sample (4 cells per 4w refit): quick screen, same weeks | 40/40 | 160 | 75 | -186 | -96 | 37,395 | -6,215 | -633 | 344 | 111 | -734 |
+| NYPM | best version (100% hist, 3M, N5, r2w, always): EXACT | 80/80 | 160 | 165 | 172 | 55 | 8,999 | -2,457 | -115 | 147 | 5 | 55 |
+| NYPM | best version (100% hist, 3M, N5, r2w, always): quick screen, same weeks | 80/80 | 160 | 190 | 182 | 19 | 12,534 | -2,117 | -91 | 107 | -86 | 78 |
+| NYPM | equal-weight sample (4 cells per 4w refit): EXACT | 40/40 | 160 | 654 | -132 | -37 | 43,129 | -4,047 | 382 | 405 | -335 | -339 |
+| NYPM | equal-weight sample (4 cells per 4w refit): quick screen, same weeks | 40/40 | 160 | 276 | -593 | -150 | 52,280 | -4,209 | 229 | 314 | -425 | -496 |
+
+
+Weekly exact series: autopilot/ROTATION_TEST_2_EXACT.json (blocks with exact and quick-screen weekly values).
+
+Code: code/th_rot2/{walk,chain,metrics,resolve,build2,score2}.py; data on server C /mnt/l2/l2vast/_rot2/{out2,stageb_picks.json}; build files /mnt/l2/l2vast/_rot2/ on box1 (small; events in /mnt/l2/l2vast/_rota/ev/ shared with W-ROTA, no existing file rewritten).
