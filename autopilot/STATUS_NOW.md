@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-26 14:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-26 14:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-26 14:15Z | AUTO-FILL step run: dispatcher alive pid 2146021/2146022/2208027
+LATEST CORES.md LINE: 2026-11-26 14:30Z | AUTO-FILL step run: dispatcher alive pid 2254113
 
 ## UTC TIME WRITTEN
-2026-11-26 14:15Z
+2026-11-26 14:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-26 14:15Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 69.9 GB; live reservations 2 (2 GB); workers 14, of which TP-adopted 14 (RSS 18.9 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 38.80, 46.02, 51.53
-  by tag: NYR quota 12 running 14 hungry False RSS 18.9 GB PSS 15.9 GB
+Server 1 (this box): MemAvail 48.4 GB; live reservations 7 (7 GB); workers 13, of which TP-adopted 13 (RSS 18.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 55.78, 56.80, 54.68
+  by tag: NYE quota 16 running 13 hungry False RSS 18.1 GB PSS 16.6 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L364813ea_ALNCT21m (x12);TL3_NYE_L364813ea_ALNCT28m (x10);TL3_NYE_L364813ea_ALNCT14m (x10);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 58.39, 58.55, 56.33|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_Lf09f9d69_ALN (x22);TL3_NYE_Lc17dd748_ALNCT77m (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 57.86, 58.22, 57.35|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 58.39, 58.55, 56.33|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261125_2057Z_Josh-pick-best-recent-that-passes-prior-years.md 20261125_2120Z_Josh-selection-rule-bake-off-walk-forward.md 20261125_2240Z_Josh-frontier-on-filter-first-picks-and-keys.md 20261126_0025Z_Josh-London-pick-that-passes.md 20261126_1420Z_relay-scale-rows-today-for-live-check.md
+20261126_0025Z_Josh-London-pick-that-passes.md 20261126_1420Z_relay-scale-rows-today-for-live-check.md 20261126_1425Z_Josh-two-week-book-rotation-walk-forward.md 20261126_1432Z_Josh-two-week-rotation-on-the-FULL-candidate-set.md 20261126_1436Z_Josh-rotation-test-add-refit-steps.md
