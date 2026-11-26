@@ -1,14 +1,3 @@
-2026-11-26 06:10Z | HOST SLOT_HEAL PRODUCING NOTHING (06:08Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 381095, supervisor restarts it (once per 30 min per host)
-2026-11-26 06:15Z | box1: busy 100%, load1 75.07, workers 15, MemAvail 49 GB | server2: busy 83%, load1 57.17, workers 0, MemAvail 473 GB | pending box1-eligible 512557 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 83%, load1 101.63, workers 105 (grid) + 72 (engine), 128 threads, MemAvail 996 GB | serverB: busy 50%, load1 64.93, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 988 GB | serverC: busy 2%, load1 0.20, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 06:15Z | WARNING serverA below 85% busy for 6 readings in a row with jobs pending
-2026-11-26 06:15Z | WARNING serverB below 85% busy for 36 readings in a row with jobs pending
-2026-11-26 06:15Z | WARNING serverC below 85% busy for 36 readings in a row with jobs pending
-2026-11-26 06:15Z | WARNING serverD below 85% busy for 37 readings in a row with jobs pending
-2026-11-26 06:15Z | WARNING server2 below 85% busy for 36 readings in a row with jobs pending
-2026-11-26 06:15Z | AUTO-FILL step run: dispatcher alive pid 487677/487681/505609
-2026-11-26 06:20Z | box1: busy 100%, load1 57.97, workers 17, MemAvail 59 GB | server2: busy 79%, load1 61.92, workers 0, MemAvail 535 GB | pending box1-eligible 512528 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 76%, load1 80.89, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1031 GB | serverB: busy 50%, load1 62.56, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 984 GB | serverC: busy 0%, load1 0.16, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.07, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 06:20Z | WARNING serverA below 85% busy for 7 readings in a row with jobs pending
-2026-11-26 06:20Z | WARNING serverB below 85% busy for 37 readings in a row with jobs pending
 2026-11-26 06:20Z | WARNING serverC below 85% busy for 37 readings in a row with jobs pending
 2026-11-26 06:20Z | WARNING serverD below 85% busy for 38 readings in a row with jobs pending
 2026-11-26 06:20Z | WARNING server2 below 85% busy for 37 readings in a row with jobs pending
@@ -302,3 +291,10 @@
 2026-11-26 09:20Z | HOST serverB PRODUCING NOTHING (E-ENGINE host serverB slots 0/102)
 2026-11-26 09:20Z | HOST serverD PRODUCING NOTHING (E-ENGINE host serverD slots 0/68)
 2026-11-26 09:20Z | HOST SLOT_HEAL PRODUCING NOTHING (09:16Z W-GRIDOPS SELF-HEAL: server2 engine slots 0 of 28 (or dispatcher log silent) for >=10 min with runnable lines: killing dispatcher pid(s) 1045294, supervisor restarts it (once per 30 min per hos)
+2026-11-26 09:25Z | box1: busy 93%, load1 27.01, workers 13, MemAvail 72 GB | server2: busy 82%, load1 71.05, workers 28, MemAvail 687 GB | pending box1-eligible 511269 / server2-eligible 159 (shared queues count in both; unleased, not DONE) | serverA: busy 67%, load1 109.04, workers 105 (grid) + 94 (engine), 128 threads, MemAvail 963 GB | serverB: busy 54%, load1 82.97, workers 105 (grid) + 24 (engine), 128 threads, MemAvail 967 GB | serverC: busy 0%, load1 0.00, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 6%, load1 6.00, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1496 GB
+2026-11-26 09:25Z | WARNING serverA below 85% busy for 44 readings in a row with jobs pending
+2026-11-26 09:25Z | WARNING serverB below 85% busy for 74 readings in a row with jobs pending
+2026-11-26 09:25Z | WARNING serverC below 85% busy for 74 readings in a row with jobs pending
+2026-11-26 09:25Z | WARNING serverD below 85% busy for 75 readings in a row with jobs pending
+2026-11-26 09:25Z | WARNING server2 below 85% busy for 74 readings in a row with jobs pending
+2026-11-26 09:25Z | AUTO-FILL step run: dispatcher alive pid 1154705/1154706/1174751
