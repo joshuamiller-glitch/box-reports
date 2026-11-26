@@ -1,8 +1,8 @@
-# BEST_BOOKS_ASIA - own-merit scorecard, Asia session (W-BEST; GENERATED AT 2026-11-26 01:07:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
+# BEST_BOOKS_ASIA - own-merit scorecard, Asia session (W-BEST; GENERATED AT 2026-11-26 01:37:02Z UTC (a stale page = the cron has stopped; heartbeat /mnt/l2/l2vast/_split/best_books_*.status mtime); first looks as landed; data end 2026-10-31)
 
 **Purpose (order 20261119_1806Z item 1):** every cell with a landed first look is scored BY ITSELF (its own trades, tag MF*, 1 lot), live books are ordinary rows from the JL3 baseline. D7 is not the judge here.
 
-**Counts:** 2818 distinct cells scored (376 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 1768; L6M and L3M > 0: 1374; labels {'WEAK-BUT-POSITIVE': 1208, 'BEST-AVAILABLE-NOT-PROVEN': 1050, 'LEAD': 558, 'CONFIRMED': 2}. Job errors: 0. Run 838 s.
+**Counts:** 2818 distinct cells scored (376 twin cells merged and counted once, autopilot/DEDUP_TWINS.md) + 5 live-book rows; L6M $/wk > 0: 1768; L6M and L3M > 0: 1374; labels {'WEAK-BUT-POSITIVE': 1208, 'BEST-AVAILABLE-NOT-PROVEN': 1050, 'LEAD': 558, 'CONFIRMED': 2}. Job errors: 0. Run 572 s.
 
 **Source per cell:** REPLACE set (RA7 for Asia, RK7 for NY AM) when its L6M is landed, else the ADD set (column src). Windows: L6M = 2026-05..10 (26 wk), L3M = 2026-08..10 (13 wk); prior years 2023/2024/2025 only where all of the year's months (202511 excluded: tape hole) are landed for that set; otherwise blank / "not landed".
 
