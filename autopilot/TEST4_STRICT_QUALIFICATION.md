@@ -10,7 +10,7 @@
 4. **Size of the baskets and turnover.** The loose end holds thousands of books (N=100, t>=2: Asia 2,459 on average, 3,364 at the last date; sum 9,455) and changes nearly all of them each 13 weeks (Asia 2,640 adds+drops per date); the strictest end holds a handful (N=1000, t>=4: Asia 15 on average, London 0.7). A basket of 1 to 10 books has per-lot drawdowns of 25,000 to 30,000 $ (London N1000 t4 30,061; NY PM N300 t4 25,561).
 5. **REFERENCE row (same rule with t on the trailing 52 weeks only; N=300, t>=3):** Asia 170 (vs 156 for all-history t), London -89 (-78), NY AM 129 (69), NY PM -119 (-3), sum 85 (40). Mixed: better in Asia, NY AM and the sum, worse in London and NY PM; it is one row, not a result.
 6. **T2, the 20 live books (table below):** 17 of 20 map to a stored grid cell. Under the loosest rule (N>=100, t>=2) 8 of 17 ever qualify (all at 2024-09 or later, on average +620 $/wk after the first qualified date); at t>=3 only 3 of 17 (+400/wk); at t>=4 none. The strict rules do not reach most of the live books: they have the trades but not the t-stat, the family share or the profitable half-years. Same hindsight caveat as Test 3 (the 20 books were chosen with hindsight).
-7. **How far to trust the dollar figures:** Test 3 calibrated the quick screen against the exact engine on 17 live books (exact 1.52x the quick screen on average, median 1.17, weekly correlation 0.92: rank-grade, not level-grade). The Test 4 exact rows (best version per session) are queued and the calibration for them is in the EXACT section when they land (PENDING).
+7. **How far to trust the dollar figures:** Test 3 calibrated the quick screen against the exact engine on 17 live books (exact 1.52x the quick screen on average, median 1.17, weekly correlation 0.92: rank-grade, not level-grade). The Test 4 exact rows (best version per session) have LANDED (exact 1.20-1.63x quick, all four sessions positive; see the EXACT section).
 
 ## Verdicts (QUICK SCREEN, best-of-9, White reality check vs zero, block bootstrap block 4 wk, 2,000 draws; REFERENCE not counted in the 9)
 
@@ -371,9 +371,20 @@ First re-qualify date (13-week dates) at which the live book's own grid cell pas
 - Best version for the exact part: by mean = the version the reality check evaluates (Asia N1000 t4, London N1000 t4, NY AM N300 t4, NY PM N300 t4). **Note for LEAD:** by income per unit max drawdown (the Test 3 convention) Asia would be N>=100, t>=3 with 10,757 cells ever held, tens of thousands of set-months; the exact part therefore uses the by-mean version (the one the reality check evaluates; Asia 157 cells, London 7, NY AM 1,397 in 1,446 held periods, NY PM 120 in 124): 1,681 cells in total. The income-per-DD Asia version is NOT queued.
 
 
-## EXACT (bare R0 own bracket, 1 lot, held periods; PENDING)
+## EXACT (bare R0 own bracket, 1 lot, held periods; LANDED 2026-11-26 23:50Z, all 1,731 held periods)
 
-Best version per session = by mean (N>=1000 t>=4 Asia and London; N>=300 t>=4 NY AM and NY PM). 1,681 cells, 1,731 held periods; sets TL3_ALN_<S>_W<hash>_R0RT (same naming as W-ROTA, W-ROT2, Test 3: the same cell is the same set, rows already DONE are not requeued). Build on box1 niced, 3 procs (started 19:01Z); rows are appended to pending_nyam_gating.txt by a waiter only after Test 3's A, B and PB rows are queued. Status and the calibration table (exact vs quick on the same periods) are written by the finishing commands in MORNING.md; this section is replaced when they land.
+Best version per session = by mean. 1,681 cells, 8,704 set-months, all DONE. EXACT engine numbers vs the QUICK SCREEN on the same held periods (weeks counted over held weeks only, so the quick numbers differ from the full-span table above).
+
+| session | version | held periods landed | weeks | exact $/lot/wk | exact max DD | exact worst wk | exact L6M | exact L3M | quick $/lot/wk (same periods) | quick max DD | quick L6M | quick L3M | exact / quick |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | N>=1000, t>=4 | 157 of 157 | 69 | 264 | 14231 | -9353 | 1043 | 572 | 200 | 22257 | 905 | 490 | 1.32 |
+| London | N>=1000, t>=4 | 7 of 7 | 69 | 41 | 33137 | -11188 | -311 | -1208 | 33 | 30061 | -289 | -1457 | 1.24 |
+| NYAM | N>=300, t>=4 | 1446 of 1446 | 160 | 295 | 18491 | -6270 | 147 | 426 | 182 | 23692 | -85 | 254 | 1.63 |
+| NYPM | N>=300, t>=4 | 124 of 124 | 160 | 297 | 21964 | -5060 | 779 | 268 | 247 | 25561 | 604 | 277 | 1.20 |
+
+Bare R0, own bracket, 1 lot per book, equal weight over the books held that week, events from raw signals (stage B build, W-ROTA method); only held periods whose months all landed are used (quick screen restricted to the same periods). Calibration: compare the exact / quick column with Test 3 (average 1.52x, median 1.17 on 17 live books).
+
+Reading: the exact engine is positive in all four sessions, 1.20x to 1.63x the quick screen (sign agreement 4 of 4; same range as the Test 3 live-book calibration, 1.52x mean / 1.17x median). London has only 7 held periods, so its 41 $/lot/wk is noise. This is still the best-of-9 version and the luck test above (RC p 0.19-0.28) is unchanged: the exact engine confirms the level, it does not remove the selection penalty.
 
 ## PART C (live books only, hindsight-chosen; NOT run on the Test 3 baskets)
 

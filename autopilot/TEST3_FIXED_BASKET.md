@@ -10,7 +10,7 @@
 4. **Best versions are not stable.** The best version per session sits on different rules and schedules (table below); the L6M and L3M of the best versions disagree with the whole-period number in London (L3M +205, 2023 Q4 -245) and NY PM (L6M -14, 2025 +406). The equal-weight qualified basket, which has no selection, is the more honest read: Asia +114, NY AM +71 $/lot/wk but with max drawdowns of 3,380 and 5,000+ $/lot.
 5. **Part B (brackets only, QUICK SCREEN)**: re-picking the bracket inside each held book (trailing 1, 3 or 6 months, refit 2, 4, 13 weeks, 9 versions) beats the unchanged held cell only in Asia (best 6M/13w: +54 $/lot/wk, after best-of-9 haircut +23, RC p 0.22 = FAIL) and NY AM (+15, after -28, p 0.73); London (-80) and NY PM (-90) are worse. No session passes. Family definition note: the test-2 family is (bar type, module, variant) with all bar sizes, params, brackets and sides, wider than one book; Part B therefore uses the narrower group "same bar type and size, module, variant, params, side, all 17 brackets".
 6. **Part C (fittings only)**: not run; set-month count and fleet hours posted as a LEAD NOTE in MORNING.md (about 92,700 set-months, ~90 h at the measured fleet rate) for Josh to decide; nothing queued.
-7. **Exact engine**: see the last section (PENDING until the sets land; status in MORNING.md).
+7. **Exact engine**: see the last section (LANDED, all sets 2026-11-26 23:48Z).
 
 ### Verdicts (QUICK SCREEN)
 
@@ -317,11 +317,38 @@ Best-of-9 luck penalty vs the held cell: Asia best 26/13w diff +54, haircut 30, 
 
 17 live books: exact is on average 1.52 x the quick screen (median ratio 1.17); weekly correlation median 0.92. The quick screen is therefore a ranking-grade, not a level-grade, measure of a book (levels differ by tens of percent either way; the quick screen misses the exact engine's fills and rollover handling). Mapped to a grid cell: 17 of 20 (missing L385f4f2e_CX502, B7bfd33b7, Bf428c4a1.BRS8U; the exact sets exist for the last of these but it has no grid cell to compare). The grid cell is W-ROTA's identification of the live definition and can differ from the live file.
 
-**(i) Asia partB_best: 3 of 960 picks landed (2 weeks)**: exact $/lot/wk 0 (max DD 0, worst 0, L6M 0, L3M 0) vs quick -61 (max DD 9774, worst -7535, L6M 0, L3M 0)
+**(i) Asia best: 58 of 58 picks landed (160 weeks)**: exact $/lot/wk 45 (max DD 4365, worst -1547, L6M 114, L3M 194) vs quick 78 (max DD 3646, worst -1943, L6M 11, L3M 45)
 
-**(i) NYPM partB_best: 4 of 960 picks landed (2 weeks)**: exact $/lot/wk 0 (max DD 0, worst 0, L6M 0, L3M 0) vs quick 185 (max DD 0, worst 0, L6M 0, L3M 0)
+**(i) Asia ew: 195 of 195 picks landed (160 weeks)**: exact $/lot/wk 126 (max DD 9262, worst -3871, L6M 75, L3M 191) vs quick 138 (max DD 8072, worst -3591, L6M 182, L3M 220)
 
-Still PENDING (landed/total picks): Asia best 0/58; Asia ew 0/195; London best 0/34; London ew 0/105; NYAM best 0/130; NYAM ew 0/195; NYPM best 0/54; NYPM ew 0/195; Asia T1 0/12; London T1 0/8; NYAM T1 0/20; NYPM T1 0/12; Asia partB_best 3/960; London partB_best 0/104; NYAM partB_best 0/800; NYPM partB_best 4/960. Rows queued behind W-ROTA and W-ROT2 in pending_nyam_gating.txt; the table above fills as sets land.
+**(i) London best: 34 of 34 picks landed (160 weeks)**: exact $/lot/wk 13 (max DD 8558, worst -1670, L6M -98, L3M 29) vs quick 118 (max DD 5987, worst -1466, L6M 198, L3M 205)
+
+**(i) London ew: 105 of 105 picks landed (160 weeks)**: exact $/lot/wk -81 (max DD 22880, worst -7240, L6M -111, L3M -421) vs quick 14 (max DD 9195, worst -4453, L6M 56, L3M -164)
+
+**(i) NYAM best: 130 of 130 picks landed (160 weeks)**: exact $/lot/wk 66 (max DD 6985, worst -2215, L6M 383, L3M 478) vs quick 51 (max DD 6364, worst -1884, L6M 196, L3M 511)
+
+**(i) NYAM ew: 195 of 195 picks landed (160 weeks)**: exact $/lot/wk 74 (max DD 9021, worst -4213, L6M 255, L3M 588) vs quick 60 (max DD 14462, worst -4233, L6M -105, L3M 258)
+
+**(i) NYPM best: 54 of 54 picks landed (160 weeks)**: exact $/lot/wk 82 (max DD 5570, worst -1569, L6M -45, L3M -299) vs quick 114 (max DD 7895, worst -2333, L6M -14, L3M 6)
+
+**(i) NYPM ew: 195 of 195 picks landed (160 weeks)**: exact $/lot/wk -25 (max DD 22148, worst -3817, L6M -159, L3M 240) vs quick -102 (max DD 26343, worst -3698, L6M -286, L3M -8)
+
+**(ii) T1 Asia: 12 of 12 books landed**: exact mean $/lot/wk 94
+
+**(ii) T1 London: 8 of 8 books landed**: exact mean $/lot/wk 111
+
+**(ii) T1 NYAM: 20 of 20 books landed**: exact mean $/lot/wk 158
+
+**(ii) T1 NYPM: 12 of 12 books landed**: exact mean $/lot/wk 149
+
+**(i) Asia partB_best: 960 of 960 picks landed (160 weeks)**: exact $/lot/wk 1953 (max DD 27228, worst -24216, L6M 2374, L3M 3387) vs quick 1476 (max DD 28724, worst -18837, L6M 511, L3M 668)
+
+**(i) London partB_best: 104 of 104 picks landed (160 weeks)**: exact $/lot/wk 317 (max DD 73354, worst -12807, L6M -485, L3M 2059) vs quick 304 (max DD 63806, worst -12871, L6M -358, L3M 2009)
+
+**(i) NYAM partB_best: 800 of 800 picks landed (160 weeks)**: exact $/lot/wk 2287 (max DD 69793, worst -39798, L6M 7465, L3M 9543) vs quick 1328 (max DD 68979, worst -39430, L6M 5794, L3M 8514)
+
+**(i) NYPM partB_best: 960 of 960 picks landed (160 weeks)**: exact $/lot/wk -215 (max DD 144743, worst -22279, L6M -1164, L3M 151) vs quick 295 (max DD 87658, worst -29246, L6M 918, L3M -1298)
+
 
 ## Hindsight and survivor effects
 - Candidate set = the stored grid (cells with >= 5 trades over 3.6 years, a filter that looks at the whole span); modules, brackets and bar types were chosen by people who saw earlier data; 13 of 17 level modules had stale pre-06:00Z grid results (UNVERIFIED), as flagged in stage A.
