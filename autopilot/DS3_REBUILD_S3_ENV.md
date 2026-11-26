@@ -1,4 +1,4 @@
-# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-26 11:06Z
+# DS3_REBUILD_S3_ENV - stage 3 brackets by ENVIRONMENT (stop / target / time-stop by session x environment), raw chassis, from the SAME stage 3 grid runs (W-S3). FIRST PASS, PARTIAL. Updated 2026-11-26 11:37Z
 > VALIDATION (W-S3, FIRST PASS, 2026-11-17): trials counted = per book 7 schemes x 3 buckets x <= 5 sessions + pooled x 11 candidates (native + 10 priority grid sets), 7 books; the screen is read against 21 shifted-label runs (11/23/37 days) and 3 nonsense 3-bucketings (all counted); correction = walk-forward (one freeze per book on the SEL months landed, then HOLD 2025-11..2026-04 and L6M 2026-05..10 read once) + label nulls; PBO / White RC over the full grid on the stage 3 page; engine-exact assembly and 30 random-bracket controls NOT built yet: nothing here is a tier, missing controls = NOT FINISHED. Numbers shown: out of sample after the freeze for frozen books, SEL-only otherwise.
 
 VERDICT (data ends 2026-10-30; FIRST PASS, PARTIAL: only the 10-set priority subset of the grid (6 targets at stop 60, 40/40, 40/60, 90/60, 90/90) is used and it is still landing; frozen books H7, A7): see five lines below; nothing assembled on the engine, no tier.
@@ -163,6 +163,7 @@ Cuts (frozen from native SEL trades): atr_rel thirds [1.0641536788691555, 2.2891
 | range k=1.0 | L6M | 6 | 129412 | 13879 | 11852 | 4074 / 5062 |
 
 <!-- MD:APPEND -->
+
 <!-- W-MD section start: written 2026-11-26 11:19Z; sections: UW levels, Size by environment, Own-book walls, one summary table. Source W-MD (MAJOR D addendum 1337Z). FIRST PASS, ARITHMETIC SCREEN (raw-chassis 1-s paths); no engine run yet; nothing assembled. -->
 
 # W-MD sections (appended below the W-S3 ENV page): UW levels as exit levels, size by environment, own-book walls
