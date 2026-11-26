@@ -1,5 +1,3 @@
-2026-11-26 17:20Z | WARNING serverB below 85% busy for 169 readings in a row with jobs pending
-2026-11-26 17:20Z | WARNING serverC below 85% busy for 169 readings in a row with jobs pending
 2026-11-26 17:20Z | WARNING serverD below 85% busy for 170 readings in a row with jobs pending
 2026-11-26 17:20Z | WARNING server2 below 85% busy for 11 readings in a row with jobs pending
 2026-11-26 17:20Z | AUTO-FILL step run: dispatcher alive pid 2805099/2805100/2864180
@@ -298,3 +296,5 @@
 2026-11-26 22:35Z | WARNING serverC below 85% busy for 6 readings in a row with jobs pending
 2026-11-26 22:40Z | box1: busy 94%, load1 51.65, workers 12, MemAvail 72 GB | server2: busy 96%, load1 84.63, workers 28, MemAvail 803 GB | pending box1-eligible 508204 / server2-eligible 231034 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 156.06, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 1011 GB | serverB: busy 100%, load1 185.43, workers 105 (grid) + 92 (engine), 128 threads, MemAvail 960 GB | serverC: busy 47%, load1 57.80, workers 1 (grid) + 131 (engine), 128 threads, MemAvail 1470 GB | serverD: busy 86%, load1 54.18, workers 1 (grid) + 62 (engine), 64 threads, MemAvail 1480 GB
 2026-11-26 22:40Z | WARNING serverC below 85% busy for 7 readings in a row with jobs pending
+2026-11-26 22:45Z | box1: busy 100%, load1 59.31, workers 13, MemAvail 73 GB | server2: busy 96%, load1 82.21, workers 26, MemAvail 926 GB | pending box1-eligible 508172 / server2-eligible 229829 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 179.33, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 1006 GB | serverB: busy 100%, load1 168.38, workers 105 (grid) + 89 (engine), 128 threads, MemAvail 955 GB | serverC: busy 47%, load1 59.20, workers 1 (grid) + 136 (engine), 128 threads, MemAvail 1469 GB | serverD: busy 83%, load1 53.12, workers 1 (grid) + 57 (engine), 64 threads, MemAvail 1479 GB
+2026-11-26 22:45Z | WARNING serverC below 85% busy for 8 readings in a row with jobs pending
