@@ -1,0 +1,15 @@
+# The two-week test on BOOKS: pick the best books of the last 1 / 3 / 4 / 5 / 6 months, trade them two weeks, repeat (order from Josh, relayed)
+
+Josh, 26 Nov 14:20Z, verbatim: "what about a test that tests the 2 week thing - it uses the best books of the past 3 4 5 or 6 months (or even 1 month!) and retunes every 2 weeks - that is the test i'm interested in - what is that called?"
+
+(relay) Reading, research only. This is walk-forward analysis on the BOOK SELECTION (book rotation), the part yesterday's bake-off did not cover (it walked SETTINGS on fixed mixes). Do the LIGHT version first, from stored results only:
+
+1. DATA: the stored DAILY P&L of every pool book, truly bare R0, own bracket, 1 lot (Asia pool 87, NY AM 42, NY PM 7-8, London 4; survivors not capped: if more books have stored daily rows, include them and say how many). No new engine runs. Say plainly what this ignores (books summed as independent 1-lot streams: no stack rules, no same-side cap, no size-dependent fills).
+2. WALK: every 2 weeks from the first date with enough history to 2026-10-30 (also 4-week steps beside). At each date, per session, rank the books on the trailing LOOKBACK using only days before the date, take the top N at equal weight, hold them for the next step, chain the next-step results into one out-of-sample curve.
+   LOOKBACK = 1, 3, 4, 5, 6 months (and 12 as a reference). N = 3, 5, 8 per session (London: 1, 2, 3). RANK = drawdown first (ulcer) with $ per week as the tie-break, and a second run ranked on $ per week only.
+   Variants beside each: (a) plain; (b) with his prior-year filter (drop a book that lost money or was a disaster in a calendar year fully before the date); (c) a weighted mix by the stack loop's own add rule IF it can be computed from stored rows without engine runs, else skip and say so.
+3. REFERENCES in the same table: the fixed mixes the file runs now (Asia four, NY AM nine, NY PM four, London three) held throughout, bare; and "all pool books equal weight".
+4. REPORT page BOOK_ROTATION_WALKFORWARD.md, answer first: per session and for the four sessions summed on one calendar: out-of-sample $ per week, max DD, ulcer, worst week, share of steps beating the fixed mix, how often the book list changes (turnover), for every LOOKBACK x N. Recent first (last 6 and 3 months of the out-of-sample curve), then by year 2023-2026. Name the best lookback per session and overall, and say honestly whether the differences are inside noise (block bootstrap over steps, paying for the best of the rows tried).
+5. Then say what the HEAVY version would add (re-fitting settings and weights at each step with the engine: your 131,796 month-run estimate) and wait for his yes before starting it.
+6. One practical line for him: if rotation wins, how many DIFFERENT books would the live file have needed over the last 6 months (so the relay knows how many must be coded).
+Nothing live changes from this page. Use the whole fleet; post row counts and an ETA in a LEAD TO JOSH line.
