@@ -1,0 +1,19 @@
+# MORNING SUMMARY 2026-11-26 (written by LEAD 11:06Z; the full Nov 25 story is in MORNING_SUMMARY_20261125.md)
+
+Research and shadow only: nothing was touched on the execution server or any live chart. No servers were resized or released.
+
+## Waiting on you (QUESTIONS_FOR_JOSH.md has the full text; all have a safe default that is already in force)
+1. **What each session runs** (your 20:54Z rule, picks = best recent that passes the prior years): NY PM primary BARE, NY PM delivered four + JT241 (STC-free), London BARE (three-book and LO-CRUDE alone), NY AM nine + JT162, NY AM eight BARE, Asia 4-book + JT275 (STC-free). The relay reports the file runs JT19 / JT4 / JT91 / JT110 for NY PM / London / NY AM / Asia, which are not these: your/the relay's decision. Settings pages: D8_LAYER_KEYS_ASIA_4BOOK_JT275.md, D8_LAYER_KEYS_NYAM_NYAMW_JT162.md, D8_LAYER_KEYS_NYPM_4BOOK_JT241.md (+ DEFAULTS, index D8_LAYER_KEYS_INDEX.md). All their nulls failed (labels BEST-AVAILABLE-NOT-PROVEN / WEAK-BUT-POSITIVE).
+2. **London final (order 0025Z):** no London layer setting passes the prior years and beats bare recently (three-book: 0 of 256; LO-CRUDE alone: only JT525, which gives up 74% of recent income): London goes in BARE. If 'every layer ON' must hold, the only candidate is JT525 on LO-CRUDE alone.
+3. **Lots per session:** frontier tables in D8_ALL_SESSIONS_COMBINED.md (the file's 6/6/4/3 is dominated everywhere). BUILD v38 ROW (Asia JT275 6, London bare 8/4/2, NY AM nine JT162 6, NY PM four JT241 6): L6M $105,194/wk, max DD -$38,773, ulcer 11,739; prior years $19.4k / $20.0k / $31.5k per week with max DD -$81.5k / -$132.2k / -$172.7k (2023 / 2024 / 2025).
+4. **Selection method:** R1 (best recent) and R2 (filter first) are tied inside noise (SELECTION_RULE_BAKEOFF.md); W-BAKEOFF recommends filter-first where the filter leaves survivors (Asia, NY AM nine, NY PM four), best-recent where it strips to bare (London, NY AM eight). The refit machinery and the auto joint driver pick filter-first now (RF_PYFILTER=1; =0 switches it off).
+5. **Clean no-look-ahead test (yes/no):** variant D = 161,488 month-runs = about 28 h whole fleet / 45 h on 2 servers / 90 h on 1; London pilot 36,484 runs = 6 h. Mix test: 882 month-runs (leave-one-book-out) or 131,796 (full). Nothing is queued without your yes.
+6. **Older items:** store-hole choice (as-stored default), tape delivery (NY AM, NY PM, London tape pages are in outputs/autopilot_nomirror/ because the mirror's account-id gate false-positives on them), L12842dde needs an NT8 Level-1 size feature at 100 ms and L74274eca a live ZB feed + roll, real live commission, L8e0bf58c port vs re-run, early-close days rule.
+
+## What ran overnight
+Nightly data top-up (cron 01:30Z): $0.0000, 13 requests, 18.79 GB, finished 02:22Z; raw data for td 20261124 and 20261125 are on the box. NOT done yet: hist_replica day files for those days, engine month 202611 (so no 20261110 TRADES in the spec pages), td 20261125 constants listed as open in the spec pages (can be filled in on request).
+London milder-menu fits finished (13,440 rows, about 2.3 h); London size rows at 8/4/2 and 6/3/2 bare added to LONDON_PRIMARY_FILE_SIZE.md. W-LAYERS2 stopped its idle follow processes (pids 368741, 1924375, guards, copier); kept the auto driver (102301) and the Asia post-watch (189768).
+Fleet: nothing queued that needs many cores any more; the box is waiting on you. Sizing the servers down is your decision.
+
+## Honest list of the box's mistakes in the last 24 h
+Picks made L6M-first and tested afterwards (fixed 20:57Z Nov 25); rows lost behind low-rank queue files three times (NY AM weighted, NY PM primary screen, London nulls); LEAD note time stamps one hour ahead around 15:20-16:30Z Nov 25; duplicate re-rank run by W-LAYERS2 (four duplicate lines); my first read of the bake-off said R1 wins NY AM nine when it is a tie (corrected).
