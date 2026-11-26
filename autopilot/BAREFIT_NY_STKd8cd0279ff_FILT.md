@@ -1,4 +1,4 @@
-# BAREFIT_NY_STKd8cd0279ff_FILT - the prior-year-FILTERED pick (filter first, then best recent; order Josh 20:57Z 11-25; W-LAYERS2 2026-11-25 21:31Z)
+# BAREFIT_NY_STKd8cd0279ff_FILT - the prior-year-FILTERED pick (filter first, then best recent; order Josh 20:57Z 11-25; W-LAYERS2 2026-11-26 00:08Z)
 
 Cells: ulcer / max DD / $ per week, whole stack at the fit basis. 4 of 242 combos pass the filter (1 inside the 15% L6M guard).
 
