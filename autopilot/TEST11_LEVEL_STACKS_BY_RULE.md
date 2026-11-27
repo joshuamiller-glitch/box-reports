@@ -1,6 +1,6 @@
 # TEST 11: two-sided level books as a BUILDABLE stack, chosen by rule, with account layers, on stress fills
 
-Written 2026-11-27 01:30Z by W-TEST11 (sub-agent of LEAD; order autopilot/DIRECTIVE_TEST11_0117Z.md, relay design under Josh's standing 18:22Z order, not Josh's words). Research and shadow only. Code code/th_test11 (t11_plan, t11_build, t11_quick, t11_live, t11_held, t11_page, t11_lib). Re-run: `python3 code/th_test11/t11_page.py` (re-scores whatever exact rows have landed).
+Written 2026-11-27 04:30Z by W-TEST11 (sub-agent of LEAD; order autopilot/DIRECTIVE_TEST11_0117Z.md, relay design under Josh's standing 18:22Z order, not Josh's words). Research and shadow only. Code code/th_test11 (t11_plan, t11_build, t11_quick, t11_live, t11_held, t11_page, t11_lib). Re-run: `python3 code/th_test11/t11_page.py` (re-scores whatever exact rows have landed).
 
 ## ANSWER FIRST
 1. **STATUS: the exact stack rows are queued, not run.** 3,480 stacks, 25,442 rows (60 of the 100 chains per group; bare + layered; 6,490 Asia + 18,952 NY AM rows) were appended with queue_rows_safe.py at the END of pending_nyam_gating.txt (about 406k lines, 405k not DONE, were ahead; I did not reorder). Measured queue throughput 6.5k-11k rows per hour, so these rows start landing in about 40-60 h and finish about 2.5-4 h after that; section 4 and the stress numbers fill themselves when t11_page.py is re-run (a 3-hourly re-run loop is running). **Nothing below that is exact is exact stack evidence yet.** What exists now is the QUICK screen (bare, no layers), the exact live mixes, and the stress rescorer applied to the exact Test 8 held cells.
@@ -110,11 +110,11 @@ Corrected exact8 scoring (every month of each 13-week hold must be DONE; the end
 
 
 ## 4. EXACT STACK ROWS (A and B, bare and layered), MEASURED and STRESS
-Landed 0 of 25442 queued rows. Rows were queued at the END of pending_nyam_gating.txt (about 406k rows were ahead; Q1 not reordered), newest date first, so recent windows land first. Landing by date:
+Landed 516 of 25442 queued rows. Rows were queued at the END of pending_nyam_gating.txt (about 406k rows were ahead; Q1 not reordered), newest date first, so recent windows land first. Landing by date:
 
 | session | date (week) | rows landed / queued |
 |---|---|---|
-| Asia | 182 | 0 / 828 |
+| Asia | 182 | 516 / 828 |
 | Asia | 169 | 0 / 1704 |
 | Asia | 156 | 0 / 1360 |
 | Asia | 143 | 0 / 16 |
