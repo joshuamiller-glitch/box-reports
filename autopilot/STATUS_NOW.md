@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 05:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 05:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 05:15Z | box1: busy 100%, load1 95.78, workers 14, MemAvail 54 GB | server2: busy 100%, load1 106.03, workers 27, MemAvail 980 GB | pending box1-eligible 506338 / server2-eligible 137465 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 168.75, workers 105 (grid) + 89 (engine), 128 threads, MemAvail 963 GB | serverB: busy 100%, load1 192.82, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 905 GB | serverC: busy 100%, load1 181.42, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1353 GB | serverD: busy 96%, load1 62.20, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1445 GB
+LATEST CORES.md LINE: 2026-11-27 05:30Z | box1: busy 100%, load1 69.41, workers 2, MemAvail 31 GB | server2: busy 98%, load1 87.10, workers 27, MemAvail 682 GB | pending box1-eligible 506243 / server2-eligible 136224 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 182.03, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 992 GB | serverB: busy 100%, load1 186.96, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 952 GB | serverC: busy 100%, load1 257.61, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1335 GB | serverD: busy 97%, load1 62.92, workers 1 (grid) + 66 (engine), 64 threads, MemAvail 1468 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 05:15Z
+2026-11-27 05:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 05:15Z | box1: busy 100%, load1 95.78, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 52.2 GB; live reservations 5 (5 GB); workers 14, of which TP-adopted 14 (RSS 21.9 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 95.78, 107.59, 102.69
-  by tag: NYR quota 12 running 13 hungry False RSS 20.6 GB PSS 16.3 GB; ALN quota 10 running 1 hungry True RSS 1.2 GB PSS 1.0 GB
+Server 1 (this box): MemAvail 31.1 GB; live reservations 0 (0 GB); workers 2, of which TP-adopted 1 (RSS 1.4 GB) vs others 1 (RSS 1.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 89.72, 79.76, 88.03
+  by tag: NYR quota 12 running 1 hungry True RSS 1.4 GB PSS 1.3 GB; REST quota 0 running 1 hungry False RSS 1.0 GB PSS 0.9 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L852baf1e_ALNCT56p (x12);TL3_NYE_L852baf1e_ALNCT63p (x10);TL3_NYE_L852baf1e_ALNCT49p (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 102.69, 97.50, 88.62|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
+  top running jobs: TL3_ALN_NY_L5b6829bc_BASE (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 87.83, 87.10, 87.39|/dev/md2         28T  2.8T   26T  10% /mnt/l2|53|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 102.69, 97.50, 88.62|/dev/m
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_0340Z_Josh-exits-inputs-must-update-INSIDE-the-trade.md 20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md 20261127_0349Z_Josh-ORDER-realtime-exit-for-ALL-books-do-not-stop.md 20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md
+20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md 20261127_0349Z_Josh-ORDER-realtime-exit-for-ALL-books-do-not-stop.md 20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md 20261127_0525Z_Josh-exits-next-round-stuck-trade-exit-fair-entries-and-disk-guard.md
