@@ -75,5 +75,31 @@ The same line format is what the engine hook writes in the replay (algo_log), so
 - It does not report income. The scorecard (smoothness first, income as a floor at 10 / 20 / 30% below the fixed bracket) is applied to the rows when they exist.
 - Design inputs known to be missing or blind today: London and NY PM feeds, TICK, UW from the US morning only (not used in these designs), range-rank table.
 
+## 6. ADDED 17:10Z (order 1648Z): CALENDAR RULES AND THE TOOLS EACH RULE NEEDS
+CALENDAR (in EVERY design; the calendar feed is built by W-DYNX8; class reads code/th_dync/calendar_events.json [{ts, impact, name}] and abstains when it is absent, logging 'blind'):
+C1  "A scheduled high-impact event (CPI, jobs, FOMC decision, Fed chair speech) is minutes away and my trade is not a winner -> do not carry it through the number": cautious: leave ALL; middle: tighten to the book's own stop if on a dip; active: no action. Window: from 5 minutes before the event.
+C2  "Inside the event window (5 minutes before to 5 minutes after) the other markets are moving on the number, not on my trade -> evidence rules (L1, P2, P3) are suspended; winners keep the stop they have; the book's own safety stop stays." Same in all three designs.
+C3  "Holiday half-days and early closes: the session end for T1 is the actual early close." (calendar feed field 'close_ts'.) Opex, megacap earnings after the bell and auctions: logged as context in the shadow line (field event_tag), no rule yet; a rule needs evidence, none is invented here.
+SESSION STRUCTURE (inputs; all self-adjusting): prior-day and overnight high/low, opening range, Globex VWAP, round numbers are LEVELS for P5 (level just ahead) through W-DYNL's pool state (kinds p1/p5/p20, pd, on, ib, hl); the session range used vs typical is P4 (rank table built: code/th_dync/range_table.json from NQ 1-s, Asia 412 and NY AM 954 session-days; rank needs 10 prior sessions).
+TOOLS PER RULE (what each rule reads; refresh rate the rule needs; this is the rule-by-rule half of the 'tool -> use -> on box -> live' table; W-DYNX8 adds the live-availability column):
+| rule | reads | refresh needed | on the box (history) |
+|---|---|---|---|
+| vocabulary: typical moves | the instrument's own prices, previous 2 h | recomputed every 10 min | all listed below |
+| L1 / L2 / P2 / P3 / P6 "the others" | ES, RTY quote mids (1 s); YM, NKD, 6J, ZB 1-min bars; ZN 1-s trades; NY: TICK 1-min (tick_ma5), megacap basket (NVDA MSFT AAPL AMZN META GOOGL AVGO TSLA, 1-min, +120 s), Unusual Whales Market Tide net premium (1-min, +120 s) as further members of 'the others' (sign: with the index). Others worth having, not on the box today: CL and GC in Asia (1-s trades, sparse), 6E, 6A, HG, BTC, SI | 15 s decisions on 1-s feeds; 60 s on bar feeds; UW 60-120 s | ES/RTY from 2023-08 (quotes), YM/NKD/6J/ZB/6E 1-min from 2023-01, ZN/CL/GC 1-s, TICK 2023-04, megacaps and UW from 2024-10; 6A HG BTC SI NO |
+| NQ followed / leading back | NQ quote mid 1 s | 15 s | yes |
+| L3 stuck loser | this book's own history of winners' time-to-win (causal) | per trade | yes |
+| P1 trail | NQ price, typical 5-min move | 15 s | yes |
+| P4 range used | NQ session range to date vs last 20 sessions of the type | 60 s | yes (table) |
+| P5 level just ahead | liquidity pools: swings, equal highs/lows, prior-day / overnight / IB / VWAP / profile levels; UW gamma walls and flip (EOD only before 13 Nov: 1 day stale; intraday on 9 recorder days) | levels: 1 min; UW walls: daily (history) / intraday (live recorder) | pools yes; UW intraday walls NO (9 days) |
+| NQ tape and 10-level book | wall pulled / eaten, size behind, iceberg refills: NOT used by D1-D3 as written (attribution found no information; MBO not live-entitled). Available for the scorecard follow-up only | 1 s | tape and 10 levels yes; MBO to 13 Nov |
+| C1 / C2 calendar | scheduled events with time and impact | static, loaded daily | NOT yet (W-DYNX8 building) |
+| internals ADD / VOLD / VIX | would join 'the others' (TICK is the only one on the box) | 1-60 s | ADD VOLD VIX NO (Josh's second subscription may have them live: history needed for any test) |
+The designs as written use the first column set the box has. Anything marked NO is not silently replaced: the rule runs with the members it has (at least 2 valid) and the shadow line says which members were blind.
+UW options flow (tide, net premium ticks, gamma) enters as a member of 'the others' in NY sessions only (refresh 60 s, +120 s history lag, live stream 2.7 s): optional member, off in the first run of each design so that D1-D3 stay comparable across Asia and NY; it is not tuned.
+
+## 7. STATUS OF THE CODE (17:30Z)
+Class code/th_dync/algo_mgmt.py (class MGMT, params design = cautious / middle / active, book, session, others, extras, shadow_path) implements L1, L2 (log only), L3, P1-P6, T1, C1/C2 (when the calendar file exists). Sanity run only (25 safety-stop-only trades per book, 15-s steps; NOT a result, NOT used to change anything): first-fire shares per trade on Asia MF1 / NY AM MF5: cautious P1 68% / 44%, P3 60% / 36%, P4 12% / 16%, T1 24% / 32%, L1 0% / 0%; middle P1 76% / 56%, P3 72% / 52%, T1 28% / 40%, L1 0%; active P1 72% / 56%, L1 4% / 8%. Two things to look at before the rows run: (a) P3 fires on over half of the trades that reach the arm level (others turned against over 5 minutes by 1.0 of their own move is common): that is a property of the design as written; if it is changed after results it is logged under CHANGES; (b) Asia decisions are counted blind 3,582 of 15,201 (cautious) because the Asia range table has 412 session-days and the rank is missing for the rest, and fewer than two valid others on some bars; W-DYNH's health counter will say whether any set is data-starved (> 5%).
+L1 never fired in the cautious / middle sanity run (a_z 2.0 / 1.5 with ALL others, a dip of 0.5 s5, NQ not followed, NQ not leading back, best < arm): the loss side is rare as written. Stated, not changed.
+
 ## CHANGES (counted; empty means every design is as first written)
 (none)
