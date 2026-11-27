@@ -76,3 +76,20 @@ ROWS TO BUILD EXACT (W-DYNH hooks: carry / endmgmt), fixed rule, NY AM live mix,
 S3 pre60 vs reference: income +149k (+65%), max DD -60.9k vs -69.3k (-12%), worst week -18.1k vs -20.6k, DD shallower in 2023 (-28k vs -38k), 2025 (-41k vs -46k), 2026 (-23.8k vs -28.3k), about equal 2024; income higher in EVERY year and in L3M (+13k) and L6M (+36k). Pessimistic: income 262k vs 146k, DD -75.0k vs -82.9k, L6M 107k vs 74k. Carry rules alone (a-f) do NOT help PM (DD equal or deeper, income +15..+40k).
 Caveats: (1) this is a management rule applied to almost every PM trade (4,828 of 5,251 changed), so a same-count random-application null is not informative (S3 applied to random same-count subsets: income 94% / DD 56% / worst week 61% beaten); (2) bare table, no Trade Health, no live layers, 1 lot, entries of the table are the bracket events: the live PM mix has TH and the exact answer needs the rows; (3) the rule cuts losers that never reached +0.25R at 60 min before the bell, winners trail 0.25R behind the best price from that moment (trail updated per second, breach = market exit at the bid/ask).
 ROWS TO BUILD EXACT FIRST FOR PM: S3 pre60 (endmgmt 60 min: losers out, tight trail 0.25R) and S3 pre30; then (c) carry. For NY AM: (c), (d), (f30), S3-60 as above. W-DYNH specs: endmgmt = [60, 0.25, 0.25] meaning minutes before bell, loser threshold R, trail R.
+
+## NEAR-MISS ORDER 1508Z (15:13Z): protection of trades that reached >= 60-80% of the target (NY AM, 1-s replay of the bracket, no Trade Health/layers: REFSIM vs protected rows, same 42 months; 144 variants = 9 books x (REFSIM + give-back cap 25/33/50% x activation 60/70/80% of target + 5-min structure trail x 3 + lock LK0.8 +0/+10/+20))
+ANSWER: for every NY AM book protecting near-target trades costs more in winners cut short than it saves in round trips. Saved (trades the plain bracket stopped out that the protection improved) vs cut (trades the plain bracket won at target that the protection stopped short), 42 months, $:
+| book | LK0.8 +0: saved (n) / cut (n) / net | LK0.8 +10 net | least harmful row: net income / DD change / worst week |
+|---|---|---|---|
+| MF1 120/120 | +230k (24) / -281k (25) / -65k | -95k | struct5m@0.7: -134k / +8.9k shallower |
+| MF2 60/60 | +310k (70) / -360k (75) / -60k, DD +23k shallower | -56k, DD +23k | struct5m@0.8: -59k / +38k shallower (-115k vs -154k) |
+| MF3 120/120 | +130k (13) / -158k (14) / -17k, DD 0 | -11k | LK0.8+10: -11k |
+| MF4 90/30 | +632k (83) / -792k (338) / -71k, DD deeper 12.7k | -57k | struct5m@0.8: -11k / +17.8k shallower |
+| MF5 60/60 | +224k (81) / -272k (96) / -51k | -54k | cap33@70%: -4k / +11.0k shallower, worst week +6.2k |
+| MF6 90/30 | +502k (66) / -637k (274) / -70k, DD deeper 21k | -95k | struct5m@0.6: -95k / +9.6k |
+| MF7 60/120 | +22k (9) / -52k (31) / -30k | -23k | none helps |
+| MF8 40/80 | +37k (22) / -66k (77) / -27k | -19k | struct5m@0.7: -11k / +1.3k |
+| MF9 40/80 | +37k (10) / -84k (45) / -42k, DD +9k shallower | -33k, DD +15k | struct5m@0.8: -23k / +14k shallower |
+Wide brackets (120/120 MF1, MF3) are NOT different in sign: the plain bracket wins at target 33% (MF1 29%) and the lock cuts as many winners (25 / 14) as it saves stops (24 / 13). The near-miss that costs real money is rare in the wide books: reached >= 90% of the target and ended at the STOP in 42 months: MF1 8 trades (-$77k), MF3 2 (-$27k), MF2 27, MF4 43, MF5 33, MF6 40; the 6-lot 113-of-120 example is one of 8 MF1 cases in 3.6 years. Drawdown improves (not income) only for MF2, MF9 (LK/struct), MF5 and MF4 (struct5m@0.8), at an income cost of $11-60k over 42 months.
+Why the joint pick left LK off for NY AM (my reading from this replay, not from the pick log): LK0.8 reduces income in all 9 books and shallows DD only in 2 (MF2, MF9), so an income/DD objective drops it.
+PROPOSED EXACT ROWS (ASK BEFORE QUEUEING; per book, not one setting): reference rows LK0.8 +0/+10/+20 on MF1, MF3 (wide) and MF2; struct5m@0.8 (5-minute swing trail once 80% of target is reached) on MF2, MF4, MF8, MF9; give-back cap 33% from 70% of target on MF5. 8 sets x 42 months; W-DYNH to size.
