@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 03:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 04:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 03:45Z | box1: busy 99%, load1 102.96, workers 17, MemAvail 58 GB | server2: busy 97%, load1 84.62, workers 24, MemAvail 731 GB | pending box1-eligible 506620 / server2-eligible 144766 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 169.79, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 961 GB | serverB: busy 100%, load1 177.33, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 920 GB | serverC: busy 100%, load1 321.43, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1263 GB | serverD: busy 86%, load1 53.86, workers 1 (grid) + 66 (engine), 64 threads, MemAvail 1446 GB
+LATEST CORES.md LINE: 2026-11-27 04:00Z | box1: busy 100%, load1 88.67, workers 6, MemAvail 41 GB | server2: busy 97%, load1 83.85, workers 26, MemAvail 813 GB | pending box1-eligible 506540 / server2-eligible 142278 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 181.85, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 958 GB | serverB: busy 100%, load1 188.12, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 916 GB | serverC: busy 100%, load1 248.22, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1281 GB | serverD: busy 98%, load1 63.84, workers 1 (grid) + 65 (engine), 64 threads, MemAvail 1441 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 03:45Z
+2026-11-27 04:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 03:45Z | box1: busy 99%, load1 102.96, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 56.7 GB; live reservations 2 (2 GB); workers 17, of which TP-adopted 17 (RSS 23.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 102.96, 108.39, 97.18
-  by tag: NYE quota 16 running 17 hungry False RSS 23.2 GB PSS 21.3 GB
+Server 1 (this box): MemAvail 39.9 GB; live reservations 6 (6 GB); workers 6, of which TP-adopted 6 (RSS 8.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 88.67, 94.68, 95.85
+  by tag: NYR quota 12 running 5 hungry True RSS 6.7 GB PSS 5.9 GB; NYE quota 16 running 1 hungry False RSS 1.5 GB PSS 1.4 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_La8473645_ALN (x28);TL3_NYE_Laefc5551_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 85.01, 85.46, 85.00|/dev/md2         28T  2.8T   26T  10% /mnt/l2|53|
+  top running jobs: TL3_NYE_La8473645_ALNCT70p (x6);TL3_NYE_La8473645_ALNCT77p (x4);TL3_NYE_La8473645_ALNCT63p (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 84.56, 83.61, 83.67|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,6 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 85.01, 85.46, 85.00|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_0311Z_Josh-ORDER-all-servers-on-exits-walk-forward-until-solved.md 20261127_0318Z_Josh-exit-catalogue-every-smart-exit-X12-to-X22.md 20261127_0337Z_Josh-exits-add-X23-liquidity-targets-and-stops-all-methods.md 20261127_0340Z_Josh-exits-inputs-must-update-INSIDE-the-trade.md 20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md
-- lead 03:44Z INBOX 20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs 
-INBOX ack 03:44Z: 20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md (Josh 03:43Z "i want dynamic exits - may not even have to walk forward -
+20261127_0340Z_Josh-exits-inputs-must-update-INSIDE-the-trade.md 20261127_0343Z_Josh-exits-also-judge-fixed-rules-straight-no-refit.md 20261127_0349Z_Josh-ORDER-realtime-exit-for-ALL-books-do-not-stop.md 20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md
