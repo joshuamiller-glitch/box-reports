@@ -22,6 +22,13 @@
 - Clean out-of-sample fixed rule (shape picked on weeks 0-108, held 109-181): income 18.3k vs 26.9k (-32%), DD -25.3k vs -31.5k: FAILS. The same shape on MF1/MF3/MF4/NP-CONF loses 33-43% income (MF4 negative): not general.
 - So the walk-forward gain comes from re-picking among 19 variants, not from a fixed plan. Status: lead only. 4-book mix step 2: not a candidate. Details PLAN_NP_LOG.md round 3.
 
+
+## ROUND 4 UPDATE (regime pick; loss-side vs profit-side)
+- A causal regime variable (recent NY PM range vs 60-session median) does not predict the pick: regime-split picks are no better than the plain daily pick on 5 of 6 books; clean fit/hold passes only NP-MACD (HOLD 40.5k vs 26.9k, DD -17.7k vs -31.5k) and fails on the other five books.
+- Loss-side-only (target kept): no book passes; MF1 and NP-CONF reach neutral income on hold with at most a few k of drawdown gain (NP-CONF -13.2k vs -17.0k, 3 eligible variants).
+- Profit-side-only (stop kept) NP-MACD walk-forward: DD shallower in 9-10 of 13 periods, chained DD -15.4k..-15.8k vs -31.5k, income 77-87k vs 43.7k, pessimistic 72-82k vs 39k; clears the first SOLUTION clause; random-pick null: real beats it on DD 90-93%, income 78-91%. But the family is unstable on the hold weeks (median variant income 21.9k vs 26.9k, DD deeper) and the fixed fit pick fails: walk-forward lead only. MF2: family helps on hold (97% of variants) and hurts on fit years: regime dependent.
+- Exact rows not queued (survivors are walk-forward leads; disk 21 GB); X24 and MBO still pending. See PLAN_NP_LOG.md round 4.
+
 ## Yardstick rows (1 lot, quick screen, May-Oct window = tape; L3M = weeks 169-181 = 2026-07-10..10-09, L6M = weeks 156-181)
 | book | REF0 fixed bracket: inc / maxDD / worst wk (wk 26-181) | REFTH (+ live per-book layer): inc / DD | L3M inc/DD (REF0) | L6M inc/DD (REF0) |
 |---|---|---|---|---|
