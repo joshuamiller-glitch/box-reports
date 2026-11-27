@@ -1,0 +1,22 @@
+# What we learned about exits (for Josh; W-DYNQ, 2026-11-27, quick screen, numbers from DYNEXIT_WF.md)
+
+## Answer first
+**Making the stop and target dynamic (volatility-scaled, range-forecast, level-based, trailing, staged, re-computed inside the trade) did not beat the live books' own fixed brackets when walked forward. The brackets are not 'crazy': on these weeks they are the best exit in a menu of 287 recipes, because they were tuned together with their entries. The only dynamic thing that carries information is a SHAPE (tight stop, far target or a trailing exit that lets winners run), and it works in a trending year (2026), not across 2023-2025.**
+
+## Which pieces carry any information
+1. **Reward:risk shape / trend capture (real but regime-bound).** On the Asia qualifier sample, in 2026 and the last 6 months, tight-stop / far-target brackets (fixed30/90: +$423k L6M vs own +$150k) and vol-scaled exits (chandelier trail +$708k, ATR 1.5/3 +$516k) beat the cells' own brackets; widening the bracket symmetrically does NOT help (90/90, 120/120, 8-30 x unit all about zero or negative). About 70-75% of the gain also appears on random entries, so it is the exit harvesting the 2026 up-trend, not entry skill; in 2025 no rule wins. Registered as a forward lead (FORWARD_REGISTER_STACKS.md, 'Exit leads'), not a recommendation.
+2. **Drawdown trim from time / structure families, small and not repeatable:** best walk-forward family DD cuts on the live books were 8-10% (X6 no-progress at 2 weeks, X2 structure stop at 13 weeks) with income -6% to -10%; neither wins 2/3 of periods. Consistent with the earlier dynamic-target replay (DD cuts 2-9%, in-sample).
+3. **Recent windows only:** a 2-week re-pick halves the L3M drawdown (all-17 $14.6k vs $22.4k, London $2.1k vs $6.0k) at -14% to -28% income, but L6M is deeper and three years say -57% income.
+
+## Which families are real and which are noise (live books, walk-forward)
+No family is real on the live books: every picked family loses forward points against the fixed bracket (X9 level recipes lose most: they are 80 of the 287 recipes and the pick rule loves them in-sample). Families that come closest: X2 structure stops, X6 time/behaviour, X3 range-left target (its intra-trade version X3D is the most stable at 13 weeks, still FAIL). Re-picking more often (4, 2 weeks) is worse than 13 weeks. A best-FIXED-bracket re-pick (Test 3 part B) keeps income (+1%) but deepens drawdown (+73%). Intra-trade recomputation of levels/targets (order 0340Z) adds nothing over set-once and costs 1-17 order changes per trade.
+**Levels are not walls:** for 13 level types (prior-day, overnight, session, opens, IB, VWAP and bands, anchored VWAP, pivots, fib, volume profile, swings, round numbers, UW gamma levels) price touches the nearest level ahead exactly as often as a shuffled same-distance level, and the reaction after a touch is at the null. Using them as stops/targets just makes stops tight and trades many: all lose against the book's bracket.
+
+## What the live books' own brackets already capture
+On random entries every fixed bracket loses (-$300k to -$630k L6M on the Asia sample); on the real entries the books' brackets earn. The brackets were chosen together with the entries on the same weeks, so they hold the in-sample fit of the entry/exit pair; a generic exit loses $350k-$750k L6M against them. So the answer to 'are fixed brackets crazy' is: not on the evidence of these tests, but the evidence cannot tell fit from edge for the live books (hindsight). The fair arena is the non-hindsight qualifier cells (Test 5), where results are mixed and recent-only.
+
+## What remains untested
+- Supply/demand zones, trendlines/channels as stops/targets (no zone definition in the data); X4 trail on the trigger's own line (triggers do not export it); X6 volatility-burst-against exit (not in the kernel); UW forecast range (X1c) and intraday UW wall movement (recorder only since 18 Nov: too thin); X8 resting orders / depth (W-DYNX8).
+- The exact engine: everything here is the quick screen (weekly arrays, no stack/Trade Health, no pessimistic stop fill). Interaction with Trade Health is W-DYNH's.
+- The non-hindsight test is a sample (127 Asia / 82 NY AM cells at the first pass; round 2 is running on the other 3,798 cells) and London / NY PM are untested.
+- Regime: only one trending regime (2026) is in the data; whether trend-capture shapes survive a range year cannot be said.
