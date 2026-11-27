@@ -98,3 +98,22 @@ Live mix TL3_SR_LO_STKd8w42lo_FSffb8_BARE (lots 8/4/2). Replaced most often: MF1
 | 2024-01-01 | MF1 (8L) | bands_atrchan fixed90/30 both | -65,388 -> -13,522, 2,789 -> 11,257 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 | 2023-10-02 | MF1 (8L) | levels_fib5 asym10u/20u both | -65,388 -> -4,950, 828 -> 9,876 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 | 2026-09-28 (4wk tail) | MF2 (4L) | levels_trendline fixed90/90 long | -213,180 -> -101,789, 4,531 -> 6,330 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+
+## ADDENDUM 2/4/13-WEEK DECISION STEPS (order 0249Z), QUICK SCREEN ONLY, EXACT PENDING (order 0311Z paused Test 12; no faster-step exact rows queued)
+
+Same primary swap rule re-run at steps 2, 4 and 13 weeks (candidates = Test 5 primary cells held at each decision date, walk12 on server C), forward judged on the next step weeks, grid candidate weekly points on the exact leave-one-out weekly mix (weekly resolution, so the 2-week step is 2 weekly points). DD-pass = shallower DD, or higher income with no deeper DD. Chained = all forward periods joined, max DD of the chain. Selection-time pasts of candidates are in-sample; hindsight caveats as above.
+
+```
+QS fwd step 2 AS periods 79 DD-pass 46 (58%) mean dDD 206 d$/wk 1377 chained maxDD U -67617 S -123427 chained $/wk U 5666 S 7126
+QS fwd step 2 LO periods 79 DD-pass 39 (49%) mean dDD 170 d$/wk -2428 chained maxDD U -213180 S -159668 chained $/wk U 5498 S 3126
+QS fwd step 2 NY periods 79 DD-pass 39 (49%) mean dDD -2512 d$/wk -2709 chained maxDD U -163622 S -241291 chained $/wk U 20650 S 17745
+QS fwd step 2 NP periods 79 DD-pass 39 (49%) mean dDD -826 d$/wk -231 chained maxDD U -126828 S -146563 chained $/wk U 6372 S 6177
+QS fwd step 4 AS periods 40 DD-pass 22 (55%) mean dDD -76 d$/wk 446 chained maxDD U -67617 S -111112 chained $/wk U 5666 S 6343
+QS fwd step 4 LO periods 40 DD-pass 19 (48%) mean dDD 1127 d$/wk -2191 chained maxDD U -213180 S -204209 chained $/wk U 5498 S 3350
+QS fwd step 4 NY periods 40 DD-pass 17 (42%) mean dDD -8701 d$/wk -1083 chained maxDD U -163622 S -263299 chained $/wk U 20650 S 19543
+QS fwd step 4 NP periods 40 DD-pass 17 (42%) mean dDD -6442 d$/wk -1565 chained maxDD U -126828 S -152262 chained $/wk U 6372 S 4826
+QS fwd step 13 AS periods 13 DD-pass 6 (46%) mean dDD -2173 d$/wk -1007 chained maxDD U -67617 S -144047 chained $/wk U 5666 S 4668
+QS fwd step 13 LO periods 13 DD-pass 5 (38%) mean dDD -9892 d$/wk -3719 chained maxDD U -213180 S -137982 chained $/wk U 5498 S 2340
+QS fwd step 13 NY periods 13 DD-pass 5 (38%) mean dDD -12606 d$/wk -1879 chained maxDD U -163622 S -223850 chained $/wk U 20650 S 19595
+QS fwd step 13 NP periods 13 DD-pass 4 (31%) mean dDD -10995 d$/wk -265 chained maxDD U -126828 S -94695 chained $/wk U 6372 S 6220
+```
