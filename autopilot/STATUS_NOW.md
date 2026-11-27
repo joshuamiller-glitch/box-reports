@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 20:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 20:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 20:15Z | box1: busy 100%, load1 78.58, workers 15, MemAvail 65 GB | server2: busy 96%, load1 80.85, workers 25, MemAvail 821 GB | pending box1-eligible 500909 / server2-eligible 84479 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 194.92, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 833 GB | serverB: busy 100%, load1 190.59, workers 105 (grid) + 82 (engine), 128 threads, MemAvail 876 GB | serverC: busy 100%, load1 251.33, workers 1 (grid) + 134 (engine), 128 threads, MemAvail 721 GB | serverD: busy 90%, load1 53.50, workers 1 (grid) + 110 (engine), 64 threads, MemAvail 1473 GB
+LATEST CORES.md LINE: 2026-11-27 20:30Z | box1: busy 99%, load1 52.37, workers 12, MemAvail 69 GB | server2: busy 97%, load1 85.04, workers 24, MemAvail 581 GB | pending box1-eligible 500819 / server2-eligible 82444 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 193.40, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 895 GB | serverB: busy 99%, load1 177.24, workers 105 (grid) + 91 (engine), 128 threads, MemAvail 917 GB | serverC: busy 100%, load1 232.93, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 834 GB | serverD: busy 100%, load1 97.90, workers 1 (grid) + 101 (engine), 64 threads, MemAvail 1467 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 20:15Z
+2026-11-27 20:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 20:15Z | box1: busy 100%, load1 78.58, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 65.4 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 14 (RSS 17.9 GB) vs others 1 (RSS 1.1 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 80.53, 71.13, 62.86
-  by tag: NYE quota 16 running 14 hungry False RSS 17.9 GB PSS 16.3 GB; REST quota 0 running 1 hungry False RSS 1.1 GB PSS 1.0 GB
+Server 1 (this box): MemAvail 67.8 GB; live reservations 1 (1 GB); workers 12, of which TP-adopted 12 (RSS 17.8 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.74, 60.28, 63.14
+  by tag: NYR quota 12 running 12 hungry False RSS 17.8 GB PSS 14.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Ld61ffe03_ALN (x28);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 81.01, 83.15, 84.47|/dev/md2         28T  2.8T   26T  11% /mnt/l2|48|
+  top running jobs: TL3_NYE_L33285244_ALNCT28p (x12);TL3_NYE_L33285244_ALNCT21p (x8);TL3_NYE_L33285244_ALNCT35p (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 85.45, 85.66, 85.05|/dev/md2         28T  2.8T   26T  11% /mnt/l2|42|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 81.01, 83.15, 84.47|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md 20261127_1940Z_Josh-restore-loss-side-rows-and-mix-level-price.md 20261127_2016Z_Josh-on-the-data-authority-his-words.md
+20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md 20261127_1940Z_Josh-restore-loss-side-rows-and-mix-level-price.md 20261127_2016Z_Josh-on-the-data-authority-his-words.md 20261127_2030Z_Josh-desk-manager-v0_2.md
