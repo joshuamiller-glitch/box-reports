@@ -235,3 +235,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 23:41Z Josh: ES/RTY tape owned (mbp-10 L2 39 months each, 1-min bars): port level modules and run (quick screen ~10 min wall per instrument after bar rows; exact needs engine port)? waiting for your word
 - 01:14Z Josh: exact engine fills 85% of stops BETTER than the stop (vs your DS3_DN_STOPFILL study: stops slip 0.85 pt worse): check the engine stop-fill model against real stops before relying on exact dollar levels?
 - 01:31Z Josh: move Test 11 exact rows (25,442) ahead of Q1's remaining ~150k rows (pause Q1 / reorder) so the layered answer lands in <24 h instead of 40-60 h? default: leave the order
+- 02:23Z Josh: data top-up blocked by the 60 GB disk reserve (51 GB free): lower reserve to ~40 GB (3 GB catch-up leaves ~48 GB), free 10-15 GB (name data to move), or add disk? NQ mbp-10 is stale since Nov 25 17:00Z
