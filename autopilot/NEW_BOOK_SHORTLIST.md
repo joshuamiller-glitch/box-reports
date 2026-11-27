@@ -1,6 +1,6 @@
 # NEW_BOOK_SHORTLIST - RULE-BASED (no top-N; W-SHORT, order 1845Z; replaces the 12-per-session list, kept as NEW_BOOK_SHORTLIST_12PER_SESSION_OLD.md)
 
-refreshed 2026-11-27 21:20Z | screen level, bare ranking from server-2 results only (grid partitioned across servers until W-S3 merges; counts PROVISIONAL) | pick window = last 26 weeks (L6M) with last 13 (L3M) beside, equal risk (R = points / stop; risk-matched $/week = R/wk x $1,200)
+refreshed 2026-11-27 21:40Z | screen level, bare ranking from server-2 results only (grid partitioned across servers until W-S3 merges; counts PROVISIONAL) | pick window = last 26 weeks (L6M) with last 13 (L3M) beside, equal risk (R = points / stop; risk-matched $/week = R/wk x $1,200)
 
 RULE (a cell is shortlisted when it passes ALL): L6M > 0; >= 100 trades in L6M; L3M > 0; persistence > 0.60 (share of 2-week windows since 2023-10 positive); prior years 2023/24/25 R per week not more than 30% below the cell's own L6M R per week (RED = shown on disk, not delivered; AMBER 15-30% passes, flagged); then trust + look-ahead (phase 2, every passing cell, best first). Counts per session and the failing-reason split: autopilot/SURVIVOR_COUNTS.md. Every evaluated cell with its reason is on disk (server 2 /mnt/l2/l2vast/_grid/rule/bare_<session>.parquet) for the 2-week refit. OWN-STOP and current-stack MASK rankings beside bare: pending (full-grid arrays not built yet).
 
