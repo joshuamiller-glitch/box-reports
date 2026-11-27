@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 16:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 16:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 16:00Z | WARNING serverD below 85% busy for 8 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-27 16:15Z | box1: busy 100%, load1 69.43, workers 13, MemAvail 71 GB | server2: busy 96%, load1 83.74, workers 27, MemAvail 853 GB | pending box1-eligible 502507 / server2-eligible 119673 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 158.95, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 941 GB | serverB: busy 100%, load1 190.05, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 880 GB | serverC: busy 100%, load1 162.62, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1352 GB | serverD: busy 98%, load1 62.46, workers 1 (grid) + 61 (engine), 64 threads, MemAvail 1433 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 16:00Z
+2026-11-27 16:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 16:00Z | WARNING serverD below 85% busy for 8 r
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 78.2 GB; live reservations 6 (6 GB); workers 10, of which TP-adopted 10 (RSS 13.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 45.56, 42.17, 51.53
-  by tag: NYE quota 16 running 10 hungry False RSS 13.5 GB PSS 12.4 GB
+Server 1 (this box): MemAvail 70.7 GB; live reservations 1 (1 GB); workers 13, of which TP-adopted 13 (RSS 19.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 69.43, 70.50, 64.22
+  by tag: NYE quota 16 running 13 hungry False RSS 19.1 GB PSS 17.6 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Lde4f2683_ALN (x30);TL3_NYE_L852baf1e_ALNCT28m (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 85.15, 81.91, 80.65|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
+  top running jobs: TL3_NYE_L3cb184c1_ALN (x24);TL3_NYE_L71ad6c47_ALN (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 81.55, 83.99, 83.21|/dev/md2         28T  2.8T   26T  10% /mnt/l2|45|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 85.15, 81.91, 80.65|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1518Z_Josh-ORDER-everything-on-the-cross-market-management-loop-coded-for-Sunday-Globex.md 20261127_1521Z_Josh-wide-bracket-books-edge-per-trade-versus-risk-per-trade-and-drift.md 20261127_1527Z_Josh-management-work-goes-straight-to-the-exact-engine-no-quick-screen-results.md 20261127_1529Z_Josh-cross-market-management-on-the-BARE-entry-not-on-the-fitted-books.md 20261127_1530Z_Josh-reproduce-the-quick-screens-behaviour-in-the-exact-engine-trade-frequency.md
+20261127_1521Z_Josh-wide-bracket-books-edge-per-trade-versus-risk-per-trade-and-drift.md 20261127_1527Z_Josh-management-work-goes-straight-to-the-exact-engine-no-quick-screen-results.md 20261127_1529Z_Josh-cross-market-management-on-the-BARE-entry-not-on-the-fitted-books.md 20261127_1530Z_Josh-reproduce-the-quick-screens-behaviour-in-the-exact-engine-trade-frequency.md 20261127_1612Z_Josh-Sunday-all-books-give-back-rules-and-cross-instrument-management-verdicts-by-Saturday.md
