@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 09:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 09:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 09:00Z | box1: busy 100%, load1 49.86, workers 11, MemAvail 78 GB | server2: busy 94%, load1 79.12, workers 28, MemAvail 1135 GB | pending box1-eligible 505022 / server2-eligible 104262 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 182.42, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 946 GB | serverB: busy 100%, load1 172.66, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 912 GB | serverC: busy 100%, load1 137.37, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1388 GB | serverD: busy 98%, load1 64.38, workers 1 (grid) + 65 (engine), 64 threads, MemAvail 1442 GB
+LATEST CORES.md LINE: 2026-11-27 09:15Z | box1: busy 97%, load1 37.79, workers 14, MemAvail 81 GB | server2: busy 94%, load1 78.31, workers 27, MemAvail 1137 GB | pending box1-eligible 504918 / server2-eligible 102292 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 171.47, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 943 GB | serverB: busy 100%, load1 193.33, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 906 GB | serverC: busy 100%, load1 137.35, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1384 GB | serverD: busy 98%, load1 64.62, workers 1 (grid) + 62 (engine), 64 threads, MemAvail 1441 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 09:00Z
+2026-11-27 09:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 09:00Z | box1: busy 100%, load1 49.86, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 76.8 GB; live reservations 4 (4 GB); workers 11, of which TP-adopted 11 (RSS 15.7 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 49.86, 51.34, 52.63
-  by tag: NYR quota 12 running 11 hungry True RSS 15.7 GB PSS 13.3 GB
+Server 1 (this box): MemAvail 79.8 GB; live reservations 2 (2 GB); workers 14, of which TP-adopted 14 (RSS 20.5 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 37.79, 50.06, 53.42
+  by tag: NYR quota 12 running 13 hungry False RSS 18.6 GB PSS 15.5 GB; NYE quota 16 running 1 hungry False RSS 1.9 GB PSS 1.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Lcee6a0b5_ALNCT28p (x12);TL3_NYE_Lcee6a0b5_ALNCT21p (x10);TL3_NYE_Lcee6a0b5_ALNCT35p (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 78.83, 78.43, 81.26|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
+  top running jobs: TL3_NYE_Lcee6a0b5_ALNCT49m (x12);TL3_NYE_Lcee6a0b5_ALNCT42m (x12);TL3_NYE_Lcee6a0b5_ALNCT56m (x5);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 80.99, 78.85, 79.65|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 78.83, 78.43, 81.26|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_0349Z_Josh-ORDER-realtime-exit-for-ALL-books-do-not-stop.md 20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md 20261127_0525Z_Josh-exits-next-round-stuck-trade-exit-fair-entries-and-disk-guard.md 20261127_0719Z_Josh-exits-session-end-flatten-is-the-leak-test-carry-and-late-entry-rules.md
+20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md 20261127_0525Z_Josh-exits-next-round-stuck-trade-exit-fair-entries-and-disk-guard.md 20261127_0719Z_Josh-exits-session-end-flatten-is-the-leak-test-carry-and-late-entry-rules.md 20261127_0914Z_Josh-RESEND-session-end-flatten-order-and-two-questions.md
