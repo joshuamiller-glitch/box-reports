@@ -1,5 +1,8 @@
 # WF M11: SIZE BY THE UNUSUAL WHALES RANGE FORECAST (W-WF1112, 2026-11-27 03:04Z)
 
+**PAUSED (LEAD order 0311Z, DIRECTIVE_EXITS_ALL_SERVERS_0311Z.md): M11 is paused until a new order; no further compute; this page is the write-up of what was computed before the pause.**
+
+
 ## ANSWER FIRST
 **M11 (size by the UW range forecast) does NOT work as a walk-forward rule. Primary PASS only for S1 Asia (the four-live-mix subject) at the 2-week and 4-week steps; every other session, subject and step FAILS, and the Asia pass is not distinguishable from random half-sizing at the 10% level (p about 0.09-0.11 against a random-half null), before any correction for the number of cells tried.**
 - Primary (as ordered): session size FULL when the UW-forecast session range sits in the tercile where the subject earned best per unit drawdown on past data, HALF otherwise; refit of the forecast every 10 trading days, tercile re-chosen at every decision date from past days only.
