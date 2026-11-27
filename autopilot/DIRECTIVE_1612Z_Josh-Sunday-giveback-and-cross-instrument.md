@@ -1,0 +1,14 @@
+# For Sunday: give-back rules on ALL books, and a cross-instrument management verdict for EVERY book by Saturday (order from Josh, relayed)
+
+Josh, 27 Nov 16:11Z, verbatim: "yes all books will be managed using other instruments starting Sunday and all will have give back rules"
+
+(relay) My reading. Two deliverables with the Saturday 16:00Z deadline of the Sunday job. Exact engine only. Research only; Josh decides per book on Saturday what is switched on live.
+
+1. GIVE-BACK RULE ON EVERY BOOK (part of EXIT_MGMT_SUNDAY.md, mandatory row per book): a trade that has been well in profit may not turn into a loser, and may not give back more than a stated share of its best open profit. Per book test: breakeven after 50 / 70 / 80% of target; keep 50 / 67 / 75% of peak open profit once peak >= 0.5 / 0.7 of target; the structure-trail and give-back-cap versions already in the plan. Deliver for EVERY book the best give-back setting with its cost (income, max DD, worst week versus the live row, L3M and L6M first) even where it costs income: Josh has said he will pay for it; mark the cheapest effective level per book and the level that would have handled today's NY-FIB trade (peak ~94% of a 120-point target, then full stop).
+2. CROSS-INSTRUMENT MANAGEMENT, A VERDICT PER BOOK BY SATURDAY 14:00Z, bare entries and live books both (15:29Z rows A-E), with the feed bug fixed:
+ a. SIMPLE RULES FIRST (readable, few settings, stated before scoring), loss side: while under water, leave (or halve, or tighten to the book's own stop) when the other index futures have broken against the trade: ES and RTY (and YM) each beyond k sigma against since entry (k = 1.0, 1.5, 2.0) AND NQ not leading back; versions with bonds/crude/yen by session where relevant (Asia: NKD and 6J; NY: ZN, TICK); confirmation version: hold through a dip when the others have NOT moved against. Profit side: tighten the give-back when the others turn against a winning trade.
+ b. THE LEARNED LOOP, corrected: both sides, labels against the book's own bracket, 15-second decisions, full instrument set; exact rows as each fit is ready.
+ c. For each book: PASS / FAIL / NOT READY against that book's reference (bare bracket for the bare row; live as run for the fitted row), loss-side table first; random-management null on any PASS.
+ d. For every book that has a PASS: the exact rule text or model file, the live-feasibility of each input in NT8, and match rows (15:07Z format). For every book without a PASS by the deadline: say so plainly, with the best row and how far it is from passing; it will run in SHADOW on Sunday and the give-back rule is its live protection.
+3. STEMS: add the live stem names (NY-FIB, NY-NODE, AS-NR7, LO-CRUDE ...) beside MF numbers in every table that goes to Josh.
+4. Hourly LEAD TO JOSH line: books with a give-back setting done; books with a cross-instrument PASS / FAIL / pending; on time for Saturday yes or no.
