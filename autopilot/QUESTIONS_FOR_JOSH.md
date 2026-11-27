@@ -245,3 +245,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 13:37Z Josh/relay: run the Databento cost lookup (code/th_cross/quote2.py, metadata only, buys nothing) for the 7 megacaps + QQQ/SPY 2024-10..2026-11, or give the agents a quote; the algo's stock-tape input depends on it
 - 16:37Z Josh/relay: this week's live fills (23-27 Nov) are not on the box: send the trade file (or the fills) if the give-back count must include them
 - 20:09Z Josh: final list of drift books to cut/size down after the reconciled verdicts (London MF2 long-only trend-dependent; NY PM MF1 flagged; NY AM MF2/MF5 borderline; Asia MF4 an exits question)
+- 21:07Z Josh: Databento key: run in a terminal: (umask 077; cat > ~/.databento_key) then paste the key and Ctrl-D; then say 'key file ready'. Spend authority received: up to $5,000, quote first, ask before passing $1,000.
