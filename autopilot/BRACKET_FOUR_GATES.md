@@ -1,6 +1,6 @@
 # BRACKET: FOUR GATES ONLY (Josh 18:10Z Nov 20), books that clear walk-forward without the 15% guard
 
-Written 2026-11-27 08:13 UTC by W-BRKT. The 15% max-DD / worst-week guard was an AGENT-ADDED gate (W-BRKT, copied from W-LAYERS pool_run and the stack rules), NOT one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); here it is a displayed column only. Pick = best L6M equal-risk shape that beats own in L6M and L3M, no guard. Prior-year band: wf_gate.year_band of that frozen shape vs own, RED fails. Null: the same 17-shape screen and rule on 5 random-entry versions of the book, real gain (relative equal-risk L6M $/wk gain) must strictly beat >= 4 of 5. L130cb48e (0.578) is a shown near-miss.
+Written 2026-11-27 08:51 UTC by W-BRKT. The 15% max-DD / worst-week guard was an AGENT-ADDED gate (W-BRKT, copied from W-LAYERS pool_run and the stack rules), NOT one of Josh's four gates (recent pick, walk-forward >= 58%, prior-year band, null >= 4 of 5); here it is a displayed column only. Pick = best L6M equal-risk shape that beats own in L6M and L3M, no guard. Prior-year band: wf_gate.year_band of that frozen shape vs own, RED fails. Null: the same 17-shape screen and rule on 5 random-entry versions of the book, real gain (relative equal-risk L6M $/wk gain) must strictly beat >= 4 of 5. L130cb48e (0.578) is a shown near-miss.
 
 | book | own | pick | walk-forward | band 2023/24/25 | null (beats of 5; null gains) | real L6M gain (rel) | 15% guard (shown only) | verdict |
 |---|---|---|---|---|---|---|---|---|
