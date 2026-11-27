@@ -105,3 +105,13 @@ Target = remaining move to the base exit in R (clipped +-4), rows = every minute
 - LightGBM: R2 vs mean -0.12 (every book negative, range -0.06 to -0.20), row correlation about 0.00 (8 of 17 positive), per-trade correlation -0.09 (0 of 17 positive), AUC for target-before-stop 0.44 (below 0.5 in every book).
 - Ridge (X13): R2 -0.017 (0 of 17 positive), correlation -0.01, AUC 0.51.
 ANSWER: with price, bar-volatility, MAE/MFE, time and level-distance features there is NO out-of-sample predictability of the remaining move inside a trade on these 17 books; the GBM is worse than predicting the mean (it overfits and ranks backwards). This matches the attribution result. Flow/depth feature version NOT yet run (needs th_dynof code and per-trade depth snapshots). Items 1 (hazard, press), 3 (real finalists), 4 (Test 5 entries), 5 (London/NY PM stores) not yet done.
+
+### Round 2 item 2b and positive control
+Positive control (same pipeline): next-15-minute realised range in R, out-of-sample R2 0.40 (0.30-0.49, 17/17 books), correlation 0.63; log minutes left to base exit R2 0.32 (corr 0.69). So the pipeline works; volatility and duration are forecastable inside a trade.
+Flow/depth features (16, from the 1-s tables, window ends 1 s before the decision: 60-s and 300-s delta share, OFI share and z, trade-rate ratio, sweep share, big-print share, bid/ask cancel and add imbalance at the touch, spread, microprice minus mid, 10-level depth imbalance, EMA depth imbalance, total depth, depletion imbalance), LightGBM, purged 13-week walk-forward, 17 books, target = remaining move to the base exit in R:
+| feature set | R2 | corr | AUC |
+|---|---|---|---|
+| price/level only | -0.1245 | -0.001 | 0.441 |
+| price + flow/depth | -0.1229 | +0.004 | 0.442 |
+| flow/depth only | -0.0218 | -0.003 | 0.503 |
+Flow adds nothing out of sample (R2 negative in 17/17 books in every set; flow-only AUC 0.503, 9 of 17 books above 0.5). ANSWER: nothing we can measure (price, levels, order flow, 10-level depth) predicts the outcome of the rest of an open trade on these books; only volatility and duration are predictable. Not yet run: London/NY PM stores, Test 5 entries, X13 hazard/press, X10 on real finalists. (Tape only through 10 levels; MBO-based features not built.)
