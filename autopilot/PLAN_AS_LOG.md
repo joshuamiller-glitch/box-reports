@@ -23,3 +23,5 @@ Kernel reconciliation (recon.py, recon2.py, recon3.py on C; outputs /mnt/l2/l2va
 Gate AS8G fixed rule scored (r16.py): +6.6% income, DD -11%, worst week -17%, null beaten; live-mix entries only.
 Exact rows: MF1 pas8 A/M running; scorer code/th_planas/score_pas.py (read only, uses dx_score).
 Variants ~225.
+## Exact verdict (06:55Z)
+ALLAS8_M vs live mix: income -43%, chained DD deeper (-89k vs -68k), 2023 and 2025 lose; per book M: MF1/MF3 fail, MF2/MF4 neutral; stk45 fails, stk45h marginal; WF picks live. AS8 refuted with Trade Health on. Why: early exits free the stream for extra entries (round 1 ignored them) and TH already cuts these trades. Next: pas1 when it runs (expected same); no plan found for Asia: remaining ideas = none worth testing from this family; untested = MF4 alone with longer time, entry-side filters (out of scope).
