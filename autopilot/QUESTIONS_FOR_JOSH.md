@@ -242,3 +242,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 05:06Z Josh: allow agents to delete their OWN regenerable scratch created today on box1 (e.g. W-DYNC grid.npz/feat.npz 1.8 GB, W-DYNA v2 stores)? default: no deletion
 - 05:51Z Josh: add W-DYNX8 tape.npz 3.59 GB to the 'agents may delete own regenerable scratch' list (option A)
 - 13:02Z Josh: carry rule needs the cross-session engine (choice B, ~1 working day) to count carried risk across sessions; default: build only if choice A shows a candidate
+- 13:37Z Josh/relay: run the Databento cost lookup (code/th_cross/quote2.py, metadata only, buys nothing) for the 7 megacaps + QQQ/SPY 2024-10..2026-11, or give the agents a quote; the algo's stock-tape input depends on it
