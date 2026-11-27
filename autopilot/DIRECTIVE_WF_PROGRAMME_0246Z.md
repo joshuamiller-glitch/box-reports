@@ -1,0 +1,21 @@
+# WALK-FORWARD PROGRAMME: ten different methods, all servers, until one works (order from Josh, relayed)
+
+Josh, 27 Nov 02:45Z, verbatim: "you are to continue to test until you find a waok forward or otherwise that actually works - try everything possible you can thihnk of - all 6 cores"
+
+(relay) The list is my design. Research only. All six servers; run the methods in PARALLEL (quick-screen parts on server C now, exact rows across the fleet), ahead of Q1 and behind only Q0 and Test 12. Drawdown first in every table (max DD, worst week, then income), L3M and L6M first, then by year.
+
+COMMON RULES for every method: at each decision date use only data before it; judge only the following period; 13-week steps unless stated; ONE primary version per method, named below, judged alone; at most 5 reference versions each, marked reference. Subjects: (S1) the four LIVE session mixes with their live layers (exact engine), and (S2) the equal-weight basket of Test 5 primary qualifiers per session (quick screen, exact for the primary). PASS = forward max drawdown shallower than the untouched subject in at least 8 of 12 periods AND forward income not lower by more than 10%; OR forward income higher in at least 8 of 12 with drawdown not deeper. Say PASS / FAIL per session and subject. A method that passes is then run on the pessimistic fill basis (label only) and added to the forward register.
+
+M1. BOOK SWITCH ON ITS OWN CURVE. Each book trades full size only while its own trailing P&L is above zero, else half size. Primary: trailing 13 weeks, half size when below.
+M2. SIZE BY RISK. Lots per book proportional to 1 / trailing max drawdown per lot, session total lots unchanged. Primary: trailing 26 weeks, re-set every 13.
+M3. SESSION ALLOCATION. Lots per session re-set by trailing income per unit drawdown, total lots unchanged. Primary: trailing 26 weeks, floor 2 lots per session, re-set every 13.
+M4. VOLATILITY REGIME. Session size by NQ's trailing 20-day median daily range: full size inside the range band where the subject earned on past data, half outside. Primary: band = the past-data tercile with the best income per drawdown.
+M5. CONFLUENCE ACROSS BOOKS. A book's entry is taken only if at least one OTHER book of the same session signalled the same side within the last N minutes; reference: opposite-side signal within N minutes blocks the entry. Primary: N = 30, same-side confirmation. No limit on conditions in the reference rows, but report trades per day and show the gain is not just from fewer trades (same-count random-skip null, 200 draws).
+M6. FAMILY AGREEMENT. A book's entry is taken only if at least k of its near-twin cells (same module and bar type, neighbouring params) are on the same side that session. Primary: k = half of the twins.
+M7. DAY FILTER. Skip the session on day types that lost on past data: by weekday, by prior-session range tercile, by overnight gap tercile, by scheduled-event day. Primary: skip the single worst day type of the trailing 52 weeks, re-chosen every 13.
+M8. HOURS. Trade only the hours of the session that earned on past data. Primary: drop the worst third of session hours of the trailing 52 weeks.
+M9. BRACKET SCALED TO RANGE. Stop and target multiplied by (trailing 20-day median range / the book's fit-period median range), clipped 0.6-1.6. Primary as stated, lots scaled inversely so dollars at risk stay equal.
+M10. LOSS-STREAK GOVERNOR. After a session mix's trailing 4-week P&L falls below minus X, run half size until it makes a new 4-week high. Primary: X = the 20th percentile of past 4-week results.
+
+LUCK ACCOUNTING: ten primaries x four sessions x two subjects are being tried, on data already used many times. Keep one page, WF_PROGRAMME_SCOREBOARD.md: every method, session, subject, PASS/FAIL, the numbers, and a running count of everything tried since Test 1; for each PASS give the plain p and the p after a best-of-all-primaries correction. Nothing is called "works" on this data alone: a PASS means it goes to the forward register and to Josh as a candidate.
+One page per method (WF_M1.md ... WF_M10.md), answer first. Post the set-month counts and the start order in a LEAD TO JOSH line and start at once; if one method exceeds 40 h of fleet, run its Asia and NY AM parts first and say what waits. No server released, resized or wiped; nothing deleted or bought.
