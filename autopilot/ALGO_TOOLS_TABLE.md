@@ -38,3 +38,21 @@ Stock/ETF ticks and quotes (UW 1-min bars only; AVGO none); VIX/VX, ADD, VOLD, T
 | CME futures (ES RTY YM ZN ZB CL GC 6E 6J NKD 6A 6B 6C HG SI NG...) | context / leaders | see table above; 1-min 2013..2026-11-13, 1-s for ES NQ RTY CL GC ZN, 10-level book for ES and RTY 2023-08..2026-10-30 | sub-minute YM ZB 6E 6J NKD |
 | Asia / China context found on the box (not asked): Hang Seng (HSI), Nikkei 225 (N225), FXI | Asia-hours risk tone for the Asia books | hourly bars 2024-11-18..2026-11-16 (_newdata/yahoo/*_1h.json) and daily; free source, no tick | 1-min |
 | ES MBO per-second features | ES wall / pulls | only 78 days 2026-08-02..2026-10-30 (_newdata/es_mbo_sec) | the rest of ES MBO |
+
+## CALENDAR FEED: what exists, from when, how good (feed built 2023-04..2026-11-05 on the levels_ second grid; events_all.parquet; calendar_kinds.json)
+Sources: DISCOVER_CALENDAR.csv (built 2026-11-03: bls.gov year/release pages for CPI PPI NFP; federalreserve.gov for FOMC decisions; census.gov retail sales; bea.gov PCE/GDP (2026 pages + ALFRED vintages earlier); Treasury fiscaldata coupon auctions; NQ bars for holidays/early closes; rules for presser 14:30, minutes 14:00, claims Thursdays 08:30, ISM 1st/3rd business day 10:00, opex, month/quarter end, NQ roll week) and _calendar/events.csv (2024-10-01..2026-12-23: megacap earnings after the close, Chair speeches, announced-call times).
+| event | from .. to | count | quality |
+|---|---|---|---|
+| CPI, PPI, NFP, retail sales | 2023-04 .. 2027-03 | 47-48 each | source-confirmed dates, 08:30 ET |
+| FOMC decision / presser / minutes | 2023-04 .. 2027-03 | 32 each | decision source-confirmed (2027 tentative), presser 14:30 and minutes 14:00 rule-derived |
+| GDP, PCE | 2023-04 .. 2026-12 | 44 | source-confirmed (ALFRED vintages for older) |
+| jobless claims | 2023-04 .. 2027-03 | 208 | dates rule-derived (Thursday 08:30), values not used |
+| ISM manufacturing / services | 2023-04 .. 2027-03 | 48 each | rule-derived 10:00 |
+| Treasury auctions 2Y 3Y 5Y 7Y 10Y 20Y 30Y (13:00 ET close) | 2023-04 .. 2026-10-22 | 42-84 each | source-confirmed; data through 2026-10-22 (Nov-2026 refunding not in); TIPS auctions and FRN: not in this table (events.csv has some from 2024-10) |
+| opex monthly / quarterly | 2023-04 .. 2027-03 | 32 / 16 | rule-derived (3rd Friday, 09:30 SOQ for quarterly) |
+| month end, quarter end, NQ roll week | 2023-04 .. 2027-03 | day flags | rule-derived |
+| holidays, early closes | 2023-04 .. 2027-03 | 11 / 41 | confirmed from NQ bars for the past (36 of 41 early closes, 8 of 11 holidays), rule for the rest |
+| megacap earnings (AMC) | 2024-10 .. 2026-12 only | 62 | free-source build, time ~16:05-16:20 ET; BEFORE 2024-10 NOT IN THE TABLE (2023-04..2024-09, about 7 names x 6 quarters = ~40 missing) |
+| Fed Chair speeches and testimony | 2024-10 .. 2026-12 only | 27 | only the Chair; NO other Fed speakers; before 2024-10 not in the table |
+Gaps to say plainly: Fed speakers other than the Chair; megacap earnings before 2024-10; ISM/claims times are rules not confirmed; auctions after 2026-10-22; no consensus/actual used (values exist for CPI etc. in the csv but the feed uses SCHEDULE only, so it is causal and cannot leak the result).
+Feed columns (per second, minutes): nxt_min nxt_kind nxt_imp (next scheduled timed event), nxt_hi_min nxt_hi_kind (next importance-3: FOMC decision/presser, CPI, NFP, megacap earnings), prv_min prv_kind prv_imp, prv_hi_min prv_hi_kind, n_next60 (importance>=2 events in the next 60 min), day_early_close day_holiday day_opex day_opex_q day_month_end day_quarter_end day_roll_week. Importance: 3 = FOMC decision/presser, CPI, NFP, megacap earnings; 2 = PCE GDP PPI retail ISM FOMC minutes Chair speech 10Y/30Y auction quarterly opex; 1 = claims, other auctions, monthly opex. kind codes in /mnt/l2/l2vast/_dynexit/calendar_kinds.json.

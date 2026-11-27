@@ -3,3 +3,4 @@
 - NY AM stage 1 queued: MF1,MF3,MF7,MF4,MF6,MF2,MF5,MF8,MF9: 44 versions each (396 sets), rows_c0_sun_001..012.
 - LO MF1-3, AS MF1-4, NP MF1-4 queued (files 013-028)
 - 17:15Z two-phase plan: sun_phase.py (L6M first, promotion), sun_l6.py screen, sun_joint.py joint stage
+- 17:25Z NY MF2/MF4/MF5 promoted 48 sets (top 8 per side on L6M) to 42 months
