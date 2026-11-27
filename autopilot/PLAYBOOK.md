@@ -46,4 +46,28 @@ NEVER BEND: (i) once the best reached 80% of T0 the stop is at least entry (rule
 ## SANITY (not a result; 20 safety-stop-only trades per book, first-fire shares per trade, Asia MF1 / NY AM MF5)
 C5 55% / 15%, O3 15% / 20%, NB 25% / 30%, RT 25% / 10%, R2 5% / 5%, O1 5% / 15%; J3, J2, R3, R4 did not fire in this sample; no errors; 0 blind decisions. Watch items (stated, not changed): the 1-minute series in Asia (ZB, 6E, 6J) often show a since-entry z of 0.0 (no new bar since entry): they rarely vote; C5 fires on over half the Asia winners on a hold-to-session-end path.
 
-## CHANGES (counted): none.
+## SIDE ROW: health vote (v0.2h) -- NOT the headline; the core above stays the eight screens, UNCHANGED (order 1736Z; pre-result amendment of 1733Z logged here)
+v0.2h = PLAYBOOK v0.1 + a NINTH vote "the trade's own health", one set per book, a side row only. Class: the same PLAYBOOK class, param health true (default false: the core is untouched); config for W-DYNH: code/th_dync/playbook_configs_v02h.json (params_v02h per book; also params_timecut for the reference row). Same manager path.
+The vote (measured against THIS BOOK'S OWN PRIOR WINNERS, causal: winners whose exit is before this trade's entry, expanding window, minimum 30 winners else the screen abstains; no free thresholds): MAE: deeper against than 90% of the book's winners ever went (R units of the trade's own stop) -> AGAINST; TIME UNDER WATER: under water longer than 90% of those winners ever were -> AGAINST; MFE by minute: the best open profit so far is below the 25th percentile of the winners' best at this minute -> AGAINST, above the median -> WITH. The screen votes AGAINST when at least two of the three measures are against; WITH when the MFE measure is WITH and no measure is against; else NOTHING. It counts like any screen in J2/J3/R2/R3 and never cuts alone. The hook's best_px, worst_px and uw_s are used when given (else the manager's own 15-s tracking).
+Winner = a live-book trade that ended with a positive result (engine pts > 0), NQ 1-s path from instr_1s. Percentile table (all winners, whole history; the class uses the causal prefix) file code/th_dync/health_winners.npz (keys '<mix>_<book>_{exit,mae,tuw,mfe}', build_health_table.py):
+| book | winners (n) | MAE p90 (R) | time under water p90 (s) | MFE at 10 min p25 / p50 (R) |
+|---|---|---|---|---|
+| AS MF1 | 904 | 0.75 | 8019 | 0.09 / 0.22 (minute 10) |
+| AS MF2 | 327 | 0.50 | 6510 | 0.08 / 0.17 (minute 10) |
+| AS MF3 | 1561 | 0.69 | 4421 | 0.13 / 0.32 (minute 10) |
+| AS MF4 | 511 | 0.57 | 2389 | 0.14 / 0.38 (minute 10) |
+| NY MF1 | 888 | 0.66 | 2669 | 0.15 / 0.31 (minute 10) |
+| NY MF2 | 988 | 0.80 | 1501 | 0.38 / 0.70 (minute 10) |
+| NY MF3 | 520 | 0.69 | 3438 | 0.17 / 0.35 (minute 10) |
+| NY MF4 | 2313 | 0.64 | 1251 | 0.24 / 0.33 (minute 10) |
+| NY MF5 | 1336 | 0.75 | 1507 | 0.34 / 0.67 (minute 10) |
+| NY MF6 | 2027 | 0.60 | 1453 | 0.19 / 0.32 (minute 10) |
+| NY MF7 | 544 | 0.59 | 2691 | 0.10 / 0.22 (minute 10) |
+| NY MF8 | 609 | 0.66 | 1742 | 0.24 / 0.45 (minute 10) |
+| NY MF9 | 441 | 0.62 | 2009 | 0.18 / 0.32 (minute 10) |
+Counts: every book has more than 300 winners over the 42 months (enough for stable percentiles); the early part of the history is thin: the first weeks of 2023-04 have fewer than 30 prior winners and the vote abstains (health 'abs' in the log). The smallest books: Asia MF2 327, NY MF9 441, Asia MF4 511, NY MF3 520.
+REFERENCE ROW (not a candidate): the BLIND PERCENTILE TIME CUT: param mode 'blind_time': the same time-under-water percentile acting ALONE: leave when the trade has been under water longer than 90% of the book's prior winners ever were; nothing else but the safety stop (config params_timecut; reference row algoR_timecut_pctile). Sanity (20 trades per book, safety-stop-only walks): it would fire on 30% (Asia MF1) / 10% (NY AM MF5) of trades.
+RULE 6 reference: v0.2h is run with the re-entry gate (PLAYBOOK.snapshot) and a reference row WITHOUT the gate (v0.1h in W-DYNH's naming) so slot effects can be shown with and without rule 6; the manager is the same, the gate lives in the hook.
+Sanity of the health vote (not a result): the vote returns N or W in the sample, A never in 20 trades per book; logged in the shadow line as 'health:mae x/p90 tuw x/p90 mfe x/p25'.
+
+## CHANGES (counted): 1. PRE-RESULT: side row v0.2h (health vote) and the blind time-cut reference row added; core unchanged.
