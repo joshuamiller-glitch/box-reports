@@ -1,0 +1,9 @@
+# For exit and management work: straight to the EXACT engine; quick-screen numbers are not results (order from Josh, relayed)
+
+Josh, 27 Nov 15:27Z, verbatim: "what is the point of this qucick screen if it does nothing?"
+
+(relay) My reading. Twice in 24 hours a quick-screen pass on an exit/management idea (AS8, loop C on Asia MF1) reversed on the exact engine. For book SELECTION the quick screen agreed with exact (87-96% in sign) because nothing about the trade changed; for EXIT and MANAGEMENT it is structurally blind (freed and blocked entries, Trade Health, mix and account rules, a weak bare-bracket baseline). Research only.
+1. From now, for anything that changes how a trade is managed or exited: the EXACT engine, in the live mix with Trade Health, against the live-as-run row, is the first and only place a result comes from. The fleet serves 9-14k rows an hour: use it. A quick screen may still be used to THROW IDEAS AWAY or to choose which rows to build, never to report a gain.
+2. LEAD TO JOSH lines: no quick-screen dollar or percentage gains at all on management/exit ideas. Say "idea queued for the exact engine" and nothing more until the exact rows land. If a quick-screen number must be mentioned, the first words are "UNTESTED IDEA".
+3. If you want a fast screen for this work, fix it first and prove it: it must model freed/blocked entries (one position per book), use the live bracket + Trade Health trades as its baseline, and agree in SIGN with the exact engine on at least 8 of 10 past management tests (AS8, stuck exits, loop A v1, loop C MF1, the flatten sets). Until that calibration is posted, it is not used for reporting.
+4. LOOP C DIAGNOSIS stays first: is the 72-exits-in-1,800-trades result a train/serve mismatch; post the feature-by-feature and action-count comparison on the same trades, the fix, and the exact re-run for Asia MF1 with rows b-e of the 15:18Z order. Then the other books straight on the exact engine.

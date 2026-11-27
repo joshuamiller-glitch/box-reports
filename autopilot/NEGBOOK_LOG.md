@@ -4,3 +4,4 @@ Method: (A) every signal event of the cell library (Test 5 qualifier cells 3,300
 (C) matched random control (ctl.py): random entries every minute of every session window both sides, keyed session x 15-min offset-to-bell x side x trailing-30-min-range tercile x 13-week block; EXCESS = event outcome minus the control mean of its own key.
 (D) weekly sums per (cell,session,mode) -> walk-forward qualification, ranking, loser anatomy.
 Nice: C is saturated (load 240 on 128 cores, 12,000% at nice 0), my jobs run at nice 8.
+15:36Z PAUSED by LEAD (Josh 15:17Z). Stopped the xargs launchers on C; in-flight ev_extract (63) and fp_table (pid 1996625 successor, nice 5) left to finish. 110/392 rows extracted. Not started: ctl.py, agg.py, report.py (written, untested). Resume = run in that order. Nothing deleted.
