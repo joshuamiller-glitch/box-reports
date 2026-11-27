@@ -2,193 +2,738 @@
 
 Exact engine rows only (runs_rf, 42 months, Nov 2025 excluded), live lots, drawdown first. Two rows per stream: **loop on top of Trade Health (M)** and **loop replaces Trade Health (N)**, both vs the live mix as run. $: income = engine trades p484 (fee $4.84/lot in); pessimistic = Stop exits worse by DS3_DN_STOPFILL slippage. Candidate test (order 1307Z item 3): L3M and L6M both win AND more than half of the years with data win AND beats the random-management null (income above all null draws and DD shallower than the null median in L6M and whole); win = shallower max DD and worst week with income not lower by more than 10%, or more income with DD not deeper.
 
-## Asia  loop A v1m10 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10_A | months done 27/42
+## POLICY COMPARISON (order 1411Z): re-entry policy per row, vs the live mix as run (fixed bracket + Trade Health + flatten). L1 slot lock = the default a discretionary trader would recognise (one position per book, a new entry only when the book is flat); L0 free; L2 cooldown 15 / 45 min; L3 evidence gate. algoS rows = safe-stop-only references.
+
+| session | tag | stream | version | policy | months | trades / day | income whole (chg) | max DD whole | worst week | L6M income / DD | L3M income / DD | blocked entries | recognisable |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | MF1 | A | Shold | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Ssafe10 | L0 | 42/42 | 1.7 | 539,350 (-38%) | -150,532 / -111,441 | -63,974 / -50,206 | 157,227 / -141,244 | 33,502 / -106,941 | n/a |  |
+| Asia | MF1 | A | Ssafe15 | L0 | 42/42 | 1.5 | 85,932 (-90%) | -399,587 / -111,441 | -86,826 / -50,206 | -131,431 / -399,587 | -36,667 / -116,653 | n/a |  |
+| Asia | MF1 | A | Ssafe20 | L0 | 42/42 | 1.3 | -71,480 (-108%) | -429,191 / -111,441 | -81,010 / -50,206 | -177,813 / -382,614 | -30,508 / -103,979 | n/a |  |
+| Asia | MF1 | A | Sstub0 | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m10 | L0 | 27/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | A | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m15 | L0 | 17/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | A | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av1m20 | L0 | 12/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | A | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Shold | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Ssafe10 | L0 | 42/42 | 6.1 | 687,210 (-23%) | -111,760 / -67,941 | -38,935 / -37,409 | 323,881 / -43,664 | 111,433 / -43,664 | n/a |  |
+| Asia | MF1 | M | Ssafe15 | L0 | 42/42 | 5.8 | 480,491 (-46%) | -202,141 / -67,941 | -41,856 / -37,409 | 220,826 / -101,745 | 110,432 / -40,700 | n/a |  |
+| Asia | MF1 | M | Ssafe20 | L0 | 42/42 | 5.7 | 377,442 (-58%) | -231,297 / -67,941 | -42,531 / -37,409 | 235,531 / -89,720 | 126,522 / -27,004 | n/a |  |
+| Asia | MF1 | M | Sstub0 | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m10 | L0 | 24/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | M | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m15 | L0 | 21/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | M | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av1m20 | L0 | 24/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | M | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Shold | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Ssafe10 | L0 | 42/42 | 6.1 | 687,210 (-23%) | -111,760 / -67,941 | -38,935 / -37,409 | 323,881 / -43,664 | 111,433 / -43,664 | n/a |  |
+| Asia | MF1 | N | Ssafe15 | L0 | 42/42 | 5.8 | 480,491 (-46%) | -202,141 / -67,941 | -41,856 / -37,409 | 220,826 / -101,745 | 110,432 / -40,700 | n/a |  |
+| Asia | MF1 | N | Ssafe20 | L0 | 42/42 | 5.7 | 377,442 (-58%) | -231,297 / -67,941 | -42,531 / -37,409 | 235,531 / -89,720 | 126,522 / -27,004 | n/a |  |
+| Asia | MF1 | N | Sstub0 | L0 | 8/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m10 | L0 | 15/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | N | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m15 | L0 | 16/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| Asia | MF1 | N | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av1m20 | L0 | 23/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| Asia | MF1 | N | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF1 | A | Shold | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF1 | A | Ssafe10 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF1 | A | Sstub0 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF1 | M | Shold | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF1 | M | Ssafe10 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF1 | M | Sstub0 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Ssafe10 | L0 | 7/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Ssafe15 | L0 | 7/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Ssafe20 | L0 | 7/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m10 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF4 | A | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m15 | L0 | 6/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF4 | A | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av1m20 | L0 | 6/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | A | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Ssafe10 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Ssafe15 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Ssafe20 | L0 | 7/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m10 | L0 | 1/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF4 | M | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m15 | L0 | 6/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF4 | M | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av1m20 | L0 | 1/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF4 | M | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Ssafe10 | L0 | 42/42 | 1.7 | 178,341 (-49%) | -144,329 / -103,673 | -84,836 / -50,861 | -40,550 / -114,719 | 61,811 / -39,892 | n/a |  |
+| NY AM | MF5 | A | Ssafe15 | L0 | 42/42 | 1.4 | 187,099 (-46%) | -153,538 / -103,673 | -90,364 / -50,861 | -20,209 / -79,627 | 40,623 / -46,017 | n/a |  |
+| NY AM | MF5 | A | Ssafe20 | L0 | 26/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m10 | L0 | 19/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF5 | A | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m15 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF5 | A | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av1m20 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | A | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Ssafe10 | L0 | 34/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Ssafe15 | L0 | 13/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Ssafe20 | L0 | 8/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m10 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF5 | M | Av1m10 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m10 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m10 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m15 | L1 | 0/42 | not finished | | | | | | | default |
+| NY AM | MF5 | M | Av1m15 | L2c15 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m15 | L2c45 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m15 | L3 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av1m20 | L0 | 1/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2am10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2am15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2bm10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2bm15 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2m10 | L0 | 0/42 | not finished | | | | | | |  |
+| NY AM | MF5 | M | Av2m15 | L0 | 0/42 | not finished | | | | | | |  |
+
+## Asia loop A v1m10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10_A | months done 27/42
 not finished: treated 27/42 months, reference 42/42
 
-## Asia  loop A v1m10 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10_M | months done 24/42
+## Asia loop A v1m10 | policy L1 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10L1_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c45 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L3 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA10L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10_M | months done 24/42
 not finished: treated 24/42 months, reference 42/42
 
-## Asia  loop A v1m10 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10_N | months done 15/42
+## Asia loop A v1m10 | policy L1 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c45 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L3 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA10L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10_N | months done 15/42
 not finished: treated 15/42 months, reference 42/42
 
-## Asia  loop A v1m15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15_A | months done 17/42
+## Asia loop A v1m10 | policy L1 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10L1_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10L2C15_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L2c45 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10L2C45_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m10 | policy L3 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA10L3_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15_A | months done 17/42
 not finished: treated 17/42 months, reference 42/42
 
-## Asia  loop A v1m15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15_M | months done 21/42
+## Asia loop A v1m15 | policy L1 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15L1_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c45 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L3 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA15L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15_M | months done 21/42
 not finished: treated 21/42 months, reference 42/42
 
-## Asia  loop A v1m15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15_N | months done 16/42
+## Asia loop A v1m15 | policy L1 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c45 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L3 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA15L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15_N | months done 16/42
 not finished: treated 16/42 months, reference 42/42
 
-## Asia  loop A v1m20 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA20_A | months done 12/42
+## Asia loop A v1m15 | policy L1 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15L1_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15L2C15_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L2c45 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15L2C45_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m15 | policy L3 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA15L3_N | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## Asia loop A v1m20 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LA20_A | months done 12/42
 not finished: treated 12/42 months, reference 42/42
 
-## Asia  loop A v1m20 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA20_M | months done 24/42
+## Asia loop A v1m20 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LA20_M | months done 24/42
 not finished: treated 24/42 months, reference 42/42
 
-## Asia  loop A v1m20 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA20_N | months done 23/42
+## Asia loop A v1m20 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LA20_N | months done 23/42
 not finished: treated 23/42 months, reference 42/42
 
-## Asia  loop A v2am10 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2A10_A | months done 0/42
+## Asia loop A v2am10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2A10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2am10 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2A10_M | months done 0/42
+## Asia loop A v2am10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2A10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2am10 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2A10_N | months done 0/42
+## Asia loop A v2am10 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2A10_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2am15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2A15_A | months done 0/42
+## Asia loop A v2am15 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2A15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2am15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2A15_M | months done 0/42
+## Asia loop A v2am15 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2A15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2am15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2A15_N | months done 0/42
+## Asia loop A v2am15 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2A15_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm10 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2B10_A | months done 0/42
+## Asia loop A v2bm10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2B10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm10 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2B10_M | months done 0/42
+## Asia loop A v2bm10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2B10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm10 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2B10_N | months done 0/42
+## Asia loop A v2bm10 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2B10_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2B15_A | months done 0/42
+## Asia loop A v2bm15 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV2B15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2B15_M | months done 0/42
+## Asia loop A v2bm15 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV2B15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2bm15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2B15_N | months done 0/42
+## Asia loop A v2bm15 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV2B15_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m10 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV210_A | months done 0/42
+## Asia loop A v2m10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV210_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m10 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV210_M | months done 0/42
+## Asia loop A v2m10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV210_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m10 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV210_N | months done 0/42
+## Asia loop A v2m10 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV210_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m15 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV215_A | months done 0/42
+## Asia loop A v2m15 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_LV215_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m15 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV215_M | months done 0/42
+## Asia loop A v2m15 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_LV215_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## Asia  loop A v2m15 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV215_N | months done 0/42
+## Asia loop A v2m15 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_LV215_N | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v1m10 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10_A | months done 8/42
+## Asia loop S hold | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_HOLD10_A | months done 8/42
 not finished: treated 8/42 months, reference 42/42
 
-## NY AM  loop A v1m10 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10_M | months done 1/42
+## Asia loop S hold | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_HOLD10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## Asia loop S hold | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_HOLD10_N | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## Asia loop S safe10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_SAFE10_A | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -106,941 / -72,079 | -32,426 / -31,183 | 33,502 / 101,602 (-67%) | 17,666 / 81,326 | - |
+| L6M | -141,244 / -72,080 | -59,304 / -31,183 | 157,227 / 388,544 (-60%) | 123,779 / 343,997 | - |
+| 2026 | -150,532 / -111,441 | -63,974 / -50,206 | 190,304 / 486,144 (-61%) | 141,316 / 422,060 | - |
+| 2025 | -124,322 / -95,359 | -31,353 / -36,300 | 74,898 / 152,783 (-51%) | 43,522 / 114,303 | - |
+| 2024 | -91,410 / -70,156 | -31,498 / -31,498 | 189,598 / 155,949 (+22%) | 170,654 / 133,009 | - |
+| 2023 | -59,577 / -59,191 | -13,882 / -12,808 | 84,550 / 81,435 (+4%) | 79,074 / 75,959 | - |
+| whole | -150,532 / -111,441 | -63,974 / -50,206 | 539,350 / 876,310 (-38%) | 434,566 / 745,330 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 10, 3, -150,532 / -111,441, FAIL; 4: 39 periods, 28, 21, -150,532 / -111,441, FAIL; 2: 77 periods, 59, 39, -150,532 / -111,441, FAIL
+**candidate test: L3M False, L6M False, years won 0 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 863, 3,916,963; Stop 713, -3,364,591; RollFlat 12, 12,762 | live: Stop 902, -4,252,109; UWTime 805, 1,207,658; Target 407, 3,895,411; RollFlat 12, 12,762
+
+## Asia loop S safe10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_SAFE10_M | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -43,664 / -36,934 | -17,392 / -19,755 | 111,433 / 147,423 (-24%) | 96,234 / 130,096 | - |
+| L6M | -43,664 / -37,750 | -18,981 / -19,755 | 323,881 / 441,789 (-27%) | 290,142 / 402,194 | - |
+| 2026 | -100,302 / -57,585 | -30,086 / -33,859 | 296,573 / 481,130 (-38%) | 245,967 / 422,943 | - |
+| 2025 | -89,316 / -67,941 | -38,935 / -37,409 | 147,829 / 172,228 (-14%) | 116,968 / 137,253 | - |
+| 2024 | -83,300 / -64,207 | -27,072 / -27,072 | 162,458 / 161,799 (+0%) | 144,816 / 142,551 | - |
+| 2023 | -33,442 / -33,442 | -10,668 / -10,668 | 80,350 / 78,769 (+2%) | 76,105 / 74,523 | WIN |
+| whole | -111,760 / -67,941 | -38,935 / -37,409 | 687,210 / 893,926 (-23%) | 583,857 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 7, 5, -111,760 / -67,941, FAIL; 4: 39 periods, 21, 20, -111,760 / -67,941, FAIL; 2: 77 periods, 50, 37, -111,760 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1696, 1,528,980; Stop 1438, -4,205,172; PolicyTake 1435, 2,635,384; PolicyTrail 332, 200,121; Target 326, 967,823; EarlyCut 300, -485,965; DayHalt 24, 51,783; RollFlat 17, 5,088 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S safe10 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_SAFE10_N | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -43,664 / -36,934 | -17,392 / -19,755 | 111,433 / 147,423 (-24%) | 96,234 / 130,096 | - |
+| L6M | -43,664 / -37,750 | -18,981 / -19,755 | 323,881 / 441,789 (-27%) | 290,142 / 402,194 | - |
+| 2026 | -100,302 / -57,585 | -30,086 / -33,859 | 296,573 / 481,130 (-38%) | 245,967 / 422,943 | - |
+| 2025 | -89,316 / -67,941 | -38,935 / -37,409 | 147,829 / 172,228 (-14%) | 116,968 / 137,253 | - |
+| 2024 | -83,300 / -64,207 | -27,072 / -27,072 | 162,458 / 161,799 (+0%) | 144,816 / 142,551 | - |
+| 2023 | -33,442 / -33,442 | -10,668 / -10,668 | 80,350 / 78,769 (+2%) | 76,105 / 74,523 | WIN |
+| whole | -111,760 / -67,941 | -38,935 / -37,409 | 687,210 / 893,926 (-23%) | 583,857 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 7, 5, -111,760 / -67,941, FAIL; 4: 39 periods, 21, 20, -111,760 / -67,941, FAIL; 2: 77 periods, 50, 37, -111,760 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1696, 1,528,980; Stop 1438, -4,205,172; PolicyTake 1435, 2,635,384; PolicyTrail 332, 200,121; Target 326, 967,823; EarlyCut 300, -485,965; DayHalt 24, 51,783; RollFlat 17, 5,088 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S safe15 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_SAFE15_A | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -116,653 / -72,079 | -43,587 / -31,183 | -36,667 / 101,602 (-136%) | -47,471 / 81,326 | - |
+| L6M | -399,587 / -72,080 | -86,826 / -31,183 | -131,431 / 388,544 (-134%) | -156,295 / 343,997 | - |
+| 2026 | -399,587 / -111,441 | -86,826 / -50,206 | -121,819 / 486,144 (-125%) | -156,599 / 422,060 | - |
+| 2025 | -183,047 / -95,359 | -56,357 / -36,300 | 14,216 / 152,783 (-91%) | -4,580 / 114,303 | - |
+| 2024 | -101,034 / -70,156 | -28,622 / -31,498 | 125,195 / 155,949 (-20%) | 114,539 / 133,009 | - |
+| 2023 | -49,641 / -59,191 | -13,683 / -12,808 | 68,341 / 81,435 (-16%) | 66,417 / 75,959 | - |
+| whole | -399,587 / -111,441 | -86,826 / -50,206 | 85,932 / 876,310 (-90%) | 19,776 / 745,330 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 4, 2, -399,587 / -111,441, FAIL; 4: 39 periods, 18, 16, -399,587 / -111,441, FAIL; 2: 77 periods, 34, 27, -399,587 / -111,441, FAIL
+**candidate test: L3M False, L6M False, years won 0 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 871, 3,295,986; Stop 449, -3,180,174; RollFlat 12, 12,762 | live: Stop 902, -4,252,109; UWTime 805, 1,207,658; Target 407, 3,895,411; RollFlat 12, 12,762
+
+## Asia loop S safe15 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_SAFE15_M | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -40,700 / -36,934 | -11,882 / -19,755 | 110,432 / 147,423 (-25%) | 97,418 / 130,096 | - |
+| L6M | -101,745 / -37,750 | -34,810 / -19,755 | 220,826 / 441,789 (-50%) | 190,695 / 402,194 | - |
+| 2026 | -123,205 / -57,585 | -34,810 / -33,859 | 181,590 / 481,130 (-62%) | 136,762 / 422,943 | - |
+| 2025 | -123,407 / -67,941 | -41,856 / -37,409 | 70,579 / 172,228 (-59%) | 44,537 / 137,253 | - |
+| 2024 | -121,748 / -64,207 | -26,536 / -27,072 | 141,545 / 161,799 (-13%) | 127,296 / 142,551 | - |
+| 2023 | -26,626 / -33,442 | -12,383 / -10,668 | 86,776 / 78,769 (+10%) | 83,971 / 74,523 | WIN |
+| whole | -202,141 / -67,941 | -41,856 / -37,409 | 480,491 / 893,926 (-46%) | 392,566 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 7, 3, -202,141 / -67,941, FAIL; 4: 39 periods, 20, 15, -202,141 / -67,941, FAIL; 2: 77 periods, 44, 28, -202,141 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1699, 1,278,880; PolicyTake 1419, 2,599,928; Stop 1191, -4,111,876; PolicyTrail 327, 196,713; Target 324, 957,326; EarlyCut 297, -480,284; DayHalt 25, 54,099; RollFlat 17, 5,088 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S safe15 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_SAFE15_N | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -40,700 / -36,934 | -11,882 / -19,755 | 110,432 / 147,423 (-25%) | 97,418 / 130,096 | - |
+| L6M | -101,745 / -37,750 | -34,810 / -19,755 | 220,826 / 441,789 (-50%) | 190,695 / 402,194 | - |
+| 2026 | -123,205 / -57,585 | -34,810 / -33,859 | 181,590 / 481,130 (-62%) | 136,762 / 422,943 | - |
+| 2025 | -123,407 / -67,941 | -41,856 / -37,409 | 70,579 / 172,228 (-59%) | 44,537 / 137,253 | - |
+| 2024 | -121,748 / -64,207 | -26,536 / -27,072 | 141,545 / 161,799 (-13%) | 127,296 / 142,551 | - |
+| 2023 | -26,626 / -33,442 | -12,383 / -10,668 | 86,776 / 78,769 (+10%) | 83,971 / 74,523 | WIN |
+| whole | -202,141 / -67,941 | -41,856 / -37,409 | 480,491 / 893,926 (-46%) | 392,566 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 7, 3, -202,141 / -67,941, FAIL; 4: 39 periods, 20, 15, -202,141 / -67,941, FAIL; 2: 77 periods, 44, 28, -202,141 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1699, 1,278,880; PolicyTake 1419, 2,599,928; Stop 1191, -4,111,876; PolicyTrail 327, 196,713; Target 324, 957,326; EarlyCut 297, -480,284; DayHalt 25, 54,099; RollFlat 17, 5,088 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S safe20 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_SAFE20_A | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -103,979 / -72,079 | -43,531 / -31,183 | -30,508 / 101,602 (-130%) | -37,908 / 81,326 | - |
+| L6M | -382,614 / -72,080 | -81,010 / -31,183 | -177,813 / 388,544 (-146%) | -196,313 / 343,997 | - |
+| 2026 | -382,614 / -111,441 | -81,010 / -50,206 | -211,018 / 486,144 (-143%) | -236,326 / 422,060 | - |
+| 2025 | -159,505 / -95,359 | -36,849 / -36,300 | -17,742 / 152,783 (-112%) | -30,026 / 114,303 | - |
+| 2024 | -136,956 / -70,156 | -34,061 / -31,498 | 103,324 / 155,949 (-34%) | 97,552 / 133,009 | - |
+| 2023 | -66,354 / -59,191 | -13,474 / -12,808 | 53,956 / 81,435 (-34%) | 52,772 / 75,959 | - |
+| whole | -429,191 / -111,441 | -81,010 / -50,206 | -71,480 / 876,310 (-108%) | -116,028 / 745,330 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 7, 2, -429,191 / -111,441, FAIL; 4: 39 periods, 17, 13, -429,191 / -111,441, FAIL; 2: 77 periods, 39, 28, -429,191 / -111,441, FAIL
+**candidate test: L3M False, L6M False, years won 0 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 884, 2,829,934; Stop 303, -2,867,944; RollFlat 13, 5,117 | live: Stop 902, -4,252,109; UWTime 805, 1,207,658; Target 407, 3,895,411; RollFlat 12, 12,762
+
+## Asia loop S safe20 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_SAFE20_M | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -27,004 / -36,934 | -15,642 / -19,755 | 126,522 / 147,423 (-14%) | 114,808 / 130,096 | - |
+| L6M | -89,720 / -37,750 | -21,143 / -19,755 | 235,531 / 441,789 (-47%) | 207,950 / 402,194 | - |
+| 2026 | -114,729 / -57,585 | -29,005 / -33,859 | 166,805 / 481,130 (-65%) | 125,587 / 422,943 | - |
+| 2025 | -140,448 / -67,941 | -42,531 / -37,409 | 19,377 / 172,228 (-89%) | -3,672 / 137,253 | - |
+| 2024 | -123,360 / -64,207 | -27,103 / -27,072 | 113,820 / 161,799 (-30%) | 101,426 / 142,551 | - |
+| 2023 | -31,251 / -33,442 | -13,659 / -10,668 | 77,439 / 78,769 (-2%) | 74,830 / 74,523 | - |
+| whole | -231,297 / -67,941 | -42,531 / -37,409 | 377,442 / 893,926 (-58%) | 298,171 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 6, 3, -231,297 / -67,941, FAIL; 4: 39 periods, 18, 12, -231,297 / -67,941, FAIL; 2: 77 periods, 43, 28, -231,297 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 0 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1725, 1,087,360; PolicyTake 1415, 2,594,927; Stop 1057, -3,975,033; PolicyTrail 326, 195,396; Target 322, 954,815; EarlyCut 295, -479,484; DayHalt 19, 11,596; RollFlat 18, 1,284 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S safe20 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_SAFE20_N | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -27,004 / -36,934 | -15,642 / -19,755 | 126,522 / 147,423 (-14%) | 114,808 / 130,096 | - |
+| L6M | -89,720 / -37,750 | -21,143 / -19,755 | 235,531 / 441,789 (-47%) | 207,950 / 402,194 | - |
+| 2026 | -114,729 / -57,585 | -29,005 / -33,859 | 166,805 / 481,130 (-65%) | 125,587 / 422,943 | - |
+| 2025 | -140,448 / -67,941 | -42,531 / -37,409 | 19,377 / 172,228 (-89%) | -3,672 / 137,253 | - |
+| 2024 | -123,360 / -64,207 | -27,103 / -27,072 | 113,820 / 161,799 (-30%) | 101,426 / 142,551 | - |
+| 2023 | -31,251 / -33,442 | -13,659 / -10,668 | 77,439 / 78,769 (-2%) | 74,830 / 74,523 | - |
+| whole | -231,297 / -67,941 | -42,531 / -37,409 | 377,442 / 893,926 (-58%) | 298,171 / 777,270 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 6, 3, -231,297 / -67,941, FAIL; 4: 39 periods, 18, 12, -231,297 / -67,941, FAIL; 2: 77 periods, 43, 28, -231,297 / -67,941, FAIL
+**candidate test: L3M False, L6M False, years won 0 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 1725, 1,087,360; PolicyTake 1415, 2,594,927; Stop 1057, -3,975,033; PolicyTrail 326, 195,396; Target 322, 954,815; EarlyCut 295, -479,484; DayHalt 19, 11,596; RollFlat 18, 1,284 | live: UWTime 1644, 306,133; Stop 1604, -4,694,547; PolicyTake 1448, 2,657,937; Target 691, 2,893,613; PolicyTrail 389, 235,401; EarlyCut 303, -491,940
+
+## Asia loop S stub0 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_AS_MF1_STUB10_A | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## Asia loop S stub0 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_AS_MF1_STUB10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## Asia loop S stub0 | policy L0 | tag MF1 | variant N (replaces TH) | set TL3_DX_AS_MF1_STUB10_N | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10_A | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L1 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10L1_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c45 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L3 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA10L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10_M | months done 1/42
 not finished: treated 1/42 months, reference 42/42
 
-## NY AM  loop A v1m10 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10_A | months done 19/42
+## NY AM loop A v1m10 | policy L1 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c45 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L3 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA10L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10_A | months done 19/42
 not finished: treated 19/42 months, reference 42/42
 
-## NY AM  loop A v1m10 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10_M | months done 0/42
+## NY AM loop A v1m10 | policy L1 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10L1_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v1m15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15_A | months done 6/42
+## NY AM loop A v1m10 | policy L2c15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c45 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L3 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA10L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L1 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L2c45 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m10 | policy L3 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA10L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15_A | months done 6/42
 not finished: treated 6/42 months, reference 42/42
 
-## NY AM  loop A v1m15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15_M | months done 6/42
+## NY AM loop A v1m15 | policy L1 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15L1_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c45 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L3 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA15L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15_M | months done 6/42
 not finished: treated 6/42 months, reference 42/42
 
-## NY AM  loop A v1m15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15_A | months done 8/42
+## NY AM loop A v1m15 | policy L1 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c45 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L3 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA15L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15_A | months done 8/42
 not finished: treated 8/42 months, reference 42/42
 
-## NY AM  loop A v1m15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15_M | months done 0/42
+## NY AM loop A v1m15 | policy L1 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15L1_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v1m20 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA20_A | months done 6/42
+## NY AM loop A v1m15 | policy L2c15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15L2C15_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c45 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15L2C45_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L3 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA15L3_A | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L1 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15L1_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15L2C15_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L2c45 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15L2C45_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m15 | policy L3 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA15L3_M | months done 0/42
+not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop A v1m20 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LA20_A | months done 6/42
 not finished: treated 6/42 months, reference 42/42
 
-## NY AM  loop A v1m20 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA20_M | months done 1/42
+## NY AM loop A v1m20 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LA20_M | months done 1/42
 not finished: treated 1/42 months, reference 42/42
 
-## NY AM  loop A v1m20 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA20_A | months done 8/42
+## NY AM loop A v1m20 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LA20_A | months done 8/42
 not finished: treated 8/42 months, reference 42/42
 
-## NY AM  loop A v1m20 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA20_M | months done 1/42
+## NY AM loop A v1m20 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LA20_M | months done 1/42
 not finished: treated 1/42 months, reference 42/42
 
-## NY AM  loop A v2am10 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2A10_A | months done 0/42
+## NY AM loop A v2am10 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2A10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am10 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2A10_M | months done 0/42
+## NY AM loop A v2am10 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2A10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am10 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2A10_A | months done 0/42
+## NY AM loop A v2am10 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2A10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am10 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2A10_M | months done 0/42
+## NY AM loop A v2am10 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2A10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2A15_A | months done 0/42
+## NY AM loop A v2am15 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2A15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2A15_M | months done 0/42
+## NY AM loop A v2am15 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2A15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2A15_A | months done 0/42
+## NY AM loop A v2am15 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2A15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2am15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2A15_M | months done 0/42
+## NY AM loop A v2am15 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2A15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm10 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2B10_A | months done 0/42
+## NY AM loop A v2bm10 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2B10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm10 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2B10_M | months done 0/42
+## NY AM loop A v2bm10 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2B10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm10 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2B10_A | months done 0/42
+## NY AM loop A v2bm10 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2B10_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm10 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2B10_M | months done 0/42
+## NY AM loop A v2bm10 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2B10_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2B15_A | months done 0/42
+## NY AM loop A v2bm15 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV2B15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2B15_M | months done 0/42
+## NY AM loop A v2bm15 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV2B15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2B15_A | months done 0/42
+## NY AM loop A v2bm15 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV2B15_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2bm15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2B15_M | months done 0/42
+## NY AM loop A v2bm15 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV2B15_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m10 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV210_A | months done 0/42
+## NY AM loop A v2m10 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV210_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m10 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV210_M | months done 0/42
+## NY AM loop A v2m10 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV210_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m10 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV210_A | months done 0/42
+## NY AM loop A v2m10 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV210_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m10 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV210_M | months done 0/42
+## NY AM loop A v2m10 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV210_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m15 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV215_A | months done 0/42
+## NY AM loop A v2m15 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_LV215_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m15 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV215_M | months done 0/42
+## NY AM loop A v2m15 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_LV215_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m15 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV215_A | months done 0/42
+## NY AM loop A v2m15 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_LV215_A | months done 0/42
 not finished: treated 0/42 months, reference 42/42
 
-## NY AM  loop A v2m15 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV215_M | months done 0/42
+## NY AM loop A v2m15 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_LV215_M | months done 0/42
 not finished: treated 0/42 months, reference 42/42
+
+## NY AM loop S hold | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_NY_MF1_HOLD10_A | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S hold | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_NY_MF1_HOLD10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S safe10 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_NY_MF1_SAFE10_A | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S safe10 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_NY_MF1_SAFE10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S safe10 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_SAFE10_A | months done 7/42
+not finished: treated 7/42 months, reference 42/42
+
+## NY AM loop S safe10 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_SAFE10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S safe10 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_SAFE10_A | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -39,892 / -29,376 | -15,880 / -11,019 | 61,811 / 55,242 (+12%) | 58,218 / 50,187 | - |
+| L6M | -114,719 / -56,571 | -84,836 / -50,861 | -40,550 / 98,291 (-141%) | -50,781 / 85,746 | - |
+| 2026 | -127,626 / -103,673 | -84,836 / -50,861 | 15,105 / 94,266 (-84%) | -1,521 / 71,794 | - |
+| 2025 | -124,016 / -53,291 | -32,981 / -24,016 | -42,479 / 120,350 (-135%) | -57,156 / 100,496 | - |
+| 2024 | -51,808 / -45,874 | -22,184 / -20,153 | 164,093 / 119,692 (+37%) | 152,826 / 103,918 | - |
+| 2023 | -51,864 / -56,084 | -20,270 / -21,538 | 41,623 / 15,044 (+177%) | 35,107 / 7,493 | WIN |
+| whole | -144,329 / -103,673 | -84,836 / -50,861 | 178,341 / 349,352 (-49%) | 129,256 / 283,702 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 6, 4, -144,329 / -103,673, FAIL; 4: 39 periods, 22, 18, -144,329 / -103,673, FAIL; 2: 77 periods, 48, 39, -144,329 / -103,673, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): Stop 816, -2,869,503; UWTime 774, 3,038,322 | live: Target 1126, 4,037,425; Stop 1087, -3,826,788; UWTime 605, 140,280
+
+## NY AM loop S safe10 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_SAFE10_M | months done 34/42
+not finished: treated 34/42 months, reference 42/42
+
+## NY AM loop S safe15 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_SAFE15_A | months done 7/42
+not finished: treated 7/42 months, reference 42/42
+
+## NY AM loop S safe15 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_SAFE15_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S safe15 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_SAFE15_A | months done 42/42
+| window | max DD algo / live | worst week | income (change) | pessimistic income | win |
+|---|---|---|---|---|---|
+| L3M | -46,017 / -29,376 | -23,885 / -11,019 | 40,623 / 55,242 (-26%) | 38,126 / 50,187 | - |
+| L6M | -79,627 / -56,571 | -65,096 / -50,861 | -20,209 / 98,291 (-121%) | -26,847 / 85,746 | - |
+| 2026 | -91,894 / -103,673 | -65,096 / -50,861 | 39,613 / 94,266 (-58%) | 29,077 / 71,794 | - |
+| 2025 | -153,538 / -53,291 | -90,364 / -24,016 | -61,364 / 120,350 (-151%) | -70,073 / 100,496 | - |
+| 2024 | -52,252 / -45,874 | -16,112 / -20,153 | 150,833 / 119,692 (+26%) | 144,682 / 103,918 | - |
+| 2023 | -45,932 / -56,084 | -22,941 / -21,538 | 58,018 / 15,044 (+286%) | 54,973 / 7,493 | WIN |
+| whole | -153,538 / -103,673 | -90,364 / -50,861 | 187,099 / 349,352 (-46%) | 158,659 / 283,702 | - |
+forward 13/4/2 weeks (periods, DD or worst week better, income higher, chained DD treated / ref, verdict): 13: 12 periods, 6, 6, -153,538 / -103,673, FAIL; 4: 39 periods, 18, 18, -153,538 / -103,673, FAIL; 2: 77 periods, 44, 38, -153,538 / -103,673, FAIL
+**candidate test: L3M False, L6M False, years won 1 of 4, beats null pending (no null rows) -> not a candidate**
+how trades ended (algo, top exit names: n, $): UWTime 806, 2,687,872; Stop 472, -2,500,553; DayHalt 1, 4,455 | live: Target 1126, 4,037,425; Stop 1087, -3,826,788; UWTime 605, 140,280
+
+## NY AM loop S safe15 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_SAFE15_M | months done 13/42
+not finished: treated 13/42 months, reference 42/42
+
+## NY AM loop S safe20 | policy L0 | tag MF4 | variant A (alone bare) | set TL3_DX_NY_MF4_SAFE20_A | months done 7/42
+not finished: treated 7/42 months, reference 42/42
+
+## NY AM loop S safe20 | policy L0 | tag MF4 | variant M (on top of TH) | set TL3_DX_NY_MF4_SAFE20_M | months done 7/42
+not finished: treated 7/42 months, reference 42/42
+
+## NY AM loop S safe20 | policy L0 | tag MF5 | variant A (alone bare) | set TL3_DX_NY_MF5_SAFE20_A | months done 26/42
+not finished: treated 26/42 months, reference 42/42
+
+## NY AM loop S safe20 | policy L0 | tag MF5 | variant M (on top of TH) | set TL3_DX_NY_MF5_SAFE20_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S stub0 | policy L0 | tag MF1 | variant A (alone bare) | set TL3_DX_NY_MF1_STUB10_A | months done 8/42
+not finished: treated 8/42 months, reference 42/42
+
+## NY AM loop S stub0 | policy L0 | tag MF1 | variant M (on top of TH) | set TL3_DX_NY_MF1_STUB10_M | months done 8/42
+not finished: treated 8/42 months, reference 42/42
 
 ## CANDIDATES: none yet
