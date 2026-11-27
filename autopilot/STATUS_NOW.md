@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 19:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 19:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 19:30Z | box1: busy 95%, load1 38.10, workers 13, MemAvail 76 GB | server2: busy 98%, load1 86.85, workers 27, MemAvail 581 GB | pending box1-eligible 501201 / server2-eligible 89776 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 205.39, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 784 GB | serverB: busy 100%, load1 209.02, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 819 GB | serverC: busy 100%, load1 254.75, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 730 GB | serverD: busy 100%, load1 103.04, workers 1 (grid) + 105 (engine), 64 threads, MemAvail 1426 GB
+LATEST CORES.md LINE: 2026-11-27 19:45Z | box1: busy 100%, load1 69.83, workers 13, MemAvail 62 GB | server2: busy 98%, load1 86.45, workers 28, MemAvail 658 GB | pending box1-eligible 501108 / server2-eligible 87478 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 194.57, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 892 GB | serverB: busy 100%, load1 198.45, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 884 GB | serverC: busy 100%, load1 246.34, workers 1 (grid) + 136 (engine), 128 threads, MemAvail 792 GB | serverD: busy 97%, load1 84.25, workers 1 (grid) + 106 (engine), 64 threads, MemAvail 1465 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 19:30Z
+2026-11-27 19:45Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 19:30Z | box1: busy 95%, load1 38.10, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 74.6 GB; live reservations 0 (0 GB); workers 13, of which TP-adopted 13 (RSS 16.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 38.10, 47.27, 52.60
-  by tag: NYE quota 16 running 13 hungry False RSS 16.6 GB PSS 15.2 GB
+Server 1 (this box): MemAvail 61.8 GB; live reservations 4 (4 GB); workers 13, of which TP-adopted 13 (RSS 17.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 71.61, 70.37, 62.93
+  by tag: NYR quota 12 running 13 hungry False RSS 17.9 GB PSS 15.3 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L0d3fa5cc_ALN (x32);TL3_NYE_Lc1542700_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 87.38, 86.55, 87.44|/dev/md2         28T  2.8T   26T  11% /mnt/l2|47|
+  top running jobs: TL3_NYE_L0d3fa5cc_ALNCT105p (x12);TL3_NYE_L0d3fa5cc_ALNCT98p (x8);TL3_NYE_L0d3fa5cc_ALNCT7m (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 85.01, 86.64, 87.25|/dev/md2         28T  2.8T   26T  11% /mnt/l2|53|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 87.38, 86.55, 87.44|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md
+20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md 20261127_1940Z_Josh-restore-loss-side-rows-and-mix-level-price.md

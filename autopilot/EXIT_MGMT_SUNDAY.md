@@ -1,8 +1,14 @@
 FIRST LINE: NINE BOOKS ARE MOSTLY DRIFT (Josh order 1622Z, lead list): AS-VWAPBAND (Asia MF4), LO-IMB (London MF2), NP-ATRFADE (NY PM MF1), NP-DIVFADE (NY PM MF4), NY-SOPEN (NY AM MF3), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-EMA (NY AM MF8), NY-AVWAP (NY AM MF9). Four are long-only: LO-IMB (London MF2), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-AVWAP (NY AM MF9). Three of them have a LARGE stop (NY AM MF3 120/120, MF7 120/60, MF6 90/30; London MF3 120/60 is MOSTLY DRIFT in the W-SUNDAY-WB table). Alternatives for Josh: smaller size until managed (mix row d), or removal (mix row c): both tested below.
 
-# EXIT_MGMT_SUNDAY: protection price list, one simple rule, keys for the build (W-SUNDAY, 27 Nov 19:36Z)
+# EXIT_MGMT_SUNDAY: protection price list, one simple rule, keys for the build (W-SUNDAY, 27 Nov 19:48Z)
 
-(answer paragraph pending)
+## ANSWER FIRST (exact engine, live mix with live layers and live lots, 42 months; Nov 2025 off)
+1. NO protection rule pays in the mix. Five simple rules were run on every edge book (11 live books plus NP-MACD and NP-CONF, own units of target): breakeven after 50% / 70% of target (be50, be70), keep 50% of the peak once the peak is 50% / 70% of target (pl50k50, pl70k50), trail 0.25 of the target behind the best once 70% is covered (nt70k25). Summed over 12 edge books: be70 gives up 4.4% of income and the max DD gets $133k DEEPER, worst week +$3k; nt70k25 6.3% / $100k deeper / +$12k; pl70k50 7.9% / $131k deeper / -$14k; be50 9.2% / $222k deeper; pl50k50 11.4% / $236k deeper / -$27k (section 1). Winning-week share is unchanged (about 61-64% in every row). Weekly standard deviation falls by $5-12k summed: the only smoothing found.
+2. THE ONE SIMPLE SETTING (same rule, each book's own units): BE70 = breakeven after 70% of the target (stop to entry + 0 pt). It is the cheapest of the five (4.4% of income) and is passed by the PY filter on 5 of the 12 books; it is WEAK, and nothing in the price list beats the live row on drawdown: all session mixes with BE70 on every edge book at once: NY AM income -13.0% with max DD $214k vs $164k live; London -24.1% (DD $282k vs $213k); NY PM -3.0% (DD equal); Asia +9.4% (DD equal; READING: the live Asia LK/TK entries that BE70 replaces were costing income) (section 3). Per-book best rules are in the side column (section 4), not the pick.
+3. GIVE-BACK COUNT (section 2): the breakeven rules do NOT reduce the number of trades that give back more than half of their peak (NY-FIB all 42 months: live 480, be50 751, be70 583: they turn big peaks into small wins and more trades into scratch exits), the peak-keep and trail rules hold or lower it (pl50k50 423, pl70k50 470, nt70k25 421). The 27 Nov NY-FIB type trade (peak >= 90% of target then a loss): live 18 trades in 42 months, be50 4, be70 5, pl50k50 / pl70k50 / nt70k25 0.
+4. LOSS SIDE: tested exact singles exist only for NY AM and London (CU/CX/SCR/NFT/zones/bell exits, L6M screen in section 4, WEAK); Asia and NY PM loss-side families were parked 27 Nov 18:00Z (restore requested): their live loss rules (AS MF2 scratch 45/5, AS MF4 cut 24, NY PM CU 30/96/80/60) stay as the loss side until the rows run: READING.
+5. Nine books are MOSTLY DRIFT (first line); mixes a/b/c/d in SUNDAY_MIX_ROWS.md: NY AM removing all nine cuts income 36% and does not cut max DD; at 1 lot (row d) NY AM income -21% with max DD $185k vs $201k.
+
 
 ## 1. PRICE LIST per book (exact engine, live mix with its live layers and live lots, 42 months, Nov 2025 off; reference = the live mix as run; the tested book's own live LK/TK entries are REPLACED by the rule)
 Columns: "income given up" positive = cost; DD/worst-week/sd changes positive = smoother (a minus sign = DEEPER / more swing than live). PY FAIL = some prior year (2023-2025) mix income < 90% of live or that year's weekly-chain DD > 1.15x deeper. Rules: be50/be70 = breakeven after 50/70% of the target; pl50k50/pl70k50 = once the peak reaches 50/70% of target keep 50% of the best open profit (stop = entry + 0.5 x best excursion, resting stop, ratchet); nt70k25 = once 70% of target is covered trail 0.25 x target distance behind the best price.
@@ -100,16 +106,16 @@ CROSS-BOOK (sum over books with the rule complete):
 
 ## 3. SESSION MIXES: all edge books of the session on ONE rule at once vs the live mix as run (exact engine)
 
-| session | rule | status | income vs live | max DD (live) | worst week (live) | weekly sd | win-week share (live) | L3M inc / DD | L6M inc / DD | by year income gap 23/24/25/26 | NQ-down-week result n/a |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| NY | be70 | NOT DONE | | | | | | | | | |
-| NY | nt70k25 | ok | -609k (-17.4%) | -230k (-164k) | -102k (-110k) | +4k | 61% (62%) | -54k / -19k | -5k / -3k | -61k/-227k/-29k/-292k | |
-| LO | be70 | NOT DONE | | | | | | | | | |
-| LO | nt70k25 | ok | -345k (-37.7%) | -267k (-213k) | -94k (-107k) | +1k | 60% (64%) | -26k / -0k | -108k / +0k | -24k/-89k/-132k/-100k | |
-| AS | be70 | ok | +86k (9.4%) | -66k (-68k) | -40k (-37k) | -1k | 60% (61%) | +16k / +14k | +6k / -5k | +15k/+21k/+44k/+7k | |
-| AS | nt70k25 | ok | -88k (-9.6%) | -59k (-68k) | -41k (-37k) | -1k | 59% (61%) | -45k / -0k | -84k / -24k | +20k/+5k/-36k/-77k | |
-| NP | be70 | ok | -34k (-3.0%) | -128k (-127k) | -45k (-44k) | +0k | 65% (64%) | -16k / +0k | -26k / +2k | -2k/+20k/-12k/-40k | |
-| NP | nt70k25 | ok | -51k (-4.5%) | -110k (-127k) | -46k (-44k) | +0k | 64% (64%) | -2k / -1k | -17k / -0k | -13k/+27k/-43k/-23k | |
+| session | rule | status | income vs live | max DD (live) | worst week (live) | weekly sd | win-week share (live) | L3M inc / DD | L6M inc / DD | by year income gap 23/24/25/26 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| NY | be70 | ok | -453k (-13.0%) | -214k (-164k) | -75k (-110k) | +5k | 61% (62%) | -152k / -17k | -238k / -0k | +16k/-34k/-11k/-425k |
+| NY | nt70k25 | ok | -609k (-17.4%) | -230k (-164k) | -102k (-110k) | +4k | 61% (62%) | -54k / -19k | -5k / -3k | -61k/-227k/-29k/-292k |
+| LO | be70 | ok | -220k (-24.1%) | -282k (-213k) | -112k (-107k) | +1k | 64% (64%) | -6k / -2k | -130k / -6k | -21k/-4k/-135k/-60k |
+| LO | nt70k25 | ok | -345k (-37.7%) | -267k (-213k) | -94k (-107k) | +1k | 60% (64%) | -26k / -0k | -108k / +0k | -24k/-89k/-132k/-100k |
+| AS | be70 | ok | +86k (9.4%) | -66k (-68k) | -40k (-37k) | -1k | 60% (61%) | +16k / +14k | +6k / -5k | +15k/+21k/+44k/+7k |
+| AS | nt70k25 | ok | -88k (-9.6%) | -59k (-68k) | -41k (-37k) | -1k | 59% (61%) | -45k / -0k | -84k / -24k | +20k/+5k/-36k/-77k |
+| NP | be70 | ok | -34k (-3.0%) | -128k (-127k) | -45k (-44k) | +0k | 65% (64%) | -16k / +0k | -26k / +2k | -2k/+20k/-12k/-40k |
+| NP | nt70k25 | ok | -51k (-4.5%) | -110k (-127k) | -46k (-44k) | +0k | 64% (64%) | -2k / -1k | -17k / -0k | -13k/+27k/-43k/-23k |
 
 
 Drift-book mixes a/b/c/d (live / long-only removed / all nine removed = new BASE / nine at 1 lot): autopilot/SUNDAY_MIX_ROWS.md (W-SUNDAY-MX).
@@ -158,7 +164,7 @@ The recommended simple rule BE70 on every edge book, in the book's own units (ar
 | NY-NODE (NY AM MF4) | 90 / 30 | see BOOK_STEMS.md | BE=0.70:0 (arm 21.0 pt) | PL=0.70:0.50 (arm 21.0 pt, stop = entry + 0.5 x best) | NT=0.70:0.25 (arm 21.0 pt, trail 7.5 pt behind best) | none |
 | NY-OFI (NY AM MF5) | 60 / 60 | see BOOK_STEMS.md | BE=0.70:0 (arm 42.0 pt) | PL=0.70:0.50 (arm 42.0 pt, stop = entry + 0.5 x best) | NT=0.70:0.25 (arm 42.0 pt, trail 15.0 pt behind best) | none |
 
-NY-FIB 27 Nov trade (peak about 94% of the 120-pt target, then a full stop): BE70, PL50K50, PL70K50 and NT70K25 all arm at or before 94% (84 pt for 70%), so the stop would have been at entry or better instead of -120 pt: READING (fill at the resting stop; gap risk not modelled). BE50 arms at 60 pt. A lock LK90 (108 pt) would NOT arm before 94% (113 pt peak reaches it only if the print touches 108: it does at 94% = 112.8 pt, so it arms; software lock, market exit on touch). Exact counts of >=90% peak trades that closed at a loss under each rule: see section 2 note and SUNDAY_GIVEBACK_RULES.md.
+NY-FIB 27 Nov trade (peak about 94% of the 120-pt target, then a full stop): BE70, PL50K50, PL70K50 and NT70K25 all arm at or before 94% (84 pt for 70%), so the stop would have been at entry or better instead of -120 pt: READING (fill at the resting stop; gap risk not modelled). BE50 arms at 60 pt; a lock LK90 (108 pt) also arms at a 112.8-pt peak (software market exit on touch). Exact counts of >=90% peak trades that closed at a loss under each rule: see section 2 note and SUNDAY_GIVEBACK_RULES.md.
 
 
 ## 6. LINKS
