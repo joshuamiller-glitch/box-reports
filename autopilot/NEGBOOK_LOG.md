@@ -8,3 +8,4 @@ Nice: C is saturated (load 240 on 128 cores, 12,000% at nice 0), my jobs run at 
 17:53Z two-sided merge done (merge.py): NEGBOOK_TWOSIDED.md. Next if asked: widen jobs.json to full grid (rest of the library), shuffle charge.
 17:54Z WIDEN-TO-ALL launched: fused.py over 457 bfl17 rows x all stored modules x all GRID params, + 1 shuffled-timing null twin, nice 5 P=72 on C
 18:11Z widened: hosts A (rows_p0), B (p1), S2 207.188.7.103 (p2), C (rows 0-71 in flight + p3); results in each host _negbook/ts_all + ts_null, to be gathered onto C via tar pipe through box1 (no box1 disk)
+20:38Z widen partial merge4 posted; remaining rows still running on A,B,dal,C (fused.py, results into host ts_all; gather = tar pipe through box1 then merge4.py on C)
