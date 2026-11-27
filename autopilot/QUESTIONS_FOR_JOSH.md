@@ -246,3 +246,10 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 16:37Z Josh/relay: this week's live fills (23-27 Nov) are not on the box: send the trade file (or the fills) if the give-back count must include them
 - 20:09Z Josh: final list of drift books to cut/size down after the reconciled verdicts (London MF2 long-only trend-dependent; NY PM MF1 flagged; NY AM MF2/MF5 borderline; Asia MF4 an exits question)
 - 21:07Z Josh: Databento key: run in a terminal: (umask 077; cat > ~/.databento_key) then paste the key and Ctrl-D; then say 'key file ready'. Spend authority received: up to $5,000, quote first, ask before passing $1,000.
+
+## DESK v0.2.1 four defects/interpretations (W-DYNC, 23:11Z 27 Nov; relay decision; queue NOT paused, DK21 runs as written)
+1. Units drift: best open profit and 1-min bars are stored in s5 units at the time and not rescaled when s5 is re-estimated every 10 min (T4: s5 34.64 -> 27.73 pt flips CONFIRMED back to PROBATION). A fix = v0.2.2 behaviour change.
+2. One-lot first objective does nothing (flag set, never used).
+3. Age feed stale limit is checked against the feed row's second, not its age column (carried-forward old quote accepted).
+4. FALLBACK (<3 voting seats) stops only seat-driven actions; objectives, clock, never-bend still run. Intended?
+See autopilot/DESK_V02_MATCH.md.
