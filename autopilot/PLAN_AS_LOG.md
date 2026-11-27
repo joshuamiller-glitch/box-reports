@@ -14,3 +14,7 @@ r11: early cut -0.5/-0.6/-0.75S: income -35..-66%, FAIL. Two-stage stuck: no gai
 r12: MF2 (60-pt stop) needs a longer stuck time than MF1/MF3/MF4 at one setting. Time proportional to the stop (0.75 min per point) fixes it: AS8 = stuck exit + toend15 (no lock): ALL PASS 13/10/7, MF1-3 PASS, MF4 FAILS (income 0.57). Exact rows for AS8 queued (546 rows, sets pas8).
 Why MF4 fails: its 22-min stuck time cuts late winners in 2025-26 (L6M income 28k vs 40k). Next ideas for MF4: longer time (1.0-1.5 min/pt), or stay on reference.
 Variant tally ~175 (x4 books); null draws 2x200.
+## Round 2 (05:50-06:10Z)
+r14 plateau map on live entries (20 cells + 3 defaults), r15 2023 anatomy and stop-share gate, T5 fair-entry run on C (168 Asia cells, 171 jobs incl. 3 live cells, W-DYNQ dq_stuck kernel + my recipes in code/th_planas/stk_plateau.py, outputs /mnt/l2/l2vast/_dynq/as8/out, report /mnt/l2/l2vast/_dynq/as8/t5_report.txt), live_report.py (grid signals of MF1/MF3/MF4 vs own, WF bracket, null).
+Outcome: AS8 fails on fair entries (T5 baskets: income -15%, DD -4%, worst week worse, no plateau) and on grid signals of the live books (income -24%, DD deeper, null as good). Holds only on the 6,111 live-mix entries. Next: exact rows (queued), then an attribution of WHY live-mix entries differ (live gating / layers / selection on the same weeks), e.g. run the grid-signal screen restricted to the signals the live mix actually took.
+Variant tally ~215 (x books). 
