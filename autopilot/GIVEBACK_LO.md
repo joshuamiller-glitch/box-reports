@@ -1,0 +1,7 @@
+# GIVEBACK_LO: London rows in the GIVEBACK_COUNT.md format (W-PLAN-AS; exact live London mix trades, 2023-04..2026-10, Nov 2025 off; peak from the fill to the engine exit on the 1-s NQ series (instr_1s: prices differ from the tick tape on ~3% of trades, so peaks are +-); definition as GIVEBACK_COUNT: up share = peak / target distance, counted if share >= p and the trade closed gross < 0 or exit Stop; given back = (peak pts - final pts) x lots x $20 before fees; L3M = Aug-Oct 2026)
+
+| stem | bracket | lots | trades | n >=50% / 70% / 90% | $k from peak >=50 / 70 / 90 | realised $k >=70% / >=90% | share of trades >=70% | L3M n / $k (>=70%) | per year n/$k (>=70%) 2023 / 2024 / 2025 / 2026 | $k/yr from peak >=70% |
+|---|---|---|---|---|---|---|---|---|---|---|
+| LO-CRUDE (London MF1) | 90/30 | 8 | 1110 | 131 / 81 / 38 | 1486 / 940 / 439 | -573 / -234 | 7.3% | 6 / 69 | 15/121 / 17/203 / 23/271 / 26/344 | 269 |
+| London MF2 | 45/45 | 4 | 3034 | 459 / 258 / 93 | 2564 / 1532 / 587 | -707 / -233 | 8.5% | 20 / 112 | 24/123 / 50/280 / 83/528 / 101/601 | 438 |
+| London MF3 | 120/60 | 2 | 1828 | 224 / 99 / 37 | 881 / 405 / 178 | -200 / -92 | 5.4% | 10 / 44 | 9/26 / 15/46 / 38/162 / 37/172 | 116 |
