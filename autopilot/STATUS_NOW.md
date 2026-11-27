@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 18:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 18:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 18:00Z | WARNING serverD below 85% busy for 11 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-27 18:15Z | WARNING serverD below 85% busy for 14 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-27 18:00Z
+2026-11-27 18:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 18:00Z | WARNING serverD below 85% busy for 11 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 80.4 GB; live reservations 2 (2 GB); workers 13, of which TP-adopted 13 (RSS 16.6 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 49.94, 50.92, 56.22
-  by tag: NYE quota 16 running 13 hungry False RSS 16.6 GB PSS 15.2 GB
+Server 1 (this box): MemAvail 60.8 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 16 (RSS 19.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 84.74, 74.38, 65.30
+  by tag: NYE quota 16 running 16 hungry False RSS 19.1 GB PSS 17.2 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Lbf3b6806_ALN (x16);TL3_NYE_L7e1074b3_ALN (x16);TL3_NYE_L44462b6d_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 83.60, 82.16, 82.39|/dev/md2         28T  2.8T   26T  10% /mnt/l2|46|
+  top running jobs: TL3_NYE_L3910941d_ALN (x22);TL3_NYE_L45399ae3_ALN (x6);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 123.26, 110.31, 94.54|/dev/md2         28T  2.8T   26T  10% /mnt/l2|26|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
