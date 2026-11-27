@@ -8,6 +8,14 @@
   - Hold-out (fit weeks 0-108, test 109-181) of a fit-picked shape: fails on MF1, MF3, MF4 (income 13-21% of reference), mixed on MF2, DD shallower but income -26% (NP-CONF) and -34% (NP-MACD).
 - Plan of record for every book until a plan passes = the live exit (fixed bracket + per-book layers). The best candidate shape to carry into round 2 is below (hindsight, NOT validated).
 
+
+## ROUND 2 UPDATE (04:20Z): two quick-screen candidates, nothing validated yet
+- Family "target kept" (leg 1 at the own target, stop 0.5-0.75-1.0 S, optional runner / second target / BE / 3600 s time stop; 150 variants), WF pick with an income floor (last 26 wk income >= 90% of the own bracket), written before scoring.
+- NP-MACD: walk-forward (2/4/13 wk) income 78k/76k/70k vs 43.7k fixed bracket, chained DD -20.4k vs -31.5k, L6M DD -5.2k vs -10.3k; income higher in 10-11 of 13 periods; pessimistic fills income 72k/70k/65k vs 39k; beats the random-pick null (income 97-99%, DD 89-91%). Clears the SOLUTION income-higher clause. Caveats: 2025 DD deeper, 2026 carries most of the gain, quick screen only, not yet on exact rows or the non-hindsight entry sample.
+- 4 live books (equal lots), re-pick every 2 weeks: DD shallower in 10 of 13 periods, worst week better in 10, income -2% vs fixed bracket (-6% vs bracket + live layers; pessimistic -8%): clears clause 1 at step 2 only (step 4 fails on pessimistic income); beats the random-pick null on drawdown but not on income; 2026 income lower and DD deeper. Weak.
+- MF2, MF3 clear the clause numerically but do not beat the random-pick null: not credited. MF1, MF4, NP-CONF fail.
+- Not done: X24 steering (controller not posted), exact rows (disk 22 GB free < 32 GB rule), MBO/10-level paths (needs NP entries table; server C has no depth files). Details: PLAN_NP_LOG.md round 2.
+
 ## Yardstick rows (1 lot, quick screen, May-Oct window = tape; L3M = weeks 169-181 = 2026-07-10..10-09, L6M = weeks 156-181)
 | book | REF0 fixed bracket: inc / maxDD / worst wk (wk 26-181) | REFTH (+ live per-book layer): inc / DD | L3M inc/DD (REF0) | L6M inc/DD (REF0) |
 |---|---|---|---|---|
