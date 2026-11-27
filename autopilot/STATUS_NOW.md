@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 01:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 01:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 01:15Z | box1: busy 100%, load1 71.42, workers 14, MemAvail 72 GB | server2: busy 96%, load1 86.21, workers 25, MemAvail 912 GB | pending box1-eligible 507577 / server2-eligible 407744 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 181.64, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 998 GB | serverB: busy 100%, load1 184.80, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 961 GB | serverC: busy 100%, load1 136.99, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1447 GB | serverD: busy 97%, load1 62.48, workers 1 (grid) + 63 (engine), 64 threads, MemAvail 1474 GB
+LATEST CORES.md LINE: 2026-11-27 01:30Z | box1: busy 100%, load1 47.50, workers 16, MemAvail 74 GB | server2: busy 98%, load1 92.95, workers 28, MemAvail 747 GB | pending box1-eligible 507467 / server2-eligible 431804 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 184.36, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 995 GB | serverB: busy 100%, load1 189.44, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 961 GB | serverC: busy 100%, load1 139.38, workers 1 (grid) + 136 (engine), 128 threads, MemAvail 1447 GB | serverD: busy 98%, load1 66.08, workers 1 (grid) + 67 (engine), 64 threads, MemAvail 1472 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 01:15Z
+2026-11-27 01:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 01:15Z | box1: busy 100%, load1 71.42, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 71.3 GB; live reservations 3 (3 GB); workers 14, of which TP-adopted 14 (RSS 21.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 71.42, 65.74, 60.51
-  by tag: NYR quota 12 running 8 hungry True RSS 11.4 GB PSS 9.9 GB; NYE quota 16 running 6 hungry False RSS 9.7 GB PSS 9.0 GB
+Server 1 (this box): MemAvail 74.2 GB; live reservations 2 (2 GB); workers 16, of which TP-adopted 16 (RSS 21.1 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 47.50, 50.36, 54.14
+  by tag: NYR quota 12 running 16 hungry False RSS 21.1 GB PSS 17.0 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_La51097ed_ALNCT14p (x12);TL3_NYE_La51097ed_ALNCT7p (x8);TL3_NYE_La51097ed_ALNCT21p (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 84.87, 81.59, 80.71|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
+  top running jobs: TL3_NYE_La51097ed_ALNCT35m (x12);TL3_NYE_La51097ed_ALNCT28m (x12);TL3_NYE_La51097ed_ALNCT21m (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 90.34, 87.70, 84.90|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 84.87, 81.59, 80.71|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261126_2023Z_Josh-test-6-primary-on-buildable-books-only-and-todays-list.md 20261126_2115Z_Josh-test-7-is-the-level-edge-real-or-long-drift.md 20261126_2149Z_Josh-test-8-two-sided-level-books-vs-drift.md 20261126_2313Z_Josh-test-9-live-books-vs-drift-and-spec-pages-for-A4-A5-N4-N5.md 20261127_0015Z_Josh-test-10-why-exact-disagrees-on-level-books.md
+20261126_2115Z_Josh-test-7-is-the-level-edge-real-or-long-drift.md 20261126_2149Z_Josh-test-8-two-sided-level-books-vs-drift.md 20261126_2313Z_Josh-test-9-live-books-vs-drift-and-spec-pages-for-A4-A5-N4-N5.md 20261127_0015Z_Josh-test-10-why-exact-disagrees-on-level-books.md 20261127_0117Z_Josh-test-11-two-sided-level-stacks-by-rule-with-layers-and-stress-fills.md
