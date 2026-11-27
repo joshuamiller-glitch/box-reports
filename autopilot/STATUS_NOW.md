@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 03:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 03:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 03:15Z | box1: busy 100%, load1 70.02, workers 14, MemAvail 85 GB | server2: busy 95%, load1 85.64, workers 26, MemAvail 928 GB | pending box1-eligible 506764 / server2-eligible 115287 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 178.83, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 934 GB | serverB: busy 100%, load1 193.59, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 898 GB | serverC: busy 100%, load1 278.70, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1227 GB | serverD: busy 96%, load1 63.57, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1442 GB
+LATEST CORES.md LINE: 2026-11-27 03:30Z | box1: busy 100%, load1 90.85, workers 22, MemAvail 37 GB | server2: busy 97%, load1 86.12, workers 25, MemAvail 600 GB | pending box1-eligible 506672 / server2-eligible 144506 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 178.79, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 959 GB | serverB: busy 99%, load1 185.37, workers 105 (grid) + 95 (engine), 128 threads, MemAvail 922 GB | serverC: busy 100%, load1 331.37, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1216 GB | serverD: busy 89%, load1 57.93, workers 1 (grid) + 57 (engine), 64 threads, MemAvail 1450 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 03:15Z
+2026-11-27 03:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 03:15Z | box1: busy 100%, load1 70.02, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 84.1 GB; live reservations 1 (1 GB); workers 14, of which TP-adopted 14 (RSS 21.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 70.02, 66.58, 61.83
-  by tag: NYR quota 12 running 14 hungry False RSS 21.0 GB PSS 16.5 GB
+Server 1 (this box): MemAvail 35.5 GB; live reservations 2 (2 GB); workers 22, of which TP-adopted 6 (RSS 8.9 GB) vs others 16 (RSS 32.4 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 90.85, 85.90, 75.05
+  by tag: NYR quota 12 running 6 hungry True RSS 8.9 GB PSS 8.0 GB; REST quota 0 running 16 hungry False RSS 32.4 GB PSS 30.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L4c4b28d5_ALNCT84p (x12);TL3_NYE_L4c4b28d5_ALNCT77p (x8);TL3_NYE_L4c4b28d5_ALNCT91p (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 85.90, 81.45, 80.35|/dev/md2         28T  2.8T   26T  10% /mnt/l2|52|
+  top running jobs: TL3_NYE_L4c4b28d5_ALNCT77m (x8);TL3_NYE_L4c4b28d5_ALNCT84m (x4);TL3_NYE_L4c4b28d5_ALNCT70m (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 87.30, 85.80, 83.69|/dev/md2         28T  2.8T   26T  10% /mnt/l2|50|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 85.90, 81.45, 80.35|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_0249Z_Josh-programme-add-faster-steps-2-and-4-weeks.md 20261127_0253Z_Josh-programme-M11-M12-unusual-whales-range-forecast-as-regime.md 20261127_0301Z_Josh-dynamic-exits-walk-forward-on-the-live-books-FRONT-of-queue.md 20261127_0303Z_Josh-dynamic-exits-add-resting-orders-and-every-level-type.md 20261127_0311Z_Josh-ORDER-all-servers-on-exits-walk-forward-until-solved.md
+20261127_0253Z_Josh-programme-M11-M12-unusual-whales-range-forecast-as-regime.md 20261127_0301Z_Josh-dynamic-exits-walk-forward-on-the-live-books-FRONT-of-queue.md 20261127_0303Z_Josh-dynamic-exits-add-resting-orders-and-every-level-type.md 20261127_0311Z_Josh-ORDER-all-servers-on-exits-walk-forward-until-solved.md 20261127_0318Z_Josh-exit-catalogue-every-smart-exit-X12-to-X22.md
