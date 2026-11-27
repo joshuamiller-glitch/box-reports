@@ -895,3 +895,67 @@ Result: X4 on the 133 twin cells: L6M income $741k / DD $120k vs own $187k / $28
 | X6 | +528 | 120 | +539 | 120 | +338 | 34 | -6 / -36 / +11 | -213 | -160 |
 | X4t | +463 | 224 | +427 | 224 | +79 | 200 | -6 / +13 / +53 | -98 | -83 |
 | fixed45/45 | +322 | 180 | +317 | 180 | +219 | 72 | -2 / +34 / +43 | -326 | -270 |
+
+
+## AS8 SECOND PAIR OF EYES (order 0525Z follow-up; PLAN_AS lead: stuck exit 0.75 min per stop point, 0.25R, under water + profitable trades leave 15 min before session end)
+Same rule re-implemented in my kernel (code/th_dynq/dq_stuckk.py, DP[18] min per stop point, DP[19] end rule; identity: own row unchanged). My numbers vs PLAN_AS: **partly agree.** Recent windows agree; whole-period and drawdown do not on my 3 Asia live books, and the reasons are (a) books: my Asia set is 3 grid cells with 40/80, 45/45 and 30/30 brackets; PLAN_AS's MF4 (22 min stuck, fails in its own screen: 'cuts late winners in 2025-26') is my 30/30 book (whole income -42%, L6M -18%); the 60-pt MF1/MF2 books are not among my 17 mapped cells (unmapped), so the best-behaved books are missing; (b) weighting: PLAN_AS is live lots (60-pt stop gets fewer lots), mine is 1 lot per book; (c) PLAN_AS chose the 0.75 min/pt setting after seeing the plateau (its own caveat). On my 3 Asia books: whole income -32%, DD $25.8k vs $21.6k, L6M +4% income with DD $7.0k vs $5.6k, 2026 -18%. All 17: L6M +4%, L3M -2% with DD $12.8k vs $15.7k (window win), 2026 -3% (win), whole -15%, pessimistic -28%. Why all-17 stuck is -14% to -15% while PLAN_AS says -1% for Asia: the stuck exit costs income in 2023 (-54%) and 2025 (-12%) in my set and only trims noise in the recent windows; PLAN_AS's whole-period number is on four books with live-lot weighting that favours the wide-stop books.
+Test 5 ASIA qualifier cells (not tuned on those weeks; bracket = family median), sample of 72 cells (growing): AS8 vs the cell's own bracket: wins L3M (income +98%, DD $80.6k vs $90.8k), L6M (+52%, DD $83.4k vs $90.8k), 2026 (+36%), 2025 (+120%) and loses 2024 (-219%, DD $91k vs $47k; 2023: no held weeks); whole period income -15% with DD deeper ($125k vs $101k); beats the random-exit null at the same fraction in L6M ($126k vs $81k) and L3M ($52k vs $13k). FAIR vs the WALK-FORWARD BRACKET (cells re-pick among 17 brackets on prior data): AS8 passes at 13, 4 and 2 weeks (chained DD $125k vs $184k / $181k / $188k, income $72k vs -$24k / +$30k / +$1k). Plain reading: with no hindsight on the bracket AS8 is better than a walk-forward bracket on Asia qualifiers, and recent-window better than the family bracket, but it is not better than the bracket across 2024 and it has a 2024 hole; it agrees with PLAN_AS on the direction in the recent windows, not on whole-period drawdown for these books.
+
+NY AM widen-vs-shape (26 NY AM qualifier cells with random twins; L6M income / DD $k, own bracket 26/10): fixed90/90 3/21, 120/120 20/19, 30/90 -36/47, 40/80 -13/18, 60/120 -11/28, X1 -17/31, X4 -1/25, X4t -29/43, X6 -17/30; L3M X4 +24/10 vs own 14/9. No shape or width gain in NY AM (26 cells, thin): the Asia trend-capture lead is Asia-specific.
+
+### Table A1 - AS8 on the 17 live books (quick screen, own bracket + stuck exit 0.75 min per stop point at 0.25R under water + profitable trades leave 15 min before session end); rule / own, all books of the session summed, 1 base lot; NUL = random exit at the same fraction (same end rule); pess = +0.85 pt per losing exit
+| session | window | DD rule / own | income rule / own | pess income rule / own | NUL income / DD | stuck only (no end rule) income / DD | end rule only income / DD | win |
+|---|---|---|---|---|---|---|---|---|
+| Asia (3 books) | L3M | 6,992 / 5,608 | 22,575 / 27,404 (-18%) | 18,036 / 23,562 | 24,460 / 8,290 | 25,970 / 5,289 | 23,275 / 6,605 | - |
+| Asia (3 books) | L6M | 6,992 / 5,608 | 42,741 / 41,102 (+4%) | 32,898 / 32,296 | 42,576 / 8,290 | 45,598 / 5,289 | 37,277 / 6,605 | - |
+| Asia (3 books) | 2026 | 24,962 / 19,955 | 51,699 / 62,673 (-18%) | 36,212 / 49,396 | 74,866 / 8,290 | 56,748 / 23,529 | 56,391 / 21,395 | - |
+| Asia (3 books) | 2025 | 25,753 / 19,243 | 26,987 / 41,668 (-35%) | 12,265 / 31,995 | 39,293 / 20,855 | 24,463 / 26,009 | 46,222 / 19,732 | - |
+| Asia (3 books) | 2024 | 10,022 / 20,482 | 50,001 / 59,619 (-16%) | 33,681 / 51,986 | 53,350 / 17,329 | 49,059 / 11,396 | 60,751 / 17,997 | - |
+| Asia (3 books) | 2023 | 16,229 / 9,075 | -9,426 / 11,966 (-179%) | -23,723 / 7,189 | 2,989 / 9,879 | -3,690 / 12,737 | 7,239 / 9,490 | - |
+| Asia (3 books) | ALL | 25,753 / 21,572 | 119,261 / 175,925 (-32%) | 58,435 / 140,565 | 170,498 / 22,861 | 126,580 / 26,009 | 170,602 / 21,395 | - |
+| London | L3M | 7,151 / 6,048 | 70,420 / 60,726 (+16%) | 64,283 / 56,561 | 51,831 / 11,278 | 66,526 / 10,078 | 63,900 / 7,906 | - |
+| London | L6M | 7,151 / 10,062 | 128,742 / 112,438 (+15%) | 116,349 / 103,683 | 93,203 / 11,278 | 130,106 / 10,078 | 110,698 / 9,633 | WIN |
+| London | 2026 | 14,614 / 20,769 | 138,725 / 132,283 (+5%) | 117,951 / 117,816 | 109,523 / 17,097 | 146,621 / 15,018 | 125,022 / 19,581 | WIN |
+| London | 2025 | 33,980 / 39,466 | 27,445 / 52,764 (-48%) | 3,186 / 39,674 | 37,477 / 39,870 | 23,560 / 33,205 | 53,653 / 37,318 | - |
+| London | 2024 | 18,081 / 8,067 | 67,591 / 84,947 (-20%) | 41,462 / 74,662 | 76,471 / 7,666 | 66,721 / 16,681 | 85,324 / 11,269 | - |
+| London | 2023 | 16,909 / 19,882 | 9,904 / 22,855 (-57%) | -9,408 / 16,803 | 30,061 / 14,169 | 19,214 / 14,716 | 17,779 / 18,612 | - |
+| London | ALL | 33,980 / 39,466 | 243,665 / 292,848 (-17%) | 153,191 / 248,954 | 253,533 / 39,870 | 256,115 / 33,205 | 281,778 / 37,318 | - |
+| NY AM | L3M | 12,813 / 13,763 | 105,984 / 105,834 (+0%) | 97,943 / 99,663 | 105,417 / 12,813 | 105,571 / 13,073 | 106,229 / 12,813 | WIN |
+| NY AM | L6M | 30,988 / 29,241 | 236,657 / 227,464 (+4%) | 218,484 / 212,487 | 234,592 / 30,988 | 230,109 / 29,241 | 233,708 / 30,988 | - |
+| NY AM | 2026 | 46,512 / 48,039 | 252,354 / 247,374 (+2%) | 221,754 / 222,588 | 252,618 / 45,933 | 248,201 / 49,252 | 251,358 / 45,205 | WIN |
+| NY AM | 2025 | 47,943 / 47,331 | 191,601 / 188,320 (+2%) | 161,273 / 165,897 | 179,408 / 51,706 | 200,067 / 42,342 | 183,827 / 50,715 | - |
+| NY AM | 2024 | 42,036 / 42,234 | 56,523 / 117,287 (-52%) | 24,223 / 95,697 | 76,226 / 40,647 | 101,398 / 44,016 | 75,148 / 40,007 | - |
+| NY AM | 2023 | 34,777 / 33,564 | 48,499 / 77,326 (-37%) | 27,385 / 64,287 | 51,392 / 41,567 | 71,430 / 26,909 | 50,233 / 41,845 | - |
+| NY AM | ALL | 61,573 / 56,959 | 548,977 / 630,307 (-13%) | 434,635 / 548,469 | 559,644 / 69,459 | 621,095 / 49,252 | 560,565 / 67,248 | - |
+| NY PM | L3M | 4,819 / 5,035 | 39,595 / 48,386 (-18%) | 33,526 / 43,745 | 38,685 / 7,240 | 43,843 / 2,710 | 44,256 / 5,467 | - |
+| NY PM | L6M | 4,819 / 5,035 | 87,374 / 95,589 (-9%) | 74,828 / 85,559 | 84,059 / 7,240 | 84,974 / 4,243 | 97,427 / 5,467 | WIN |
+| NY PM | 2026 | 20,273 / 17,396 | 80,278 / 99,395 (-19%) | 59,827 / 83,364 | 81,988 / 17,158 | 80,868 / 18,450 | 95,637 / 18,141 | - |
+| NY PM | 2025 | 20,677 / 16,106 | 82,435 / 93,627 (-12%) | 59,468 / 77,324 | 76,388 / 22,799 | 87,781 / 14,965 | 80,898 / 19,930 | - |
+| NY PM | 2024 | 22,466 / 33,512 | 68,202 / 54,049 (+26%) | 44,861 / 37,678 | 52,653 / 23,555 | 73,581 / 24,893 | 51,406 / 30,840 | WIN |
+| NY PM | 2023 | 17,487 / 16,125 | 59,915 / 66,381 (-10%) | 43,714 / 56,147 | 66,204 / 15,065 | 60,037 / 19,616 | 73,009 / 13,191 | - |
+| NY PM | ALL | 27,546 / 33,512 | 290,830 / 313,452 (-7%) | 207,870 / 254,513 | 277,234 / 24,500 | 302,267 / 27,347 | 300,950 / 30,840 | WIN |
+| All 17 | L3M | 12,849 / 15,710 | 238,574 / 242,350 (-2%) | 213,788 / 223,531 | 220,393 / 9,823 | 241,910 / 19,008 | 237,660 / 11,106 | WIN |
+| All 17 | L6M | 29,793 / 22,398 | 495,514 / 476,592 (+4%) | 442,559 / 434,024 | 454,431 / 28,488 | 490,787 / 24,052 | 479,111 / 28,563 | - |
+| All 17 | 2026 | 66,180 / 66,273 | 523,056 / 541,724 (-3%) | 435,744 / 473,163 | 518,994 / 48,666 | 532,438 / 58,198 | 528,408 / 60,227 | WIN |
+| All 17 | 2025 | 42,715 / 52,373 | 328,468 / 376,379 (-13%) | 236,192 / 314,890 | 332,566 / 45,677 | 335,870 / 54,210 | 364,599 / 44,674 | - |
+| All 17 | 2024 | 25,557 / 35,514 | 242,317 / 315,901 (-23%) | 144,227 / 260,022 | 258,700 / 24,877 | 290,759 / 28,459 | 272,629 / 30,328 | - |
+| All 17 | 2023 | 37,654 / 24,205 | 108,892 / 178,528 (-39%) | 37,968 / 144,426 | 150,647 / 25,176 | 146,990 / 32,801 | 148,260 / 31,231 | - |
+| All 17 | ALL | 69,311 / 66,273 | 1,202,733 / 1,412,532 (-15%) | 854,131 / 1,192,501 | 1,260,909 / 48,666 | 1,306,057 / 58,198 | 1,313,895 / 60,227 | - |
+
+### Table A2 - AS8 on the Test 5 ASIA qualifier cells (sample of 72 cells, hold weeks only, basket 1 lot per cell; bracket = the cell family-median bracket, not tuned on these weeks): AS8 vs the cell own bracket; NUL = random exit at the same fraction; pess
+| window | DD AS8 / own | worst week | income AS8 / own | pess income AS8 / own | NUL income / DD | win |
+|---|---|---|---|---|---|---|
+| L3M | 80,552 / 90,847 | -45,211 / -45,094 | 52,294 / 26,467 (+98%) | 22,578 / 2,174 | 13,118 / 93,390 | WIN |
+| L6M | 83,356 / 90,847 | -51,851 / -51,978 | 125,998 / 82,877 (+52%) | 78,041 / 42,111 | 80,568 / 97,410 | WIN |
+| 2026 | 83,356 / 90,847 | -51,851 / -51,978 | 105,214 / 77,463 (+36%) | 51,001 / 32,396 | 82,696 / 97,410 | WIN |
+| 2025 | 45,191 / 63,569 | -15,824 / -24,915 | 5,051 / -25,185 (+120%) | -16,556 / -35,640 | 5,266 / 43,064 | WIN |
+| 2024 | 91,344 / 46,511 | -23,192 / -21,780 | -38,276 / 32,154 (-219%) | -66,139 / 20,458 | -57,633 / 101,029 | - |
+| 2023 | 0 / 0 | 0 / 0 | 0 / 0 (n/a) | 0 / 0 | 0 / 0 | - |
+| ALL | 125,218 / 100,988 | -51,851 / -51,978 | 71,988 / 84,433 (-15%) | -31,695 / 17,215 | 30,329 / 132,274 | - |
+
+### Table A3 - FAIR: AS8 fixed rule vs the WALK-FORWARD BRACKET (each cell re-picks among the 17 grid brackets by the standing pick rule on data before the date; fallback plain60/60), same Asia cells, chained forward; step 13 / 4 / 2 weeks
+| step | periods DD or worst week better | DD AS8 / WF bracket | worst week | income AS8 / WF bracket | L3M DD | L6M DD | L6M income | verdict |
+|---|---|---|---|---|---|---|---|---|
+| 13 | 5/10 | 125,218 / 184,023 | -51,851 / -67,157 | 71,988 / -23,661 (+404%) | 83,356 / 184,023 | 83,356 / 184,023 | 141,549 / 33,848 | **PASS** |
+| 4 | 11/28 | 125,218 / 181,124 | -51,851 / -67,157 | 71,988 / 30,382 (+137%) | 81,304 / 138,417 | 83,356 / 181,124 | 114,639 / 27,849 | **PASS** |
+| 2 | 22/47 | 125,218 / 187,981 | -51,851 / -72,337 | 71,988 / 825 (+8623%) | 81,304 / 143,597 | 83,356 / 187,981 | 141,549 / 12,872 | **PASS** |
