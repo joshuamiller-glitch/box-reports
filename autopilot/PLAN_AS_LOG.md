@@ -6,3 +6,11 @@ Tried 7 fixed plans A..G at live lots, all four books and the mix. FAILED: A sca
 Plateau, not a spike: MF1 passes at 15 of 28 settings, MF3 at 10 of 28 (best region 30-60 min / MFE < 0.1-0.4R), MF4 at 3, MF2 at 2. Holds on the stop-fill stress label. Shared setting 45 min / 0.25R: ALL income +3.8%, max DD -73.8k vs -82.6k, worst week -36.6k vs -40.5k, L3M DD -24.7k vs -29.8k, L6M DD -46.1k vs -45.3k (flat), 2023 weak (58k vs 100k). 
 Variants counted so far: 7 + 28 + 3 shared = 38 (x 4 books).
 Next: (a) evidence-based leave-now triggers (flow/book features, extracted 1-s) on the loss and profit side, (b) combine stuck exit with the best parts, (c) walk-forward 2/4/13, (d) random-exit null, (e) exact rows via per-entry exit_ts built from the sim fire times.
+## Round 3 (05:30Z) assembled plans
+r6: time-decay stop (tighten at 30/60/120 min) and late target pull: worse alone, add nothing to the stuck exit. Lock 0.6-0.9T0 -> +0.5..+1 pt after the stuck exit: plateau, DD -17..-36% with income 97-105% (all pass) but lower L3M income.
+r8: AS1 = stuck 45 min/0.25R + lock 0.8T0 + toend 15 min: ALL PASS, 1 lot PASS, stress PASS, null income 100% DD 100% worst 68%. Exact rows queued (546 rows, sets pas1).
+r10: evidence triggers on top: MBO cancel-of-support (3 + 5 thresholds), 10-level best-size shrink (3), delta against (2), big prints (1), 10-level imbalance (1): none adds.
+r11: early cut -0.5/-0.6/-0.75S: income -35..-66%, FAIL. Two-stage stuck: no gain.
+r12: MF2 (60-pt stop) needs a longer stuck time than MF1/MF3/MF4 at one setting. Time proportional to the stop (0.75 min per point) fixes it: AS8 = stuck exit + toend15 (no lock): ALL PASS 13/10/7, MF1-3 PASS, MF4 FAILS (income 0.57). Exact rows for AS8 queued (546 rows, sets pas8).
+Why MF4 fails: its 22-min stuck time cuts late winners in 2025-26 (L6M income 28k vs 40k). Next ideas for MF4: longer time (1.0-1.5 min/pt), or stay on reference.
+Variant tally ~175 (x4 books); null draws 2x200.
