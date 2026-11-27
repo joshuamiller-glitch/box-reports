@@ -98,3 +98,10 @@ Per-book rows and every variant: /mnt/l2/l2vast/_dynml/agg.json (session and boo
 ## NEXT
 
 1. Test 5 qualifier entries (non-hindsight sample) for the same rules; 2. exact Trade Health baseline from Q0 rows; 3. add flow/depth features to X11 from W-DYNOF/W-DYNX8 when ready; 4. X13 hazard version and press action (needs paths beyond the target); 5. pessimistic fill rescore of any survivor; 6. X10 finalist pool swapped for the other agents finalists once /mnt/l2/l2vast/_dynexit/ candidate files exist (placeholders used).
+
+## ROUND 2 (0349Z), item 2 first: is anything predictable inside a trade? (price/bar/level features, purged walk-forward, 13-week refit, 17 live books)
+
+Target = remaining move to the base exit in R (clipped +-4), rows = every minute of every trade of the own fixed bracket, test rows = forward periods from week 26 on, models fitted only on trades exited >= 24 h before each decision. Out-of-sample, per book then averaged over 17 books:
+- LightGBM: R2 vs mean -0.12 (every book negative, range -0.06 to -0.20), row correlation about 0.00 (8 of 17 positive), per-trade correlation -0.09 (0 of 17 positive), AUC for target-before-stop 0.44 (below 0.5 in every book).
+- Ridge (X13): R2 -0.017 (0 of 17 positive), correlation -0.01, AUC 0.51.
+ANSWER: with price, bar-volatility, MAE/MFE, time and level-distance features there is NO out-of-sample predictability of the remaining move inside a trade on these 17 books; the GBM is worse than predicting the mean (it overfits and ranks backwards). This matches the attribution result. Flow/depth feature version NOT yet run (needs th_dynof code and per-trade depth snapshots). Items 1 (hazard, press), 3 (real finalists), 4 (Test 5 entries), 5 (London/NY PM stores) not yet done.
