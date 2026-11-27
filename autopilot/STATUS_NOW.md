@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 18:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 18:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 18:15Z | WARNING serverD below 85% busy for 14 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-27 18:30Z | WARNING serverD below 85% busy for 17 readings in a row with jobs pending
 
 ## UTC TIME WRITTEN
-2026-11-27 18:15Z
+2026-11-27 18:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 18:15Z | WARNING serverD below 85% busy for 14 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 60.8 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 16 (RSS 19.1 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 84.74, 74.38, 65.30
-  by tag: NYE quota 16 running 16 hungry False RSS 19.1 GB PSS 17.2 GB
+Server 1 (this box): MemAvail 62.6 GB; live reservations 3 (3 GB); workers 13, of which TP-adopted 13 (RSS 18.5 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 52.45, 48.65, 55.84
+  by tag: NYR quota 12 running 13 hungry False RSS 18.5 GB PSS 15.5 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L3910941d_ALN (x22);TL3_NYE_L45399ae3_ALN (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 123.26, 110.31, 94.54|/dev/md2         28T  2.8T   26T  10% /mnt/l2|26|
+  top running jobs: TL3_NYE_L45399ae3_ALNCT70p (x12);TL3_NYE_L45399ae3_ALNCT77p (x10);TL3_NYE_L45399ae3_ALNCT63p (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 110.62, 111.38, 106.53|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 123.26, 110.31, 94.54|/dev/
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1723Z_Josh-playbook-draft-and-how-the-manager-is-tested.md 20261127_1733Z_Josh-add-trade-health-screen-mae-mfe-time-underwater.md 20261127_1736Z_Josh-health-vote-is-a-side-row-not-core.md 20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md
+20261127_1733Z_Josh-add-trade-health-screen-mae-mfe-time-underwater.md 20261127_1736Z_Josh-health-vote-is-a-side-row-not-core.md 20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md
