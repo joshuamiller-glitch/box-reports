@@ -2,6 +2,9 @@
 
 Version 0.1 skeleton, 2026-11-27 13:26Z. Keys-page standard: every item is `key = value` with its status: SPEC = read from running code / committed rule file (the relay can code it as written), READING = my reading of an agent's text or code that the owner must confirm, OPEN = not decided yet / owner named. Research only; nothing here touches the execution server. Version log: ALGO_LOG.md. Owners: A and B loops W-DYNC, C loop W-DYNML, engine hook W-DYNH, inputs and lags W-DYNX8, spec and match tables W-DYNA.
 
+
+> **2026-11-27 20:10Z NOTE: LOOP C WITHDRAWN.** W-DYNML found that the quick-screen result of the learned loop was a fill bug (a trail under water was filled at the stop level above the market instead of at market); the exact engine was right; the first model file is marked RETRACTED. Section 6 (Loop C format), LOOPC_SPEC.md, LOOPC_MODEL_*.md and LOOPC_MATCH_*.md are kept ONLY as format documentation and must NOT be built for NT8. The generic parts stay valid: interface (section 1), state machine (2), inputs table with lags (3, 3b, 3c live L3 quantities), order handling and log format (7), match-test format (8). The L3 event-level moment tests are paused by the 15:17Z order (events built so far are kept).
+
 ## 0. WHAT IS FIXED
 ```
 entries                = the live books' own entries, unchanged (SPEC: events file ts, side, lots)
