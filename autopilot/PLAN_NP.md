@@ -1,5 +1,17 @@
 # PLAN_NP: real-time exit PLAN for the 4 live NY PM books + NP-MACD + NP-CONF (W-PLAN-NP, round 1, 27 Nov ~04:15Z). Research only.
 
+# PLAN CARD, NY PM (final-form summary, updated 27 Nov ~13:45Z; details below and in PLAN_NP_LOG.md)
+| book | on the live book now | proposed plan | evidence | status |
+|---|---|---|---|---|
+| MF1 L52359bf4 (30/30 fade) | stop 30 / target 30, per-book layer LK8 (stop to entry+10 at 80% of target), flat 16:00:01 ET | none; keep live. Flatten: carry if open >= 0 at the bell (quick screen 88.6k vs 81.3k, DD -19.4k vs -21.7k, 1 lot) pending exact rows | no walk-forward or fixed shape clears income and DD; hold-out picks fail | no winner, stays on the list |
+| MF2 L8e0bf58c (120/120 breakout) | stop 120 / target 120 (-1 pt shave), market cut at 0.8 x stop | none validated; profit-side family is better than the bracket on hold weeks (97% of variants) and worse on fit years | regime dependent; WF row not distinguishable from random pick | no winner |
+| MF3 L4bdd521a (80/40) | stop 80 / target 40, no per-book exit layer | none; never carry (carry-all -6% income) | every shape loses 40-80% of hold-out income | no winner |
+| MF4 L2c6916a5 (60/60 delta fade) | stop 60 / target 60, LK7 (stop to entry at 80% of target) | none; flatten: carry with stop to breakeven (quick screen 75.0k / -18.8k vs 62.4k / -20.0k) pending exact rows | every shape fails on hold, pessimistic fills negative | no winner |
+| NP-MACD L6d238076 (90/30, coded, OFF) | not in the live stack | x3: stop 90 pt, two thirds off at 22.5 pt, last third to 60 pt, no breakeven, flat 16:00:01 ET (lots 6: 4+2, 4: 3+1, 3: 2+1, 2: 1+1, 1: breakeven armed at 22.5, hold to 60) | exact engine alone 6 lots: 375k / DD -98k / worst week -33k vs bracket 180k / -233k / -50k, pessimistic 333k / -104k; out-of-time pick (26-108 -> 109-181) halves DD at -11% income; in the live mix DD does NOT improve (1,150k / -161k vs 4 books 941k / -134k) | best available if switched on, not a solution; exact random-exit null rows built (428 rows) |
+| NP-CONF L8dff280f (90/90, coded, OFF) | not in the live stack | none | x1/x2/x3 (own units) do not clear: x1 149.9k / -13.9k vs 148.2k / -17.0k but DD better in 7 of 13 periods; no survivor on 26-108 | no winner |
+Flatten (NY PM bell): carry-all is not the answer (4 live books quick screen: income -1.5%, DD -5%, worst week -21%); carry if open >= 0: +6% income, DD -35.3k vs -38.3k; carry max 30 min: +3%, DD -34.1k. Exact rows chosen from W-DYNH's held set: carA, carB, carD, carF30 + identity (hold/rows_np_flat_pick.txt, 170 rows).
+
+
 ## ANSWER FIRST
 - No plan passes the SOLUTION clause yet, on any NY PM book or on the 4-book mix. Every book stays on the list. Round 1 = quick screen on the 1-s NQ tape (ends 2026-10-09), books alone and as a sum at equal lots, not the exact engine.
 - Leave-now triggers: 0 of 108 tape-only attribution tests carry information (6 books x 18 signals: adverse momentum 60/300 s, vol burst, no progress 10/30 min, stuck negative, give-back 25/40%, stall, roll-over, no new high 5/15 min, vol expansion, random control). So no plan uses a tape-based market "leave now" trigger. Book/flow triggers need MBO or 10-level paths for NP entries, not extracted yet.

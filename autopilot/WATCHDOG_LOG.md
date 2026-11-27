@@ -909,3 +909,4 @@
 2026-11-27 12:54Z WATCHDOG L1 fired: B/F/G
 2026-11-27 12:58Z WATCHDOG L2: no lead response 15+ min after the first wake: Escape + wake line again (session b5)
 2026-11-27 13:04Z WATCHDOG L1 fired: A/B/E/F/G
+2026-11-27 13:16Z WATCHDOG L1 fired: A/C/E/F/G

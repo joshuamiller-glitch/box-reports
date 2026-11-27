@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 13:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 13:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 13:00Z | AUTO-FILL step run: dispatcher alive pid 300573/300574/1500273
+LATEST CORES.md LINE: 2026-11-27 13:15Z | box1: busy 100%, load1 74.24, workers 16, MemAvail 68 GB | server2: busy 94%, load1 76.97, workers 28, MemAvail 1131 GB | pending box1-eligible 503694 / server2-eligible 82396 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 163.29, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 929 GB | serverB: busy 100%, load1 195.18, workers 105 (grid) + 91 (engine), 128 threads, MemAvail 899 GB | serverC: busy 100%, load1 139.95, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1355 GB | serverD: busy 98%, load1 62.31, workers 1 (grid) + 68 (engine), 64 threads, MemAvail 1423 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 13:00Z
+2026-11-27 13:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 13:00Z | AUTO-FILL step run: dispatcher alive p
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 79.6 GB; live reservations 0 (0 GB); workers 0, of which TP-adopted 0 (RSS 0.0 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=0 LOAD_CAP=40 | load1/5/15: 36.19, 32.75, 30.56
-  by tag: 
+Server 1 (this box): MemAvail 66.4 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 16 (RSS 21.7 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 75.59, 74.19, 58.31
+  by tag: NYR quota 12 running 16 hungry False RSS 21.7 GB PSS 16.9 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L8929d00b_ALNCT84p (x5);TL3_NYE_L8929d00b_ALNCT77p (x4);TL3_NYE_L8929d00b_ALNCT70p (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 46.74, 48.69, 53.43|/dev/md2         28T  2.8T   26T  10% /mnt/l2|0|
+  top running jobs: TL3_NYE_L8929d00b_ALNCT70m (x12);TL3_NYE_L8929d00b_ALNCT63m (x12);TL3_NYE_L8929d00b_ALNCT77m (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 76.91, 75.47, 68.04|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 46.74, 48.69, 53.43|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_0353Z_Josh-exits-X24-evidence-driven-moving-targets-and-adaptive-trail.md 20261127_0354Z_Josh-exit-engine-must-behave-like-an-algo.md 20261127_0525Z_Josh-exits-next-round-stuck-trade-exit-fair-entries-and-disk-guard.md 20261127_0719Z_Josh-exits-session-end-flatten-is-the-leak-test-carry-and-late-entry-rules.md 20261127_0914Z_Josh-RESEND-session-end-flatten-order-and-two-questions.md
+20261127_0719Z_Josh-exits-session-end-flatten-is-the-leak-test-carry-and-late-entry-rules.md 20261127_0914Z_Josh-RESEND-session-end-flatten-order-and-two-questions.md 20261127_1301Z_Josh-TOP-PRIORITY-active-trade-management-on-L2-L3-event-level.md 20261127_1305Z_Josh-RETEST-as-real-time-safety-stop-plus-second-by-second-management.md 20261127_1307Z_Josh-ORDER-do-not-stop-until-the-management-algo-is-coded.md
