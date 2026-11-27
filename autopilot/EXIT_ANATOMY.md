@@ -1,3 +1,157 @@
+# LEAK TABLE AND CARRY REPLAY (W-DYNA, 13:25Z; read first)
+
+Answer first.
+1. Where the P&L comes from (section A below, per session per year and per book, exact-engine trades): in every session and every year the money is Target (NY AM +$26.2M, London +$9.4M, NY PM +$8.0M, Asia +$2.9M plus PolicyTake +$2.7M) against Stop (-$21.3M, -$7.0M, -$5.9M, -$4.7M); UWTime (the bell flatten) is the third item and is negative every year in NY AM (-$202k, -$409k, -$203k, -$124k for 2023-2026) and London; EarlyCut costs NY PM -$0.82M and Asia -$0.49M; DayHalt/BookLock -$0.0-0.14M. Exits that earn: Target, PolicyTake, PolicyTrail (small). The leak that is not the stop is the bell.
+2. Carry replay (section B; REPLAY from the 1-s tape, not engine: no Trade Health, layers, one-position-per-book slots or next-session interaction): 8,269 trades ended on the bell (NY AM 3,628, London 1,893, NY PM 1,104, Asia 1,644). Carrying ALL of them with their own stop and target to 16:55 ET changes net by NY AM +$56k, London +$228k, NY PM -$65k, Asia +$26k (against UWTime losses of -$938k, -$1.41M, -$354k, +$327k): the carried trades do about as badly as the flattened ones, so carrying everything recovers at most 4-16% of the bell loss and is not stable by year (NY AM +$342k 2023, -$155k 2024, +$60k 2025, -$191k 2026; London +$200k, -$78k, +$103k, +$3k). Subset carries against the same-count random-carry null: NY PM 'open >= +0.25R' +$31k vs null -$14k (p 0.024, 241 trades); NY AM 'open >= +0.25R' +$179k vs null +$17k (p 0.076, 730 trades); every other subset has p > 0.09 and London 'carry only winners' LOSES (-$42k to -$51k vs a null of +$35-94k, p 0.87-0.90: London winners at the bell should be taken, its losers are what carries pay on: carry losers only +$270k, null +$136k, p 0.095). Over the 12 subset tests the smallest p is 0.024: Benjamini-Hochberg q = 0.29, no variant is significant after the correction. The other variants are in-sample settings (32 tried): half-distance stop carry (e) NY AM +$164k, London +$379k, Asia +$134k, NY PM -$73k; carry at most 60 minutes (f60) NY AM +$270k, London +$134k, Asia +$209k, NY PM -$65k; they say a SHORT carry with a tighter stop is where a candidate may sit, to be judged by the exact engine (W-DYNH rows) with the slot and layer effects, not here.
+3. Per book (section B): the books that carry well are NY_MF1 (+$142k carry-all, +$115k with open >= +0.25R), NY_MF3, NY_MF5, LO_MF3 (+$165k) and LO_MF1 (+$104k); the books that lose by carrying are NY_MF4 (-$160k), NY_MF6, NY_MF2, LO_MF2 (-$40k, winners-only -$66k) and NP_MF4/NP_MF3. A per-book choice from this table would be a fit to 42 months of the same trades (19 books): label 'replay, selection'.
+Caveats: replay prices from the 1-s tape (hi/lo of each second; stop and target at the live bracket distances from the entry price; both touched in the same second = stop first; stop-fills and market flats 0.5 pt worse; no exit fees change); a carried trade would occupy its book slot and its account risk in the next session (not modelled: that can only reduce the benefit); 16:55 ET flat for all (Asia trades carry 15 hours); the 42-month trades are the same ones the books were chosen on.
+
+## A. Where the P&L comes from, by exit name (net $, exact engine trades; trades in brackets)
+
+### NY AM per year
+
+| year | Target | UWTime | Stop | BookLock | DayHalt | total |
+|---|---|---|---|---|---|---|
+| 2023 | +3191660 (1078) | -201795 (935) | -2545346 (476) | +0 (0) | -37904 (21) | +406615 |
+| 2024 | +5997514 (1885) | -409001 (1169) | -5031680 (924) | -4619 (3) | -4087 (34) | +548126 |
+| 2025 | +7307164 (2274) | -203453 (905) | -5949090 (1134) | -29141 (10) | -42862 (25) | +1082618 |
+| 2026 | +9714522 (2956) | -123749 (619) | -7778638 (1438) | -102603 (21) | -53456 (45) | +1656075 |
+| ALL | +26210859 (8193) | -937999 (3628) | -21304755 (3972) | -136363 (34) | -138308 (125) | +3693435 |
+
+### NY AM per book (all years)
+
+| book | Target | UWTime | Stop | BookLock | DayHalt | total |
+|---|---|---|---|---|---|---|
+| NY_MF1 | +4597290 (488) | +348510 (737) | -3638609 (387) | -80354 (9) | -25238 (31) | +1201598 |
+| NY_MF2 | +3930986 (826) | +58023 (347) | -3591201 (788) | -25588 (9) | +13521 (18) | +385741 |
+| NY_MF3 | +2966176 (333) | +67964 (357) | -2471278 (274) | +0 (0) | -55246 (22) | +507617 |
+| NY_MF4 | +5386592 (2278) | -746855 (421) | -4011985 (578) | -4734 (2) | -26231 (17) | +596787 |
+| NY_MF5 | +2906080 (1039) | +115494 (544) | -2711626 (991) | -25687 (14) | -3132 (16) | +281127 |
+| NY_MF6 | +4702079 (1941) | -606756 (478) | -3698684 (506) | +0 (0) | -25747 (8) | +370892 |
+| NY_MF7 | +575634 (366) | -70156 (401) | -356012 (112) | +0 (0) | -12702 (6) | +136764 |
+| NY_MF8 | +496062 (562) | -43963 (154) | -357908 (205) | +0 (0) | -692 (6) | +93499 |
+| NY_MF9 | +649961 (360) | -60260 (189) | -467452 (131) | +0 (0) | -2839 (1) | +119411 |
+
+### London per year
+
+| year | Target | UWTime | Stop | total |
+|---|---|---|---|---|
+| 2023 | +847549 (224) | -297501 (454) | -428895 (106) | +121152 |
+| 2024 | +1872817 (520) | -307661 (573) | -1315058 (301) | +250098 |
+| 2025 | +2715311 (771) | -453105 (485) | -2176288 (490) | +85919 |
+| 2026 | +3974862 (1130) | -351924 (381) | -3074401 (658) | +548538 |
+| ALL | +9410540 (2645) | -1410191 (1893) | -6994643 (1555) | +1005706 |
+
+### London per book (all years)
+
+| book | Target | UWTime | Stop | total |
+|---|---|---|---|---|
+| LO_MF1 | +3210425 (670) | -992688 (343) | -1651804 (117) | +565933 |
+| LO_MF2 | +4389932 (1220) | +76489 (676) | -4219439 (1201) | +246982 |
+| LO_MF3 | +1810183 (755) | -493993 (874) | -1123399 (237) | +192791 |
+
+### NY PM per year
+
+| year | Target | PolicyTrail | UWTime | Stop | EarlyCut | DayHalt | total |
+|---|---|---|---|---|---|---|---|
+| 2023 | +1188938 (429) | +42831 (91) | -66339 (404) | -883267 (338) | -53046 (8) | -19594 (17) | +209523 |
+| 2024 | +2065146 (714) | +67936 (142) | -75265 (433) | -1695097 (619) | -169830 (21) | -6552 (27) | +186339 |
+| 2025 | +2244076 (775) | +68771 (144) | -41498 (347) | -1643387 (599) | -301704 (43) | +735 (25) | +326995 |
+| 2026 | +2458043 (813) | +80299 (163) | -35359 (230) | -1727409 (627) | -291134 (44) | +7881 (27) | +492321 |
+| ALL | +7956203 (2731) | +259837 (540) | -218460 (1414) | -5949159 (2183) | -815714 (116) | -17530 (96) | +1215176 |
+
+### NY PM per book (all years)
+
+| book | Target | PolicyTrail | UWTime | Stop | EarlyCut | DayHalt | total |
+|---|---|---|---|---|---|---|---|
+| NP_MF1 | +2617512 (1374) | +261039 (441) | -14851 (294) | -2642182 (1436) | -1762 (1) | +2397 (7) | +222154 |
+| NP_MF2 | +1187091 (126) | +0 (0) | +135517 (310) | +0 (0) | -813953 (115) | +4195 (36) | +512851 |
+| NP_MF3 | +1793326 (660) | +0 (0) | -243738 (255) | -1117780 (204) | +0 (0) | -27180 (19) | +404627 |
+| NP_MF4 | +2358274 (571) | -1202 (99) | -95388 (555) | -2189197 (543) | +0 (0) | +3057 (34) | +75544 |
+
+### Asia per year
+
+| year | Target | PolicyTake | PolicyTrail | UWTime | Stop | EarlyCut | DayHalt | RollFlat | total |
+|---|---|---|---|---|---|---|---|---|---|
+| 2023 | +67535 (23) | +155233 (80) | +30014 (45) | +31332 (459) | -168540 (62) | -27884 (17) | +0 (0) | -551 (3) | +87139 |
+| 2024 | +437593 (100) | +452881 (238) | +50418 (74) | +111342 (529) | -742840 (258) | -124012 (71) | +394 (2) | +987 (3) | +186763 |
+| 2025 | +851327 (205) | +727162 (393) | +59800 (99) | +64713 (410) | -1393657 (476) | -146608 (91) | +4734 (5) | +3022 (7) | +170493 |
+| 2026 | +1545810 (363) | +1342377 (737) | +100329 (171) | +119172 (246) | -2369432 (808) | -189428 (124) | -1617 (8) | +1817 (4) | +549030 |
+| ALL | +2902265 (691) | +2677653 (1448) | +240561 (389) | +326559 (1644) | -4674468 (1604) | -487932 (303) | +3511 (15) | +5275 (17) | +993425 |
+
+### Asia per book (all years)
+
+| book | Target | PolicyTake | PolicyTrail | UWTime | Stop | EarlyCut | DayHalt | RollFlat | total |
+|---|---|---|---|---|---|---|---|---|---|
+| AS_MF1 | +1896296 (358) | +0 (0) | +34140 (55) | +534405 (746) | -1993005 (783) | +0 (0) | +3945 (9) | +4868 (12) | +480648 |
+| AS_MF2 | +451975 (115) | +219331 (56) | -1139 (28) | +31710 (272) | -430877 (115) | -15392 (48) | -3766 (2) | +171 (2) | +252013 |
+| AS_MF3 | +253557 (78) | +2458322 (1392) | +0 (0) | -228126 (431) | -2228076 (695) | +0 (0) | +2186 (3) | +236 (3) | +258100 |
+| AS_MF4 | +300438 (140) | +0 (0) | +207560 (306) | -11429 (195) | -22511 (11) | -472540 (255) | +1146 (1) | +0 (0) | +2664 |
+
+## B. REPLAY (not engine): trades open at the bell (UWTime exits) carried with their own stop and target to 16:55 ET hard flat, from the 1-s tape
+
+Change in net $ versus the actual bell flatten (+ = carrying would have made more). Stop fills 0.5 pt worse, market flats 0.5 pt worse, target at the limit price, both touched in one second = stop first; the engine's Trade Health, layers, one-position-per-book slots, next-session books and account limits are NOT in this replay. a carry all; b carry only if open >= 0 (else flatten); c carry only if open >= +0.25R; d carry with stop at breakeven (flatten if already under water); e carry with stop at half distance (flatten if worse); f30/f60/f120 carry at most N minutes. Null: the same number of randomly chosen UWTime trades of the same session carried (2000 draws): null mean total and the share of draws at least as good as the selected set (p).
+
+| session | bell trades | actual net $ of them | a $ | b $ | c $ | d $ | e $ | f30 $ | f60 $ | f120 $ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| NY AM | 3628 | -937999 | +56465 | +77740 | +179415 | -5765 | +163980 | +127325 | +269540 | +248175 |
+| London | 1893 | -1410191 | +228190 | -41875 | -50720 | +15885 | +378690 | +97520 | +133545 | +266150 |
+| NY PM | 1104 | -353977 | -65195 | -1255 | +30545 | +10405 | -73390 | -55980 | -65195 | -65195 |
+| Asia | 1644 | +326559 | +26185 | +69555 | +30525 | +61270 | +133690 | +102710 | +209305 | +257105 |
+
+### Subset carries with the random-carry null (by session)
+
+| session | subset carried | trades | change in net $ | null mean (same count, random) | p (share of random sets at least as good) |
+|---|---|---|---|---|---|
+| NY AM | b: open >= 0 | 1665 | +77740 | +26297 | 0.359 |
+| NY AM | c: open >= +0.25R | 730 | +179415 | +17315 | 0.076 |
+| NY AM | losers only (open < 0) | 1963 | -21275 | +34475 | 0.659 |
+| London | b: open >= 0 | 766 | -41875 | +94025 | 0.904 |
+| London | c: open >= +0.25R | 285 | -50720 | +35118 | 0.868 |
+| London | losers only (open < 0) | 1127 | +270065 | +136328 | 0.095 |
+| NY PM | b: open >= 0 | 468 | -1255 | -27353 | 0.169 |
+| NY PM | c: open >= +0.25R | 241 | +30545 | -14451 | 0.024 |
+| NY PM | losers only (open < 0) | 636 | -63940 | -38586 | 0.818 |
+| Asia | b: open >= 0 | 886 | +69555 | +13016 | 0.212 |
+| Asia | c: open >= +0.25R | 525 | +30525 | +7958 | 0.370 |
+| Asia | losers only (open < 0) | 758 | -43370 | +13039 | 0.778 |
+
+### Per book: carry-all (a), profit-only (b), +0.25R (c) change in net $ (trades)
+
+| book | bell trades | actual net $ | a carry all | b open>=0 (n, p) | c open>=+0.25R (n) | d BE stop | f60 |
+|---|---|---|---|---|---|---|---|
+| AS_MF1 | 746 | +534405 | +20075 | +34005 (507, p 0.35) | +28955 (371) | +48225 | +103030 |
+| AS_MF2 | 272 | +31710 | -49020 | -18580 (150, p 0.40) | -10880 (80) | -2260 | +64420 |
+| AS_MF3 | 431 | -228126 | +47965 | +41585 (151, p 0.24) | +3760 (42) | +5520 | +26995 |
+| AS_MF4 | 195 | -11429 | +7165 | +12545 (78, p 0.25) | +8690 (32) | +9785 | +14860 |
+| LO_MF1 | 343 | -992688 | +103590 | -19495 (84, p 0.74) | +2145 (2) | -1500 | +111730 |
+| LO_MF2 | 676 | +76489 | -40100 | -72060 (352, p 0.88) | -65925 (205) | +725 | -68330 |
+| LO_MF3 | 874 | -493993 | +164700 | +49680 (330, p 0.60) | +13060 (78) | +16660 | +90145 |
+| NP_MF1 | 294 | -14851 | +4910 | +3180 (141, p 0.47) | +12505 (84) | +17225 | +4910 |
+| NP_MF3 | 255 | -243738 | -36055 | +4165 (70, p 0.11) | +5085 (23) | -3850 | -36055 |
+| NP_MF4 | 555 | -95388 | -34050 | -8600 (257, p 0.37) | +12955 (134) | -2970 | -34050 |
+| NY_MF1 | 737 | +348510 | +142120 | +33675 (401, p 0.67) | +114955 (228) | -7800 | +105035 |
+| NY_MF2 | 347 | +58023 | -33460 | -4190 (170, p 0.37) | -3880 (111) | -13130 | -36880 |
+| NY_MF3 | 357 | +67964 | +71335 | +53530 (188, p 0.38) | +22355 (113) | +22755 | +39995 |
+| NY_MF4 | 421 | -746855 | -159565 | -35685 (99, p 0.48) | +560 (2) | -12650 | +11915 |
+| NY_MF5 | 544 | +115494 | +91690 | +49075 (317, p 0.57) | +28600 (180) | +4630 | +72735 |
+| NY_MF6 | 478 | -606756 | -66550 | -40525 (153, p 0.67) | +3330 (8) | -3740 | +72410 |
+| NY_MF7 | 401 | -70156 | +27385 | +2415 (189, p 0.71) | +6875 (47) | +6075 | +21440 |
+| NY_MF8 | 154 | -43963 | -5325 | -2665 (61, p 0.53) | +5895 (18) | +75 | -10820 |
+| NY_MF9 | 189 | -60260 | -11165 | +22110 (87, p 0.04) | +725 (23) | -1980 | -6290 |
+
+### Carry-all (a) by year and session (change in net $)
+
+| year | NY AM | London | NY PM | Asia |
+|---|---|---|---|---|
+| 2023 | +342280 | +199855 | -30360 | -22720 |
+| 2024 | -154880 | -78420 | -3360 | -84960 |
+| 2025 | +59905 | +103300 | -15055 | -14565 |
+| 2026 | -190840 | +3455 | -16420 | +148430 |
+
+
+---
+
 # EXIT ANATOMY of the live mixes (W-DYNA, 07:20Z; exact trades of the 4 live sets, 42 months, 35,236 trades)
 
 Answer first (drawdown first).

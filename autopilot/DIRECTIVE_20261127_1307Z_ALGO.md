@@ -1,0 +1,15 @@
+# ORDER: turn the strategy into an ALGO; do not stop until the management algo is CODED (order from Josh, relayed)
+
+Josh, 27 Nov 13:07Z, verbatim: "i knew that kind of test wouldn't work because we've tested TH a lot already - this is completely different - we have a strategy now we need to make it an algo using all available tools - the server is to not stop until it's coded"
+
+(relay) My reading. The books and their entries are the foundation and are not in question. The job is to BUILD the real-time trade-management algo of the 13:05Z order (safety stop at entry, then a per-second loop acting on the whole landscape) as working code, and keep going until it exists and has been run. Rule-on-a-bracket tests of the Trade Health kind are finished: do not spend more servers on them. Research only on the box; nothing on the execution server or the live file is touched by the box.
+
+1. DELIVERABLE = CODE THAT RUNS, in this order:
+ a. the per-second management hook in the EXACT engine (reads MBO / 10-level book, tape, cross-market series, UW series with lags; holds a position with a safety stop only; takes the actions hold / tighten / part / all / trail / release target; logs every decision with its reason);
+ b. the landscape feature library at event/second resolution (13:01Z item 2) with the L3 and the 10-level versions;
+ c. loop A (rule loop, rules and thresholds written down first), then loop B (score), then loop C (learned);
+ d. the replay on every live book and the four live mixes, both rows (loop replaces Trade Health; loop on top of Trade Health);
+ e. the SPEC for the live build: page ALGO_SPEC.md in the keys-page standard (every rule, threshold, input, update rate, lag, order handling, state machine; SPEC vs READING marked; per-second input tables for 3 dated trades per book for a match test), so the relay can code the same engine into the NT8 strategy and prove it matches trade for trade.
+2. NO STOPPING, NO SILENT GAPS: one agent owns each of a-e; the lead posts a LEAD TO JOSH line at least every 60 minutes with: what is built, what is running, what is blocked and on what. If something is blocked on Josh (disk, data, a purchase quote), say it in the first words of that line. Read the inbox at least every 15 minutes.
+3. ITERATE UNTIL IT WORKS: after each replay, read where the managed trades lost against the reference (by state and by rule), change the loop from that evidence, re-run. Keep the log of versions (ALGO_LOG.md). A version is a candidate when, on the exact engine with the live mix, it gives shallower max drawdown and worst week than the live mix as run with income not lower by more than 10%, or more income with drawdown not deeper, in the recent windows and in most years, and beats the random-management null.
+4. FIRST LINE WANTED WITHIN THE HOUR: the data inventory (which inputs exist at second/event resolution, which months, which server), what the engine hook needs built and how long, and when the first managed replay of one Asia book and one NY AM book will land.
