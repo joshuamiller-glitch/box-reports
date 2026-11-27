@@ -18,3 +18,8 @@ Variant tally ~175 (x4 books); null draws 2x200.
 r14 plateau map on live entries (20 cells + 3 defaults), r15 2023 anatomy and stop-share gate, T5 fair-entry run on C (168 Asia cells, 171 jobs incl. 3 live cells, W-DYNQ dq_stuck kernel + my recipes in code/th_planas/stk_plateau.py, outputs /mnt/l2/l2vast/_dynq/as8/out, report /mnt/l2/l2vast/_dynq/as8/t5_report.txt), live_report.py (grid signals of MF1/MF3/MF4 vs own, WF bracket, null).
 Outcome: AS8 fails on fair entries (T5 baskets: income -15%, DD -4%, worst week worse, no plateau) and on grid signals of the live books (income -24%, DD deeper, null as good). Holds only on the 6,111 live-mix entries. Next: exact rows (queued), then an attribution of WHY live-mix entries differ (live gating / layers / selection on the same weeks), e.g. run the grid-signal screen restricted to the signals the live mix actually took.
 Variant tally ~215 (x books). 
+## Round 3 (06:23Z)
+Kernel reconciliation (recon.py, recon2.py, recon3.py on C; outputs /mnt/l2/l2vast/_dynq/as8/): my 1-s sim vs W-DYNQ tick kernel agree on grid signals (weekly corr .96-.98, AS8-minus-REF same sign and size). Both lose on grid signals. On the 6,111 live trades the two price sources (tape vs instr_1s) give REF $1.16M vs $1.54M and AS8 effect -1% vs -28%; engine-exit agreement equal (95%): price-source sensitive, exact engine decides. Extra entries from the freed stream were ignored in round 1 (exact rows include them).
+Gate AS8G fixed rule scored (r16.py): +6.6% income, DD -11%, worst week -17%, null beaten; live-mix entries only.
+Exact rows: MF1 pas8 A/M running; scorer code/th_planas/score_pas.py (read only, uses dx_score).
+Variants ~225.
