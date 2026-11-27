@@ -25,3 +25,7 @@ Exact rows: MF1 pas8 A/M running; scorer code/th_planas/score_pas.py (read only,
 Variants ~225.
 ## Exact verdict (06:55Z)
 ALLAS8_M vs live mix: income -43%, chained DD deeper (-89k vs -68k), 2023 and 2025 lose; per book M: MF1/MF3 fail, MF2/MF4 neutral; stk45 fails, stk45h marginal; WF picks live. AS8 refuted with Trade Health on. Why: early exits free the stream for extra entries (round 1 ignored them) and TH already cuts these trades. Next: pas1 when it runs (expected same); no plan found for Asia: remaining ideas = none worth testing from this family; untested = MF4 alone with longer time, entry-side filters (out of scope).
+## Round 4 (06:55Z)
+r17/r18 on exact trades: extras -121k (1,872 trades), common entries -308k (exit kills PolicyTake/Target winners: -927k; saves stops +884k), block rule cannot rescue (max +121k of a -458k gap). Inverse: slot reuse after normal exit is not losing (+147 mean). Clock exit alone (quick screen, 1-s data): -2% income, DD deeper; no rows justified. MF2/MF4: no change; numbers on the page. Not queued: block rows (546 rows, 24 MB) and pe15 rows (546, 24 MB) pending coordinator's say.
+## Round 5 (07:10Z)
+Plan card finalised (no change). MF4 cap: r19.py on exact live trades. London stuck rows spec built, NOT queued: /mnt/l2/l2vast/_dynexit/hold/rows_stuck_LO.txt (504 rows, 12 sets TL3_DX_LO_<MFn>_{stk45,stk45h}_{A,M}) + rows_stuck_LO_ident.txt (2), code/th_planas/ex_build_lo.py (copy of W-DYNH dx_build10 for LIVE['LO']); eq rows not yet run.
