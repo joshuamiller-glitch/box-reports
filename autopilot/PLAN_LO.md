@@ -74,3 +74,33 @@ Non-hindsight entries (Test 5 London qualifiers), X24 controller (code/th_dync n
 6. Test 5 London qualifier entries (non-hindsight): NOT done. The qualifiers need the signal builder (dq_run with the gexit kernel) to create entries and 1-s paths; it is 1 to 2 hours of building; next in queue. X24: code/th_dync not posted yet.
 ## Count round 3
 9 stop x trail cells x 2 labels fit/hold, 4 day-type splits, 4 gated variants x 2 labels, 3 x 13 books x 2 labels generalisation: ~150 more settings; running total ~530.
+
+# ROUND 4 (real clock ~04:45Z; earlier round headers carry estimated times, the LEAD NOTE lines in MORNING.md carry the true date -u). Output /mnt/l2/l2vast/_plan_lo/r4.out, code/th_plan_lo/r4.py xbuild.py
+## Exact rows QUEUED (survivors, disk exception from LEAD)
+Sets TL3_DX_LO_MF2_{plpt45,plpt54,plpt68}_{A,M} = MF2 events with stop 45 / 54 / 67.5 and the dx_multi latch recipe [0.5, 22.5, 0] (activation 0.5 x target distance = 22.5 pt, then ratchet 22.5 pt behind the best price; target 45 unchanged; no time part). A = MF2 alone bare, M = live LO mix. 6 sets x 42 months = 252 rows in /mnt/l2/l2vast/_dynexit/rows_plan_lo_MF2.txt, appended with queue_rows_safe (252 appended, verified_missing 0), class 0 in reorder. Process note: I ran reorder.py once live before running its --dry; its own multiset verify passed, the follow-up --dry moves 0 rows (idempotent), 252 rows are in the queue. df before and after: 22 GB free both times. Gated version (per-entry gate) is NOT in these rows: needs a per-event recipe column in dx_multi (W-DYNH) - request below. Registry written with the new sets (read-modify-write of registry.json, a few seconds).
+## Gate robustness (3 gates pre-registered in fixed_rules_plan_lo.json before G2/G3 were scored; same rule: gate ON when the feature >= 67th percentile of the book's past trades, >= 100 past trades)
+G1 pre-entry 15-min range (hindsight-chosen), G2 prior London session range, G3 trailing 20-day mean full-day range. MF2, live lots, income / max DD.
+| rule | ALL | fit 0-108 | HOLD 109+ | L6M | L3M | PESS ALL | PESS HOLD | PESS L6M | PESS L3M |
+|---|---|---|---|---|---|---|---|---|---|
+| REF bracket | 164k/-179k | -7k/-154k | 171k/-68k | 102k/-40k | 38k/-29k | 33k/-228k | 104k/-75k | 81k/-42k | 30k/-31k |
+| trail all trades stop 54 | 222k/-73k | 46k/-69k | 176k/-36k | 69k/-36k | 14k/-22k | 47k/-113k | 88k/-41k | 33k/-39k | -2k/-30k |
+| G1 stop 54 | 307k/-90k | 52k/-79k | 255k/-39k | 126k/-28k | 30k/-22k | 153k/-126k | 178k/-45k | 98k/-30k | 18k/-25k |
+| G1 stop 45 | 288k/-86k | 46k/-68k | 242k/-44k | 140k/-28k | 39k/-22k | 131k/-123k | 164k/-54k | 112k/-30k | 27k/-23k |
+| G2 stop 54 | 244k/-82k | 106k/-82k | 138k/-53k | 22k/-53k | 6k/-40k | 78k/-123k | 51k/-63k | -11k/-63k | -9k/-43k |
+| G3 stop 54 | 257k/-73k | 51k/-69k | 206k/-36k | 107k/-36k | 33k/-29k | 91k/-121k | 119k/-39k | 76k/-39k | 22k/-31k |
+| G3 stop 45 | 185k/-78k | 43k/-65k | 142k/-38k | 99k/-33k | 28k/-29k | 13k/-131k | 54k/-56k | 67k/-36k | 17k/-31k |
+By year (plain, income/DD): REF 2023 43k/-50k, 2024 47k/-53k, 2025 -49k/-179k, 2026 123k/-68k. G1 stop 54: 28k/-59k, 35k/-61k, 57k/-90k, 188k/-39k. G3 stop 54: 27k/-55k, 30k/-65k, 33k/-73k, 168k/-36k. G2 stop 54: 24k/-56k, 80k/-82k, 36k/-75k, 104k/-53k. Random-gate null (same 51% share, random trades, 200 draws): DD mean -126k..-129k, best -69k..-72k, income 163k-199k; G1: P(null DD as shallow) 0.005 (stop 45) / 0.07 (stop 54), P(null income as high) 0.000 / 0.025.
+Reading: the gate works when the feature says "volatile NOW" (G1 15-min pre-range; G3 20-day range), not for "yesterday's London range" (G2 fails the recent windows: L6M income 22k vs 102k). G3 is NOT chosen after seeing the table, so it supports the idea; G3 stop 54 passes plain hold, L6M and DD, pessimistic hold and L6M within the income clause; L3M income -13% (33k vs 38k) with DD equal, pessimistic L3M 22k/-31k vs 30k/-31k. G1 remains the strongest but carries the hindsight caveat. Candidate stays a candidate: the exact rows (plain trail only) and the non-hindsight entries are what is left.
+## Live-codeable statement of the MF2 gated trail (for the spec page; NT8 inputs)
+Book L12842dde.BRP45 (LONG only, stop 45 / target 45 as in D8_LONDON_SPEC_L12842dde.md), changes only the stop handling after the fill:
+1. At the fill (entry price E): initial stop at E - W, W = 54 pt (1.2 x 45; 45 pt version also tested), target E + 45, lots as the stack.
+2. Gate, evaluated once at the signal time: R15 = (highest trade price - lowest trade price) over the 900 s before the entry order; keep a rolling list of R15 values of this book's earlier signals that became trades (all past MF2 trades since the start, no look-ahead); gate ON when R15 >= the 67th percentile of that list (list needs >= 100 entries; before that gate OFF = plain bracket). NT8 inputs: tick or 1-s bars of NQ only (no depth, no flow, no MBO).
+3. If gate ON: track the highest trade price H since the fill (updated every tick). When H >= E + 22.5, from then on the stop = max(current stop, H - 22.5), moved when H makes a new high (tick-wise ratchet, never loosened). Target at E + 45 unchanged, all lots.
+4. If gate OFF: no change (the book's bracket).
+5. Exit 08:30 ET flat as the book. No leave-now triggers (none carry information).
+Rounding: one price step = 0.25; the same at 1 lot (no partials in the plan). Also needed in the spec: the rolling R15 list persisted across days (state file), 100-trade warm-up, which in a live restart means the list must be seeded from the stored past trades of the book.
+G3 variant needs: the previous 20 days' (UTC date) full-day high-low of NQ, averaged; same 67th percentile rule against that book's past trade-time values.
+## Counts round 4
+3 gates x 2 stops x (plain, pess) + 2 nulls (400 draws), exact rows 252 queued: ~30 more settings; running total ~560.
+## Requests / next
+W-DYNH: a per-event trail flag (recipe on/off per entry) in dx_multi so the gated trail can be exact (168 rows when the flag exists). Next: Test 5 London qualifiers (builder not yet built), X24 (th_dync not posted), exact results when rows land.

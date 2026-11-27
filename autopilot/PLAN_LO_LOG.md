@@ -7,3 +7,4 @@
 - Next idea from MF2: loss comes from 2025 (reversals after reaching +half target); test the same BE trail rule on MF1 (act 0.5 T0 = 15 pt of a 30 pt target gave no gain: MF1 trades rarely reverse after +15) - done within grid, no gain.
 - 04:50Z round 2: MF2 trail passes random-exit null; wider stop 1.5x keeps pess income positive (+91k); equal-income WF fails everywhere; structure stop and early half-cut no pass. Next: Test 5 London qualifiers, X24 when posted, exact rows when disk allows, look at why 2025 carries the MF2 gain (day-type).
 - 05:20Z round 3: fit/hold, day-type split, causal pre-range gate (strong candidate), Asia/NY generalisation = trail hurts (MF2-specific). Next: Test 5 London qualifiers, exact rows 420 when disk released, X24.
+- round 4: 3 gates pre-registered (G1 pre-range, G2 prior London range, G3 20-day range); G1 and G3 work, G2 fails recent windows; 252 exact rows queued; live-codeable text written.
