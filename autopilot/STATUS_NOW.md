@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 20:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 20:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 20:00Z | box1: busy 93%, load1 38.33, workers 14, MemAvail 77 GB | server2: busy 96%, load1 81.39, workers 25, MemAvail 757 GB | pending box1-eligible 500997 / server2-eligible 86124 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 192.31, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 870 GB | serverB: busy 100%, load1 182.73, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 868 GB | serverC: busy 100%, load1 240.79, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 711 GB | serverD: busy 100%, load1 105.27, workers 1 (grid) + 108 (engine), 64 threads, MemAvail 1438 GB
+LATEST CORES.md LINE: 2026-11-27 20:15Z | box1: busy 100%, load1 78.58, workers 15, MemAvail 65 GB | server2: busy 96%, load1 80.85, workers 25, MemAvail 821 GB | pending box1-eligible 500909 / server2-eligible 84479 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 194.92, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 833 GB | serverB: busy 100%, load1 190.59, workers 105 (grid) + 82 (engine), 128 threads, MemAvail 876 GB | serverC: busy 100%, load1 251.33, workers 1 (grid) + 134 (engine), 128 threads, MemAvail 721 GB | serverD: busy 90%, load1 53.50, workers 1 (grid) + 110 (engine), 64 threads, MemAvail 1473 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 20:00Z
+2026-11-27 20:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 20:00Z | box1: busy 93%, load1 38.33, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 75.8 GB; live reservations 2 (2 GB); workers 14, of which TP-adopted 14 (RSS 19.9 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 44.55, 47.37, 55.89
-  by tag: NYE quota 16 running 14 hungry False RSS 19.9 GB PSS 18.3 GB
+Server 1 (this box): MemAvail 65.4 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 14 (RSS 17.9 GB) vs others 1 (RSS 1.1 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 80.53, 71.13, 62.86
+  by tag: NYE quota 16 running 14 hungry False RSS 17.9 GB PSS 16.3 GB; REST quota 0 running 1 hungry False RSS 1.1 GB PSS 1.0 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Lfa897488_ALN (x32);TL3_NYE_Lcee6a0b5_ALN (x1);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 82.28, 83.37, 85.39|/dev/md2         28T  2.8T   26T  11% /mnt/l2|56|
+  top running jobs: TL3_NYE_Ld61ffe03_ALN (x28);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 81.01, 83.15, 84.47|/dev/md2         28T  2.8T   26T  11% /mnt/l2|48|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 82.28, 83.37, 85.39|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md 20261127_1940Z_Josh-restore-loss-side-rows-and-mix-level-price.md
+20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md 20261127_1940Z_Josh-restore-loss-side-rows-and-mix-level-price.md 20261127_2016Z_Josh-on-the-data-authority-his-words.md

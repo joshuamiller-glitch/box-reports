@@ -1,6 +1,6 @@
 FIRST LINE: NINE BOOKS ARE MOSTLY DRIFT (Josh order 1622Z, lead list): AS-VWAPBAND (Asia MF4), LO-IMB (London MF2), NP-ATRFADE (NY PM MF1), NP-DIVFADE (NY PM MF4), NY-SOPEN (NY AM MF3), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-EMA (NY AM MF8), NY-AVWAP (NY AM MF9). Four are long-only: LO-IMB (London MF2), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-AVWAP (NY AM MF9). Three of them have a LARGE stop (NY AM MF3 120/120, MF7 120/60, MF6 90/30; London MF3 120/60 is MOSTLY DRIFT in the W-SUNDAY-WB table). Alternatives for Josh: smaller size until managed (mix row d), or removal (mix row c): both tested below.
 
-# EXIT_MGMT_SUNDAY: protection price list, one simple rule, keys for the build (W-SUNDAY, 27 Nov 19:50Z)
+# EXIT_MGMT_SUNDAY: protection price list, one simple rule, keys for the build (W-SUNDAY, 27 Nov 20:15Z)
 
 ## ANSWER FIRST (exact engine, live mix with live layers and live lots, 42 months; Nov 2025 off)
 1. NO protection rule pays in the mix. Five simple rules were run on every edge book (11 live books plus NP-MACD and NP-CONF, own units of target): breakeven after 50% / 70% of target (be50, be70), keep 50% of the peak once the peak is 50% / 70% of target (pl50k50, pl70k50), trail 0.25 of the target behind the best once 70% is covered (nt70k25). Summed over 12 edge books: be70 gives up 4.4% of income and the max DD gets $133k DEEPER, worst week +$3k; nt70k25 6.3% / $100k deeper / +$12k; pl70k50 7.9% / $131k deeper / -$14k; be50 9.2% / $222k deeper; pl50k50 11.4% / $236k deeper / -$27k (section 1). Winning-week share is unchanged (about 61-64% in every row). Weekly standard deviation falls by $5-12k summed: the only smoothing found.
@@ -8,6 +8,7 @@ FIRST LINE: NINE BOOKS ARE MOSTLY DRIFT (Josh order 1622Z, lead list): AS-VWAPBA
 3. GIVE-BACK COUNT (section 2): the breakeven rules do NOT reduce the number of trades that give back more than half of their peak (NY-FIB all 42 months: live 480, be50 751, be70 583: they turn big peaks into small wins and more trades into scratch exits), the peak-keep and trail rules hold or lower it (pl50k50 423, pl70k50 470, nt70k25 421). The 27 Nov NY-FIB type trade (peak >= 90% of target then a loss): live 18 trades in 42 months, be50 4, be70 5, pl50k50 / pl70k50 / nt70k25 0.
 4. LOSS SIDE: tested exact singles exist only for NY AM and London (CU/CX/SCR/NFT/zones/bell exits, L6M screen in section 4, WEAK); Asia and NY PM loss-side families were parked 27 Nov 18:00Z (restore requested): their live loss rules (AS MF2 scratch 45/5, AS MF4 cut 24, NY PM CU 30/96/80/60) stay as the loss side until the rows run: READING.
 5. Nine books are MOSTLY DRIFT (first line); mixes a/b/c/d in SUNDAY_MIX_ROWS.md: NY AM removing all nine cuts income 36% and does not cut max DD; at 1 lot (row d) NY AM income -21% with max DD $185k vs $201k.
+6. RE-ENTRY GATE (order 1940Z, exact engine, section 3 rows "+gate"): after a protection exit the same book may not re-enter in the same direction until price trades back through the exit level or 15 minutes pass (W-DYNH key reentry exit_level_or_15m). It changes almost nothing: NY AM be70 income -13.0% -> -13.2%, max DD $214k -> $214k, worst week equal; nt70k25 -17.4% -> -16.8%, DD $230k -> $233k; London be70 -24.1% -> -25.1%; Asia be70 identical (0 blocked signals); NY PM be70 -3.0% -> -3.2%. Blocked signals over 42 months: NY AM be70 19, nt70k25 132; London 1 / 13; Asia 0 / 34; NY PM 1 / 0. The gate does not change the picture: the recommendation stays BE70, WEAK, without the gate.
 
 
 ## 1. PRICE LIST per book (exact engine, live mix with its live layers and live lots, 42 months, Nov 2025 off; reference = the live mix as run; the tested book's own live LK/TK entries are REPLACED by the rule)
@@ -109,13 +110,21 @@ CROSS-BOOK (sum over books with the rule complete):
 | session | rule | status | income vs live | max DD (live) | worst week (live) | weekly sd | win-week share (live) | L3M inc / DD | L6M inc / DD | by year income gap 23/24/25/26 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | NY | be70 | ok | -453k (-13.0%) | -214k (-164k) | -75k (-110k) | +5k | 61% (62%) | -152k / -17k | -238k / -0k | +16k/-34k/-11k/-425k |
+| NY | be70+gate | ok | -462k (-13.2%) | -214k (-164k) | -75k (-110k) | +6k | 61% (62%) | -152k / -17k | -261k / -0k | +16k/-34k/+3k/-448k |
 | NY | nt70k25 | ok | -609k (-17.4%) | -230k (-164k) | -102k (-110k) | +4k | 61% (62%) | -54k / -19k | -5k / -3k | -61k/-227k/-29k/-292k |
+| NY | nt70k25+gate | ok | -588k (-16.8%) | -233k (-164k) | -100k (-110k) | +4k | 62% (62%) | -63k / -20k | -12k / -3k | -129k/-241k/+62k/-280k |
 | LO | be70 | ok | -220k (-24.1%) | -282k (-213k) | -112k (-107k) | +1k | 64% (64%) | -6k / -2k | -130k / -6k | -21k/-4k/-135k/-60k |
+| LO | be70+gate | ok | -229k (-25.1%) | -282k (-213k) | -112k (-107k) | +1k | 64% (64%) | -11k / -2k | -134k / -6k | -21k/-9k/-135k/-65k |
 | LO | nt70k25 | ok | -345k (-37.7%) | -267k (-213k) | -94k (-107k) | +1k | 60% (64%) | -26k / -0k | -108k / +0k | -24k/-89k/-132k/-100k |
+| LO | nt70k25+gate | ok | -351k (-38.5%) | -271k (-213k) | -94k (-107k) | +0k | 60% (64%) | -20k / -0k | -105k / +0k | -24k/-96k/-135k/-96k |
 | AS | be70 | ok | +86k (9.4%) | -66k (-68k) | -40k (-37k) | -1k | 60% (61%) | +16k / +14k | +6k / -5k | +15k/+21k/+44k/+7k |
+| AS | be70+gate | ok | +86k (9.4%) | -66k (-68k) | -40k (-37k) | -1k | 60% (61%) | +16k / +14k | +6k / -5k | +15k/+21k/+44k/+7k |
 | AS | nt70k25 | ok | -88k (-9.6%) | -59k (-68k) | -41k (-37k) | -1k | 59% (61%) | -45k / -0k | -84k / -24k | +20k/+5k/-36k/-77k |
+| AS | nt70k25+gate | ok | -90k (-9.8%) | -73k (-68k) | -41k (-37k) | -1k | 60% (61%) | -36k / -0k | -73k / -21k | +20k/+2k/-27k/-85k |
 | NP | be70 | ok | -34k (-3.0%) | -128k (-127k) | -45k (-44k) | +0k | 65% (64%) | -16k / +0k | -26k / +2k | -2k/+20k/-12k/-40k |
+| NP | be70+gate | ok | -37k (-3.2%) | -128k (-127k) | -45k (-44k) | +0k | 65% (64%) | -16k / +0k | -26k / +2k | -5k/+20k/-12k/-40k |
 | NP | nt70k25 | ok | -51k (-4.5%) | -110k (-127k) | -46k (-44k) | +0k | 64% (64%) | -2k / -1k | -17k / -0k | -13k/+27k/-43k/-23k |
+| NP | nt70k25+gate | ok | -50k (-4.5%) | -110k (-127k) | -46k (-44k) | +0k | 64% (64%) | -2k / -1k | -17k / -0k | -12k/+27k/-43k/-23k |
 
 
 Drift-book mixes a/b/c/d (live / long-only removed / all nine removed = new BASE / nine at 1 lot): autopilot/SUNDAY_MIX_ROWS.md (W-SUNDAY-MX).
