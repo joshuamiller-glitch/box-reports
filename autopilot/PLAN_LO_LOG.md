@@ -8,3 +8,4 @@
 - 04:50Z round 2: MF2 trail passes random-exit null; wider stop 1.5x keeps pess income positive (+91k); equal-income WF fails everywhere; structure stop and early half-cut no pass. Next: Test 5 London qualifiers, X24 when posted, exact rows when disk allows, look at why 2025 carries the MF2 gain (day-type).
 - 05:20Z round 3: fit/hold, day-type split, causal pre-range gate (strong candidate), Asia/NY generalisation = trail hurts (MF2-specific). Next: Test 5 London qualifiers, exact rows 420 when disk released, X24.
 - round 4: 3 gates pre-registered (G1 pre-range, G2 prior London range, G3 20-day range); G1 and G3 work, G2 fails recent windows; 252 exact rows queued; live-codeable text written.
+- 05:00Z round 5: fixed stale hi/lo (no conclusion change); Test 5 London qualifiers (79): gate lifts pass count 11 to 21 of 79; gate on Asia/NY no rescue; share file written; exact rows not landed.

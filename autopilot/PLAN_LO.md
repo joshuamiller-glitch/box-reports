@@ -104,3 +104,23 @@ G3 variant needs: the previous 20 days' (UTC date) full-day high-low of NQ, aver
 3 gates x 2 stops x (plain, pess) + 2 nulls (400 draws), exact rows 252 queued: ~30 more settings; running total ~560.
 ## Requests / next
 W-DYNH: a per-event trail flag (recipe on/off per entry) in dx_multi so the gated trail can be exact (168 rows when the flag exists). Next: Test 5 London qualifiers (builder not yet built), X24 (th_dync not posted), exact results when rows land.
+
+# ROUND 5 (true time ~05:00Z). Outputs /mnt/l2/l2vast/_plan_lo/r4b.out r5.out r5b.out r5b.csv; code/th_plan_lo/dense.py r5.py r5b.py r4b.py
+## 0. A correction found and fixed
+The London store filled seconds without trades with the previous second's high/low; that can fire a raised trail stop on stale lows. Fixed in lib.py (gap seconds: high = low = last price) and all MF2 / grid / gate results re-run: the numbers moved by < 10% and no conclusion changed (plain trail stop 54: ALL 212k / -78k vs REF 157k / -186k; HOLD 170k / -36k vs 171k / -68k; G1 stop 54 ALL 296k / -94k, HOLD 249k / -39k, L6M 120k / -28k, L3M 24k / -28k; G3 stop 54 ALL 252k / -77k, HOLD 206k / -36k, L6M 107k / -36k, L3M 33k / -29k; G2 still fails L6M 22k vs 102k; random-gate null G1 P(DD) 0.005 / 0.06). The REF in this harness is now 899k (engine 946k).
+## 1. Test 5 London qualifier entries (non-hindsight), quick screen
+Builder: code/th_plan_lo/dense.py (dense 1-s NQ tape for the London window, 934 days) + r5b.py (signals rebuilt with th_brkt/brkt_build.raw_events from the Test 5 qualifier definitions in th_dynq/t5_meta.json, the qualifier's own bracket, one position at a time on the reference sequence, 1 lot, entry = last price at the order second, same sim). 79 of 330 London qualifiers (random seed 5, 1 skipped for < 150 trades), trail = activation 0.5 x target, distance 0.5 x target, target kept, G1 gate = pre-entry 15-min range >= past p67. Result (income >= 90% of the qualifier's own bracket AND shallower max DD):
+| rule | DD shallower | income >= 90% | both (79) | HOLD (weeks 109+) both |
+|---|---|---|---|---|
+| trail all trades | 44 | 12 | 11 | 4 |
+| G1-gated trail | 50 | 26 | 21 | 12 |
+| G1-gated, stop 1.2x | 45 | 22 | 19 | 14 |
+Median income ratio to own bracket 0.51 / 0.71 / 0.69. Reading: the gate roughly doubles the number of qualifiers where the trail passes (11 to 21 of 79, hold 4 to 12), so the regime effect is not unique to MF2, but in 74% of London qualifiers it still fails; it is a per-book property, not a general plan. Not a pick: no qualifier was selected here.
+## 2. Exact rows
+252 rows are in the queue, none landed at the time of writing (no run directories for TL3_DX_LO_MF2_pl*). Comparison engine vs quick screen by year follows when they land.
+## 3. Gate on Asia / NY AM books (W-DYNA path store 5-s grid, fixed rules: plain trail 0.5 T0 / 0.5 T0 and the PA shape (half at T0, BE, runner 3 T0 with trail), gated by G1 pre-range and G3 20-day range, p67 of past trades)
+The gate does not rescue the trail outside London: always-on trail loses income on 13 of 13 books; gated G1 / G3 recovers part (NY MF4 G1 392k vs 523k; NY MF5 G1 142k / -92k vs 160k / -98k; NY MF7 G1 91k / -23k vs 121k / -28k; NY MF1 G3 1.05M / -102k vs 1.16M / -110k; NY MF2 G1 105k vs 291k) but none beats the book's own bracket on income with equal or better DD except where the DD gain is tiny and income -10% to -30%. PA shape changes < 3% on every book (its activation sits at the target, which rarely trades). Recipe and files shared with W-PLAN-NY and W-PLAN-NP in autopilot/PLAN_GATE_SHARE.md; their own best shapes should be gated with that recipe, mine is only the generic check.
+## 4. Counts round 5
+79 qualifiers x 4 rules, 13+4 books x 2 shapes x 4 gate rows x 2 labels, re-runs after the fix: ~900 settings; running total ~1,500 incl. qualifier runs.
+## Next
+Exact results when they land; gated exact rows when W-DYNH has the per-entry flag (168); spec text in the London coding-spec format once exact results hold; X24 (not posted).
