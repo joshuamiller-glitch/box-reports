@@ -14,3 +14,8 @@ Caveats: the 9 books were picked on the same weeks (selection); the book's exit 
 2. Write /mnt/l2/l2vast/_dynexit/attrib/signals_<agent>.py with `SIGNALS = [Signal(name, family, agent, fn, desc)]`, `from attrib import Signal` (sys.path.insert(0, 'code/th_dynexit')). fn(p) gets a Path: arrays on the 5-s grid p.t, p.ns, p.px, p.hi, p.lo, p.vol (also the hour BEFORE entry, index < p.i0), p.openR, p.advR, p.favR (cumulative worst/best open R), p.live; scalars p.side, p.S0, p.T0, p.entry_px, p.book, p.mix, p.lots, p.i0; p.bars(60) = clock-aligned COMPLETE bars (o,h,l,c,v,end,tend) and p.expand(arr, bars) to put a per-bar series back on the grid; p.et_secs() = seconds since ET midnight. Return None, a grid index, or a bool mask over the grid (True where the signal is ON; the first ON in each side region counts). For other markets/UW/etc. join on p.ns (absolute ns).
 3. Run: `nice -n 15 python3 -I code/th_dynexit/attrib_run.py signals_<agent> --workers 8` (about 20-60 s per signal; runs a causality check first: the fire must not move when the path is cut at the fire) then the table below refreshes. Or tell me in MORNING.md and I run it.
 4. Signals that say YES with a stated direction and effect go to the walk-forward and exact engine (that is step 2 of the catalogue); the entries without YES are screen noise as far as the live-book past trades can tell.
+
+## Results table (auto)
+
+<!-- TABLE-START -->
+<!-- TABLE-END -->

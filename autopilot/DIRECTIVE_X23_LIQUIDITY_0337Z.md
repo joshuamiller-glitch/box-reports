@@ -1,0 +1,17 @@
+# Exit walk-forward: add X23, LIQUIDITY targets and stops, every method of finding liquidity (order from Josh, relayed)
+
+Josh, 27 Nov 03:37Z, verbatim: "include liquidity targets /stops - all methods"
+
+(relay) My reading and design. "Liquidity" is measured every way the box can, and each way is tried as a TARGET (exit into it) and as a STOP reference (stop beyond it, or not where everyone else's stop is). Extends X8 (resting orders) and X15 (stop hunts); same subjects, walk-forward, baseline and solution rule as the 03:11Z order; attribution pass first, drawdown first.
+
+X23a. RESTING-STOP POOLS FROM PRICE STRUCTURE (where stops are likely sitting): above swing highs / below swing lows (several swing sizes); EQUAL highs and lows (two or more touches within a few ticks); prior-day, prior-week, overnight, Asia-range, London-range and initial-balance highs and lows; session open; round numbers. Target = just in front of the pool, at it, or just through it (the sweep); stop = beyond the nearest pool behind the trade with an offset, never at it.
+X23b. SWEEP BEHAVIOUR: when a pool ahead is swept (taken out by N ticks) and price reclaims: take profit; when a pool behind is swept and reclaimed: hold or re-enter instead of stopping (links to X15 acceptance). Measure how often a sweep reverses versus continues, per pool type and session.
+X23c. GAPS AND THIN AREAS: fair value gaps / imbalances (three-bar gaps on several bar types), single prints and low-volume nodes: price tends to cross them fast, so target the far side and do not rest a stop inside one. Order blocks (last opposite bar before a displacement) as stop references and targets.
+X23d. ORDER-BOOK LIQUIDITY (X8, restated so nothing is missed): largest resting size ahead and behind, persistence filtered, live updating, pulled/added size, icebergs and refills, depth-weighted "wall" across the visible levels; cumulative depth needed to move price X points as a distance measure for stops and targets.
+X23e. TRADED LIQUIDITY: high-volume nodes, POC and value-area edges (session, prior session, composite of the last 5 and 20 days), anchored-VWAP bands, large-print clusters and absorption zones from the tape as levels.
+X23f. MBO-ONLY SIGNS (where the stored data allows): stop-run footprints (bursts of aggressive orders right after a level breaks), clusters of orders added just beyond a swing (visible resting stops/limits), queue size and replenishment at the pool's price. State per month whether MBO or only 10-level depth exists.
+X23g. OPTIONS LIQUIDITY: UW call wall / put wall / gamma flip and the largest open-interest strikes mapped to NQ, 0DTE included where history exists, as targets and as lines not to hold through.
+X23h. COMBINED LIQUIDITY MAP: one score per price from a to g (confluence of pools); target = the nearest strong cluster ahead; stop = beyond the nearest strong cluster behind; minimum reward:risk from the two; skip rule when there is no room.
+
+FIRST TABLE WANTED (before any strategy numbers): for every liquidity type and session, after a live-book entry, how often price reaches the pool ahead, what it does there (stall / reverse / run through) against a same-distance random price, and how often the pool behind is swept before the trade works. That table alone tells Josh which "liquidity" is real on NQ.
+Then the walk-forward as for the other families, loss side and profit side, joined to the per-book menu and the combined exit (X22). Post the count and start with Asia and NY AM live books.
