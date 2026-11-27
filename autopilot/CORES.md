@@ -1,5 +1,3 @@
-2026-11-26 17:50Z | WARNING serverC below 85% busy for 175 readings in a row with jobs pending
-2026-11-26 17:50Z | WARNING serverD below 85% busy for 176 readings in a row with jobs pending
 2026-11-26 17:50Z | WARNING server2 below 85% busy for 17 readings in a row with jobs pending
 2026-11-26 17:50Z | AUTO-FILL step run: dispatcher alive pid 2907673/2907675/2967052
 2026-11-26 17:50Z | HOST serverA PRODUCING NOTHING (E-ENGINE host serverA slots 0/102)
@@ -298,3 +296,5 @@
 2026-11-27 00:00Z | box1: busy 100%, load1 50.71, workers 10, MemAvail 83 GB | server2: busy 96%, load1 82.09, workers 24, MemAvail 828 GB | pending box1-eligible 508075 / server2-eligible 236623 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 177.61, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 1005 GB | serverB: busy 99%, load1 179.64, workers 105 (grid) + 86 (engine), 128 threads, MemAvail 954 GB | serverC: busy 41%, load1 53.14, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1470 GB | serverD: busy 80%, load1 54.60, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1469 GB
 2026-11-27 00:00Z | WARNING serverC below 85% busy for 23 readings in a row with jobs pending
 2026-11-27 00:00Z | WARNING serverD below 85% busy for 9 readings in a row with jobs pending
+2026-11-27 00:05Z | box1: busy 99%, load1 49.55, workers 12, MemAvail 83 GB | server2: busy 97%, load1 84.90, workers 28, MemAvail 810 GB | pending box1-eligible 508041 / server2-eligible 235802 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 162.98, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 977 GB | serverB: busy 100%, load1 192.10, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 925 GB | serverC: busy 63%, load1 116.96, workers 1 (grid) + 134 (engine), 128 threads, MemAvail 1434 GB | serverD: busy 95%, load1 61.70, workers 1 (grid) + 60 (engine), 64 threads, MemAvail 1468 GB
+2026-11-27 00:05Z | WARNING serverC below 85% busy for 24 readings in a row with jobs pending
