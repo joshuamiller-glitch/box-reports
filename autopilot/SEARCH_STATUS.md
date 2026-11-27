@@ -1,4 +1,4 @@
-# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-27 16:35Z
+# SEARCH_STATUS - full-search programme (plan 1722Z: no Globex deadline), W-GRIDOPS, refreshed 2026-11-27 17:05Z
 
 Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish the whole search -> 2 prove it is not luck (30 controls, selection-corrected null, trust) -> 3 gates/layers one by one then jointly -> 4 D8 spec. Every number below is a screen-level number unless it says engine.
 
@@ -7,15 +7,15 @@ Plain words. Data end 2026-11-15 (NQ). Research only, no spend. Phases: 1 finish
 | item | done | todo | jobs/hour (last 60 min) | ETA at that rate |
 |---|---|---|---|---|
 | pass 1, all tags (real + random-entry nulls 1/2 + extra null draws) | 295046 result files | 9 jobs | 302 | 0.0 h |
-| pass 2 (family cells, exits a2, top cells) | n/a | 5082 (a top cells 14, a2 exit families 0, c family cells 5068) | 204 | 24.9 h |
+| pass 2 (family cells, exits a2, top cells) | n/a | 5094 (a top cells 14, a2 exit families 0, c family cells 5080) | 204 | 25.0 h |
 
 NOTE (18:40Z): the grid is partitioned over server 2 (rows 0-1 of 12), A (2-6) and B (7-11) by W-S3; finished results are merged into server 2 every ~5 min (lag <= 10 min), the todo and worker counts are summed over the three servers. A and B also see 172 bar rows that are complete on box 1 but not yet on server 2, so total todo is higher than the earlier single-server figure (about +50%).
 
 Pass-1 results on disk by tag: real 69334, null draw 1 66590, null draw 2 66590, extra draws (3-25) 86397 files. Pass-1 results still waiting for their pass-2 upgrade: real 54036.
 
-Machines (grid partitioned across servers): 207.188.7.103 load 83.47 workers 86; 109.94.96.39 load 175.12 workers 104; 206.223.224.21 load 178.84 workers 104; grid workers 294 (143 computing), engine workers 391; forward-path tables built (summed over servers) 733.
+Machines (grid partitioned across servers): 207.188.7.103 load 80.30 workers 86; 109.94.96.39 load 184.57 workers 104; 206.223.224.21 load 185.02 workers 104; grid workers 294 (143 computing), engine workers 452; forward-path tables built (summed over servers) 733.
 
-Since 12:35Z: pass-1 todo 9 -> 9 (+0), pass-2 todo 5195 -> 5082 (-113). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
+Since 13:05Z: pass-1 todo 9 -> 9 (+0), pass-2 todo 5217 -> 5094 (-123). Pass-2 todo grows when pass 1 delivers cells that earn pass 2.
 
 ## R4 - selection-corrected null of the whole search: FIVE draws, calibration check of the ladder (orders 1932Z + 2042Z; prereg sha 125fd12566e72aa6 + amendment)
 
@@ -35,7 +35,7 @@ Estimate: about 18 more full draws at the null share of the fleet (64 threads, ~
 
 ### False-discovery counts (W-SHORT, rule/null_summary.md: per accepted null draw per session, null cells passing vs the real search on the SAME coverage; ratio null/real = false-discovery ratio)
 
-# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 16:31Z
+# NULL DRAWS vs REAL (same coverage) - cells passing R0 (bare) per session, W-SHORT 17:01Z
 
 | tag | audit | Asia null / real (ratio) | London null / real (ratio) | NYAM null / real (ratio) | NYPM null / real (ratio) |
 |---|---|---|---|---|---|
@@ -73,10 +73,10 @@ Counts are the files on each host before the merge (A and B results are copied t
 
 | machine | real threads | busy % | load1 | grid workers (computing) | engine workers | re-rank/other workers | results/hour (this machine) |
 |---|---|---|---|---|---|---|---|
-| server 2 Dallas | 64 | 93.6 | 83.47 | 294 (143) | 195 | 0 | 506 |
-| A Frankfurt | 128 | 99.9 | 175.12 | 104 (54) | 90 | 0 | 258 |
-| B Singapore | 128 | 99.9 | 178.84 | 104 (46) | 83 | 0 | 244 |
-| box 1 London (lead, engine fillers) | 32 | 99 | 70.33 | 0 | see CORES.md | - | - |
+| server 2 Dallas | 64 | 94.6 | 80.30 | 294 (143) | 226 | 0 | 506 |
+| A Frankfurt | 128 | 99.9 | 184.57 | 104 (54) | 102 | 0 | 261 |
+| B Singapore | 128 | 99.9 | 185.02 | 104 (46) | 96 | 0 | 223 |
+| box 1 London (lead, engine fillers) | 32 | 99 | 46.44 | 0 | see CORES.md | - | - |
 
 Server 2 has 64 threads (SMT off in firmware, order 1830Z check), A and B 128 each, box 1 32. Total jobs/hour and the phase-1 ETA are in the table above (sum over servers; double counting warning applies until W-S3 merges results). Any machine under 85% busy for 3 readings with work pending gets a one-line explanation in MORNING.md.
 
@@ -129,7 +129,7 @@ Engine capacity decides the ORDER cells are tested in (best first), never WHETHE
 
 ### Counts passing per session (from SURVIVOR_COUNTS.md, W-SHORT)
 
-# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-27 16:21Z
+# SURVIVOR_COUNTS - the LADDER (cheapest test first; W-SHORT, orders 1845Z + 1932Z), refreshed 2026-11-27 17:01Z
 
 No top-N cap anywhere. A cell leaves only by FAILING a test. Counts are bare (R0) from server-2 results only and PROVISIONAL (grid partitioned over servers until W-S3 merges; data week 189). Rungs not yet run say "n/a (reason)", never zero.
 
@@ -139,7 +139,7 @@ FAMILIES = connected components of the grid neighbour graph over passing cells (
 
 FLEET: 352 threads (Dallas 64, Frankfurt 128, Singapore 128, box 1 32), 90% busy assumed = 317 screen cores; engine set-months/hour measured 763 (box 1 450 + Dallas 313; A and B have no engine runs yet), projected 2894 with A and B engine-ready (ENGINE_PLAN.md s.11). Unit costs measured on WP10 / XA3 (PHASE2_TOOLING_TEST.md): R2 ~12 CPU-s per cell; R3 ~0.31 core-h per (row, module) pair (30 draws; cells sharing a pair share the draws); R4 ~317 core-h per full null draw = ~1,585 core-h for the 5 draws now planned (order 2042Z; shared by all four sessions; W-GRIDOPS ETA: draws 1-2 inside the real loops ~16 h, draws 3-5 ~62 h at the 25 percent share or ~30 h once real pass 1 is done); R5 engine 0.05 core-h per set-month measured on box 1 / Dallas (Frankfurt measured ~0.30: 1,072 s per month, starved), R5 stage a = 12 set-months per family (L6M as ADD and as replacement of the weakest live book), prior years +72, 30 date-shift controls +180 set-months (7.8 core-h at 0.043). All "hours" below are UPPER BOUNDS (no cell has failed R1-R3 yet) and assume the whole fleet for screen rungs (R4: its 25 percent share of A + B) and the measured 763 set-months/h for the engine.
 
-## UNVERIFIED (stale level result) - notice, refreshed 16:20Z UTC
+## UNVERIFIED (stale level result) - notice, refreshed 17:00Z UTC
 
 trig_levels_* grid results written BEFORE 2026-11-18 06:00Z predate the level-module fixes (13 of 17 level modules differ on a fresh re-run, W-GRIDOPS 0145Z); they are being re-run (Dallas from 01:33Z, Frankfurt / Singapore ~02:30Z, null draws 1-2 last). Until the result stamp (code hash on every result file) exists, every row below that touches a level module and a pre-06:00Z result is **UNVERIFIED (stale level result)**; non-level modules are not known to be affected (all-module check pending, order 0143Z). Stage-A p-values of R3 are computed with the CURRENT module code (fresh), but the cell SELECTION (R0) used the stale grid result; cells whose fresh L6M differs from the grid L6M by > 1 point are VOID (excluded).
 
@@ -567,9 +567,9 @@ Result: NO code mismatch; the below-chance upper tail is a MEASURED selection ef
 
 ## D8 spec date: Asia + NY AM only (order 0216Z; from D8_SPEC_STATUS.md, W-NYENG)
 
-Updated 2026-11-27 15:05Z by W-NYENG. **RULE (order 1337Z): NO D8 build spec until the Asia AND NY AM ladders are COMPLETE**: every ladder cell has its first look, and every cell that beats a live book has prior years, controls, layers, exit run and the today / REPLACE / ADD pick. No wave dates. London and NY PM follow (stages 2 and 3). Funnel model redone at 14:00Z from landed data (order 1400Z).
+Updated 2026-11-27 17:01Z by W-NYENG. **RULE (order 1337Z): NO D8 build spec until the Asia AND NY AM ladders are COMPLETE**: every ladder cell has its first look, and every cell that beats a live book has prior years, controls, layers, exit run and the today / REPLACE / ADD pick. No wave dates. London and NY PM follow (stages 2 and 3). Funnel model redone at 14:00Z from landed data (order 1400Z).
 
-## STAGE 1 COMPLETE (Asia + NY AM): THREE dates from a funnel with explicit stage pass rates, at the current rate **5158 set-months/h** (HEALTH.md fleet rate; tp_admit last hour says a different number at times; W-COMPILED factor not yet available, W-FASTLADDER share not included)
+## STAGE 1 COMPLETE (Asia + NY AM): THREE dates from a funnel with explicit stage pass rates, at the current rate **6236 set-months/h** (HEALTH.md fleet rate; tp_admit last hour says a different number at times; W-COMPILED factor not yet available, W-FASTLADDER share not included)
 
 **Funnel stages and rates read from landed NY AM data:** (1) first look: 3222 of 4557 ladder cells have REPLACE last-6-month + last-3-month rows; (2) BEATER under the W-ASIA gate (a REPLACE row beats today stack on BOTH L6M and L3M: ulcer lower, mean not lower, worst week and max DD not worse): **0.4% of looked-at cells (13 of 3222); 0.3% with a REPLACE-K7 row; the looser rule (ulcer < 0 and mean >= 0 only) gives 1.1% (36)** (uncalibrated, label BETTER; calibration caveat: the whole-search null gives per-mode FDR both-side 8-25%, long-only 12-18%, i.e. a share of these yes rows is noise); (3) PASS prior years + persistence (rule B: no RED year in 2023/24/25; pooled persistence >= 0.58): **7 of 14 yes rows with all three prior years landed pass = 50%** (3 of 10 cells); the 4 REPLACE-K7 beaters: 3 pass (L01811caa, L6a25b155 pass, L0f097450 RED 2023); Asia: 8 passers among the beaters evaluated (W-ASIA); (4) only PASSERS get 30 controls (ADD and REPLACE variants: 2 x 180), layers (347, W-LAYERS cost) and exit rows (438) = 877 set-months per passer; every beater gets prior years (37 per beating REPLACE set). REPLACE ONLY (order 1407Z): ADD rows are reference, not candidates, and are no longer queued; exit rows = top 3 recipes x REPLACE x (6+37) + 30 controls x 6 = 309.
 
@@ -577,17 +577,17 @@ Updated 2026-11-27 15:05Z by W-NYENG. **RULE (order 1337Z): NO D8 build spec unt
 
 | scenario | NY AM beaters share / pass rate | NY AM beaters -> passers | Asia beaters share / pass | NY AM follow-ups | Asia follow-ups | TOTAL set-months | hours | **STAGE 1 COMPLETE** |
 |---|---|---|---|---|---|---|---|---|
-| LOW (strict gate, half the measured share) | 0.2% / 50% | 9 -> 5 | 2.2% / 50% | 4452 | 15940 | 156786 | 30 | **2026-11-28 21:29Z** |
-| BASE (STRICT gate, measured share less mid FDR) | 0.3% / 50% | 15 -> 8 | 3.0% / 50% | 7435 | 21736 | 165566 | 32 | **2026-11-28 23:11Z** |
-| HIGH (strict gate, 3x: the a2 other-book rows add chances) | 1.2% / 80% | 55 -> 44 | 4.4% / 80% | 41235 | 31880 | 209509 | 41 | **2026-11-29 07:42Z** |
-| VARIANT: LOOSER gate (ulcer < 0 and mean >= 0 only), measured share less mid FDR | 0.9% / 50% | 43 -> 21 | 3.0% / 50% | 20590 | 21736 | 178721 | 35 | **2026-11-29 01:44Z** |
-| UPPER BOUND: every REPLACE beater gets everything (10% NY AM / 6.5% Asia) | 10.0% / 100% | 456 -> 456 | 6.5% / 100% | 420646 | 47095 | 604136 | 117 | 2026-12-02 12:13Z |
+| LOW (strict gate, half the measured share) | 0.2% / 50% | 9 -> 5 | 2.2% / 50% | 4452 | 15940 | 156786 | 25 | **2026-11-28 18:10Z** |
+| BASE (STRICT gate, measured share less mid FDR) | 0.3% / 50% | 15 -> 8 | 3.0% / 50% | 7435 | 21736 | 165566 | 27 | **2026-11-28 19:34Z** |
+| HIGH (strict gate, 3x: the a2 other-book rows add chances) | 1.2% / 80% | 55 -> 44 | 4.4% / 80% | 41235 | 31880 | 209509 | 34 | **2026-11-29 02:37Z** |
+| VARIANT: LOOSER gate (ulcer < 0 and mean >= 0 only), measured share less mid FDR | 0.9% / 50% | 43 -> 21 | 3.0% / 50% | 20590 | 21736 | 178721 | 29 | **2026-11-28 21:41Z** |
+| UPPER BOUND: every REPLACE beater gets everything (10% NY AM / 6.5% Asia) | 10.0% / 100% | 456 -> 456 | 6.5% / 100% | 420646 | 47095 | 604136 | 97 | 2026-12-01 17:54Z |
 
-Scenario assumptions (REPLACE ONLY, STRICT gate = ulcer lower, mean not lower, worst week and max DD not worse on L6M and L3M): measured strict share 0.4%; LOW = half of it, 50% pass; BASE = the measured share minus the mid FDR 16.5% (calibration), pass rate = observed on the loose REPLACE yes rows (50%); HIGH = 3x the strict share, 80% pass; the LOOSER-gate row is a variant only. SMALL SAMPLE: 3222 REPLACE looks. Asia beater share 2.4% (W-ASIA strict rule: 15 of 614) / 4.4% / 6.5% (looser rule 50 of 766), Asia pass rates as NY AM. First looks alone (NY AM 0 + Asia 62000) end 2026-11-28 03:06Z. CAVEAT: the observed beater share comes from the cells looked at so far, which are the BEST screen-ranked ones (the ladder runs in rank order), so extrapolating it to all 9,081 cells over-states the BASE and HIGH rows; the true beater share of the tail is probably lower (LOW is the REPLACE-only bound). The biggest remaining uncertainty is the beater and pass share; the null calibration (R4) and the persistence/rule-B gates move it.
+Scenario assumptions (REPLACE ONLY, STRICT gate = ulcer lower, mean not lower, worst week and max DD not worse on L6M and L3M): measured strict share 0.4%; LOW = half of it, 50% pass; BASE = the measured share minus the mid FDR 16.5% (calibration), pass rate = observed on the loose REPLACE yes rows (50%); HIGH = 3x the strict share, 80% pass; the LOOSER-gate row is a variant only. SMALL SAMPLE: 3222 REPLACE looks. Asia beater share 2.4% (W-ASIA strict rule: 15 of 614) / 4.4% / 6.5% (looser rule 50 of 766), Asia pass rates as NY AM. First looks alone (NY AM 0 + Asia 62000) end 2026-11-28 02:58Z. CAVEAT: the observed beater share comes from the cells looked at so far, which are the BEST screen-ranked ones (the ladder runs in rank order), so extrapolating it to all 9,081 cells over-states the BASE and HIGH rows; the true beater share of the tail is probably lower (LOW is the REPLACE-only bound). The biggest remaining uncertainty is the beater and pass share; the null calibration (R4) and the persistence/rule-B gates move it.
 
 ## ENGINE-SLOT SPLIT (re-proposed from remaining FIRST LOOKS, then gate-pass follow-ups; NOT applied)
 
-Remaining first looks: Asia 62000 vs NY AM 0 (+74394 NY AM other-book rows) => **Asia 100% / NY AM 0%** (45% / 55% with the other-book rows) = ~2345 / ~2813 set-months/h at 5158/h; with the base-case follow-ups added the work ratio is NY AM 49% / Asia 51% (NY AM follow-ups 7435 vs Asia 21736): the follow-ups only exist for cells that pass, so they come AFTER the first looks, are small until prior years land, and are taken first by the mix when they appear. Proposal: start at **Asia 100% / NY AM 0%** (remaining first looks only; the other-book REPLACE rows are ordered behind the first looks of both ladders) and re-propose when the funnel is re-measured (each refresh of this page recomputes it). W-ASIA's passer controls (_asi/first.txt) stay first, my gate-pass follow-ups stay first in pending_l.txt / the front of pending_r5.txt; the mix file puts both unmixed ahead of the interleaved block. NY AM at the order's ~120/h would leave 682 h of work. NOT applied: the QUEUES.txt edit (replace the _asi/pending.txt and _nye/pending_r5.txt lines by /mnt/l2/l2vast/_split/pending_mix.txt, built by code/th_nyeng/ny_mix.py <NYAM share>, e.g. 0.41) waits for the lead.
+Remaining first looks: Asia 62000 vs NY AM 0 (+74394 NY AM other-book rows) => **Asia 100% / NY AM 0%** (45% / 55% with the other-book rows) = ~2835 / ~3401 set-months/h at 6236/h; with the base-case follow-ups added the work ratio is NY AM 49% / Asia 51% (NY AM follow-ups 7435 vs Asia 21736): the follow-ups only exist for cells that pass, so they come AFTER the first looks, are small until prior years land, and are taken first by the mix when they appear. Proposal: start at **Asia 100% / NY AM 0%** (remaining first looks only; the other-book REPLACE rows are ordered behind the first looks of both ladders) and re-propose when the funnel is re-measured (each refresh of this page recomputes it). W-ASIA's passer controls (_asi/first.txt) stay first, my gate-pass follow-ups stay first in pending_l.txt / the front of pending_r5.txt; the mix file puts both unmixed ahead of the interleaved block. NY AM at the order's ~120/h would leave 682 h of work. NOT applied: the QUEUES.txt edit (replace the _asi/pending.txt and _nye/pending_r5.txt lines by /mnt/l2/l2vast/_split/pending_mix.txt, built by code/th_nyeng/ny_mix.py <NYAM share>, e.g. 0.41) waits for the lead.
 
 ## Early-rung exits (4c): lines queued for cells that already left the ladder
 
@@ -1028,11 +1028,11 @@ Phase 1 is NOT split by session (one grid job feeds all four sessions), so the g
 - Screen numbers are naked triggers; the engine rows (NEW_BOOK_ENGINE*.md) show layers and account rules change results both ways.
 
 <!-- ENGINE_PLAN_ETAS -->
-**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-27 16:05Z):**
+**Phase ETAs (W-PLAN, from ENGINE_PLAN.md section 11, 2026-11-27 17:05Z):**
 
 - phase 1 pass 1: 9 jobs left at 302/h = 0.0 h (rate from the grid line above; sums over machines).
-- phase 1 pass 2: 5099 jobs left at 174/h = 29.3 h at today's allocation.
-- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 11 h at the current fleet (2788/h) or 16.8 h with A and B engine-ready (projected 1812/h). Full table: ENGINE_PLAN.md section 11.
+- phase 1 pass 2: 5094 jobs left at 204/h = 25.0 h at today's allocation.
+- phases 2-3 engine, N = 6 passing cells per session: 30400 set-months = 4 h at the current fleet (8052/h) or 4.3 h with A and B engine-ready (projected 7065/h). Full table: ENGINE_PLAN.md section 11.
 - luck test (order 2042Z): R3 = per-cell p-values with BH at q = 10% (stages A 30 / B 200 / C 1,000 draws); screen cost ~454-1759 core-h in all (hours on the 262 pool 1.7-6.7); R4 = 5 null draws, 1,585 core-h = 38 h at 25% of A+B; engine for the BH passers: ~68 core-h per passer incl. layers, 48 h on the pool for up to ~186 passers; BH passer counts per session come from W-SHORT (SURVIVOR_COUNTS.md). Dated D8-spec estimates: ENGINE_PLAN.md section 0.
 - N is not a limit (order 1845Z): N only sizes the estimate; engine capacity decides the ORDER, never whether a passing cell is tested.
 
