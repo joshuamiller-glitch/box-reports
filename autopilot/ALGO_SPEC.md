@@ -110,11 +110,46 @@ STATUS: HELD = not traded through since created; SWEPT_RECLAIMED = traded throug
 LIMITS: 10-level depth covers 10 ticks (2.5 pts): walls and protecting size at a stop >= 3 pts away need MBO. Older months: the 1-s table exists for 2023-03..2026-10 (+ext weeks 2026-11) on box1; server C has a partial copy (W-DYNML) at /mnt/l2/l2vast/_dynml/nq/1s. UW intraday walls: 9 recorder days only (13-25 Nov 2026); everything older is static per day.
 
 
+
+### 3c. LIVE L3 (MBO) QUANTITIES THE ENGINE NEEDS (order 1414Z item A; Josh accepts a live Databento L3 subscription) - READING of code/th_dynx8/l3_sec.py, dyn_replay.py, th_dynexit/dyn_mbo.py
+```
+feed            = Databento MBO (mdp3) for the front NQ contract: per record action (A add, C cancel, M modify, T trade, F fill, R clear/snapshot), side (B/A), price, size, order_id, flags (F_SNAPSHOT 32, F_LAST), ts_recv, ts_event, sequence, instrument_id; the day starts with R + snapshot adds (age of snapshot orders counted from the first record = lower bound)
+book state kept = hash order_id -> (tick = price/0.25, size, side, insert ts, 'old' flag); per-tick arrays all-size and size resting >= 120 s (promotion queue: an order becomes 'old' 120 s after insert; a MODIFY that changes price or INCREASES size resets age and old flag; reduce-only modify keeps it)
+fills/cancels   = CME sends F then C for a filled size: a pull = C size minus the order's fill; trades = T records at price ticks; per-second counters per tick: cancelled size, traded size, added size
+per second (SPEC, W-DYNX8 l3sec table, stamp = end of second, records ts_recv < stamp): best bid tick, best ask tick, 5-level depth sums bid/ask, within 10 ticks of the touch: pulls NET of fills, adds, fills per side; bid and ask WALL within 30 pt and within 120 pt behind/ahead of the touch: size (max over a 5-tick window), distance in ticks, share of that window resting >= 120 s
+per second (READING, W-DYNA dyn_mbo.py): behind wall and ahead wall relative to the trade (largest size within 160 ticks, >= 30 lots counts): size, old share, distance, cancel/trade/add size at the previous second's wall tick, pulled (drop >= 50 % with trades < 50 % of the drop) / consumed events, iceberg refill (re-add >= 50 % of traded size, >= 20 lots traded)
+per trade (W-DYNL mbo_cols): size resting between price and the stop by age (old >= 1 / 3 minutes, all) and the cluster behind the stop (distance, size)
+latency         = LAT_BOOK / ts_recv versus engine clock: OPEN (sim.py PRM LAT_BOOK=-1.0); live: use ts_recv of the subscription and an explicit measured lag; replay: records with ts_recv < stamp
+capacity        = full-depth MBO for one contract: about 2-3 million records on a busy day (1 GB/day uncompressed zst ~ 65 MB); the book hash needs 2^21 slots; replay speed on one core about 15 s per day file, live is real time
+```
+
 OPEN: loop A rule features from the L3 wall channels (behind/ahead wall size, share of size resting >= 120 s, pulled/consumed, refill) are defined in code/th_dynexit/dyn_mbo.py (SPEC for the replay; no attribution passed them, W-DYNA 06:55Z: 0 of 24).
 
 ## 4. LOOP A (rule loop) - OPEN: W-DYNC to write the rule list and thresholds BEFORE scoring; copy here as `A.R<k> = condition -> action (reason)`
 ## 5. LOOP B (score loop) - SPEC for the X24 count machine (section 2 steering and guard rails; fixed_rules_x24.json), OPEN for any change
-## 6. LOOP C (learned loop) - OPEN: W-DYNML: features list, target, refit schedule, purge, model file, inference code; the live build needs the model frozen as a file with a version hash
+## 6. LOOP C (learned loop; W-DYNML code/th_dynml/algo_hook_c.py, loopc_trees.py, dml_algo_hookfit.py) - SPEC (read from the code, 15:20Z)
+```
+model             = LightGBM regressors, one per action (4: take-all, tighten, part, trail), target = advantage over HOLDING, in units of the book's own stop R0 (clipped to +-3 R0), fitted on 1-minute states of past trades
+export format     = one bundle per (book, refit step) /mnt/l2/l2vast/_dynml/algo/hook/loopc_<TAG>_s<STEP>.json.gz (json, gzip, a few hundred KB to a few MB):
+                    {"tag", "step" (refit weeks 4 or 13), "feats" (18 names, order fixed), "safety_mult" (1.5),
+                     "periods": [ {"wk0","wk1","t0","t1" (epoch s of the forward period), "fit_end" (the model saw only trades that ended before it),
+                                   "models": [ {"init": 0.0, "trees": [ {"f":[split feature index, -1 = leaf], "t":[threshold], "l":[left child], "r":[right child], "d":[default-left 0/1], "m":[missing type 0 None, 1 Zero, 2 NaN], "v":[leaf value]} ... ]} x4 ] } ... ] }
+evaluator         = loopc_trees.py predict_one(trees, x, init): pure python/numpy, no lightgbm: per tree walk from node 0: v = x[f[i]]; NaN -> go left if (m[i]==2 and d[i]) else (0.0 <= t[i]); (m[i]==1 and |v|<=1e-35) -> d[i]; else go left iff v <= t[i]; prediction = init + sum of leaf values; identity-tested against lightgbm (dml_algo_hookfit.py)
+model choice      = a trade is managed with the period whose [t0, t1) contains the decision second; after the last period the last model is reused; before the first nothing happens (hold)
+features (x, 18)  = openR mfeR maeR sec R0pts hod nq60 nq300 nq900 ES60 ES300 RTY60 RTY300 CL60 CL300 ZN60 ZN300 gap
+   openR  = open_pts / R0 (R0 = the book's own stop in pts; the hook holds the safety stop = safety_mult x R0 = 1.5 x R0 and rescales)   mfeR = best open R0 so far   maeR = -|worst open R0 so far|
+   sec = seconds in trade   R0pts = R0   hod = ET hour of the decision minute shifted -18 h (Globex day clock; the key minute = entry + int(mins)*60)
+   nq60/nq300/nq900 = side * (NQ close_now - NQ close_{60/300/900 s ago}) / R0 ; ES60 ES300 RTY60 RTY300 CL60 CL300 ZN60 ZN300 = side * 1e4 * (close_now / close_then - 1) (basis points) ; gap = ES300 - nq300 in bp
+   feeds = instr_1s 1-s bars NQ ES RTY CL ZN, a bar is known at its start + 1 s; LAG 1 s: value = last bar with start + 1 + 1 <= decision second; missing -> NaN (trees route NaN by their default direction); no flow feature in this version
+schedule          = decide ONCE per trade-minute: at the first call with int(minutes in trade) > last evaluated minute (minute k = first second with t - entry >= 60 k); minute 0 never
+loss-mode gate    = mode 'loss': only when open_pts < 0 (openR < 0); otherwise HOLD without evaluating the model; mode 'joint' evaluates also in profit
+decision          = theta = 0.2 R0: the action with the largest predicted advantage > theta that is ALLOWED: tighten only if (open_pts - 0.5*R0) > current stop distance; part only if lots >= 2 and not already parted (frac 0.5); trail only once per trade; ties go to the later action index
+actions           = all (market, state OUT), tighten {to: open_pts - 0.5*R0 from entry, state DEFENDING}, part {0.5 of lots, state RUNNING}, trail {distance R0, state RUNNING}; reason string 'LOOP C adv %.2f R (all .. tight .. part .. trail ..) openR ..'
+refit schedule    = purged walk-forward refit every 4 weeks (s4) and every 13 weeks (s13); a bundle holds all periods of the history up to the build date; for live a refit adds a period with its own t0 = the refit date
+safety stop       = 1.5 x R0 from entry (k_safe 1.5), never widened
+one bundle per    = book (cell id): Asia MF1 = Lb0e6dfa3_R0_F40_80; the other books as W-DYNML builds them (index: /mnt/l2/l2vast/_dynml/algo/hook/)
+```
+Match-test rows for Loop C: /mnt/l2/l2vast/_dynexit/algo_inputs/loopc/<book>_<bundle tag>_s<STEP>.csv: for each dated trade of section 8 and every trade-minute: the 18 features exactly as handed to the trees (column x18, json), openR/best/worst in R0, loss gate, the four predicted advantages pred_all pred_tight pred_part pred_trail, action, rule, reason. Asia MF1 done for its 3 trades (steps 4 and 13); other books as bundles are mapped to books (OPEN: W-DYNML to give the cell id for each book key). Trades after 2026-10-12 (instr_1s end) have NaN feeds for the cross-market columns (same as the engine would see without the feed). Pass criterion: predictions equal to 1e-9, same action at the same minute. OPEN: exact-engine action logs for these trades from W-DYNH, to compare actions with the hook's.
 
 ## 7. ORDER HANDLING AND LOG FORMAT
 ```
