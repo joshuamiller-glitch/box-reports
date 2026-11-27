@@ -1,6 +1,6 @@
 # BRACKET SETTLING RUN BA (layers + caps off), L6M, 1 lot
 
-Written 2026-11-27 10:52Z UTC by W-BRKT. Prereg: PREREG_BRKT_SETTLING_BA.md (sha in DECISIONS.md). BA = account layers and caps off (scr gate, c_gov, ec, ctx cut, p7 day cap, mf day caps removed; slippage 0.8, engine BookLock and the time exit at session end kept). WITH = the screen set (layers on). eq = $/wk scaled to the own bracket's ulcer of the SAME condition. * = own bracket.
+Written 2026-11-27 11:34Z UTC by W-BRKT. Prereg: PREREG_BRKT_SETTLING_BA.md (sha in DECISIONS.md). BA = account layers and caps off (scr gate, c_gov, ec, ctx cut, p7 day cap, mf day caps removed; slippage 0.8, engine BookLock and the time exit at session end kept). WITH = the screen set (layers on). eq = $/wk scaled to the own bracket's ulcer of the SAME condition. * = own bracket.
 
 ## AS_L7c368a4f (own P60)
 
