@@ -240,3 +240,4 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 - 04:24Z Josh: disk: free the LOW rows (~94 GB; copy+hash-verify to C first, delete only on your explicit word)? or add disk. box1 ~22 GB free, filling ~30 GB/day
 - 05:02Z Josh: DISK CRITICAL 15 GB free, ~17 GB/h: free the LOW rows (71 GB hash-verified on C: shuf, ds3_l2h, ds3_redo_d8) / add disk / stop box1 builds? decide within the hour
 - 05:06Z Josh: allow agents to delete their OWN regenerable scratch created today on box1 (e.g. W-DYNC grid.npz/feat.npz 1.8 GB, W-DYNA v2 stores)? default: no deletion
+- 05:51Z Josh: add W-DYNX8 tape.npz 3.59 GB to the 'agents may delete own regenerable scratch' list (option A)
