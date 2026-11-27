@@ -117,5 +117,13 @@ cautious: S2 56% / 16%, S1 8% / 20%, P1 24% / 40%, P3 16% / 24%; middle: S2 52% 
 ### VERSION COUNT (luck charge)
 v0 = designs as first written (sections 1-7; manager built before the amendments, batch-1 rows queued by W-DYNH: any (set, month) that has FINISHED stays as design 'v0', labelled, counted, and not mixed with v1). v1 = v0 + S1 + S2 (replacing T1) + breadth ways (NY). Each v1 design is run once in each of its ways: Asia/London 3 designs x 1 way; NY 3 designs x 2 ways. Rows not yet finished at the time of the amendment: VOID and requeue as v1. No threshold was moved after a result; the sanity shares above did not change any rule.
 
+## 9. CALENDAR-AWARE VERSION v2c (pre-result amendment, 27 Nov ~18:30Z; rows NOT yet run only)
+The queued MGMT v1 rows are calendar-blind and are not touched. v2c = v1 + the rules below, param cal true; ONE calendar-aware version per design, run ONCE after the core replays (not searched). Source: W-DYNX8's calendar feed, feeds/calendar_<YYYY-MM>.parquet, per second: nxt_hi_min / prv_hi_min (minutes to the next / since the last HIGH-importance scheduled event), n_next60, day_early_close, day_holiday, day_opex, day_month_end, day_quarter_end, day_roll_week.
+C1  "A high-importance release is within 5 minutes (nxt_hi_min <= 5) and my trade is not a winner -> cautious: flat; middle: tighten to the book's own stop if on a dip; active: nothing."
+C2  "From 5 minutes before to 5 minutes after a high-importance release (nxt_hi_min <= 5 or prv_hi_min <= 5) the other markets are moving on the number: the evidence rules (L1, P2, P3) are suspended; winners keep the stop they have."
+C3  "Early-close day (day_early_close = 1): the bell for S2 and the one-minute backstop is 13:00 ET, not the engine's normal session end."
+Holiday, opex, month/quarter end and roll week are logged as context in the shadow line, no rule (no evidence). Configs: code/th_dync/mgmt_configs_v2c.json (22 books; London and NY PM ready=false).
 ## CHANGES (counted; empty means every design is as first written)
 1. PRE-RESULT amendment batch 8 (17:30Z): S1 and S2 added to every design, T1 (fixed 15-minute clock) replaced by S2, breadth vote added to the NY versions as a second way. Not a post-result change (no design row had been scored). Versions: v0 (as first written), v1 (amended).
+
+2. PRE-RESULT (18:30Z): calendar-aware version v2c added (section 9), for rows not yet run only; queued v1 rows stay calendar-blind; London MF1/MF3 and NY PM MF2/MF3 get a tgt_ratio (LO_MF1 0.333, LO_MF3 0.5, NP_MF2 1.0, NP_MF3 0.5; also NP_MF1 1.0, NP_MF4 1.0, NPMACD 0.333, NPCONF 1.0) so S1 and S2 stop abstaining there. Versions: v0, v1, v2c.
