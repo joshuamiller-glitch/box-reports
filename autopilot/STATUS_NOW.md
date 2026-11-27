@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 19:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 19:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 19:00Z | box1: busy 93%, load1 40.86, workers 13, MemAvail 67 GB | server2: busy 98%, load1 92.91, workers 28, MemAvail 818 GB | pending box1-eligible 501415 / server2-eligible 92404 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 214.56, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 730 GB | serverB: busy 100%, load1 197.65, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 800 GB | serverC: busy 100%, load1 253.37, workers 1 (grid) + 135 (engine), 128 threads, MemAvail 698 GB | serverD: busy 100%, load1 101.27, workers 1 (grid) + 107 (engine), 64 threads, MemAvail 1442 GB
+LATEST CORES.md LINE: 2026-11-27 19:15Z | box1: busy 100%, load1 63.28, workers 9, MemAvail 69 GB | server2: busy 95%, load1 75.80, workers 27, MemAvail 1046 GB | pending box1-eligible 501319 / server2-eligible 90960 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 209.25, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 806 GB | serverB: busy 100%, load1 203.17, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 798 GB | serverC: busy 100%, load1 256.08, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 744 GB | serverD: busy 100%, load1 102.71, workers 1 (grid) + 108 (engine), 64 threads, MemAvail 1458 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 19:00Z
+2026-11-27 19:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 19:00Z | box1: busy 93%, load1 40.86, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 65.8 GB; live reservations 1 (1 GB); workers 13, of which TP-adopted 13 (RSS 17.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 40.86, 42.25, 50.71
-  by tag: NYR quota 12 running 1 hungry True RSS 1.1 GB PSS 1.0 GB; NYE quota 16 running 12 hungry False RSS 16.2 GB PSS 14.9 GB
+Server 1 (this box): MemAvail 68.1 GB; live reservations 1 (1 GB); workers 9, of which TP-adopted 9 (RSS 12.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 63.28, 62.65, 58.63
+  by tag: NYR quota 12 running 9 hungry True RSS 12.9 GB PSS 11.4 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L02b4fc0b_ALNCT7p (x12);TL3_NYE_L02b4fc0b_ALN (x12);TL3_NYE_L02b4fc0b_ALNCT14p (x2);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 92.74, 93.72, 97.72|/dev/md2         28T  2.8T   26T  11% /mnt/l2|51|
+  top running jobs: TL3_NYE_L02b4fc0b_ALNCT21m (x12);TL3_NYE_L02b4fc0b_ALNCT14m (x12);TL3_NYE_L02b4fc0b_ALNCT7m (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 77.48, 82.34, 89.21|/dev/md2         28T  2.8T   26T  11% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 92.74, 93.72, 97.72|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1736Z_Josh-health-vote-is-a-side-row-not-core.md 20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md
+20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md 20261127_1913Z_Josh-does-an-existing-authority-cover-the-small-data-items.md
