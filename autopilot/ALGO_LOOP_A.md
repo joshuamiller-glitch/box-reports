@@ -1,0 +1,29 @@
+# ALGO_LOOP_A (W-DYNC): rule loop, version A1. Written 27 Nov ~13:35Z BEFORE any scoring. Code: code/th_dync/algo.py (manage_A, CFG_A). Research only.
+
+## Interface (shared by loops A, B, C)
+manage(state, landscape) -> Action(kind, reason, rule, qty_frac, stop_px, style, marketable). Called every second and on book events for an open trade; one action per call, reason logged with every non-HOLD. kinds: HOLD, TIGHTEN (stop to a price), PART (fraction of open lots), ALL (marketable exit), RELEASE_TARGET (drop target, switch to a trail style), TRAIL (set style). State: side, entry, px, S0, T0, lots open/original, stop, time in trade, peak, partial done, time to session end, changes in the last minute, machine state PROBE/CONFIRMED/RUNNING/DEFENDING/OUT. Landscape values arrive in the TRADE's frame (behind = protecting side, ahead = side the trade heads into; flow > 0 = with the trade) and are None when the input is missing: the rule then abstains.
+
+## At entry
+Only a back-up stop: the book's own stop x {1.0, 1.5 (primary), 2.0}, or max(S0, 3 x 5-min ATR) (vol disaster stop). No target. Reference row = the live bracket. Never widened after entry; may be tightened by the loop (<= 6 changes per minute, min 15 s in trade before any rule acts).
+
+## The four rules (first that fires wins; order R4, R1, R2, R3; plus the clock rule)
+| rule | plain words | fires when (all) | action | inputs | exists? |
+|---|---|---|---|---|---|
+| R1 LEAVE | size protecting the trade is pulled and flow turns | same-side depth (levels 1-5) <= 50% of its 120-s median AND cancels >= 1.5x adds on that side over 10 s AND signed delta share (30 s) <= -0.15 | ALL, marketable | NQ 1-s table: bsz1..5/asz1..5, sz_can_*/sz_add_* (b1,b23,b410 / a1..), buy_vol, sell_vol | yes, 2023-02..2026-11-05 at 1 s (10-level + MBO-derived counts); full L3 only for walls beyond 10 levels (MBO to 2026-11-13) |
+| R2 TAKE | a real wall ahead holds and momentum stalls | open profit >= 0.30 R AND ahead size >= 2.0x its 120-s median for >= 20 s AND 60-s progress <= 0.10 R; first time: PART 50% at the wall; if delta share (30 s) <= -0.15 too: ALL | PART / ALL | asz/bsz 1..10, refill_n, price | yes at 10 levels (reach ~2.25 pt only); walls 30-120 pt away need MBO (inventory W-DYNX8) |
+| R3 HOLD+TRAIL | the wall is eaten and ES / leaders confirm | >= 50% of ahead size removed by trades in 30 s AND >= 2 levels cleared (nclr_a) AND ES 5-min move with the trade >= +0.5 sigma AND RTY not against | RELEASE_TARGET (structure trail, no tightening for 60 s) | depl_a_trd, nclr_a, ES/RTY 1-min | NQ yes; ES/RTY/YM/6J/ZN/ZB/NKD/6E 1-min to 2026-11-10 (second-level ES: W-DYNX8 to confirm) |
+| R4 CUT | ES and leaders break against and options flow flips | ES and RTY both <= -1.5 sigma (since entry) AND UW tide net premium changed sign against since entry; if open <= +0.25 R: ALL, else stop to breakeven | ALL / TIGHTEN | ES, RTY 1-min; UW QQQ/SPY net call-put premium 1-min | ES/RTY yes to 11-10; UW tide 2024-10..(RTH only), +1 min delivery lag; intraday walls/flip only 9 days (11-13..11-25): not usable for history |
+| T15 clock | do not carry profit into the close | 15 min before session end and open > 0 | ALL | clock | yes |
+Delivery lags (stated for the hook): book/tape 1 s; ES/RTY 1-min bars complete at their end (+ up to 60 s); UW tide +60 s; decision lag 1 s; exits fill on the next print; marketable exits modelled at the touch -/+ 1 tick (pessimistic label: 4 ticks).
+Order handling: resting limit for PART at the wall price minus 1 tick, re-priced when the wall moves (<= 6 changes/min); marketable for ALL; stop moves cancel/replace. Slices at size: lots open > 6 are cut in slices of <= 3.
+Abstain rule: a rule with a missing input does nothing and the replay records "abstain"; share of seconds each rule was blind is reported per month (so the pre-2024-10 months, which have no UW tide, are R4-blind, not R4-negative).
+Thresholds are priors, not tuned; no search. Version log in ALGO_LOG.md; any later change = new version A2 with the evidence that motivated it.
+
+## What can be replayed honestly
+R1/R2/R3 (NQ-only plus ES): 2023-04..2026-11-05 where the 1-s tables exist; R4: 2024-10..2026-11-05 only; stocks (NVDA etc.): no stored tape known to me (W-DYNX8 inventory to say); CL history only from 2026-11-13; intraday option walls only 9 days. These are listed, not guessed.
+
+## PLAN for loop B (score loop), reusing the X24 state machine (code/th_x24/x24_sim.py)
+1. Score = evidence FOR minus AGAINST each second, items from the same landscape: delta share, ofi, depth imbalance behind/ahead, size pulled/added behind, ahead wall persistence, wall eaten, ES/RTY/YM with/against, UW flip, vol ratio, momentum/efficiency. Item signs and deadbands fixed in advance (count version, cutoffs +-1/2/3); weighted version = OLS weights fitted on past data only, refit 2/4/13 weeks, cutoffs quantile-matched.
+2. States PROBE -> CONFIRMED -> RUNNING -> DEFENDING -> OUT with logged transition reason. Actions at score levels: >= +3 release target / loosen trail (guard: never give back more than 50% of peak profit, breakeven after a part); <= -2 tighten / take part; <= -3 take all; re-add one part only when >= +3 again, open > 0, never above original size.
+3. Same replay rows as A (loop replaces Trade Health / on top of it), random-management null by time-shifting the score series, drop-one by input family.
+4. What X24 already says about B (bare-bracket screen, 4 tape items, 5-s): only the steered runner trail beat the random null; target steering, score-sized partial and re-add did not; the score items had no proven information (attribution 0/25). B's new inputs (wall/size pulled, leaders, UW) are the untested part; that is why A is run first.

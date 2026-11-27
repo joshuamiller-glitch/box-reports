@@ -1,0 +1,13 @@
+# ALGO_HARNESS (W-DYNQ, part d of orders 1305Z/1307Z): replay and reporting harness for the managed-trade algo
+Code: code/th_algo/ (ar_lib.py scoring library on dx_score.py; ar_report.py -> autopilot/ALGO_REPORT.md; fl_report.py -> autopilot/FLATTEN_EXACT.md; ar_loop.sh refreshes both every 10 min, niced, read-only on box1 runs_rf, KB output, cache /mnt/l2/l2vast/_dynexit/algo_cache.pkl about 2-5 MB; stop file /mnt/l2/l2vast/_dynexit/algo_loop.STOP).
+## What W-DYNH must register (registry.json fields: sess, tag, recipe, variant, live)
+- recipe = algo<LOOP>_<ver>[__flag...] (LOOP A rule, B score, C learned; ver e.g. v1); tag = ALL (session mix) or MFk (one book); sess AS LO NY NP.
+- variant M = loop ON TOP of the live Trade Health (live mix, the stream changed); N = loop REPLACES the Trade Health (that stream's TH off); A = book alone bare (reference fix_A).
+- flags: noL3 noX noStk noOpt (drop-one input family, same version otherwise), L3 | L10 (depth version), rnd01..rndNN (random-management null: the same number and timing of management actions as the version, on random trades/times; at least 5 draws, 10 preferred).
+- Reference for M and N rows is the live mix as run; for A rows fix_A of the tag. Every set must be complete (42 months DONE) to be scored; partial progress is shown.
+## What the report shows (per session x version x stream)
+Window table (L3M, L6M, 2026, 2025, 2024, 2023, whole): max DD, worst week, income and change vs live, pessimistic income; forward 13/4/2-week periods (periods with DD or worst week better, income higher, chained DD, verdict); how trades ended (exit_name counts and $ for the algo and the live mix: the loop must write its rule/state into exit_name, e.g. AlgoRuleLeave, AlgoTrail, AlgoTake); drop-one and L3 vs 10-level deltas; random-management null ranks; **candidate test** (order 1307Z item 3): L3M and L6M both win, more than half of the years with data win, beats the null (income above every draw, DD shallower than the null median in L6M and whole). CANDIDATES line at the bottom.
+## Flatten blocks
+FLATTEN_EXACT.md scores every registry set whose recipe is a flatten family (car*, CARRYOFF, em*, EMOFF, c90, win*, w*, late*, skip*, stk45/stk45h, rnd*) for tags ALL and MFk, variants A/M/N, vs live mix / fix_A / fix_N; identity rows for CARRYOFF/EMOFF (max daily diff vs live), London random-exit null vs stk45h, NP-MACD x3 vs x3plain with null x3rnd1..5 and x3dynoff identity.
+## Not in the harness (needs the owners)
+The loop's per-decision logs (reason, inputs) for 'how trades ended' by state; input-lag stamps; the learned loop's purged refit audit. The harness reads only trades.parquet exit_name and p484.

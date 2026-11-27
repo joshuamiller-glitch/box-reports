@@ -1,0 +1,8 @@
+# ALGO_LOG - version log of the management algo (every version: what changed, why, replay result)
+
+| version | date UTC | owner | what changed | why | replay result |
+|---|---|---|---|---|---|
+| v0.1 spec skeleton | 2026-11-27 13:26Z | W-DYNA | ALGO_SPEC.md created: interface, state machine PROBE->CONFIRMED->RUNNING->DEFENDING->OUT from X24 (fixed_rules_x24.json) and the 03:54Z order, input table with lags, log format, match-test format | order 13:07Z item e | none yet (loops A/B/C not scored); reference facts: X24 T50 count-steered trail beats a random-steering null (Asia +$70k, NY AM +$388k over the static plan; bare bracket; not a solution) |
+| v0.2 match tables | 2026-11-27 13:40Z | W-DYNA | per-second input tables for 57 dated trades (3 per book, 19 books) with the X24 features computed by the box, in /mnt/l2/l2vast/_dynexit/algo_inputs/ on server C; spec section 8 rewritten to the file format | order 13:07Z item e | none (inputs and features only; expected_* columns wait for the reference implementation) |
+| v0.3 pools merged | 2026-11-27 13:50Z | W-DYNA | section 3b pools/walls/10-level per-second columns from ALGO_INPUTS_POOLS.md (W-DYNL) merged into the inputs; lag note FEED_LAG/ORDER_LAG 3 s vs engine LAT_FILL 1.0 s flagged OPEN | request from W-DYNL | none |
+| v0.4 pools tables | 2026-11-27 14:05Z | W-DYNA | W-DYNL per-second pool/10-level/cross-market tables for the match-test trades listed in section 8; ORDER lag note reconciled to LAT_FILL 1.0 s / LAT_CANCEL 0.5 s | W-DYNL delivery | none |
