@@ -1,0 +1,12 @@
+# Exit job: the deliverable is a trade-management ENGINE, not a list of rules (order from Josh, relayed)
+
+Josh, 27 Nov 03:54Z, verbatim: "needs to behave like an algo - not just a strategy"
+
+(relay) My reading: after the entry fires, the position is run by a continuous decision engine that keeps re-judging the trade, the way an execution/management algo does, instead of a bracket with a few add-on rules. Shapes the deliverable of the 03:49Z and 03:53Z orders. Research only.
+
+1. ONE LOOP, EVERY SECOND (or on every book/trade event): read the state (open profit in R, time in trade, position left, evidence score FOR and AGAINST from X24, distance to the next liquidity ahead and behind, volatility now versus expected, session clock) and choose ONE action from a fixed set: hold; tighten stop; loosen trail (inside the guard rails); extend target; pull target in; take a part; take all; and, after a partial, RE-ADD the part when evidence turns strongly FOR again (never above the book's original size, never when the trade is under water: the earlier under-water-add study was dead, do not repeat it).
+2. EXPLICIT STATES, so it can be coded and audited: e.g. PROBE (just entered, initial stop) -> CONFIRMED (evidence FOR, stop to structure) -> RUNNING (target released, trail active) -> DEFENDING (evidence AGAINST, tight trail / partial) -> OUT; state the transition conditions; log every transition with its reason. A competent discretionary trader should recognise each decision.
+3. HOW ORDERS ARE WORKED is part of it (X21): resting limits placed in front of liquidity, re-priced when the book moves; marketable exits when a leave-now trigger fires; slices at size; never more than a stated number of order changes per minute.
+4. THREE BUILDS OF THE ENGINE, simplest first, each judged as a fixed rule and walked forward against the reference (fixed bracket + live Trade Health), drawdown first: (A) hand-written state machine with thresholds stated in advance; (B) the same with thresholds fitted on past data; (C) the learned policy choosing the action. Prefer A if it holds.
+5. REPORT per book: the state diagram, share of trades ending in each state, what each action added or cost (action attribution), order changes per trade, MBO versus 10-level versions, and the trade-for-trade replay check that the engine hook equals the screen.
+Keep the simple pieces flowing first (attribution table, plan per book); the engine is assembled from the pieces that carry information.
