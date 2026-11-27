@@ -1,3 +1,21 @@
+# ALGO_INVENTORY (updated W-DYNX8, 2026-11-27)
+## TABLE 0: which input families exist per session, through which dates (ET sessions: Asia 18:00-02:00, London 02:00-08:30, NY AM 08:30-12:00, NY PM 12:00-17:00). Feeds = server C /mnt/l2/l2vast/_dynexit/feeds/ (files with a 'sec' column, lag baked in; 'age_' gives value + age). Y = full session, P = partial (hours stated), N = none.
+| input family (feed file) | Asia | London | NY AM | NY PM | first date .. last date | note |
+|---|---|---|---|---|---|---|
+| NQ MBO L3 per-second book/wall columns (l3sec_, mbo_cols for AS MF1 / NY AM MF5 trades) | Y | Y | Y | Y | 2023-04-02 .. 2026-11-13 (raw MBO); l3sec all 1,134 days | walls beyond 10 levels, pulls net of fills; live account has no MBO entitlement |
+| NQ 10-level per-second book/flow (nq10_) | Y | Y | Y | Y | 2023-02 .. 2026-11-05 (raw mbp-10 to 2026-11-25 only as raw chunks) | 10 levels = ~2.25 pt |
+| ES, RTY 10-level quote mids per second (age_ES_mid, age_RTY_mid; tab10) | Y | Y | Y | Y | 2023-08 .. 2026-10-30 | quote age <=2 s in 99% (ES) / 93% (RTY) of Asia seconds |
+| ES, RTY, CL, GC, ZN 1-s TRADE closes (age_*_last; instr_1s) | P: sparse (ES 60%, RTY 19%, CL 30%, GC 41%, ZN 9% of Asia seconds have a trade) | P | Y | Y | 2023-02 .. 2026-10-12 (ES, RTY to 10-16) | use the age column |
+| 1-min bars YM, NKD, 6J, 6E, ZB, 6B, 6C, GC, CL, ZN + NQ/ES/RTY (xmkt_, age_*_c) | Y (NKD only 55% of Asia minutes, ZB 65%) | Y | Y | Y | 2023-01 .. 2026-11-13 (6E 6J NKD ZB ZN to 11-10; 6B 6C to 10-16) | dollar proxy from 6E/6J/6B/6C |
+| Megacaps + QQQ/SPY/IWM/DIA 1-min bars, basket, NQ minus basket (stocks_, rel_) | N | P: 04:00-08:30 | Y | Y | 2024-10-01 .. 2026-11-12 | UW bars exist 04:00-20:00 ET; +120 s lag |
+| UW Market Tide, ETF tide, net-premium ticks (tide_, etf_tide_, net_prem_ticks_) | N | N | P: from 09:30 | P: to 16:14 | 2024-10-01 .. 2026-11-12 | 1-min, +120 s lag |
+| UW spot gamma/charm/vanna totals (spot_1m_) | N | P: from 06:30 | Y | P: to 16:00 | 2024-10-01 .. 2026-11-12 | 1-min, +120 s lag |
+| UW options print tape / flow alerts (raw uw/tape_big, tape_agg, flow_alerts; no feed file yet) | N | N | P: from 09:30 | P: to ~17:00 | 2024-10-01 .. 2026-11-12 | second stamps; 60-120 s lag |
+| UW by-strike walls / flip intraday | N | P: from ~06:36 | Y | Y | 9 recorder days only: 2026-11-13, 16-20, 23-25 (11-18 partial); EOD snapshot earlier | see UW_INTRADAY_HISTORY.md |
+| NYSE TICK 1-min (tick_) | N | N | P: from 09:31 | P: to 16:00 | 2023-04-03 .. 2026-11-13 (354,080 bars) | usable bar end + 5 s; no ADD / VOLD / TRIN |
+| Session levels and distances (levels_): prior-day RTH H/L/C, overnight H/L, RTH H/L so far, Globex VWAP | Y | Y | Y | Y | 2023-04 .. 2026-11-05 (all hours) | NQ 1-s, not roll-adjusted (roll flag) |
+| Stock/ETF tick tape, YM/ZB/6E/6J/NKD below 1 min, VIX, DXY, Asian cash indices | N | N | N | N | not on the box | purchase only |
+
 # ALGO_INVENTORY: every landscape input for the real-time management algo, what exists, at what resolution, where, with what lag (W-DYNX8, order 13:05Z/13:07Z part b; read-only audit, nothing written to box1 except this page; nothing bought)
 Box1 = this machine (/mnt/l2/l2vast). Server C (67.213.127.157) has /mnt/l2/l2vast/instr_1s, _dynexit, _dynml and th_grid tapes only (412 GB local disk, 5 GB used); raw depth, tables/, uw/ live only on box1 (read them there, copy KB results). Servers A, B, D-E, F: not inspected (no ssh entry on this box); say if they hold anything else.
 Delivery lag column = the lag the engine hook must apply (state at second s may use only data stamped <= s - lag). Engine latency 2.6 s (orders) is separate. "Event" = every order-book message.
