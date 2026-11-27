@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 18:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 19:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 18:45Z | WARNING serverD below 85% busy for 20 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-27 19:00Z | box1: busy 93%, load1 40.86, workers 13, MemAvail 67 GB | server2: busy 98%, load1 92.91, workers 28, MemAvail 818 GB | pending box1-eligible 501415 / server2-eligible 92404 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 214.56, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 730 GB | serverB: busy 100%, load1 197.65, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 800 GB | serverC: busy 100%, load1 253.37, workers 1 (grid) + 135 (engine), 128 threads, MemAvail 698 GB | serverD: busy 100%, load1 101.27, workers 1 (grid) + 107 (engine), 64 threads, MemAvail 1442 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 18:45Z
+2026-11-27 19:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 18:45Z | WARNING serverD below 85% busy for 20 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 65.0 GB; live reservations 5 (5 GB); workers 12, of which TP-adopted 12 (RSS 15.7 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 66.93, 63.75, 60.09
-  by tag: NYR quota 12 running 12 hungry False RSS 15.7 GB PSS 13.4 GB
+Server 1 (this box): MemAvail 65.8 GB; live reservations 1 (1 GB); workers 13, of which TP-adopted 13 (RSS 17.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 40.86, 42.25, 50.71
+  by tag: NYR quota 12 running 1 hungry True RSS 1.1 GB PSS 1.0 GB; NYE quota 16 running 12 hungry False RSS 16.2 GB PSS 14.9 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L45399ae3_ALNCT91m (x12);TL3_NYE_L45399ae3_ALNCT84m (x12);TL3_NYE_L45399ae3_ALNCT77m (x4);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 100.07, 99.13, 103.01|/dev/md2         28T  2.8T   26T  11% /mnt/l2|43|
+  top running jobs: TL3_NYE_L02b4fc0b_ALNCT7p (x12);TL3_NYE_L02b4fc0b_ALN (x12);TL3_NYE_L02b4fc0b_ALNCT14p (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 92.74, 93.72, 97.72|/dev/md2         28T  2.8T   26T  11% /mnt/l2|51|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 100.07, 99.13, 103.01|/dev/
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_1733Z_Josh-add-trade-health-screen-mae-mfe-time-underwater.md 20261127_1736Z_Josh-health-vote-is-a-side-row-not-core.md 20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md
+20261127_1736Z_Josh-health-vote-is-a-side-row-not-core.md 20261127_1747Z_Josh-not-a-search-a-human-style-manager-on-proven-books.md 20261127_1754Z_Josh-what-moves-NQ-and-what-moves-before-NQ.md 20261127_1826Z_Josh-serverD-idle-fill-it.md 20261127_1850Z_Josh-prepare-the-data-shopping-list-estimate-no-spend.md
