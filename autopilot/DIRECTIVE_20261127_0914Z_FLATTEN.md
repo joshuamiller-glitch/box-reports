@@ -1,0 +1,21 @@
+# RE-SEND (first sent 07:19Z, not acknowledged by 09:14Z) + two questions (relay note)
+
+written by the relay (Claude), not typed by Josh. Please ack with an INBOX ack line. Questions: (1) W-GRIDA still runs grid pass-2 family cells with 86 workers (204 h ETA at 08:10Z): is it taking capacity from the exit job or writing to box 1 (bfl17 pull)? Josh's 03:11Z order is all servers on exits; if it is not exit work and can be paused without deleting anything, pause it and say so; if pausing needs Josh's word, say that in a LEAD TO JOSH line. (2) Post a LEAD TO JOSH line now with: disk free, rows queued/served for the exit job, what each exit agent is doing, and what is waiting on the disk decision.
+
+---- ORIGINAL ORDER FOLLOWS UNCHANGED ----
+
+# Exit job: the session-end flatten is where the money goes; test what to do with trades still open at the bell (ordered by the relay under Josh's standing exit order)
+
+Josh, 27 Nov 03:11Z, verbatim: "yes we have good entry triggers - the walk forward should be completely around how to exit a trade both sides - all technology available - you are to keep all 6 servers aimed at this until we have a solulution - this is an order"
+
+(relay) My design, research only. Your EXIT_ANATOMY says the scheduled session-end flatten (UWTime) cost London -$1.22M, NY AM -$936k, NY PM -$354k over 42 months (Asia +$327k), most of those trades being 10-50% of the way to target, and the market flat afterwards. The live file showed the same on 26 Nov: all five NY AM trades left at the bell. The flatten is a rule we chose, not a market fact. Test replacing it. EXACT ENGINE WITH LIVE TRADE HEALTH AND THE LIVE MIX from the first row (lesson of AS8: quick screens ignore the entries that an exit frees or blocks); quick screen only to choose which rows to build. London and NY AM first, then NY PM, then Asia. Drawdown and worst week first.
+
+S1. CARRY, DO NOT FLATTEN: a trade open at the session bell keeps its own stop and target and runs on. Hard flat at 16:55 ET for everything (Josh trades intraday only: nothing over the daily close). Variants, stated now: (a) carry all; (b) carry only if open profit >= 0; (c) carry only if open profit >= +0.25R, flatten the rest; (d) carry with the stop moved to breakeven; (e) carry with the stop tightened to half its distance; (f) carry at most N minutes (30, 60, 120) then flat.
+ State how a carried trade interacts with the NEXT session's books: does the book's slot stay taken (one position per book), do the next session's account layers and session lots apply, and count open risk across sessions. Report with both choices where the engine allows.
+S2. LATE ENTRIES: no new entry when the time left in the session is less than the book's own typical time to target (median and 75th percentile of past winners' holding time, from data before each date); and the softer version: late entries allowed only at half size. (An entry rule, but it exists only because of the exit clock: Josh to judge.)
+S3. END-OF-SESSION MANAGEMENT INSTEAD OF A CLIFF: from T minutes before the bell (15, 30, 60): losers that never reached +0.25R leave; winners trail tight; no change for the rest. And your stable one-setting NY AM rule C90_0.25 as its own row.
+S4. SESSION WINDOW ITSELF: for each live book, the result if its session simply ended 30 / 60 / 90 minutes later with no other change (is the bell in the wrong place for this book).
+
+JUDGING: against the live mix as run (fixed bracket + Trade Health + flatten), per session and per book: max DD, worst week, income, L3M and L6M first, by year; 13-week forward periods and the same at 4 and 2 weeks where a setting is re-picked; pessimistic fills; a same-count random-carry null (carry a random set of the trades open at the bell). SOLUTION rule unchanged. Fixed rule row first (no re-fit).
+ALSO: one table of where each live book's P&L comes from by exit name (Target, Stop, UWTime, EarlyCut, locks, halts) per session and year, so Josh sees the leak in one place.
+Disk: keep to the guard; if exact rows cannot be queued, say exactly how many GB these rows need. Post a LEAD TO JOSH line with counts and the first-table time.
