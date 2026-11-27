@@ -9,7 +9,7 @@ Written 2026-11-26 23:53Z. **QUICK SCREEN label on every number below** unless i
 3. **BUT the result depends on one module family: the level modules (trig_levels_*).** In the full-set primary the levels are 52-53% of the books held and **91% of the four-session P&L (Asia 70%, NY AM 85%, London 68%, NY PM 106%)**. With the levels removed from the held baskets (static removal, no refilling) the sum falls to **+79 (p 0.26, L6M -90)** on the full set and **+97 (p 0.21, L6M -32)** on set (3); Asia to +139 (p 0.096) full / +108 (p 0.147) set (3); NY AM to +90 (p 0.28) / +108 (p 0.25). The pass disappears without the levels. The largest BAR TYPE is not a dependence: removing tsf (the largest bar type in the sum, 8-15% of the books, 2% of the P&L) leaves the sum at +136 (p 0.073) full / +147 (p 0.067) set (3). The levels are also the family most affected by the 18 Nov module fixes (grid results older than 2026-11-18 06:00Z are stale), which is why part A (2) matters: only about 2% of candidate cells were stale, so that exposure is small in this basket, but the family fix is still unfinished for the whole level result and the 13 modules were NOT re-verified here (dropped instead).
 4. **THE LIST TODAY (set 3, the books the primary holds from the last re-qualify date, week 182, 2026-10-04 to 2026-10-25): Asia 197 books (150 near-twin groups, 138 long only, all with L6M above zero, 175 with L3M above zero, 128 still qualify at the last data date), NY AM 76 books (67 with L6M > 0, 60 with L3M > 0, 53 still qualify).** Marks: Asia 12 share module+variant with a D8Asia.cs book, 4 are twins of the live Asia book vwap break, 181 new; NY AM 6 twins of live books, 70 new; none is a cell-for-cell match of a live book (the relay confirms the D8Asia.cs ones). Exact numbers for these books come from Q1 as it lands (marked EXACT in the table when all 42 months have landed; none had at the time of writing).
 5. **SIX STACKS FIXED TODAY (seed 20261127, never re-drawn, autopilot/FORWARD_REGISTER_STACKS.md): Asia A1, A2, A3 and NY AM N1, N2, N3, six books each, at most one per module family and per near-twin group.** Quick-screen $/lot/wk of the equal-weight six, 2023-04 to 2026-10, in sample (hindsight list, all books were picked from their own past): A1 518, A2 597, A3 461, N1 995, N2 974, N3 986. These are in-sample for the whole history; the register scores them from now on, forward only.
-6. **EXACT (part D): rows QUEUED; stacks 0 of 504 set-months landed, primary held cells (set 3) 8192 of 10145 set-months landed (status at 2026-11-26 23:53Z).** Rows are appended the moment Test 5's rows are queued (waiter queue_chain6.sh polls every 5 s, before W-Q0's 60 s poll), ahead of Q0's NY AM / NY PM / London rows and Q1. Measured ETA in MORNING.md.
+6. **EXACT (part D): ALL ROWS LANDED, scored 2026-11-27 00:2xZ (code/th_test6/exact6.py). Primary held cells on set (3), bare R0, 1 lot: 2,211 of 2,215 held periods landed (4 cells have no exact set: build failures), 10,145 of 10,145 set-months; weeks 2023-10-01 on, exact vs quick on the same periods: four summed +189 vs +139 $/lot/wk (1.36x), L6M +171, L3M +224, max DD 11,360; Asia +155 vs +148, NY AM +264 vs +166, NY PM +292 vs +276, London -80 vs -127 (still FAIL): the signs agree 4/4 and exact is not weaker than the quick screen here. Stacks 504 of 504 set-months landed (42 of 42 months each): per book per lot exact $/wk bare / with account layers: A1 465/437, A2 487/443, A3 467/410, N1 860/871, N2 922/869, N3 959/915 (in sample, hindsight-picked; max DD of the 6-book stack 16.6k-47.4k $); full tables in PART D.** Rerun: cd code/th_rota; nice -n 3 ../../../.venv/bin/python -I ../th_test6/exact6.py.
 
 ## PART A: the primary re-run on the buildable candidate sets (QUICK SCREEN)
 
@@ -559,11 +559,43 @@ Rule of the list: the books the primary (unchanged) holds on set (3) from the la
 
 ## PART D: exact
 
-**Status: stacks (bare + layers, 42 months): 0 of 504 set-months landed; primary held cells on set (3), bare R0 held periods: 8192 of 10145 set-months landed (2026-11-26 23:53Z).**
+**Status: 10,145 of 10,145 held-cell set-months and 504 of 504 stack set-months landed (coverage 2,211 of 2,215 held periods; 12 of 12 stack sets complete), scored 2026-11-27 by code/th_test6/exact6.py.**
 
 What is queued (all bare R0 or the stack rows of the engine, no engine or gate change):
 1. **The primary's held cells restricted to set (3), all four sessions** (Asia 712 cells, London 196, NY AM 1,118, NY PM 117 = 2,143 cells, 2,140 built; 3 cells failed to build (module errors ema_hold, ema_hold, fade) and are excluded), bare R0, 1 lot, own bracket, the months touched by each hold period: **10,145 set-months** (names TL3_ALN_<AS|NY|LO|NP>_W<hash>_R0RT, the same names as Test 5 / Q1 for the same cell, so any row Test 5 or Q1 already has is reused; rows already DONE or in the gating file are skipped at append). Rows file /mnt/l2/l2vast/_test6/rows_T6.txt, cells json cells_T6.json (scoring: th_test3/th_test5 score code on picks_set3_test6.json; exact vs quick comparison to be added when they land).
 2. **The six named stacks A1-A3, N1-N3, bare and with each session's live ACCOUNT layers, all 42 months:** 12 sets x 42 = **504 set-months** (rows_STK.txt). Sets TL3_SR_<AS|NY>_T6<A1..N3>_BARE and _LY on events TL3_ALN_<AS|NY>_T6<k> (6 streams, 1 lot per book, cap 12000/4800, fill through, as Q2). Layers (as Q2): Asia = the JT275 account layers STK8, SZW3, CGB1, DLA4, DLB14, DLC4; NY AM = the JT162 account layers BL6, CAP6, STK7, SZW2, NTS2, CGB2 (D8_LAYER_KEYS_ASIA_4BOOK_JT275.md, D8_LAYER_KEYS_NYAM_NYAMW_JT162.md). Per-book Trade Health (LOCK / TAKE / ZONE / LOSS) is fitted per named book and is NOT applied to the drawn books (as Q2). Names carry no _BF1/_BF4 tag, so park_non2lot does not touch them (no exemption needed).
 3. Queue position: appended right after Test 5's rows ('P queued'), before Q0's NY AM / NY PM / London and Q1 (waiter queue_chain6.sh, writes "T6 queued" to /mnt/l2/l2vast/_test6/queue.log).
 
-Results (EXACT) will be added to this part when the rows land; until then the numbers above are QUICK SCREEN only.
+## EXACT RESULTS (bare R0, 1 lot, fees in)
+
+### Part D (1) held cells, set (3)
+
+| session | held periods landed | weeks | exact $/lot/wk | exact max DD | exact worst wk | exact L6M | exact L3M | exact 2023 Q4 / 2024 / 2025 / 2026 | quick $/lot/wk (same periods) | quick max DD | quick L6M | quick L3M | exact / quick |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Asia | 740 of 743 (3 without an exact set) | 160 | 155 | 12796 | -5269 | 325 | 177 | 41 / 244 / 75 / 151 | 148 | 9493 | 474 | 275 | 1.05 |
+| London | 195 of 196 (1 without an exact set) | 160 | -80 | 20012 | -8635 | -114 | -370 | -59 / 42 / -169 / -95 | -127 | 22108 | -175 | -467 | 0.63 |
+| NYAM | 1156 of 1156 | 160 | 264 | 15481 | -6060 | 203 | 376 | 122 / 219 / 348 / 184 | 166 | 20533 | -29 | 225 | 1.59 |
+| NYPM | 120 of 120 | 160 | 292 | 23976 | -4828 | 858 | 188 | -33 / 45 / 772 / 131 | 276 | 26279 | 693 | 180 | 1.06 |
+| Four summed | 2211 of 2215 (4 without an exact set) | 160 | 189 | 11360 | -5648 | 171 | 224 | 47 / 166 / 261 / 144 | 139 | 12258 | 123 | 247 | 1.36 |
+
+### Part D (2) the six stacks
+
+| stack | version | months landed | exact $/wk (6 books, 1 lot each) | per book per lot $/wk | exact max DD | exact worst wk | exact L6M | exact L3M | 2023 Q4 / 2024 / 2025 / 2026 (per book per lot) | quick $/lot/wk (equal weight 6, in sample) | exact / quick |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A1 | bare R0 | 42 of 42 | 2790 | 465 | 16595 | -9735 | 6585 | 4624 | 38 / 415 / 439 / 957 | 518.0 | 0.90 |
+| A1 | live account layers | 42 of 42 | 2619 | 437 | 17119 | -8933 | 5970 | 3875 | 37 / 402 / 423 / 869 | 518.0 | 0.84 |
+| A2 | bare R0 | 42 of 42 | 2920 | 487 | 40444 | -25499 | 5913 | 4083 | -11 / 439 / 599 / 870 | 597.0 | 0.82 |
+| A2 | live account layers | 42 of 42 | 2659 | 443 | 33107 | -18951 | 6866 | 4576 | -13 / 409 / 412 / 949 | 597.0 | 0.74 |
+| A3 | bare R0 | 42 of 42 | 2803 | 467 | 18166 | -15925 | 5442 | 3235 | 88 / 408 / 493 / 863 | 461.0 | 1.01 |
+| A3 | live account layers | 42 of 42 | 2462 | 410 | 16988 | -13456 | 4669 | 3007 | 89 / 409 / 402 / 721 | 461.0 | 0.89 |
+| N1 | bare R0 | 42 of 42 | 5160 | 860 | 27926 | -20473 | 6159 | 5972 | 565 / 492 / 1248 / 1118 | 995.0 | 0.86 |
+| N1 | live account layers | 42 of 42 | 5226 | 871 | 25633 | -18249 | 7293 | 6217 | 520 / 510 / 1229 / 1209 | 995.0 | 0.88 |
+| N2 | bare R0 | 42 of 42 | 5532 | 922 | 31655 | -22327 | 5097 | 3224 | 719 / 712 / 1037 / 1234 | 974.0 | 0.95 |
+| N2 | live account layers | 42 of 42 | 5212 | 869 | 29776 | -21496 | 4750 | 2898 | 638 / 700 / 1043 / 1079 | 974.0 | 0.89 |
+| N3 | bare R0 | 42 of 42 | 5757 | 959 | 44519 | -21498 | 9813 | 6028 | 429 / 669 / 1231 / 1482 | 986.0 | 0.97 |
+| N3 | live account layers | 42 of 42 | 5490 | 915 | 47388 | -20358 | 8838 | 6617 | 425 / 668 / 1147 / 1394 | 986.0 | 0.93 |
+
+Part D (1): primary held cells on candidate set (3), bare R0, own bracket, 1 lot per cell, fees in, equal weight over the books held that week; only held periods whose months ALL have DONE; quick screen restricted to the same periods; weeks 26..185 (2023-10-01 on). "Four summed" is pooled equal weight over every book held in any session that week (as the quick screen in part A). Code code/th_test6/exact6.py.
+
+Part D (2): six stacks, 1 lot per book, all 42 months (2023-04..2026-10 without 2025-11), BARE vs the session account layers (Asia JT275: STK8 SZW3 CGB1 DLA4 DLB14 DLC4; NY AM JT162: BL6 CAP6 STK7 SZW2 NTS2 CGB2); per-book Trade Health NOT applied. Max DD / worst week are on the 6-book weekly $ (not per lot). Quick column is the in-sample equal-weight per-lot mean from the stacks table; the stacks were picked from their own past, so exact vs quick is NOT a calibration of the rule.
+

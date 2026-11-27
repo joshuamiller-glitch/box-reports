@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-27 00:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-27 00:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-27 00:00Z | WARNING serverD below 85% busy for 9 readings in a row with jobs pending
+LATEST CORES.md LINE: 2026-11-27 00:15Z | box1: busy 96%, load1 46.76, workers 15, MemAvail 76 GB | server2: busy 98%, load1 86.28, workers 25, MemAvail 630 GB | pending box1-eligible 507974 / server2-eligible 234844 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 182.92, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 951 GB | serverB: busy 100%, load1 182.74, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 926 GB | serverC: busy 100%, load1 138.58, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1407 GB | serverD: busy 97%, load1 62.47, workers 1 (grid) + 56 (engine), 64 threads, MemAvail 1458 GB
 
 ## UTC TIME WRITTEN
-2026-11-27 00:00Z
+2026-11-27 00:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-27 00:00Z | WARNING serverD below 85% busy for 9 r
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 81.6 GB; live reservations 2 (2 GB); workers 10, of which TP-adopted 10 (RSS 13.5 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.10, 51.26, 52.75
-  by tag: NYR quota 12 running 10 hungry True RSS 13.5 GB PSS 11.9 GB
+Server 1 (this box): MemAvail 76.0 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 15 (RSS 20.3 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 46.76, 49.79, 51.97
+  by tag: NYR quota 12 running 15 hungry False RSS 20.3 GB PSS 16.8 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Ld4c3d92d_ALNCT98m (x12);TL3_NYE_Ld4c3d92d_ALNCT105m (x12);TL3_NYE_La6026c36_ALN (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 84.48, 82.67, 82.69|/dev/md2         28T  2.8T   26T  10% /mnt/l2|48|
+  top running jobs: TL3_NYE_La6026c36_ALNCT70p (x12);TL3_NYE_La6026c36_ALNCT63p (x12);TL3_NYE_La6026c36_ALNCT56p (x5);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 83.64, 84.50, 83.66|/dev/md2         28T  2.8T   26T  10% /mnt/l2|56|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 84.48, 82.67, 82.69|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261126_2009Z_Josh-Q0-widen-every-layer-and-set-or-refit-verdict.md 20261126_2023Z_Josh-test-6-primary-on-buildable-books-only-and-todays-list.md 20261126_2115Z_Josh-test-7-is-the-level-edge-real-or-long-drift.md 20261126_2149Z_Josh-test-8-two-sided-level-books-vs-drift.md 20261126_2313Z_Josh-test-9-live-books-vs-drift-and-spec-pages-for-A4-A5-N4-N5.md
+20261126_2023Z_Josh-test-6-primary-on-buildable-books-only-and-todays-list.md 20261126_2115Z_Josh-test-7-is-the-level-edge-real-or-long-drift.md 20261126_2149Z_Josh-test-8-two-sided-level-books-vs-drift.md 20261126_2313Z_Josh-test-9-live-books-vs-drift-and-spec-pages-for-A4-A5-N4-N5.md 20261127_0015Z_Josh-test-10-why-exact-disagrees-on-level-books.md
+- lead 00:15Z INBOX 20261127_0015Z_Josh-test-10-why-exact-disagrees-on-level-books.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the
