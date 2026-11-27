@@ -51,7 +51,7 @@ Exact micro patches: 1.54x measured so far (target in the order: >= 10x). Candid
 - 07:17Z: P1-P8 1.54x on Asia ADD 202608; identity batch 1 (24 cases, older patch revisions): 15 of 15 finished identical; batch 2 (193 cases, final revision sha 819eaa97...) started 07:17Z, 4 procs.
 
 <!--FLSTATUS-->
-## 7. Identity status (auto, 12:20Z)
+## 7. Identity status (auto, 12:50Z)
 - rev A (P1-P8): 52 identical of 52 tested (failures: 0)
 - rev B (P1-P11): 217 identical of 217 tested of 217 sample set-months (runner alive: yes); mean CPU per set-month in the test (contended host) 120 s
   - ASI ADD identical: 44
