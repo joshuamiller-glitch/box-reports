@@ -16,6 +16,12 @@
 - MF2, MF3 clear the clause numerically but do not beat the random-pick null: not credited. MF1, MF4, NP-CONF fail.
 - Not done: X24 steering (controller not posted), exact rows (disk 22 GB free < 32 GB rule), MBO/10-level paths (needs NP entries table; server C has no depth files). Details: PLAN_NP_LOG.md round 2.
 
+
+## ROUND 3 UPDATE (stress test): the NP-MACD candidate is downgraded
+- Not an outlier, both sides help, plan income above the fixed bracket in 26 of 27 pick-rule settings (floor 80/90/100%, history 13/26/52 wk, step 2/4/13) and chained DD shallower in 26 of 27; but the per-period clause (income higher in >= 9 of 13 with DD not deeper) holds in few settings and 52-week history is poor.
+- Clean out-of-sample fixed rule (shape picked on weeks 0-108, held 109-181): income 18.3k vs 26.9k (-32%), DD -25.3k vs -31.5k: FAILS. The same shape on MF1/MF3/MF4/NP-CONF loses 33-43% income (MF4 negative): not general.
+- So the walk-forward gain comes from re-picking among 19 variants, not from a fixed plan. Status: lead only. 4-book mix step 2: not a candidate. Details PLAN_NP_LOG.md round 3.
+
 ## Yardstick rows (1 lot, quick screen, May-Oct window = tape; L3M = weeks 169-181 = 2026-07-10..10-09, L6M = weeks 156-181)
 | book | REF0 fixed bracket: inc / maxDD / worst wk (wk 26-181) | REFTH (+ live per-book layer): inc / DD | L3M inc/DD (REF0) | L6M inc/DD (REF0) |
 |---|---|---|---|---|
