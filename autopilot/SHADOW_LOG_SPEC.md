@@ -80,3 +80,12 @@ ts_ns,ts_et,seq,design,stem,session,mf,trade_id,side,lots_open,lots_orig,px,bid,
 - replay equivalence: the box replay writes the same columns with fill_* from the engine's fill model, so `diff` of a shadow day against its replay shows where live differs (latency, fills, missing feeds)
 - file closed at the end of the UTC trading day; sha256 of the file posted next to it
 ```
+
+## 5. AMENDMENTS (finalised with W-DYNC's MGMT_DESIGN section 4 proposal and the playbook; 2026-11-27)
+```
+add field 43 health   : the book's health vote (ninth screen): A / W / N / - (A = deeper (MAE) or longer under water than 90 percent of this book's past winners, or less early progress than 75 percent of winners by this minute; W = better than the median winner; - = fewer than 40 past winners): written on every TICK line, with health_mae_R, health_uw_min, health_mfe_R in the inputs JSON
+add field 44 votes    : the playbook's 8 screen votes as an 8-character string, one character per screen in the order 1 NQ chart, 2 NQ tape/book, 3 ES/RTY/YM, 4 other markets, 5 TICK, 6 VIX, 7 megacaps/ETFs, 8 UW tide; A against, W with, N nothing, - abstains (the same string W-DYNH writes in algo_log as 'sec:vote:VVVVVVVV:openR'); on every TICK line (the engine writes it on change only: the logger repeats the last string)
+fold in W-DYNC's design columns inside `inputs` (JSON keys): open_s5, best_s5, dip_s5, others {"ES":-1.7,"RTY":-2.1,...} (signed own-vol moves with the trade, null = stale), n_against, m_valid, n_with, nq_move_own, nq_followed (0/1), nq_leading_back (0/1), range_rank, level_ahead_s5, order_changes_last_min
+tab-separated option: W-DYNC's proposal uses tabs; the relay may write TAB or comma separated files as long as the header line names the fields in this order
+the engine replay writes the same fields from algo_log: algo_log item 'sec:kind:rule:openR' -> action/rule/open_R (open R in safety-stop units x1.5 -> open_R in R of the book stop)
+```
