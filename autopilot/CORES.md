@@ -1,6 +1,3 @@
-2026-11-26 17:50Z | box1: busy 99%, load1 53.68, workers 0, MemAvail 20 GB | server2: busy 72%, load1 50.92, workers 0, MemAvail 890 GB | pending box1-eligible 508260 / server2-eligible 153 (shared queues count in both; unleased, not DONE) | serverA: busy 62%, load1 78.35, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 1030 GB | serverB: busy 50%, load1 63.02, workers 105 (grid) + 0 (engine), 128 threads, MemAvail 985 GB | serverC: busy 8%, load1 1.17, workers 1 (grid) + 0 (engine), 128 threads, MemAvail 1495 GB | serverD: busy 0%, load1 0.06, workers 1 (grid) + 0 (engine), 64 threads, MemAvail 1495 GB
-2026-11-26 17:50Z | WARNING serverA below 85% busy for 145 readings in a row with jobs pending
-2026-11-26 17:50Z | WARNING serverB below 85% busy for 175 readings in a row with jobs pending
 2026-11-26 17:50Z | WARNING serverC below 85% busy for 175 readings in a row with jobs pending
 2026-11-26 17:50Z | WARNING serverD below 85% busy for 176 readings in a row with jobs pending
 2026-11-26 17:50Z | WARNING server2 below 85% busy for 17 readings in a row with jobs pending
@@ -298,3 +295,6 @@
 2026-11-26 23:55Z | box1: busy 100%, load1 51.75, workers 12, MemAvail 73 GB | server2: busy 95%, load1 78.98, workers 25, MemAvail 678 GB | pending box1-eligible 508111 / server2-eligible 237833 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 178.25, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 1006 GB | serverB: busy 98%, load1 162.11, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 943 GB | serverC: busy 39%, load1 52.41, workers 1 (grid) + 128 (engine), 128 threads, MemAvail 1472 GB | serverD: busy 74%, load1 50.09, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1480 GB
 2026-11-26 23:55Z | WARNING serverC below 85% busy for 22 readings in a row with jobs pending
 2026-11-26 23:55Z | WARNING serverD below 85% busy for 8 readings in a row with jobs pending
+2026-11-27 00:00Z | box1: busy 100%, load1 50.71, workers 10, MemAvail 83 GB | server2: busy 96%, load1 82.09, workers 24, MemAvail 828 GB | pending box1-eligible 508075 / server2-eligible 236623 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 177.61, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 1005 GB | serverB: busy 99%, load1 179.64, workers 105 (grid) + 86 (engine), 128 threads, MemAvail 954 GB | serverC: busy 41%, load1 53.14, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1470 GB | serverD: busy 80%, load1 54.60, workers 1 (grid) + 64 (engine), 64 threads, MemAvail 1469 GB
+2026-11-27 00:00Z | WARNING serverC below 85% busy for 23 readings in a row with jobs pending
+2026-11-27 00:00Z | WARNING serverD below 85% busy for 9 readings in a row with jobs pending
