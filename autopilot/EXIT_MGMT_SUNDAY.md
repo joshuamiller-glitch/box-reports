@@ -1,3 +1,9 @@
+<!-- BE70-TOP-BEGIN -->
+**BE70 VERDICT (W-SUNDAY-MX, see SUNDAY_FINAL_ROWS.md):**
+- Asia (a, no late50): BE70 row pending
+- Asia (b, with late50): BE70 row pending
+- NY PM: BE70 row pending
+<!-- BE70-TOP-END -->
 FIRST LINE: NINE BOOKS ARE MOSTLY DRIFT (Josh order 1622Z, lead list): AS-VWAPBAND (Asia MF4), LO-IMB (London MF2), NP-ATRFADE (NY PM MF1), NP-DIVFADE (NY PM MF4), NY-SOPEN (NY AM MF3), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-EMA (NY AM MF8), NY-AVWAP (NY AM MF9). Four are long-only: LO-IMB (London MF2), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-AVWAP (NY AM MF9). Three of them have a LARGE stop (NY AM MF3 120/120, MF7 120/60, MF6 90/30; London MF3 120/60 is MOSTLY DRIFT in the W-SUNDAY-WB table). Alternatives for Josh: smaller size until managed (mix row d), or removal (mix row c): both tested below.
 
 # EXIT_MGMT_SUNDAY: protection price list, one simple rule, keys for the build (W-SUNDAY, 27 Nov 21:04Z)
@@ -189,3 +195,82 @@ NY-FIB 27 Nov trade (peak about 94% of the 120-pt target, then a full stop): BE7
 - NY PM (37 months): lowest max DD = drift removed / late50 (-$54,114 vs live -$134,363), income $846,757 vs live $1,047,175; best income = replacement book / znconf ($1,451,235, DD -$72,379).
 - London (42 months): lowest max DD = drift at 1 lot / late75 (-$128,414 vs live -$224,333), income $727,063 vs live $913,621; best income = live / late50 ($988,772, DD -$198,304).
 <!-- JOINT-MIXES-END -->
+
+<!-- BUILD-KEYS-BEGIN -->
+## SUNDAY BUILD KEYS (W-SUNDAY-MX, from the exact set JSONs, nothing to interpret)
+Per row: per book stop / target / lots / Trade Health / exit-manager keys, then session layer keys. "stop pts / target pts" are the event-file medians (range if it varies). lots = event lots per entry BEFORE layers (sizer_hooks, zones, stack caps, daily halts still act). Late rule key LATE50 / LATE75: at the signal, if (planned exit - signal time) < the expanding p50 / p75 of that book's winners holding times (seed pools autopilot/LATE_ENTRY_SEED*.md), lots = max(1, lots // 2); otherwise unchanged. BE70 key: once best open profit >= 70% of the target distance the stop moves to entry + 0 (resting stop, target stays). BE70 REPLACED these live profit-side keys: Asia AS-NR7 (MF1) lock 80% / +10 pt; Asia AS-RSI (MF2) take 95% / 30 s and lock 80% / +0 pt; NY PM NP-ZN (MF2) and NP-YM (MF3) had no live profit-side keys (nothing replaced). AS-VWAPBRK (MF3) live take 50% / 15 s is replaced by tr100.
+
+### ASIA: drift removed + VWAPBRK tr100 + BE70 NR7/RSI, (a) no late50   [set TL3_DX_AS_FIN_c_vwapbe70]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| AS MF1 (AS-NR7) | 40 | 80 | 6 | be=[0.7, 0.0] (rr=2.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| AS MF2 (AS-RSI) | 60 | 60 | 6 | be=[0.7, 0.0] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | scratch {'d': 45, 's': 5} |
+| AS MF3 (AS-VWAPBRK) | 45 | none (stop only) [live bracket target was 45] | 6 | tr=[0.5, 1.0] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+
+Session layers: zones {'MF1': {'dist': 50.0, 'act': 'Half'}, 'MF3': {'dist': 20.0, 'act': 'Skip'}}; stack_caps {'tags': ['MF1', 'MF2', 'MF3'], 'profit': 0.0, 'loss': 13600.0} | sizer {'thr': 0.4, 'lo': 0.5, 'tags': '*'} | c_gov [{'when': {'sess': [0, 1, 3, 4], 'loss_same_ge': 1, 'noevid': 1}, 'act': 'skip'}] | daily halts {'book': {'X': 2.5, 'mode': 'close', 'pause': 0}} | daily halts {'stack': {'Y': 8000, 'mode': 'close', 'pause': 60}} | daily halts {'consec': {'N': 5, 'pause': 0}} | BookLock/lin {'stackcut_share': None, 'bl': [None, 0.5, None], 'ntz_share': 0.5}
+
+### ASIA: same, (b) with LATE50   [set TL3_DX_AS_FIN_c_vwapbe70late50; LATE50 on every book]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| AS MF1 (AS-NR7) | 40 | 80 | 3,6 | be=[0.7, 0.0] (rr=2.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| AS MF2 (AS-RSI) | 60 | 60 | 3,6 | be=[0.7, 0.0] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | scratch {'d': 45, 's': 5} |
+| AS MF3 (AS-VWAPBRK) | 45 | none (stop only) [live bracket target was 45] | 3,6 | tr=[0.5, 1.0] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+
+Session layers: zones {'MF1': {'dist': 50.0, 'act': 'Half'}, 'MF3': {'dist': 20.0, 'act': 'Skip'}}; stack_caps {'tags': ['MF1', 'MF2', 'MF3'], 'profit': 0.0, 'loss': 13600.0} | sizer {'thr': 0.4, 'lo': 0.5, 'tags': '*'} | c_gov [{'when': {'sess': [0, 1, 3, 4], 'loss_same_ge': 1, 'noevid': 1}, 'act': 'skip'}] | daily halts {'book': {'X': 2.5, 'mode': 'close', 'pause': 0}} | daily halts {'stack': {'Y': 8000, 'mode': 'close', 'pause': 60}} | daily halts {'consec': {'N': 5, 'pause': 0}} | BookLock/lin {'stackcut_share': None, 'bl': [None, 0.5, None], 'ntz_share': 0.5}
+
+### NY PM: drift removed + LATE50 + BE70 on NP-ZN, NP-YM   [set TL3_DX_NP_FIN_c_be70late50; LATE50 on every book]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| NP MF2 (NP-ZN) | 120 | 120 | 3,6 | BE70 = be50 [0.7, 0] | flat {'d': 96.0}; shave 4 |
+| NP MF3 (NP-YM) | 80 | 40 | 3,6 | BE70 = be50 [0.7, 0] | flat {'d': 80.0} |
+
+Session layers: zones {'MF2': {'dist': 10.0, 'act': 'Half'}, 'MF3': {'dist': 30.0, 'act': 'Half'}}; stack_caps {'tags': ['MF2', 'MF3'], 'profit': 11200.0, 'loss': 0.0} | daily halts {'book': {'X': 3, 'mode': 'close', 'pause': 0}} | daily halts {'stack': {'Y': 6000, 'mode': 'new', 'pause': 0}} | sizer {'thr': 0.4, 'lo': 0.5, 'tags': '*'} | BookLock/lin {'stackcut_share': None, 'bl': [3.0, 0.33, -12.0], 'ntz_share': 1.0}
+
+### NY PM: same WITHOUT BE70 (beside it)   [set TL3_DX_NP_JM_c_late50; LATE50 on every book]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| NP MF2 (NP-ZN) | 120 | 120 | 3,6 | bracket (stop + target) | flat {'d': 96.0}; shave 4 |
+| NP MF3 (NP-YM) | 80 | 40 | 3,6 | bracket (stop + target) | flat {'d': 80.0} |
+
+Session layers: zones {'MF2': {'dist': 10.0, 'act': 'Half'}, 'MF3': {'dist': 30.0, 'act': 'Half'}}; stack_caps {'tags': ['MF2', 'MF3'], 'profit': 11200.0, 'loss': 0.0} | daily halts {'book': {'X': 3, 'mode': 'close', 'pause': 0}} | daily halts {'stack': {'Y': 6000, 'mode': 'new', 'pause': 0}} | sizer {'thr': 0.4, 'lo': 0.5, 'tags': '*'} | BookLock/lin {'stackcut_share': None, 'bl': [3.0, 0.33, -12.0], 'ntz_share': 1.0}
+
+### NY AM chosen: drift removed + NY-NODE g67a70 (no late)   [set TL3_DX_NY_JM_c_node]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| NY MF1 (NY-FIB) | 120 (median; 72 to 120) | 120 (median; 72 to 120) | 6 | bracket (stop + target) | none |
+| NY MF2 (NY-VALUE) | 60 | 60 | 6 | bracket (stop + target) | none |
+| NY MF4 (NY-NODE) | 90 | none (stop only) [live bracket target was 30] | 6 | gb=[0.7, 0.67] (rr=0.333333; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| NY MF5 (NY-OFI) | 60 | 60 | 3 | bracket (stop + target) | none |
+
+Session layers: zones None; stack_caps {'tags': ['MF1', 'MF2', 'MF4', 'MF5'], 'profit': 0.0, 'loss': 28800.0} | sizer {'thr': 0.3, 'lo': 0.5, 'tags': '*'} | c_gov [{'when': {'sess': [0, 1, 3, 4], 'loss_same_ge': 2, 'noevid': 1}, 'act': 'skip'}] | BookLock/lin {'stackcut_share': None, 'bl': [2.0, 0.67, -12.0], 'ntz_share': 1.0, 'ntz': 'off'}
+
+### NY AM + NY-FIB g75a30   [set TL3_DX_NY_FIN_c_nodefib30]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| NY MF1 (NY-FIB) | 120 (median; 72 to 120) | none (stop only) [live bracket target was 120 (median; 72 to 120)] | 6 | gb=[0.3, 0.75] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| NY MF2 (NY-VALUE) | 60 | 60 | 6 | bracket (stop + target) | none |
+| NY MF4 (NY-NODE) | 90 | none (stop only) [live bracket target was 30] | 6 | gb=[0.7, 0.67] (rr=0.333333; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| NY MF5 (NY-OFI) | 60 | 60 | 3 | bracket (stop + target) | none |
+
+Session layers: zones None; stack_caps {'tags': ['MF1', 'MF2', 'MF4', 'MF5'], 'profit': 0.0, 'loss': 28800.0} | sizer {'thr': 0.3, 'lo': 0.5, 'tags': '*'} | c_gov [{'when': {'sess': [0, 1, 3, 4], 'loss_same_ge': 2, 'noevid': 1}, 'act': 'skip'}] | BookLock/lin {'stackcut_share': None, 'bl': [2.0, 0.67, -12.0], 'ntz_share': 1.0, 'ntz': 'off'}
+
+### NY AM + NY-FIB g75a70   [set TL3_DX_NY_FIN_c_nodefib70]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| NY MF1 (NY-FIB) | 120 (median; 72 to 120) | none (stop only) [live bracket target was 120 (median; 72 to 120)] | 6 | gb=[0.7, 0.75] (rr=1.0; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| NY MF2 (NY-VALUE) | 60 | 60 | 6 | bracket (stop + target) | none |
+| NY MF4 (NY-NODE) | 90 | none (stop only) [live bracket target was 30] | 6 | gb=[0.7, 0.67] (rr=0.333333; gb [a, keep]: stop keeps `keep` of the peak once peak >= a x old target; tr [a, k]: trail k x stop distance behind best once best >= a x old target; be [pct, off]: stop to entry + off once pct of target covered) | none |
+| NY MF5 (NY-OFI) | 60 | 60 | 3 | bracket (stop + target) | none |
+
+Session layers: zones None; stack_caps {'tags': ['MF1', 'MF2', 'MF4', 'MF5'], 'profit': 0.0, 'loss': 28800.0} | sizer {'thr': 0.3, 'lo': 0.5, 'tags': '*'} | c_gov [{'when': {'sess': [0, 1, 3, 4], 'loss_same_ge': 2, 'noevid': 1}, 'act': 'skip'}] | BookLock/lin {'stackcut_share': None, 'bl': [2.0, 0.67, -12.0], 'ntz_share': 1.0, 'ntz': 'off'}
+
+### LONDON chosen: drift at 1 lot (MF2 at 1 lot) + LATE75   [set TL3_DX_LO_JM_d_late75; LATE75 on every book]
+| book | stop pts | target pts | lots (event) | exit-management key | Trade Health keys (live as run) |
+|---|---|---|---|---|---|
+| LO MF1 (LO-CRUDE) | 90 | 30 | 4,8 | bracket (stop + target) | none |
+| LO MF2 (LO MF2) | 45 | 45 | 1 | bracket (stop + target) | none |
+| LO MF3 (LO-ZB) | 120 | 60 | 1,2 | bracket (stop + target) | none |
+
+Session layers:  | BookLock/lin {'stackcut_share': None, 'bl': [None, 0.5, None], 'ntz_share': 1.0}
+
+<!-- BUILD-KEYS-END -->
