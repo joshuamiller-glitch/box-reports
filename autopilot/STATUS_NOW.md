@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 01:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 01:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 01:00Z | box1: busy 88%, load1 37.84, workers 14, MemAvail 68 GB | server2: busy 94%, load1 77.74, workers 28, MemAvail 1130 GB | pending box1-eligible 498923 / server2-eligible 65879 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 183.88, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 928 GB | serverB: busy 100%, load1 180.48, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 894 GB | serverC: busy 100%, load1 176.92, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1295 GB | serverD: busy 100%, load1 148.93, workers 1 (grid) + 149 (engine), 64 threads, MemAvail 1344 GB
+LATEST CORES.md LINE: 2026-11-28 01:15Z | box1: busy 100%, load1 65.15, workers 15, MemAvail 70 GB | server2: busy 94%, load1 76.39, workers 26, MemAvail 1144 GB | pending box1-eligible 498823 / server2-eligible 64258 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 181.97, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 976 GB | serverB: busy 100%, load1 193.23, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 931 GB | serverC: busy 100%, load1 173.62, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1337 GB | serverD: busy 100%, load1 147.45, workers 1 (grid) + 145 (engine), 64 threads, MemAvail 1419 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 01:00Z
+2026-11-28 01:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 01:00Z | box1: busy 88%, load1 37.84, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 67.9 GB; live reservations 1 (1 GB); workers 14, of which TP-adopted 14 (RSS 18.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 37.84, 38.11, 47.99
-  by tag: NYR quota 12 running 7 hungry True RSS 8.0 GB PSS 7.1 GB; NYE quota 16 running 7 hungry False RSS 10.4 GB PSS 9.6 GB
+Server 1 (this box): MemAvail 69.6 GB; live reservations 0 (0 GB); workers 15, of which TP-adopted 15 (RSS 20.2 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 65.15, 64.98, 58.82
+  by tag: NYR quota 12 running 15 hungry False RSS 20.2 GB PSS 16.3 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L4700137a_ALNCT7p (x12);TL3_NYE_L4700137a_ALNCT14p (x8);TL3_NYE_L4700137a_ALN (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 77.90, 79.70, 83.28|/dev/md2         28T  2.8T   26T  11% /mnt/l2|55|
+  top running jobs: TL3_NYE_L4700137a_ALNCT21m (x12);TL3_NYE_L4700137a_ALNCT14m (x12);TL3_NYE_L4700137a_ALNCT7m (x2);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 75.77, 77.20, 79.79|/dev/md2         28T  2.8T   26T  11% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 77.90, 79.70, 83.28|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_2128Z_Josh-serverD-load-10-again.md 20261127_2242Z_Josh-specs-and-vectors-for-the-relays-build.md 20261127_2255Z_Josh-desk-v0_2-clock-rule-logic-error.md 20261127_2342Z_Josh-desk-v0_2_2-relay-decisions-on-the-four-defects.md 20261127_2359Z_Josh-hourly-line-overdue.md
+20261127_2242Z_Josh-specs-and-vectors-for-the-relays-build.md 20261127_2255Z_Josh-desk-v0_2-clock-rule-logic-error.md 20261127_2342Z_Josh-desk-v0_2_2-relay-decisions-on-the-four-defects.md 20261127_2359Z_Josh-hourly-line-overdue.md 20261128_0110Z_Josh-match-csvs-as-md-pages.md
