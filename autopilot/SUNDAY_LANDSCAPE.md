@@ -362,3 +362,10 @@ Codes: so0 = stop-only to session end; gKKaAA = give-back cap: stop keeps KK% of
 | g67a30 | 42 | -323k | -31k | -33k | -164k / -29k | -115k / -16k | -236k | +172k / -106k / -156k / -233k | WEAK |
 | rg80 | 42 | -575k | -31k | -4k | -292k / -34k | -148k / -37k | -314k | +90k / -127k / -254k / -283k | WEAK |
 | g75a30 | 42 | -384k | -34k | -29k | -188k / -28k | -114k / -20k | -241k | +128k / -103k / -166k / -244k | WEAK |
+
+## Notes and gaps
+- Sets with a month missing (failed exact-engine rows, retried by the dispatcher) are left out of this page: AS-NR7 xi10all / xi10ext / xi10tight / xi15all / x7 / cbA (202309), NY-FIB x7 (202504), NY-FIB g67a30 / g67a70 (one month). Check the tables for the codes present.
+- Not wired in this pass: liquidity-ahead take from MBO resting size (PoolHook coverage starts about 2025-07), NYSE TICK. Level takes use causal day levels (prior day, session, open, IB, VWAP, pivots, fib, POC, round 100) fixed at the entry bar.
+- xi rows start 2023-09 (the age feed has no ES / RTY mids before 2023-08); rg rows act only from 2025-03 (the forecast file); on earlier months rg = its g67a50 base. 1-lot trades cannot take a partial (lv07p).
+- Whole-mix numbers include interactions with the other books; the NQ-down-weeks column is the summed weekly P&L of weeks where NQ fell (nq_weekly.json).
+- Strict PASS rule (see top) was met by no set; the VERDICT line gives the best exit by the drawdown-first rule with its cost either way.
