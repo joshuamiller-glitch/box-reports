@@ -4,6 +4,11 @@ Smoothness-first scorecard (Josh's rules: smoother = worst week not worse AND we
 
 Window facts: Asia and London sets have 37 months (2023-09..2026-10 without 2025-11), NY AM and NY PM sets 24 months (2024-10..2026-10 without 2025-11); NO-GATE sets 8 months (Asia/London 2024-04..2026-10 subset) or 5 months (NY, from 2024-12): they are shown but are too short to judge. Quarter counts are small (Asia/London up to 13 quarters, NY up to 8): read n of n literally.
 
+## READ FIRST (added by the scorecard agent): completeness, verdict, notes
+Completeness checked before scoring: every DK3MAIN / DK3NOSEAT / DK3W _A and _M set has all its months DONE (Asia and London sets 37/37, NY AM and NY PM sets 24/24); nothing half-finished was scored. DK3IDMAIN / DK3MATCH sets are identity / match checks, not scored. Rows labelled "v0.2.2 (comparison)" repeat the earlier DK22 numbers; DK22 has no W variant (those blocks say no rows).
+VERDICT per session at the 10 / 20 / 30% income floors (acceptable = smoother in >= 2/3 of quarters overall, in NQ-up and in NQ-down weeks, AND income not more than the floor below the bracket): ASIA FAIL / FAIL / FAIL; NY AM FAIL / FAIL / FAIL; LONDON FAIL / FAIL / FAIL; NY PM FAIL / FAIL / FAIL, for v0.3 main and v0.3 no-seat, per book and per session mix. No DK3MAIN or DK3NOSEAT row clears any floor. The only YES in the page is the REFERENCE row NY AM MF1 DK3W (1.5x stop) at the 30% floor.
+Notes: (1) engine exit_name "Target" appears on desk-managed winners-cut-short trades that closed within a few points of entry (e.g. NY MF4: exit +6 pts vs own bracket +30 pts, label Target) after the desk moved the stop (never-bend / DEFEND-half); the label looks like the engine's name for the stop-at-entry fill, not the book target; unverified, W-DYNC to confirm. In the attribution page that bucket is "Target (book exit, not a desk rule)". (2) NY PM in-mix rows for MF2 are identical between DK3MAIN and DK3W: the 1.5x stop made no difference to the live-mix replacement there; unverified. (3) mix rows are post-hoc sums of per-book deltas on the live mix (interaction neglected).
+
 # Asia
 
 ## Asia, v0.3, main: per book, alone bare (_A) vs the book on its fixed bracket (fix_A)
