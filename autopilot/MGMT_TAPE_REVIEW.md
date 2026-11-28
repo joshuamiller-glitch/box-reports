@@ -8782,3 +8782,1586 @@ Health vote (A = against / W = with / N = nothing / - = no history, vs this book
   15:21:45  price 30631.00 (open -0.41 R of the book stop): state change desk [NORMAL/ANNNNN: NORMAL/ANNNNN]
   15:22:00  price 30633.38 (open -0.43 R of the book stop): state change desk [DEFEND/ANNNNA: DEFEND/ANNNNA]
   exit: ExAlgoAll_AB at 30641.17
+
+
+---
+# DK22 PART: Asia CORRECTED (appended 03:20Z; SUPERSEDES the "# Asia (AS): managed rows DK22MAIN_A ... matched on 0 signals" block above, left in place, nothing deleted). BUG: the generator concatenated month files including EMPTY months (no columns), which turned sig_ns into float in one of the two row sets, so the string keys book|sig_ns never matched (0 pairs). Fix: drop empty frames and cast sig_ns / entry_ns / exit_ns to int64 in load(). Restated Asia four counts (3,348 matched pairs) are identical to the ones quoted from DESK_V022_SCORECARD.md (that page uses its own matching, which was right). Other sessions were unaffected (their pair counts were non-zero and equal to the page).
+
+# Asia (AS): managed rows DK22MAIN_A, 4924 trades from 110 finished (set, month) rows, matched to the book's own bracket on 3348 signals
+
+## Four counts (managed vs the same signal under the book's own bracket; a change is counted when the managed R differs by >= 0.25 R)
+
+| count | trades | net $ managed minus own | by year |
+|---|---|---|---|
+| big give-backs prevented | 512 | +3040110 | 2023 +11150, 2024 +321100, 2025 +789710, 2026 +1918150 |
+| winners cut short | 1395 | -6660955 | 2023 -179515, 2024 -994830, 2025 -1755155, 2026 -3731455 |
+| losers cut early | 1026 | +5485420 | 2023 +69070, 2024 +789710, 2025 +1472265, 2026 +3154375 |
+| losers made worse | 186 | -439685 | 2024 -8490, 2025 -119280, 2026 -311915 |
+| matched pairs (all) | 3348 | -1443900 | 2023 -107640, 2024 -202695, 2025 -278155, 2026 -855410 |
+
+Slot effects (no rule 6 in the v0 rows): entries that exist only under the managed run (a freed slot): 1576 trades, net $ -99123; entries that exist only under the own bracket in the same months (blocked by a carried trade): 1589 trades, net $ +572430. WITH rule 6 (playbook re-entry gate): the PB1 rows have not run yet; the same table is produced when they land.
+
+## Asia: the 20 WORST give-backs (largest open profit given back, $)
+
+**AS-VWAPBRK (Asia MF3)** 2026-04-07 18:32:47 ET, SHORT 6 lots at 24585.75, safety stop 24652.94 (1.5 x own stop 44.7917 pts). Result managed -67 pts/lot (-1.50 R, $-8062) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +3.17 R, MAE -3.50 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 
+  18:32:49  price 24500.42 (open +1.91 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  exit: Stop at 24652.88
+
+**AS-RSI (Asia MF2)** 2025-04-13 18:01:41 ET, LONG 6 lots at 19054.50, safety stop 18965.06 (1.5 x own stop 59.625 pts). Result managed -93 pts/lot (-1.56 R, $-11187) ; own bracket result -53 pts (-0.89 R, $-6377). MFE +0.91 R, MAE -1.61 R, 16 min under water (longest 10 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  18:01:42  price 19052.71 (open -0.03 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:20:14  price 19014.25 (open -0.68 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:25:45  price 18980.27 (open -1.24 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 18961.33
+
+**AS-VWAPBRK (Asia MF3)** 2025-04-06 20:04:40 ET, SHORT 6 lots at 16570.92, safety stop 16638.10 (1.5 x own stop 44.7917 pts). Result managed -68 pts/lot (-1.53 R, $-8212) ; own bracket result +45 pts (+1.00 R, $+5383). MFE +1.57 R, MAE -1.42 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 
+  20:04:41  price 16583.01 (open -0.27 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: Stop at 16639.29
+
+**AS-NR7 (Asia MF1)** 2026-04-07 18:24:03 ET, LONG 6 lots at 24617.21, safety stop 24557.65 (1.5 x own stop 39.7083 pts). Result managed -9 pts/lot (-0.23 R, $-1082) ; own bracket result +80 pts (+2.02 R, $+9598). MFE +3.19 R, MAE -0.60 R, 8 min under water (longest 4 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 4m:W
+  18:24:05  price 24616.02 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:32:41  price 24620.19 (open +0.08 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:32:41  price 24620.19 (open +0.08 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:32:41  price 24620.19 (open +0.08 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 24608.25
+
+**AS-VWAPBRK (Asia MF3)** 2026-04-19 18:00:06 ET, SHORT 6 lots at 26583.54, safety stop 26650.73 (1.5 x own stop 44.7917 pts). Result managed -66 pts/lot (-1.47 R, $-7917) ; own bracket result +45 pts (+1.01 R, $+5398). MFE +1.45 R, MAE -1.33 R, 1 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:07  price 26598.32 (open -0.33 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: Stop at 26649.46
+
+**AS-VWAPBRK (Asia MF3)** 2025-06-22 18:00:03 ET, SHORT 6 lots at 21638.79, safety stop 21705.98 (1.5 x own stop 44.7917 pts). Result managed -70 pts/lot (-1.57 R, $-8447) ; own bracket result +45 pts (+1.01 R, $+5398). MFE +1.23 R, MAE -1.96 R, 1 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  18:00:04  price 21621.99 (open +0.38 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  exit: Stop at 21709.12
+
+**AS-VWAPBRK (Asia MF3)** 2026-05-03 18:00:05 ET, LONG 6 lots at 27886.33, safety stop 27819.15 (1.5 x own stop 44.7917 pts). Result managed -66 pts/lot (-1.48 R, $-7942) ; own bracket result -45 pts (-1.01 R, $-5447). MFE +1.03 R, MAE -1.36 R, 70 min under water (longest 66 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 22m:A
+  18:00:06  price 27882.97 (open -0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:12  price 27872.90 (open -0.30 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  18:21:27  price 27862.82 (open -0.52 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:21:42  price 27862.15 (open -0.54 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  18:24:01  price 27841.99 (open -0.99 R of the book stop): state change desk [NORMAL/NNA-W-: NORMAL/NNA-W-]
+  18:24:16  price 27845.35 (open -0.92 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  18:26:35  price 27849.38 (open -0.83 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:29:33  price 27842.66 (open -0.98 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  18:29:49  price 27844.01 (open -0.95 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:00:12  price 27846.69 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  19:00:28  price 27846.02 (open -0.90 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:00:43  price 27846.02 (open -0.90 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  19:01:51  price 27854.08 (open -0.72 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:03:08  price 27849.38 (open -0.83 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  19:03:57  price 27848.71 (open -0.84 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:07:55  price 27846.69 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  19:11:02  price 27837.29 (open -1.09 R of the book stop): state change desk [NORMAL/ANN-W-: NORMAL/ANN-W-]
+  exit: Stop at 27820.21
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-10 20:17:39 ET, LONG 6 lots at 28537.12, safety stop 28469.94 (1.5 x own stop 44.7917 pts). Result managed -68 pts/lot (-1.51 R, $-8112) ; own bracket result -43 pts (-0.96 R, $-5147). MFE +0.79 R, MAE -1.52 R, 8 min under water (longest 4 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 4m:A
+  20:17:40  price 28533.77 (open -0.08 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:18:39  price 28533.09 (open -0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:21:10  price 28498.83 (open -0.85 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:26:28  price 28476.66 (open -1.35 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 28469.58
+
+**AS-VWAPBRK (Asia MF3)** 2024-11-03 18:00:03 ET, SHORT 6 lots at 20113.12, safety stop 20180.31 (1.5 x own stop 44.7917 pts). Result managed -53 pts/lot (-1.18 R, $-6362) ; own bracket result -44 pts (-0.99 R, $-5337). MFE +1.05 R, MAE -1.46 R, 145 min under water (longest 144 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 32m:A
+  18:00:04  price 20121.19 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:00  price 20109.77 (open +0.08 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:20:15  price 20113.80 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:24:38  price 20123.88 (open -0.24 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:24:54  price 20122.53 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:25:10  price 20123.88 (open -0.24 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:25:25  price 20120.52 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:26:42  price 20127.91 (open -0.33 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:35:08  price 20140.00 (open -0.60 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:36:00  price 20142.02 (open -0.65 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:36:15  price 20141.34 (open -0.63 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:37:20  price 20150.08 (open -0.83 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:37:35  price 20148.06 (open -0.78 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:37:50  price 20150.75 (open -0.84 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:39:09  price 20144.70 (open -0.70 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:41:12  price 20151.42 (open -0.85 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:41:27  price 20151.42 (open -0.85 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:41:57  price 20156.80 (open -0.98 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:42:12  price 20153.44 (open -0.90 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:42:59  price 20151.42 (open -0.85 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:43:14  price 20152.77 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:43:30  price 20154.78 (open -0.93 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:44:01  price 20153.44 (open -0.90 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:44:20  price 20155.45 (open -0.95 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:44:36  price 20152.77 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:45:37  price 20147.39 (open -0.77 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:45:52  price 20146.72 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:48:50  price 20146.72 (open -0.75 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:49:05  price 20146.05 (open -0.73 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:49:20  price 20145.38 (open -0.72 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:50:25  price 20148.73 (open -0.80 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:52:56  price 20146.72 (open -0.75 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:53:18  price 20146.72 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:01:05  price 20127.23 (open -0.32 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:01:50  price 20127.23 (open -0.32 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:03:09  price 20125.22 (open -0.27 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:03:24  price 20125.22 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:04:13  price 20124.55 (open -0.26 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:04:28  price 20125.22 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:24:36  price 20142.69 (open -0.66 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 20166.08
+
+**AS-VWAPBRK (Asia MF3)** 2024-08-11 18:03:04 ET, LONG 6 lots at 18630.83, safety stop 18563.65 (1.5 x own stop 44.7917 pts). Result managed -68 pts/lot (-1.51 R, $-8132) ; own bracket result -45 pts (-1.00 R, $-5397). MFE +0.71 R, MAE -1.64 R, 2 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 11m:A
+  18:03:05  price 18626.80 (open -0.09 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  exit: Stop at 18563.12
+
+**AS-VWAPBRK (Asia MF3)** 2025-06-15 18:00:03 ET, SHORT 6 lots at 21547.75, safety stop 21614.94 (1.5 x own stop 44.7917 pts). Result managed -66 pts/lot (-1.47 R, $-7902) ; own bracket result -44 pts (-0.98 R, $-5272). MFE +0.64 R, MAE -1.10 R, 2 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 4m:A
+  18:00:04  price 21567.91 (open -0.45 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: Stop at 21613.54
+
+**AS-VWAPBRK (Asia MF3)** 2024-09-29 18:00:03 ET, SHORT 6 lots at 20196.58, safety stop 20263.77 (1.5 x own stop 44.7917 pts). Result managed -62 pts/lot (-1.38 R, $-7407) ; own bracket result -45 pts (-1.00 R, $-5392). MFE +0.73 R, MAE -1.70 R, 102 min under water (longest 100 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 3m:W 11m:A
+  18:00:04  price 20191.88 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:09  price 20223.46 (open -0.60 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:27:42  price 20230.85 (open -0.77 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:30:11  price 20232.19 (open -0.80 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:30:26  price 20234.88 (open -0.85 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:30:42  price 20232.86 (open -0.81 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:33:21  price 20232.86 (open -0.81 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:33:57  price 20234.21 (open -0.84 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:34:12  price 20237.57 (open -0.92 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:37:00  price 20236.90 (open -0.90 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:39:12  price 20239.58 (open -0.96 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:40:13  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:40:59  price 20236.22 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:41:52  price 20236.22 (open -0.89 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:42:17  price 20235.55 (open -0.87 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:42:55  price 20234.21 (open -0.84 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:43:13  price 20236.22 (open -0.89 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:43:30  price 20236.90 (open -0.90 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:43:46  price 20238.91 (open -0.95 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:45:00  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:45:18  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:46:59  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:47:14  price 20240.93 (open -0.99 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:47:48  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:48:03  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:48:22  price 20237.57 (open -0.92 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:49:11  price 20238.91 (open -0.95 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:49:53  price 20237.57 (open -0.92 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:50:08  price 20238.24 (open -0.93 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:51:11  price 20238.91 (open -0.95 R of the book stop): state change desk [NORMAL/NN--N-: NORMAL/NN--N-]
+  18:51:29  price 20237.57 (open -0.92 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:54:30  price 20240.93 (open -0.99 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:54:47  price 20238.91 (open -0.95 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:56:09  price 20240.26 (open -0.98 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:57:51  price 20240.93 (open -0.99 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:58:12  price 20239.58 (open -0.96 R of the book stop): state change desk [NORMAL/NN--N-: NORMAL/NN--N-]
+  18:58:34  price 20239.58 (open -0.96 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:58:49  price 20239.58 (open -0.96 R of the book stop): state change desk [NORMAL/NN--N-: NORMAL/NN--N-]
+  18:59:05  price 20241.60 (open -1.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:59:40  price 20243.61 (open -1.05 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 20258.25
+
+**AS-VWAPBRK (Asia MF3)** 2025-10-30 00:37:07 ET, LONG 6 lots at 26284.42, safety stop 26217.23 (1.5 x own stop 44.7917 pts). Result managed -66 pts/lot (-1.48 R, $-7962) ; own bracket: not taken (slot effect). MFE +0.54 R, MAE -1.46 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  00:37:08  price 26283.74 (open -0.01 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  00:38:07  price 26284.42 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: Stop at 26218.12
+
+**AS-VWAPBRK (Asia MF3)** 2025-05-11 18:00:03 ET, LONG 6 lots at 20467.08, safety stop 20399.90 (1.5 x own stop 44.7917 pts). Result managed -67 pts/lot (-1.49 R, $-8022) ; own bracket result -43 pts (-0.96 R, $-5152). MFE +0.51 R, MAE -1.36 R, 30 min under water (longest 15 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  18:00:04  price 20454.99 (open -0.27 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:10:14  price 20434.83 (open -0.72 R of the book stop): state change desk [NORMAL/NN----: NORMAL/NN----]
+  18:20:17  price 20446.93 (open -0.45 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: Stop at 20400.29
+
+**AS-RSI (Asia MF2)** 2025-06-18 21:04:44 ET, SHORT 6 lots at 21826.62, safety stop 21916.06 (1.5 x own stop 59.625 pts). Result managed -53 pts/lot (-0.89 R, $-6377) ; own bracket result -57 pts (-0.96 R, $-6862). MFE +0.59 R, MAE -0.94 R, 170 min under water (longest 113 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  21:04:45  price 21829.31 (open -0.04 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  21:05:44  price 21856.14 (open -0.49 R of the book stop): state change desk [PRESS/WNN-W-: PRESS/WNN-W-]
+  21:06:14  price 21838.25 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:09:53  price 21837.36 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:18:40  price 21848.98 (open -0.38 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:19:13  price 21847.20 (open -0.35 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:45:01  price 21836.46 (open -0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:57:25  price 21840.04 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:57:45  price 21839.15 (open -0.21 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:58:00  price 21840.04 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:58:16  price 21839.15 (open -0.21 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:58:48  price 21840.04 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:59:41  price 21838.25 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:59:57  price 21838.25 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:08:23  price 21833.78 (open -0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:09:56  price 21838.25 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:29:19  price 21853.46 (open -0.45 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:35:55  price 21857.03 (open -0.51 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:36:27  price 21851.67 (open -0.42 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:38:03  price 21851.67 (open -0.42 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:49:46  price 21856.14 (open -0.49 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:50:01  price 21855.24 (open -0.48 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:50:49  price 21853.46 (open -0.45 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  23:01:58  price 21855.24 (open -0.48 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:04:15  price 21863.29 (open -0.61 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  23:05:32  price 21866.87 (open -0.68 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:05:47  price 21867.77 (open -0.69 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  23:06:59  price 21865.08 (open -0.65 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:10:06  price 21871.34 (open -0.75 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:11:39  price 21870.45 (open -0.73 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:12:02  price 21871.34 (open -0.75 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:12:27  price 21872.24 (open -0.77 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:12:43  price 21874.92 (open -0.81 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:13:14  price 21877.60 (open -0.85 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:16:34  price 21872.24 (open -0.77 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:17:13  price 21871.34 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:17:31  price 21872.24 (open -0.77 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:17:52  price 21872.24 (open -0.77 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:20:35  price 21874.03 (open -0.80 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:21:07  price 21875.82 (open -0.83 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: ExAlgoAll_AB at 21879.71
+
+**AS-NR7 (Asia MF1)** 2025-04-02 18:40:03 ET, SHORT 6 lots at 18905.17, safety stop 18964.73 (1.5 x own stop 39.7083 pts). Result managed -60 pts/lot (-1.51 R, $-7192) ; own bracket result -42 pts (-1.05 R, $-4992). MFE +0.61 R, MAE -1.42 R, 10 min under water (longest 5 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 9m:A
+  18:40:04  price 18909.93 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: Stop at 18965.04
+
+**AS-VWAPBRK (Asia MF3)** 2026-05-05 18:52:14 ET, LONG 6 lots at 28380.83, safety stop 28313.65 (1.5 x own stop 44.7917 pts). Result managed -23 pts/lot (-0.52 R, $-2812) ; own bracket result -44 pts (-0.99 R, $-5347). MFE +1.26 R, MAE -0.82 R, 2 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 2m:A
+  18:52:16  price 28357.99 (open -0.51 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:53:14  price 28338.51 (open -0.95 R of the book stop): state change desk [DEFEND/WAA-A-: DEFEND/WAA-A-]
+  18:53:14  price 28338.51 (open -0.95 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  18:53:14  price 28338.51 (open -0.95 R of the book stop): took a part [DF: DF]
+  18:53:29  price 28332.46 (open -1.08 R of the book stop): state change desk [NORMAL/WNA-A-: NORMAL/WNA-A-]
+  18:55:00  price 28377.47 (open -0.08 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  18:55:00  price 28377.47 (open -0.08 R of the book stop): state change DEFENDING>OUT [DV: DV]
+  18:55:00  price 28377.47 (open -0.08 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 28357.46
+
+**AS-VWAPBRK (Asia MF3)** 2026-03-08 18:00:03 ET, SHORT 6 lots at 24446.50, safety stop 24513.69 (1.5 x own stop 44.7917 pts). Result managed +166 pts/lot (+3.70 R, $+19898) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +5.46 R, MAE -0.12 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:04  price 24469.34 (open -0.51 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:11  price 24289.95 (open +3.50 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  18:20:11  price 24289.95 (open +3.50 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:20:11  price 24289.95 (open +3.50 R of the book stop): took a part [OB1: OB1]
+  18:20:26  price 24289.95 (open +3.50 R of the book stop): state change DEFENDING>FREE [NB: NB]
+  18:20:26  price 24289.95 (open +3.50 R of the book stop): moved the stop closer [NB: NB]
+  18:21:44  price 24296.00 (open +3.36 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:24:02  price 24283.23 (open +3.65 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  18:24:17  price 24280.55 (open +3.71 R of the book stop): moved the stop closer [NB: NB]
+  18:24:32  price 24265.77 (open +4.04 R of the book stop): moved the stop closer [NB: NB]
+  18:26:05  price 24270.47 (open +3.93 R of the book stop): state change FREE>OUT [OB2: OB2]
+  18:26:05  price 24270.47 (open +3.93 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 24280.62
+
+**AS-VWAPBRK (Asia MF3)** 2026-08-30 18:00:13 ET, LONG 6 lots at 29503.88, safety stop 29436.69 (1.5 x own stop 44.7917 pts). Result managed -41 pts/lot (-0.93 R, $-4982) ; own bracket result -41 pts (-0.92 R, $-4927). MFE +0.83 R, MAE -1.28 R, 32 min under water (longest 32 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 4m:A
+  18:00:14  price 29503.20 (open -0.01 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:20:14  price 29487.75 (open -0.36 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:34:44  price 29464.23 (open -0.89 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  18:34:44  price 29464.23 (open -0.89 R of the book stop): state change PROBE>OUT [AB: AB]
+  18:34:44  price 29464.23 (open -0.89 R of the book stop): closed everything [AB: AB]
+  exit: ExAlgoAll_AB at 29462.42
+
+**AS-VWAPBRK (Asia MF3)** 2025-08-25 20:03:38 ET, SHORT 6 lots at 23480.42, safety stop 23547.60 (1.5 x own stop 44.7917 pts). Result managed +2 pts/lot (+0.05 R, $+238) ; own bracket: not taken (slot effect). MFE +1.63 R, MAE -0.27 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  20:03:39  price 23482.43 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:04:38  price 23472.35 (open +0.18 R of the book stop): state change desk [PRESS/WNW-W-: PRESS/WNW-W-]
+  20:05:53  price 23483.78 (open -0.08 R of the book stop): state change desk [PRESS/WNN-W-: PRESS/WNN-W-]
+  20:06:08  price 23478.40 (open +0.04 R of the book stop): state change desk [PRESS/WNW-W-: PRESS/WNW-W-]
+  20:06:38  price 23484.45 (open -0.09 R of the book stop): state change desk [PRESS/WNN-W-: PRESS/WNN-W-]
+  20:07:08  price 23480.42 (open -0.00 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:07:08  price 23480.42 (open -0.00 R of the book stop): took a part [OB1: OB1]
+  20:08:10  price 23474.37 (open +0.14 R of the book stop): state change desk [PRESS/WNW-W-: PRESS/WNW-W-]
+  20:08:56  price 23474.37 (open +0.14 R of the book stop): state change desk [PRESS/NNW-W-: PRESS/NNW-W-]
+  20:09:11  price 23475.04 (open +0.12 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:09:11  price 23475.04 (open +0.12 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 23478.38
+
+## Asia: the 20 BEST runners (largest final R among trades that kept at least 80% of their peak)
+
+**AS-VWAPBRK (Asia MF3)** 2025-04-06 18:00:03 ET, SHORT 6 lots at 17119.88, safety stop 17187.06 (1.5 x own stop 44.7917 pts). Result managed +367 pts/lot (+8.18 R, $+43973) ; own bracket result +45 pts (+1.00 R, $+5378). MFE +9.22 R, MAE -1.94 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:10  price 17050.00 (open +1.56 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:10:08  price 16740.94 (open +8.46 R of the book stop): state change desk [NORMAL/NN----: NORMAL/NN----]
+  18:10:08  price 16740.94 (open +8.46 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:10:08  price 16740.94 (open +8.46 R of the book stop): took a part [OB1: OB1]
+  18:10:23  price 16762.44 (open +7.98 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:10:23  price 16762.44 (open +7.98 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 16753.38
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-14 18:00:03 ET, LONG 6 lots at 29893.38, safety stop 29826.19 (1.5 x own stop 44.7917 pts). Result managed +177 pts/lot (+3.95 R, $+21213) ; own bracket result +45 pts (+1.01 R, $+5408). MFE +2.15 R, MAE -1.83 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:06  price 29908.16 (open +0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:09  price 30072.09 (open +3.99 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  18:20:09  price 30072.09 (open +3.99 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:20:09  price 30072.09 (open +3.99 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 30070.21
+
+**AS-VWAPBRK (Asia MF3)** 2025-05-25 18:03:32 ET, LONG 6 lots at 20993.96, safety stop 20926.77 (1.5 x own stop 44.7917 pts). Result managed +146 pts/lot (+3.27 R, $+17563) ; own bracket result +45 pts (+1.01 R, $+5398). MFE +3.36 R, MAE -0.26 R, 1 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:03:33  price 20997.32 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:12  price 21139.08 (open +3.24 R of the book stop): state change desk [PRESS/WNW-W-: PRESS/WNW-W-]
+  18:20:12  price 21139.08 (open +3.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:20:12  price 21139.08 (open +3.24 R of the book stop): took a part [OB1: OB1]
+  18:20:27  price 21143.11 (open +3.33 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:20:27  price 21143.11 (open +3.33 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 21140.38
+
+**AS-VWAPBRK (Asia MF3)** 2025-10-12 18:00:03 ET, LONG 6 lots at 24582.00, safety stop 24514.81 (1.5 x own stop 44.7917 pts). Result managed +121 pts/lot (+2.70 R, $+14513) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +1.06 R, MAE -2.00 R, 12 min under water (longest 6 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 6m:A
+  18:00:10  price 24699.58 (open +2.62 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:20:01  price 24707.64 (open +2.81 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:01  price 24707.64 (open +2.81 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:20:01  price 24707.64 (open +2.81 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 24703.00
+
+**AS-VWAPBRK (Asia MF3)** 2025-06-19 18:00:04 ET, LONG 6 lots at 21763.00, safety stop 21695.81 (1.5 x own stop 44.7917 pts). Result managed +62 pts/lot (+1.39 R, $+7448) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +1.64 R, MAE -0.14 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:05  price 21771.06 (open +0.18 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:10:06  price 21824.14 (open +1.36 R of the book stop): state change desk [NORMAL/NN----: NORMAL/NN----]
+  18:10:06  price 21824.14 (open +1.36 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:10:06  price 21824.14 (open +1.36 R of the book stop): took a part [OB1: OB1]
+  18:10:21  price 21826.16 (open +1.41 R of the book stop): state change DEFENDING>FREE [NB: NB]
+  18:10:21  price 21826.16 (open +1.41 R of the book stop): moved the stop closer [NB: NB]
+  18:10:36  price 21829.52 (open +1.48 R of the book stop): state change FREE>OUT [OB2: OB2]
+  18:10:36  price 21829.52 (open +1.48 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 21825.12
+
+**AS-VWAPBRK (Asia MF3)** 2026-04-22 20:15:31 ET, SHORT 6 lots at 26921.42, safety stop 26988.60 (1.5 x own stop 44.7917 pts). Result managed +59 pts/lot (+1.33 R, $+7118) ; own bracket result +45 pts (+1.00 R, $+5383). MFE +1.53 R, MAE -0.08 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  20:15:32  price 26923.43 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  20:16:31  price 26864.31 (open +1.27 R of the book stop): state change desk [NORMAL/WNW-A-: NORMAL/WNW-A-]
+  20:16:31  price 26864.31 (open +1.27 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:16:31  price 26864.31 (open +1.27 R of the book stop): took a part [OB1: OB1]
+  20:16:46  price 26857.59 (open +1.42 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:16:46  price 26857.59 (open +1.42 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 26862.04
+
+**AS-VWAPBRK (Asia MF3)** 2024-03-31 18:00:03 ET, LONG 6 lots at 18514.29, safety stop 18447.10 (1.5 x own stop 44.7917 pts). Result managed +58 pts/lot (+1.30 R, $+6968) ; own bracket result +45 pts (+1.00 R, $+5388). MFE +1.59 R, MAE -0.25 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:20:05  price 18572.74 (open +1.30 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:20:05  price 18572.74 (open +1.30 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:20:05  price 18572.74 (open +1.30 R of the book stop): took a part [OB1: OB1]
+  18:20:20  price 18572.07 (open +1.29 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:20:20  price 18572.07 (open +1.29 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 18572.42
+
+**AS-VWAPBRK (Asia MF3)** 2026-05-24 18:00:03 ET, LONG 6 lots at 29719.92, safety stop 29652.73 (1.5 x own stop 44.7917 pts). Result managed +57 pts/lot (+1.28 R, $+6883) ; own bracket result +45 pts (+1.01 R, $+5403). MFE +1.37 R, MAE -0.23 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:04  price 29719.92 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:05  price 29778.37 (open +1.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:05  price 29778.37 (open +1.30 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:20:05  price 29778.37 (open +1.30 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 29777.33
+
+**AS-NR7 (Asia MF1)** 2025-01-26 18:04:04 ET, SHORT 6 lots at 21701.21, safety stop 21760.77 (1.5 x own stop 39.7083 pts). Result managed +48 pts/lot (+1.20 R, $+5728) ; own bracket result +80 pts (+2.01 R, $+9588). MFE +1.33 R, MAE -0.16 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:04:05  price 21703.00 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:03  price 21654.75 (open +1.17 R of the book stop): state change desk [NORMAL/NNN-W-: NORMAL/NNN-W-]
+  18:20:03  price 21654.75 (open +1.17 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:20:03  price 21654.75 (open +1.17 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 21653.42
+
+**AS-NR7 (Asia MF1)** 2026-06-21 19:00:04 ET, SHORT 6 lots at 30515.62, safety stop 30575.19 (1.5 x own stop 39.7083 pts). Result managed +46 pts/lot (+1.16 R, $+5498) ; own bracket result +80 pts (+2.01 R, $+9578). MFE +1.36 R, MAE -0.18 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  19:00:05  price 30513.24 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:01:04  price 30490.01 (open +0.65 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:01:04  price 30490.01 (open +0.65 R of the book stop): state change PROBE>FREE [NB: NB]
+  19:01:04  price 30490.01 (open +0.65 R of the book stop): moved the stop closer [NB: NB]
+  19:01:34  price 30470.95 (open +1.12 R of the book stop): state change FREE>DEFENDING [OB1: OB1]
+  19:01:34  price 30470.95 (open +1.12 R of the book stop): took a part [OB1: OB1]
+  19:01:49  price 30467.98 (open +1.20 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:01:49  price 30467.98 (open +1.20 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 30469.75
+
+**AS-VWAPBRK (Asia MF3)** 2026-10-11 18:01:17 ET, LONG 6 lots at 31138.62, safety stop 31071.44 (1.5 x own stop 44.7917 pts). Result managed +45 pts/lot (+1.01 R, $+5408) ; own bracket result +45 pts (+1.01 R, $+5408). MFE +1.13 R, MAE -0.08 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:01:18  price 31137.28 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:00  price 31184.31 (open +1.02 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:00  price 31184.31 (open +1.02 R of the book stop): state change PROBE>OUT [DV: DV]
+  18:20:00  price 31184.31 (open +1.02 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 31183.75
+
+**AS-VWAPBRK (Asia MF3)** 2024-07-28 18:00:06 ET, LONG 6 lots at 19178.12, safety stop 19110.94 (1.5 x own stop 44.7917 pts). Result managed +45 pts/lot (+1.00 R, $+5378) ; own bracket result +45 pts (+1.01 R, $+5408). MFE +1.11 R, MAE -0.07 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:07  price 19183.50 (open +0.12 R of the book stop): state change desk [ABORT/AAA-N-: ABORT/AAA-N-]
+  18:20:07  price 19225.16 (open +1.05 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:20:07  price 19225.16 (open +1.05 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:20:07  price 19225.16 (open +1.05 R of the book stop): took a part [OB1: OB1]
+  18:20:22  price 19221.12 (open +0.96 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:20:22  price 19221.12 (open +0.96 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 19223.00
+
+**AS-VWAPBRK (Asia MF3)** 2025-02-23 18:00:08 ET, LONG 6 lots at 21699.25, safety stop 21632.06 (1.5 x own stop 44.7917 pts). Result managed +42 pts/lot (+0.94 R, $+5058) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +1.11 R, MAE -0.56 R, 2 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:00:09  price 21702.61 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:20:00  price 21743.59 (open +0.99 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:20:00  price 21743.59 (open +0.99 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:20:00  price 21743.59 (open +0.99 R of the book stop): took a part [OB1: OB1]
+  18:20:17  price 21740.23 (open +0.92 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:20:17  price 21740.23 (open +0.92 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 21741.46
+
+**AS-VWAPBRK (Asia MF3)** 2026-07-12 20:06:07 ET, LONG 6 lots at 29960.46, safety stop 29893.27 (1.5 x own stop 44.7917 pts). Result managed +41 pts/lot (+0.92 R, $+4953) ; own bracket result +45 pts (+1.01 R, $+5398). MFE +1.09 R, MAE -0.03 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  20:06:08  price 29959.11 (open -0.03 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  20:07:07  price 30002.11 (open +0.93 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:07:07  price 30002.11 (open +0.93 R of the book stop): state change PROBE>OUT [DV: DV]
+  20:07:07  price 30002.11 (open +0.93 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 30001.79
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-10 19:20:05 ET, SHORT 6 lots at 28359.04, safety stop 28426.23 (1.5 x own stop 44.7917 pts). Result managed +38 pts/lot (+0.86 R, $+4613) ; own bracket result +45 pts (+1.01 R, $+5398). MFE +1.06 R, MAE -0.83 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  19:20:06  price 28358.37 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  19:21:05  price 28317.39 (open +0.93 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:21:05  price 28317.39 (open +0.93 R of the book stop): state change PROBE>OUT [DV: DV]
+  19:21:05  price 28317.39 (open +0.93 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 28320.54
+
+## Asia: 50 RANDOM trades (seed 11)
+
+**AS-RSI (Asia MF2)** 2023-10-03 01:09:13 ET, SHORT 6 lots at 14945.88, safety stop 15035.31 (1.5 x own stop 59.625 pts). Result managed -5 pts/lot (-0.08 R, $-572) ; own bracket result -11 pts (-0.18 R, $-1282). MFE +0.03 R, MAE -0.21 R, 28 min under water (longest 10 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:-
+  01:10:13  price 14947.66 (open -0.03 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  01:10:30  price 14947.66 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:12:05  price 14953.03 (open -0.12 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  01:12:20  price 14953.92 (open -0.14 R of the book stop): state change desk [DEFEND/NAA-N-: DEFEND/NAA-N-]
+  01:12:20  price 14953.92 (open -0.14 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  01:12:20  price 14953.92 (open -0.14 R of the book stop): took a part [DF: DF]
+  01:12:36  price 14954.82 (open -0.15 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  01:14:49  price 14951.24 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:15:05  price 14953.03 (open -0.12 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  01:17:12  price 14951.24 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:17:42  price 14947.66 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:20:30  price 14950.35 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:24:12  price 14947.66 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:30:31  price 14948.56 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:30:46  price 14947.66 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:31:53  price 14949.45 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:32:47  price 14951.24 (open -0.09 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  01:33:33  price 14950.35 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:38:04  price 14951.24 (open -0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:41:22  price 14945.88 (open -0.00 R of the book stop): state change DEFENDING>OUT [CL: CL]
+  01:41:22  price 14945.88 (open -0.00 R of the book stop): closed everything [CL: CL]
+  exit: ExAlgoAll_CL at 14950.58
+
+**AS-NR7 (Asia MF1)** 2023-11-21 18:04:03 ET, SHORT 6 lots at 15959.88, safety stop 16019.44 (1.5 x own stop 39.7083 pts). Result managed +10 pts/lot (+0.25 R, $+1183) ; own bracket result +2 pts (+0.04 R, $+198). MFE +0.34 R, MAE -0.03 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:04:04  price 15961.66 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:05:03  price 15959.28 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  18:06:07  price 15956.30 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:15:40  price 15950.94 (open +0.22 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:15:40  price 15950.94 (open +0.22 R of the book stop): took a part [OB1: OB1]
+  18:15:55  price 15948.56 (open +0.29 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:15:55  price 15948.56 (open +0.29 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 15949.96
+
+**AS-VWAPBRK (Asia MF3)** 2024-01-11 20:07:16 ET, SHORT 6 lots at 16927.33, safety stop 16994.52 (1.5 x own stop 44.7917 pts). Result managed -25 pts/lot (-0.56 R, $-3007) ; own bracket result -32 pts (-0.70 R, $-3792). MFE +0.17 R, MAE -0.79 R, 334 min under water (longest 325 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 6m:N 8m:W 11m:N 68m:A
+  20:07:17  price 16928.01 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:08:17  price 16930.02 (open -0.06 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:08:33  price 16928.68 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:08:48  price 16931.36 (open -0.09 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  20:09:06  price 16931.36 (open -0.09 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:09:41  price 16929.35 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:31:01  price 16925.99 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:36:03  price 16929.35 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:36:19  price 16929.35 (open -0.04 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:45:11  price 16939.43 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:48:07  price 16940.77 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:49:11  price 16942.11 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:50:15  price 16944.80 (open -0.39 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:51:01  price 16945.47 (open -0.41 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:51:01  price 16945.47 (open -0.41 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  20:51:01  price 16945.47 (open -0.41 R of the book stop): took a part [DF: DF]
+  20:51:50  price 16943.46 (open -0.36 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:52:05  price 16941.44 (open -0.32 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:00:59  price 16945.47 (open -0.41 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  21:01:14  price 16946.82 (open -0.43 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:02:16  price 16947.49 (open -0.45 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:04:04  price 16946.82 (open -0.43 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:14:17  price 16949.51 (open -0.49 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:15:03  price 16952.86 (open -0.57 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:17:11  price 16946.82 (open -0.43 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:17:58  price 16948.16 (open -0.46 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  21:18:16  price 16947.49 (open -0.45 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:22:58  price 16950.18 (open -0.51 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:24:04  price 16950.85 (open -0.52 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:25:31  price 16950.18 (open -0.51 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:26:07  price 16950.85 (open -0.52 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:26:23  price 16950.18 (open -0.51 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:26:38  price 16950.85 (open -0.52 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:27:02  price 16950.18 (open -0.51 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:29:14  price 16953.54 (open -0.58 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:29:29  price 16952.19 (open -0.55 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:29:44  price 16952.86 (open -0.57 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:31:13  price 16952.19 (open -0.55 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:32:00  price 16954.21 (open -0.60 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  21:33:10  price 16954.21 (open -0.60 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  exit: UWTime at 16952.33
+
+**AS-NR7 (Asia MF1)** 2024-03-05 18:32:03 ET, SHORT 6 lots at 17958.08, safety stop 18017.65 (1.5 x own stop 39.7083 pts). Result managed +11 pts/lot (+0.27 R, $+1273) ; own bracket result -25 pts (-0.63 R, $-2997). MFE +0.35 R, MAE -0.21 R, 44 min under water (longest 26 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 18m:N
+  18:32:04  price 17958.08 (open +0.00 R of the book stop): state change desk [ABORT/AAA-N-: ABORT/AAA-N-]
+  18:33:03  price 17960.47 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:37:13  price 17965.23 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:37:28  price 17965.23 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:40:12  price 17962.85 (open -0.12 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:40:28  price 17962.25 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:14:07  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:14:39  price 17956.89 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:15:13  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:15:45  price 17956.30 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:17:09  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:17:25  price 17956.30 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:18:01  price 17955.11 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:18:33  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:19:05  price 17955.11 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:19:24  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:19:39  price 17954.51 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:24:54  price 17956.89 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:25:34  price 17956.89 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:26:06  price 17957.49 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:28:14  price 17959.87 (open -0.04 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:29:03  price 17960.47 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:30:38  price 17962.85 (open -0.12 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:30:53  price 17961.66 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:39:43  price 17960.47 (open -0.06 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  19:40:00  price 17959.87 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:44:24  price 17955.11 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:45:00  price 17955.11 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:47:00  price 17954.51 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:47:15  price 17955.70 (open +0.06 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  19:47:31  price 17953.91 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:49:01  price 17946.17 (open +0.30 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  19:49:01  price 17946.17 (open +0.30 R of the book stop): took a part [OB1: OB1]
+  19:49:31  price 17947.96 (open +0.26 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:49:31  price 17947.96 (open +0.26 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 17947.42
+
+**AS-VWAPBRK (Asia MF3)** 2024-03-26 21:19:19 ET, LONG 6 lots at 18488.88, safety stop 18421.69 (1.5 x own stop 44.7917 pts). Result managed +11 pts/lot (+0.24 R, $+1268) ; own bracket: not taken (slot effect). MFE +0.29 R, MAE -0.16 R, 26 min under water (longest 14 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 2m:A 7m:W 10m:N 32m:A 38m:N 55m:A 61m:N
+  21:19:20  price 18488.88 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:20:19  price 18487.53 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:22:15  price 18484.84 (open -0.09 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:23:58  price 18488.20 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:25:10  price 18487.53 (open -0.03 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  21:25:29  price 18488.88 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:26:01  price 18492.23 (open +0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:28:31  price 18489.55 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:29:59  price 18490.89 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:30:14  price 18488.88 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:32:00  price 18490.22 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:33:24  price 18488.88 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:33:43  price 18490.22 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:34:52  price 18489.55 (open +0.01 R of the book stop): state change desk [NORMAL/WAN-N-: NORMAL/WAN-N-]
+  21:35:07  price 18489.55 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:36:26  price 18488.20 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:37:39  price 18486.86 (open -0.04 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:37:58  price 18486.86 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:38:15  price 18484.17 (open -0.11 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:41:04  price 18483.50 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:44:25  price 18486.86 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:44:40  price 18484.84 (open -0.09 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  21:44:55  price 18485.52 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:47:17  price 18487.53 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:51:13  price 18486.86 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:51:57  price 18486.86 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:10:20  price 18488.20 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:11:30  price 18488.88 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:13:10  price 18490.89 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:17:01  price 18490.89 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:22:24  price 18491.56 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:22:56  price 18489.55 (open +0.01 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  22:23:13  price 18490.89 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:24:24  price 18494.25 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:25:02  price 18492.91 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:25:39  price 18494.25 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:26:11  price 18493.58 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:27:24  price 18494.25 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:29:35  price 18495.59 (open +0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:31:08  price 18497.61 (open +0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: ExAlgoAll_OB2 at 18499.50
+
+**AS-VWAPBRK (Asia MF3)** 2024-05-15 19:28:21 ET, LONG 6 lots at 18719.33, safety stop 18652.15 (1.5 x own stop 44.7917 pts). Result managed +9 pts/lot (+0.21 R, $+1128) ; own bracket result +3 pts (+0.07 R, $+383). MFE +0.36 R, MAE -0.04 R, 3 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 6m:N 7m:W 29m:N 34m:W
+  19:28:22  price 18719.33 (open +0.00 R of the book stop): state change desk [ABORT/AAA-N-: ABORT/AAA-N-]
+  19:29:24  price 18718.66 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:31:06  price 18718.66 (open -0.01 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:33:08  price 18719.33 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:34:29  price 18723.36 (open +0.09 R of the book stop): state change desk [NORMAL/WAN-N-: NORMAL/WAN-N-]
+  19:34:47  price 18722.02 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:35:02  price 18722.02 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:37:28  price 18722.69 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:38:13  price 18724.04 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:38:34  price 18724.04 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:38:55  price 18724.04 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:39:11  price 18722.69 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:39:46  price 18726.72 (open +0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:40:16  price 18724.04 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:44:59  price 18722.69 (open +0.08 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:45:14  price 18722.02 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:47:36  price 18720.01 (open +0.01 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:47:54  price 18720.68 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:01:35  price 18725.38 (open +0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:01:51  price 18724.71 (open +0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:11  price 18724.71 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:02:42  price 18730.76 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:02:42  price 18730.76 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  20:06:34  price 18728.07 (open +0.20 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:06:34  price 18728.07 (open +0.20 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 18728.79
+
+**AS-NR7 (Asia MF1)** 2024-06-06 18:32:03 ET, LONG 6 lots at 19073.12, safety stop 19013.56 (1.5 x own stop 39.7083 pts). Result managed +10 pts/lot (+0.25 R, $+1173) ; own bracket result +19 pts (+0.48 R, $+2288). MFE +0.31 R, MAE -0.14 R, 32 min under water (longest 12 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 7m:W 35m:N
+  18:32:05  price 19073.12 (open -0.00 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:33:11  price 19073.12 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:34:00  price 19072.53 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:34:26  price 19073.12 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:38:39  price 19077.29 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:39:46  price 19076.10 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:40:09  price 19076.10 (open +0.08 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:41:21  price 19077.29 (open +0.11 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:42:21  price 19078.49 (open +0.14 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:42:48  price 19078.49 (open +0.14 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:45:25  price 19078.49 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:47:53  price 19076.10 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:48:25  price 19076.70 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:48:52  price 19076.10 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:49:13  price 19076.10 (open +0.08 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:49:28  price 19076.10 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:52:37  price 19077.89 (open +0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:54:45  price 19079.08 (open +0.15 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:55:01  price 19079.08 (open +0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:58:35  price 19079.08 (open +0.15 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:59:50  price 19079.68 (open +0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:00:06  price 19077.89 (open +0.12 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  19:00:21  price 19078.49 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:00:36  price 19078.49 (open +0.14 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  19:00:55  price 19079.08 (open +0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:02:22  price 19073.72 (open +0.01 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:05:01  price 19076.10 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:14:47  price 19077.89 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:15:31  price 19077.29 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:16:26  price 19077.89 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:16:52  price 19076.70 (open +0.09 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:17:34  price 19077.29 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:18:03  price 19077.29 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:18:39  price 19076.70 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:18:59  price 19077.29 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:20:16  price 19079.08 (open +0.15 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:23:26  price 19076.70 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:24:00  price 19077.29 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:25:36  price 19077.29 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  19:25:54  price 19077.29 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: ExAlgoAll_OB2 at 19082.96
+
+**AS-VWAPBRK (Asia MF3)** 2024-07-22 20:09:49 ET, SHORT 6 lots at 19961.58, safety stop 20028.77 (1.5 x own stop 44.7917 pts). Result managed +11 pts/lot (+0.24 R, $+1308) ; own bracket result +45 pts (+1.01 R, $+5403). MFE +0.27 R, MAE -0.04 R, 2 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 2m:W
+  20:09:50  price 19962.26 (open -0.01 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:10:55  price 19962.26 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:12:06  price 19960.24 (open +0.03 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:12:22  price 19958.22 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  20:12:59  price 19958.22 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:15:27  price 19956.21 (open +0.12 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:16:14  price 19958.90 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:22:08  price 19960.24 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:28:16  price 19950.83 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:28:16  price 19950.83 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  20:35:08  price 19950.16 (open +0.26 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:35:08  price 19950.16 (open +0.26 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 19950.62
+
+**AS-VWAPBRK (Asia MF3)** 2024-08-11 18:17:19 ET, SHORT 6 lots at 18550.21, safety stop 18617.40 (1.5 x own stop 44.7917 pts). Result managed +11 pts/lot (+0.25 R, $+1333) ; own bracket result -47 pts (-1.04 R, $-5592). MFE +0.58 R, MAE -0.35 R, 3 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:17:20  price 18550.21 (open -0.00 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  18:20:11  price 18558.94 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:21:47  price 18537.44 (open +0.29 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:21:47  price 18537.44 (open +0.29 R of the book stop): took a part [OB1: OB1]
+  18:26:16  price 18538.11 (open +0.27 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:26:16  price 18538.11 (open +0.27 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 18539.04
+
+**AS-VWAPBRK (Asia MF3)** 2024-08-18 18:24:43 ET, LONG 6 lots at 19629.29, safety stop 19562.10 (1.5 x own stop 44.7917 pts). Result managed +7 pts/lot (+0.15 R, $+798) ; own bracket result +45 pts (+1.00 R, $+5388). MFE +0.37 R, MAE -0.21 R, 1 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:24:44  price 19628.62 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:25:46  price 19629.96 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:28:01  price 19636.68 (open +0.17 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:28:01  price 19636.68 (open +0.17 R of the book stop): took a part [OB1: OB1]
+  18:29:28  price 19638.70 (open +0.21 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:29:28  price 19638.70 (open +0.21 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:29:28  price 19638.70 (open +0.21 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 19636.00
+
+**AS-VWAPBRK (Asia MF3)** 2024-09-08 18:32:58 ET, LONG 6 lots at 18422.75, safety stop 18355.56 (1.5 x own stop 44.7917 pts). Result managed +12 pts/lot (+0.26 R, $+1413) ; own bracket result +45 pts (+1.00 R, $+5393). MFE +0.38 R, MAE -0.04 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:32:59  price 18420.73 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:36:15  price 18425.44 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  18:36:30  price 18426.11 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:38:43  price 18438.88 (open +0.36 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:38:43  price 18438.88 (open +0.36 R of the book stop): took a part [OB1: OB1]
+  18:38:58  price 18432.83 (open +0.22 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:38:58  price 18432.83 (open +0.22 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 18434.58
+
+**AS-VWAPBRK (Asia MF3)** 2024-09-29 20:00:27 ET, LONG 6 lots at 20280.67, safety stop 20213.48 (1.5 x own stop 44.7917 pts). Result managed -50 pts/lot (-1.12 R, $-6007) ; own bracket: not taken (slot effect). MFE +0.03 R, MAE -1.17 R, 60 min under water (longest 60 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  20:00:28  price 20280.67 (open +0.00 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:01:27  price 20272.60 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:30  price 20273.95 (open -0.15 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  20:02:45  price 20274.62 (open -0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:03:00  price 20273.28 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  20:03:16  price 20273.28 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:05:49  price 20265.89 (open -0.33 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  20:06:04  price 20265.89 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:10:24  price 20278.65 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:11:14  price 20274.62 (open -0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:18:04  price 20271.93 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:18:53  price 20269.24 (open -0.26 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:19:08  price 20261.85 (open -0.42 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:19:23  price 20279.99 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:21:00  price 20273.28 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:24:05  price 20268.57 (open -0.27 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:24:54  price 20266.56 (open -0.32 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:26:03  price 20264.54 (open -0.36 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:26:19  price 20263.87 (open -0.38 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:26:54  price 20262.53 (open -0.41 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:28:59  price 20254.46 (open -0.58 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:30:17  price 20259.84 (open -0.46 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:34:05  price 20263.87 (open -0.38 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:34:23  price 20263.20 (open -0.39 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:43:23  price 20265.21 (open -0.35 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:43:55  price 20262.53 (open -0.41 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:52:17  price 20259.84 (open -0.46 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:52:51  price 20255.81 (open -0.55 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:53:07  price 20260.51 (open -0.45 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:53:37  price 20255.81 (open -0.55 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:54:07  price 20250.43 (open -0.68 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:54:39  price 20252.45 (open -0.63 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:54:54  price 20250.43 (open -0.68 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:58:04  price 20249.76 (open -0.69 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:00:15  price 20230.28 (open -1.12 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  21:00:15  price 20230.28 (open -1.12 R of the book stop): state change PROBE>OUT [AB: AB]
+  21:00:15  price 20230.28 (open -1.12 R of the book stop): closed everything [AB: AB]
+  exit: ExAlgoAll_AB at 20230.67
+
+**AS-VWAPBRK (Asia MF3)** 2024-10-01 18:51:04 ET, SHORT 6 lots at 19915.83, safety stop 19983.02 (1.5 x own stop 44.7917 pts). Result managed +14 pts/lot (+0.31 R, $+1653) ; own bracket: not taken (slot effect). MFE +0.46 R, MAE -0.55 R, 31 min under water (longest 16 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 9m:N 11m:A 34m:N 35m:W
+  18:51:07  price 19915.83 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:52:04  price 19918.52 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:06:21  price 19915.83 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:07:57  price 19920.54 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:22:12  price 19918.52 (open -0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:22:27  price 19921.21 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:22:59  price 19917.18 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:23:32  price 19917.85 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:23:52  price 19915.16 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:24:08  price 19912.47 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:24:36  price 19914.49 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:25:25  price 19913.15 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:26:12  price 19903.07 (open +0.29 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:26:12  price 19903.07 (open +0.29 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  19:26:12  price 19903.07 (open +0.29 R of the book stop): took a part [OB1: OB1]
+  19:26:27  price 19899.71 (open +0.36 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:26:27  price 19899.71 (open +0.36 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 19902.00
+
+**AS-NR7 (Asia MF1)** 2024-10-08 18:32:04 ET, SHORT 6 lots at 20277.62, safety stop 20337.19 (1.5 x own stop 39.7083 pts). Result managed +2 pts/lot (+0.05 R, $+228) ; own bracket result +46 pts (+1.15 R, $+5468). MFE +0.48 R, MAE -0.52 R, 116 min under water (longest 22 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 2m:N 4m:W 9m:N 31m:A 61m:N
+  18:32:05  price 20275.84 (open +0.04 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:33:05  price 20275.84 (open +0.04 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:33:21  price 20275.84 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:33:39  price 20277.03 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:34:04  price 20276.43 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:34:21  price 20277.62 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:35:00  price 20276.43 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:35:15  price 20275.84 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:35:30  price 20273.46 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:36:16  price 20277.03 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:36:48  price 20275.24 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:37:20  price 20274.05 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:45:17  price 20273.46 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:48:19  price 20276.43 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:50:17  price 20275.24 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:50:39  price 20276.43 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:55:55  price 20284.18 (open -0.17 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:59:04  price 20285.37 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:59:22  price 20287.15 (open -0.24 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:00:07  price 20292.52 (open -0.38 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:00:07  price 20292.52 (open -0.38 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  19:00:07  price 20292.52 (open -0.38 R of the book stop): took a part [DF: DF]
+  19:03:02  price 20291.32 (open -0.35 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:05:55  price 20284.18 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:14:44  price 20277.62 (open +0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:19:00  price 20279.41 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:32:04  price 20275.24 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:33:46  price 20277.62 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:34:16  price 20277.03 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:34:57  price 20277.62 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:35:12  price 20277.03 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:35:52  price 20277.62 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:37:28  price 20278.82 (open -0.03 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:37:45  price 20280.01 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:38:00  price 20280.60 (open -0.08 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:38:24  price 20280.60 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:46:09  price 20277.03 (open +0.01 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  19:46:37  price 20275.84 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:51:05  price 20278.22 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:52:42  price 20275.84 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: ExAlgoAll_OB2 at 20275.67
+
+**AS-VWAPBRK (Asia MF3)** 2024-12-10 18:02:06 ET, LONG 6 lots at 21433.79, safety stop 21366.60 (1.5 x own stop 44.7917 pts). Result managed -1 pts/lot (-0.02 R, $-137) ; own bracket result +11 pts (+0.24 R, $+1283). MFE +0.16 R, MAE -0.54 R, 397 min under water (longest 131 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 2m:N 5m:A 61m:N 94m:A
+  18:02:09  price 21431.78 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:03:10  price 21430.43 (open -0.08 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:06:49  price 21429.76 (open -0.09 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:06:49  price 21429.76 (open -0.09 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  18:06:49  price 21429.76 (open -0.09 R of the book stop): took a part [DF: DF]
+  18:07:19  price 21425.73 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:08:06  price 21426.40 (open -0.17 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:08:37  price 21425.73 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:12:17  price 21424.39 (open -0.21 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:13:11  price 21427.07 (open -0.15 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:13:43  price 21424.39 (open -0.21 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:15:37  price 21426.40 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:20:11  price 21423.71 (open -0.22 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:20:26  price 21424.39 (open -0.21 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:20:41  price 21423.71 (open -0.22 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:21:17  price 21424.39 (open -0.21 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:22:08  price 21423.04 (open -0.24 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:30:13  price 21420.35 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:34:51  price 21425.06 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:35:12  price 21425.06 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:35:46  price 21425.06 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:37:42  price 21426.40 (open -0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:38:34  price 21425.06 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:38:56  price 21425.06 (open -0.20 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:39:41  price 21425.73 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:40:01  price 21424.39 (open -0.21 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:42:51  price 21420.35 (open -0.30 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:43:06  price 21420.35 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:46:37  price 21426.40 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:04:01  price 21421.70 (open -0.27 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:04:37  price 21421.03 (open -0.29 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:05:07  price 21420.35 (open -0.30 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:06:38  price 21421.03 (open -0.29 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:06:55  price 21421.03 (open -0.29 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:07:25  price 21420.35 (open -0.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:07:46  price 21418.34 (open -0.35 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:08:03  price 21417.67 (open -0.36 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:09:26  price 21418.34 (open -0.35 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:09:44  price 21418.34 (open -0.35 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:11:00  price 21416.32 (open -0.39 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  exit: ExAlgoAll_CL at 21432.71
+
+**AS-NR7 (Asia MF1)** 2024-12-12 18:16:06 ET, LONG 6 lots at 21731.71, safety stop 21672.15 (1.5 x own stop 39.7083 pts). Result managed +9 pts/lot (+0.23 R, $+1103) ; own bracket result +13 pts (+0.32 R, $+1518). MFE +0.28 R, MAE -0.11 R, 7 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 11m:N 13m:W
+  18:16:07  price 21731.11 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:20:08  price 21731.71 (open +0.00 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:20:23  price 21732.30 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:35:11  price 21741.24 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:35:11  price 21741.24 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  18:35:26  price 21741.24 (open +0.24 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:35:26  price 21741.24 (open +0.24 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 21740.96
+
+**AS-NR7 (Asia MF1)** 2025-01-19 18:36:03 ET, SHORT 6 lots at 21538.17, safety stop 21597.73 (1.5 x own stop 39.7083 pts). Result managed -43 pts/lot (-1.08 R, $-5162) ; own bracket result -40 pts (-1.00 R, $-4772). MFE +0.33 R, MAE -1.27 R, 415 min under water (longest 354 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 4m:W 61m:N 88m:A
+  18:36:16  price 21539.36 (open -0.03 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  18:37:05  price 21538.17 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:42:05  price 21545.31 (open -0.18 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:42:20  price 21545.91 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:47:03  price 21533.40 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:00:12  price 21551.27 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:00:42  price 21544.12 (open -0.15 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:02:13  price 21541.74 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:30:36  price 21545.31 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:33:16  price 21547.70 (open -0.24 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:33:33  price 21545.91 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:36:22  price 21551.87 (open -0.35 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:49:03  price 21538.76 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:50:57  price 21545.91 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:52:15  price 21542.34 (open -0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:52:30  price 21544.72 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:55:15  price 21550.67 (open -0.32 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:55:35  price 21548.89 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:55:50  price 21551.87 (open -0.35 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:56:05  price 21554.25 (open -0.41 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:04:14  price 21566.76 (open -0.72 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:06:31  price 21564.97 (open -0.68 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:10:12  price 21569.14 (open -0.78 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:12:38  price 21567.95 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:16:55  price 21560.20 (open -0.55 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:21:41  price 21545.31 (open -0.18 R of the book stop): state change desk [NORMAL/WAN-N-: NORMAL/WAN-N-]
+  20:21:56  price 21544.72 (open -0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:23:11  price 21550.08 (open -0.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:28:19  price 21547.70 (open -0.24 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:33:35  price 21550.08 (open -0.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:34:21  price 21556.04 (open -0.45 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:40:10  price 21564.37 (open -0.66 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:48:38  price 21567.95 (open -0.75 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:50:06  price 21571.52 (open -0.84 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:50:06  price 21571.52 (open -0.84 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  20:50:06  price 21571.52 (open -0.84 R of the book stop): took a part [DF: DF]
+  20:50:24  price 21570.33 (open -0.81 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:51:00  price 21570.33 (open -0.81 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:51:15  price 21568.54 (open -0.77 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:51:35  price 21566.76 (open -0.72 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: ExAlgoAll_AB at 21581.12
+
+**AS-NR7 (Asia MF1)** 2025-02-02 18:32:03 ET, LONG 6 lots at 21100.21, safety stop 21040.65 (1.5 x own stop 39.7083 pts). Result managed +21 pts/lot (+0.54 R, $+2558) ; own bracket result -40 pts (-1.00 R, $-4757). MFE +0.77 R, MAE -0.96 R, 13 min under water (longest 8 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  18:33:03  price 21093.06 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:45:28  price 21114.50 (open +0.36 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:45:28  price 21114.50 (open +0.36 R of the book stop): took a part [OB1: OB1]
+  18:45:43  price 21130.59 (open +0.77 R of the book stop): state change DEFENDING>OUT [DV: DV]
+  18:45:43  price 21130.59 (open +0.77 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 21121.58
+
+**AS-VWAPBRK (Asia MF3)** 2025-03-09 21:49:07 ET, LONG 6 lots at 20104.00, safety stop 20036.81 (1.5 x own stop 44.7917 pts). Result managed +12 pts/lot (+0.28 R, $+1473) ; own bracket: not taken (slot effect). MFE +0.50 R, MAE -0.08 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  21:49:08  price 20101.31 (open -0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:50:07  price 20101.31 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:50:22  price 20099.97 (open -0.09 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  21:50:40  price 20099.97 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:53:23  price 20115.42 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  21:53:23  price 20115.42 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  21:54:46  price 20116.77 (open +0.29 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:55:16  price 20118.78 (open +0.33 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  21:55:16  price 20118.78 (open +0.33 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 20116.33
+
+**AS-NR7 (Asia MF1)** 2025-03-19 18:48:38 ET, LONG 6 lots at 19813.21, safety stop 19753.65 (1.5 x own stop 39.7083 pts). Result managed +9 pts/lot (+0.22 R, $+1018) ; own bracket result +10 pts (+0.25 R, $+1198). MFE +0.37 R, MAE -0.37 R, 47 min under water (longest 43 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 27m:N
+  18:48:40  price 19812.02 (open -0.03 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:51:07  price 19815.00 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:51:45  price 19817.38 (open +0.11 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:52:04  price 19812.02 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:55:46  price 19807.85 (open -0.14 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:57:02  price 19809.04 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:57:19  price 19807.25 (open -0.15 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:57:37  price 19807.85 (open -0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:59:14  price 19803.68 (open -0.24 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:00:05  price 19804.87 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:06:32  price 19801.30 (open -0.30 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:06:48  price 19803.68 (open -0.24 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:16:09  price 19803.68 (open -0.24 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:17:01  price 19800.10 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:25:59  price 19808.44 (open -0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:26:44  price 19806.66 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:31:07  price 19806.06 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:31:23  price 19804.87 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:33:34  price 19806.06 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:33:51  price 19806.06 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:38:16  price 19806.06 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:56:12  price 19816.19 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:56:48  price 19816.78 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:57:46  price 19822.74 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  19:57:46  price 19822.74 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  19:58:28  price 19822.14 (open +0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:59:25  price 19823.33 (open +0.26 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:59:25  price 19823.33 (open +0.26 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 19821.75
+
+**AS-NR7 (Asia MF1)** 2025-05-06 18:32:03 ET, LONG 6 lots at 20076.58, safety stop 20017.02 (1.5 x own stop 39.7083 pts). Result managed -59 pts/lot (-1.47 R, $-7032) ; own bracket result -38 pts (-0.97 R, $-4622). MFE +0.03 R, MAE -1.46 R, 5 min under water (longest 5 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 3m:A
+  18:32:05  price 20073.01 (open -0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:33:04  price 20067.65 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  exit: Stop at 20018.04
+
+**AS-VWAPBRK (Asia MF3)** 2025-06-01 22:22:30 ET, SHORT 6 lots at 21266.58, safety stop 21333.77 (1.5 x own stop 44.7917 pts). Result managed -0 pts/lot (-0.01 R, $-42) ; own bracket result +45 pts (+1.01 R, $+5403). MFE +0.39 R, MAE -0.32 R, 30 min under water (longest 18 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 37m:N
+  22:22:32  price 21267.93 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:23:31  price 21271.29 (open -0.11 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:24:01  price 21271.29 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:24:17  price 21273.97 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:25:38  price 21271.29 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:31:13  price 21269.27 (open -0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:32:45  price 21271.29 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:33:06  price 21267.26 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:34:18  price 21269.94 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:35:19  price 21269.94 (open -0.08 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:36:01  price 21271.96 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:38:00  price 21277.33 (open -0.24 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  22:38:00  price 21277.33 (open -0.24 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  22:38:00  price 21277.33 (open -0.24 R of the book stop): took a part [DF: DF]
+  22:39:06  price 21278.01 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:39:36  price 21274.65 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:39:53  price 21277.33 (open -0.24 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:40:57  price 21276.66 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:42:04  price 21278.01 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:42:20  price 21276.66 (open -0.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:43:26  price 21278.01 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:44:08  price 21277.33 (open -0.24 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:46:12  price 21275.32 (open -0.20 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:46:46  price 21278.68 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:47:03  price 21280.02 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  22:48:08  price 21278.01 (open -0.26 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:52:33  price 21267.26 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  23:02:06  price 21253.15 (open +0.30 R of the book stop): state change DEFENDING>RUNNER [OB1: OB1]
+  23:02:06  price 21253.15 (open +0.30 R of the book stop): moved the stop closer [OB1: OB1]
+  23:02:21  price 21255.83 (open +0.24 R of the book stop): state change RUNNER>OUT [OB2: OB2]
+  23:02:21  price 21255.83 (open +0.24 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 21266.88
+
+**AS-NR7 (Asia MF1)** 2025-06-22 18:40:03 ET, LONG 6 lots at 21781.25, safety stop 21721.69 (1.5 x own stop 39.7083 pts). Result managed -53 pts/lot (-1.33 R, $-6352) ; own bracket result -40 pts (-1.00 R, $-4757). MFE +0.14 R, MAE -1.33 R, 85 min under water (longest 85 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  18:40:04  price 21771.12 (open -0.26 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:41:03  price 21766.96 (open -0.36 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:10:01  price 21735.98 (open -1.14 R of the book stop): state change desk [DEFEND/NAA-N-: DEFEND/NAA-N-]
+  19:10:01  price 21735.98 (open -1.14 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  19:10:01  price 21735.98 (open -1.14 R of the book stop): took a part [DF: DF]
+  19:10:16  price 21738.96 (open -1.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:11:36  price 21740.15 (open -1.03 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:11:55  price 21747.90 (open -0.84 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:27:19  price 21747.90 (open -0.84 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  19:27:44  price 21748.49 (open -0.83 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:30:09  price 21756.23 (open -0.63 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:30:41  price 21751.47 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:32:00  price 21756.83 (open -0.61 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:35:35  price 21751.47 (open -0.75 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:49:13  price 21757.42 (open -0.60 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:55:39  price 21756.23 (open -0.63 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:56:27  price 21761.59 (open -0.49 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:58:04  price 21762.79 (open -0.46 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:01:47  price 21734.79 (open -1.17 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:02:19  price 21733.00 (open -1.22 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:34  price 21735.98 (open -1.14 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 21728.38
+
+**AS-VWAPBRK (Asia MF3)** 2025-07-10 20:27:27 ET, SHORT 6 lots at 22861.92, safety stop 22929.10 (1.5 x own stop 44.7917 pts). Result managed +8 pts/lot (+0.18 R, $+938) ; own bracket result -41 pts (-0.91 R, $-4912). MFE +0.64 R, MAE -0.97 R, 17 min under water (longest 14 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 6m:A
+  20:27:28  price 22860.57 (open +0.03 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:28:27  price 22872.67 (open -0.24 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:30:28  price 22842.43 (open +0.43 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:30:28  price 22842.43 (open +0.43 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:30:28  price 22842.43 (open +0.43 R of the book stop): took a part [OB1: OB1]
+  20:30:43  price 22845.79 (open +0.36 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:31:28  price 22876.70 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:34:58  price 22885.43 (open -0.52 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  20:35:13  price 22888.79 (open -0.60 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:36:16  price 22901.56 (open -0.89 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:37:17  price 22892.15 (open -0.68 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:37:47  price 22887.45 (open -0.57 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  20:38:02  price 22887.45 (open -0.57 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:39:19  price 22882.07 (open -0.45 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:39:34  price 22885.43 (open -0.52 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:40:36  price 22878.71 (open -0.38 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:42:07  price 22880.73 (open -0.42 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:44:08  price 22878.71 (open -0.38 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:45:09  price 22857.89 (open +0.09 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:45:09  price 22857.89 (open +0.09 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 22854.04
+
+**AS-VWAPBRK (Asia MF3)** 2025-08-05 20:00:38 ET, SHORT 6 lots at 23059.83, safety stop 23127.02 (1.5 x own stop 44.7917 pts). Result managed -29 pts/lot (-0.65 R, $-3527) ; own bracket: not taken (slot effect). MFE +0.07 R, MAE -0.73 R, 31 min under water (longest 30 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 4m:A
+  20:00:39  price 23061.85 (open -0.04 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  20:01:38  price 23061.18 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:09  price 23067.90 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:02:24  price 23067.90 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:03:13  price 23073.27 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:10:39  price 23085.36 (open -0.57 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:10:39  price 23085.36 (open -0.57 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  20:10:39  price 23085.36 (open -0.57 R of the book stop): took a part [DF: DF]
+  20:10:56  price 23079.99 (open -0.45 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:19:14  price 23071.93 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:20:20  price 23073.27 (open -0.30 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:20:40  price 23073.27 (open -0.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:23:02  price 23082.68 (open -0.51 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:26:03  price 23079.32 (open -0.43 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:27:12  price 23080.66 (open -0.46 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:28:03  price 23084.69 (open -0.55 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:30:15  price 23076.63 (open -0.38 R of the book stop): state change desk [NORMAL/WNA-N-: NORMAL/WNA-N-]
+  20:30:30  price 23075.29 (open -0.35 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:31:01  price 23077.30 (open -0.39 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:32:08  price 23092.76 (open -0.73 R of the book stop): state change desk [ABORT/AAA-N-: ABORT/AAA-N-]
+  20:32:08  price 23092.76 (open -0.73 R of the book stop): state change DEFENDING>OUT [AB: AB]
+  20:32:08  price 23092.76 (open -0.73 R of the book stop): closed everything [AB: AB]
+  exit: ExAlgoAll_AB at 23089.17
+
+**AS-NR7 (Asia MF1)** 2025-08-14 18:36:08 ET, LONG 6 lots at 23886.75, safety stop 23827.19 (1.5 x own stop 39.7083 pts). Result managed +9 pts/lot (+0.22 R, $+1043) ; own bracket result +52 pts (+1.32 R, $+6263). MFE +0.27 R, MAE -0.11 R, 6 min under water (longest 3 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 2m:W 6m:N 23m:W
+  18:36:09  price 23886.15 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:58:33  price 23893.90 (open +0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:59:03  price 23894.49 (open +0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:59:52  price 23896.28 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:59:52  price 23896.28 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  19:00:26  price 23895.68 (open +0.22 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:00:26  price 23895.68 (open +0.22 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:00:26  price 23895.68 (open +0.22 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 23895.50
+
+**AS-RSI (Asia MF2)** 2025-09-10 20:55:01 ET, LONG 6 lots at 23903.04, safety stop 23813.60 (1.5 x own stop 59.625 pts). Result managed -2 pts/lot (-0.03 R, $-187) ; own bracket result -19 pts (-0.31 R, $-2237). MFE +0.28 R, MAE -0.53 R, 113 min under water (longest 103 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 7m:N 260m:A
+  20:55:05  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:56:03  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:58:02  price 23901.25 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  20:58:21  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:01:24  price 23900.36 (open -0.04 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:01:39  price 23901.25 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:01:56  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  21:02:11  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:06:28  price 23906.62 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:06:48  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:09:13  price 23908.41 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:15:56  price 23904.83 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:16:16  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:18:33  price 23904.83 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:18:48  price 23906.62 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:22:37  price 23904.83 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:25:51  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:26:12  price 23906.62 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  21:27:14  price 23910.20 (open +0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:27:30  price 23911.99 (open +0.15 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:28:03  price 23911.99 (open +0.15 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  21:28:41  price 23910.20 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:28:59  price 23910.20 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  21:30:09  price 23911.09 (open +0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:31:00  price 23913.77 (open +0.18 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  21:32:05  price 23913.77 (open +0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:39:25  price 23911.09 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:44:50  price 23912.88 (open +0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:45:09  price 23911.09 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:49:18  price 23906.62 (open +0.06 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  21:50:25  price 23904.83 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:55:09  price 23909.30 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:55:28  price 23908.41 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:58:11  price 23906.62 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:02:13  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:02:29  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:03:06  price 23905.72 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:06:15  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  22:06:31  price 23902.15 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:15:07  price 23904.83 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  exit: UWTime at 23901.54
+
+**AS-NR7 (Asia MF1)** 2025-09-25 18:24:15 ET, SHORT 6 lots at 24648.25, safety stop 24707.81 (1.5 x own stop 39.7083 pts). Result managed +12 pts/lot (+0.30 R, $+1443) ; own bracket result +32 pts (+0.82 R, $+3888). MFE +0.52 R, MAE -0.37 R, 19 min under water (longest 13 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 4m:A 8m:N 11m:W 17m:N 28m:W
+  18:24:19  price 24650.04 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:25:15  price 24651.82 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:48:08  price 24646.46 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:48:25  price 24648.25 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:49:45  price 24644.68 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:50:32  price 24644.68 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:52:01  price 24639.91 (open +0.21 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:52:18  price 24641.70 (open +0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:52:53  price 24639.32 (open +0.22 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:52:53  price 24639.32 (open +0.22 R of the book stop): took a part [OB1: OB1]
+  18:53:09  price 24635.74 (open +0.32 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:53:26  price 24631.57 (open +0.42 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:53:26  price 24631.57 (open +0.42 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:53:26  price 24631.57 (open +0.42 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 24636.17
+
+**AS-VWAPBRK (Asia MF3)** 2025-09-29 23:45:37 ET, LONG 6 lots at 24850.08, safety stop 24782.90 (1.5 x own stop 44.7917 pts). Result managed -13 pts/lot (-0.29 R, $-1562) ; own bracket: not taken (slot effect). MFE +0.01 R, MAE -0.74 R, 134 min under water (longest 134 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 61m:N 73m:A
+  23:45:44  price 24849.41 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  23:46:40  price 24848.07 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:46:55  price 24848.07 (open -0.04 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:47:12  price 24848.07 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:48:22  price 24846.72 (open -0.08 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:50:03  price 24846.72 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:50:20  price 24845.38 (open -0.11 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:54:11  price 24845.38 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:54:29  price 24842.69 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:56:20  price 24844.71 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:57:09  price 24842.69 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:57:45  price 24844.04 (open -0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:58:57  price 24842.69 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  23:59:17  price 24844.04 (open -0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:00:10  price 24843.36 (open -0.15 R of the book stop): state change desk [NORMAL/WNA-N-: NORMAL/WNA-N-]
+  00:01:15  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:02:58  price 24838.66 (open -0.26 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  00:02:58  price 24838.66 (open -0.26 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  00:02:58  price 24838.66 (open -0.26 R of the book stop): took a part [DF: DF]
+  00:03:20  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:05:01  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:05:20  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:05:41  price 24840.01 (open -0.22 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:06:17  price 24841.35 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:07:55  price 24844.04 (open -0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:08:15  price 24844.71 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:09:49  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:10:14  price 24841.35 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:12:29  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:13:49  price 24841.35 (open -0.20 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:15:20  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:16:16  price 24842.02 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:16:37  price 24840.01 (open -0.22 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:17:01  price 24840.68 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  00:28:08  price 24836.65 (open -0.30 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  00:31:01  price 24830.60 (open -0.43 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:33:04  price 24827.91 (open -0.49 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  00:33:38  price 24827.91 (open -0.49 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  00:34:20  price 24825.90 (open -0.54 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  00:35:13  price 24826.57 (open -0.52 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  exit: UWTime at 24837.12
+
+**AS-NR7 (Asia MF1)** 2025-10-05 20:00:03 ET, SHORT 6 lots at 25068.83, safety stop 25128.40 (1.5 x own stop 39.7083 pts). Result managed +12 pts/lot (+0.31 R, $+1453) ; own bracket: not taken (slot effect). MFE +0.40 R, MAE -0.17 R, 10 min under water (longest 5 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 21m:N 24m:W
+  20:00:04  price 25067.64 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:01:03  price 25065.26 (open +0.09 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:01:55  price 25067.64 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:27  price 25065.86 (open +0.08 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:03:45  price 25062.88 (open +0.15 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  20:04:01  price 25064.07 (open +0.12 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:06:52  price 25070.62 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:08:36  price 25068.83 (open +0.00 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:08:54  price 25068.24 (open +0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:10:43  price 25062.88 (open +0.15 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:11:01  price 25065.26 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:11:32  price 25062.28 (open +0.17 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  20:12:17  price 25064.66 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:15:39  price 25072.41 (open -0.09 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:15:55  price 25070.62 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:16:10  price 25071.81 (open -0.08 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:17:49  price 25072.41 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:21:30  price 25065.26 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:23:45  price 25058.11 (open +0.27 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:23:45  price 25058.11 (open +0.27 R of the book stop): took a part [OB1: OB1]
+  20:25:52  price 25060.49 (open +0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:26:07  price 25057.52 (open +0.29 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:26:39  price 25055.73 (open +0.33 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:26:58  price 25057.52 (open +0.29 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:27:13  price 25058.11 (open +0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:31:19  price 25060.49 (open +0.21 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:31:38  price 25059.30 (open +0.24 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:33:56  price 25053.94 (open +0.38 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:33:56  price 25053.94 (open +0.38 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 25056.67
+
+**AS-VWAPBRK (Asia MF3)** 2025-10-13 00:53:41 ET, LONG 6 lots at 24820.83, safety stop 24753.65 (1.5 x own stop 44.7917 pts). Result managed -5 pts/lot (-0.10 R, $-567) ; own bracket: not taken (slot effect). MFE +0.31 R, MAE -0.39 R, 17 min under water (longest 7 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 2m:N 3m:A 6m:N 7m:A 22m:N 24m:W 27m:N 30m:W
+  00:53:42  price 24819.49 (open -0.03 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  00:54:44  price 24818.82 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  00:57:17  price 24816.80 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:02:16  price 24808.07 (open -0.29 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:02:31  price 24806.72 (open -0.32 R of the book stop): state change desk [DEFEND/NNA-A-: DEFEND/NNA-A-]
+  01:02:31  price 24806.72 (open -0.32 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  01:02:31  price 24806.72 (open -0.32 R of the book stop): took a part [DF: DF]
+  01:03:01  price 24803.36 (open -0.39 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  01:03:34  price 24806.05 (open -0.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:05:02  price 24808.07 (open -0.29 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:05:35  price 24813.44 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:07:25  price 24816.80 (open -0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:07:41  price 24814.11 (open -0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:07:56  price 24814.11 (open -0.15 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:08:43  price 24816.13 (open -0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:08:59  price 24819.49 (open -0.03 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:09:14  price 24821.51 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  01:10:15  price 24819.49 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:11:17  price 24814.11 (open -0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:11:36  price 24812.77 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:13:17  price 24816.80 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  01:13:59  price 24819.49 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:15:00  price 24823.52 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  01:17:27  price 24826.88 (open +0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:19:02  price 24816.80 (open -0.09 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  01:19:24  price 24815.46 (open -0.12 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  01:19:40  price 24822.18 (open +0.03 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  01:20:00  price 24823.52 (open +0.06 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  01:22:49  price 24830.91 (open +0.22 R of the book stop): state change DEFENDING>RUNNER [OB1: OB1]
+  01:22:49  price 24830.91 (open +0.22 R of the book stop): moved the stop closer [OB1: OB1]
+  01:24:03  price 24830.91 (open +0.22 R of the book stop): state change desk [NORMAL/WNN-A-: NORMAL/WNN-A-]
+  exit: Stop at 24816.17
+
+**AS-NR7 (Asia MF1)** 2026-01-15 20:04:03 ET, LONG 6 lots at 25764.46, safety stop 25704.90 (1.5 x own stop 39.7083 pts). Result managed +9 pts/lot (+0.23 R, $+1083) ; own bracket: not taken (slot effect). MFE +0.32 R, MAE -0.08 R, 1 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N 3m:W
+  20:04:04  price 25763.86 (open -0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:05:03  price 25764.46 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:07:20  price 25766.25 (open +0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:07:51  price 25768.63 (open +0.11 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:08:06  price 25768.63 (open +0.11 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:08:21  price 25773.99 (open +0.24 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:08:37  price 25773.99 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:08:37  price 25773.99 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  20:09:08  price 25773.39 (open +0.22 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:09:08  price 25773.39 (open +0.22 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:09:08  price 25773.39 (open +0.22 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 25773.54
+
+**AS-VWAPBRK (Asia MF3)** 2026-02-04 23:49:39 ET, LONG 6 lots at 25008.92, safety stop 24941.73 (1.5 x own stop 44.7917 pts). Result managed +16 pts/lot (+0.36 R, $+1943) ; own bracket result -45 pts (-1.01 R, $-5412). MFE +0.47 R, MAE -0.02 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  23:49:40  price 25005.56 (open -0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  23:50:54  price 25025.71 (open +0.38 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  23:50:54  price 25025.71 (open +0.38 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  23:50:54  price 25025.71 (open +0.38 R of the book stop): took a part [OB1: OB1]
+  23:51:10  price 25024.37 (open +0.35 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  23:51:10  price 25024.37 (open +0.35 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 25025.17
+
+**AS-NR7 (Asia MF1)** 2026-03-23 18:48:03 ET, LONG 6 lots at 24449.50, safety stop 24389.94 (1.5 x own stop 39.7083 pts). Result managed +12 pts/lot (+0.30 R, $+1408) ; own bracket: not taken (slot effect). MFE +0.47 R, MAE -0.08 R, 1 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:48:04  price 24449.50 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:49:03  price 24451.29 (open +0.04 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:49:38  price 24448.31 (open -0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:52:03  price 24460.22 (open +0.27 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:52:03  price 24460.22 (open +0.27 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:52:03  price 24460.22 (open +0.27 R of the book stop): took a part [OB1: OB1]
+  18:53:08  price 24463.79 (open +0.36 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:53:08  price 24463.79 (open +0.36 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:53:08  price 24463.79 (open +0.36 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 24461.29
+
+**AS-VWAPBRK (Asia MF3)** 2026-03-24 19:10:19 ET, SHORT 6 lots at 24419.42, safety stop 24486.60 (1.5 x own stop 44.7917 pts). Result managed -6 pts/lot (-0.12 R, $-667) ; own bracket result -44 pts (-0.98 R, $-5257). MFE +0.41 R, MAE -0.55 R, 28 min under water (longest 25 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 3m:W 5m:N 27m:A 32m:N
+  19:10:21  price 24419.42 (open -0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:11:22  price 24421.43 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:22:11  price 24436.89 (open -0.39 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:22:26  price 24436.21 (open -0.38 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:25:14  price 24440.92 (open -0.48 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:25:14  price 24440.92 (open -0.48 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  19:25:14  price 24440.92 (open -0.48 R of the book stop): took a part [DF: DF]
+  19:25:31  price 24439.57 (open -0.45 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:25:47  price 24438.90 (open -0.43 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:26:03  price 24440.24 (open -0.46 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:26:19  price 24441.59 (open -0.49 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:26:34  price 24441.59 (open -0.49 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:27:07  price 24437.56 (open -0.41 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:27:53  price 24441.59 (open -0.49 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:28:09  price 24440.92 (open -0.48 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:28:25  price 24438.23 (open -0.42 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:38:15  price 24436.89 (open -0.39 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  19:38:51  price 24430.84 (open -0.26 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:00:59  price 24405.31 (open +0.32 R of the book stop): state change DEFENDING>RUNNER [OB1: OB1]
+  20:00:59  price 24405.31 (open +0.32 R of the book stop): moved the stop closer [OB1: OB1]
+  20:01:14  price 24407.32 (open +0.27 R of the book stop): state change RUNNER>OUT [OB2: OB2]
+  20:01:14  price 24407.32 (open +0.27 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 24424.92
+
+**AS-VWAPBRK (Asia MF3)** 2026-04-09 19:46:34 ET, SHORT 6 lots at 25219.79, safety stop 25286.98 (1.5 x own stop 44.7917 pts). Result managed -2 pts/lot (-0.04 R, $-247) ; own bracket: not taken (slot effect). MFE +0.28 R, MAE -0.43 R, 15 min under water (longest 13 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 14m:N 18m:W 19m:N
+  19:46:39  price 25219.12 (open +0.01 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  19:47:34  price 25226.51 (open -0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:47:50  price 25227.18 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:48:05  price 25233.23 (open -0.30 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:48:05  price 25233.23 (open -0.30 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  19:48:05  price 25233.23 (open -0.30 R of the book stop): took a part [DF: DF]
+  19:48:20  price 25231.21 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:48:51  price 25227.18 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:49:07  price 25227.18 (open -0.17 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:50:31  price 25227.18 (open -0.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:50:46  price 25231.21 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:51:18  price 25227.85 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:55:19  price 25231.21 (open -0.26 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:55:42  price 25229.20 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:56:32  price 25233.23 (open -0.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  19:56:47  price 25232.56 (open -0.29 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  19:57:11  price 25231.89 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:00:30  price 25214.42 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:00:45  price 25217.78 (open +0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:03  price 25213.07 (open +0.15 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:02:18  price 25218.45 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:02:33  price 25218.45 (open +0.03 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  20:02:52  price 25219.79 (open +0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:04:11  price 25209.04 (open +0.24 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:05:43  price 25217.10 (open +0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:07:19  price 25212.40 (open +0.17 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:07:35  price 25213.74 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:07:50  price 25209.04 (open +0.24 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:07:50  price 25209.04 (open +0.24 R of the book stop): state change DEFENDING>RUNNER [OB1: OB1]
+  20:07:50  price 25209.04 (open +0.24 R of the book stop): moved the stop closer [OB1: OB1]
+  20:08:25  price 25209.71 (open +0.22 R of the book stop): state change RUNNER>OUT [OB2: OB2]
+  20:08:25  price 25209.71 (open +0.22 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 25221.79
+
+**AS-NR7 (Asia MF1)** 2026-04-19 18:40:04 ET, LONG 6 lots at 26645.42, safety stop 26585.85 (1.5 x own stop 39.7083 pts). Result managed +7 pts/lot (+0.17 R, $+823) ; own bracket result -9 pts (-0.23 R, $-1092). MFE +0.33 R, MAE -0.14 R, 2 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 3m:W
+  18:40:05  price 26644.23 (open -0.03 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  18:41:04  price 26639.46 (open -0.15 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:44:19  price 26654.95 (open +0.24 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:44:19  price 26654.95 (open +0.24 R of the book stop): took a part [OB1: OB1]
+  18:44:34  price 26651.37 (open +0.15 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:44:34  price 26651.37 (open +0.15 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 26652.33
+
+**AS-VWAPBRK (Asia MF3)** 2026-05-03 20:01:28 ET, SHORT 6 lots at 27812.79, safety stop 27879.98 (1.5 x own stop 44.7917 pts). Result managed -59 pts/lot (-1.32 R, $-7122) ; own bracket result -45 pts (-1.00 R, $-5362). MFE +0.13 R, MAE -1.48 R, 53 min under water (longest 33 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 2m:N 5m:A
+  20:01:29  price 27812.79 (open -0.00 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:07:45  price 27862.51 (open -1.11 R of the book stop): state change desk [DEFEND/NAA-N-: DEFEND/NAA-N-]
+  20:07:45  price 27862.51 (open -1.11 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  20:07:45  price 27862.51 (open -1.11 R of the book stop): took a part [DF: DF]
+  20:08:00  price 27861.84 (open -1.09 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:08:15  price 27858.48 (open -1.02 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:09:32  price 27865.87 (open -1.19 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:10:18  price 27863.18 (open -1.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:17:43  price 27834.29 (open -0.48 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:22:04  price 27810.78 (open +0.04 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  20:22:35  price 27814.81 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:28:31  price 27841.68 (open -0.65 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:30:21  price 27834.96 (open -0.49 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:31:10  price 27843.03 (open -0.68 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:37:19  price 27838.32 (open -0.57 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:38:22  price 27843.70 (open -0.69 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:42:03  price 27859.15 (open -1.03 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:46:19  price 27861.17 (open -1.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:46:34  price 27871.24 (open -1.30 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:51:03  price 27871.24 (open -1.30 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:53:42  price 27873.93 (open -1.36 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:54:12  price 27872.59 (open -1.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:55:36  price 27875.95 (open -1.41 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  exit: Stop at 27872.08
+
+**AS-VWAPBRK (Asia MF3)** 2026-05-31 18:10:03 ET, SHORT 6 lots at 30379.50, safety stop 30446.69 (1.5 x own stop 44.7917 pts). Result managed -60 pts/lot (-1.33 R, $-7167) ; own bracket result -45 pts (-1.00 R, $-5397). MFE +0.15 R, MAE -1.49 R, 32 min under water (longest 32 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 4m:A
+  18:20:05  price 30411.08 (open -0.70 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:20:20  price 30400.33 (open -0.46 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:22:20  price 30417.12 (open -0.84 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:22:36  price 30417.80 (open -0.85 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:23:08  price 30416.45 (open -0.83 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:23:23  price 30415.78 (open -0.81 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:23:58  price 30424.52 (open -1.01 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:24:47  price 30429.89 (open -1.12 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:25:03  price 30427.88 (open -1.08 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:25:55  price 30431.23 (open -1.16 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:25:55  price 30431.23 (open -1.16 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  18:25:55  price 30431.23 (open -1.16 R of the book stop): took a part [DF: DF]
+  18:27:07  price 30431.23 (open -1.16 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:27:29  price 30431.91 (open -1.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:30:39  price 30440.64 (open -1.36 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:31:14  price 30437.95 (open -1.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:32:02  price 30432.58 (open -1.19 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:32:48  price 30437.95 (open -1.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:34:06  price 30431.91 (open -1.17 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:34:36  price 30437.95 (open -1.30 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  18:35:14  price 30435.27 (open -1.24 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:36:21  price 30440.64 (open -1.36 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:36:37  price 30439.97 (open -1.35 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:36:56  price 30439.30 (open -1.33 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:37:12  price 30436.61 (open -1.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:40:39  price 30440.64 (open -1.36 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:41:12  price 30439.30 (open -1.33 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:41:29  price 30439.97 (open -1.35 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  18:42:00  price 30444.00 (open -1.44 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  18:42:00  price 30444.00 (open -1.44 R of the book stop): state change DEFENDING>OUT [AB: AB]
+  18:42:00  price 30444.00 (open -1.44 R of the book stop): closed everything [AB: AB]
+  exit: ExAlgoAll_AB at 30439.17
+
+**AS-NR7 (Asia MF1)** 2026-06-07 21:44:03 ET, LONG 6 lots at 29142.17, safety stop 29082.60 (1.5 x own stop 39.7083 pts). Result managed +20 pts/lot (+0.51 R, $+2403) ; own bracket result +80 pts (+2.02 R, $+9603). MFE +0.66 R, MAE -0.04 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  21:44:05  price 29144.55 (open +0.06 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  21:45:03  price 29163.61 (open +0.54 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  21:45:03  price 29163.61 (open +0.54 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  21:45:03  price 29163.61 (open +0.54 R of the book stop): took a part [OB1: OB1]
+  21:45:18  price 29164.80 (open +0.57 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  21:45:18  price 29164.80 (open +0.57 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 29162.25
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-10 20:01:44 ET, LONG 6 lots at 28403.21, safety stop 28336.02 (1.5 x own stop 44.7917 pts). Result managed -65 pts/lot (-1.45 R, $-7802) ; own bracket: not taken (slot effect). MFE +0.33 R, MAE -1.48 R, 2 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 3m:A
+  20:01:46  price 28400.52 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:04:31  price 28358.86 (open -0.99 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  exit: Stop at 28338.25
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-22 18:39:09 ET, SHORT 6 lots at 30587.71, safety stop 30654.90 (1.5 x own stop 44.7917 pts). Result managed +14 pts/lot (+0.30 R, $+1628) ; own bracket result +45 pts (+1.00 R, $+5388). MFE +0.51 R, MAE -0.16 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  18:39:10  price 30592.41 (open -0.11 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  18:40:09  price 30587.71 (open -0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:40:56  price 30586.36 (open +0.03 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:44:16  price 30576.29 (open +0.26 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  18:44:16  price 30576.29 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:44:16  price 30576.29 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  18:44:46  price 30571.58 (open +0.36 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:44:46  price 30571.58 (open +0.36 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 30574.08
+
+**AS-VWAPBRK (Asia MF3)** 2026-06-25 20:16:43 ET, LONG 6 lots at 29739.88, safety stop 29672.69 (1.5 x own stop 44.7917 pts). Result managed +21 pts/lot (+0.48 R, $+2548) ; own bracket: not taken (slot effect). MFE +0.65 R, MAE -0.17 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  20:16:44  price 29737.86 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:17:43  price 29761.38 (open +0.48 R of the book stop): state change PROBE>OUT [DV: DV]
+  20:17:43  price 29761.38 (open +0.48 R of the book stop): closed everything [DV: DV]
+  exit: ExAlgoAll_DV at 29761.17
+
+**AS-NR7 (Asia MF1)** 2026-06-28 19:32:05 ET, LONG 6 lots at 29660.00, safety stop 29600.44 (1.5 x own stop 39.7083 pts). Result managed +6 pts/lot (+0.16 R, $+763) ; own bracket result -39 pts (-0.98 R, $-4692). MFE +0.33 R, MAE -0.04 R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  19:32:07  price 29657.62 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  19:35:19  price 29667.74 (open +0.20 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  19:35:19  price 29667.74 (open +0.20 R of the book stop): took a part [OB1: OB1]
+  19:35:35  price 29667.15 (open +0.18 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  19:35:35  price 29667.15 (open +0.18 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 29666.42
+
+**AS-VWAPBRK (Asia MF3)** 2026-07-28 18:27:04 ET, SHORT 6 lots at 27931.46, safety stop 27998.65 (1.5 x own stop 44.7917 pts). Result managed +24 pts/lot (+0.55 R, $+2923) ; own bracket result +45 pts (+1.00 R, $+5388). MFE +1.09 R, MAE -0.26 R, 5 min under water (longest 3 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A 5m:W
+  18:27:05  price 27933.47 (open -0.04 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:32:09  price 27915.33 (open +0.36 R of the book stop): state change desk [PRESS/WNW-N-: PRESS/WNW-N-]
+  18:32:09  price 27915.33 (open +0.36 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:32:09  price 27915.33 (open +0.36 R of the book stop): took a part [OB1: OB1]
+  18:32:24  price 27891.82 (open +0.89 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:32:24  price 27891.82 (open +0.89 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 27907.04
+
+**AS-VWAPBRK (Asia MF3)** 2026-08-03 18:07:54 ET, LONG 6 lots at 28942.25, safety stop 28875.06 (1.5 x own stop 44.7917 pts). Result managed +10 pts/lot (+0.23 R, $+1218) ; own bracket result -45 pts (-1.01 R, $-5427). MFE +0.43 R, MAE -0.39 R, 4 min under water (longest 2 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 3m:N 4m:W 13m:N 27m:W
+  18:07:55  price 28939.56 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:11:08  price 28946.95 (open +0.11 R of the book stop): state change desk [NORMAL/NNW-N-: NORMAL/NNW-N-]
+  18:11:28  price 28948.30 (open +0.14 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:13:59  price 28932.84 (open -0.21 R of the book stop): state change desk [NORMAL/NAN-N-: NORMAL/NAN-N-]
+  18:14:14  price 28928.14 (open -0.32 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  18:39:23  price 28953.67 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  18:39:23  price 28953.67 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  18:39:38  price 28953.00 (open +0.24 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  18:39:38  price 28953.00 (open +0.24 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 28952.46
+
+**AS-NR7 (Asia MF1)** 2026-09-03 22:12:03 ET, LONG 6 lots at 29549.96, safety stop 29490.40 (1.5 x own stop 39.7083 pts). Result managed +11 pts/lot (+0.28 R, $+1343) ; own bracket: not taken (slot effect). MFE +0.43 R, MAE -0.08 R, 4 min under water (longest 1 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W 3m:N 19m:W
+  22:12:05  price 29549.36 (open -0.01 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:28:13  price 29553.53 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:28:48  price 29553.53 (open +0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:29:05  price 29553.53 (open +0.09 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:29:20  price 29552.94 (open +0.08 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  22:29:56  price 29554.72 (open +0.12 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  22:30:26  price 29560.08 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  22:30:26  price 29560.08 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  22:31:28  price 29563.06 (open +0.33 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  22:31:28  price 29563.06 (open +0.33 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 29561.21
+
+**AS-NR7 (Asia MF1)** 2026-10-11 20:44:03 ET, LONG 6 lots at 31254.50, safety stop 31194.94 (1.5 x own stop 39.7083 pts). Result managed -30 pts/lot (-0.76 R, $-3617) ; own bracket result -40 pts (-1.00 R, $-4777). MFE +0.01 R, MAE -1.08 R, 8 min under water (longest 8 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:A
+  20:44:05  price 31254.50 (open -0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:45:04  price 31247.35 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:45:56  price 31247.35 (open -0.18 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:47:24  price 31247.35 (open -0.18 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:49:30  price 31238.42 (open -0.41 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:49:45  price 31236.63 (open -0.45 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:49:45  price 31236.63 (open -0.45 R of the book stop): state change PROBE>DEFENDING [DF: DF]
+  20:49:45  price 31236.63 (open -0.45 R of the book stop): took a part [DF: DF]
+  20:50:00  price 31234.84 (open -0.49 R of the book stop): state change desk [NORMAL/ANN-N-: NORMAL/ANN-N-]
+  20:51:00  price 31221.15 (open -0.84 R of the book stop): state change desk [DEFEND/ANA-N-: DEFEND/ANA-N-]
+  20:52:00  price 31212.81 (open -1.05 R of the book stop): state change desk [ABORT/AAA-N-: ABORT/AAA-N-]
+  20:52:00  price 31212.81 (open -1.05 R of the book stop): state change DEFENDING>OUT [AB: AB]
+  20:52:00  price 31212.81 (open -1.05 R of the book stop): closed everything [AB: AB]
+  exit: ExAlgoAll_AB at 31224.42
+
+**AS-VWAPBRK (Asia MF3)** 2026-10-12 20:11:18 ET, SHORT 6 lots at 30774.58, safety stop 30841.77 (1.5 x own stop 44.7917 pts). Result managed +4 pts/lot (+0.10 R, $+523) ; own bracket result +45 pts (+1.01 R, $+5403). MFE +0.35 R, MAE -0.73 R, 5 min under water (longest 5 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:W
+  20:11:20  price 30774.58 (open -0.00 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  20:12:18  price 30763.16 (open +0.26 R of the book stop): state change desk [NORMAL/NNW-A-: NORMAL/NNW-A-]
+  20:12:18  price 30763.16 (open +0.26 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  20:12:18  price 30763.16 (open +0.26 R of the book stop): took a part [OB1: OB1]
+  20:12:48  price 30769.21 (open +0.12 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  20:13:03  price 30778.61 (open -0.09 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:14:03  price 30791.38 (open -0.38 R of the book stop): state change desk [NORMAL/NNN-A-: NORMAL/NNN-A-]
+  20:14:33  price 30794.74 (open -0.45 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:15:18  price 30797.43 (open -0.51 R of the book stop): state change desk [NORMAL/NNA-N-: NORMAL/NNA-N-]
+  20:16:18  price 30786.68 (open -0.27 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  20:17:35  price 30775.26 (open -0.01 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  20:17:35  price 30775.26 (open -0.01 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 30770.17
+
+**AS-NR7 (Asia MF1)** 2026-10-20 21:48:03 ET, LONG 6 lots at 29991.75, safety stop 29932.19 (1.5 x own stop 39.7083 pts). Result managed +7 pts/lot (+0.16 R, $+778) ; own bracket result -40 pts (-1.00 R, $-4777). MFE +nan R, MAE +nan R, 0 min under water (longest 0 min).
+Health vote (A = against / W = with / N = nothing / - = no history, vs this book's own winners): 1m:N
+  21:48:04  price 29987.58 (open -0.11 R of the book stop): state change desk [ABORT/AAN-N-: ABORT/AAN-N-]
+  21:49:04  price 29986.39 (open -0.14 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:49:19  price 29983.41 (open -0.21 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:50:20  price 29989.96 (open -0.04 R of the book stop): state change desk [NORMAL/WNN-N-: NORMAL/WNN-N-]
+  21:50:50  price 29989.37 (open -0.06 R of the book stop): state change desk [NORMAL/NNN-N-: NORMAL/NNN-N-]
+  21:57:18  price 29998.90 (open +0.18 R of the book stop): state change PROBE>DEFENDING [OB1: OB1]
+  21:57:18  price 29998.90 (open +0.18 R of the book stop): took a part [OB1: OB1]
+  21:57:33  price 29998.90 (open +0.18 R of the book stop): state change DEFENDING>OUT [OB2: OB2]
+  21:57:33  price 29998.90 (open +0.18 R of the book stop): closed everything [OB2: OB2]
+  exit: ExAlgoAll_OB2 at 29998.29
