@@ -1,6 +1,6 @@
 # TEST 11: two-sided level books as a BUILDABLE stack, chosen by rule, with account layers, on stress fills
 
-Written 2026-11-28 04:31Z by W-TEST11 (sub-agent of LEAD; order autopilot/DIRECTIVE_TEST11_0117Z.md, relay design under Josh's standing 18:22Z order, not Josh's words). Research and shadow only. Code code/th_test11 (t11_plan, t11_build, t11_quick, t11_live, t11_held, t11_page, t11_lib). Re-run: `python3 code/th_test11/t11_page.py` (re-scores whatever exact rows have landed).
+Written 2026-11-28 07:31Z by W-TEST11 (sub-agent of LEAD; order autopilot/DIRECTIVE_TEST11_0117Z.md, relay design under Josh's standing 18:22Z order, not Josh's words). Research and shadow only. Code code/th_test11 (t11_plan, t11_build, t11_quick, t11_live, t11_held, t11_page, t11_lib). Re-run: `python3 code/th_test11/t11_page.py` (re-scores whatever exact rows have landed).
 
 ## ANSWER FIRST
 1. **STATUS: the exact stack rows are queued, not run.** 3,480 stacks, 25,442 rows (60 of the 100 chains per group; bare + layered; 6,490 Asia + 18,952 NY AM rows) were appended with queue_rows_safe.py at the END of pending_nyam_gating.txt (about 406k lines, 405k not DONE, were ahead; I did not reorder). Measured queue throughput 6.5k-11k rows per hour, so these rows start landing in about 40-60 h and finish about 2.5-4 h after that; section 4 and the stress numbers fill themselves when t11_page.py is re-run (a 3-hourly re-run loop is running). **Nothing below that is exact is exact stack evidence yet.** What exists now is the QUICK screen (bare, no layers), the exact live mixes, and the stress rescorer applied to the exact Test 8 held cells.
@@ -253,14 +253,28 @@ Recent windows (median over chains with the dates 156/169/182 landed): none land
 ## 5. E: A4, A5, N4, N5 (TL3_SR_<AS|NY>_T8<k>_BARE / _LY)
 | set | months landed | basis | $/wk (6 books x 1 lot) | max DD | worst week | L3M | L6M | 2026 | 2025 | 2024 | 2023 Q4 | first half | last half |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| TL3_SR_NY_T8N4_LY | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_NY_T8N4_BARE | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_NY_T8N5_LY | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_NY_T8N5_BARE | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_AS_T8A4_LY | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_AS_T8A4_BARE | 11 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_AS_T8A5_LY | 0 / 42 | not landed | | | | | | | | | | | |
-| TL3_SR_AS_T8A5_BARE | 0 / 42 | not landed | | | | | | | | | | | |
-
-Rows for the missing sets are in the queue (queued by W-TEST8 at pending_nyam_gating.txt lines ~217k, 3,295 rows given, 374 appended on 11-26). **Re-run when they land: `cd <repo>/outputs && python3 code/th_test11/t11_page.py`** (this section fills itself; no other step). Check DONE: `ls /mnt/l2/l2vast/_th_sz/ijk/exact/runs_rf/TL3_SR_AS_T8A4_BARE/*/DONE | wc -l` (42 needed).
+| TL3_SR_NY_T8N4_LY | 42 / 42 | MEASURED | 7,416 | 48,250 | -29,273 | 8,429 | 10,385 | 9,307 | 8,764 | 5,009 | 6,159 | 5,576 | 9,232 |
+| TL3_SR_NY_T8N4_LY | 42 / 42 | FEE | 7,283 | 49,527 | -29,438 | 8,301 | 10,229 | 9,155 | 8,631 | 4,885 | 6,042 | 5,452 | 9,090 |
+| TL3_SR_NY_T8N4_LY | 42 / 42 | STRESS | 7,120 | 51,890 | -29,829 | 8,129 | 9,985 | 8,919 | 8,478 | 4,755 | 5,953 | 5,322 | 8,895 |
+| TL3_SR_NY_T8N4_BARE | 42 / 42 | MEASURED | 7,500 | 52,631 | -31,973 | 8,356 | 10,501 | 9,274 | 9,012 | 5,024 | 6,294 | 5,611 | 9,364 |
+| TL3_SR_NY_T8N4_BARE | 42 / 42 | FEE | 7,364 | 53,876 | -32,152 | 8,228 | 10,343 | 9,120 | 8,876 | 4,900 | 6,176 | 5,486 | 9,219 |
+| TL3_SR_NY_T8N4_BARE | 42 / 42 | STRESS | 7,199 | 56,273 | -32,577 | 8,054 | 10,094 | 8,879 | 8,716 | 4,770 | 6,087 | 5,356 | 9,018 |
+| TL3_SR_NY_T8N5_LY | 42 / 42 | MEASURED | 7,522 | 113,564 | -33,609 | 13,838 | 15,328 | 10,947 | 11,189 | 2,844 | 2,307 | 4,147 | 10,853 |
+| TL3_SR_NY_T8N5_LY | 42 / 42 | FEE | 7,363 | 114,648 | -33,778 | 13,663 | 15,127 | 10,749 | 11,025 | 2,708 | 2,198 | 4,010 | 10,672 |
+| TL3_SR_NY_T8N5_LY | 42 / 42 | STRESS | 7,165 | 116,756 | -34,118 | 13,451 | 14,846 | 10,459 | 10,842 | 2,548 | 2,084 | 3,853 | 10,434 |
+| TL3_SR_NY_T8N5_BARE | 42 / 42 | MEASURED | 8,236 | 110,861 | -33,609 | 14,097 | 15,788 | 12,036 | 12,616 | 2,800 | 2,319 | 4,413 | 12,009 |
+| TL3_SR_NY_T8N5_BARE | 42 / 42 | FEE | 8,071 | 111,981 | -33,778 | 13,919 | 15,575 | 11,826 | 12,446 | 2,662 | 2,210 | 4,274 | 11,820 |
+| TL3_SR_NY_T8N5_BARE | 42 / 42 | STRESS | 7,862 | 114,174 | -34,118 | 13,696 | 15,265 | 11,509 | 12,254 | 2,499 | 2,094 | 4,112 | 11,563 |
+| TL3_SR_AS_T8A4_LY | 42 / 42 | MEASURED | 4,046 | 21,539 | -14,845 | 5,945 | 6,804 | 7,410 | 4,757 | 1,330 | 1,652 | 1,843 | 6,220 |
+| TL3_SR_AS_T8A4_LY | 42 / 42 | FEE | 3,943 | 21,875 | -14,922 | 5,789 | 6,638 | 7,259 | 4,661 | 1,253 | 1,581 | 1,765 | 6,094 |
+| TL3_SR_AS_T8A4_LY | 42 / 42 | STRESS | 3,850 | 22,181 | -15,092 | 5,556 | 6,388 | 7,047 | 4,588 | 1,213 | 1,578 | 1,726 | 5,947 |
+| TL3_SR_AS_T8A4_BARE | 42 / 42 | MEASURED | 4,134 | 22,102 | -10,391 | 5,739 | 7,380 | 7,809 | 4,717 | 1,308 | 1,652 | 1,902 | 6,338 |
+| TL3_SR_AS_T8A4_BARE | 42 / 42 | FEE | 4,030 | 23,149 | -10,471 | 5,577 | 7,208 | 7,654 | 4,620 | 1,230 | 1,581 | 1,823 | 6,210 |
+| TL3_SR_AS_T8A4_BARE | 42 / 42 | STRESS | 3,935 | 23,999 | -10,658 | 5,338 | 6,950 | 7,436 | 4,546 | 1,190 | 1,578 | 1,783 | 6,059 |
+| TL3_SR_AS_T8A5_LY | 42 / 42 | MEASURED | 4,561 | 19,302 | -11,261 | 7,766 | 7,432 | 8,162 | 4,679 | 2,119 | 2,431 | 2,464 | 6,631 |
+| TL3_SR_AS_T8A5_LY | 42 / 42 | FEE | 4,460 | 20,517 | -11,480 | 7,616 | 7,267 | 8,010 | 4,584 | 2,043 | 2,367 | 2,388 | 6,505 |
+| TL3_SR_AS_T8A5_LY | 42 / 42 | STRESS | 4,353 | 21,622 | -11,973 | 7,390 | 6,999 | 7,781 | 4,487 | 2,000 | 2,357 | 2,343 | 6,337 |
+| TL3_SR_AS_T8A5_BARE | 42 / 42 | MEASURED | 4,839 | 20,288 | -13,508 | 7,401 | 8,402 | 8,714 | 5,091 | 2,151 | 2,355 | 2,495 | 7,153 |
+| TL3_SR_AS_T8A5_BARE | 42 / 42 | FEE | 4,737 | 21,167 | -13,611 | 7,248 | 8,233 | 8,560 | 4,994 | 2,075 | 2,291 | 2,418 | 7,025 |
+| TL3_SR_AS_T8A5_BARE | 42 / 42 | STRESS | 4,629 | 21,881 | -13,764 | 7,021 | 7,965 | 8,330 | 4,895 | 2,031 | 2,281 | 2,373 | 6,856 |
 
