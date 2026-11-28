@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 06:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 07:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 06:45Z | box1: busy 99%, load1 77.27, workers 18, MemAvail 50 GB | server2: busy 98%, load1 86.63, workers 28, MemAvail 847 GB | pending box1-eligible 496668 / server2-eligible 18475 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 168.96, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 946 GB | serverB: busy 100%, load1 192.97, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 893 GB | serverC: busy 100%, load1 137.98, workers 1 (grid) + 135 (engine), 128 threads, MemAvail 1392 GB | serverD: busy 100%, load1 144.39, workers 1 (grid) + 142 (engine), 64 threads, MemAvail 1379 GB
+LATEST CORES.md LINE: 2026-11-28 07:00Z | box1: busy 85%, load1 50.71, workers 18, MemAvail 68 GB | server2: busy 95%, load1 78.79, workers 28, MemAvail 1071 GB | pending box1-eligible 496624 / server2-eligible 16374 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 182.43, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 925 GB | serverB: busy 100%, load1 190.46, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 877 GB | serverC: busy 100%, load1 140.04, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1358 GB | serverD: busy 100%, load1 148.78, workers 1 (grid) + 149 (engine), 64 threads, MemAvail 1346 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 06:45Z
+2026-11-28 07:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 06:45Z | box1: busy 99%, load1 77.27, workers 1
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 51.3 GB; live reservations 4 (4 GB); workers 18, of which TP-adopted 10 (RSS 12.3 GB) vs others 8 (RSS 27.7 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 77.27, 74.81, 66.82
-  by tag: NYE quota 16 running 10 hungry False RSS 12.3 GB PSS 11.2 GB; REST quota 0 running 8 hungry False RSS 27.7 GB PSS 26.9 GB
+Server 1 (this box): MemAvail 66.8 GB; live reservations 0 (0 GB); workers 18, of which TP-adopted 15 (RSS 22.4 GB) vs others 3 (RSS 12.1 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 50.71, 44.89, 55.25
+  by tag: NYR quota 12 running 15 hungry False RSS 22.4 GB PSS 17.4 GB; REST quota 0 running 3 hungry False RSS 12.1 GB PSS 11.8 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L3b123252_ALN (x16);TL3_NYE_L3b123252_ALNCT7p (x9);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 86.30, 87.65, 87.33|/dev/md2         28T  2.8T   26T  10% /mnt/l2|49|
+  top running jobs: TL3_NYE_L3b123252_ALNCT56p (x10);TL3_NYE_L3b123252_ALNCT42p (x10);TL3_NYE_L3b123252_ALNCT63p (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 79.59, 81.08, 83.98|/dev/md2         28T  2.8T   26T  10% /mnt/l2|54|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 86.30, 87.65, 87.33|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261127_2359Z_Josh-hourly-line-overdue.md 20261128_0110Z_Josh-match-csvs-as-md-pages.md 20261128_0240Z_Josh-read-the-desk-scorecard-on-the-runnable-window-now.md 20261128_0322Z_Josh-desk-v0_2_2-failed-attribution-then-v0_3.md 20261128_0552Z_Josh-rerun-what-moves-NQ-on-the-new-1s-data.md
+20261128_0110Z_Josh-match-csvs-as-md-pages.md 20261128_0240Z_Josh-read-the-desk-scorecard-on-the-runnable-window-now.md 20261128_0322Z_Josh-desk-v0_2_2-failed-attribution-then-v0_3.md 20261128_0552Z_Josh-rerun-what-moves-NQ-on-the-new-1s-data.md 20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md
