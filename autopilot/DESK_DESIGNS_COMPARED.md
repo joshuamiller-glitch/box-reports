@@ -1,10 +1,10 @@
-# DESK_DESIGNS_COMPARED (generated 2026-11-28 14:37Z by code/th_algo/ar_designs.py; order 1408Z; research only)
+# DESK_DESIGNS_COMPARED (generated 2026-11-28 14:47Z by code/th_algo/ar_designs.py; order 1408Z; research only)
 
 One table of manager designs, same windows, same like-with-like references. Window per session = the months the DK22 sets have (Asia / London 37 months 2023-09..2026-10, NY AM / NY PM 24 months 2024-10..2026-10, Nov 2025 out); every design is cut to those months and the reference (the live mix as run for the mix rows, the book on its fixed bracket for alone rows) is cut to the same months and weeks. SESSION MIX row = live mix + sum of the per-book deltas of the books that design has finished (post-hoc additive, interaction neglected); books a design has not finished for the whole window are listed as not complete and left out. Floors: ACCEPTABLE = smoother (worst week not worse AND weekly st.dev. not larger) in >= 2/3 of quarters overall AND in NQ-up AND in NQ-down weeks, and income not more than 10 / 20 / 30% below the bracket; shown as YES / no (smooth = smoothness passed, income failed) / no. Give-backs: peak open profit from best_px in the trade rows (tape where the column is absent, marked), $ minus realised p484; largest single trade and the count of trades that gave back more than half of a peak of at least $500; managed = the managed books' own trades, bracket = the same books on the fixed bracket (fix_A, tape). Designs are read from code/th_algo/desk_designs.json (first tag with rows wins) and rows appear as the sets finish; the best single landscape code per book is the _M set named in autopilot/SUNDAY_LANDSCAPE.md.
 
 DK4..DK9 set families found in runs_rf: DK4MAIN, DK4REF, DK5, DK6, DK7; NOT in desk_designs.json (add them): 
 
-DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 books; v0.3 Asia 3/3 books; v0.4 ratchet-only Asia 2/3 books; v0.4-ceiling Asia 2/3 books; v0.5 bank half, run half Asia 2/3 books; v0.6 ratchet + ABORT Asia 2/3 books; v0.7 bracket + near-target guard Asia 2/3 books; v0.8 Asia 0/3 books; v0.9 Asia 0/3 books; v0.10 Asia 0/3 books; v0.11 Asia 0/3 books; v0.12 Asia 0/3 books; v0.13 Asia 0/3 books; v0.14 Asia 0/3 books; v0.15 Asia 0/3 books; A1 volatility stop at entry Asia 0/3 books; A2 structure stop at entry Asia 0/3 books; A3 chandelier trail Asia 0/3 books; A4 1-min EMA21 trail once up 1 unit, no target Asia 0/3 books; A5 parabolic-SAR trail on 1-min bars, no target Asia 0/3 books; B1 R-multiple ladder Asia 0/3 books; B2 exhaustion take Asia 0/3 books; B3 VWAP-band take Asia 0/3 books; C1 halve-and-hold Asia 0/3 books; C2 adverse-speed cut Asia 0/3 books; D1 pyramid into a winner Asia 0/3 books; D2 scale-in entry Asia 0/3 books; E1 continuation re-entry after a ratchet stop-out in profit Asia 0/3 books; E2 no same-direction re-entry 15 min after a full stop Asia 0/3 books; F1 calendar-aware Asia 0/3 books; F2 volatility regime Asia 0/3 books; F3 day-of-week / opex / month-end Asia 0/3 books; G1 DAY PROFIT RATCHET Asia 0/3 books; G2 same-direction crowd Asia 0/3 books; G3 opposite books may not add Asia 0/3 books; G4 loss-streak brake Asia 0/3 books; v0.16 Asia 0/3 books; v0.17 Asia 0/3 books; v0.18 Asia 0/3 books; v0.2.2 NY AM 4/4 books; v0.3 NY AM 4/4 books; v0.4 ratchet-only NY AM 1/4 books; v0.4-ceiling NY AM 0/4 books; v0.5 bank half, run half NY AM 0/4 books; v0.6 ratchet + ABORT NY AM 0/4 books; v0.7 bracket + near-target guard NY AM 4/4 books; v0.8 NY AM 0/4 books; v0.9 NY AM 0/4 books; v0.10 NY AM 0/4 books; v0.11 NY AM 0/4 books; v0.12 NY AM 0/4 books; v0.13 NY AM 0/4 books; v0.14 NY AM 0/4 books; v0.15 NY AM 0/4 books; A1 volatility stop at entry NY AM 0/4 books; A2 structure stop at entry NY AM 0/4 books; A3 chandelier trail NY AM 0/4 books; A4 1-min EMA21 trail once up 1 unit, no target NY AM 0/4 books; A5 parabolic-SAR trail on 1-min bars, no target NY AM 0/4 books; B1 R-multiple ladder NY AM 0/4 books; B2 exhaustion take NY AM 0/4 books; B3 VWAP-band take NY AM 0/4 books; C1 halve-and-hold NY AM 0/4 books; C2 adverse-speed cut NY AM 0/4 books; D1 pyramid into a winner NY AM 0/4 books; D2 scale-in entry NY AM 0/4 books; E1 continuation re-entry after a ratchet stop-out in profit NY AM 0/4 books; E2 no same-direction re-entry 15 min after a full stop NY AM 0/4 books; F1 calendar-aware NY AM 0/4 books; F2 volatility regime NY AM 0/4 books; F3 day-of-week / opex / month-end NY AM 0/4 books; G1 DAY PROFIT RATCHET NY AM 0/4 books; G2 same-direction crowd NY AM 0/4 books; G3 opposite books may not add NY AM 0/4 books; G4 loss-streak brake NY AM 0/4 books; v0.16 NY AM 0/4 books; v0.17 NY AM 0/4 books; v0.18 NY AM 0/4 books; v0.2.2 London 2/2 books; v0.3 London 2/2 books; v0.4 ratchet-only London 0/2 books; v0.4-ceiling London 0/2 books; v0.5 bank half, run half London 0/2 books; v0.6 ratchet + ABORT London 0/2 books; v0.7 bracket + near-target guard London 2/2 books; v0.8 London 0/2 books; v0.9 London 0/2 books; v0.10 London 0/2 books; v0.11 London 0/2 books; v0.12 London 0/2 books; v0.13 London 0/2 books; v0.14 London 0/2 books; v0.15 London 0/2 books; A1 volatility stop at entry London 0/2 books; A2 structure stop at entry London 0/2 books; A3 chandelier trail London 0/2 books; A4 1-min EMA21 trail once up 1 unit, no target London 0/2 books; A5 parabolic-SAR trail on 1-min bars, no target London 0/2 books; B1 R-multiple ladder London 0/2 books; B2 exhaustion take London 0/2 books; B3 VWAP-band take London 0/2 books; C1 halve-and-hold London 0/2 books; C2 adverse-speed cut London 0/2 books; D1 pyramid into a winner London 0/2 books; D2 scale-in entry London 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit London 0/2 books; E2 no same-direction re-entry 15 min after a full stop London 0/2 books; F1 calendar-aware London 0/2 books; F2 volatility regime London 0/2 books; F3 day-of-week / opex / month-end London 0/2 books; G1 DAY PROFIT RATCHET London 0/2 books; G2 same-direction crowd London 0/2 books; G3 opposite books may not add London 0/2 books; G4 loss-streak brake London 0/2 books; v0.16 London 0/2 books; v0.17 London 0/2 books; v0.18 London 0/2 books; v0.2.2 NY PM 2/2 books; v0.3 NY PM 2/2 books; v0.4 ratchet-only NY PM 1/2 books; v0.4-ceiling NY PM 0/2 books; v0.5 bank half, run half NY PM 0/2 books; v0.6 ratchet + ABORT NY PM 0/2 books; v0.7 bracket + near-target guard NY PM 2/2 books; v0.8 NY PM 0/2 books; v0.9 NY PM 0/2 books; v0.10 NY PM 0/2 books; v0.11 NY PM 0/2 books; v0.12 NY PM 0/2 books; v0.13 NY PM 0/2 books; v0.14 NY PM 0/2 books; v0.15 NY PM 0/2 books; A1 volatility stop at entry NY PM 0/2 books; A2 structure stop at entry NY PM 0/2 books; A3 chandelier trail NY PM 0/2 books; A4 1-min EMA21 trail once up 1 unit, no target NY PM 0/2 books; A5 parabolic-SAR trail on 1-min bars, no target NY PM 0/2 books; B1 R-multiple ladder NY PM 0/2 books; B2 exhaustion take NY PM 0/2 books; B3 VWAP-band take NY PM 0/2 books; C1 halve-and-hold NY PM 0/2 books; C2 adverse-speed cut NY PM 0/2 books; D1 pyramid into a winner NY PM 0/2 books; D2 scale-in entry NY PM 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit NY PM 0/2 books; E2 no same-direction re-entry 15 min after a full stop NY PM 0/2 books; F1 calendar-aware NY PM 0/2 books; F2 volatility regime NY PM 0/2 books; F3 day-of-week / opex / month-end NY PM 0/2 books; G1 DAY PROFIT RATCHET NY PM 0/2 books; G2 same-direction crowd NY PM 0/2 books; G3 opposite books may not add NY PM 0/2 books; G4 loss-streak brake NY PM 0/2 books; v0.16 NY PM 0/2 books; v0.17 NY PM 0/2 books; v0.18 NY PM 0/2 books
+DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 books; v0.3 Asia 3/3 books; v0.4 ratchet-only Asia 3/3 books; v0.4-ceiling Asia 3/3 books; v0.5 bank half, run half Asia 3/3 books; v0.6 ratchet + ABORT Asia 3/3 books; v0.7 bracket + near-target guard Asia 3/3 books; v0.8 Asia 0/3 books; v0.9 Asia 0/3 books; v0.10 Asia 0/3 books; v0.11 Asia 0/3 books; v0.12 Asia 0/3 books; v0.13 Asia 0/3 books; v0.14 Asia 0/3 books; v0.15 Asia 0/3 books; A1 volatility stop at entry Asia 0/3 books; A2 structure stop at entry Asia 0/3 books; A3 chandelier trail Asia 0/3 books; A4 EMA21 trail once up 1 unit Asia 0/3 books; A5 parabolic-SAR trail Asia 0/3 books; B1 R-multiple ladder Asia 0/3 books; B2 exhaustion take Asia 0/3 books; B3 VWAP-band take Asia 0/3 books; C1 halve-and-hold Asia 0/3 books; C2 adverse-speed cut Asia 0/3 books; D1 pyramid into a winner Asia 0/3 books; D2 scale-in entry Asia 0/3 books; E1 continuation re-entry after a ratchet stop-out in profit Asia 0/3 books; E2 no same-direction re-entry 15 min after a full stop Asia 0/3 books; F1 calendar-aware Asia 0/3 books; F2 volatility regime Asia 0/3 books; F3 day-of-week / opex / month-end Asia 0/3 books; G1 DAY PROFIT RATCHET Asia 0/3 books; G2 same-direction crowd Asia 0/3 books; G3 opposite books may not add Asia 0/3 books; G4 loss-streak brake Asia 0/3 books; v0.16 Asia 0/3 books; v0.17 Asia 0/3 books; v0.18 Asia 0/3 books; v0.2.2 NY AM 4/4 books; v0.3 NY AM 4/4 books; v0.4 ratchet-only NY AM 4/4 books; v0.4-ceiling NY AM 3/4 books; v0.5 bank half, run half NY AM 3/4 books; v0.6 ratchet + ABORT NY AM 2/4 books; v0.7 bracket + near-target guard NY AM 3/4 books; v0.8 NY AM 0/4 books; v0.9 NY AM 0/4 books; v0.10 NY AM 0/4 books; v0.11 NY AM 0/4 books; v0.12 NY AM 0/4 books; v0.13 NY AM 0/4 books; v0.14 NY AM 0/4 books; v0.15 NY AM 0/4 books; A1 volatility stop at entry NY AM 0/4 books; A2 structure stop at entry NY AM 0/4 books; A3 chandelier trail NY AM 0/4 books; A4 EMA21 trail once up 1 unit NY AM 0/4 books; A5 parabolic-SAR trail NY AM 0/4 books; B1 R-multiple ladder NY AM 0/4 books; B2 exhaustion take NY AM 0/4 books; B3 VWAP-band take NY AM 0/4 books; C1 halve-and-hold NY AM 0/4 books; C2 adverse-speed cut NY AM 0/4 books; D1 pyramid into a winner NY AM 0/4 books; D2 scale-in entry NY AM 0/4 books; E1 continuation re-entry after a ratchet stop-out in profit NY AM 0/4 books; E2 no same-direction re-entry 15 min after a full stop NY AM 0/4 books; F1 calendar-aware NY AM 0/4 books; F2 volatility regime NY AM 0/4 books; F3 day-of-week / opex / month-end NY AM 0/4 books; G1 DAY PROFIT RATCHET NY AM 0/4 books; G2 same-direction crowd NY AM 0/4 books; G3 opposite books may not add NY AM 0/4 books; G4 loss-streak brake NY AM 0/4 books; v0.16 NY AM 0/4 books; v0.17 NY AM 0/4 books; v0.18 NY AM 0/4 books; v0.2.2 London 2/2 books; v0.3 London 2/2 books; v0.4 ratchet-only London 0/2 books; v0.4-ceiling London 0/2 books; v0.5 bank half, run half London 0/2 books; v0.6 ratchet + ABORT London 0/2 books; v0.7 bracket + near-target guard London 2/2 books; v0.8 London 0/2 books; v0.9 London 0/2 books; v0.10 London 0/2 books; v0.11 London 0/2 books; v0.12 London 0/2 books; v0.13 London 0/2 books; v0.14 London 0/2 books; v0.15 London 0/2 books; A1 volatility stop at entry London 0/2 books; A2 structure stop at entry London 0/2 books; A3 chandelier trail London 0/2 books; A4 EMA21 trail once up 1 unit London 0/2 books; A5 parabolic-SAR trail London 0/2 books; B1 R-multiple ladder London 0/2 books; B2 exhaustion take London 0/2 books; B3 VWAP-band take London 0/2 books; C1 halve-and-hold London 0/2 books; C2 adverse-speed cut London 0/2 books; D1 pyramid into a winner London 0/2 books; D2 scale-in entry London 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit London 0/2 books; E2 no same-direction re-entry 15 min after a full stop London 0/2 books; F1 calendar-aware London 0/2 books; F2 volatility regime London 0/2 books; F3 day-of-week / opex / month-end London 0/2 books; G1 DAY PROFIT RATCHET London 0/2 books; G2 same-direction crowd London 0/2 books; G3 opposite books may not add London 0/2 books; G4 loss-streak brake London 0/2 books; v0.16 London 0/2 books; v0.17 London 0/2 books; v0.18 London 0/2 books; v0.2.2 NY PM 2/2 books; v0.3 NY PM 2/2 books; v0.4 ratchet-only NY PM 1/2 books; v0.4-ceiling NY PM 0/2 books; v0.5 bank half, run half NY PM 1/2 books; v0.6 ratchet + ABORT NY PM 0/2 books; v0.7 bracket + near-target guard NY PM 2/2 books; v0.8 NY PM 0/2 books; v0.9 NY PM 0/2 books; v0.10 NY PM 0/2 books; v0.11 NY PM 0/2 books; v0.12 NY PM 0/2 books; v0.13 NY PM 0/2 books; v0.14 NY PM 0/2 books; v0.15 NY PM 0/2 books; A1 volatility stop at entry NY PM 0/2 books; A2 structure stop at entry NY PM 0/2 books; A3 chandelier trail NY PM 0/2 books; A4 EMA21 trail once up 1 unit NY PM 0/2 books; A5 parabolic-SAR trail NY PM 0/2 books; B1 R-multiple ladder NY PM 0/2 books; B2 exhaustion take NY PM 0/2 books; B3 VWAP-band take NY PM 0/2 books; C1 halve-and-hold NY PM 0/2 books; C2 adverse-speed cut NY PM 0/2 books; D1 pyramid into a winner NY PM 0/2 books; D2 scale-in entry NY PM 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit NY PM 0/2 books; E2 no same-direction re-entry 15 min after a full stop NY PM 0/2 books; F1 calendar-aware NY PM 0/2 books; F2 volatility regime NY PM 0/2 books; F3 day-of-week / opex / month-end NY PM 0/2 books; G1 DAY PROFIT RATCHET NY PM 0/2 books; G2 same-direction crowd NY PM 0/2 books; G3 opposite books may not add NY PM 0/2 books; G4 loss-streak brake NY PM 0/2 books; v0.16 NY PM 0/2 books; v0.17 NY PM 0/2 books; v0.18 NY PM 0/2 books
 
 # Asia: window 202309-202610 (37 months)
 
@@ -14,11 +14,11 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 |---|---|---|---|---|---|---|---|---|---|
 | v0.2.2 (DK22 main) | MF1, MF2, MF3 | -233,607 (-126%) | -308,325 / -67,941 | -44,293 / -37,409 | 10,045 / 18,895 | 35,774 / 15,529 | 1649 / 2345 | 11/14, 8/11, 6/12 | no / no / no |
 | v0.3 (DK3 main) | MF1, MF2, MF3 | 399,861 (-55%) | -120,551 / -67,941 | -35,127 / -37,409 | 13,100 / 18,895 | 14,099 / 15,529 | 1976 / 2345 | 11/14, 9/11, 6/12 | no / no / no |
-| v0.4 ratchet-only | MF1, MF2 / missing MF3 | 408,571 (-54%) | -134,376 / -67,941 | -36,872 / -37,409 | 13,175 / 18,895 | 16,079 / 15,529 | 989 / 1334 | 11/14, 8/11, 6/12 | no / no / no |
-| v0.4-ceiling (own target as ceiling) | MF1 / missing MF3 | 492,538 (-45%) | -125,255 / -67,941 | -34,027 / -37,409 | 13,767 / 18,895 | 8,329 / 14,634 | 727 / 1054 | 11/14, 8/11, 7/12 | no / no / no |
-| v0.5 bank half, run half | MF1 / missing MF3 | 496,117 (-44%) | -122,665 / -67,941 | -34,027 / -37,409 | 13,746 / 18,895 | 18,394 / 14,634 | 729 / 1054 | 11/14, 8/11, 7/12 | no / no / no |
-| v0.6 ratchet + ABORT | MF1 / missing MF3 | 483,646 (-46%) | -119,335 / -67,941 | -34,027 / -37,409 | 13,715 / 18,895 | 16,079 / 14,634 | 734 / 1054 | 10/14, 8/11, 7/12 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF1, MF3 / missing MF2 | 710,803 (-20%) | -97,938 / -67,941 | -36,938 / -37,409 | 17,335 / 18,895 | 12,034 / 14,634 | 1591 / 2065 | 8/14, 6/11, 6/12 | no / no / no |
+| v0.4 ratchet-only | MF1, MF2, MF3 | 394,913 (-56%) | -140,182 / -67,941 | -48,560 / -37,409 | 14,702 / 18,895 | 33,439 / 15,529 | 2337 / 2345 | 9/14, 8/11, 5/12 | no / no / no |
+| v0.4-ceiling (own target as ceiling) | MF1, MF2, MF3 | 373,637 (-58%) | -160,074 / -67,941 | -39,958 / -37,409 | 13,112 / 18,895 | 13,269 / 15,529 | 2235 / 2345 | 10/14, 8/11, 6/12 | no / no / no |
+| v0.5 bank half, run half | MF1, MF2, MF3 | 394,310 (-56%) | -147,721 / -67,941 | -46,360 / -37,409 | 13,947 / 18,895 | 33,439 / 15,529 | 2223 / 2345 | 9/14, 8/11, 6/12 | no / no / no |
+| v0.6 ratchet + ABORT | MF1, MF2, MF3 | 388,183 (-57%) | -139,402 / -67,941 | -48,560 / -37,409 | 14,706 / 18,895 | 33,439 / 15,529 | 2337 / 2345 | 9/14, 8/11, 4/12 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF1, MF2, MF3 | 544,555 (-39%) | -100,130 / -67,941 | -40,563 / -37,409 | 14,742 / 18,895 | 13,269 / 15,529 | 2106 / 2345 | 9/14, 6/11, 6/12 | no / no / no |
 | v0.8 (scale out in thirds) | none complete | not run yet |||||||| 
 | v0.9 (volatility-sized give-back) | none complete | not run yet |||||||| 
 | v0.10 (level-anchored stop) | none complete | not run yet |||||||| 
@@ -27,16 +27,16 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.13 (tape-led defence (Asia, London only)) | none complete | not run yet |||||||| 
 | v0.14 (time of session) | none complete | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete | not run yet |||||||| 
-| A1 volatility stop at entry (stop = 2 x s5, same lots-risk) | none complete | not run yet |||||||| 
-| A2 structure stop at entry (behind last swing, capped at own stop) | none complete | not run yet |||||||| 
-| A3 chandelier trail (3 x 5-min ATR behind the best, no target) | none complete | not run yet |||||||| 
-| A4 1-min EMA21 trail once up 1 unit, no target | none complete | not run yet |||||||| 
-| A5 parabolic-SAR trail on 1-min bars, no target | none complete | not run yet |||||||| 
-| B1 R-multiple ladder (third at 1R, third at 2R, runner on ratchet) | none complete | not run yet |||||||| 
-| B2 exhaustion take (RSI14 beyond 80/20 then turning: half, ratchet rest) | none complete | not run yet |||||||| 
-| B3 VWAP-band take (half at VWAP +/- 2 sd, runner on ratchet) | none complete | not run yet |||||||| 
-| C1 halve-and-hold (cut half at -50% of stop, rest keeps stop and target) | none complete | not run yet |||||||| 
-| C2 adverse-speed cut (1 unit against inside 60 s -> out) | none complete | not run yet |||||||| 
+| A1 volatility stop at entry (2 x s5, same lots-risk, own target; compare in $ and DD, lots differ); post-result change 22 | none complete | not run yet |||||||| 
+| A2 structure stop at entry (capped at own stop, own lots); post-result change 23 | none complete | not run yet |||||||| 
+| A3 chandelier trail (3 x ATR5, no target); post-result change 24 | none complete | not run yet |||||||| 
+| A4 EMA21 trail once up 1 unit (no target); post-result change 25 | none complete | not run yet |||||||| 
+| A5 parabolic-SAR trail (no target); post-result change 26 | none complete | not run yet |||||||| 
+| B1 R-multiple ladder (thirds at 1R/2R, ratchet runner); post-result change 27 | none complete | not run yet |||||||| 
+| B2 exhaustion take (RSI14 80/20 turn, half); post-result change 28 | none complete | not run yet |||||||| 
+| B3 VWAP-band take (+/-2 sd, half); post-result change 29 | none complete | not run yet |||||||| 
+| C1 halve-and-hold (cut half at -50% of stop); post-result change 30 | none complete | not run yet |||||||| 
+| C2 adverse-speed cut (1 unit in 60 s); post-result change 31 | none complete | not run yet |||||||| 
 | D1 pyramid into a winner (+1R add half once, stop to entry, ratchet) | none complete | not run yet |||||||| 
 | D2 scale-in entry (half first, add half if up 0.5 unit in median time) | none complete | not run yet |||||||| 
 | E1 continuation re-entry after a ratchet stop-out in profit | none complete | not run yet |||||||| 
@@ -65,14 +65,19 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.3 (DK3 main) | MF3 (alone) | 332,919 (-48%) | -115,728 / -103,232 | -37,207 / -39,659 | 15,138 / 16,561 | 10,899 / 12,119 | 1134 / 1011 | 9/14, 6/11, 8/12 | no / no / no |
 | v0.4 ratchet-only | MF1 (alone) | 89,234 (-90%) | -97,032 / -111,441 | -33,340 / -50,206 | 11,055 / 20,523 | 16,079 / 14,634 | 734 / 1054 | 11/14, 8/11, 8/12 | no (smooth) / no (smooth) / no (smooth) |
 | v0.4 ratchet-only | MF2 (alone) | 237,506 (-42%) | -95,808 / -92,225 | -26,596 / -30,707 | 8,327 / 10,772 | 13,269 / 15,529 | 255 / 280 | 9/14, 7/11, 5/12 | no / no / no |
+| v0.4 ratchet-only | MF3 (alone) | 503,631 (-21%) | -113,282 / -103,232 | -55,780 / -39,659 | 17,416 / 16,561 | 33,439 / 12,119 | 1348 / 1011 | 6/14, 2/11, 6/12 | no / no / no |
 | v0.4-ceiling (own target as ceiling) | MF1 (alone) | 83,415 (-91%) | -106,582 / -111,441 | -33,340 / -50,206 | 11,384 / 20,523 | 8,329 / 14,634 | 727 / 1054 | 11/14, 8/11, 8/12 | no (smooth) / no (smooth) / no (smooth) |
 | v0.4-ceiling (own target as ceiling) | MF2 (alone) | 281,152 (-31%) | -83,578 / -92,225 | -26,596 / -30,707 | 8,237 / 10,772 | 13,269 / 15,529 | 224 / 280 | 10/14, 6/11, 7/12 | no / no / no |
+| v0.4-ceiling (own target as ceiling) | MF3 (alone) | 400,477 (-37%) | -101,338 / -103,232 | -48,974 / -39,659 | 15,376 / 16,561 | 10,474 / 12,119 | 1284 / 1011 | 8/14, 3/11, 7/12 | no / no / no |
 | v0.5 bank half, run half | MF1 (alone) | 89,129 (-90%) | -101,012 / -111,441 | -33,340 / -50,206 | 11,142 / 20,523 | 18,394 / 14,634 | 729 / 1054 | 11/14, 8/11, 8/12 | no (smooth) / no (smooth) / no (smooth) |
 | v0.5 bank half, run half | MF2 (alone) | 263,941 (-36%) | -86,623 / -92,225 | -26,596 / -30,707 | 8,183 / 10,772 | 18,614 / 15,529 | 231 / 280 | 10/14, 7/11, 6/12 | no / no / no |
+| v0.5 bank half, run half | MF3 (alone) | 469,827 (-26%) | -92,707 / -103,232 | -53,735 / -39,659 | 16,596 / 16,561 | 33,439 / 12,119 | 1263 / 1011 | 7/14, 3/11, 7/12 | no / no / no |
 | v0.6 ratchet + ABORT | MF1 (alone) | 85,709 (-90%) | -94,717 / -111,441 | -33,340 / -50,206 | 11,042 / 20,523 | 16,079 / 14,634 | 734 / 1054 | 11/14, 8/11, 8/12 | no (smooth) / no (smooth) / no (smooth) |
 | v0.6 ratchet + ABORT | MF2 (alone) | 234,166 (-43%) | -95,808 / -92,225 | -26,596 / -30,707 | 8,330 / 10,772 | 13,269 / 15,529 | 255 / 280 | 8/14, 7/11, 5/12 | no / no / no |
+| v0.6 ratchet + ABORT | MF3 (alone) | 503,631 (-21%) | -113,282 / -103,232 | -55,780 / -39,659 | 17,416 / 16,561 | 33,439 / 12,119 | 1348 / 1011 | 6/14, 2/11, 6/12 | no / no / no |
 | v0.7 bracket + near-target guard (pl70k50) | MF1 (alone) | 340,241 (-61%) | -90,967 / -111,441 | -41,917 / -50,206 | 16,054 / 20,523 | 12,034 / 14,634 | 621 / 1054 | 11/14, 5/11, 8/12 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF3 (in mix) | 961,227 (+8%) | -79,933 / -67,941 | -37,905 / -37,409 | 20,256 / 18,895 | 9,299 / 12,119 | 970 / 1011 | 3/14, 3/11, 5/12 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF2 (alone) | 236,523 (-42%) | -122,965 / -92,225 | -30,404 / -30,707 | 9,463 / 10,772 | 13,269 / 15,529 | 264 / 280 | 8/14, 5/11, 5/12 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF3 (alone) | 476,015 (-25%) | -94,930 / -103,232 | -46,561 / -39,659 | 16,421 / 16,561 | 10,474 / 12,119 | 1221 / 1011 | 8/14, 5/11, 7/12 | no / no / no |
 | best single landscape code per book (MF1 tr100, MF2 so0, MF3 x7) | MF1 (in mix) | 848,019 (-5%) | -79,568 / -67,941 | -39,838 / -37,409 | 18,453 / 18,895 | 9,229 / 14,634 | 990 / 1054 | 6/14, 4/11, 4/12 | no / no / no |
 | best single landscape code per book (MF1 tr100, MF2 so0, MF3 x7) | MF2 (in mix) | 858,715 (-4%) | -71,310 / -67,941 | -37,409 / -37,409 | 19,562 / 18,895 | 19,244 / 15,529 | 286 / 280 | 6/14, 4/11, 8/12 | no / no / no |
 | best single landscape code per book (MF1 tr100, MF2 so0, MF3 x7) | MF3 (in mix) | 992,929 (+11%) | -65,426 / -67,941 | -36,778 / -37,409 | 20,533 / 18,895 | 11,440 / 12,119 | 840 / 1011 | 7/14, 4/11, 7/12 | no / no / no |
@@ -85,11 +90,11 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 |---|---|---|---|---|---|---|---|---|---|
 | v0.2.2 (DK22 main) | MF1, MF2, MF4, MF5 | 1,683,301 (-41%) | -130,615 / -163,622 | -64,328 / -110,130 | 37,994 / 54,746 | 29,234 / 29,179 | 3019 / 2433 | 4/9, 3/7, 4/7 | no / no / no |
 | v0.3 (DK3 main) | MF1, MF2, MF4, MF5 | 2,177,072 (-24%) | -166,714 / -163,622 | -88,687 / -110,130 | 44,961 / 54,746 | 27,254 / 29,179 | 3039 / 2433 | 6/9, 2/7, 5/7 | no / no / no |
-| v0.4 ratchet-only | none complete (MF2 not complete) | not run yet |||||||| 
-| v0.4-ceiling (own target as ceiling) | none complete | not run yet |||||||| 
-| v0.5 bank half, run half | none complete | not run yet |||||||| 
-| v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
-| v0.7 bracket + near-target guard (pl70k50) | MF1, MF2, MF4, MF5 | 2,003,756 (-30%) | -321,834 / -163,622 | -140,939 / -110,130 | 51,259 / 54,746 | 24,269 / 29,179 (tape) | 2552 / 2433 | 3/9, 4/7, 3/7 | no / no / no |
+| v0.4 ratchet-only | none complete | not run yet |||||||| 
+| v0.4-ceiling (own target as ceiling) | none complete (MF5 not complete) | not run yet |||||||| 
+| v0.5 bank half, run half | none complete (MF5 not complete) | not run yet |||||||| 
+| v0.6 ratchet + ABORT | none complete (MF4, MF5 not complete) | not run yet |||||||| 
+| v0.7 bracket + near-target guard (pl70k50) | MF1 / missing MF5 | 2,478,028 (-13%) | -231,311 / -163,622 | -110,871 / -110,130 | 52,690 / 54,746 | 26,679 / 29,179 | 579 / 543 | 3/9, 3/7, 1/7 | no / no / no |
 | v0.8 (scale out in thirds) | none complete | not run yet |||||||| 
 | v0.9 (volatility-sized give-back) | none complete | not run yet |||||||| 
 | v0.10 (level-anchored stop) | none complete | not run yet |||||||| 
@@ -98,16 +103,16 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.13 (tape-led defence (Asia, London only)) | none complete | not run yet |||||||| 
 | v0.14 (time of session) | none complete | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete | not run yet |||||||| 
-| A1 volatility stop at entry (stop = 2 x s5, same lots-risk) | none complete | not run yet |||||||| 
-| A2 structure stop at entry (behind last swing, capped at own stop) | none complete | not run yet |||||||| 
-| A3 chandelier trail (3 x 5-min ATR behind the best, no target) | none complete | not run yet |||||||| 
-| A4 1-min EMA21 trail once up 1 unit, no target | none complete | not run yet |||||||| 
-| A5 parabolic-SAR trail on 1-min bars, no target | none complete | not run yet |||||||| 
-| B1 R-multiple ladder (third at 1R, third at 2R, runner on ratchet) | none complete | not run yet |||||||| 
-| B2 exhaustion take (RSI14 beyond 80/20 then turning: half, ratchet rest) | none complete | not run yet |||||||| 
-| B3 VWAP-band take (half at VWAP +/- 2 sd, runner on ratchet) | none complete | not run yet |||||||| 
-| C1 halve-and-hold (cut half at -50% of stop, rest keeps stop and target) | none complete | not run yet |||||||| 
-| C2 adverse-speed cut (1 unit against inside 60 s -> out) | none complete | not run yet |||||||| 
+| A1 volatility stop at entry (2 x s5, same lots-risk, own target; compare in $ and DD, lots differ); post-result change 22 | none complete | not run yet |||||||| 
+| A2 structure stop at entry (capped at own stop, own lots); post-result change 23 | none complete | not run yet |||||||| 
+| A3 chandelier trail (3 x ATR5, no target); post-result change 24 | none complete | not run yet |||||||| 
+| A4 EMA21 trail once up 1 unit (no target); post-result change 25 | none complete | not run yet |||||||| 
+| A5 parabolic-SAR trail (no target); post-result change 26 | none complete | not run yet |||||||| 
+| B1 R-multiple ladder (thirds at 1R/2R, ratchet runner); post-result change 27 | none complete | not run yet |||||||| 
+| B2 exhaustion take (RSI14 80/20 turn, half); post-result change 28 | none complete | not run yet |||||||| 
+| B3 VWAP-band take (+/-2 sd, half); post-result change 29 | none complete | not run yet |||||||| 
+| C1 halve-and-hold (cut half at -50% of stop); post-result change 30 | none complete | not run yet |||||||| 
+| C2 adverse-speed cut (1 unit in 60 s); post-result change 31 | none complete | not run yet |||||||| 
 | D1 pyramid into a winner (+1R add half once, stop to entry, ratchet) | none complete | not run yet |||||||| 
 | D2 scale-in entry (half first, add half if up 0.5 unit in median time) | none complete | not run yet |||||||| 
 | E1 continuation re-entry after a ratchet stop-out in profit | none complete | not run yet |||||||| 
@@ -136,11 +141,21 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.3 (DK3 main) | MF2 (alone) | 6,153 (-96%) | -252,359 / -263,422 | -49,914 / -59,825 | 21,275 / 23,724 | 14,354 / 15,369 | 745 / 629 | 4/9, 3/7, 3/7 | no / no / no |
 | v0.3 (DK3 main) | MF4 (alone) | 204,524 (-53%) | -202,867 / -199,315 | -62,974 / -73,124 | 24,182 / 28,083 | 14,544 / 16,454 | 814 / 549 | 5/9, 2/7, 6/7 | no / no / no |
 | v0.3 (DK3 main) | MF5 (alone) | 166,326 (-35%) | -91,139 / -103,673 | -34,616 / -50,861 | 11,744 / 13,987 | 7,125 / 8,125 | 840 / 712 | 7/9, 3/7, 4/7 | no / no / no |
+| v0.4 ratchet-only | MF1 (alone) | 864,251 (-32%) | -178,982 / -158,282 | -68,385 / -81,412 | 32,504 / 38,170 | 98,349 / 29,179 | 638 / 543 | 4/9, 4/7, 2/7 | no / no / no |
+| v0.4 ratchet-only | MF2 (alone) | -301,186 (-277%) | -353,806 / -263,422 | -70,723 / -59,825 | 22,839 / 23,724 | 42,274 / 15,369 | 1075 / 629 | 1/9, 1/7, 2/7 | no / no / no |
 | v0.4 ratchet-only | MF4 (alone) | 253,380 (-41%) | -171,492 / -199,315 | -61,995 / -73,124 | 29,638 / 28,083 | 39,134 / 16,454 | 1227 / 549 | 2/9, 1/7, 4/7 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF1 (in mix) | 2,387,684 (-16%) | -228,327 / -163,622 | -110,130 / -110,130 | 51,815 / 54,746 | 24,269 / 29,179 (tape) | 629 / 543 | 4/9, 2/7, 4/7 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF2 (in mix) | 2,631,022 (-8%) | -159,918 / -163,622 | -123,574 / -110,130 | 54,520 / 54,746 | 12,259 / 15,369 | 573 / 629 | 4/9, 5/7, 3/7 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF4 (in mix) | 2,712,942 (-5%) | -163,325 / -163,622 | -112,046 / -110,130 | 54,053 / 54,746 | 13,189 / 16,454 | 748 / 549 | 3/9, 5/7, 3/7 | no / no / no |
-| v0.7 bracket + near-target guard (pl70k50) | MF5 (in mix) | 2,814,091 (-1%) | -178,168 / -163,622 | -101,238 / -110,130 | 54,724 / 54,746 | 6,100 / 8,125 | 602 / 712 | 4/9, 1/7, 6/7 | no / no / no |
+| v0.4 ratchet-only | MF5 (alone) | 204,975 (-20%) | -140,141 / -103,673 | -43,523 / -50,861 | 12,234 / 13,987 | 20,385 / 8,125 | 1154 / 712 | 4/9, 3/7, 4/7 | no / no / no |
+| v0.4-ceiling (own target as ceiling) | MF1 (alone) | 971,599 (-23%) | -164,535 / -158,282 | -68,385 / -81,412 | 35,963 / 38,170 | 23,004 / 29,179 | 663 / 543 | 5/9, 4/7, 3/7 | no / no / no |
+| v0.4-ceiling (own target as ceiling) | MF2 (alone) | -118,782 (-170%) | -251,555 / -263,422 | -56,195 / -59,825 | 21,510 / 23,724 | 14,339 / 15,369 | 945 / 629 | 3/9, 3/7, 3/7 | no / no / no |
+| v0.4-ceiling (own target as ceiling) | MF4 (alone) | 295,470 (-32%) | -200,157 / -199,315 | -70,645 / -73,124 | 27,271 / 28,083 | 14,544 / 16,454 | 570 / 549 | 4/9, 1/7, 3/7 | no / no / no |
+| v0.5 bank half, run half | MF1 (alone) | 768,319 (-39%) | -169,627 / -158,282 | -68,385 / -81,412 | 31,186 / 38,170 | 139,489 / 29,179 | 616 / 543 | 4/9, 4/7, 2/7 | no / no / no |
+| v0.5 bank half, run half | MF2 (alone) | -321,214 (-289%) | -343,624 / -263,422 | -68,033 / -59,825 | 21,373 / 23,724 | 52,554 / 15,369 | 965 / 629 | 2/9, 3/7, 2/7 | no / no / no |
+| v0.5 bank half, run half | MF4 (alone) | 291,816 (-33%) | -157,740 / -199,315 | -54,481 / -73,124 | 25,793 / 28,083 | 64,734 / 16,454 | 1325 / 549 | 4/9, 2/7, 3/7 | no / no / no |
+| v0.6 ratchet + ABORT | MF1 (alone) | 850,757 (-33%) | -178,982 / -158,282 | -68,385 / -81,412 | 32,671 / 38,170 | 98,349 / 29,179 | 639 / 543 | 4/9, 4/7, 2/7 | no / no / no |
+| v0.6 ratchet + ABORT | MF2 (alone) | -301,186 (-277%) | -353,806 / -263,422 | -70,723 / -59,825 | 22,839 / 23,724 | 42,274 / 15,369 | 1075 / 629 | 1/9, 1/7, 2/7 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF1 (alone) | 759,841 (-40%) | -204,279 / -158,282 | -63,486 / -81,412 | 35,771 / 38,170 | 26,679 / 29,179 | 579 / 543 | 4/9, 2/7, 2/7 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF2 (alone) | 85,197 (-50%) | -287,371 / -263,422 | -63,777 / -59,825 | 22,480 / 23,724 | 14,354 / 15,369 | 741 / 629 | 3/9, 4/7, 3/7 | no / no / no |
+| v0.7 bracket + near-target guard (pl70k50) | MF4 (alone) | 408,239 (-6%) | -218,081 / -199,315 | -64,591 / -73,124 | 27,773 / 28,083 | 14,544 / 16,454 | 827 / 549 | 3/9, 0/7, 4/7 | no / no / no |
 | best single landscape code per book (MF1 g75a30, MF2 tr50, MF4 g67a70, MF5 x7) | MF1 (in mix) | 2,920,493 (+3%) | -148,601 / -163,622 | -103,227 / -110,130 | 51,954 / 54,746 | 18,624 / 29,179 | 504 / 543 | 6/9, 3/7, 4/7 | no / no / no |
 | best single landscape code per book (MF1 g75a30, MF2 tr50, MF4 g67a70, MF5 x7) | MF2 (in mix) | 2,554,880 (-10%) | -167,136 / -163,622 | -104,639 / -110,130 | 50,928 / 54,746 | 10,724 / 15,369 | 1053 / 629 | 3/9, 1/7, 2/7 | no / no / no |
 | best single landscape code per book (MF1 g75a30, MF2 tr50, MF4 g67a70, MF5 x7) | MF4 (in mix) | 2,850,996 (+0%) | -158,564 / -163,622 | -118,756 / -110,130 | 52,064 / 54,746 | 13,189 / 16,454 | 389 / 549 | 4/9, 3/7, 5/7 | no / no / no |
@@ -154,8 +169,8 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 |---|---|---|---|---|---|---|---|---|---|
 | v0.2.2 (DK22 main) | MF1, MF3 | 284,800 (-68%) | -336,126 / -224,333 | -82,790 / -107,350 | 19,661 / 23,472 | 22,529 / 19,919 | 1484 / 923 | 6/14, 5/11, 4/12 | no / no / no |
 | v0.3 (DK3 main) | MF1, MF3 | 449,142 (-49%) | -274,932 / -224,333 | -67,484 / -107,350 | 19,410 / 23,472 | 17,239 / 19,919 | 1398 / 923 | 6/14, 2/11, 4/12 | no / no / no |
-| v0.4 ratchet-only | none complete | not run yet |||||||| 
-| v0.4-ceiling (own target as ceiling) | none complete | not run yet |||||||| 
+| v0.4 ratchet-only | none complete (MF1 not complete) | not run yet |||||||| 
+| v0.4-ceiling (own target as ceiling) | none complete (MF1, MF3 not complete) | not run yet |||||||| 
 | v0.5 bank half, run half | none complete | not run yet |||||||| 
 | v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
 | v0.7 bracket + near-target guard (pl70k50) | MF1, MF3 | 464,563 (-47%) | -295,676 / -224,333 | -106,029 / -107,350 | 22,902 / 23,472 | 17,824 / 19,919 | 1426 / 923 | 7/14, 4/11, 4/12 | no / no / no |
@@ -167,16 +182,16 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.13 (tape-led defence (Asia, London only)) | none complete | not run yet |||||||| 
 | v0.14 (time of session) | none complete | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete | not run yet |||||||| 
-| A1 volatility stop at entry (stop = 2 x s5, same lots-risk) | none complete | not run yet |||||||| 
-| A2 structure stop at entry (behind last swing, capped at own stop) | none complete | not run yet |||||||| 
-| A3 chandelier trail (3 x 5-min ATR behind the best, no target) | none complete | not run yet |||||||| 
-| A4 1-min EMA21 trail once up 1 unit, no target | none complete | not run yet |||||||| 
-| A5 parabolic-SAR trail on 1-min bars, no target | none complete | not run yet |||||||| 
-| B1 R-multiple ladder (third at 1R, third at 2R, runner on ratchet) | none complete | not run yet |||||||| 
-| B2 exhaustion take (RSI14 beyond 80/20 then turning: half, ratchet rest) | none complete | not run yet |||||||| 
-| B3 VWAP-band take (half at VWAP +/- 2 sd, runner on ratchet) | none complete | not run yet |||||||| 
-| C1 halve-and-hold (cut half at -50% of stop, rest keeps stop and target) | none complete | not run yet |||||||| 
-| C2 adverse-speed cut (1 unit against inside 60 s -> out) | none complete | not run yet |||||||| 
+| A1 volatility stop at entry (2 x s5, same lots-risk, own target; compare in $ and DD, lots differ); post-result change 22 | none complete | not run yet |||||||| 
+| A2 structure stop at entry (capped at own stop, own lots); post-result change 23 | none complete | not run yet |||||||| 
+| A3 chandelier trail (3 x ATR5, no target); post-result change 24 | none complete | not run yet |||||||| 
+| A4 EMA21 trail once up 1 unit (no target); post-result change 25 | none complete | not run yet |||||||| 
+| A5 parabolic-SAR trail (no target); post-result change 26 | none complete | not run yet |||||||| 
+| B1 R-multiple ladder (thirds at 1R/2R, ratchet runner); post-result change 27 | none complete | not run yet |||||||| 
+| B2 exhaustion take (RSI14 80/20 turn, half); post-result change 28 | none complete | not run yet |||||||| 
+| B3 VWAP-band take (+/-2 sd, half); post-result change 29 | none complete | not run yet |||||||| 
+| C1 halve-and-hold (cut half at -50% of stop); post-result change 30 | none complete | not run yet |||||||| 
+| C2 adverse-speed cut (1 unit in 60 s); post-result change 31 | none complete | not run yet |||||||| 
 | D1 pyramid into a winner (+1R add half once, stop to entry, ratchet) | none complete | not run yet |||||||| 
 | D2 scale-in entry (half first, add half if up 0.5 unit in median time) | none complete | not run yet |||||||| 
 | E1 continuation re-entry after a ratchet stop-out in profit | none complete | not run yet |||||||| 
@@ -227,16 +242,16 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.13 (tape-led defence (Asia, London only)) | none complete | not run yet |||||||| 
 | v0.14 (time of session) | none complete | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete | not run yet |||||||| 
-| A1 volatility stop at entry (stop = 2 x s5, same lots-risk) | none complete | not run yet |||||||| 
-| A2 structure stop at entry (behind last swing, capped at own stop) | none complete | not run yet |||||||| 
-| A3 chandelier trail (3 x 5-min ATR behind the best, no target) | none complete | not run yet |||||||| 
-| A4 1-min EMA21 trail once up 1 unit, no target | none complete | not run yet |||||||| 
-| A5 parabolic-SAR trail on 1-min bars, no target | none complete | not run yet |||||||| 
-| B1 R-multiple ladder (third at 1R, third at 2R, runner on ratchet) | none complete | not run yet |||||||| 
-| B2 exhaustion take (RSI14 beyond 80/20 then turning: half, ratchet rest) | none complete | not run yet |||||||| 
-| B3 VWAP-band take (half at VWAP +/- 2 sd, runner on ratchet) | none complete | not run yet |||||||| 
-| C1 halve-and-hold (cut half at -50% of stop, rest keeps stop and target) | none complete | not run yet |||||||| 
-| C2 adverse-speed cut (1 unit against inside 60 s -> out) | none complete | not run yet |||||||| 
+| A1 volatility stop at entry (2 x s5, same lots-risk, own target; compare in $ and DD, lots differ); post-result change 22 | none complete | not run yet |||||||| 
+| A2 structure stop at entry (capped at own stop, own lots); post-result change 23 | none complete | not run yet |||||||| 
+| A3 chandelier trail (3 x ATR5, no target); post-result change 24 | none complete | not run yet |||||||| 
+| A4 EMA21 trail once up 1 unit (no target); post-result change 25 | none complete | not run yet |||||||| 
+| A5 parabolic-SAR trail (no target); post-result change 26 | none complete | not run yet |||||||| 
+| B1 R-multiple ladder (thirds at 1R/2R, ratchet runner); post-result change 27 | none complete | not run yet |||||||| 
+| B2 exhaustion take (RSI14 80/20 turn, half); post-result change 28 | none complete | not run yet |||||||| 
+| B3 VWAP-band take (+/-2 sd, half); post-result change 29 | none complete | not run yet |||||||| 
+| C1 halve-and-hold (cut half at -50% of stop); post-result change 30 | none complete | not run yet |||||||| 
+| C2 adverse-speed cut (1 unit in 60 s); post-result change 31 | none complete | not run yet |||||||| 
 | D1 pyramid into a winner (+1R add half once, stop to entry, ratchet) | none complete | not run yet |||||||| 
 | D2 scale-in entry (half first, add half if up 0.5 unit in median time) | none complete | not run yet |||||||| 
 | E1 continuation re-entry after a ratchet stop-out in profit | none complete | not run yet |||||||| 
@@ -262,6 +277,7 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.3 (DK3 main) | MF2 (alone) | 70,585 (-70%) | -86,179 / -165,629 | -29,665 / -41,926 | 12,631 / 18,229 | 25,779 / 28,539 | 309 / 239 | 7/9, 6/7, 5/7 | no (smooth) / no (smooth) / no (smooth) |
 | v0.3 (DK3 main) | MF3 (alone) | 221,462 (-47%) | -70,389 / -75,125 | -29,739 / -28,888 | 10,095 / 14,432 | 14,044 / 14,494 | 369 / 215 | 6/9, 4/7, 3/7 | no / no / no |
 | v0.4 ratchet-only | MF3 (alone) | 512,234 (+23%) | -75,185 / -75,125 | -30,643 / -28,888 | 16,126 / 14,432 | 16,889 / 14,494 | 389 / 215 | 2/9, 1/7, 1/7 | no / no / no |
+| v0.5 bank half, run half | MF3 (alone) | 460,498 (+11%) | -67,275 / -75,125 | -31,734 / -28,888 | 14,682 / 14,432 | 22,819 / 14,494 | 256 / 215 | 2/9, 1/7, 1/7 | no / no / no |
 | v0.7 bracket + near-target guard (pl70k50) | MF2 (in mix) | 676,560 (+3%) | -133,938 / -134,363 | -44,139 / -44,139 | 19,520 / 20,021 | 19,520 / 28,539 | 193 / 239 | 3/9, 1/7, 5/7 | no / no / no |
 | v0.7 bracket + near-target guard (pl70k50) | MF3 (in mix) | 563,335 (-14%) | -122,129 / -134,363 | -45,699 / -44,139 | 19,655 / 20,021 | 12,384 / 14,494 | 223 / 215 | 2/9, 0/7, 3/7 | no / no / no |
 | best single landscape code per book (MF2 xi15all, MF3 x7) | MF2 (in mix) | 633,457 (-4%) | -94,366 / -134,363 | -44,139 / -44,139 | 19,669 / 20,021 | 18,575 / 28,539 | 191 / 239 | 1/9, 1/7, 3/7 | no / no / no |

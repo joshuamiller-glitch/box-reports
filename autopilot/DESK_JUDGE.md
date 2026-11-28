@@ -1,8 +1,8 @@
-# DESK_JUDGE (generated 2026-11-28 14:15Z by code/th_algo/ar_judge.py; order 1418Z; research only)
+# DESK_JUDGE (generated 2026-11-28 14:48Z by code/th_algo/ar_judge.py; order 1418Z; research only)
 
 LABELS: sections marked IN-SAMPLE choose with the whole window and then score on the same window (optimistic, fitting visible). Sections marked WALKED-FORWARD choose each book's design at every quarter start from the TRAILING 12 MONTHS ONLY and apply it to the next quarter; only that table can be used to decide what goes live. Rule (fixed before looking, same at floors 10 / 20 / 30%): among eligible designs whose income over the evaluation period is >= (1 - floor) x the bracket, take the shallowest max DD; the book's own bracket (fix_A) is always eligible, so with nothing clearing the floor the bracket is picked. Eligible designs = alone-bare _A rows of the registered designs (code/th_algo/desk_designs.json) that have every window month DONE for that book; designs with only in-mix _M rows (v0.7 sun_pl70k50, landscape codes) are NOT eligible here (no _A rows). Mix = live mix + sum over books of (chosen design - the book's own bracket), reference = live mix as run, same days. Windows: Asia / London 2023-09..2026-10, NY AM / NY PM 2024-10..2026-10, Nov 2025 out.
 
-# Asia: window 202309-202610 (37 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN; walkable quarters (trailing 12 months with >= 9 window months): 10 of 14 quarters (2024Q3, 2024Q4, 2025Q1, 2025Q2, 2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
+# Asia: window 202309-202610 (37 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN, v0.4 ratchet-only DK4MAIN, v0.4-ceiling DK4REF, v0.5 bank half, run half DK5, v0.6 ratchet + ABORT DK6, v0.7 bracket + near-target guard DK7; walkable quarters (trailing 12 months with >= 9 window months): 10 of 14 quarters (2024Q3, 2024Q4, 2025Q1, 2025Q2, 2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
 
 ## Asia: per-book whole-window table, IN-SAMPLE (each eligible design alone vs the book's own bracket)
 
@@ -10,42 +10,57 @@ LABELS: sections marked IN-SAMPLE choose with the whole window and then score on
 |---|---|---|---|---|---|
 | MF1 | v0.2.2 DK22MAIN | -198,618 (-123%) | -222,803 / -111,441 | -31,530 / -50,206 | no / no / no |
 | MF1 | v0.3 DK3MAIN | 460,151 (-48%) | -101,818 / -111,441 | -51,433 / -50,206 | no / no / no |
+| MF1 | v0.4 ratchet-only DK4MAIN | 89,234 (-90%) | -97,032 / -111,441 | -33,340 / -50,206 | no (smooth) / no (smooth) / no (smooth) |
+| MF1 | v0.4-ceiling DK4REF | 83,415 (-91%) | -106,582 / -111,441 | -33,340 / -50,206 | no (smooth) / no (smooth) / no (smooth) |
+| MF1 | v0.5 bank half, run half DK5 | 89,129 (-90%) | -101,012 / -111,441 | -33,340 / -50,206 | no (smooth) / no (smooth) / no (smooth) |
+| MF1 | v0.6 ratchet + ABORT DK6 | 85,709 (-90%) | -94,717 / -111,441 | -33,340 / -50,206 | no (smooth) / no (smooth) / no (smooth) |
+| MF1 | v0.7 bracket + near-target guard DK7 | 340,241 (-61%) | -90,967 / -111,441 | -41,917 / -50,206 | no / no / no |
 | MF2 | v0.2.2 DK22MAIN | 74,687 (-82%) | -93,385 / -92,225 | -26,783 / -30,707 | no / no / no |
 | MF2 | v0.3 DK3MAIN | 210,720 (-49%) | -112,632 / -92,225 | -32,864 / -30,707 | no / no / no |
+| MF2 | v0.4 ratchet-only DK4MAIN | 237,506 (-42%) | -95,808 / -92,225 | -26,596 / -30,707 | no / no / no |
+| MF2 | v0.4-ceiling DK4REF | 281,152 (-31%) | -83,578 / -92,225 | -26,596 / -30,707 | no / no / no |
+| MF2 | v0.5 bank half, run half DK5 | 263,941 (-36%) | -86,623 / -92,225 | -26,596 / -30,707 | no / no / no |
+| MF2 | v0.6 ratchet + ABORT DK6 | 234,166 (-43%) | -95,808 / -92,225 | -26,596 / -30,707 | no / no / no |
+| MF2 | v0.7 bracket + near-target guard DK7 | 236,523 (-42%) | -122,965 / -92,225 | -30,404 / -30,707 | no / no / no |
 | MF3 | v0.2.2 DK22MAIN | -89,438 (-114%) | -239,545 / -103,232 | -41,929 / -39,659 | no / no / no |
 | MF3 | v0.3 DK3MAIN | 332,919 (-48%) | -115,728 / -103,232 | -37,207 / -39,659 | no / no / no |
+| MF3 | v0.4 ratchet-only DK4MAIN | 503,631 (-21%) | -113,282 / -103,232 | -55,780 / -39,659 | no / no / no |
+| MF3 | v0.4-ceiling DK4REF | 400,477 (-37%) | -101,338 / -103,232 | -48,974 / -39,659 | no / no / no |
+| MF3 | v0.5 bank half, run half DK5 | 469,827 (-26%) | -92,707 / -103,232 | -53,735 / -39,659 | no / no / no |
+| MF3 | v0.6 ratchet + ABORT DK6 | 503,631 (-21%) | -113,282 / -103,232 | -55,780 / -39,659 | no / no / no |
+| MF3 | v0.7 bracket + near-target guard DK7 | 476,015 (-25%) | -94,930 / -103,232 | -46,561 / -39,659 | no / no / no |
 
 ## Asia, floor 10%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 10 walked quarters (202407-202610 (27 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 10) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 637,970 / 728,364 (-12%) | -77,963 / -67,941 | -39,080 / -37,409 | 21,010 / 21,253 | 15,529 / 15,529 | 7 / 1 / 2 | no (smooth) / YES / YES |
+| **WALKED-FORWARD** | 598,468 / 728,364 (-18%) | -121,855 / -67,941 | -67,037 / -37,409 | 23,177 / 21,253 | 21,619 / 15,529 | 3 / 2 / 2 | no / no / no |
 | IN-SAMPLE best-per-book (same days) | 728,364 / 728,364 (+0%) | -67,941 / -67,941 | -37,409 / -37,409 | 21,253 / 21,253 | not computed | not computed | YES / YES / YES |
 
-Picks per book (walked, quarters picked): MF1: BRACKET x10; MF2: BRACKET x7, v0.3 DK3MAIN x2, v0.2.2 DK22MAIN x1; MF3: BRACKET x10
+Picks per book (walked, quarters picked): MF1: BRACKET x10; MF2: BRACKET x5, v0.4-ceiling DK4REF x2, v0.7 bracket + near-target guard DK7 x1, v0.5 bank half, run half DK5 x1, v0.2.2 DK22MAIN x1; MF3: BRACKET x4, v0.7 bracket + near-target guard DK7 x4, v0.5 bank half, run half DK5 x2
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF3: BRACKET
 
 ## Asia, floor 20%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 10 walked quarters (202407-202610 (27 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 10) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 499,079 / 728,364 (-31%) | -92,806 / -67,941 | -43,549 / -37,409 | 22,206 / 21,253 | 15,529 / 15,529 | 5 / 1 / 2 | no / no / no |
+| **WALKED-FORWARD** | 394,973 / 728,364 (-46%) | -152,983 / -67,941 | -67,037 / -37,409 | 26,704 / 21,253 | 24,714 / 15,529 | 2 / 3 / 3 | no / no / no |
 | IN-SAMPLE best-per-book (same days) | 728,364 / 728,364 (+0%) | -67,941 / -67,941 | -37,409 / -37,409 | 21,253 / 21,253 | not computed | not computed | YES / YES / YES |
 
-Picks per book (walked, quarters picked): MF1: BRACKET x8, v0.3 DK3MAIN x2; MF2: BRACKET x7, v0.3 DK3MAIN x2, v0.2.2 DK22MAIN x1; MF3: BRACKET x10
+Picks per book (walked, quarters picked): MF1: BRACKET x8, v0.3 DK3MAIN x2; MF2: BRACKET x5, v0.4-ceiling DK4REF x2, v0.7 bracket + near-target guard DK7 x1, v0.5 bank half, run half DK5 x1, v0.2.2 DK22MAIN x1; MF3: v0.7 bracket + near-target guard DK7 x4, BRACKET x2, v0.5 bank half, run half DK5 x2, v0.4 ratchet-only DK4MAIN x1, v0.4-ceiling DK4REF x1
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF3: BRACKET
 
 ## Asia, floor 30%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 10 walked quarters (202407-202610 (27 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 10) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 353,356 / 728,364 (-51%) | -92,806 / -67,941 | -41,849 / -37,409 | 20,897 / 21,253 | 15,529 / 15,529 | 5 / 3 / 1 | no / no / no |
-| IN-SAMPLE best-per-book (same days) | 728,364 / 728,364 (+0%) | -67,941 / -67,941 | -37,409 / -37,409 | 21,253 / 21,253 | not computed | not computed | YES / YES / YES |
+| **WALKED-FORWARD** | 233,438 / 728,364 (-68%) | -160,429 / -67,941 | -67,037 / -37,409 | 24,035 / 21,253 | 21,619 / 15,529 | 2 / 3 / 2 | no / no / no |
+| IN-SAMPLE best-per-book (same days) | 603,931 / 728,364 (-17%) | -135,949 / -67,941 | -64,191 / -37,409 | 25,456 / 21,253 | not computed | not computed | no / no / no |
 
-Picks per book (walked, quarters picked): MF1: BRACKET x7, v0.3 DK3MAIN x3; MF2: BRACKET x5, v0.3 DK3MAIN x3, v0.2.2 DK22MAIN x2; MF3: BRACKET x9, v0.3 DK3MAIN x1
-IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF3: BRACKET
+Picks per book (walked, quarters picked): MF1: BRACKET x7, v0.3 DK3MAIN x3; MF2: BRACKET x4, v0.2.2 DK22MAIN x2, v0.4-ceiling DK4REF x2, v0.7 bracket + near-target guard DK7 x1, v0.5 bank half, run half DK5 x1; MF3: v0.7 bracket + near-target guard DK7 x5, BRACKET x2, v0.5 bank half, run half DK5 x2, v0.4-ceiling DK4REF x1
+IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF3: v0.5 bank half, run half DK5
 
-# NY AM: window 202410-202610 (24 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN; walkable quarters (trailing 12 months with >= 9 window months): 6 of 9 quarters (2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
+# NY AM: window 202410-202610 (24 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN, v0.4 ratchet-only DK4MAIN, v0.4-ceiling DK4REF, v0.5 bank half, run half DK5, v0.6 ratchet + ABORT DK6, v0.7 bracket + near-target guard DK7; walkable quarters (trailing 12 months with >= 9 window months): 6 of 9 quarters (2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
 
 ## NY AM: per-book whole-window table, IN-SAMPLE (each eligible design alone vs the book's own bracket)
 
@@ -53,41 +68,56 @@ IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF3: BRACKET
 |---|---|---|---|---|---|
 | MF1 | v0.2.2 DK22MAIN | 622,071 (-51%) | -113,982 / -158,282 | -46,763 / -81,412 | no (smooth) / no (smooth) / no (smooth) |
 | MF1 | v0.3 DK3MAIN | 758,672 (-40%) | -136,263 / -158,282 | -64,062 / -81,412 | no / no / no |
+| MF1 | v0.4 ratchet-only DK4MAIN | 864,251 (-32%) | -178,982 / -158,282 | -68,385 / -81,412 | no / no / no |
+| MF1 | v0.4-ceiling DK4REF | 971,599 (-23%) | -164,535 / -158,282 | -68,385 / -81,412 | no / no / no |
+| MF1 | v0.5 bank half, run half DK5 | 768,319 (-39%) | -169,627 / -158,282 | -68,385 / -81,412 | no / no / no |
+| MF1 | v0.6 ratchet + ABORT DK6 | 850,757 (-33%) | -178,982 / -158,282 | -68,385 / -81,412 | no / no / no |
+| MF1 | v0.7 bracket + near-target guard DK7 | 759,841 (-40%) | -204,279 / -158,282 | -63,486 / -81,412 | no / no / no |
 | MF2 | v0.2.2 DK22MAIN | 6,145 (-96%) | -177,004 / -263,422 | -60,375 / -59,825 | no (smooth) / no (smooth) / no (smooth) |
 | MF2 | v0.3 DK3MAIN | 6,153 (-96%) | -252,359 / -263,422 | -49,914 / -59,825 | no / no / no |
+| MF2 | v0.4 ratchet-only DK4MAIN | -301,186 (-277%) | -353,806 / -263,422 | -70,723 / -59,825 | no / no / no |
+| MF2 | v0.4-ceiling DK4REF | -118,782 (-170%) | -251,555 / -263,422 | -56,195 / -59,825 | no / no / no |
+| MF2 | v0.5 bank half, run half DK5 | -321,214 (-289%) | -343,624 / -263,422 | -68,033 / -59,825 | no / no / no |
+| MF2 | v0.6 ratchet + ABORT DK6 | -301,186 (-277%) | -353,806 / -263,422 | -70,723 / -59,825 | no / no / no |
+| MF2 | v0.7 bracket + near-target guard DK7 | 85,197 (-50%) | -287,371 / -263,422 | -63,777 / -59,825 | no / no / no |
 | MF4 | v0.2.2 DK22MAIN | 242,885 (-44%) | -145,799 / -199,315 | -89,332 / -73,124 | no / no / no |
 | MF4 | v0.3 DK3MAIN | 204,524 (-53%) | -202,867 / -199,315 | -62,974 / -73,124 | no / no / no |
+| MF4 | v0.4 ratchet-only DK4MAIN | 253,380 (-41%) | -171,492 / -199,315 | -61,995 / -73,124 | no / no / no |
+| MF4 | v0.4-ceiling DK4REF | 295,470 (-32%) | -200,157 / -199,315 | -70,645 / -73,124 | no / no / no |
+| MF4 | v0.5 bank half, run half DK5 | 291,816 (-33%) | -157,740 / -199,315 | -54,481 / -73,124 | no / no / no |
+| MF4 | v0.7 bracket + near-target guard DK7 | 408,239 (-6%) | -218,081 / -199,315 | -64,591 / -73,124 | no / no / no |
 | MF5 | v0.2.2 DK22MAIN | 45,191 (-82%) | -84,752 / -103,673 | -21,271 / -50,861 | no / no / no |
 | MF5 | v0.3 DK3MAIN | 166,326 (-35%) | -91,139 / -103,673 | -34,616 / -50,861 | no / no / no |
+| MF5 | v0.4 ratchet-only DK4MAIN | 204,975 (-20%) | -140,141 / -103,673 | -43,523 / -50,861 | no / no / no |
 
 ## NY AM, floor 10%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 1,301,088 / 1,959,030 (-34%) | -193,078 / -163,622 | -77,620 / -97,182 | 51,776 / 57,307 | 28,899 / 28,899 | 4 / 2 / 0 | no / no / no |
+| **WALKED-FORWARD** | 964,624 / 1,959,030 (-51%) | -197,797 / -163,622 | -71,894 / -97,182 | 51,045 / 57,307 | 48,854 / 28,899 | 3 / 1 / 0 | no / no / no |
 | IN-SAMPLE best-per-book (same days) | 1,959,030 / 1,959,030 (+0%) | -163,622 / -163,622 | -97,182 / -97,182 | 57,307 / 57,307 | not computed | not computed | YES / YES / YES |
 
-Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, BRACKET x3; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: BRACKET x4, v0.2.2 DK22MAIN x2; MF5: BRACKET x6
+Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, BRACKET x2, v0.5 bank half, run half DK5 x1; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: v0.5 bank half, run half DK5 x3, BRACKET x2, v0.7 bracket + near-target guard DK7 x1; MF5: BRACKET x5, v0.4 ratchet-only DK4MAIN x1
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF4: BRACKET, MF5: BRACKET
 
 ## NY AM, floor 20%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 1,276,391 / 1,959,030 (-35%) | -193,078 / -163,622 | -77,620 / -97,182 | 51,752 / 57,307 | 28,899 / 28,899 | 3 / 1 / 0 | no / no / no |
+| **WALKED-FORWARD** | 950,529 / 1,959,030 (-51%) | -212,238 / -163,622 | -71,894 / -97,182 | 51,283 / 57,307 | 48,854 / 28,899 | 2 / 1 / 0 | no / no / no |
 | IN-SAMPLE best-per-book (same days) | 1,959,030 / 1,959,030 (+0%) | -163,622 / -163,622 | -97,182 / -97,182 | 57,307 / 57,307 | not computed | not computed | YES / YES / YES |
 
-Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, BRACKET x3; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: BRACKET x3, v0.2.2 DK22MAIN x3; MF5: BRACKET x6
+Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, BRACKET x2, v0.5 bank half, run half DK5 x1; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: v0.5 bank half, run half DK5 x3, BRACKET x2, v0.7 bracket + near-target guard DK7 x1; MF5: BRACKET x4, v0.4 ratchet-only DK4MAIN x2
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF4: BRACKET, MF5: BRACKET
 
 ## NY AM, floor 30%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 1,259,680 / 1,959,030 (-36%) | -193,078 / -163,622 | -77,620 / -97,182 | 52,138 / 57,307 | 28,899 / 28,899 | 3 / 1 / 0 | no / no / no |
+| **WALKED-FORWARD** | 660,350 / 1,959,030 (-66%) | -214,013 / -163,622 | -71,894 / -97,182 | 45,116 / 57,307 | 48,854 / 28,899 | 2 / 1 / 0 | no / no / no |
 | IN-SAMPLE best-per-book (same days) | 1,959,030 / 1,959,030 (+0%) | -163,622 / -163,622 | -97,182 / -97,182 | 57,307 / 57,307 | not computed | not computed | YES / YES / YES |
 
-Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, BRACKET x3; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: BRACKET x3, v0.2.2 DK22MAIN x3; MF5: BRACKET x5, v0.3 DK3MAIN x1
+Picks per book (walked, quarters picked): MF1: v0.2.2 DK22MAIN x3, v0.5 bank half, run half DK5 x1, v0.4 ratchet-only DK4MAIN x1, v0.4-ceiling DK4REF x1; MF2: BRACKET x3, v0.2.2 DK22MAIN x3; MF4: v0.5 bank half, run half DK5 x3, BRACKET x2, v0.7 bracket + near-target guard DK7 x1; MF5: v0.4 ratchet-only DK4MAIN x3, BRACKET x2, v0.3 DK3MAIN x1
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF2: BRACKET, MF4: BRACKET, MF5: BRACKET
 
 # London: window 202309-202610 (37 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN; walkable quarters (trailing 12 months with >= 9 window months): 10 of 14 quarters (2024Q3, 2024Q4, 2025Q1, 2025Q2, 2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
@@ -131,7 +161,7 @@ IN-SAMPLE whole-window picks: MF1: BRACKET, MF3: BRACKET
 Picks per book (walked, quarters picked): MF1: BRACKET x7, v0.3 DK3MAIN x2, v0.2.2 DK22MAIN x1; MF3: BRACKET x7, v0.3 DK3MAIN x3
 IN-SAMPLE whole-window picks: MF1: BRACKET, MF3: BRACKET
 
-# NY PM: window 202410-202610 (24 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN; walkable quarters (trailing 12 months with >= 9 window months): 6 of 9 quarters (2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
+# NY PM: window 202410-202610 (24 months); eligible designs: v0.2.2 DK22MAIN, v0.3 DK3MAIN, v0.4 ratchet-only DK4MAIN, v0.5 bank half, run half DK5; walkable quarters (trailing 12 months with >= 9 window months): 6 of 9 quarters (2025Q3, 2025Q4, 2026Q1, 2026Q2, 2026Q3, 2026Q4)
 
 ## NY PM: per-book whole-window table, IN-SAMPLE (each eligible design alone vs the book's own bracket)
 
@@ -141,34 +171,36 @@ IN-SAMPLE whole-window picks: MF1: BRACKET, MF3: BRACKET
 | MF2 | v0.3 DK3MAIN | 70,585 (-70%) | -86,179 / -165,629 | -29,665 / -41,926 | no (smooth) / no (smooth) / no (smooth) |
 | MF3 | v0.2.2 DK22MAIN | 52,793 (-87%) | -106,151 / -75,125 | -28,499 / -28,888 | no / no / no |
 | MF3 | v0.3 DK3MAIN | 221,462 (-47%) | -70,389 / -75,125 | -29,739 / -28,888 | no / no / no |
+| MF3 | v0.4 ratchet-only DK4MAIN | 512,234 (+23%) | -75,185 / -75,125 | -30,643 / -28,888 | no / no / no |
+| MF3 | v0.5 bank half, run half DK5 | 460,498 (+11%) | -67,275 / -75,125 | -31,734 / -28,888 | no / no / no |
 
 ## NY PM, floor 10%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 349,154 / 429,095 (-19%) | -104,640 / -88,173 | -44,139 / -44,139 | 19,660 / 18,237 | 27,954 / 27,954 | 2 / 1 / 1 | no / no / no |
-| IN-SAMPLE best-per-book (same days) | 429,095 / 429,095 (+0%) | -88,173 / -88,173 | -44,139 / -44,139 | 18,237 / 18,237 | not computed | not computed | YES / YES / YES |
+| **WALKED-FORWARD** | 337,356 / 429,095 (-21%) | -95,921 / -88,173 | -39,314 / -44,139 | 21,317 / 18,237 | 27,954 / 27,954 | 0 / 2 / 3 | no / no / no |
+| IN-SAMPLE best-per-book (same days) | 452,987 / 429,095 (+6%) | -78,834 / -88,173 | -39,314 / -44,139 | 20,153 / 18,237 | not computed | not computed | no / no / no |
 
-Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: BRACKET x6
-IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: BRACKET
+Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: v0.5 bank half, run half DK5 x5, BRACKET x1
+IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: v0.5 bank half, run half DK5
 
 ## NY PM, floor 20%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 349,154 / 429,095 (-19%) | -104,640 / -88,173 | -44,139 / -44,139 | 19,660 / 18,237 | 27,954 / 27,954 | 2 / 1 / 1 | no / no / no |
-| IN-SAMPLE best-per-book (same days) | 429,095 / 429,095 (+0%) | -88,173 / -88,173 | -44,139 / -44,139 | 18,237 / 18,237 | not computed | not computed | YES / YES / YES |
+| **WALKED-FORWARD** | 337,356 / 429,095 (-21%) | -95,921 / -88,173 | -39,314 / -44,139 | 21,317 / 18,237 | 27,954 / 27,954 | 0 / 2 / 3 | no / no / no |
+| IN-SAMPLE best-per-book (same days) | 452,987 / 429,095 (+6%) | -78,834 / -88,173 | -39,314 / -44,139 | 20,153 / 18,237 | not computed | not computed | no / no / no |
 
-Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: BRACKET x6
-IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: BRACKET
+Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: v0.5 bank half, run half DK5 x5, BRACKET x1
+IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: v0.5 bank half, run half DK5
 
 ## NY PM, floor 30%: WALKED-FORWARD session mix (trailing-12-month picks) vs live mix as run, on the 6 walked quarters (202507-202610 (15 months))
 
 | view | income managed / live (change) | max DD managed / live | worst week managed / live | weekly st.dev. managed / live | largest single give-back (picked designs / bracket books) | quarters better: smoother / shallower DD / more income (of 6) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|
-| **WALKED-FORWARD** | 349,154 / 429,095 (-19%) | -104,640 / -88,173 | -44,139 / -44,139 | 19,660 / 18,237 | 27,954 / 27,954 | 2 / 1 / 1 | no / no / no |
-| IN-SAMPLE best-per-book (same days) | 429,095 / 429,095 (+0%) | -88,173 / -88,173 | -44,139 / -44,139 | 18,237 / 18,237 | not computed | not computed | YES / YES / YES |
+| **WALKED-FORWARD** | 337,356 / 429,095 (-21%) | -95,921 / -88,173 | -39,314 / -44,139 | 21,317 / 18,237 | 27,954 / 27,954 | 0 / 2 / 3 | no / no / no |
+| IN-SAMPLE best-per-book (same days) | 452,987 / 429,095 (+6%) | -78,834 / -88,173 | -39,314 / -44,139 | 20,153 / 18,237 | not computed | not computed | no / no / no |
 
-Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: BRACKET x6
-IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: BRACKET
+Picks per book (walked, quarters picked): MF2: BRACKET x3, v0.3 DK3MAIN x3; MF3: v0.5 bank half, run half DK5 x5, BRACKET x1
+IN-SAMPLE whole-window picks: MF2: BRACKET, MF3: v0.5 bank half, run half DK5
 

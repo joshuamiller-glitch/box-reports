@@ -1,3 +1,143 @@
+# DESK_COV_ABC_CHECKS (code/th_dync/desk_cov_check.py; coverage families A B C)
+
+- U1 nq_at == DESK._val on 400 random seconds: PASS (nan 0)
+- U2a EMA21 == pandas ewm(span=21, adjust=False): PASS 
+- U2b RSI14 == independent Wilder loop: PASS (first value at close 15)
+- U2c RSI14 within 0.05 of pandas ewm(alpha=1/14) after 300 closes (seed differs): PASS 
+- U2d ATR5 (mean of last 14 true ranges of completed 5-minute bars) == pandas groupby/rolling: PASS 
+- U3 minute_bars (o,h,l,c) == pandas groupby first/max/min/last: PASS 
+
+## I1 / I2 / I3 on the six match trades
+- I1 T1 Asia MF2: cov V04 == DESK v04 (0 actions, exit session end): PASS 
+- I2 T1 Asia MF2 B1 null == v0.4 ratchet: PASS 
+- I2 T1 Asia MF2 B2 null == v0.4 ratchet: PASS 
+- I2 T1 Asia MF2 B3 null == v0.4 ratchet: PASS 
+- I2 T1 Asia MF2 A3 null == no action: PASS 
+- I2 T1 Asia MF2 A4 null == no action: PASS 
+- I2 T1 Asia MF2 A5 null == no action: PASS 
+- I2 T1 Asia MF2 C1 null == no action: PASS 
+- I2 T1 Asia MF2 C2 null == no action: PASS 
+- I3 T1 Asia MF2 A1 manager holds (stop 25.84 pts vs own 60.0, lots 7 vs 3, vol): PASS 
+- I3 T1 Asia MF2 A2 manager holds (stop 34.54 pts vs own 60.0, lots 3 vs 3, swing): PASS 
+- I1 T2 Asia MF1: cov V04 == DESK v04 (1 actions, exit stop): PASS 
+- I2 T2 Asia MF1 B1 null == v0.4 ratchet: PASS 
+- I2 T2 Asia MF1 B2 null == v0.4 ratchet: PASS 
+- I2 T2 Asia MF1 B3 null == v0.4 ratchet: PASS 
+- I2 T2 Asia MF1 A3 null == no action: PASS 
+- I2 T2 Asia MF1 A4 null == no action: PASS 
+- I2 T2 Asia MF1 A5 null == no action: PASS 
+- I2 T2 Asia MF1 C1 null == no action: PASS 
+- I2 T2 Asia MF1 C2 null == no action: PASS 
+- I3 T2 Asia MF1 A1 manager holds (stop 16.73 pts vs own 40.0, lots 7 vs 3, vol): PASS 
+- I3 T2 Asia MF1 A2 manager holds (stop 24.96 pts vs own 40.0, lots 3 vs 3, swing): PASS 
+- I1 T3 NY AM MF5: cov V04 == DESK v04 (0 actions, exit session end): PASS 
+- I2 T3 NY AM MF5 B1 null == v0.4 ratchet: PASS 
+- I2 T3 NY AM MF5 B2 null == v0.4 ratchet: PASS 
+- I2 T3 NY AM MF5 B3 null == v0.4 ratchet: PASS 
+- I2 T3 NY AM MF5 A3 null == no action: PASS 
+- I2 T3 NY AM MF5 A4 null == no action: PASS 
+- I2 T3 NY AM MF5 A5 null == no action: PASS 
+- I2 T3 NY AM MF5 C1 null == no action: PASS 
+- I2 T3 NY AM MF5 C2 null == no action: PASS 
+- I3 T3 NY AM MF5 A1 manager holds (stop 45.00 pts vs own 60.0, lots 3 vs 2, vol): PASS 
+- I3 T3 NY AM MF5 A2 manager holds (stop 13.25 pts vs own 60.0, lots 2 vs 2, swing): PASS 
+- I1 T4 NY AM MF4: cov V04 == DESK v04 (1 actions, exit stop): PASS 
+- I2 T4 NY AM MF4 B1 null == v0.4 ratchet: PASS 
+- I2 T4 NY AM MF4 B2 null == v0.4 ratchet: PASS 
+- I2 T4 NY AM MF4 B3 null == v0.4 ratchet: PASS 
+- I2 T4 NY AM MF4 A3 null == no action: PASS 
+- I2 T4 NY AM MF4 A4 null == no action: PASS 
+- I2 T4 NY AM MF4 A5 null == no action: PASS 
+- I2 T4 NY AM MF4 C1 null == no action: PASS 
+- I2 T4 NY AM MF4 C2 null == no action: PASS 
+- I3 T4 NY AM MF4 A1 manager holds (stop 63.02 pts vs own 90.0, lots 4 vs 3, vol): PASS 
+- I3 T4 NY AM MF4 A2 manager holds (stop 15.75 pts vs own 90.0, lots 3 vs 3, swing): PASS 
+- I1 T5 London MF1: cov V04 == DESK v04 (1 actions, exit stop): PASS 
+- I2 T5 London MF1 B1 null == v0.4 ratchet: PASS 
+- I2 T5 London MF1 B2 null == v0.4 ratchet: PASS 
+- I2 T5 London MF1 B3 null == v0.4 ratchet: PASS 
+- I2 T5 London MF1 A3 null == no action: PASS 
+- I2 T5 London MF1 A4 null == no action: PASS 
+- I2 T5 London MF1 A5 null == no action: PASS 
+- I2 T5 London MF1 C1 null == no action: PASS 
+- I2 T5 London MF1 C2 null == no action: PASS 
+- I3 T5 London MF1 A1 manager holds (stop 23.01 pts vs own 90.0, lots 31 vs 8, vol): PASS 
+- I3 T5 London MF1 A2 manager holds (stop 57.90 pts vs own 90.0, lots 8 vs 8, swing): PASS 
+- I1 T6 NY PM MF2: cov V04 == DESK v04 (0 actions, exit session end): PASS 
+- I2 T6 NY PM MF2 B1 null == v0.4 ratchet: PASS 
+- I2 T6 NY PM MF2 B2 null == v0.4 ratchet: PASS 
+- I2 T6 NY PM MF2 B3 null == v0.4 ratchet: PASS 
+- I2 T6 NY PM MF2 A3 null == no action: PASS 
+- I2 T6 NY PM MF2 A4 null == no action: PASS 
+- I2 T6 NY PM MF2 A5 null == no action: PASS 
+- I2 T6 NY PM MF2 C1 null == no action: PASS 
+- I2 T6 NY PM MF2 C2 null == no action: PASS 
+- I3 T6 NY PM MF2 A1 manager holds (stop 16.87 pts vs own 120.0, lots 7 vs 1, vol): PASS 
+- I3 T6 NY PM MF2 A2 manager holds (stop 29.34 pts vs own 120.0, lots 1 vs 1, swing): PASS 
+
+## R1 the ten designs on the six trades (first actions; fills are the screen model)
+- A1 T1 Asia MF2: stop 25.8 lots 7 | exit stop at +279s | 0 actions []
+- A1 T2 Asia MF1: stop 16.7 lots 7 | exit stop at +3619s | 0 actions []
+- A1 T3 NY AM MF5: stop 45.0 lots 3 | exit session end at +1355s | 0 actions []
+- A1 T4 NY AM MF4: stop 63.0 lots 4 | exit target at +457s | 0 actions []
+- A1 T5 London MF1: stop 23.0 lots 31 | exit target at +2754s | 0 actions []
+- A1 T6 NY PM MF2: stop 16.9 lots 7 | exit stop at +49s | 0 actions []
+- A2 T1 Asia MF2: stop 34.5 lots 3 | exit stop at +844s | 0 actions []
+- A2 T2 Asia MF1: stop 25.0 lots 3 | exit stop at +3743s | 0 actions []
+- A2 T3 NY AM MF5: stop 13.3 lots 2 | exit stop at +162s | 0 actions []
+- A2 T4 NY AM MF4: stop 15.8 lots 3 | exit target at +457s | 0 actions []
+- A2 T5 London MF1: stop 57.9 lots 8 | exit target at +2754s | 0 actions []
+- A2 T6 NY PM MF2: stop 29.3 lots 1 | exit stop at +219s | 0 actions []
+- A3 T1 Asia MF2: stop 60.0 lots 3 | exit stop at +913s | 4 actions [(1, 'tighten', 'A3'), (164, 'tighten', 'A3'), (165, 'tighten', 'A3')]
+- A3 T2 Asia MF1: stop 40.0 lots 3 | exit stop at +2954s | 36 actions [(52, 'tighten', 'A3'), (64, 'tighten', 'A3'), (433, 'tighten', 'A3')]
+- A3 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- A3 T4 NY AM MF4: stop 90.0 lots 3 | exit stop at +1759s | 5 actions [(270, 'tighten', 'A3'), (433, 'tighten', 'A3'), (457, 'tighten', 'A3')]
+- A3 T5 London MF1: stop 90.0 lots 8 | exit session end at +5278s | 54 actions [(1, 'tighten', 'A3'), (9, 'tighten', 'A3'), (22, 'tighten', 'A3')]
+- A3 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 2 actions [(23, 'tighten', 'A3'), (30, 'tighten', 'A3')]
+- A4 T1 Asia MF2: stop 60.0 lots 3 | exit manager:A4 at +4553s | 1 actions [(4552, 'all', 'A4')]
+- A4 T2 Asia MF1: stop 40.0 lots 3 | exit manager:A4 at +2158s | 1 actions [(2157, 'all', 'A4')]
+- A4 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- A4 T4 NY AM MF4: stop 90.0 lots 3 | exit manager:A4 at +794s | 1 actions [(793, 'all', 'A4')]
+- A4 T5 London MF1: stop 90.0 lots 8 | exit manager:A4 at +1799s | 1 actions [(1798, 'all', 'A4')]
+- A4 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+- A5 T1 Asia MF2: stop 60.0 lots 3 | exit stop at +835s | 13 actions [(112, 'tighten', 'A5'), (172, 'tighten', 'A5'), (232, 'tighten', 'A5')]
+- A5 T2 Asia MF1: stop 40.0 lots 3 | exit stop at +1696s | 26 actions [(117, 'tighten', 'A5'), (177, 'tighten', 'A5'), (237, 'tighten', 'A5')]
+- A5 T3 NY AM MF5: stop 60.0 lots 2 | exit stop at +1062s | 17 actions [(95, 'tighten', 'A5'), (155, 'tighten', 'A5'), (215, 'tighten', 'A5')]
+- A5 T4 NY AM MF4: stop 90.0 lots 3 | exit stop at +781s | 12 actions [(73, 'tighten', 'A5'), (133, 'tighten', 'A5'), (193, 'tighten', 'A5')]
+- A5 T5 London MF1: stop 90.0 lots 8 | exit stop at +1278s | 16 actions [(118, 'tighten', 'A5'), (186, 'tighten', 'A5'), (239, 'tighten', 'A5')]
+- A5 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 3 actions [(126, 'tighten', 'A5'), (239, 'tighten', 'A5'), (378, 'tighten', 'A5')]
+- B1 T1 Asia MF2: stop 60.0 lots 3 | exit session end at +5212s | 0 actions []
+- B1 T2 Asia MF1: stop 40.0 lots 3 | exit stop at +527s | 1 actions [(480, 'tighten', 'RT')]
+- B1 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- B1 T4 NY AM MF4: stop 90.0 lots 3 | exit stop at +781s | 1 actions [(435, 'tighten', 'RT')]
+- B1 T5 London MF1: stop 90.0 lots 8 | exit stop at +1924s | 1 actions [(616, 'tighten', 'RT')]
+- B1 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+- B2 T1 Asia MF2: stop 60.0 lots 3 | exit session end at +5212s | 0 actions []
+- B2 T2 Asia MF1: stop 40.0 lots 3 | exit stop at +527s | 1 actions [(480, 'tighten', 'RT')]
+- B2 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- B2 T4 NY AM MF4: stop 90.0 lots 3 | exit stop at +781s | 1 actions [(435, 'tighten', 'RT')]
+- B2 T5 London MF1: stop 90.0 lots 8 | exit stop at +1924s | 1 actions [(616, 'tighten', 'RT')]
+- B2 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+- B3 T1 Asia MF2: stop 60.0 lots 3 | exit stop at +4616s | 2 actions [(3425, 'part', 'B3'), (3426, 'tighten', 'B3BE')]
+- B3 T2 Asia MF1: stop 40.0 lots 3 | exit stop at +527s | 1 actions [(480, 'tighten', 'RT')]
+- B3 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- B3 T4 NY AM MF4: stop 90.0 lots 3 | exit stop at +781s | 1 actions [(435, 'tighten', 'RT')]
+- B3 T5 London MF1: stop 90.0 lots 8 | exit stop at +1924s | 1 actions [(616, 'tighten', 'RT')]
+- B3 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+- C1 T1 Asia MF2: stop 60.0 lots 3 | exit session end at +5212s | 1 actions [(413, 'part', 'C1')]
+- C1 T2 Asia MF1: stop 40.0 lots 3 | exit session end at +4077s | 1 actions [(3632, 'part', 'C1')]
+- C1 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- C1 T4 NY AM MF4: stop 90.0 lots 3 | exit target at +457s | 0 actions []
+- C1 T5 London MF1: stop 90.0 lots 8 | exit target at +2754s | 0 actions []
+- C1 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+- C2 T1 Asia MF2: stop 60.0 lots 3 | exit session end at +5212s | 0 actions []
+- C2 T2 Asia MF1: stop 40.0 lots 3 | exit session end at +4077s | 0 actions []
+- C2 T3 NY AM MF5: stop 60.0 lots 2 | exit session end at +1355s | 0 actions []
+- C2 T4 NY AM MF4: stop 90.0 lots 3 | exit target at +457s | 0 actions []
+- C2 T5 London MF1: stop 90.0 lots 8 | exit target at +2754s | 0 actions []
+- C2 T6 NY PM MF2: stop 120.0 lots 1 | exit session end at +599s | 0 actions []
+
+ALL PASS: True
 
 
 ## S1-S8 synthetic scenarios (desk_cov_synth.py)
@@ -17,7 +157,7 @@
 - S3i B2 short mirror fires once with frac 0.5: PASS 
 - S4a B3 takes half the first second price >= session VWAP + 2 sd (sd of 1-min closes minus VWAP since the 18:00 ET reset, completed minutes), reference loop: PASS (manager +4s, reference +4 s)
 - S5a A4 exits at the first completed 1-minute close below the EMA21 once up 1 unit (reference): PASS (exit +1484s, reference +1483 s)
-- S6a A5 stop levels == textbook Wilder PSAR on the same 1-minute bars (every reference level that tightened the stop appears within +-2 s and 0.25 pt): FAIL (21 manager tightens, 40 reference levels, 21 matched)
+- S6a A5: every manager stop level equals a textbook Wilder PSAR level (+-2 s, 0.25 pt) and the manager level is never more than 0.02 R (0.8 pt) behind the textbook level: PASS (21 manager tightens all matched 21, reference levels 40, max lag 0.00 pt)
 - S6b A5 exits through the SAR (screen exit type stop): PASS 
 - S7a A3 last stop level == best - 3 x ATR5 (reference ATR from the same bars): PASS (manager 42.77, reference 42.77; best 59.00 ATR5 5.41)
 - S7b A3 never looser than the own stop and ratchet only: PASS 
@@ -26,4 +166,4 @@
 - S8c A2 swing rule on a hand series: last confirmed swing low = 100.5 (index 8, 2 closes each side), stop = 103 - 100.5 + 0.1 x 2: PASS (2.700)
 - S8d A2 short mirror: a swing high above the entry is used: PASS (2.20 swing)
 
-SYNTH ALL PASS: False
+SYNTH ALL PASS: True
