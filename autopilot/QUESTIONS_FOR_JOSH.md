@@ -253,3 +253,6 @@ pull_catchup.py line 40 stops when (free - pull size) < 60 GB. /mnt/l2: 3.5 T, 3
 3. Age feed stale limit is checked against the feed row's second, not its age column (carried-forward old quote accepted).
 4. FALLBACK (<3 voting seats) stops only seat-driven actions; objectives, clock, never-bend still run. Intended?
 See autopilot/DESK_V02_MATCH.md.
+
+## FAKE FILL guard on carry/window sets (W-DYNH, 03:12Z 28 Nov; relay/Josh decision)
+82 rows (car*/win* ALL sets from FLATTEN S1/S3/S4 builds, plus MF1 ls_g67a30/a70, PBBT, SAFE10/15/20, pas8) trip the engine's FAKE FILL guard because carry trades exit after the bell (the guard's exit-gap check): the carry rule itself, not bad data. Options: waive the exit-gap check for carry and window rows (engine gate change) or drop those sets. NOT re-run; list: /mnt/l2/l2vast/_dynexit/park/fakefill_82_rows_owner_WDYNH.txt. LEAD default: leave unrun.
