@@ -266,3 +266,6 @@ The exact-engine queue drained at ~09:00Z; the fleet would idle. LEAD refilled i
 ## DESK v0.4-v0.7 two interpretations (W-DYNC, 14:03Z 28 Nov; relay)
 1. v0.4 structure trail is applied only once the trade is free (up 2 units); the order said 'once a swing exists'. If the relay meant from the start, say so and DK4 gets re-run.
 2. v0.5 banks half at the book's target as a MARKET part checked every second (not a resting limit); W-DYNH uses a resting limit if the hook allows. 1-lot: everything leaves at the target.
+
+## LATENT DEFECT in the desk manager's per-trade state key (W-DYNC, 14:28Z 28 Nov; relay decision)
+The manager keys its per-trade state by sec - int(mins x 60); the truncation moves the key by one second between calls: in the screen replay the state of every design v0.2.x to v0.7 splits into two copies (best open profit, bars, once-only flags, decision gate) on all 4 trades checked. v0.8-v0.15 use a one-second-tolerant key. NOT yet verified on the engine rows (W-DYNH asked to check algo_log for decision times not 15 s apart or once-only rules firing twice). IF CONFIRMED, the v0.2.2 / v0.3 / v0.4-v0.7 results may be affected; fixing = a new labelled version (rerun), LEAD proposes: rerun v0.3 and v0.4 with the fixed key as 'kfix' rows beside the originals once confirmed.

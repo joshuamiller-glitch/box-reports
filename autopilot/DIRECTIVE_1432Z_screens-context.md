@@ -1,0 +1,11 @@
+# Josh: the many-screens trader is not wasting his time: use the screens as CONTEXT, not as a seconds-ahead trigger (RESEARCH order)
+
+Josh, typed 14:26Z 28 Nov, verbatim:
+
+> so these traders who have a ton of screens watchng everythign are wasting their time basically and you gave up
+
+(relay) What has been tested is narrow: (a) do other feeds move BEFORE NQ at 1 s to 5 min (no), (b) one vote design whose early-exit rules lost. NOT tested: the screens as slower CONTEXT that sets how much room a trade gets and how the day is traded. Three designs, written here, each replayed ONCE, same scorecard and counts, logged as changes 19-21, into DESK_DESIGNS_COMPARED.md; run with the v0.8-v0.15 batch (NY AM and Asia first):
+- v0.16 THE SCREENS SET THE LEASH: own stop, no target, v0.4 ratchet, but the give-back allowed depends on AGREEMENT over the last 15 minutes (not since entry): count of {ES, RTY, YM, + megacap basket and NYSE TICK in NY hours, + NKD and 6J in Asia} trending WITH the trade (15-minute move beyond 1.0 of own typical 15-minute move). Most with -> loose (keep 33% of the peak); mixed -> keep 50%; most against -> tight (keep 75%). The screens never close a trade by themselves; they only set the leash. No other rule.
+- v0.17 THE SCREENS CHOOSE THE DAY: at the session's first signal and again every 30 minutes, classify the session: RISK-ON-TREND (index complex and megacaps aligned with NQ's session direction, range used above typical, bonds / yen not contradicting), RISK-OFF or MIXED. TREND in the trade's direction -> no target, v0.4 ratchet. TREND against the trade's direction -> half lots, own bracket. MIXED -> own bracket untouched. One fixed definition, written on the page.
+- v0.18 SLOW DIVERGENCE AT THE HIGHS: own stop and target; only when the trade is in profit by 1 unit: if NQ makes a new 30-minute extreme in the trade's direction while BOTH the index complex (ES, RTY, YM) and the megacap basket fail to make theirs within 2 minutes -> stop to the last swing. (15-30 minute divergence, the thing a screen-watcher actually acts on; the earlier divergence exit was a market exit on a short window.)
+Also restate on the page, for each of the three, how often the context read was available (history limits: megacaps / TICK from 2024-10).
