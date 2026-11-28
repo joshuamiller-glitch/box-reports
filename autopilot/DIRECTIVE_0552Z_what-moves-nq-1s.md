@@ -1,0 +1,4 @@
+# Use the data just bought: WHAT_MOVES_NQ at 1 second for the megacaps and the secondary futures (RESEARCH note)
+
+written by the relay (Claude), not typed by Josh. Background: his 17:51Z 27 Nov order ("what moves NQ and what moves beforr NQ moves") and the data he approved, now on the box (megacap 1-second bars and trades, 1-second YM ZB 6E 6J NKD 6A HG, 2025-05..2026-11).
+If not already queued: rerun WHAT_MOVES_NQ.md with these feeds at 1 s / 5 s / 15 s / 60 s / 5 min (same method, matched null, by session, by half-year since the window is 18 months, steady / sometimes / never), with a short top section: does any megacap or the megacap basket lead NQ below one minute in NY AM / NY PM; do YM, ZB, 6J, NKD lead NQ in Asia / London; which lead NQ TURNS. DISCOVERY label; it feeds which feeds sit on which seat, nothing else. Spare capacity only; the proven-book search and the Sunday page keep priority.
