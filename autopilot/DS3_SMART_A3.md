@@ -1,6 +1,6 @@
 # DS3_SMART_A3 — T-SMART item A3: structure stops with equal-$ lots (W-SM3)
 
-Generated 2026-11-28 02:47Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
+Generated 2026-11-28 03:17Z UTC. Exact engine, one set per job (TP engine), base JN05W2 = live panel + F3 + E1 + C22 + BR3S + FLAT45K (JN05W2J = same on JN04RM). Shadow only, no PASS claim.
 
 **CAVEAT (every table):** the engine state cut fires in the engine but did NOT fire live on 2026-11-11 (autopilot/DS3_P7_CUT_FIDELITY.md). Rows marked **S0 = state cut OFF = the live-realistic case** are read first and compared with SMA3_REF_S0 (JN05W2 with every state cut switched off, K7 flat45 kept); **S1** rows keep the state cut and compare with JN05W2.
 
@@ -21,7 +21,7 @@ Dead-cell lookup (loss|struct_stop_eq|<book>|<feat>, 32 specs): 0 hits; first-or
 | SMA3_KC2_U_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | 1.1 | 712 | - | - | - | - | - | - |
 | SMA3_KC4_U_S0 | 6 | SMA3_REF_S0 | 103% ($312k of $302k) | 0 of 19 | -6.4 | 379 | - | - | - | - | - | - |
 | SMA3_KU_S0 | 6 | SMA3_REF_S0 | 103% ($310k of $302k) | 0 of 19 | -12.1 | 871 | - | - | - | - | - | - |
-| SMA3_KU_S1 | 6 | JN05W2 | 109% ($346k of $316k) | 1 of 20 | -1.5 | 706 | - | - | - | - | - | - |
+| SMA3_KU_S1 | 6 | JN05W2 | (err [Errno 2] No such file or directory: '/mnt/l2/l2vast/_th_sz/ijk/exact/merged_lpb/nf_JN05W2/202507/trades.parquet') ||||||||||
 | SMA3_REF_S0 | 6 |  | (reference) ||||||||||
 
 cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks mean difference ($/wk, carry week kept); WF = bi-weekly re-pick walk-forward (only with all 43 months).
@@ -126,17 +126,6 @@ cut % = stack maxDD vs the reference (positive = shallower); d mean = all-weeks 
 | H7 | 175 / 175 | 1.86 / 1.86 | -39 | 1.88 / 1.84 | 0.00 | 1.07 |
 | M7 | 618 / 622 | 1.21 / 1.21 | +282 | 11.76 / 11.95 | 0.00 | 0.00 |
 | A7 | 345 / 346 | 1.00 / 1.00 | -159 | 4.94 / 4.75 | 0.00 | 0.00 |
-
-**SMA3_KU_S1** vs JN05W2
-
-| book | trades cell / ref | mean lots cell / ref | d net $/wk | full stops/wk cell / ref | structure exits/wk | StateCut/wk |
-|---|---|---|---|---|---|---|
-| K7 | 1520 / 1553 | 1.19 / 1.14 | -46 | 0.42 / 0.46 | 19.58 | 11.11 |
-| P7 | 1029 / 1037 | 3.51 / 3.50 | -91 | 0.50 / 0.50 | 0.00 | 21.88 |
-| U7 | 277 / 271 | 3.49 / 2.73 | +969 | 0.96 / 3.45 | 4.44 | 0.96 |
-| H7 | 176 / 176 | 1.86 / 1.86 | +0 | 0.84 / 0.84 | 0.00 | 2.64 |
-| M7 | 720 / 733 | 1.19 / 1.19 | -78 | 1.30 / 1.26 | 0.00 | 15.21 |
-| A7 | 351 / 353 | 1.00 / 1.00 | -109 | 4.18 / 3.98 | 0.00 | 2.18 |
 
 ## 2. acceptance_p7 (L6M only, fail on > 2 of 20) for complete L6M cells with L6M cut >= 5%
 
