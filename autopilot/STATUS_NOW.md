@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 10:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 11:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 10:45Z | box1: busy 99%, load1 81.19, workers 9, MemAvail 43 GB | server2: busy 100%, load1 102.36, workers 44, MemAvail 825 GB | pending box1-eligible 494933 / server2-eligible 18176 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 182.48, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 973 GB | serverB: busy 100%, load1 190.15, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 926 GB | serverC: busy 100%, load1 138.67, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1417 GB | serverD: busy 100%, load1 148.21, workers 1 (grid) + 146 (engine), 64 threads, MemAvail 1397 GB
+LATEST CORES.md LINE: 2026-11-28 11:00Z | box1: busy 96%, load1 53.70, workers 16, MemAvail 62 GB | server2: busy 99%, load1 93.57, workers 42, MemAvail 1095 GB | pending box1-eligible 495077 / server2-eligible 24191 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 179.21, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 944 GB | serverB: busy 100%, load1 188.83, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 886 GB | serverC: busy 100%, load1 139.40, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1363 GB | serverD: busy 100%, load1 148.46, workers 1 (grid) + 148 (engine), 64 threads, MemAvail 1363 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 10:45Z
+2026-11-28 11:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 10:45Z | box1: busy 99%, load1 81.19, workers 9
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 41.7 GB; live reservations 8 (8 GB); workers 9, of which TP-adopted 9 (RSS 11.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 82.06, 75.36, 67.32
-  by tag: NYE quota 16 running 9 hungry False RSS 11.4 GB PSS 10.5 GB
+Server 1 (this box): MemAvail 60.8 GB; live reservations 0 (0 GB); workers 16, of which TP-adopted 16 (RSS 21.6 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 53.70, 58.19, 62.97
+  by tag: NYE quota 16 running 16 hungry False RSS 21.6 GB PSS 19.7 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_Lde9b27f7_ALN (x20);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 101.82, 105.28, 102.65|/dev/md2         28T  2.8T   26T  10% /mnt/l2|78|
+  top running jobs: TL3_NYE_L50e678bb_ALN (x22);TL3_NYE_Lde9b27f7_ALN (x8);TL3_NYE_La6eb6792_ALN (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 95.06, 95.60, 98.53|/dev/md2         28T  2.8T   26T  10% /mnt/l2|88|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 101.82, 105.28, 102.65|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261128_0240Z_Josh-read-the-desk-scorecard-on-the-runnable-window-now.md 20261128_0322Z_Josh-desk-v0_2_2-failed-attribution-then-v0_3.md 20261128_0552Z_Josh-rerun-what-moves-NQ-on-the-new-1s-data.md 20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md 20261128_0957Z_Josh-server2-under-85-and-hourly-line.md
+20261128_0322Z_Josh-desk-v0_2_2-failed-attribution-then-v0_3.md 20261128_0552Z_Josh-rerun-what-moves-NQ-on-the-new-1s-data.md 20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md 20261128_0957Z_Josh-server2-under-85-and-hourly-line.md 20261128_1050Z_Josh-fill-the-fleet-exact-rows-for-all-qualifiers-and-joint-mixes.md
