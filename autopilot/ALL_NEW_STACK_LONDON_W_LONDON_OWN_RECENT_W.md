@@ -1,4 +1,4 @@
-# ALL-NEW STACK, LONDON: WEIGHTED LOOP london-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-28 05:14Z.
+# ALL-NEW STACK, LONDON: WEIGHTED LOOP london-own-recent-w (W-COMBO, order 1416Z part 2). Updated 2026-11-28 05:19Z.
 
 **DECISION BASIS: EQUAL L6M ULCER (recent basis, order 1552Z; 15% L6M max-DD / worst-week guard; L3M beside; prior years only as the 15-30% band, RED not chosen).** Candidates are tried at sizes [0.25, 0.5, 1.0, 2.0] relative to 1 lot (lots = round(4 x size)); a stack whose sizes are all 1 is the existing lot-1 stack set. Every window number below is in 1-lot units (x4-lots sets divided by 4).
 **CAPS: scaled x4 with the lots: same-side lots cap 6 -> 24, each new-book stream day-cap pair $12,000/$4,800 -> $48,000/$19,200; NOT scaled: sizer thr 0.3 lo 0.5 hi 1.0, p7_daycap, StackCut / BookLock / c_gov / screens / ev_panel / ev_profit values (calibration of lot-linearity: see the CALIBRATION line); weights do not change the dollar layers meaning for the live D7**
