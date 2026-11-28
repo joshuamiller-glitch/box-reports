@@ -1,3 +1,5 @@
+> **NOTE 28 Nov (W-PLAN-AS): this page and REPL_EXACT_SCORES.md are for MERGED STREAMS: the candidate key lacked the bar row, so multi-row trigger cells (918 of 1,767) were stage-1 evaluated on one arbitrary row and stage-2/event files merged signals of all rows. The corrected table is REPLACE_CANDIDATES_R.md (key = row|module|variant|params). Exact results on this page's sets stand as results of the merged streams; the 12 superseded sets (all already DONE, none parked: 504 rows) are listed in MORNING.md.**
+
 # REPLACEMENT SETS: exact scorecard vs the live mix as run (W-PLAN-AS)
 
 | subject | stream (managed vs reference) | worst week | winning weeks | st.dev. weekly income | biggest give-back | trades giving back > 50% of peak (all / peak >= $1k) | max DD | income | smoother quarters: all / NQ-up / NQ-down | smoother years: all / up / down | ACCEPTABLE at floor 10% / 20% / 30% | slot effects: entries only in the managed run (n, net $) / only in the bracket run (n, net $) |
