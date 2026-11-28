@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 13:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 13:30Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 13:15Z | box1: busy 100%, load1 58.17, workers 12, MemAvail 71 GB | server2: busy 100%, load1 95.49, workers 42, MemAvail 1050 GB | pending box1-eligible 494503 / server2-eligible 8002 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 183.74, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 972 GB | serverB: busy 100%, load1 191.36, workers 105 (grid) + 98 (engine), 128 threads, MemAvail 909 GB | serverC: busy 100%, load1 143.89, workers 1 (grid) + 135 (engine), 128 threads, MemAvail 1397 GB | serverD: busy 100%, load1 146.94, workers 1 (grid) + 141 (engine), 64 threads, MemAvail 1417 GB
+LATEST CORES.md LINE: 2026-11-28 13:30Z | box1: busy 99%, load1 56.91, workers 13, MemAvail 77 GB | server2: busy 100%, load1 100.01, workers 40, MemAvail 781 GB | pending box1-eligible 494422 / server2-eligible 11214 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 166.03, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 998 GB | serverB: busy 100%, load1 177.60, workers 105 (grid) + 96 (engine), 128 threads, MemAvail 949 GB | serverC: busy 100%, load1 167.37, workers 1 (grid) + 138 (engine), 128 threads, MemAvail 1428 GB | serverD: busy 100%, load1 145.64, workers 1 (grid) + 148 (engine), 64 threads, MemAvail 1452 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 13:15Z
+2026-11-28 13:30Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 13:15Z | box1: busy 100%, load1 58.17, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 69.8 GB; live reservations 2 (2 GB); workers 12, of which TP-adopted 12 (RSS 15.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 58.17, 59.74, 56.31
-  by tag: NYE quota 16 running 12 hungry False RSS 15.4 GB PSS 14.0 GB
+Server 1 (this box): MemAvail 75.7 GB; live reservations 4 (4 GB); workers 13, of which TP-adopted 13 (RSS 17.8 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 56.91, 60.86, 59.68
+  by tag: NYR quota 12 running 1 hungry True RSS 1.7 GB PSS 1.4 GB; NYE quota 16 running 12 hungry False RSS 16.1 GB PSS 14.5 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L33b8d988_ALN (x28);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 95.92, 95.75, 97.23|/dev/md2         28T  2.8T   26T  10% /mnt/l2|77|
+  top running jobs: TL3_NYE_Ldc39d3c2_ALN (x30);TL3_NYE_L841447d3_ALNCT14m (x1);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 100.94, 99.52, 97.66|/dev/md2         28T  2.8T   26T  10% /mnt/l2|74|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 95.92, 95.75, 97.23|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261128_0552Z_Josh-rerun-what-moves-NQ-on-the-new-1s-data.md 20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md 20261128_0957Z_Josh-server2-under-85-and-hourly-line.md 20261128_1050Z_Josh-fill-the-fleet-exact-rows-for-all-qualifiers-and-joint-mixes.md 20261128_1230Z_Josh-late-entry-rule-exact-text-and-table.md
+20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md 20261128_0957Z_Josh-server2-under-85-and-hourly-line.md 20261128_1050Z_Josh-fill-the-fleet-exact-rows-for-all-qualifiers-and-joint-mixes.md 20261128_1230Z_Josh-late-entry-rule-exact-text-and-table.md 20261128_1328Z_Josh-late-entry-seed-lists-for-the-live-build.md
