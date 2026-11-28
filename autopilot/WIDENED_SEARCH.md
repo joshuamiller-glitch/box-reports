@@ -4,9 +4,9 @@ Pool fixed before scoring: W-NEGBOOK two-sided FULL rule over the whole stored l
 
 | session | cells | stage 1 pass | stage 2 candidates | stage 2 qualify (non-live) | live-family duplicates | same-day null | shuffled replicates (qualify non-live) | exact alone (survivor rule) |
 |---|---|---|---|---|---|---|---|---|
-| London | 402 | 30 | 183 | **0** | 32 | n/a | 0, 0, 0, 0 (reps 3, 4, 11, 12) | none |
+| London | 402 | 30 | 183 | **0** | 32 | n/a | 0, 0, 0, 0, 0 (reps 3, 4, 5, 11, 12) | none |
 | NY AM | 193 | 7 | 88 | **5** | 0 | 5 of 5 >= 0.99 | 0, 0, 0 (reps 3, 4, 5) | 1 of 5 passes, a duplicate of QNY009 (drb_25000 round break_native 10/90); WNY001 DD 40% of income, WNY002 L3M < 0, WNY004 DD 63%, WNY005 negative L6M and year |
-| NY PM | 113 | running | | | | | | |
+| NY PM | 113 | (see below) | 50 | **5** | 0 | 3 of 5 >= 0.90 both sides (WNP003 short 0.465, WNP002 short 0.825 fail) | shuffles running | exact alone rows queued (210) |
 | Asia | 482 | running | | | | | | |
 
 Reading: the widened pool adds no London candidate (the 32 live-family duplicates are the xmarket rates/commodity triggers the live London mix already trades) and no new NY AM book (1 survivor, a duplicate). Replicates 1 and 2 of each session failed at stage 2 (import bug, fixed) and are not counted.
