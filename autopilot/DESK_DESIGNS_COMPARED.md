@@ -1,10 +1,10 @@
-# DESK_DESIGNS_COMPARED (generated 2026-11-28 15:17Z by code/th_algo/ar_designs.py; order 1408Z; research only)
+# DESK_DESIGNS_COMPARED (generated 2026-11-28 15:22Z by code/th_algo/ar_designs.py; order 1408Z; research only)
 
 One table of manager designs, same windows, same like-with-like references. Window per session = the months the DK22 sets have (Asia / London 37 months 2023-09..2026-10, NY AM / NY PM 24 months 2024-10..2026-10, Nov 2025 out); every design is cut to those months and the reference (the live mix as run for the mix rows, the book on its fixed bracket for alone rows) is cut to the same months and weeks. SESSION MIX row = live mix + sum of the per-book deltas of the books that design has finished (post-hoc additive, interaction neglected); books a design has not finished for the whole window are listed as not complete and left out. Floors: ACCEPTABLE = smoother (worst week not worse AND weekly st.dev. not larger) in >= 2/3 of quarters overall AND in NQ-up AND in NQ-down weeks, and income not more than 10 / 20 / 30% below the bracket; shown as YES / no (smooth = smoothness passed, income failed) / no. Give-backs: peak open profit from best_px in the trade rows (tape where the column is absent, marked), $ minus realised p484; largest single trade and the count of trades that gave back more than half of a peak of at least $500; managed = the managed books' own trades, bracket = the same books on the fixed bracket (fix_A, tape). Designs are read from code/th_algo/desk_designs.json (first tag with rows wins) and rows appear as the sets finish; the best single landscape code per book is the _M set named in autopilot/SUNDAY_LANDSCAPE.md.
 
 DK4..DK9 set families found in runs_rf: DK4MAIN, DK4REF, DK5, DK6, DK7, DK8, DK9; NOT in desk_designs.json (add them): 
 
-DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 books; v0.3 Asia 3/3 books; v0.4 ratchet-only Asia 3/3 books; v0.4-ceiling Asia 3/3 books; v0.5 bank half, run half Asia 3/3 books; v0.6 ratchet + ABORT Asia 3/3 books; v0.7 bracket + near-target guard Asia 3/3 books; v0.8 Asia 1/3 books; v0.9 Asia 1/3 books; v0.10 Asia 1/3 books; v0.11 Asia 0/3 books; v0.12 Asia 0/3 books; v0.13 Asia 0/3 books; v0.14 Asia 0/3 books; v0.15 Asia 0/3 books; A1 volatility stop at entry Asia 0/3 books; A2 structure stop at entry Asia 0/3 books; A3 chandelier trail Asia 0/3 books; A4 EMA21 trail once up 1 unit Asia 0/3 books; A5 parabolic-SAR trail Asia 0/3 books; B1 R-multiple ladder Asia 0/3 books; B2 exhaustion take Asia 0/3 books; B3 VWAP-band take Asia 0/3 books; C1 halve-and-hold Asia 0/3 books; C2 adverse-speed cut Asia 0/3 books; D1 pyramid into a winner Asia 0/3 books; D2 scale-in entry Asia 0/3 books; E1 continuation re-entry after a ratchet stop-out in profit Asia 0/3 books; E2 no same-direction re-entry 15 min after a full stop Asia 0/3 books; F1 calendar-aware Asia 0/3 books; F2 volatility regime Asia 0/3 books; F3 day-of-week / opex / month-end Asia 0/3 books; G1 DAY PROFIT RATCHET Asia 0/3 books; G2 same-direction crowd Asia 0/3 books; G3 opposite books may not add Asia 0/3 books; G4 loss-streak brake Asia 0/3 books; v0.16 Asia 0/3 books; v0.17 Asia 0/3 books; v0.18 Asia 0/3 books; v0.2.2 NY AM 4/4 books; v0.3 NY AM 4/4 books; v0.4 ratchet-only NY AM 4/4 books; v0.4-ceiling NY AM 4/4 books; v0.5 bank half, run half NY AM 4/4 books; v0.6 ratchet + ABORT NY AM 4/4 books; v0.7 bracket + near-target guard NY AM 4/4 books; v0.8 NY AM 0/4 books; v0.9 NY AM 0/4 books; v0.10 NY AM 0/4 books; v0.11 NY AM 0/4 books; v0.12 NY AM 0/4 books; v0.13 NY AM 0/4 books; v0.14 NY AM 0/4 books; v0.15 NY AM 0/4 books; A1 volatility stop at entry NY AM 0/4 books; A2 structure stop at entry NY AM 0/4 books; A3 chandelier trail NY AM 0/4 books; A4 EMA21 trail once up 1 unit NY AM 0/4 books; A5 parabolic-SAR trail NY AM 0/4 books; B1 R-multiple ladder NY AM 0/4 books; B2 exhaustion take NY AM 0/4 books; B3 VWAP-band take NY AM 0/4 books; C1 halve-and-hold NY AM 0/4 books; C2 adverse-speed cut NY AM 0/4 books; D1 pyramid into a winner NY AM 0/4 books; D2 scale-in entry NY AM 0/4 books; E1 continuation re-entry after a ratchet stop-out in profit NY AM 0/4 books; E2 no same-direction re-entry 15 min after a full stop NY AM 0/4 books; F1 calendar-aware NY AM 0/4 books; F2 volatility regime NY AM 0/4 books; F3 day-of-week / opex / month-end NY AM 0/4 books; G1 DAY PROFIT RATCHET NY AM 0/4 books; G2 same-direction crowd NY AM 0/4 books; G3 opposite books may not add NY AM 0/4 books; G4 loss-streak brake NY AM 0/4 books; v0.16 NY AM 0/4 books; v0.17 NY AM 0/4 books; v0.18 NY AM 0/4 books; v0.2.2 London 2/2 books; v0.3 London 2/2 books; v0.4 ratchet-only London 2/2 books; v0.4-ceiling London 2/2 books; v0.5 bank half, run half London 2/2 books; v0.6 ratchet + ABORT London 2/2 books; v0.7 bracket + near-target guard London 2/2 books; v0.8 London 0/2 books; v0.9 London 0/2 books; v0.10 London 0/2 books; v0.11 London 0/2 books; v0.12 London 0/2 books; v0.13 London 0/2 books; v0.14 London 0/2 books; v0.15 London 0/2 books; A1 volatility stop at entry London 0/2 books; A2 structure stop at entry London 0/2 books; A3 chandelier trail London 0/2 books; A4 EMA21 trail once up 1 unit London 0/2 books; A5 parabolic-SAR trail London 0/2 books; B1 R-multiple ladder London 0/2 books; B2 exhaustion take London 0/2 books; B3 VWAP-band take London 0/2 books; C1 halve-and-hold London 0/2 books; C2 adverse-speed cut London 0/2 books; D1 pyramid into a winner London 0/2 books; D2 scale-in entry London 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit London 0/2 books; E2 no same-direction re-entry 15 min after a full stop London 0/2 books; F1 calendar-aware London 0/2 books; F2 volatility regime London 0/2 books; F3 day-of-week / opex / month-end London 0/2 books; G1 DAY PROFIT RATCHET London 0/2 books; G2 same-direction crowd London 0/2 books; G3 opposite books may not add London 0/2 books; G4 loss-streak brake London 0/2 books; v0.16 London 0/2 books; v0.17 London 0/2 books; v0.18 London 0/2 books; v0.2.2 NY PM 2/2 books; v0.3 NY PM 2/2 books; v0.4 ratchet-only NY PM 2/2 books; v0.4-ceiling NY PM 2/2 books; v0.5 bank half, run half NY PM 2/2 books; v0.6 ratchet + ABORT NY PM 2/2 books; v0.7 bracket + near-target guard NY PM 2/2 books; v0.8 NY PM 0/2 books; v0.9 NY PM 0/2 books; v0.10 NY PM 0/2 books; v0.11 NY PM 0/2 books; v0.12 NY PM 0/2 books; v0.13 NY PM 0/2 books; v0.14 NY PM 0/2 books; v0.15 NY PM 0/2 books; A1 volatility stop at entry NY PM 0/2 books; A2 structure stop at entry NY PM 0/2 books; A3 chandelier trail NY PM 0/2 books; A4 EMA21 trail once up 1 unit NY PM 0/2 books; A5 parabolic-SAR trail NY PM 0/2 books; B1 R-multiple ladder NY PM 0/2 books; B2 exhaustion take NY PM 0/2 books; B3 VWAP-band take NY PM 0/2 books; C1 halve-and-hold NY PM 0/2 books; C2 adverse-speed cut NY PM 0/2 books; D1 pyramid into a winner NY PM 0/2 books; D2 scale-in entry NY PM 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit NY PM 0/2 books; E2 no same-direction re-entry 15 min after a full stop NY PM 0/2 books; F1 calendar-aware NY PM 0/2 books; F2 volatility regime NY PM 0/2 books; F3 day-of-week / opex / month-end NY PM 0/2 books; G1 DAY PROFIT RATCHET NY PM 0/2 books; G2 same-direction crowd NY PM 0/2 books; G3 opposite books may not add NY PM 0/2 books; G4 loss-streak brake NY PM 0/2 books; v0.16 NY PM 0/2 books; v0.17 NY PM 0/2 books; v0.18 NY PM 0/2 books
+DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 books; v0.3 Asia 3/3 books; v0.4 ratchet-only Asia 3/3 books; v0.4-ceiling Asia 3/3 books; v0.5 bank half, run half Asia 3/3 books; v0.6 ratchet + ABORT Asia 3/3 books; v0.7 bracket + near-target guard Asia 3/3 books; v0.8 Asia 1/3 books; v0.9 Asia 1/3 books; v0.10 Asia 1/3 books; v0.11 Asia 0/3 books; v0.12 Asia 0/3 books; v0.13 Asia 0/3 books; v0.14 Asia 0/3 books; v0.15 Asia 0/3 books; A1 volatility stop at entry Asia 0/3 books; A2 structure stop at entry Asia 0/3 books; A3 chandelier trail Asia 0/3 books; A4 EMA21 trail once up 1 unit Asia 0/3 books; A5 parabolic-SAR trail Asia 0/3 books; B1 R-multiple ladder Asia 0/3 books; B2 exhaustion take Asia 0/3 books; B3 VWAP-band take Asia 0/3 books; C1 halve-and-hold Asia 0/3 books; C2 adverse-speed cut Asia 0/3 books; D1 pyramid into a winner Asia 0/3 books; D2 scale-in entry Asia 0/3 books; E1 continuation re-entry after a ratchet stop-out in profit Asia 0/3 books; E2 no same-direction re-entry 15 min after a full stop Asia 0/3 books; F1 calendar-aware Asia 0/3 books; F2 volatility regime Asia 0/3 books; F3 day-of-week / opex / month-end Asia 0/3 books; G1 DAY PROFIT RATCHET Asia 0/3 books; G2 same-direction crowd Asia 0/3 books; G3 opposite books may not add Asia 0/3 books; G4 loss-streak brake Asia 0/3 books; v0.16 Asia 0/3 books; v0.17 Asia 0/3 books; v0.18 Asia 0/3 books; v0.16b Asia 0/3 books; v0.18b Asia 0/3 books; v0.16b PRE Asia 0/3 books; v0.2.2 NY AM 4/4 books; v0.3 NY AM 4/4 books; v0.4 ratchet-only NY AM 4/4 books; v0.4-ceiling NY AM 4/4 books; v0.5 bank half, run half NY AM 4/4 books; v0.6 ratchet + ABORT NY AM 4/4 books; v0.7 bracket + near-target guard NY AM 4/4 books; v0.8 NY AM 0/4 books; v0.9 NY AM 0/4 books; v0.10 NY AM 0/4 books; v0.11 NY AM 0/4 books; v0.12 NY AM 0/4 books; v0.13 NY AM 0/4 books; v0.14 NY AM 0/4 books; v0.15 NY AM 0/4 books; A1 volatility stop at entry NY AM 0/4 books; A2 structure stop at entry NY AM 0/4 books; A3 chandelier trail NY AM 0/4 books; A4 EMA21 trail once up 1 unit NY AM 0/4 books; A5 parabolic-SAR trail NY AM 0/4 books; B1 R-multiple ladder NY AM 0/4 books; B2 exhaustion take NY AM 0/4 books; B3 VWAP-band take NY AM 0/4 books; C1 halve-and-hold NY AM 0/4 books; C2 adverse-speed cut NY AM 0/4 books; D1 pyramid into a winner NY AM 0/4 books; D2 scale-in entry NY AM 0/4 books; E1 continuation re-entry after a ratchet stop-out in profit NY AM 0/4 books; E2 no same-direction re-entry 15 min after a full stop NY AM 0/4 books; F1 calendar-aware NY AM 0/4 books; F2 volatility regime NY AM 0/4 books; F3 day-of-week / opex / month-end NY AM 0/4 books; G1 DAY PROFIT RATCHET NY AM 0/4 books; G2 same-direction crowd NY AM 0/4 books; G3 opposite books may not add NY AM 0/4 books; G4 loss-streak brake NY AM 0/4 books; v0.16 NY AM 0/4 books; v0.17 NY AM 0/4 books; v0.18 NY AM 0/4 books; v0.16b NY AM 0/4 books; v0.18b NY AM 0/4 books; v0.16b PRE NY AM 0/4 books; v0.2.2 London 2/2 books; v0.3 London 2/2 books; v0.4 ratchet-only London 2/2 books; v0.4-ceiling London 2/2 books; v0.5 bank half, run half London 2/2 books; v0.6 ratchet + ABORT London 2/2 books; v0.7 bracket + near-target guard London 2/2 books; v0.8 London 0/2 books; v0.9 London 0/2 books; v0.10 London 0/2 books; v0.11 London 0/2 books; v0.12 London 0/2 books; v0.13 London 0/2 books; v0.14 London 0/2 books; v0.15 London 0/2 books; A1 volatility stop at entry London 0/2 books; A2 structure stop at entry London 0/2 books; A3 chandelier trail London 0/2 books; A4 EMA21 trail once up 1 unit London 0/2 books; A5 parabolic-SAR trail London 0/2 books; B1 R-multiple ladder London 0/2 books; B2 exhaustion take London 0/2 books; B3 VWAP-band take London 0/2 books; C1 halve-and-hold London 0/2 books; C2 adverse-speed cut London 0/2 books; D1 pyramid into a winner London 0/2 books; D2 scale-in entry London 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit London 0/2 books; E2 no same-direction re-entry 15 min after a full stop London 0/2 books; F1 calendar-aware London 0/2 books; F2 volatility regime London 0/2 books; F3 day-of-week / opex / month-end London 0/2 books; G1 DAY PROFIT RATCHET London 0/2 books; G2 same-direction crowd London 0/2 books; G3 opposite books may not add London 0/2 books; G4 loss-streak brake London 0/2 books; v0.16 London 0/2 books; v0.17 London 0/2 books; v0.18 London 0/2 books; v0.16b London 0/2 books; v0.18b London 0/2 books; v0.16b PRE London 0/2 books; v0.2.2 NY PM 2/2 books; v0.3 NY PM 2/2 books; v0.4 ratchet-only NY PM 2/2 books; v0.4-ceiling NY PM 2/2 books; v0.5 bank half, run half NY PM 2/2 books; v0.6 ratchet + ABORT NY PM 2/2 books; v0.7 bracket + near-target guard NY PM 2/2 books; v0.8 NY PM 0/2 books; v0.9 NY PM 0/2 books; v0.10 NY PM 0/2 books; v0.11 NY PM 0/2 books; v0.12 NY PM 0/2 books; v0.13 NY PM 0/2 books; v0.14 NY PM 0/2 books; v0.15 NY PM 0/2 books; A1 volatility stop at entry NY PM 0/2 books; A2 structure stop at entry NY PM 0/2 books; A3 chandelier trail NY PM 0/2 books; A4 EMA21 trail once up 1 unit NY PM 0/2 books; A5 parabolic-SAR trail NY PM 0/2 books; B1 R-multiple ladder NY PM 0/2 books; B2 exhaustion take NY PM 0/2 books; B3 VWAP-band take NY PM 0/2 books; C1 halve-and-hold NY PM 0/2 books; C2 adverse-speed cut NY PM 0/2 books; D1 pyramid into a winner NY PM 0/2 books; D2 scale-in entry NY PM 0/2 books; E1 continuation re-entry after a ratchet stop-out in profit NY PM 0/2 books; E2 no same-direction re-entry 15 min after a full stop NY PM 0/2 books; F1 calendar-aware NY PM 0/2 books; F2 volatility regime NY PM 0/2 books; F3 day-of-week / opex / month-end NY PM 0/2 books; G1 DAY PROFIT RATCHET NY PM 0/2 books; G2 same-direction crowd NY PM 0/2 books; G3 opposite books may not add NY PM 0/2 books; G4 loss-streak brake NY PM 0/2 books; v0.16 NY PM 0/2 books; v0.17 NY PM 0/2 books; v0.18 NY PM 0/2 books; v0.16b NY PM 0/2 books; v0.18b NY PM 0/2 books; v0.16b PRE NY PM 0/2 books
 
 # Asia: window 202309-202610 (37 months)
 
@@ -22,8 +22,8 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.8 (scale out in thirds) | none complete (MF2 not complete) | not run yet |||||||| 
 | v0.9 (volatility-sized give-back) | none complete (MF2 not complete) | not run yet |||||||| 
 | v0.10 (level-anchored stop) | none complete (MF2 not complete) | not run yet |||||||| 
-| v0.11 (trend day vs range day) | none complete (MF1 not complete) | not run yet |||||||| 
-| v0.12 (momentum roll-over) | none complete (MF1 not complete) | not run yet |||||||| 
+| v0.11 (trend day vs range day) | none complete (MF1, MF2 not complete) | not run yet |||||||| 
+| v0.12 (momentum roll-over) | none complete (MF1, MF2, MF3 not complete) | not run yet |||||||| 
 | v0.13 (tape-led defence (Asia, London only)) | none complete (MF1 not complete) | not run yet |||||||| 
 | v0.14 (time of session) | none complete (MF1 not complete) | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete (MF1, MF2 not complete) | not run yet |||||||| 
@@ -51,6 +51,9 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.16 (the screens set the leash; post-result change 19) | none complete | not run yet |||||||| 
 | v0.17 (the screens choose the day; post-result change 20) | none complete | not run yet |||||||| 
 | v0.18 (slow divergence at the highs; post-result change 21) | none complete | not run yet |||||||| 
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | none complete | not run yet |||||||| 
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | none complete | not run yet |||||||| 
+| v0.16b PRE (NY 2023-09..2024-09 pre-window, separate row; only if built) | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 tr100, MF2 so0, MF3 x7) | MF1, MF2, MF3 | 912,321 (+2%) | -89,603 / -67,941 | -39,207 / -37,409 | 20,610 / 18,895 | 19,244 / 15,529 | 2116 / 2345 | 5/14, 4/11, 4/12 | no / no / no |
 
 ## Asia: PER BOOK
@@ -99,12 +102,12 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.6 ratchet + ABORT | MF1, MF2, MF4, MF5 | 1,620,381 (-43%) | -173,260 / -163,622 | -86,466 / -110,130 | 41,929 / 54,746 | 98,349 / 29,179 | 4095 / 2433 | 4/9, 2/7, 3/7 | no / no / no |
 | v0.7 bracket + near-target guard (pl70k50) | MF1, MF2, MF4, MF5 | 2,297,634 (-19%) | -354,064 / -163,622 | -112,604 / -110,130 | 52,243 / 54,746 | 26,679 / 29,179 | 2980 / 2433 | 5/9, 4/7, 4/7 | no / no / no |
 | v0.8 (scale out in thirds) | none complete | not run yet |||||||| 
-| v0.9 (volatility-sized give-back) | none complete | not run yet |||||||| 
-| v0.10 (level-anchored stop) | none complete | not run yet |||||||| 
+| v0.9 (volatility-sized give-back) | none complete (MF1 not complete) | not run yet |||||||| 
+| v0.10 (level-anchored stop) | none complete (MF5 not complete) | not run yet |||||||| 
 | v0.11 (trend day vs range day) | none complete (MF5 not complete) | not run yet |||||||| 
 | v0.12 (momentum roll-over) | none complete | not run yet |||||||| 
 | v0.13 (tape-led defence (Asia, London only)) | none complete | not run yet |||||||| 
-| v0.14 (time of session) | none complete | not run yet |||||||| 
+| v0.14 (time of session) | none complete (MF1 not complete) | not run yet |||||||| 
 | v0.15 (per-book winner profile) | none complete | not run yet |||||||| 
 | A1 volatility stop at entry (2 x s5, same lots-risk, own target; compare in $ and DD, lots differ); post-result change 22 | none complete | not run yet |||||||| 
 | A2 structure stop at entry (capped at own stop, own lots); post-result change 23 | none complete | not run yet |||||||| 
@@ -130,6 +133,9 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.16 (the screens set the leash; post-result change 19) | none complete | not run yet |||||||| 
 | v0.17 (the screens choose the day; post-result change 20) | none complete | not run yet |||||||| 
 | v0.18 (slow divergence at the highs; post-result change 21) | none complete | not run yet |||||||| 
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | none complete | not run yet |||||||| 
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | none complete | not run yet |||||||| 
+| v0.16b PRE (NY 2023-09..2024-09 pre-window, separate row; only if built) | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 g75a30, MF2 tr50, MF4 g67a70, MF5 x7) | MF1, MF2, MF4, MF5 | 2,634,979 (-7%) | -160,142 / -163,622 | -107,874 / -110,130 | 46,092 / 54,746 | 18,624 / 29,179 | 2485 / 2433 | 5/9, 4/7, 4/7 | no / no / no |
 
 ## NY AM: PER BOOK
@@ -214,6 +220,9 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.16 (the screens set the leash; post-result change 19) | none complete | not run yet |||||||| 
 | v0.17 (the screens choose the day; post-result change 20) | none complete | not run yet |||||||| 
 | v0.18 (slow divergence at the highs; post-result change 21) | none complete | not run yet |||||||| 
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | none complete | not run yet |||||||| 
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | none complete | not run yet |||||||| 
+| v0.16b PRE (NY 2023-09..2024-09 pre-window, separate row; only if built) | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 tr100, MF3 so0) | MF1, MF3 | 778,909 (-12%) | -319,212 / -224,333 | -76,627 / -107,350 | 25,852 / 23,472 | 20,265 / 19,919 | 999 / 923 | 3/14, 2/11, 3/12 | no / no / no |
 
 ## London: PER BOOK
@@ -282,6 +291,9 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 | v0.16 (the screens set the leash; post-result change 19) | none complete | not run yet |||||||| 
 | v0.17 (the screens choose the day; post-result change 20) | none complete | not run yet |||||||| 
 | v0.18 (slow divergence at the highs; post-result change 21) | none complete | not run yet |||||||| 
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | none complete | not run yet |||||||| 
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | none complete | not run yet |||||||| 
+| v0.16b PRE (NY 2023-09..2024-09 pre-window, separate row; only if built) | none complete | not run yet |||||||| 
 | best single landscape code per book (MF2 xi15all, MF3 x7) | MF2, MF3 | 543,807 (-17%) | -79,217 / -134,363 | -47,044 / -44,139 | 19,579 / 20,021 | 18,575 / 28,539 | 336 / 454 | 3/9, 0/7, 3/7 | no / no / no |
 
 ## NY PM: PER BOOK
@@ -309,15 +321,15 @@ DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 
 
 | row | session | window | income managed / live (change) | max DD managed / live | worst DAY managed / live | worst week managed / live | weekly st.dev. | largest single DAY give-back (peak minus end of day, managed) | rule fired (days / entries) | floors 10 / 20 / 30% |
 |---|---|---|---|---|---|---|---|---|---|---|
-| G1 | Asia | | not built yet |||||||||
-| G1 | NY AM | | not built yet |||||||||
-| G1 | London | | not built yet |||||||||
+| G1 | Asia | 18 of 37 months DONE | not scored (incomplete) |||||||||
+| G1 | NY AM | 1 of 24 months DONE | not scored (incomplete) |||||||||
+| G1 | London | 20 of 37 months DONE | not scored (incomplete) |||||||||
 | G1 | NY PM | | not built yet |||||||||
-| G2 | Asia | | not built yet |||||||||
+| G2 | Asia | 12 of 37 months DONE | not scored (incomplete) |||||||||
 | G2 | NY AM | | not built yet |||||||||
-| G2 | London | | not built yet |||||||||
-| G2 | NY PM | | not built yet |||||||||
-| G3 | Asia | | not built yet |||||||||
+| G2 | London | 15 of 37 months DONE | not scored (incomplete) |||||||||
+| G2 | NY PM | 2 of 24 months DONE | not scored (incomplete) |||||||||
+| G3 | Asia | 1 of 37 months DONE | not scored (incomplete) |||||||||
 | G3 | NY AM | | not built yet |||||||||
 | G3 | London | | not built yet |||||||||
 | G3 | NY PM | | not built yet |||||||||
@@ -332,17 +344,26 @@ G3 (opposite books may not add): the cost / saving is the net of the live mix tr
 
 Availability file: present, first lines: book,window,n,v16_avail,v16_loose,v16_mixed,v16_tight,v16_na,v17_avail,v17_UP,v17_DOWN,v17_MIXED,v17_NA,v18_avail / Asia MF1,window,150,0.92,0.11333333333333333,0.8,0.006666666666666667,0.08,0.9466666666666667,0.02,0.013333333333333334,0.9133333333333333,0.05333333333333334,0.41333333333333333 / Asia MF2,window,150,0.92,0.31333333333333335,0.6,0.006666666666666667,0.08,0.8266666666666667,0.006666666666666667,0.013333333333333334,0.8066666666666666,0.17333333333333334,0.16666666666666666 / Asia MF3,window,150,0.8533333333333334,0.16,0.6266666666666667,0.06666666666666667,0.14666666666666667,0.88,0.013333333333333334,0.013333333333333334,0.8533333333333334,0.12,0.15333333333333332 / NY AM MF1,window,150,1.0,0.2,0.6866666666666666,0.11333333333333333,0.0,0.9933333333333333,0.02,0.02,0.9533333333333334,0.006666666666666667,0.9866666666666667 / NY AM MF1,pre-2024-10,150,1.0,0.14,0.68,0.18,0.0,0.74,0.0,0.0,0.74,0.26,0.0
 
-| design | session | trades with a context rule id (TR / HL / DV / LP) or AGR:L/M/T in the log, share (of trades, books complete) |
-|---|---|---|
-| v0.16 (the screens set the leash; post-result change 19) | Asia | no complete rows yet |
-| v0.16 (the screens set the leash; post-result change 19) | NY AM | no complete rows yet |
-| v0.16 (the screens set the leash; post-result change 19) | London | no complete rows yet |
-| v0.16 (the screens set the leash; post-result change 19) | NY PM | no complete rows yet |
-| v0.17 (the screens choose the day; post-result change 20) | Asia | no complete rows yet |
-| v0.17 (the screens choose the day; post-result change 20) | NY AM | no complete rows yet |
-| v0.17 (the screens choose the day; post-result change 20) | London | no complete rows yet |
-| v0.17 (the screens choose the day; post-result change 20) | NY PM | no complete rows yet |
-| v0.18 (slow divergence at the highs; post-result change 21) | Asia | no complete rows yet |
-| v0.18 (slow divergence at the highs; post-result change 21) | NY AM | no complete rows yet |
-| v0.18 (slow divergence at the highs; post-result change 21) | London | no complete rows yet |
-| v0.18 (slow divergence at the highs; post-result change 21) | NY PM | no complete rows yet |
+Breadth availability (v16b / v18b members, tick / add valid share): see autopilot/DESK_CTX_AVAILABILITY_B.csv (per book, window and pre-window rows)
+| design | session | context AVAILABILITY share (mean over books, DESK_CTX_AVAILABILITY.csv) | trades with a context rule id (TR / HL / DV / LP / DB) or AGR:L/M/T in the log, share (of trades, books complete) |
+|---|---|---|---|
+| v0.16 (the screens set the leash; post-result change 19) | Asia | 90% | no complete rows yet |
+| v0.16 (the screens set the leash; post-result change 19) | NY AM | 100% | no complete rows yet |
+| v0.16 (the screens set the leash; post-result change 19) | London | 47% | no complete rows yet |
+| v0.16 (the screens set the leash; post-result change 19) | NY PM | 100% | no complete rows yet |
+| v0.17 (the screens choose the day; post-result change 20) | Asia | 88% | no complete rows yet |
+| v0.17 (the screens choose the day; post-result change 20) | NY AM | 87% | no complete rows yet |
+| v0.17 (the screens choose the day; post-result change 20) | London | 62% | no complete rows yet |
+| v0.17 (the screens choose the day; post-result change 20) | NY PM | 69% | no complete rows yet |
+| v0.18 (slow divergence at the highs; post-result change 21) | Asia | 24% | no complete rows yet |
+| v0.18 (slow divergence at the highs; post-result change 21) | NY AM | 50% | no complete rows yet |
+| v0.18 (slow divergence at the highs; post-result change 21) | London | 37% | no complete rows yet |
+| v0.18 (slow divergence at the highs; post-result change 21) | NY PM | 49% | no complete rows yet |
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | Asia | 90% | no complete rows yet |
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | NY AM | 100% | no complete rows yet |
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | London | 47% | no complete rows yet |
+| v0.16b (screens set the leash + breadth; post-result change 32; rule LP) | NY PM | 100% | no complete rows yet |
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | Asia | 24% | no complete rows yet |
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | NY AM | 50% | no complete rows yet |
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | London | 37% | no complete rows yet |
+| v0.18b (slow divergence + breadth; post-result change 33; rule DB) | NY PM | 49% | no complete rows yet |

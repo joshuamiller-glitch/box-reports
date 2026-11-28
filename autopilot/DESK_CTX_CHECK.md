@@ -1,4 +1,4 @@
-### T1 Asia MF2 (ABORT)  (62s)
+### T1 Asia MF2 (ABORT)  (75s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
 - I4 v17 force MIXED == no action: PASS
@@ -11,7 +11,7 @@
   - first / last context read: {'cls': 'MIXED', 'mark': 0} | {'cls': 'MIXED', 'mark': 2}
 - v18 live: exit session end at 1791180000 px 31045.25, acts [] ; counters {'dec': 344, 'v18_ev': 19}
   - first / last context read: {'div': 'na'} | {'div': 'na'}
-### T2 Asia MF1 (objective exit)  (146s)
+### T2 Asia MF1 (objective exit)  (82s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
 - I4 v17 force MIXED == no action: PASS
@@ -24,30 +24,40 @@
   - first / last context read: {'cls': 'NA', 'mark': 0} | {'cls': 'MIXED', 'mark': 2}
 - v18 live: exit session end at 1789452000 px 29081.62, acts [] ; counters {'dec': 268, 'v18_ev': 28}
   - first / last context read: {'div': 'na'} | {'div': 'na'}
-### T3 NY AM MF5 (clock exit)  (62s)
+### T3 NY AM MF5 (clock exit)  (75s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
 - I4 v17 force MIXED == no action: PASS
 - I5 v17 force IN == v0.4 ratchet (tightens + exit): PASS
 - I6 v18 force_none == no action: PASS
+- I7 v16b breadth forced off == v16 live: PASS
+- I8 v18b breadth forced off == v18 live: PASS
 - v0.4 exit session end at 1790092800, acts []
 - v16 live: exit session end at 1790092800 px 30909.75, acts [] ; counters {'dec': 87, 'v16_av': 87, 'v16_mixed': 77, 'v16_tight': 10}
   - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(-1.24), 'RTY': np.float64(-0.86), 'YM': np.float64(-0.69), 'MEGA': np.float64(-0.45), 'TICK': -1.05} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.39), 'RTY': np.float64(0.63), 'YM': np.float64(-0.11), 'MEGA': np.float64(-0.51), 'TICK': 0.74}
 - v17 live: exit session end at 1790092800 px 30909.75, acts [] ; counters {'dec': 87, 'v17_cls': 1, 'v17_av': 1, 'v17_mixed': 1}
   - first / last context read: {'cls': 'MIXED', 'mark': 0} | {'cls': 'MIXED', 'mark': 0}
 - v18 live: exit session end at 1790092800 px 30909.75, acts [] ; counters {'dec': 87}
-### T4 NY AM MF4 (never-bend stop)  (85s)
+- v16b live: exit session end at 1790092800 px 30909.75, acts [] ; counters {'dec': 87, 'v16_av': 87, 'v16_mixed': 79, 'v16_tight': 8}
+  - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(-1.24), 'RTY': np.float64(-0.86), 'YM': np.float64(-0.69), 'MEGA': np.float64(-0.45), 'TICK': -0.99, 'ADD': 0.27} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.39), 'RTY': np.float64(0.63), 'YM': np.float64(-0.11), 'MEGA': np.float64(-0.51), 'TICK': 0.31, 'ADD': -0.02}
+- v18b live: exit session end at 1790092800 px 30909.75, acts [] ; counters {'dec': 87}
+### T4 NY AM MF4 (never-bend stop)  (99s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
 - I4 v17 force MIXED == no action: PASS
 - I5 v17 force IN == v0.4 ratchet (tightens + exit): PASS
 - I6 v18 force_none == no action: PASS
+- I7 v16b breadth forced off == v16 live: PASS
+- I8 v18b breadth forced off == v18 live: PASS
 - v0.4 exit stop at 1786376448, acts ['RT']
 - v16 live: exit stop at 1786376448 px 29779.75, acts [(435, 'RT')] ; counters {'dec': 49, 'v16_av': 49, 'v16_mixed': 49}
   - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.04), 'RTY': np.float64(0.13), 'YM': np.float64(-0.15), 'MEGA': np.float64(0.23), 'TICK': -0.23} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.33), 'RTY': np.float64(0.58), 'YM': np.float64(0.88), 'MEGA': np.float64(0.45), 'TICK': 0.78}
 - v17 live: exit target at 1786376124 px 29747.38, acts [] ; counters {'dec': 27, 'v17_cls': 1, 'v17_av': 1, 'v17_mixed': 1}
   - first / last context read: {'cls': 'MIXED', 'mark': 0} | {'cls': 'MIXED', 'mark': 0}
 - v18 live: exit target at 1786376124 px 29747.38, acts [] ; counters {'dec': 27, 'v18_ev': 2}
+- v16b live: exit stop at 1786376448 px 29779.75, acts [(435, 'RT')] ; counters {'dec': 49, 'v16_av': 49, 'v16_mixed': 49}
+  - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.04), 'RTY': np.float64(0.13), 'YM': np.float64(-0.15), 'MEGA': np.float64(0.23), 'TICK': 0.23, 'ADD': 0.91} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.33), 'RTY': np.float64(0.58), 'YM': np.float64(0.88), 'MEGA': np.float64(0.45), 'TICK': 0.89, 'ADD': 0.94}
+- v18b live: exit target at 1786376124 px 29747.38, acts [] ; counters {'dec': 27, 'v18_ev': 2}
 ### T5 London MF1 (FALLBACK, feeds NQ+ES+RTY only)  (2s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
@@ -61,16 +71,21 @@
 - v17 live: exit target at 1789040876 px 25888.50, acts [] ; counters {'dec': 179, 'v17_cls': 2, 'v17_mixed': 2}
   - first / last context read: {'cls': 'NA', 'mark': 0} | {'cls': 'NA', 'mark': 1}
 - v18 live: exit target at 1789040876 px 25888.50, acts [] ; counters {'dec': 179, 'v18_ev': 10}
-### T6 NY PM MF2 (ABORT, NY PM session)  (12s)
+### T6 NY PM MF2 (ABORT, NY PM session)  (10s)
 - I1 DESKCTX v04 == DESK v04: PASS
 - I2 v16 force mixed == v0.4: PASS
 - I4 v17 force MIXED == no action: PASS
 - I5 v17 force IN == v0.4 ratchet (tightens + exit): PASS
 - I6 v18 force_none == no action: PASS
+- I7 v16b breadth forced off == v16 live: PASS
+- I8 v18b breadth forced off == v18 live: PASS
 - v0.4 exit session end at 1787342401, acts []
 - v16 live: exit session end at 1787342401 px 25956.75, acts [] ; counters {'dec': 36, 'v16_av': 36, 'v16_mixed': 36}
   - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.14), 'RTY': np.float64(0.87), 'YM': np.float64(0.69), 'MEGA': np.float64(1.24), 'TICK': 0.46} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(-2.52), 'RTY': np.float64(-0.58), 'YM': np.float64(-0.27), 'MEGA': np.float64(-2.72), 'TICK': -0.4}
 - v17 live: exit session end at 1787342401 px 25956.75, acts [] ; counters {'dec': 36, 'v17_cls': 1, 'v17_av': 1, 'v17_mixed': 1}
   - first / last context read: {'cls': 'MIXED', 'mark': 0} | {'cls': 'MIXED', 'mark': 0}
 - v18 live: exit session end at 1787342401 px 25956.75, acts [] ; counters {'dec': 36}
+- v16b live: exit session end at 1787342401 px 25956.75, acts [] ; counters {'dec': 36, 'v16_av': 36, 'v16_mixed': 36}
+  - first / last context read: {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(0.14), 'RTY': np.float64(0.87), 'YM': np.float64(0.69), 'MEGA': np.float64(1.24), 'TICK': -0.03, 'ADD': 1.0} | {'agree': 'mixed', 'keep': 0.5, 'ES': np.float64(-2.52), 'RTY': np.float64(-0.58), 'YM': np.float64(-0.27), 'MEGA': np.float64(-2.72), 'TICK': -0.56, 'ADD': 1.05}
+- v18b live: exit session end at 1787342401 px 25956.75, acts [] ; counters {'dec': 36}
 ALL IDENTITY CHECKS PASS
