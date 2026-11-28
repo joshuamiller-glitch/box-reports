@@ -1,11 +1,11 @@
-# SUNDAY JOINT MIXES (W-SUNDAY-MX) 28 Nov 10:52Z
+# SUNDAY JOINT MIXES (W-SUNDAY-MX) 28 Nov 11:13Z
 
 ## Answer
 
-- NY AM (42 months): lowest max DD = drift at 1 lot / reference (no treatment) (-$185,152 vs live -$200,647), income $2,779,825 vs live $3,498,291; best income = live / reference (no treatment) ($3,498,291, DD -$200,647).
-- Asia (42 months): lowest max DD = drift removed / reference (no treatment) (-$66,365 vs live -$67,941), income $909,638 vs live $914,998; best income = replacement book / reference (no treatment) ($1,044,530, DD -$66,418).
-- NY PM (37 months): lowest max DD = drift removed / reference (no treatment) (-$55,701 vs live -$134,363), income $882,039 vs live $1,047,175; best income = replacement book / reference (no treatment) ($1,050,341, DD -$73,880).
-- London (42 months): lowest max DD = drift removed / reference (no treatment) (-$137,970 vs live -$224,333), income $711,979 vs live $913,621; best income = live / reference (no treatment) ($913,621, DD -$224,333).
+- NY AM (42 months): lowest max DD = drift removed / node (-$137,104 vs live -$200,647), income $2,450,021 vs live $3,498,291; best income = live / node ($3,615,376, DD -$180,710).
+- Asia (42 months): lowest max DD = replacement book / vwaplate50 (-$57,774 vs live -$67,941), income $1,216,508 vs live $914,998; best income = replacement book / vwap ($1,301,812, DD -$59,708).
+- NY PM (37 months): lowest max DD = drift removed / late50 (-$54,114 vs live -$134,363), income $846,757 vs live $1,047,175; best income = replacement book / znconf ($1,451,235, DD -$72,379).
+- London (42 months): lowest max DD = drift at 1 lot / late75 (-$128,414 vs live -$224,333), income $727,063 vs live $913,621; best income = live / late50 ($988,772, DD -$198,304).
 
 Exact engine, p484. Treatments: NY AM node = NY-NODE (MF4) g67a70 no target; Asia vwap = AS-VWAPBRK (MF3) tr100 no target (trail 1.0 x S0 armed at best >= 50% of old target); NY PM zn = NP-ZN xi15all, conf = NP-CONF (MF5, added book as in the CONF set) xi10tight; late50 = half lots on entries whose planned hold is under the p50 of past winners holds; London late50/late75 on the live mix. Bases: live / drift books removed / drift books at 1 lot / replacement (Asia Ma1 in place of MF4; NY PM Z1 in place of MF1, flagged: the REPL2 page supports only Asia Ma1). Layer dollar caps NOT re-fitted. London drift-removed = the mix without MF2.
 
@@ -15,15 +15,15 @@ Exact engine, p484. Treatments: NY AM node = NY-NODE (MF4) g67a70 no target; Asi
 | live | reference (no treatment) | $3,498,291 | -$200,647 | -$110,130 | $49,934 | $506,856 | -$54,493 | $1,463,415 | -$69,974 | $1,348,100 | -$110,130 |
 | drift removed | reference (no treatment) | $2,234,172 | -$217,943 | -$92,427 | $41,861 | $339,389 | -$56,176 | $990,095 | -$79,159 | $1,238,417 | -$88,432 |
 | drift at 1 lot | reference (no treatment) | $2,779,825 | -$185,152 | -$94,476 | $43,543 | $418,681 | -$50,546 | $1,186,230 | -$65,993 | $1,319,979 | -$94,476 |
-| live | node | pending |||||||||
-| live | late50 | pending |||||||||
-| live | nodelate50 | pending |||||||||
-| drift removed | node | pending |||||||||
-| drift removed | late50 | pending |||||||||
-| drift removed | nodelate50 | pending |||||||||
-| drift at 1 lot | node | pending |||||||||
-| drift at 1 lot | late50 | pending |||||||||
-| drift at 1 lot | nodelate50 | pending |||||||||
+| live | node | $3,615,376 | -$180,710 | -$118,756 | $47,670 | $543,521 | -$58,389 | $1,444,120 | -$78,458 | $1,273,055 | -$71,460 |
+| live | late50 | $3,298,166 | -$172,809 | -$106,747 | $48,675 | $464,002 | -$53,033 | $1,403,235 | -$68,065 | $1,180,690 | -$106,747 |
+| live | nodelate50 | $3,413,168 | -$170,775 | -$113,197 | $46,393 | $502,945 | -$56,688 | $1,389,129 | -$78,907 | $1,119,847 | -$67,181 |
+| drift removed | node | $2,450,021 | -$137,104 | -$93,021 | $40,204 | $409,158 | -$43,563 | $1,015,384 | -$95,317 | $1,130,503 | -$69,428 |
+| drift removed | late50 | $2,027,013 | -$234,617 | -$86,568 | $40,138 | $301,068 | -$55,073 | $929,237 | -$82,722 | $1,080,792 | -$82,658 |
+| drift removed | nodelate50 | $2,240,701 | -$152,359 | -$86,912 | $38,588 | $370,467 | -$43,550 | $960,041 | -$98,595 | $975,212 | -$69,876 |
+| drift at 1 lot | node | $2,975,805 | -$148,404 | -$94,569 | $41,740 | $478,386 | -$44,476 | $1,215,385 | -$69,186 | $1,208,830 | -$64,463 |
+| drift at 1 lot | late50 | $2,581,063 | -$181,583 | -$88,703 | $41,991 | $380,005 | -$52,208 | $1,125,017 | -$62,459 | $1,169,334 | -$88,703 |
+| drift at 1 lot | nodelate50 | $2,795,079 | -$157,699 | -$88,460 | $40,162 | $439,695 | -$43,492 | $1,159,031 | -$72,614 | $1,072,285 | -$65,254 |
 
 ## Asia (42 months, 2023-04 to 2026-10; Nov 2025 excluded)
 | base | treatment | income | max DD | worst week | weekly st.dev | L3M inc | L3M DD | L6M inc | L6M DD | NQ-down wks income | NQ-down worst wk |
@@ -31,17 +31,17 @@ Exact engine, p484. Treatments: NY AM node = NY-NODE (MF4) g67a70 no target; Asi
 | live | reference (no treatment) | $914,998 | -$67,941 | -$37,409 | $17,867 | $154,302 | -$36,934 | $462,565 | -$36,934 | $378,957 | -$37,409 |
 | drift removed | reference (no treatment) | $909,638 | -$66,365 | -$35,545 | $17,072 | $141,925 | -$34,250 | $458,635 | -$34,250 | $355,436 | -$35,545 |
 | drift at 1 lot | reference (no treatment) | $908,189 | -$66,943 | -$35,476 | $17,250 | $145,805 | -$34,615 | $459,319 | -$34,615 | $360,891 | -$35,476 |
-| live | vwap | pending |||||||||
-| live | late50 | pending |||||||||
-| live | vwaplate50 | pending |||||||||
-| drift removed | vwap | pending |||||||||
-| drift removed | late50 | pending |||||||||
-| drift removed | vwaplate50 | pending |||||||||
-| drift at 1 lot | vwap | pending |||||||||
-| drift at 1 lot | late50 | pending |||||||||
-| drift at 1 lot | vwaplate50 | pending |||||||||
-| replacement book | vwap | pending |||||||||
-| replacement book | vwaplate50 | pending |||||||||
+| live | vwap | $1,119,794 | -$63,287 | -$39,372 | $19,077 | $146,368 | -$32,009 | $459,903 | -$35,235 | $486,444 | -$39,372 |
+| live | late50 | $853,755 | -$69,706 | -$37,451 | $16,065 | $163,498 | -$34,937 | $427,386 | -$34,937 | $323,408 | -$37,451 |
+| live | vwaplate50 | $1,041,886 | -$66,155 | -$43,653 | $17,802 | $150,221 | -$31,140 | $422,039 | -$34,317 | $404,891 | -$43,653 |
+| drift removed | vwap | $1,157,521 | -$60,946 | -$36,691 | $18,820 | $161,182 | -$31,542 | $495,719 | -$31,542 | $467,377 | -$36,691 |
+| drift removed | late50 | $866,635 | -$68,965 | -$34,941 | $15,235 | $151,518 | -$30,391 | $427,622 | -$30,391 | $298,802 | -$34,941 |
+| drift removed | vwaplate50 | $1,064,536 | -$59,783 | -$42,455 | $17,267 | $165,006 | -$31,554 | $452,659 | -$31,554 | $377,658 | -$42,455 |
+| drift at 1 lot | vwap | $1,140,725 | -$62,549 | -$36,092 | $18,779 | $152,929 | -$31,127 | $484,803 | -$31,587 | $472,108 | -$36,092 |
+| drift at 1 lot | late50 | $864,523 | -$69,207 | -$35,076 | $15,407 | $155,402 | -$30,752 | $428,312 | -$30,752 | $306,001 | -$35,076 |
+| drift at 1 lot | vwaplate50 | $1,045,942 | -$61,385 | -$41,749 | $17,290 | $156,752 | -$31,310 | $436,621 | -$35,524 | $379,527 | -$41,749 |
+| replacement book | vwap | $1,301,812 | -$59,708 | -$35,296 | $19,426 | $180,117 | -$31,298 | $549,856 | -$31,298 | $542,814 | -$35,296 |
+| replacement book | vwaplate50 | $1,216,508 | -$57,774 | -$42,455 | $17,911 | $186,790 | -$29,693 | $513,216 | -$29,693 | $459,605 | -$42,455 |
 | replacement book | reference (no treatment) | $1,044,530 | -$66,418 | -$36,185 | $17,850 | $175,276 | -$29,282 | $519,179 | -$29,282 | $404,397 | -$36,185 |
 
 ## NY PM (37 months, 2023-09 to 2026-10; Nov 2025 excluded)
@@ -50,20 +50,20 @@ Exact engine, p484. Treatments: NY AM node = NY-NODE (MF4) g67a70 no target; Asi
 | live | reference (no treatment) | $1,047,175 | -$134,363 | -$44,139 | $16,915 | $199,258 | -$20,350 | $386,078 | -$30,613 | $486,530 | -$35,057 |
 | drift removed | reference (no treatment) | $882,039 | -$55,701 | -$32,018 | $12,119 | $135,645 | -$11,840 | $242,779 | -$33,802 | $435,781 | -$18,793 |
 | drift at 1 lot | reference (no treatment) | $710,863 | -$59,887 | -$27,216 | $11,587 | $142,406 | -$9,553 | $242,215 | -$18,032 | $322,214 | -$15,625 |
-| live | zn | pending |||||||||
-| live | znconf | pending |||||||||
-| live | late50 | pending |||||||||
-| live | znconflate50 | pending |||||||||
-| drift removed | zn | pending |||||||||
-| drift removed | znconf | pending |||||||||
-| drift removed | late50 | pending |||||||||
-| drift removed | znconflate50 | pending |||||||||
-| drift at 1 lot | zn | pending |||||||||
-| drift at 1 lot | znconf | pending |||||||||
-| drift at 1 lot | late50 | pending |||||||||
-| drift at 1 lot | znconflate50 | pending |||||||||
-| replacement book | znconf | pending |||||||||
-| replacement book | znconflate50 | pending |||||||||
+| live | zn | $1,026,432 | -$100,916 | -$44,139 | $17,008 | $211,877 | -$18,545 | $334,301 | -$32,709 | $432,299 | -$34,441 |
+| live | znconf | $1,439,477 | -$76,536 | -$45,400 | $19,276 | $275,834 | -$25,368 | $385,160 | -$32,259 | $686,304 | -$41,560 |
+| live | late50 | $1,067,470 | -$128,032 | -$41,468 | $15,756 | $166,006 | -$32,765 | $358,993 | -$32,765 | $518,257 | -$32,613 |
+| live | znconflate50 | $1,369,241 | -$70,734 | -$43,377 | $18,070 | $259,927 | -$25,624 | $369,490 | -$32,047 | $674,359 | -$34,756 |
+| drift removed | zn | $851,862 | -$79,939 | -$30,506 | $12,391 | $153,447 | -$11,840 | $180,580 | -$77,709 | $333,196 | -$25,000 |
+| drift removed | znconf | $1,264,907 | -$86,668 | -$32,457 | $15,091 | $217,404 | -$17,370 | $231,439 | -$86,668 | $587,201 | -$31,686 |
+| drift removed | late50 | $846,757 | -$54,114 | -$31,009 | $11,144 | $130,192 | -$11,657 | $251,457 | -$34,604 | $394,814 | -$16,878 |
+| drift removed | znconflate50 | $1,150,154 | -$68,915 | -$31,683 | $13,932 | $210,440 | -$16,070 | $245,492 | -$68,915 | $526,974 | -$22,999 |
+| drift at 1 lot | zn | $754,660 | -$74,198 | -$31,343 | $12,006 | $164,783 | -$8,833 | $203,705 | -$39,703 | $250,425 | -$15,414 |
+| drift at 1 lot | znconf | $1,167,706 | -$66,388 | -$27,758 | $14,733 | $228,740 | -$15,299 | $254,563 | -$45,449 | $504,430 | -$27,490 |
+| drift at 1 lot | late50 | $744,477 | -$56,949 | -$27,122 | $11,109 | $137,259 | -$9,553 | $244,859 | -$18,392 | $323,107 | -$15,586 |
+| drift at 1 lot | znconflate50 | $1,107,243 | -$60,707 | -$25,878 | $13,915 | $220,722 | -$14,804 | $260,046 | -$38,151 | $470,028 | -$21,359 |
+| replacement book | znconf | $1,451,235 | -$72,379 | -$28,411 | $15,397 | $215,143 | -$17,530 | $303,234 | -$53,669 | $724,083 | -$25,374 |
+| replacement book | znconflate50 | $1,337,518 | -$72,425 | -$23,369 | $14,291 | $208,179 | -$16,230 | $292,093 | -$46,099 | $652,193 | -$21,817 |
 | replacement book | reference (no treatment) | $1,050,341 | -$73,880 | -$27,163 | $12,783 | $123,310 | -$19,162 | $288,148 | -$24,714 | $554,715 | -$19,437 |
 
 ## London (42 months, 2023-04 to 2026-10; Nov 2025 excluded)
@@ -72,10 +72,10 @@ Exact engine, p484. Treatments: NY AM node = NY-NODE (MF4) g67a70 no target; Asi
 | live | reference (no treatment) | $913,621 | -$224,333 | -$107,350 | $22,877 | $234,166 | -$39,760 | $528,187 | -$39,760 | $6,885 | -$107,350 |
 | drift removed | reference (no treatment) | $711,979 | -$137,970 | -$57,078 | $17,501 | $182,567 | -$40,586 | $400,932 | -$40,586 | $324,485 | -$53,813 |
 | drift at 1 lot | reference (no treatment) | $796,513 | -$148,226 | -$65,207 | $18,195 | $200,096 | -$38,610 | $439,157 | -$38,610 | $259,385 | -$65,207 |
-| live | late50 | pending |||||||||
-| live | late75 | pending |||||||||
-| drift removed | late50 | pending |||||||||
-| drift removed | late75 | pending |||||||||
-| drift at 1 lot | late50 | pending |||||||||
-| drift at 1 lot | late75 | pending |||||||||
+| live | late50 | $988,772 | -$198,304 | -$95,858 | $21,270 | $226,467 | -$38,495 | $526,947 | -$38,495 | $76,336 | -$95,858 |
+| live | late75 | $881,041 | -$163,176 | -$66,107 | $19,531 | $216,990 | -$35,313 | $480,421 | -$35,313 | $99,364 | -$66,107 |
+| drift removed | late50 | $733,511 | -$136,915 | -$57,504 | $16,709 | $183,318 | -$42,633 | $411,963 | -$42,633 | $320,624 | -$57,504 |
+| drift removed | late75 | $642,529 | -$129,510 | -$60,259 | $16,333 | $174,365 | -$40,915 | $381,102 | -$40,915 | $303,839 | -$47,253 |
+| drift at 1 lot | late50 | $818,045 | -$132,146 | -$55,163 | $17,313 | $200,848 | -$40,458 | $450,188 | -$40,458 | $255,524 | -$55,163 |
+| drift at 1 lot | late75 | $727,063 | -$128,414 | -$59,316 | $16,920 | $191,895 | -$38,910 | $419,327 | -$38,910 | $238,739 | -$49,047 |
 

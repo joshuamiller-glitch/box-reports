@@ -181,3 +181,11 @@ NY-FIB 27 Nov trade (peak about 94% of the 120-pt target, then a full stop): BE7
 - Give-back counts by window: autopilot/SUNDAY_GIVEBACK_COUNT.md and SUNDAY_GIVEBACK_RULES.md.
 - Mix rows a/b/c/d: autopilot/SUNDAY_MIX_ROWS.md. Landscape / stop-only rows: autopilot/SUNDAY_LANDSCAPE.md (W-SUNDAY-LS; NOT READY unless that file exists). Cross-instrument and prediction rules: autopilot/MGMT_DESIGN.md, LEAD_FINDER.md, ALGO_REPORT.md (W-DYNC / W-DYNH / W-DYNML verdicts: NOT READY per book unless stated there).
 - Full single-setting list of finished sets: autopilot/SUNDAY_SETS_ALL.md (W-DYNQ).
+
+<!-- JOINT-MIXES-BEGIN -->
+## Joint session mixes (W-SUNDAY-MX; full tables autopilot/SUNDAY_JOINT_MIXES.md)
+- NY AM (42 months): lowest max DD = drift removed / node (-$137,104 vs live -$200,647), income $2,450,021 vs live $3,498,291; best income = live / node ($3,615,376, DD -$180,710).
+- Asia (42 months): lowest max DD = replacement book / vwaplate50 (-$57,774 vs live -$67,941), income $1,216,508 vs live $914,998; best income = replacement book / vwap ($1,301,812, DD -$59,708).
+- NY PM (37 months): lowest max DD = drift removed / late50 (-$54,114 vs live -$134,363), income $846,757 vs live $1,047,175; best income = replacement book / znconf ($1,451,235, DD -$72,379).
+- London (42 months): lowest max DD = drift at 1 lot / late75 (-$128,414 vs live -$224,333), income $727,063 vs live $913,621; best income = live / late50 ($988,772, DD -$198,304).
+<!-- JOINT-MIXES-END -->
