@@ -1,9 +1,9 @@
-# SUNDAY FINAL ROWS (W-SUNDAY-MX) 28 Nov 13:54Z
+# SUNDAY FINAL ROWS (W-SUNDAY-MX) 28 Nov 14:03Z
 
 ## BE70 VERDICT (read first)
-- Asia (a, no late50): BE70 row pending
-- Asia (b, with late50): BE70 row pending
-- NY PM: BE70 row pending
+- Asia (a, no late50): with BE70 max DD -$73,593 vs -$60,946, worst week -$38,406 vs -$36,691, income $1,130,797 vs $1,157,521, L6M DD -$31,301 vs -$31,542 -> BE70 IS WORSE ON MAX DD AND WORST WEEK: LEAVE BE70 OUT of this session
+- Asia (b, with late50): with BE70 max DD -$64,709 vs -$59,783, worst week -$38,084 vs -$42,455, income $1,086,490 vs $1,064,536, L6M DD -$29,682 vs -$31,554 -> BE70 IS WORSE ON MAX DD: LEAVE BE70 OUT of this session
+- NY PM: with BE70 max DD -$70,155 vs -$54,114, worst week -$33,409 vs -$31,009, income $821,339 vs $894,829, L6M DD -$27,133 vs -$34,604 -> BE70 IS WORSE ON MAX DD AND WORST WEEK: LEAVE BE70 OUT of this session
 
 Exact engine, 42 months (Nov 2025 excluded), p484. Layer dollar caps not re-fitted. Max DD = daily-equity peak to trough, worst week = Monday week.
 
@@ -12,18 +12,18 @@ Exact engine, 42 months (Nov 2025 excluded), p484. Layer dollar caps not re-fitt
 | Asia | live mix as run | $914,998 | -$67,941 | -$37,409 | $17,867 | $154,302 | -$36,934 | $462,565 | -$36,934 | $378,957 |
 | Asia | drift removed (MF4 out) | $909,638 | -$66,365 | -$35,545 | $17,072 | $141,925 | -$34,250 | $458,635 | -$34,250 | $355,436 |
 | Asia | drift removed + VWAPBRK tr100 (no BE70, no late) | $1,157,521 | -$60,946 | -$36,691 | $18,820 | $161,182 | -$31,542 | $495,719 | -$31,542 | $467,377 |
-| Asia | drift removed + VWAPBRK tr100 + BE70 NR7/RSI (a: no late50) | pending |||||||||
+| Asia | drift removed + VWAPBRK tr100 + BE70 NR7/RSI (a: no late50) | $1,130,797 | -$73,593 | -$38,406 | $19,181 | $140,037 | -$29,899 | $484,740 | -$31,301 | $431,020 |
 | Asia | drift removed + VWAPBRK tr100 + late50 (no BE70) | $1,064,536 | -$59,783 | -$42,455 | $17,267 | $165,006 | -$31,554 | $452,659 | -$31,554 | $377,658 |
-| Asia | drift removed + VWAPBRK tr100 + BE70 NR7/RSI + late50 (b) | pending |||||||||
+| Asia | drift removed + VWAPBRK tr100 + BE70 NR7/RSI + late50 (b) | $1,086,490 | -$64,709 | -$38,084 | $17,441 | $151,496 | -$28,294 | $459,675 | -$29,682 | $387,948 |
 | NY PM | live mix as run | $1,129,115 | -$134,363 | -$44,139 | $17,638 | $199,258 | -$20,350 | $386,078 | -$30,613 | $535,893 |
 | NY PM | drift removed (MF1, MF4 out) | $928,583 | -$55,701 | -$32,018 | $12,299 | $135,645 | -$11,840 | $242,779 | -$33,802 | $469,790 |
 | NY PM | drift removed + late50 (no BE70) | $894,829 | -$54,114 | -$31,009 | $11,355 | $130,192 | -$11,657 | $251,457 | -$34,604 | $430,917 |
-| NY PM | drift removed + late50 + BE70 on NP-ZN, NP-YM | pending |||||||||
+| NY PM | drift removed + late50 + BE70 on NP-ZN, NP-YM | $821,339 | -$70,155 | -$33,409 | $11,468 | $117,245 | -$11,033 | $195,483 | -$27,133 | $375,498 |
 | NY AM | live mix as run | $3,498,291 | -$200,647 | -$110,130 | $49,934 | $506,856 | -$54,493 | $1,463,415 | -$69,974 | $1,348,100 |
 | NY AM | drift removed | $2,234,172 | -$217,943 | -$92,427 | $41,861 | $339,389 | -$56,176 | $990,095 | -$79,159 | $1,238,417 |
 | NY AM | drift removed + NY-NODE g67a70 (chosen, NY-FIB on its bracket) | $2,450,021 | -$137,104 | -$93,021 | $40,204 | $409,158 | -$43,563 | $1,015,384 | -$95,317 | $1,130,503 |
-| NY AM | chosen + NY-FIB g75a30 | pending |||||||||
-| NY AM | chosen + NY-FIB g75a70 | pending |||||||||
+| NY AM | chosen + NY-FIB g75a30 | $2,342,869 | -$193,041 | -$72,965 | $37,548 | $274,965 | -$64,988 | $893,608 | -$83,591 | $1,285,174 |
+| NY AM | chosen + NY-FIB g75a70 | $2,302,204 | -$213,157 | -$92,775 | $39,804 | $352,255 | -$58,886 | $972,833 | -$58,886 | $1,277,100 |
 | London | live mix as run | $913,621 | -$224,333 | -$107,350 | $22,877 | $234,166 | -$39,760 | $528,187 | -$39,760 | $6,885 |
 | London | drift at 1 lot + late75 (chosen) | $727,063 | -$128,414 | -$59,316 | $16,920 | $191,895 | -$38,910 | $419,327 | -$38,910 | $238,739 |
 
@@ -33,8 +33,10 @@ Exact engine, 42 months (Nov 2025 excluded), p484. Layer dollar caps not re-fitt
 |---|---|---|---|---|---|
 | TL3_DX_NY_MIX_c | pending or no best_px in these rows |||||
 | TL3_DX_NY_JM_c_node (42/42 months) | 1677 | 227 / -$1,436,595 | 238.7 / $28,645 | 1009 | -$14,455 |
-| TL3_DX_NY_FIN_c_nodefib30 | pending or no best_px in these rows |||||
-| TL3_DX_NY_FIN_c_nodefib70 | pending or no best_px in these rows |||||
+| TL3_DX_NY_FIN_c_nodefib30 (42/42 months) | 3732 | 1 / -$1,605 | 155.9 / $18,710 | 639 | -$14,510 |
+| TL3_DX_NY_FIN_c_nodefib70 (42/42 months) | 2019 | 187 / -$1,122,635 | 202.9 / $24,345 | 1194 | -$14,455 |
+
+Notes: (1) NY-FIB trade count is about 2.2x higher with the ratchet (no target, the ratchet stop closes trades earlier and the book re-enters on later signals), so give-back $ are on more, smaller trades; the live-bracket row (JM_c_node) is the reference. (2) The Asia BE70 on NR7/RSI runs inside the dx_algo hook (manager mx_mgr, same rule as the dx_multi be50 [0.7, 0] session row); identity check: single-book sets TL3_DX_AS_FIN_id_MF1 / _MF2 equal the session rows TL3_DX_AS_MF1/MF2_sun_be70_M in trade count and net income in every month compared (202610, 202608: 298 / 196 and 305 / 196 trades, net $70,932 / $48,518 and $86,646 / $55,618). NY PM BE70 uses the dx_multi recipe itself. (3) Peaks are the engine best_px (MFE); the 1-s tape peak can differ slightly.
 
 <!-- BUILD-KEYS-BEGIN -->
 ## SUNDAY BUILD KEYS (W-SUNDAY-MX, from the exact set JSONs, nothing to interpret)

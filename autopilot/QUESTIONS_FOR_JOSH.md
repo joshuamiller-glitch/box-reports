@@ -262,3 +262,7 @@ The 27/28 Nov approval ($5,000 for the trade-management work) is tracked in MORN
 
 ## Exits-only pause: lift it? (LEAD, 09:55Z 28 Nov)
 The exact-engine queue drained at ~09:00Z; the fleet would idle. LEAD refilled it with the 18:00Z settings-grid park (22,757 rows, ~3-5 h). pending_PARKED_exits_20261127.txt still holds 379,616 rows parked by the 27 Nov 03:11Z exits-only order (T12, T11 chains, Q2, drift nulls T10X/T9X, Q1 filler). Should the exits-only pause be lifted so those can run when the grid rows run out? LEAD default: unpark them in class order only if the relay says yes, otherwise ask for new work.
+
+## DESK v0.4-v0.7 two interpretations (W-DYNC, 14:03Z 28 Nov; relay)
+1. v0.4 structure trail is applied only once the trade is free (up 2 units); the order said 'once a swing exists'. If the relay meant from the start, say so and DK4 gets re-run.
+2. v0.5 banks half at the book's target as a MARKET part checked every second (not a resting limit); W-DYNH uses a resting limit if the hook allows. 1-lot: everything leaves at the target.

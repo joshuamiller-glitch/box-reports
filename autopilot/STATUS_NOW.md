@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 13:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 14:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 13:45Z | box1: busy 100%, load1 75.64, workers 13, MemAvail 65 GB | server2: busy 100%, load1 102.39, workers 37, MemAvail 625 GB | pending box1-eligible 494331 / server2-eligible 16413 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 181.27, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 1000 GB | serverB: busy 100%, load1 186.19, workers 105 (grid) + 87 (engine), 128 threads, MemAvail 954 GB | serverC: busy 100%, load1 207.85, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1431 GB | serverD: busy 100%, load1 143.30, workers 1 (grid) + 136 (engine), 64 threads, MemAvail 1453 GB
+LATEST CORES.md LINE: 2026-11-28 14:00Z | box1: busy 100%, load1 54.53, workers 14, MemAvail 67 GB | server2: busy 100%, load1 98.02, workers 38, MemAvail 807 GB | pending box1-eligible 494234 / server2-eligible 12767 (shared queues count in both; unleased, not DONE) | serverA: busy 99%, load1 160.97, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 999 GB | serverB: busy 100%, load1 197.16, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 954 GB | serverC: busy 100%, load1 215.88, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1415 GB | serverD: busy 100%, load1 145.69, workers 1 (grid) + 139 (engine), 64 threads, MemAvail 1444 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 13:45Z
+2026-11-28 14:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 13:45Z | box1: busy 100%, load1 75.64, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 64.5 GB; live reservations 1 (1 GB); workers 13, of which TP-adopted 13 (RSS 19.2 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 75.64, 69.52, 62.50
-  by tag: NYR quota 12 running 12 hungry False RSS 17.4 GB PSS 14.2 GB; NYE quota 16 running 1 hungry False RSS 1.8 GB PSS 1.6 GB
+Server 1 (this box): MemAvail 65.1 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 15 (RSS 19.4 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.53, 58.14, 60.99
+  by tag: NYR quota 12 running 15 hungry False RSS 19.4 GB PSS 16.2 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L1cc381da_ALNCT21p (x12);TL3_NYE_L1cc381da_ALNCT14p (x12);TL3_NYE_L1cc381da_ALNCT28p (x6);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 102.45, 101.96, 100.36|/dev/md2         28T  2.8T   26T  10% /mnt/l2|76|
+  top running jobs: TL3_NYE_L1cc381da_ALNCT28m (x12);TL3_NYE_L1cc381da_ALNCT21m (x10);TL3_NYE_L1cc381da_ALNCT35m (x8);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 96.97, 98.10, 99.40|/dev/md2         28T  2.8T   26T  10% /mnt/l2|86|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,4 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 102.45, 101.96, 100.36|/dev
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261128_0655Z_Josh-landscape-codes-target-and-fill-questions.md 20261128_0957Z_Josh-server2-under-85-and-hourly-line.md 20261128_1050Z_Josh-fill-the-fleet-exact-rows-for-all-qualifiers-and-joint-mixes.md 20261128_1230Z_Josh-late-entry-rule-exact-text-and-table.md 20261128_1328Z_Josh-late-entry-seed-lists-for-the-live-build.md
+20261128_1230Z_Josh-late-entry-rule-exact-text-and-table.md 20261128_1328Z_Josh-late-entry-seed-lists-for-the-live-build.md 20261128_1355Z_Josh-decisions-for-Sunday-lowest-drawdown-mixes.md 20261128_1402Z_Josh-no-24k-swings-give-back-on-NY-FIB-and-ratchet-only-manager.md 20261128_1408Z_Josh-keep-testing-manager-versions-three-more-designs.md

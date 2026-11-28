@@ -1,8 +1,8 @@
 <!-- BE70-TOP-BEGIN -->
 **BE70 VERDICT (W-SUNDAY-MX, see SUNDAY_FINAL_ROWS.md):**
-- Asia (a, no late50): BE70 row pending
-- Asia (b, with late50): BE70 row pending
-- NY PM: BE70 row pending
+- Asia (a, no late50): with BE70 max DD -$73,593 vs -$60,946, worst week -$38,406 vs -$36,691, income $1,130,797 vs $1,157,521, L6M DD -$31,301 vs -$31,542 -> BE70 IS WORSE ON MAX DD AND WORST WEEK: LEAVE BE70 OUT of this session
+- Asia (b, with late50): with BE70 max DD -$64,709 vs -$59,783, worst week -$38,084 vs -$42,455, income $1,086,490 vs $1,064,536, L6M DD -$29,682 vs -$31,554 -> BE70 IS WORSE ON MAX DD: LEAVE BE70 OUT of this session
+- NY PM: with BE70 max DD -$70,155 vs -$54,114, worst week -$33,409 vs -$31,009, income $821,339 vs $894,829, L6M DD -$27,133 vs -$34,604 -> BE70 IS WORSE ON MAX DD AND WORST WEEK: LEAVE BE70 OUT of this session
 <!-- BE70-TOP-END -->
 FIRST LINE: NINE BOOKS ARE MOSTLY DRIFT (Josh order 1622Z, lead list): AS-VWAPBAND (Asia MF4), LO-IMB (London MF2), NP-ATRFADE (NY PM MF1), NP-DIVFADE (NY PM MF4), NY-SOPEN (NY AM MF3), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-EMA (NY AM MF8), NY-AVWAP (NY AM MF9). Four are long-only: LO-IMB (London MF2), NY-BLOCK (NY AM MF6), NY-BOLL (NY AM MF7), NY-AVWAP (NY AM MF9). Three of them have a LARGE stop (NY AM MF3 120/120, MF7 120/60, MF6 90/30; London MF3 120/60 is MOSTLY DRIFT in the W-SUNDAY-WB table). Alternatives for Josh: smaller size until managed (mix row d), or removal (mix row c): both tested below.
 
