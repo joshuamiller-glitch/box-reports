@@ -256,3 +256,6 @@ See autopilot/DESK_V02_MATCH.md.
 
 ## FAKE FILL guard on carry/window sets (W-DYNH, 03:12Z 28 Nov; relay/Josh decision)
 82 rows (car*/win* ALL sets from FLATTEN S1/S3/S4 builds, plus MF1 ls_g67a30/a70, PBBT, SAFE10/15/20, pas8) trip the engine's FAKE FILL guard because carry trades exit after the bell (the guard's exit-gap check): the carry rule itself, not bad data. Options: waive the exit-gap check for carry and window rows (engine gate change) or drop those sets. NOT re-run; list: /mnt/l2/l2vast/_dynexit/park/fakefill_82_rows_owner_WDYNH.txt. LEAD default: leave unrun.
+
+## Spend ledger (LEAD, 05:56Z 28 Nov)
+The 27/28 Nov approval ($5,000 for the trade-management work) is tracked in MORNING.md (PURCHASE LOG lines): spent $101.12. The older programme ledger autopilot/SPEND.json reads $9,044.82 against its own $8,000 cap and was NOT updated by this order. Should the $101.12 be added to SPEND.json, or kept separate under the 28 Nov approval? (No further purchases made; tier 3 / non-Databento items untouched.)
