@@ -274,3 +274,6 @@ The manager keys its per-trade state by sec - int(mins x 60); the truncation mov
 
 ## Coverage A1 lot count (LEAD, 14:47Z 28 Nov; relay)
 A1 (volatility stop = 2 x s5, 'same lots-risk' as ordered) multiplies lots 3-5x or more (Asia MF1: median 20 lots vs 6, max 104; London MF1 reached 112 in a 150-event sample). Not capped as ordered. The live strategy cannot trade that size; A1 rows will be labelled 'uncapped lots' and compared in dollars and drawdown. Say if a cap (e.g. 2 x the book's live lots) should be added as a second A1 row.
+
+## v0.17 'screens choose the day' will be mostly the bracket (LEAD, 14:58Z 28 Nov; relay)
+Under the fixed definition a TREND class (UP or DOWN) occurs at only about 1-6% of entries (about 0% in London and NY PM), so DK17 = the book's own bracket on ~95% of trades. Not tuned. Also: RISK-OFF was read as the same trend test applied downward; the reference is measured from 5 minutes after the session open (first YM quote of a Globex reopen is stale). If the relay wants a looser trend definition, it must be written and counted as a NEW design.
