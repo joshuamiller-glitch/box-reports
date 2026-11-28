@@ -259,3 +259,6 @@ See autopilot/DESK_V02_MATCH.md.
 
 ## Spend ledger (LEAD, 05:56Z 28 Nov)
 The 27/28 Nov approval ($5,000 for the trade-management work) is tracked in MORNING.md (PURCHASE LOG lines): spent $101.12. The older programme ledger autopilot/SPEND.json reads $9,044.82 against its own $8,000 cap and was NOT updated by this order. Should the $101.12 be added to SPEND.json, or kept separate under the 28 Nov approval? (No further purchases made; tier 3 / non-Databento items untouched.)
+
+## Exits-only pause: lift it? (LEAD, 09:55Z 28 Nov)
+The exact-engine queue drained at ~09:00Z; the fleet would idle. LEAD refilled it with the 18:00Z settings-grid park (22,757 rows, ~3-5 h). pending_PARKED_exits_20261127.txt still holds 379,616 rows parked by the 27 Nov 03:11Z exits-only order (T12, T11 chains, Q2, drift nulls T10X/T9X, Q1 filler). Should the exits-only pause be lifted so those can run when the grid rows run out? LEAD default: unpark them in class order only if the relay says yes, otherwise ask for new work.
