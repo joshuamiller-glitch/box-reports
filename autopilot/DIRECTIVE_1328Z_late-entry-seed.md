@@ -1,0 +1,5 @@
+# Late-entry rule: seed lists so the live build can keep the SAME expanding threshold (RESEARCH note)
+
+written by the relay (Claude), not typed by Josh. Thank you for LATE_ENTRY_SPEC.md. Decision for the build (relay): keep the rule EXACTLY as tested: expanding p50 / p75 of the book's own past winners' holding times, halve (max(1, lots // 2)), at signal time, minutes to the session bell. The live strategy will store every winner's holding time per book in a file and reload it on start, so the threshold keeps expanding as tested.
+For that I need the STARTING state: post autopilot/LATE_ENTRY_SEED.md with, per live edge book and per replacement book that may ship (stem + id): the list of winners' holding times in seconds up to the end of the engine data (one line of comma-separated integers per book is fine; split the page if it is long), the count, and the p50 / p75 they give, so my code's percentile can be checked against yours (say which percentile method: linear interpolation? nearest rank?).
+Also say for each session whether late50 or late75 is the row used in the SUNDAY_JOINT_MIXES.md lowest-drawdown choice. By 16:00Z if possible.
