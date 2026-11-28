@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 14:45Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 15:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 14:45Z | box1: busy 100%, load1 79.27, workers 10, MemAvail 60 GB | server2: busy 100%, load1 108.75, workers 41, MemAvail 693 GB | pending box1-eligible 493935 / server2-eligible 17564 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 184.92, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 927 GB | serverB: busy 100%, load1 187.07, workers 105 (grid) + 97 (engine), 128 threads, MemAvail 868 GB | serverC: busy 100%, load1 172.41, workers 1 (grid) + 140 (engine), 128 threads, MemAvail 1335 GB | serverD: busy 100%, load1 146.63, workers 1 (grid) + 148 (engine), 64 threads, MemAvail 1341 GB
+LATEST CORES.md LINE: 2026-11-28 15:00Z | box1: busy 99%, load1 51.63, workers 12, MemAvail 81 GB | server2: busy 99%, load1 93.92, workers 42, MemAvail 1083 GB | pending box1-eligible 493842 / server2-eligible 22115 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 161.90, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 993 GB | serverB: busy 100%, load1 194.04, workers 105 (grid) + 90 (engine), 128 threads, MemAvail 945 GB | serverC: busy 100%, load1 153.52, workers 1 (grid) + 137 (engine), 128 threads, MemAvail 1442 GB | serverD: busy 100%, load1 145.88, workers 1 (grid) + 138 (engine), 64 threads, MemAvail 1431 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 14:45Z
+2026-11-28 15:00Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 14:45Z | box1: busy 100%, load1 79.27, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 60.5 GB; live reservations 1 (1 GB); workers 10, of which TP-adopted 9 (RSS 13.0 GB) vs others 1 (RSS 1.3 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 79.27, 70.04, 63.46
-  by tag: NYR quota 12 running 9 hungry True RSS 13.0 GB PSS 11.2 GB; REST quota 0 running 1 hungry False RSS 1.3 GB PSS 1.2 GB
+Server 1 (this box): MemAvail 79.9 GB; live reservations 3 (3 GB); workers 12, of which TP-adopted 12 (RSS 17.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 51.63, 60.63, 62.72
+  by tag: NYR quota 12 running 9 hungry True RSS 13.0 GB PSS 11.4 GB; NYE quota 16 running 3 hungry False RSS 4.9 GB PSS 4.5 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L2b0454de_ALNCT63m (x12);TL3_NYE_L2b0454de_ALNCT56m (x10);TL3_NYE_L2b0454de_ALNCT70m (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 106.19, 105.64, 103.00|/dev/md2         28T  2.8T   26T  10% /mnt/l2|86|
+  top running jobs: TL3_NYE_Lf50ec1a9_ALNCT14p (x12);TL3_NYE_Lf50ec1a9_ALNCT21p (x9);TL3_NYE_Lf50ec1a9_ALNCT28p (x4);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 95.10, 96.26, 98.96|/dev/md2         28T  2.8T   26T  10% /mnt/l2|78|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -36,5 +36,3 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 106.19, 105.64, 103.00|/dev
 
 ## INBOX (last 5 received)
 20261128_1432Z_Josh-screens-as-context-three-designs.md 20261128_1438Z_Josh-super-comprehensive-manager-coverage-matrix.md 20261128_1442Z_Josh-internals-export-drop-folder-and-loader.md 20261128_1448Z_Josh-keep-addresses-off-mirrored-pages.md 20261128_1503Z_Josh-internals-export-time-zone-central.md
-- lead 14:44Z INBOX 20261128_1503Z_Josh-internals-export-time-zone-central.md received (auto-ack by inbox_watch.sh; the lead reads it next and logs the action)
-INBOX ack 14:45Z: 20261128_1503Z (Josh typed: i think central time): files received in the drop folder (^ADD ^ADV ^DVOL ^PCR ^TICK ^TICKQ ^TRIN ^TRINQ ^VIX; no
