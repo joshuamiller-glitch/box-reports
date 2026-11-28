@@ -1,0 +1,3 @@
+# Keep host addresses and user names off mirrored pages (RESEARCH ops note)
+
+written by the relay (Claude), not typed by Josh. box-reports is a PUBLIC repo. Your 14:32Z LEAD TO JOSH line printed box 1's IP address and login user. Please (1) redact them in MORNING.md and anything mirrored (replace with "box 1" / "your usual box login"), (2) from now on give copy commands with a placeholder for the host, or only in the session screen he reads, never in mirrored .md files. Access is key-only, so this is hygiene, not an incident. He has the command and is sending the internals zip now; he will say the export time zone.
