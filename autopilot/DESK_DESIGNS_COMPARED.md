@@ -1,8 +1,10 @@
-# DESK_DESIGNS_COMPARED (generated 2026-11-28 13:56Z by code/th_algo/ar_designs.py; order 1408Z; research only)
+# DESK_DESIGNS_COMPARED (generated 2026-11-28 14:15Z by code/th_algo/ar_designs.py; order 1408Z; research only)
 
 One table of manager designs, same windows, same like-with-like references. Window per session = the months the DK22 sets have (Asia / London 37 months 2023-09..2026-10, NY AM / NY PM 24 months 2024-10..2026-10, Nov 2025 out); every design is cut to those months and the reference (the live mix as run for the mix rows, the book on its fixed bracket for alone rows) is cut to the same months and weeks. SESSION MIX row = live mix + sum of the per-book deltas of the books that design has finished (post-hoc additive, interaction neglected); books a design has not finished for the whole window are listed as not complete and left out. Floors: ACCEPTABLE = smoother (worst week not worse AND weekly st.dev. not larger) in >= 2/3 of quarters overall AND in NQ-up AND in NQ-down weeks, and income not more than 10 / 20 / 30% below the bracket; shown as YES / no (smooth = smoothness passed, income failed) / no. Give-backs: peak open profit from best_px in the trade rows (tape where the column is absent, marked), $ minus realised p484; largest single trade and the count of trades that gave back more than half of a peak of at least $500; managed = the managed books' own trades, bracket = the same books on the fixed bracket (fix_A, tape). Designs are read from code/th_algo/desk_designs.json (first tag with rows wins) and rows appear as the sets finish; the best single landscape code per book is the _M set named in autopilot/SUNDAY_LANDSCAPE.md.
 
 DK4..DK9 set families found in runs_rf: none yet
+
+DESIGNS DONE (books with every window month DONE, per session): v0.2.2 Asia 3/3 books; v0.3 Asia 3/3 books; v0.4 ratchet-only Asia 0/3 books; v0.4-ceiling Asia 0/3 books; v0.5 bank half, run half Asia 0/3 books; v0.6 ratchet + ABORT Asia 0/3 books; v0.7 bracket + near-target guard Asia 3/3 books; v0.8 Asia 0/3 books; v0.9 Asia 0/3 books; v0.10 Asia 0/3 books; v0.11 Asia 0/3 books; v0.12 Asia 0/3 books; v0.13 Asia 0/3 books; v0.14 Asia 0/3 books; v0.15 Asia 0/3 books; v0.2.2 NY AM 4/4 books; v0.3 NY AM 4/4 books; v0.4 ratchet-only NY AM 0/4 books; v0.4-ceiling NY AM 0/4 books; v0.5 bank half, run half NY AM 0/4 books; v0.6 ratchet + ABORT NY AM 0/4 books; v0.7 bracket + near-target guard NY AM 4/4 books; v0.8 NY AM 0/4 books; v0.9 NY AM 0/4 books; v0.10 NY AM 0/4 books; v0.11 NY AM 0/4 books; v0.12 NY AM 0/4 books; v0.13 NY AM 0/4 books; v0.14 NY AM 0/4 books; v0.15 NY AM 0/4 books; v0.2.2 London 2/2 books; v0.3 London 2/2 books; v0.4 ratchet-only London 0/2 books; v0.4-ceiling London 0/2 books; v0.5 bank half, run half London 0/2 books; v0.6 ratchet + ABORT London 0/2 books; v0.7 bracket + near-target guard London 2/2 books; v0.8 London 0/2 books; v0.9 London 0/2 books; v0.10 London 0/2 books; v0.11 London 0/2 books; v0.12 London 0/2 books; v0.13 London 0/2 books; v0.14 London 0/2 books; v0.15 London 0/2 books; v0.2.2 NY PM 2/2 books; v0.3 NY PM 2/2 books; v0.4 ratchet-only NY PM 0/2 books; v0.4-ceiling NY PM 0/2 books; v0.5 bank half, run half NY PM 0/2 books; v0.6 ratchet + ABORT NY PM 0/2 books; v0.7 bracket + near-target guard NY PM 2/2 books; v0.8 NY PM 0/2 books; v0.9 NY PM 0/2 books; v0.10 NY PM 0/2 books; v0.11 NY PM 0/2 books; v0.12 NY PM 0/2 books; v0.13 NY PM 0/2 books; v0.14 NY PM 0/2 books; v0.15 NY PM 0/2 books
 
 # Asia: window 202309-202610 (37 months)
 
@@ -17,6 +19,14 @@ DK4..DK9 set families found in runs_rf: none yet
 | v0.5 bank half, run half | none complete | not run yet |||||||| 
 | v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
 | v0.7 bracket + near-target guard (pl70k50) | MF1, MF2, MF3 | 818,847 (-8%) | -80,221 / -67,941 | -41,374 / -37,409 | 19,594 / 18,895 | 11,624 / 15,529 | 2125 / 2345 | 5/14, 5/11, 5/12 | no / no / no |
+| v0.8 | none complete | not run yet |||||||| 
+| v0.9 | none complete | not run yet |||||||| 
+| v0.10 | none complete | not run yet |||||||| 
+| v0.11 | none complete | not run yet |||||||| 
+| v0.12 | none complete | not run yet |||||||| 
+| v0.13 | none complete | not run yet |||||||| 
+| v0.14 | none complete | not run yet |||||||| 
+| v0.15 | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 tr100, MF2 so0, MF3 x7) | MF1, MF2, MF3 | 912,321 (+2%) | -89,603 / -67,941 | -39,207 / -37,409 | 20,610 / 18,895 | 19,244 / 15,529 | 2116 / 2345 | 5/14, 4/11, 4/12 | no / no / no |
 
 ## Asia: PER BOOK
@@ -49,6 +59,14 @@ DK4..DK9 set families found in runs_rf: none yet
 | v0.5 bank half, run half | none complete | not run yet |||||||| 
 | v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
 | v0.7 bracket + near-target guard (pl70k50) | MF1, MF2, MF4, MF5 | 2,003,756 (-30%) | -321,834 / -163,622 | -140,939 / -110,130 | 51,259 / 54,746 | 24,269 / 29,179 (tape) | 2552 / 2433 | 3/9, 4/7, 3/7 | no / no / no |
+| v0.8 | none complete | not run yet |||||||| 
+| v0.9 | none complete | not run yet |||||||| 
+| v0.10 | none complete | not run yet |||||||| 
+| v0.11 | none complete | not run yet |||||||| 
+| v0.12 | none complete | not run yet |||||||| 
+| v0.13 | none complete | not run yet |||||||| 
+| v0.14 | none complete | not run yet |||||||| 
+| v0.15 | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 g75a30, MF2 tr50, MF4 g67a70, MF5 x7) | MF1, MF2, MF4, MF5 | 2,634,979 (-7%) | -160,142 / -163,622 | -107,874 / -110,130 | 46,092 / 54,746 | 18,624 / 29,179 | 2485 / 2433 | 5/9, 4/7, 4/7 | no / no / no |
 
 ## NY AM: PER BOOK
@@ -85,6 +103,14 @@ DK4..DK9 set families found in runs_rf: none yet
 | v0.5 bank half, run half | none complete | not run yet |||||||| 
 | v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
 | v0.7 bracket + near-target guard (pl70k50) | MF1, MF3 | 464,563 (-47%) | -295,676 / -224,333 | -106,029 / -107,350 | 22,902 / 23,472 | 17,824 / 19,919 | 1426 / 923 | 7/14, 4/11, 4/12 | no / no / no |
+| v0.8 | none complete | not run yet |||||||| 
+| v0.9 | none complete | not run yet |||||||| 
+| v0.10 | none complete | not run yet |||||||| 
+| v0.11 | none complete | not run yet |||||||| 
+| v0.12 | none complete | not run yet |||||||| 
+| v0.13 | none complete | not run yet |||||||| 
+| v0.14 | none complete | not run yet |||||||| 
+| v0.15 | none complete | not run yet |||||||| 
 | best single landscape code per book (MF1 tr100, MF3 so0) | MF1, MF3 | 778,909 (-12%) | -319,212 / -224,333 | -76,627 / -107,350 | 25,852 / 23,472 | 20,265 / 19,919 | 999 / 923 | 3/14, 2/11, 3/12 | no / no / no |
 
 ## London: PER BOOK
@@ -113,6 +139,14 @@ DK4..DK9 set families found in runs_rf: none yet
 | v0.5 bank half, run half | none complete | not run yet |||||||| 
 | v0.6 ratchet + ABORT | none complete | not run yet |||||||| 
 | v0.7 bracket + near-target guard (pl70k50) | MF2, MF3 | 581,840 (-12%) | -121,704 / -134,363 | -45,699 / -44,139 | 19,018 / 20,021 | 19,520 / 28,539 | 416 / 454 | 2/9, 0/7, 4/7 | no / no / no |
+| v0.8 | none complete | not run yet |||||||| 
+| v0.9 | none complete | not run yet |||||||| 
+| v0.10 | none complete | not run yet |||||||| 
+| v0.11 | none complete | not run yet |||||||| 
+| v0.12 | none complete | not run yet |||||||| 
+| v0.13 | none complete | not run yet |||||||| 
+| v0.14 | none complete | not run yet |||||||| 
+| v0.15 | none complete | not run yet |||||||| 
 | best single landscape code per book (MF2 xi15all, MF3 x7) | MF2, MF3 | 543,807 (-17%) | -79,217 / -134,363 | -47,044 / -44,139 | 19,579 / 20,021 | 18,575 / 28,539 | 336 / 454 | 3/9, 0/7, 3/7 | no / no / no |
 
 ## NY PM: PER BOOK

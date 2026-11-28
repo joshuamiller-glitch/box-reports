@@ -1,9 +1,9 @@
-# STATUS_NOW (written 2026-11-28 14:00Z by status_now.py; judgment sections from STATUS_NOTES.md)
+# STATUS_NOW (written 2026-11-28 14:15Z by status_now.py; judgment sections from STATUS_NOTES.md)
 
-LATEST CORES.md LINE: 2026-11-28 14:00Z | box1: busy 100%, load1 54.53, workers 14, MemAvail 67 GB | server2: busy 100%, load1 98.02, workers 38, MemAvail 807 GB | pending box1-eligible 494234 / server2-eligible 12767 (shared queues count in both; unleased, not DONE) | serverA: busy 99%, load1 160.97, workers 105 (grid) + 101 (engine), 128 threads, MemAvail 999 GB | serverB: busy 100%, load1 197.16, workers 105 (grid) + 100 (engine), 128 threads, MemAvail 954 GB | serverC: busy 100%, load1 215.88, workers 1 (grid) + 139 (engine), 128 threads, MemAvail 1415 GB | serverD: busy 100%, load1 145.69, workers 1 (grid) + 139 (engine), 64 threads, MemAvail 1444 GB
+LATEST CORES.md LINE: 2026-11-28 14:15Z | box1: busy 98%, load1 42.44, workers 14, MemAvail 80 GB | server2: busy 100%, load1 98.26, workers 44, MemAvail 893 GB | pending box1-eligible 494125 / server2-eligible 12187 (shared queues count in both; unleased, not DONE) | serverA: busy 100%, load1 180.26, workers 105 (grid) + 102 (engine), 128 threads, MemAvail 999 GB | serverB: busy 100%, load1 187.39, workers 105 (grid) + 99 (engine), 128 threads, MemAvail 959 GB | serverC: busy 100%, load1 216.53, workers 1 (grid) + 132 (engine), 128 threads, MemAvail 1410 GB | serverD: busy 100%, load1 145.11, workers 1 (grid) + 149 (engine), 64 threads, MemAvail 1453 GB
 
 ## UTC TIME WRITTEN
-2026-11-28 14:00Z
+2026-11-28 14:15Z
 
 ## NEEDS HELP
 - Server 2: identity PASSED; first real jobs finished 18:48Z (T-REBUILD stage 0 raw books, K7 202610 92 s); ramp to knee running (cap 16 now); copy ~150/305 GB.
@@ -21,12 +21,12 @@ LATEST CORES.md LINE: 2026-11-28 14:00Z | box1: busy 100%, load1 54.53, workers 
 - Profit lines K7 lock / U7 tighten / M7 step: 43-month replay net negative and dead live by the line 1790 bug.
 
 ## EACH SERVER
-Server 1 (this box): MemAvail 65.1 GB; live reservations 2 (2 GB); workers 15, of which TP-adopted 15 (RSS 19.4 GB) vs others 0 (RSS 0.0 GB)
-  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 54.53, 58.14, 60.99
-  by tag: NYR quota 12 running 15 hungry False RSS 19.4 GB PSS 16.2 GB
+Server 1 (this box): MemAvail 79.9 GB; live reservations 2 (2 GB); workers 14, of which TP-adopted 14 (RSS 17.9 GB) vs others 0 (RSS 0.0 GB)
+  caps: WORKER_CAP=24 LOAD_CAP=40 | load1/5/15: 42.44, 51.76, 55.35
+  by tag: NYE quota 16 running 14 hungry False RSS 17.9 GB PSS 16.3 GB
   cell-months finished last hour (DONE markers): 
-  top running jobs: TL3_NYE_L1cc381da_ALNCT28m (x12);TL3_NYE_L1cc381da_ALNCT21m (x10);TL3_NYE_L1cc381da_ALNCT35m (x8);
-Server 2 (rs4 metal): load / disk / tp_launch procs: 96.97, 98.10, 99.40|/dev/md2         28T  2.8T   26T  10% /mnt/l2|86|
+  top running jobs: TL3_NYE_Lef796290_ALN (x30);
+Server 2 (rs4 metal): load / disk / tp_launch procs: 102.28, 100.65, 100.05|/dev/md2         28T  2.8T   26T  10% /mnt/l2|75|
   state: A inventory (done) B mount md0 RAID0 of 4 NVMe as /mnt/l2, packages C rsync code+data, venv D identity (JL2 202610=642/27,487.58; JN05W2 202610 598/25,943.82) E
 
 ## NEXT DEADLINES
@@ -35,4 +35,5 @@ Server 2 (rs4 metal): load / disk / tp_launch procs: 96.97, 98.10, 99.40|/dev/md
 - 12:00Z 11-17: DS3_FLAT_VS_BOOK.md, DS3_JOINT_EXIT.md first table, DS3_REBUILD_S1.md first table.
 
 ## INBOX (last 5 received)
-20261128_1230Z_Josh-late-entry-rule-exact-text-and-table.md 20261128_1328Z_Josh-late-entry-seed-lists-for-the-live-build.md 20261128_1355Z_Josh-decisions-for-Sunday-lowest-drawdown-mixes.md 20261128_1402Z_Josh-no-24k-swings-give-back-on-NY-FIB-and-ratchet-only-manager.md 20261128_1408Z_Josh-keep-testing-manager-versions-three-more-designs.md
+20261128_1328Z_Josh-late-entry-seed-lists-for-the-live-build.md 20261128_1355Z_Josh-decisions-for-Sunday-lowest-drawdown-mixes.md 20261128_1402Z_Josh-no-24k-swings-give-back-on-NY-FIB-and-ratchet-only-manager.md 20261128_1408Z_Josh-keep-testing-manager-versions-three-more-designs.md 20261128_1418Z_Josh-more-manager-designs-through-Sunday-globex.md
+INBOX ack 14:14Z: 20261128_1418Z (Josh typed: test until Sunday globex, come up with more): eight more designs v0.8-v0.15 (scale out in thirds; volatility-sized
